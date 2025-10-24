@@ -1,0 +1,20 @@
+{
+  "total": 3,
+  "success": 1,
+  "exists": 2,
+  "error": 0,
+  "items": [
+    {
+      "slug": "cursor",
+      "status": "success"
+    },
+    {
+      "slug": "atlas-studio",
+      "status": "exists"
+    },
+    {
+      "slug": "cursor",
+      "status": "exists"
+    }
+  ]
+}
