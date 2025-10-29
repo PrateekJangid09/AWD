@@ -22,13 +22,15 @@ interface WebsiteGridProps {
   categories: string[];
   initialSearchQuery?: string;
   initialCategory?: string;
+  categoryHeading?: string;
 }
 
 export default function WebsiteGrid({ 
   websites, 
   categories, 
   initialSearchQuery = '', 
-  initialCategory = 'Browse All' 
+  initialCategory = 'Browse All',
+  categoryHeading
 }: WebsiteGridProps) {
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
@@ -188,25 +190,52 @@ export default function WebsiteGrid({
 
   return (
     <>
-      {/* New Release / Trending Toggle */}
-      <div className="mb-4 flex justify-center sm:justify-end">
-        <div className="inline-flex items-center bg-foreground/5 border border-white/20 rounded-full p-1">
-          <button
-            onClick={() => setTab('new')}
-            className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
-            style={tab === 'new' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
-          >
-            New Release
-          </button>
-          <button
-            onClick={() => setTab('trending')}
-            className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
-            style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
-          >
-            Trending
-          </button>
+      {/* Category Heading and New Release / Trending Toggle */}
+      {categoryHeading && (
+        <div className="mb-6 flex items-center justify-between">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+            {categoryHeading}
+          </h1>
+          <div className="inline-flex items-center bg-foreground/5 border border-white/20 rounded-full p-1">
+            <button
+              onClick={() => setTab('new')}
+              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
+              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+            >
+              New Release
+            </button>
+            <button
+              onClick={() => setTab('trending')}
+              className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
+              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+            >
+              Trending
+            </button>
+          </div>
         </div>
-      </div>
+      )}
+      
+      {/* New Release / Trending Toggle - For pages without category heading */}
+      {!categoryHeading && (
+        <div className="mb-4 flex justify-center sm:justify-end">
+          <div className="inline-flex items-center bg-foreground/5 border border-white/20 rounded-full p-1">
+            <button
+              onClick={() => setTab('new')}
+              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
+              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+            >
+              New Release
+            </button>
+            <button
+              onClick={() => setTab('trending')}
+              className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
+              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+            >
+              Trending
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Enhanced Search Bar */}
       <div className="mb-8">

@@ -80,6 +80,41 @@
     background: color-mix(in oklab, white 20%, transparent);
   }
 
+  /* Social media icons in light mode */
+  .theme-light footer a[aria-label="Twitter"] svg,
+  .theme-light footer a[aria-label="GitHub"] svg,
+  .theme-light footer a[aria-label="LinkedIn"] svg {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .theme-light footer a[aria-label="Twitter"]:hover svg,
+  .theme-light footer a[aria-label="GitHub"]:hover svg,
+  .theme-light footer a[aria-label="LinkedIn"]:hover svg {
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  /* FigFiles logo icon in light mode */
+  .theme-light .logo-icon {
+    color: rgba(0, 0, 0, 0.9) !important;
+  }
+
+  /* Header background in light mode - make it white */
+  .theme-light .header-container {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Hero section overrides in light mode - remove gray feel */
+  .theme-light .hero-section {
+    background-color: #ffffff !important; /* use pure white */
+  }
+  .theme-light .hero-section .hero-scrim {
+    background: none !important; /* remove dark scrim */
+  }
+  .theme-light .hero-section .hero-inset {
+    box-shadow: none !important; /* remove inset dark shadow */
+  }
+
   /* Dark/default category chips (use glass with color tint when active) */
   .category-chip {
     backdrop-filter: blur(10px);

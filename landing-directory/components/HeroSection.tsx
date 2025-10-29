@@ -39,7 +39,7 @@ export default function HeroSection({
   const NAVY = '#0B0B14';
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section className="relative overflow-hidden bg-background hero-section">
       <div
         className="pointer-events-none absolute inset-0"
           style={{
@@ -49,6 +49,8 @@ export default function HeroSection({
             `radial-gradient(800px 520px at 55% 85%, ${SUNSET_PEACH}14, transparent 60%)`,
         }}
       />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-transparent hero-scrim" />
+      <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.3)] hero-inset" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
         <motion.div variants={container} initial="hidden" animate="visible" className="text-center">
           <motion.div variants={item} className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-foreground/10 border border-white/20 text-foreground backdrop-blur">

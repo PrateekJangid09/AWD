@@ -36,16 +36,8 @@ export default async function CategoryPage({ params }: PageProps) {
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-          <div className="mb-6 flex items-center justify-between">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground">
-              {category}
-            </h1>
-            <div className="hidden sm:block px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' }}>
-              Category
-            </div>
-          </div>
-          <WebsiteGrid websites={websites} categories={categories} initialCategory={category} />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-10">
+          <WebsiteGrid websites={websites} categories={categories} initialCategory={category} categoryHeading={category} />
         </div>
       </main>
       <Footer />
