@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const category = categoryFromSlug(params.slug);
   if (!category) return { title: 'Category Not Found' };
   return {
-    title: `${category} Websites – FigFiles`,
+    title: `${category} Websites – AllWebsites.Design`,
     description: `Explore curated ${category} landing pages and hero sections.`,
     robots: { index: true },
     alternates: { canonical: `/c/${params.slug}` },

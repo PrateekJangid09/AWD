@@ -1,7 +1,30 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      const root = document.documentElement;
+      setIsLightMode(root.classList.contains('theme-light'));
+    };
+
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const categories = [
     'SaaS',
@@ -21,23 +44,17 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: 'linear-gradient(135deg, #4735DD 0%, #FF3E6C 100%)' }}>
-                <svg
-                  className="h-6 w-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
-                  />
-                </svg>
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg">
+                <Image
+                  src={isLightMode ? "/logo-light.png" : "/logo.png"}
+                  alt="AllWebsites.Design Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain rounded-lg"
+                />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-foreground">FigFiles</h3>
+                <h3 className="text-lg font-bold text-foreground">AllWebsites.Design</h3>
               </div>
             </div>
             <p className="text-sm text-foreground/70 leading-relaxed mb-4">
@@ -144,7 +161,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-foreground/60 text-center sm:text-left">
-              © {currentYear} FigFiles. Curated with ❤️ for designers and developers.
+              © {currentYear} AllWebsites.Design. Curated with ❤️ for designers and developers.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/about" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">

@@ -1,6 +1,6 @@
 # Deployment Guide 🚀
 
-Complete guide to deploy your Landing Page Directory to production.
+Complete guide to deploy AllWebsites.Design to production.
 
 ## Pre-Deployment Checklist
 
@@ -43,7 +43,7 @@ Before deploying, ensure you have:
    - Set up and deploy? **Yes**
    - Which scope? **Your account**
    - Link to existing project? **No**
-   - Project name? **landing-directory** (or your choice)
+   - Project name? **allwebsites-design** (or your choice)
    - Directory? **./
    - Override settings? **No**
 
@@ -69,7 +69,7 @@ Before deploying, ensure you have:
 
 If needed, add in Vercel Dashboard:
 ```
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+NEXT_PUBLIC_SITE_URL=https://allwebsites.design
 ```
 
 ## Option 2: Deploy to Netlify

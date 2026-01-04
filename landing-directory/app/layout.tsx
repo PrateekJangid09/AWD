@@ -15,9 +15,18 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "FigFiles - Design Inspiration & Resources",
+  title: "AllWebsites.Design - Design Inspiration & Resources",
   description: "A curated directory of 800+ landing pages from SaaS, Fintech, E-commerce, and more. Find inspiration for your next project.",
   keywords: ["landing pages", "design inspiration", "SaaS", "Fintech", "E-commerce", "web design"],
+  metadataBase: new URL("https://allwebsites.design"),
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

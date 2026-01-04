@@ -32,7 +32,7 @@ export default function HeroSection({
   const item = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
   // Palette
-  const ELECTRIC_INDIGO = '#4735DD';
+  const ELECTRIC_INDIGO = '#4600BE';
   const CORAL = '#FF3E6C';
   const SUNSET_PEACH = '#61BFC2';
   const LIGHT_INDIGO = '#FFA200';

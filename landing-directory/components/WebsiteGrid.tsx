@@ -200,14 +200,14 @@ export default function WebsiteGrid({
             <button
               onClick={() => setTab('new')}
               className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
             >
               New Release
             </button>
             <button
               onClick={() => setTab('trending')}
               className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
             >
               Trending
             </button>
@@ -222,14 +222,14 @@ export default function WebsiteGrid({
             <button
               onClick={() => setTab('new')}
               className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
             >
               New Release
             </button>
             <button
               onClick={() => setTab('trending')}
               className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4735DD, #FF3E6C)' } : {}}
+              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
             >
               Trending
             </button>

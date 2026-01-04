@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MACRO_CATEGORIES, slugifyCategory } from '@/lib/categories';
 
 export default function Header() {
@@ -49,7 +50,7 @@ export default function Header() {
             <Link 
               href="/" 
               className="flex-shrink-0 flex items-center gap-2 sm:gap-3 lg:gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl p-2 -m-2"
-              aria-label="Go to FigFiles homepage"
+              aria-label="Go to AllWebsites.Design homepage"
             >
               <div 
                 className={`flex h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 items-center justify-center transition-all duration-300 ${
@@ -57,23 +58,18 @@ export default function Header() {
                 }`}
                 style={{ borderRadius: '16px' }}
               >
-                <svg
-                  className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white logo-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
-                  />
-                </svg>
+                <Image
+                  src={isLightMode ? "/logo-light.png" : "/logo.png"}
+                  alt="AllWebsites.Design Logo"
+                  width={48}
+                  height={48}
+                  className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain rounded-2xl"
+                  priority
+                />
               </div>
               <div>
                 <h1 className="text-lg sm:text-xl lg:text-2xl font-bold brand-title transition-colors duration-200">
-                  FigFiles
+                  AllWebsites.Design
                 </h1>
                 <p className="text-xs sm:text-sm text-foreground/70 hidden sm:block font-medium">Design inspiration & resources</p>
               </div>
@@ -115,6 +111,9 @@ export default function Header() {
                   </div>
                 )}
               </div>
+              <Link href="/website-templates-for-framer" className="px-4 py-2 text-foreground/80 hover:text-foreground font-medium transition-colors rounded-xl hover:bg-white/10">
+                Website Templates
+              </Link>
               <Link href="#resources" className="px-4 py-2 text-foreground/80 hover:text-foreground font-medium transition-colors rounded-xl hover:bg-white/10">
                 Resources
               </Link>
@@ -181,6 +180,13 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Browse Templates
+                </Link>
+                <Link 
+                  href="/website-templates-for-framer" 
+                  className="px-4 py-3 text-foreground/80 hover:text-foreground font-medium transition-colors rounded-lg hover:bg-white/5"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Website Templates
                 </Link>
                 <Link 
                   href="#resources" 

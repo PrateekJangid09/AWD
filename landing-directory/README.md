@@ -1,4 +1,4 @@
-# Landing Page Directory 🚀
+# AllWebsites.Design 🚀
 
 A high-performance directory of 700+ curated landing pages with automated screenshot generation, category filtering, and fuzzy search. Built with Next.js 15, TypeScript, and Tailwind CSS.
 

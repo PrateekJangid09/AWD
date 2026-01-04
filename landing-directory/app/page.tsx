@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import HomePageContent from '@/components/HomePageContent';
 
 export const metadata = {
-  title: 'FigFiles - Design Inspiration & Resources',
+  title: 'AllWebsites.Design - Design Inspiration & Resources',
   description: 'Discover amazing design resources, landing pages, and UI inspiration. Curated collection of 750+ websites for designers and developers.',
 };
 

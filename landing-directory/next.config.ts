@@ -18,9 +18,10 @@ const nextConfig: NextConfig = {
   },
 
   // Performance optimizations
-  experimental: {
-    optimizePackageImports: ['@/components', '@/lib'],
-  },
+  // Temporarily disabled to fix React module resolution issue
+  // experimental: {
+  //   optimizePackageImports: ['@/components', '@/lib'],
+  // },
 
   // Generate ETags for caching
   generateEtags: true,

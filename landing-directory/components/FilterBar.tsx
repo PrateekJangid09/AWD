@@ -54,21 +54,21 @@ export default function FilterBar({
                 `}
                 style={{
                   // expose color for light mode CSS
-                  ['--chip-color' as any]: category === 'Browse All' ? '#4735DD' : categoryColor,
+                  ['--chip-color' as any]: category === 'Browse All' ? '#4600BE' : categoryColor,
                   ...(isLight
                     ? {
                         background: isActive
-                          ? (category === 'Browse All' ? '#4735DD' : categoryColor)
-                          : `${category === 'Browse All' ? '#4735DD' : categoryColor}26`, // ~15% tint
+                          ? (category === 'Browse All' ? '#4600BE' : categoryColor)
+                          : `${category === 'Browse All' ? '#4600BE' : categoryColor}26`, // ~15% tint
                         color: isActive ? '#FFFFFF' : '#0B0B14',
-                        border: `1px solid ${category === 'Browse All' ? '#4735DD' : categoryColor}55`,
+                        border: `1px solid ${category === 'Browse All' ? '#4600BE' : categoryColor}55`,
                         borderRadius: '50px',
                         boxShadow: 'none',
                         backdropFilter: 'none',
                       }
                     : {
                         background: isActive
-                          ? `linear-gradient(135deg, ${category === 'Browse All' ? '#4735DD' : categoryColor}80, ${category === 'Browse All' ? '#4735DD' : categoryColor}40)`
+                          ? `linear-gradient(135deg, ${category === 'Browse All' ? '#4600BE' : categoryColor}80, ${category === 'Browse All' ? '#4600BE' : categoryColor}40)`
                           : `linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))`,
                         backdropFilter: 'blur(10px)',
                         border: '1px solid rgba(255,255,255,0.2)',
@@ -87,12 +87,12 @@ export default function FilterBar({
                     className="pointer-events-none absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity"
                     style={{
                       background:
-                        `radial-gradient(120% 120% at 50% 0%, ${(category === 'Browse All' ? '#4735DD' : categoryColor)}22 0%, transparent 60%),` +
-                        `radial-gradient(80% 80% at 90% 100%, ${(category === 'Browse All' ? '#4735DD' : categoryColor)}18 0%, transparent 70%),` +
-                        `radial-gradient(80% 80% at 10% 100%, ${(category === 'Browse All' ? '#4735DD' : categoryColor)}10 0%, transparent 70%)`,
+                        `radial-gradient(120% 120% at 50% 0%, ${(category === 'Browse All' ? '#4600BE' : categoryColor)}22 0%, transparent 60%),` +
+                        `radial-gradient(80% 80% at 90% 100%, ${(category === 'Browse All' ? '#4600BE' : categoryColor)}18 0%, transparent 70%),` +
+                        `radial-gradient(80% 80% at 10% 100%, ${(category === 'Browse All' ? '#4600BE' : categoryColor)}10 0%, transparent 70%)`,
                       mixBlendMode: 'screen',
                       borderRadius: '50px',
-                      boxShadow: `inset 0 0 0 1px ${(category === 'Browse All' ? '#4735DD' : categoryColor)}33, 0 8px 24px -10px ${(category === 'Browse All' ? '#4735DD' : categoryColor)}55`,
+                      boxShadow: `inset 0 0 0 1px ${(category === 'Browse All' ? '#4600BE' : categoryColor)}33, 0 8px 24px -10px ${(category === 'Browse All' ? '#4600BE' : categoryColor)}55`,
                     }}
                   />
                 )}
@@ -109,8 +109,8 @@ export default function FilterBar({
                   `}
                   style={{ 
                     backgroundColor: isLight
-                      ? (isActive ? `${(category === 'Browse All' ? '#4735DD' : categoryColor)}66` : `${(category === 'Browse All' ? '#4735DD' : categoryColor)}33`)
-                      : (!isActive ? `${(category === 'Browse All' ? '#4735DD' : categoryColor)}26` : undefined),
+                      ? (isActive ? `${(category === 'Browse All' ? '#4600BE' : categoryColor)}66` : `${(category === 'Browse All' ? '#4600BE' : categoryColor)}33`)
+                      : (!isActive ? `${(category === 'Browse All' ? '#4600BE' : categoryColor)}26` : undefined),
                     borderRadius: '50px',
                     color: isLight ? (isActive ? '#FFFFFF' : '#0B0B14') : undefined,
                   }}

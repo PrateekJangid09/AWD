@@ -1,5 +1,5 @@
 {
-  "name": "landing-directory",
+  "name": "allwebsites-design",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,8 +19,8 @@
     "fuse.js": "^7.1.0",
     "next": "15.5.4",
     "papaparse": "^5.5.3",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {

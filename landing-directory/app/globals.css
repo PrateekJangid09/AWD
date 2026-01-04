@@ -7,7 +7,7 @@
     --background: #0B0B14;
     --foreground: #E8EAF0;
     /* Brand palette - Highlights */
-    --hl-indigo: #4735DD; /* Electric Purple/Indigo */
+    --hl-indigo: #4600BE; /* Electric Purple/Indigo */
     --hl-pink: #FF3E6C;   /* Neon Pink */
     --hl-aqua: #61BFC2;   /* Aqua Blue */
     --hl-amber: #FFA200;  /* Amber */
@@ -41,19 +41,15 @@
 
   /* Primary gradient text (indigo -> pink) */
   .text-gradient-primary {
-    background: linear-gradient(135deg, #4735DD 0%, #FF3E6C 100%);
+    background: linear-gradient(135deg, #4600BE 0%, #FF3E6C 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  /* Brand title: white by default (dark), gradient only in light */
+  /* Brand title: white by default (dark), solid purple in light */
   .brand-title { color: #ffffff; }
   .theme-light .brand-title {
-    background: linear-gradient(135deg, #4735DD 0%, #FF3E6C 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: #4600BE;
   }
 
   /* Light-mode category chips to match card badge colors */
@@ -93,7 +89,7 @@
     color: rgba(0, 0, 0, 1) !important;
   }
 
-  /* FigFiles logo icon in light mode */
+  /* AllWebsites logo icon in light mode */
   .theme-light .logo-icon {
     color: rgba(0, 0, 0, 0.9) !important;
   }

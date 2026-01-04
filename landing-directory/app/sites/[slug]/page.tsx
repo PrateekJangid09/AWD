@@ -34,19 +34,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${website.name} - FigFiles`,
+    title: `${website.name} - AllWebsites.Design`,
     description: website.description,
     openGraph: {
       title: website.name,
       description: website.description,
       images: [website.screenshotUrl],
       type: 'website',
+      url: `https://allwebsites.design/sites/${p.slug}`,
     },
     twitter: {
       card: 'summary_large_image',
       title: website.name,
       description: website.description,
       images: [website.screenshotUrl],
+    },
+    alternates: {
+      canonical: `/sites/${p.slug}`,
     },
   };
 }
@@ -283,7 +287,7 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
             <Link
               href="/"
               className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-              style={{ background: 'linear-gradient(135deg, #4735DD 0%, #FF3E6C 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #4600BE 0%, #FF3E6C 100%)' }}
             >
               <span>Browse All Websites</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
