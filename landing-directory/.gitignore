@@ -54,3 +54,5 @@ next-env.d.ts
 
 # data exports
 /data/missing-urls.json
+
+.vercel
