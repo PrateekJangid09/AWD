@@ -511,6 +511,7 @@ export default function Header(props: HeaderProps) {
                         {showLogoImage && (
                             <div style={logoMark} aria-hidden="true">
                                 {logoImageUrl ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
                                     <img
                                         src={logoImageUrl}
                                         alt=""

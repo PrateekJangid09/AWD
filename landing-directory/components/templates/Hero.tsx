@@ -743,6 +743,7 @@ export default function Hero(props: HeroProps) {
                         <div style={right}>
                             {safeCards.map((c, i) => (
                                 <div key={i} style={cardWrap(i)}>
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={c.imageUrl}
                                         alt={c.title}

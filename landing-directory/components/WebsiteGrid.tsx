@@ -50,7 +50,8 @@ export default function WebsiteGrid({
     if (initialSearchQuery && initialSearchQuery !== searchQuery) {
       setSearchQuery(initialSearchQuery);
     }
-  }, [initialSearchQuery]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialSearchQuery, searchQuery]);
 
   // Reset pagination when filters/search/category change
   useEffect(() => {

@@ -1163,6 +1163,7 @@ export default function BrowseTemplates(props: BrowseTemplatesProps) {
                                 })
                             }
                         >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={t.imageUrl} alt={t.title} style={img} />
                             <div style={cardBody}>
                                 <p style={cardTitle}>{t.title}</p>

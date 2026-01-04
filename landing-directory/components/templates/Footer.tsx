@@ -521,6 +521,7 @@ export default function Footer(props: FooterProps) {
                                 {showLogoImage ? (
                                     <div style={logoMark} aria-hidden="true">
                                         {logoImageUrl ? (
+                                            // eslint-disable-next-line @next/next/no-img-element
                                             <img
                                                 src={logoImageUrl}
                                                 alt=""

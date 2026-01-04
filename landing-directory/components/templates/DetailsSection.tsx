@@ -579,6 +579,7 @@ export default function DetailsSection(props: DetailsSectionProps) {
                                     }}
                                 >
                                     {it.logoUrl ? (
+                                        // eslint-disable-next-line @next/next/no-img-element
                                         <img
                                             src={it.logoUrl}
                                             alt=""

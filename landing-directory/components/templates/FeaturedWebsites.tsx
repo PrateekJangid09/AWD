@@ -574,6 +574,7 @@ export default function FeaturedWebsites(props: FeaturedWebsitesProps) {
                                         : `0 18px 44px ${colors.shadow}`
                             }}
                         >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={c.imageUrl}
                                 alt={c.title}
