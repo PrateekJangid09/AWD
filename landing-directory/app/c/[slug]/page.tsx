@@ -6,7 +6,7 @@ import WebsiteGrid from '@/components/WebsiteGrid';
 import { MACRO_CATEGORIES, categoryFromSlug, slugifyCategory } from '@/lib/categories';
 import { getWebsites } from '@/lib/data';
 
-type PageProps = { params: { slug: string } };
+type PageProps = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
   // Exclude 'Browse All'
@@ -15,18 +15,20 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const category = categoryFromSlug(params.slug);
+  const { slug } = await params;
+  const category = categoryFromSlug(slug);
   if (!category) return { title: 'Category Not Found' };
   return {
     title: `${category} Websites – AllWebsites.Design`,
     description: `Explore curated ${category} landing pages and hero sections.`,
     robots: { index: true },
-    alternates: { canonical: `/c/${params.slug}` },
+    alternates: { canonical: `/c/${slug}` },
   };
 }
 
 export default async function CategoryPage({ params }: PageProps) {
-  const category = categoryFromSlug(params.slug);
+  const { slug } = await params;
+  const category = categoryFromSlug(slug);
   if (!category) return notFound();
 
   const websites = await getWebsites();

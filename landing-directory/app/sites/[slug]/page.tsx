@@ -10,7 +10,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import type { Metadata } from 'next';
 
 interface PageProps {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 // Generate static params for all websites
@@ -24,8 +24,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const p = (params instanceof Promise) ? await params : params;
-  const website = await getWebsiteBySlug(p.slug);
+  const { slug } = await params;
+  const website = await getWebsiteBySlug(slug);
 
   if (!website) {
     return {
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: website.description,
       images: [website.screenshotUrl],
       type: 'website',
-      url: `https://allwebsites.design/sites/${p.slug}`,
+      url: `https://allwebsites.design/sites/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -50,14 +50,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [website.screenshotUrl],
     },
     alternates: {
-      canonical: `/sites/${p.slug}`,
+      canonical: `/sites/${slug}`,
     },
   };
 }
 
 export default async function WebsiteDetailPage({ params }: PageProps) {
-  const p = (params instanceof Promise) ? await params : params;
-  const website = await getWebsiteBySlug(p.slug);
+  const { slug } = await params;
+  const website = await getWebsiteBySlug(slug);
 
   if (!website) {
     notFound();
