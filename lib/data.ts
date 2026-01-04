@@ -30,19 +30,9 @@ export async function getWebsites(): Promise<Website[]> {
     const slug = createSlug(name);
     const displayCategory = mapToMacroCategory(category);
 
-    const heroPath = path.join(process.cwd(), 'public', 'screenshots', `${slug}.webp`);
-    const fallbackPath = path.join(process.cwd(), 'public', 'screenshots', 'fallbacks', `${slug}.webp`);
-    let screenshotUrl = `/screenshots/${slug}.webp`;
-    try {
-      if (fs.existsSync(heroPath)) {
-        const stat = fs.statSync(heroPath);
-        if (stat.size < 20000 && fs.existsSync(fallbackPath)) {
-          screenshotUrl = `/screenshots/fallbacks/${slug}.webp`;
-        }
-      } else if (fs.existsSync(fallbackPath)) {
-        screenshotUrl = `/screenshots/fallbacks/${slug}.webp`;
-      }
-    } catch {}
+    // Return URLs directly - let the client handle 404s for missing images
+    // This prevents Vercel from bundling screenshot files into the serverless function
+    const screenshotUrl = `/screenshots/${slug}.webp`;
 
     return {
       id: `${index + 1}`,
@@ -86,14 +76,15 @@ function sortWebsitesByQuality(websites: Website[]): Website[] {
 function calculateQualityScore(website: Website): number {
   let score = 0;
 
-  const fullPagePath = path.join(process.cwd(), 'public', 'fullshots', `${website.slug}.webp`);
-  if (fs.existsSync(fullPagePath)) score += 50;
+  // Removed file system checks to reduce serverless function size
+  // Files in public/ are served statically, so we can assume they exist
+  // Featured websites get bonus points
+  if (website.featured) score += 50;
 
   if (website.url && website.url.startsWith('http')) score += 15;
 
-  const heroPath = path.join(process.cwd(), 'public', 'screenshots', `${website.slug}.webp`);
-  const fallbackPath = path.join(process.cwd(), 'public', 'screenshots', 'fallbacks', `${website.slug}.webp`);
-  if (fs.existsSync(heroPath)) score += 20; else if (fs.existsSync(fallbackPath)) score += 5;
+  // Assume screenshots exist (they're in public/)
+  score += 20;
 
   if (website.description && website.description.length > 20) score += 5;
   if (website.name && website.name.length > 2) score += 5;
