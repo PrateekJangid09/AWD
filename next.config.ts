@@ -34,6 +34,9 @@ const nextConfig: NextConfig = {
 
   // React strict mode for better development
   reactStrictMode: true,
+
+  // Exclude large packages from serverless functions to reduce bundle size
+  serverExternalPackages: ['puppeteer', 'puppeteer-core', 'canvas'],
 };
 
 export default nextConfig;
