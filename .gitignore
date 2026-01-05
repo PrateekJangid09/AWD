@@ -56,5 +56,13 @@ next-env.d.ts
 
 # data exports
 /data/missing-urls.json
+/data/websites.backup.*.csv
+
+# scripts output files
+/scripts/*.json
+
+# cache files
+**/.next/cache/
+landing-directory/.next/
 
 .vercel
