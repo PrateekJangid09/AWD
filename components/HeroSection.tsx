@@ -59,7 +59,7 @@ export default function HeroSection({
           </motion.div>
 
           <motion.h1 variants={item} className="mt-4 sm:mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-foreground leading-tight">
-            Elevate Your Next Design
+            Curated Website Design Inspiration: {totalWebsites.toLocaleString()}+ Landing Pages from Top Brands
           </motion.h1>
 
                  <motion.p variants={item} className="mt-3 sm:mt-5 text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl sm:max-w-3xl mx-auto px-4 sm:px-0 font-lato">

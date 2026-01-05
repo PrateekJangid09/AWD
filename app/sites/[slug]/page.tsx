@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getWebsiteBySlug, getAllSlugs, getRelatedWebsites } from '@/lib/data';
+import { getWebsiteBySlug, getAllSlugs, getRelatedWebsites, getWebsites } from '@/lib/data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WebsiteInfoCard from '@/components/WebsiteInfoCard';
 import RelatedWebsites from '@/components/RelatedWebsites';
 import Breadcrumb from '@/components/Breadcrumb';
+import { generateBreadcrumbListSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 
 interface PageProps {
@@ -63,11 +64,24 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const allWebsites = await getWebsites();
+  const totalCount = allWebsites.length;
   const relatedWebsites = await getRelatedWebsites(website, 6);
   const displayCategory = website.displayCategory || website.category;
 
+  // Generate breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbListSchema([
+    { label: 'Home', href: '/' },
+    { label: displayCategory, href: `/?category=${encodeURIComponent(displayCategory)}` },
+    { label: website.name },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       <main className="min-h-screen bg-background">
@@ -282,7 +296,7 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
               Ready to explore more?
             </h2>
             <p className="text-lg text-text-secondary mb-8">
-              Discover 750+ curated landing pages from top companies and creators
+              Discover {totalCount.toLocaleString()}+ curated landing pages from top companies and creators
             </p>
             <Link
               href="/"

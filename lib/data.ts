@@ -11,48 +11,179 @@ function createSlug(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
+// Check if category is specific (not "Other" or empty)
+function hasSpecificCategory(category: string): boolean {
+  const cat = category?.trim() || '';
+  return cat !== '' && 
+         cat !== 'Uncategorized' && 
+         cat !== 'Other' &&
+         cat.toLowerCase() !== 'other';
+}
+
+// Check if URL is a valid official website (not platform link, not inferred)
+function isValidOfficialUrl(url: string, name: string): boolean {
+  try {
+    if (!url || typeof url !== 'string' || !url.trim()) return false;
+    if (!name || typeof name !== 'string') return false;
+    
+    const urlLower = url.toLowerCase().trim();
+    
+    // Must start with http:// or https://
+    if (!urlLower.startsWith('http://') && !urlLower.startsWith('https://')) {
+      return false;
+    }
+    
+    // Exclude platform links
+    const platformDomains = [
+      'land-book.com',
+      'saaslandingpage.com',
+      'onepagelove.com',
+      'webflow.com/made-in-webflow',
+      'webflow.com/@',
+      'a1.gallery',
+    ];
+    
+    for (const platform of platformDomains) {
+      if (urlLower.includes(platform)) {
+        return false;
+      }
+    }
+    
+    // Extract domain from URL
+    const urlObj = new URL(url);
+    let domain = urlObj.hostname.toLowerCase().replace(/^www\./, '');
+    const domainParts = domain.split('.');
+    if (domainParts.length === 0) return false;
+    
+    const domainWithoutTld = domainParts[0];
+    
+    // Check if domain is too long (likely inferred)
+    // If domain is longer than 30 chars, it's likely inferred
+    if (domainWithoutTld.length > 30) {
+      return false;
+    }
+    
+    // Check if domain matches slugified name pattern (likely inferred)
+    const nameSlug = createSlug(name);
+    if (nameSlug && nameSlug.length > 15 && domainWithoutTld.length > 20) {
+      // If domain contains a significant portion of the slugified name and is very long
+      const nameSlugStart = nameSlug.substring(0, Math.min(20, nameSlug.length));
+      if (domainWithoutTld.includes(nameSlugStart) && domainWithoutTld.length > 25) {
+        return false;
+      }
+    }
+    
+    // Check for obvious inferred patterns: very long domains with multiple hyphens
+    const hyphenCount = (domainWithoutTld.match(/-/g) || []).length;
+    if (domainWithoutTld.length > 25 && hyphenCount > 3) {
+      return false;
+    }
+    
+    return true;
+  } catch (e) {
+    // Invalid URL format or any error
+    return false;
+  }
+}
+
 export async function getWebsites(): Promise<Website[]> {
-  const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
-  const fileContent = fs.readFileSync(csvPath, 'utf-8');
+  try {
+    const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
+    
+    if (!fs.existsSync(csvPath)) {
+      console.error(`CSV file not found at: ${csvPath}`);
+      return [];
+    }
+    
+    const fileContent = fs.readFileSync(csvPath, 'utf-8');
 
-  const { data } = Papa.parse<string[]>(fileContent, {
-    header: false,
-    skipEmptyLines: true,
-  });
+    if (!fileContent || fileContent.trim() === '') {
+      console.error('CSV file is empty');
+      return [];
+    }
 
-  const websites: Website[] = data.slice(1).map((row, index) => {
-    const name = row[0]?.trim() || 'Unnamed';
-    const url = row[1]?.trim() || '';
-    const category = row[2]?.trim() || 'Uncategorized';
-    const description = row[3]?.trim() || 'No description available';
-    const featured = row[4]?.trim().toLowerCase() === 'true';
-    const hidden = row[5]?.trim().toLowerCase() === 'true';
-    const slug = createSlug(name);
-    const displayCategory = mapToMacroCategory(category);
+    const { data } = Papa.parse<string[]>(fileContent, {
+      header: false,
+      skipEmptyLines: true,
+    });
 
-    // Return URLs directly - let the client handle 404s for missing images
-    // This prevents Vercel from bundling screenshot files into the serverless function
-    const screenshotUrl = `/screenshots/${slug}.webp`;
+    if (!data || data.length === 0) {
+      console.error('No data parsed from CSV');
+      return [];
+    }
 
-    return {
-      id: `${index + 1}`,
-      name,
-      url,
-      category,
-      description,
-      screenshotUrl,
-      slug,
-      displayCategory,
-      fullScreenshotUrl: `/fullshots/${slug}.webp`,
-      featured,
-      hidden,
-    };
-  });
+    const websites: Website[] = data.slice(1)
+      .map((row, index) => {
+        try {
+          const name = (row[0]?.trim() || 'Unnamed').toString();
+          const url = (row[1]?.trim() || '').toString();
+          const category = (row[2]?.trim() || 'Uncategorized').toString();
+          const description = (row[3]?.trim() || 'No description available').toString();
+          const featured = (row[4]?.trim().toLowerCase() === 'true');
+          const hidden = (row[5]?.trim().toLowerCase() === 'true');
+          const slug = createSlug(name);
+          const displayCategory = mapToMacroCategory(category);
 
-  // Filter out hidden websites
-  const visibleWebsites = websites.filter(website => !website.hidden);
+          // Return URLs directly - let the client handle 404s for missing images
+          // This prevents Vercel from bundling screenshot files into the serverless function
+          const screenshotUrl = `/screenshots/${slug}.webp`;
 
-  return sortWebsitesByQuality(visibleWebsites);
+          return {
+            id: `${index + 1}`,
+            name,
+            url,
+            category,
+            description,
+            screenshotUrl,
+            slug,
+            displayCategory: displayCategory || category,
+            fullScreenshotUrl: `/fullshots/${slug}.webp`,
+            featured,
+            hidden,
+          } as Website;
+        } catch (rowError) {
+          console.error(`Error processing row ${index + 1}:`, rowError);
+          return null;
+        }
+      })
+      .filter((website): website is Website => website !== null && website !== undefined);
+
+    // Filter out hidden websites
+    let visibleWebsites = websites.filter(website => !website.hidden);
+    
+    // Filter to only include valid websites:
+    // 1. Must have specific category (not "Other" or empty)
+    // 2. Must have valid official URL (not platform link, not inferred)
+    // 3. Must have a name
+    visibleWebsites = visibleWebsites.filter(website => {
+      try {
+        // Check name
+        if (!website.name || typeof website.name !== 'string' || website.name.trim() === '' || website.name === 'Unnamed') {
+          return false;
+        }
+        
+        // Check category
+        if (!website.category || !hasSpecificCategory(website.category)) {
+          return false;
+        }
+        
+        // Check URL
+        if (!website.url || !isValidOfficialUrl(website.url, website.name)) {
+          return false;
+        }
+        
+        return true;
+      } catch (e) {
+        // If any error occurs during filtering, exclude the website
+        return false;
+      }
+    });
+
+    return sortWebsitesByQuality(visibleWebsites);
+  } catch (error) {
+    console.error('Error in getWebsites:', error);
+    return [];
+  }
 }
 
 function sortWebsitesByQuality(websites: Website[]): Website[] {

@@ -70,6 +70,8 @@ function ShowcaseCard({ website, size, className = '' }: { website: Website; siz
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         className="object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
         unoptimized
+        loading={size === 'lead' ? 'eager' : 'lazy'}
+        priority={size === 'lead'}
       />
 
       {/* Dark gradient overlay at bottom for text visibility */}

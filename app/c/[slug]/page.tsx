@@ -5,6 +5,10 @@ import Footer from '@/components/Footer';
 import WebsiteGrid from '@/components/WebsiteGrid';
 import { MACRO_CATEGORIES, categoryFromSlug, slugifyCategory } from '@/lib/categories';
 import { getWebsites } from '@/lib/data';
+import {
+  generateItemListSchema,
+  generateBreadcrumbListSchema,
+} from '@/lib/schema';
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -34,8 +38,23 @@ export default async function CategoryPage({ params }: PageProps) {
   const websites = await getWebsites();
   const categories = MACRO_CATEGORIES;
 
+  // Generate schema markup
+  const itemListSchema = generateItemListSchema(category, websites, `/c/${slug}`);
+  const breadcrumbSchema = generateBreadcrumbListSchema([
+    { label: 'Home', href: '/' },
+    { label: category },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-10">
