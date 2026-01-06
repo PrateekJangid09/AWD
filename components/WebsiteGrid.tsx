@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Fuse from 'fuse.js';
-import WebsiteCardTest from '@/components/WebsiteCardTest';
 import WebsiteCardSkeleton from '@/components/WebsiteCardSkeleton';
 import EmptyState from '@/components/EmptyState';
-import AdvancedFilterBar from '@/components/AdvancedFilterBar';
-import EnhancedSearchBar from '@/components/EnhancedSearchBar';
+import MagneticGallery from '@/components/MagneticGallery';
+import PrismCategoryNav from '@/components/PrismCategoryNav';
 import { Website } from '@/lib/types';
 
 interface FilterState {
@@ -36,6 +35,7 @@ export default function WebsiteGrid({
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
   const [isLoading, setIsLoading] = useState(false);
   const [visibleCount, setVisibleCount] = useState(30);
+  const [autoLoadCount, setAutoLoadCount] = useState(0);
   const [tab, setTab] = useState<'new' | 'trending'>('trending');
   const [filters, setFilters] = useState<FilterState>({
     sortBy: 'name',
@@ -53,10 +53,20 @@ export default function WebsiteGrid({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialSearchQuery, searchQuery]);
 
-  // Reset pagination when filters/search/category change
+  // Reset pagination and auto-load when filters/search/category change
   useEffect(() => {
     setVisibleCount(30);
-  }, [activeCategory, searchQuery, filters.sortBy, filters.showFeatured, filters.showRecent, filters.colorScheme, filters.showPopular, tab]);
+    setAutoLoadCount(0);
+  }, [
+    activeCategory,
+    searchQuery,
+    filters.sortBy,
+    filters.showFeatured,
+    filters.showRecent,
+    filters.colorScheme,
+    filters.showPopular,
+    tab,
+  ]);
 
   // Setup Fuse.js for fuzzy search
   const fuse = useMemo(() => {
@@ -180,6 +190,31 @@ export default function WebsiteGrid({
     return counts;
   }, [websites, categories]);
 
+  const hasMore = visibleCount < filteredWebsites.length;
+
+  // Auto-load more when user scrolls to bottom (up to 3 times)
+  const autoLoadLock = useRef(false);
+  useEffect(() => {
+    if (!hasMore || autoLoadCount >= 3) return;
+
+    const handleScroll = () => {
+      if (!hasMore || autoLoadCount >= 3 || autoLoadLock.current) return;
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+        autoLoadLock.current = true;
+        setAutoLoadCount((count) => count + 1);
+        setVisibleCount((count) => count + 30);
+        setTimeout(() => {
+          autoLoadLock.current = false;
+        }, 600);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasMore, autoLoadCount]);
+
+  const showManualLoadButton = hasMore && autoLoadCount >= 3;
+
   // Handler functions
   const handleSortChange = (sortBy: string) => {
     setFilters(prev => ({ ...prev, sortBy }));
@@ -197,18 +232,24 @@ export default function WebsiteGrid({
           <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground">
             {categoryHeading}
           </h1>
-          <div className="inline-flex items-center bg-foreground/5 border border-white/20 rounded-full p-1">
+          <div className="inline-flex items-center gap-2">
             <button
               onClick={() => setTab('new')}
-              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
+              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
+                tab === 'new'
+                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
+                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
+              }`}
             >
               New Release
             </button>
             <button
               onClick={() => setTab('trending')}
-              className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
+              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
+                tab === 'trending'
+                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
+                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
+              }`}
             >
               Trending
             </button>
@@ -219,18 +260,24 @@ export default function WebsiteGrid({
       {/* New Release / Trending Toggle - For pages without category heading */}
       {!categoryHeading && (
         <div className="mb-4 flex justify-center sm:justify-end">
-          <div className="inline-flex items-center bg-foreground/5 border border-white/20 rounded-full p-1">
+          <div className="inline-flex items-center gap-2">
             <button
               onClick={() => setTab('new')}
-              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'new' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'new' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
+              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
+                tab === 'new'
+                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
+                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
+              }`}
             >
               New Release
             </button>
             <button
               onClick={() => setTab('trending')}
-              className={`ml-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors ${tab === 'trending' ? 'text-white' : 'text-foreground/80'}`}
-              style={tab === 'trending' ? { background: 'linear-gradient(135deg, #4600BE, #FF3E6C)' } : {}}
+              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
+                tab === 'trending'
+                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
+                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
+              }`}
             >
               Trending
             </button>
@@ -239,24 +286,14 @@ export default function WebsiteGrid({
       )}
 
       {/* Enhanced Search Bar */}
-      <div className="mb-8">
-        <EnhancedSearchBar
-          onSearch={setSearchQuery}
-          websites={websites}
-          placeholder="Search by name, description, or category..."
-        />
-      </div>
-
-      {/* Advanced Filter Bar */}
-      <div className="mb-6">
-        <AdvancedFilterBar
+      {/* Category pills strip */}
+      <div className="mb-6 -mx-4 sm:-mx-6 lg:-mx-8">
+        <PrismCategoryNav
           categories={categories}
           activeCategory={activeCategory}
           onCategoryChange={setActiveCategory}
           websiteCounts={websiteCounts}
           totalCount={websites.length}
-          onSortChange={handleSortChange}
-          onFilterChange={handleFilterChange}
         />
       </div>
 
@@ -288,30 +325,11 @@ export default function WebsiteGrid({
           ))}
         </div>
       ) : filteredWebsites.length > 0 ? (
-        <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-12">
-            {filteredWebsites.slice(0, visibleCount).map((website) => (
-              <WebsiteCardTest key={website.id} website={website} />
-            ))}
-          </div>
-          {visibleCount < filteredWebsites.length && (
-            <div className="mt-6 sm:mt-8 flex justify-center">
-              <button
-                onClick={() => setVisibleCount((c) => c + 30)}
-                className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105"
-                style={{
-                  background: 'linear-gradient(135deg, #FFD769 0%, #FFA200 100%)',
-                  color: '#0b0b14',
-                  border: '1px solid rgba(255, 170, 0, 0.6)',
-                  borderRadius: '50px',
-                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.6), 0 4px 18px rgba(255,162,0,0.25)'
-                }}
-              >
-                Load more
-              </button>
-            </div>
-          )}
-        </>
+        <MagneticGallery
+          websites={filteredWebsites.slice(0, visibleCount)}
+          hasMore={showManualLoadButton}
+          onLoadMore={() => setVisibleCount((c) => c + 30)}
+        />
       ) : (
         <EmptyState
           title="No websites found"

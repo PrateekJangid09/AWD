@@ -1,182 +1,294 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 
+// --- STYLES ---
+const sectionStyle: React.CSSProperties = {
+  width: '100%',
+  backgroundColor: '#FFFFFF',
+  color: '#111',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  borderTop: '2px solid #111',
+  overflow: 'hidden',
+};
+
+const containerStyle: React.CSSProperties = {
+  width: '100%',
+  maxWidth: 1400,
+  display: 'flex',
+  flexDirection: 'column',
+};
+
+const topRowStyle: React.CSSProperties = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  width: '100%',
+  borderBottom: '2px solid #111',
+};
+
+const columnStyle: React.CSSProperties = {
+  flex: 1,
+  minWidth: 200,
+  padding: '60px 40px',
+  borderRight: '1px solid #E5E5E5',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 24,
+};
+
+const linkStyle: React.CSSProperties = {
+  textDecoration: 'none',
+  color: '#111',
+  fontSize: 16,
+  fontWeight: 500,
+  position: 'relative',
+  width: 'fit-content',
+  cursor: 'pointer',
+};
+
+// --- MAIN FOOTER ---
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [isLightMode, setIsLightMode] = useState(false);
+  const accentColor = '#CCFF00';
 
-  useEffect(() => {
-    // Check initial theme
-    const checkTheme = () => {
-      const root = document.documentElement;
-      setIsLightMode(root.classList.contains('theme-light'));
-    };
+  const col1Links: FooterColumnLink[] = [
+    { label: 'Featured', href: '/' },
+    { label: 'Trending', href: '/?tab=trending' },
+    { label: 'New Arrivals', href: '/?tab=new' },
+    { label: 'Collections', href: '/website-templates-for-framer' },
+  ];
 
-    checkTheme();
-    
-    // Watch for theme changes
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  const col2Links: FooterColumnLink[] = [
+    { label: 'Submit a Site', href: '#submit' },
+    { label: 'Pro Membership', href: '/website-templates-for-framer/pricing' },
+    { label: 'Guidelines', href: '/about' },
+  ];
 
-  const categories = [
-    'SaaS',
-    'Agency/Studio',
-    'Portfolio',
-    'Fintech',
-    'E-commerce',
-    'Developer',
-    'AI',
-    'Crypto/Web3',
+  const col3Links: FooterColumnLink[] = [
+    { label: 'About', href: '/about' },
+    { label: 'Manifesto', href: '/about' },
+    { label: 'Careers', href: '#' },
+    { label: 'Contact', href: '/about' },
   ];
 
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg">
-                <Image
-                  src={isLightMode ? "/logo-light.png" : "/logo.png"}
-                  alt="AllWebsites.Design Logo"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 object-contain rounded-lg"
-                />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-foreground">AllWebsites.Design</h3>
-              </div>
+    <footer style={sectionStyle}>
+      <div style={containerStyle}>
+        {/* 1. LINKS GRID */}
+        <div style={topRowStyle}>
+          <FooterColumn title="Discover" links={col1Links} accent={accentColor} />
+          <FooterColumn title="Submit" links={col2Links} accent={accentColor} />
+          <FooterColumn title="Company" links={col3Links} accent={accentColor} />
+
+          {/* Community Column */}
+          <div style={{ ...columnStyle, borderRight: 'none', minWidth: 260 }}>
+            <h4
+              style={{
+                margin: 0,
+                fontSize: 14,
+                color: '#888',
+                textTransform: 'uppercase',
+              }}
+            >
+              Community
+            </h4>
+            <div
+              style={{
+                display: 'flex',
+                gap: 16,
+                flexWrap: 'wrap',
+              }}
+            >
+              <SocialSticker label="TW" href="https://twitter.com" />
+              <SocialSticker label="IG" href="https://instagram.com" />
+              <SocialSticker label="LN" href="https://linkedin.com" />
+              <SocialSticker label="YT" href="https://youtube.com" />
             </div>
-            <p className="text-sm text-foreground/70 leading-relaxed mb-4">
-              A curated directory of 878+ landing pages from top companies and creators worldwide.
+            <p
+              style={{
+                fontSize: 14,
+                color: '#666',
+                lineHeight: 1.5,
+                marginTop: 'auto',
+              }}
+            >
+              Join 15,000+ designers building the future of the web.
             </p>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 transition-all duration-300 hover:scale-105 group"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: '50px',
-                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 8px rgba(0,0,0,0.1)`,
-                }}
-                aria-label="Twitter"
-              >
-                <svg className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-                </svg>
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 transition-all duration-300 hover:scale-105 group"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: '50px',
-                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 8px rgba(0,0,0,0.1)`,
-                }}
-                aria-label="GitHub"
-              >
-                <svg className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
-                </svg>
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 transition-all duration-300 hover:scale-105 group"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: '50px',
-                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 8px rgba(0,0,0,0.1)`,
-                }}
-                aria-label="LinkedIn"
-              >
-                <svg className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Templates by Category */}
-          <div>
-            <h4 className="text-sm font-bold text-foreground mb-4">Templates</h4>
-            <ul className="space-y-2">
-              {categories.slice(0, 4).map((category) => (
-                <li key={category}>
-                  <Link href={`/c/${encodeURIComponent(category === 'Agency/Studio' ? 'agency-studio' : category.replace(/\s+/g,'-').toLowerCase())}`} className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">
-                    {category}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* More Templates */}
-          <div>
-            <h4 className="text-sm font-bold text-foreground mb-4">More</h4>
-            <ul className="space-y-2">
-              {categories.slice(4).map((category) => (
-                <li key={category}>
-                  <Link href={`/c/${encodeURIComponent(category === 'Agency/Studio' ? 'agency-studio' : category.replace(/\s+/g,'-').toLowerCase())}`} className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">
-                    {category}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Tools / Products */}
-          <div>
-            <h4 className="text-sm font-bold text-foreground mb-4">Products</h4>
-            <ul className="space-y-2">
-              <li><Link href="/c/saas" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">All Template Access</Link></li>
-              <li><Link href="/c/e-commerce" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">Premium Templates</Link></li>
-              <li><Link href="/c/portfolio" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">Free Templates</Link></li>
-            </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-foreground/60 text-center sm:text-left">
-              © {currentYear} AllWebsites.Design. Curated with ❤️ for designers and developers.
-            </p>
-            <div className="flex items-center gap-6">
-              <Link href="/about" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">
-                About
-              </Link>
-              <Link href="/privacy" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">
-                Privacy
-              </Link>
-              <Link href="/terms" className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200">
-                Terms
-              </Link>
-            </div>
+        {/* 2. MASSIVE BRAND TEXT (STATIC) */}
+        <div
+          style={{
+            width: '100%',
+            overflow: 'hidden',
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '60px 20px',
+            position: 'relative',
+          }}
+        >
+          <BrandText text="AllWebsites.Design" />
+        </div>
+
+        {/* 3. BOTTOM BAR */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            padding: '20px 40px 40px 40px',
+            fontSize: 13,
+            color: '#888',
+            flexWrap: 'wrap',
+            gap: 20,
+          }}
+        >
+          <div>© {currentYear} AllWebsites.Design. Curated in California.</div>
+          <div style={{ display: 'flex', gap: 20 }}>
+            <Link href="/privacy" style={{ textDecoration: 'none', color: '#555' }}>
+              Privacy Policy
+            </Link>
+            <Link href="/terms" style={{ textDecoration: 'none', color: '#555' }}>
+              Terms of Service
+            </Link>
+            <Link href="/sitemap.xml" style={{ textDecoration: 'none', color: '#555' }}>
+              Sitemap
+            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
+// --- SUB-COMPONENTS ---
+
+interface FooterColumnLink {
+  label: string;
+  href: string;
+}
+
+function FooterColumn({
+  title,
+  links,
+  accent,
+}: {
+  title: string;
+  links: FooterColumnLink[];
+  accent: string;
+}) {
+  return (
+    <div style={columnStyle}>
+      <h4
+        style={{
+          margin: 0,
+          fontSize: 14,
+          color: '#888',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+        }}
+      >
+        {title}
+      </h4>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+        }}
+      >
+        {links.map((link) => (
+          <HoverLink key={link.label} text={link.label} href={link.href} accent={accent} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function HoverLink({ text, href, accent }: { text: string; href: string; accent: string }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <motion.a
+      href={href}
+      target={href.startsWith('http') ? '_blank' : undefined}
+      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={linkStyle}
+    >
+      {text}
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: hover ? '100%' : 0 }}
+        style={{
+          height: 2,
+          backgroundColor: accent,
+          marginTop: 2,
+          borderRadius: 2,
+        }}
+      />
+    </motion.a>
+  );
+}
+
+function SocialSticker({ label, href }: { label: string; href: string }) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{
+        scale: 1.1,
+        rotate: Math.random() * 10 - 5,
+        boxShadow: '0 10px 20px rgba(0,0,0,0.15)',
+      }}
+      style={{
+        width: 48,
+        height: 48,
+        borderRadius: '50%',
+        backgroundColor: '#111',
+        color: '#FFF',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 700,
+        fontSize: 13,
+        cursor: 'pointer',
+        border: '2px solid #111',
+        textDecoration: 'none',
+      }}
+    >
+      {label}
+    </motion.a>
+  );
+}
+
+function BrandText({ text }: { text: string }) {
+  return (
+    <motion.h1
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      style={{
+        fontSize: '5.5vw',
+        lineHeight: 0.85,
+        fontWeight: 900,
+        letterSpacing: '-0.03em',
+        margin: 0,
+        color: '#111',
+        textAlign: 'center',
+        userSelect: 'none',
+        whiteSpace: 'nowrap',
+        maxWidth: '100%',
+      }}
+    >
+      {text}
+    </motion.h1>
+  );
+}
+

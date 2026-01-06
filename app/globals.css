@@ -215,6 +215,26 @@ html {
   background: #3A3A4A;
 }
 
+/* Custom scrollbar for collage component (paper aesthetic) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-left: 1px solid #DDD;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #CCC;
+  border-radius: 4px;
+  border: 1px solid #BBB;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #AAA;
+}
+
 /* Modern subtle animations */
 @keyframes subtleFloat {
   0%, 100% { 

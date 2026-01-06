@@ -38,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sora.className} ${geist.variable} ${sora.variable}`}>
+      <body
+        className={`${sora.className} ${geist.variable} ${sora.variable}`}
+        style={{ backgroundColor: '#FAFAFA' }}
+      >
         {/* theme container; toggled by Header */}
         <div id="app-root" className="transition-colors duration-300">{children}</div>
         <script dangerouslySetInnerHTML={{__html: `

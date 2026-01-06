@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import HeroSection from '@/components/HeroSection';
+import HeroSketchbook from '@/components/HeroSketchbook';
+import MetricGrid from '@/components/MetricGrid';
+import FeaturedBento from '@/components/FeaturedBento';
 import WebsiteGrid from '@/components/WebsiteGrid';
 import { Website } from '@/lib/types';
 import AutoScrollTicker from '@/components/AutoScrollTicker';
@@ -34,14 +36,25 @@ export default function HomePageContent({
   return (
     <>
       {/* Hero Section */}
-      <HeroSection
+      <HeroSketchbook
         totalWebsites={totalWebsites}
         totalCategories={totalCategories}
         featuredWebsites={featuredWebsites}
         onSearch={handleHeroSearch}
       />
 
-      {/* Auto-scrolling ticker - REMOVED */}
+      {/* Metric strip section */}
+      <MetricGrid
+        totalWebsites={totalWebsites}
+        totalCategories={totalCategories}
+      />
+
+      {/* Featured websites bento board */}
+      <FeaturedBento
+        title="The Weekly Edit"
+        subtitle="A selection of the 9 finest websites launched recently."
+        websites={featuredWebsites}
+      />
 
       {/* Main Content Section */}
       <section id="browse" className="py-12 scroll-mt-20">

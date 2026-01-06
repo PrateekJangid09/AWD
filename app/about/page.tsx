@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Header from '@/components/Header';
+import Header from '@/components/HeaderFramer';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 
