@@ -60,7 +60,7 @@ export default function Header({ variant = 'default' }: HeaderProps) {
               alt="AllWebsites.Design Logo"
               width={32}
               height={32}
-              className="object-contain"
+              className="object-contain w-auto h-auto"
               priority
             />
           </div>

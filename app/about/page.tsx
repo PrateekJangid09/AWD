@@ -21,17 +21,15 @@ export default async function AboutPage() {
   // Fetch websites to populate the marquee
   const websites = await getWebsites();
   
-  // Filter out hidden websites and get featured/non-featured mix
+  // Filter out hidden websites
   const visibleWebsites = websites.filter(w => !w.hidden);
   
-  // Get a diverse sample of screenshots (mix of featured and regular)
-  const featuredSites = visibleWebsites.filter(w => w.featured).slice(0, 20);
-  const regularSites = visibleWebsites.filter(w => !w.featured).slice(0, 20);
-  const sampleSites = [...featuredSites, ...regularSites].slice(0, 40);
+  // Get more websites to avoid repetition (80 total = 40 per column)
+  const firstWebsites = visibleWebsites.slice(0, 80);
   
-  // Split into two columns for the marquee
-  const imagesCol1 = sampleSites.slice(0, 20).map(w => w.screenshotUrl);
-  const imagesCol2 = sampleSites.slice(20, 40).map(w => w.screenshotUrl);
+  // Split into two columns for the marquee - each column gets 40 unique images
+  const imagesCol1 = firstWebsites.slice(0, 40).map(w => w.screenshotUrl);
+  const imagesCol2 = firstWebsites.slice(40, 80).map(w => w.screenshotUrl);
   
   // Get total count
   const totalCount = visibleWebsites.length;

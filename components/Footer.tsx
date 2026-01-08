@@ -84,10 +84,9 @@ export default function Footer({ variant = 'default' }: FooterProps) {
           {/* Community Column */}
           <div style={{
             flex: 1,
-            minWidth: 200,
+            minWidth: 260,
             padding: '60px 40px',
             borderRight: 'none',
-            minWidth: 260,
             display: 'flex',
             flexDirection: 'column',
             gap: 24,
@@ -279,7 +278,7 @@ function SocialSticker({ label, href, isInverted }: { label: string; href: strin
       rel="noopener noreferrer"
       whileHover={{
         scale: 1.1,
-        rotate: Math.random() * 10 - 5,
+        rotate: 3,
         boxShadow: isInverted ? '0 10px 20px rgba(255,255,255,0.15)' : '0 10px 20px rgba(0,0,0,0.15)',
       }}
       style={{
