@@ -5,16 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 // --- STYLES ---
-const sectionStyle: React.CSSProperties = {
-  width: '100%',
-  backgroundColor: '#FFFFFF',
-  color: '#111',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  borderTop: '2px solid #111',
-  overflow: 'hidden',
-};
+// Styles will be dynamic based on variant
 
 const containerStyle: React.CSSProperties = {
   width: '100%',
@@ -23,37 +14,29 @@ const containerStyle: React.CSSProperties = {
   flexDirection: 'column',
 };
 
-const topRowStyle: React.CSSProperties = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  width: '100%',
-  borderBottom: '2px solid #111',
-};
+// Styles will be dynamic based on variant
 
-const columnStyle: React.CSSProperties = {
-  flex: 1,
-  minWidth: 200,
-  padding: '60px 40px',
-  borderRight: '1px solid #E5E5E5',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 24,
-};
+// Styles will be dynamic based on variant
 
-const linkStyle: React.CSSProperties = {
-  textDecoration: 'none',
-  color: '#111',
-  fontSize: 16,
-  fontWeight: 500,
-  position: 'relative',
-  width: 'fit-content',
-  cursor: 'pointer',
-};
+// Styles will be dynamic based on variant
 
 // --- MAIN FOOTER ---
-export default function Footer() {
+interface FooterProps {
+  variant?: 'default' | 'inverted';
+}
+
+export default function Footer({ variant = 'default' }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const accentColor = '#CCFF00';
+  
+  // Inverted colors for about page
+  const isInverted = variant === 'inverted';
+  const bgColor = isInverted ? '#050505' : '#FFFFFF';
+  const textColor = isInverted ? '#FFFFFF' : '#111';
+  const borderColor = isInverted ? '#FFFFFF' : '#111';
+  const lightTextColor = isInverted ? '#888' : '#666';
+  const linkColor = isInverted ? '#AAA' : '#555';
+  const columnBorderColor = isInverted ? 'rgba(255,255,255,0.2)' : '#E5E5E5';
 
   const col1Links: FooterColumnLink[] = [
     { label: 'Featured', href: '/' },
@@ -76,21 +59,44 @@ export default function Footer() {
   ];
 
   return (
-    <footer style={sectionStyle}>
+    <footer style={{
+      width: '100%',
+      backgroundColor: bgColor,
+      color: textColor,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      borderTop: `2px solid ${borderColor}`,
+      overflow: 'hidden',
+    }}>
       <div style={containerStyle}>
         {/* 1. LINKS GRID */}
-        <div style={topRowStyle}>
-          <FooterColumn title="Discover" links={col1Links} accent={accentColor} />
-          <FooterColumn title="Submit" links={col2Links} accent={accentColor} />
-          <FooterColumn title="Company" links={col3Links} accent={accentColor} />
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          width: '100%',
+          borderBottom: `2px solid ${borderColor}`,
+        }}>
+          <FooterColumn title="Discover" links={col1Links} accent={accentColor} isInverted={isInverted} textColor={textColor} lightTextColor={lightTextColor} linkColor={linkColor} columnBorderColor={columnBorderColor} />
+          <FooterColumn title="Submit" links={col2Links} accent={accentColor} isInverted={isInverted} textColor={textColor} lightTextColor={lightTextColor} linkColor={linkColor} columnBorderColor={columnBorderColor} />
+          <FooterColumn title="Company" links={col3Links} accent={accentColor} isInverted={isInverted} textColor={textColor} lightTextColor={lightTextColor} linkColor={linkColor} columnBorderColor={columnBorderColor} />
 
           {/* Community Column */}
-          <div style={{ ...columnStyle, borderRight: 'none', minWidth: 260 }}>
+          <div style={{
+            flex: 1,
+            minWidth: 200,
+            padding: '60px 40px',
+            borderRight: 'none',
+            minWidth: 260,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 24,
+          }}>
             <h4
               style={{
                 margin: 0,
                 fontSize: 14,
-                color: '#888',
+                color: lightTextColor,
                 textTransform: 'uppercase',
               }}
             >
@@ -103,15 +109,15 @@ export default function Footer() {
                 flexWrap: 'wrap',
               }}
             >
-              <SocialSticker label="TW" href="https://twitter.com" />
-              <SocialSticker label="IG" href="https://instagram.com" />
-              <SocialSticker label="LN" href="https://linkedin.com" />
-              <SocialSticker label="YT" href="https://youtube.com" />
+              <SocialSticker label="TW" href="https://twitter.com" isInverted={isInverted} />
+              <SocialSticker label="IG" href="https://instagram.com" isInverted={isInverted} />
+              <SocialSticker label="LN" href="https://linkedin.com" isInverted={isInverted} />
+              <SocialSticker label="YT" href="https://youtube.com" isInverted={isInverted} />
             </div>
             <p
               style={{
                 fontSize: 14,
-                color: '#666',
+                color: lightTextColor,
                 lineHeight: 1.5,
                 marginTop: 'auto',
               }}
@@ -132,7 +138,7 @@ export default function Footer() {
             position: 'relative',
           }}
         >
-          <BrandText text="AllWebsites.Design" />
+          <BrandText text="AllWebsites.Design" textColor={textColor} />
         </div>
 
         {/* 3. BOTTOM BAR */}
@@ -142,20 +148,20 @@ export default function Footer() {
             justifyContent: 'space-between',
             padding: '20px 40px 40px 40px',
             fontSize: 13,
-            color: '#888',
+            color: lightTextColor,
             flexWrap: 'wrap',
             gap: 20,
           }}
         >
           <div>© {currentYear} AllWebsites.Design. Curated in California.</div>
           <div style={{ display: 'flex', gap: 20 }}>
-            <Link href="/privacy" style={{ textDecoration: 'none', color: '#555' }}>
+            <Link href="/privacy" style={{ textDecoration: 'none', color: linkColor }}>
               Privacy Policy
             </Link>
-            <Link href="/terms" style={{ textDecoration: 'none', color: '#555' }}>
+            <Link href="/terms" style={{ textDecoration: 'none', color: linkColor }}>
               Terms of Service
             </Link>
-            <Link href="/sitemap.xml" style={{ textDecoration: 'none', color: '#555' }}>
+            <Link href="/sitemap.xml" style={{ textDecoration: 'none', color: linkColor }}>
               Sitemap
             </Link>
           </div>
@@ -176,18 +182,36 @@ function FooterColumn({
   title,
   links,
   accent,
+  isInverted,
+  textColor,
+  lightTextColor,
+  linkColor,
+  columnBorderColor,
 }: {
   title: string;
   links: FooterColumnLink[];
   accent: string;
+  isInverted: boolean;
+  textColor: string;
+  lightTextColor: string;
+  linkColor: string;
+  columnBorderColor: string;
 }) {
   return (
-    <div style={columnStyle}>
+    <div style={{
+      flex: 1,
+      minWidth: 200,
+      padding: '60px 40px',
+      borderRight: `1px solid ${columnBorderColor}`,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 24,
+    }}>
       <h4
         style={{
           margin: 0,
           fontSize: 14,
-          color: '#888',
+          color: lightTextColor,
           textTransform: 'uppercase',
           letterSpacing: '0.05em',
         }}
@@ -202,14 +226,14 @@ function FooterColumn({
         }}
       >
         {links.map((link) => (
-          <HoverLink key={link.label} text={link.label} href={link.href} accent={accent} />
+          <HoverLink key={link.label} text={link.label} href={link.href} accent={accent} textColor={textColor} />
         ))}
       </div>
     </div>
   );
 }
 
-function HoverLink({ text, href, accent }: { text: string; href: string; accent: string }) {
+function HoverLink({ text, href, accent, textColor }: { text: string; href: string; accent: string; textColor: string }) {
   const [hover, setHover] = useState(false);
   return (
     <motion.a
@@ -218,7 +242,15 @@ function HoverLink({ text, href, accent }: { text: string; href: string; accent:
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      style={linkStyle}
+      style={{
+        textDecoration: 'none',
+        color: textColor,
+        fontSize: 16,
+        fontWeight: 500,
+        position: 'relative',
+        width: 'fit-content',
+        cursor: 'pointer',
+      }}
     >
       {text}
       <motion.div
@@ -235,7 +267,11 @@ function HoverLink({ text, href, accent }: { text: string; href: string; accent:
   );
 }
 
-function SocialSticker({ label, href }: { label: string; href: string }) {
+function SocialSticker({ label, href, isInverted }: { label: string; href: string; isInverted: boolean }) {
+  const bgColor = isInverted ? '#FFFFFF' : '#111';
+  const textColor = isInverted ? '#111' : '#FFF';
+  const borderColor = isInverted ? '#FFFFFF' : '#111';
+  
   return (
     <motion.a
       href={href}
@@ -244,21 +280,21 @@ function SocialSticker({ label, href }: { label: string; href: string }) {
       whileHover={{
         scale: 1.1,
         rotate: Math.random() * 10 - 5,
-        boxShadow: '0 10px 20px rgba(0,0,0,0.15)',
+        boxShadow: isInverted ? '0 10px 20px rgba(255,255,255,0.15)' : '0 10px 20px rgba(0,0,0,0.15)',
       }}
       style={{
         width: 48,
         height: 48,
         borderRadius: '50%',
-        backgroundColor: '#111',
-        color: '#FFF',
+        backgroundColor: bgColor,
+        color: textColor,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         fontWeight: 700,
         fontSize: 13,
         cursor: 'pointer',
-        border: '2px solid #111',
+        border: `2px solid ${borderColor}`,
         textDecoration: 'none',
       }}
     >
@@ -267,7 +303,7 @@ function SocialSticker({ label, href }: { label: string; href: string }) {
   );
 }
 
-function BrandText({ text }: { text: string }) {
+function BrandText({ text, textColor }: { text: string; textColor: string }) {
   return (
     <motion.h1
       initial={{ y: 20, opacity: 0 }}
@@ -280,7 +316,7 @@ function BrandText({ text }: { text: string }) {
         fontWeight: 900,
         letterSpacing: '-0.03em',
         margin: 0,
-        color: '#111',
+        color: textColor,
         textAlign: 'center',
         userSelect: 'none',
         whiteSpace: 'nowrap',

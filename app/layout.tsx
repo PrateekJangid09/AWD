@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Sora } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/Vector.png",
+    shortcut: "/Vector.png",
+    apple: "/Vector.png",
   },
 };
 
@@ -42,6 +43,19 @@ export default function RootLayout({
         className={`${sora.className} ${geist.variable} ${sora.variable}`}
         style={{ backgroundColor: '#FAFAFA' }}
       >
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3ERMWX5HNN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3ERMWX5HNN');
+          `}
+        </Script>
         {/* theme container; toggled by Header */}
         <div id="app-root" className="transition-colors duration-300">{children}</div>
         <script dangerouslySetInnerHTML={{__html: `

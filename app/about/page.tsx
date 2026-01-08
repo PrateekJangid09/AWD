@@ -1,7 +1,13 @@
 import type { Metadata } from 'next';
-import Header from '@/components/HeaderFramer';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
+import HeroSection from '@/components/about/HeroSection';
+import AllWebsitesAbout from '@/components/about/AboutMissionGrid';
+import CategoryIndex from '@/components/about/CategoryIndex';
+import Manifesto from '@/components/about/Manifesto';
+import FaqSection from '@/components/about/FaqSection';
+import ActionGrid from '@/components/about/ActionGrid';
+import { getWebsites } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'About Us - AllWebsites.Design',
@@ -11,63 +17,75 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  // Fetch websites to populate the marquee
+  const websites = await getWebsites();
+  
+  // Filter out hidden websites and get featured/non-featured mix
+  const visibleWebsites = websites.filter(w => !w.hidden);
+  
+  // Get a diverse sample of screenshots (mix of featured and regular)
+  const featuredSites = visibleWebsites.filter(w => w.featured).slice(0, 20);
+  const regularSites = visibleWebsites.filter(w => !w.featured).slice(0, 20);
+  const sampleSites = [...featuredSites, ...regularSites].slice(0, 40);
+  
+  // Split into two columns for the marquee
+  const imagesCol1 = sampleSites.slice(0, 20).map(w => w.screenshotUrl);
+  const imagesCol2 = sampleSites.slice(20, 40).map(w => w.screenshotUrl);
+  
+  // Get total count
+  const totalCount = visibleWebsites.length;
+
+  // Count distinct macro categories (using displayCategory when available)
+  const categorySet = new Set(
+    visibleWebsites.map((w) => (w.displayCategory || w.category || '').trim()).filter(Boolean),
+  );
+  const categoryCount = categorySet.size;
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-8">
-            About AllWebsites.Design
-          </h1>
-          
-          <div className="prose prose-lg max-w-none text-foreground/80 space-y-6">
-            <p>
-              AllWebsites.Design is a curated directory of 954+ website designs from top companies
-              across various industries. Our mission is to provide designers and developers with a
-              comprehensive resource for design inspiration and best practices.
-            </p>
-            
-            <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-              What We Do
-            </h2>
-            <p>
-              We carefully curate and catalog landing pages, hero sections, and website designs
-              from SaaS companies, agencies, fintech platforms, e-commerce sites, and more. Each
-              website is categorized and tagged to help you quickly find inspiration for your next
-              project.
-            </p>
-            
-            <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-              Our Categories
-            </h2>
-            <p>
-              We organize websites into 13+ categories including SaaS, AI, Agency/Studio, Portfolio,
-              Fintech, E-commerce, Developer Tools, Crypto/Web3, Health, Education, Templates, and more.
-            </p>
-            
-            <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-              For Designers & Developers
-            </h2>
-            <p>
-              Whether you're building a new landing page, redesigning an existing site, or simply
-              looking for inspiration, AllWebsites.Design helps you discover the latest trends and
-              best practices in web design.
-            </p>
-            
-            <div className="mt-12 pt-8 border-t border-foreground/20">
-              <p className="text-foreground/60 text-sm">
-                Have questions or suggestions?{' '}
-                <Link href="/" className="text-foreground hover:underline">
-                  Visit our homepage
-                </Link>{' '}
-                to explore our collection.
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Hero Section */}
+        <HeroSection
+          title="We curate the internet's finest digital experiences."
+          description="AllWebsites.Design is a curated directory of website designs from top companies. Our mission is to provide designers with a comprehensive resource for inspiration."
+          statsText={`${totalCount}+ Active Sites Tracked`}
+          imagesCol1={imagesCol1}
+          imagesCol2={imagesCol2}
+        />
+
+        {/* Mission / Stats Bento Section */}
+        <section className="border-t border-foreground/20">
+          <AllWebsitesAbout
+            stat1Value={`${totalCount}+`}
+            stat1Label="Curated Designs"
+            stat2Value={`${categoryCount}+`}
+            stat2Label="Categories"
+          />
+        </section>
+
+        {/* Colored Archive Index by Category */}
+        <section className="border-t border-foreground/20">
+          <CategoryIndex />
+        </section>
+
+        {/* Manifesto / Why Section */}
+        <section className="border-t border-foreground/20">
+          <Manifesto />
+        </section>
+
+        {/* FAQs Section */}
+        <section className="border-t border-foreground/20">
+          <FaqSection />
+        </section>
+
+        {/* Community Action Grid */}
+        <section className="border-t border-foreground/20">
+          <ActionGrid />
+        </section>
       </main>
-      <Footer />
+      <Footer variant="inverted" />
     </>
   );
 }
