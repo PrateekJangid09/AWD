@@ -288,7 +288,7 @@ interface PortalCardData {
 
 interface PortalCardProps {
   data: PortalCardData;
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: React.RefObject<HTMLDivElement | null>;
   onHoverChange: (isHovered: boolean) => void;
 }
 
