@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import * as React from 'react';
 import {
   motion,
   useMotionValue,
@@ -9,7 +9,6 @@ import {
   useInView,
   useTransform,
   animate,
-  MotionValue,
 } from 'framer-motion';
 
 // --- THEME ---
@@ -19,12 +18,35 @@ const theme = {
   text: '#FFFFFF',
 };
 
-interface MetricGridProps {
-  totalWebsites: number;
-  totalCategories: number;
+interface ChameleonHUDProps {
+  stat1_val: string;
+  stat1_lbl: string;
+  stat1_color: string;
+  stat2_val: string;
+  stat2_lbl: string;
+  stat2_color: string;
+  stat3_val: string;
+  stat3_lbl: string;
+  stat3_color: string;
+  stat4_val: string;
+  stat4_lbl: string;
+  stat4_color: string;
 }
 
-export default function MetricGrid({ totalWebsites, totalCategories }: MetricGridProps) {
+export default function ChameleonHUD({
+  stat1_val,
+  stat1_lbl,
+  stat1_color,
+  stat2_val,
+  stat2_lbl,
+  stat2_color,
+  stat3_val,
+  stat3_lbl,
+  stat3_color,
+  stat4_val,
+  stat4_lbl,
+  stat4_color,
+}: ChameleonHUDProps) {
   // --- MOUSE PHYSICS ---
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -54,23 +76,6 @@ export default function MetricGrid({ totalWebsites, totalCategories }: MetricGri
 
   // The Border Light (Sharper, brighter version of the color)
   const borderLight = useMotionTemplate`radial-gradient(300px circle at ${smoothX}px ${smoothY}px, ${activeColor}, transparent 80%)`;
-
-  // Stats configuration
-  const stat1_val = `${totalWebsites.toLocaleString()}+`;
-  const stat1_lbl = 'Curated Websites';
-  const stat1_color = '#3B82F6'; // Blue
-
-  const stat2_val = `${totalCategories}`;
-  const stat2_lbl = 'Design Categories';
-  const stat2_color = '#A855F7'; // Purple
-
-  const stat3_val = '1000+';
-  const stat3_lbl = 'Designers Community';
-  const stat3_color = '#10B981'; // Green
-
-  const stat4_val = '24h';
-  const stat4_lbl = 'Updates';
-  const stat4_color = '#F59E0B'; // Orange
 
   return (
     <section
@@ -195,7 +200,7 @@ interface StatItemProps {
 }
 
 function StatItem({ val, lbl, index, color, onHover }: StatItemProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   // Parse Number
@@ -234,7 +239,7 @@ function StatItem({ val, lbl, index, color, onHover }: StatItemProps) {
         gap: '24px',
         alignItems: 'flex-start',
       }}
-      onMouseEnter={() => onHover(color)} // TRIGGER THE COLOR CHANGE
+      onMouseEnter={() => onHover(color)}
     >
       {/* Tech Header */}
       <div
@@ -314,15 +319,15 @@ function StatItem({ val, lbl, index, color, onHover }: StatItemProps) {
   );
 }
 
-function Counter({ value }: { value: MotionValue<number> }) {
+interface CounterProps {
+  value: ReturnType<typeof useTransform<number, number>>;
+}
+
+function Counter({ value }: CounterProps) {
   const ref = React.useRef<HTMLSpanElement>(null);
   React.useEffect(() => {
     return value.on('change', (latest) => {
-      if (ref.current) {
-        const num = Math.floor(latest);
-        // Format number with commas for large numbers
-        ref.current.textContent = num > 1000 ? num.toLocaleString() : num.toString();
-      }
+      if (ref.current) ref.current.textContent = Math.floor(latest).toString();
     });
   }, [value]);
   return <span ref={ref} />;

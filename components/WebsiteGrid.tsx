@@ -22,6 +22,7 @@ interface WebsiteGridProps {
   initialSearchQuery?: string;
   initialCategory?: string;
   categoryHeading?: string;
+  showCategoryNav?: boolean;
 }
 
 export default function WebsiteGrid({ 
@@ -29,7 +30,8 @@ export default function WebsiteGrid({
   categories, 
   initialSearchQuery = '', 
   initialCategory = 'Browse All',
-  categoryHeading
+  categoryHeading,
+  showCategoryNav = true
 }: WebsiteGridProps) {
   const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
@@ -191,13 +193,14 @@ export default function WebsiteGrid({
 
   const hasMore = visibleCount < filteredWebsites.length;
 
-  // Auto-load more when user scrolls to bottom (up to 3 times)
+  // Auto-load more when user scrolls to bottom (up to 2 times)
+  // After 2 auto-loads, show "Load More" button for subsequent loads
   const autoLoadLock = useRef(false);
   useEffect(() => {
-    if (!hasMore || autoLoadCount >= 3) return;
+    if (!hasMore || autoLoadCount >= 2) return;
 
     const handleScroll = () => {
-      if (!hasMore || autoLoadCount >= 3 || autoLoadLock.current) return;
+      if (!hasMore || autoLoadCount >= 2 || autoLoadLock.current) return;
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
         autoLoadLock.current = true;
         setAutoLoadCount((count) => count + 1);
@@ -212,7 +215,8 @@ export default function WebsiteGrid({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [hasMore, autoLoadCount]);
 
-  const showManualLoadButton = hasMore && autoLoadCount >= 3;
+  // Show manual load button after 2 auto-loads (starting from 3rd scroll)
+  const showManualLoadButton = hasMore && autoLoadCount >= 2;
 
   // Handler functions
   const handleSortChange = (sortBy: string) => {
@@ -225,76 +229,28 @@ export default function WebsiteGrid({
 
   return (
     <>
-      {/* Category Heading and New Release / Trending Toggle */}
+      {/* Category Heading */}
       {categoryHeading && (
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground">
             {categoryHeading}
           </h1>
-          <div className="inline-flex items-center gap-2">
-            <button
-              onClick={() => setTab('new')}
-              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
-                tab === 'new'
-                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
-                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
-              }`}
-            >
-              New Release
-            </button>
-            <button
-              onClick={() => setTab('trending')}
-              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
-                tab === 'trending'
-                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
-                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
-              }`}
-            >
-              Trending
-            </button>
-          </div>
-        </div>
-      )}
-      
-      {/* New Release / Trending Toggle - For pages without category heading */}
-      {!categoryHeading && (
-        <div className="mb-4 flex justify-center sm:justify-end">
-          <div className="inline-flex items-center gap-2">
-            <button
-              onClick={() => setTab('new')}
-              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
-                tab === 'new'
-                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
-                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
-              }`}
-            >
-              New Release
-            </button>
-            <button
-              onClick={() => setTab('trending')}
-              className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
-                tab === 'trending'
-                  ? 'bg-white text-neutral-900 border-neutral-900 shadow-[0_8px_20px_-10px_rgba(0,0,0,0.35)]'
-                  : 'bg-transparent text-neutral-500 border-neutral-200 hover:border-neutral-400'
-              }`}
-            >
-              Trending
-            </button>
-          </div>
         </div>
       )}
 
       {/* Enhanced Search Bar */}
       {/* Category pills strip */}
-      <div className="mb-6 -mx-4 sm:-mx-6 lg:-mx-8">
-        <PrismCategoryNav
-          categories={categories}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          websiteCounts={websiteCounts}
-          totalCount={websites.length}
-        />
-      </div>
+      {showCategoryNav && (
+        <div className="mb-6 -mx-4 sm:-mx-6 lg:-mx-8">
+          <PrismCategoryNav
+            categories={categories}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+            websiteCounts={websiteCounts}
+            totalCount={websites.length}
+          />
+        </div>
+      )}
 
       {/* Results Meta */}
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">

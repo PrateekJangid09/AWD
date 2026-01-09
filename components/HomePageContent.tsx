@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import HeroSketchbook from '@/components/HeroSketchbook';
+import AtmosphericGallery from '@/components/AtmosphericGallery';
 import MetricGrid from '@/components/MetricGrid';
-import FeaturedBento from '@/components/FeaturedBento';
-import WebsiteGrid from '@/components/WebsiteGrid';
+import RelicGrid from '@/components/RelicGrid';
+import PrismBrowserGrid from '@/components/PrismBrowserGrid';
 import { Website } from '@/lib/types';
 import AutoScrollTicker from '@/components/AutoScrollTicker';
 
@@ -36,9 +36,10 @@ export default function HomePageContent({
   return (
     <>
       {/* Hero Section */}
-      <HeroSketchbook
-        totalWebsites={totalWebsites}
-        totalCategories={totalCategories}
+      <AtmosphericGallery
+        title="DESIGN INTELLIGENCE"
+        subtitle="Curating the finest digital experiences."
+        placeholder="Search the archive..."
         featuredWebsites={featuredWebsites}
         onSearch={handleHeroSearch}
       />
@@ -49,23 +50,20 @@ export default function HomePageContent({
         totalCategories={totalCategories}
       />
 
-      {/* Featured websites bento board */}
-      <FeaturedBento
-        title="The Weekly Edit"
-        subtitle="A selection of the 9 finest websites launched recently."
+      {/* Featured Section */}
+      <RelicGrid
+        title="The Pantheon"
+        subtitle="A collection of digital masterpieces that have achieved legendary status."
         websites={featuredWebsites}
       />
 
       {/* Main Content Section */}
-      <section id="browse" className="py-12 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <WebsiteGrid 
-            websites={websites} 
-            categories={categories}
-            initialSearchQuery={heroSearchQuery}
-          />
-        </div>
-      </section>
+      <PrismBrowserGrid
+        title="Selected Projects"
+        subtitle="A showcase of high-fidelity digital products."
+        websites={websites}
+        initialSearchQuery={heroSearchQuery}
+      />
     </>
   );
 }
