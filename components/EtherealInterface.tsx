@@ -204,7 +204,6 @@ function EtherealCard({ item, index }: { item: EtherealCardItem; index: number }
         }} // Staggered entrance
         onMouseMove={handleMouseMove}
         whileHover="hover"
-        initial="idle"
         style={{
           position: 'relative',
           width: '100%',
