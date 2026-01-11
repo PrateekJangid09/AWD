@@ -8,7 +8,6 @@ import {
   useSpring,
   useTransform,
   useMotionTemplate,
-  MotionValue,
 } from 'framer-motion';
 import { Website } from '@/lib/types';
 
@@ -19,6 +18,11 @@ const theme = {
   dim: 'rgba(255,255,255,0.4)',
   accent: '#3B82F6',
 };
+
+// --- FONTS ---
+const fontStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Inter:wght@300;400;600&display=swap');
+`;
 
 interface AtmosphericGalleryProps {
   title?: string;
@@ -53,8 +57,7 @@ export default function AtmosphericGallery({
   const mouseX = useSpring(x, springConfig);
   const mouseY = useSpring(y, springConfig);
 
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    const { currentTarget, clientX, clientY } = event;
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLDivElement>) {
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     x.set((clientX - left) / width);
     y.set((clientY - top) / height);
@@ -66,7 +69,7 @@ export default function AtmosphericGallery({
   const planeX = useTransform(mouseX, [0, 1], ['2%', '-2%']);
   const planeY = useTransform(mouseY, [0, 1], ['2%', '-2%']);
 
-  // The Flashlight Gradient - need to get current values for template
+  // The Flashlight Gradient - need to use get() to access current values
   const spotlightX = useTransform(mouseX, [0, 1], [0, 100]);
   const spotlightY = useTransform(mouseY, [0, 1], [0, 100]);
   const spotlightGradient = useMotionTemplate`radial-gradient(500px circle at ${spotlightX}% ${spotlightY}%, rgba(255,255,255,0.15), transparent 80%)`;
@@ -86,63 +89,127 @@ export default function AtmosphericGallery({
     }
   };
 
+  const styles = {
+    container: {
+      width: '100%',
+      height: '1000px',
+      backgroundColor: theme.bg,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative' as const,
+      overflow: 'hidden',
+      perspective: '1200px', // Essential for depth
+    },
+    // 1. ATMOSPHERE LAYERS
+    noise: {
+      position: 'absolute' as const,
+      inset: 0,
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`,
+      opacity: 0.06,
+      pointerEvents: 'none' as const,
+      zIndex: 50,
+      mixBlendMode: 'overlay' as const,
+    },
+    vignette: {
+      position: 'absolute' as const,
+      inset: 0,
+      background: 'radial-gradient(circle at center, transparent 20%, #020202 100%)',
+      zIndex: 20,
+      pointerEvents: 'none' as const,
+    },
+    flashlight: {
+      position: 'absolute' as const,
+      inset: 0,
+      background: spotlightGradient,
+      zIndex: 25,
+      pointerEvents: 'none' as const,
+      mixBlendMode: 'overlay' as const,
+    },
+
+    // 2. THE 3D GRID PLANE
+    planeContainer: {
+      width: '120%', // Oversize to prevent edge clipping
+      height: '120%',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: '24px',
+      padding: '100px',
+      transformStyle: 'preserve-3d' as const,
+      zIndex: 10,
+    },
+
+    // 3. CONTENT LAYER (Floating above)
+    contentLayer: {
+      position: 'absolute' as const,
+      zIndex: 40,
+      display: 'flex',
+      flexDirection: 'column' as const,
+      alignItems: 'center',
+      textAlign: 'center' as const,
+      pointerEvents: 'none' as const, // Let clicks pass through to grid (except input)
+      width: '100%',
+      maxWidth: '800px',
+      padding: '0 20px',
+    },
+    h1: {
+      fontFamily: '"Inter", sans-serif',
+      fontSize: 'clamp(60px, 8vw, 120px)',
+      fontWeight: 800,
+      letterSpacing: '-0.04em',
+      color: '#FFF',
+      marginBottom: '20px',
+      textShadow: '0 30px 60px rgba(0,0,0,0.8)', // Lift off background
+    },
+    subtitle: {
+      fontFamily: '"Playfair Display", serif',
+      fontStyle: 'italic' as const,
+      fontSize: 'clamp(24px, 3vw, 32px)',
+      color: 'rgba(255,255,255,0.8)',
+      marginBottom: '60px',
+      background: 'rgba(0,0,0,0.6)',
+      padding: '8px 24px',
+      borderRadius: '100px',
+      backdropFilter: 'blur(12px)',
+      border: '1px solid rgba(255,255,255,0.1)',
+    },
+    inputWrapper: {
+      pointerEvents: 'auto' as const,
+      width: '100%',
+      maxWidth: '500px',
+      position: 'relative' as const,
+    },
+    // 4. SCROLL INDICATOR
+    scrollIndicator: {
+      position: 'absolute' as const,
+      bottom: '40px',
+      zIndex: 60,
+      display: 'flex',
+      flexDirection: 'column' as const,
+      alignItems: 'center',
+      gap: '8px',
+      color: theme.dim,
+      fontFamily: '"Inter", sans-serif',
+      fontSize: '12px',
+      letterSpacing: '1px',
+      textTransform: 'uppercase' as const,
+      pointerEvents: 'none' as const,
+    },
+  };
+
   return (
-    <div
-      className="relative w-full flex items-center justify-center overflow-hidden"
-      style={{
-        height: '1000px',
-        backgroundColor: theme.bg,
-        perspective: '1200px',
-      }}
-      onMouseMove={handleMouseMove}
-    >
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Inter:wght@300;400;600&display=swap');
-      `}</style>
+    <div style={styles.container} onMouseMove={handleMouseMove}>
+      <style jsx global>{fontStyles}</style>
 
-      {/* Noise layer */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`,
-          opacity: 0.06,
-          zIndex: 50,
-          mixBlendMode: 'overlay',
-        }}
-      />
-
-      {/* Vignette */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle at center, transparent 20%, #020202 100%)',
-          zIndex: 20,
-        }}
-      />
-
-      {/* Flashlight */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: spotlightGradient,
-          zIndex: 25,
-          mixBlendMode: 'overlay',
-        }}
-      />
+      <div style={styles.noise} />
+      <div style={styles.vignette} />
+      <motion.div style={styles.flashlight} />
 
       {/* --- THE 3D PLANE --- */}
       <motion.div
-        className="absolute"
         style={{
-          width: '120%',
-          height: '120%',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '24px',
-          padding: '100px',
-          transformStyle: 'preserve-3d',
-          zIndex: 10,
-          rotateX: rotateX,
+          ...styles.planeContainer,
+          rotateX: rotateX, // Tilted floor effect
           rotateY: rotateY,
           x: planeX,
           y: planeY,
@@ -160,24 +227,9 @@ export default function AtmosphericGallery({
       </motion.div>
 
       {/* --- FLOATING UI LAYER --- */}
-      <div
-        className="absolute z-40 flex flex-col items-center text-center pointer-events-none"
-        style={{
-          width: '100%',
-          maxWidth: '800px',
-          padding: '0 20px',
-        }}
-      >
+      <div style={styles.contentLayer}>
         <motion.h1
-          style={{
-            fontFamily: '"Inter", sans-serif',
-            fontSize: 'clamp(60px, 8vw, 120px)',
-            fontWeight: 800,
-            letterSpacing: '-0.04em',
-            color: '#FFF',
-            marginBottom: '20px',
-            textShadow: '0 30px 60px rgba(0,0,0,0.8)',
-          }}
+          style={styles.h1}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
@@ -186,18 +238,7 @@ export default function AtmosphericGallery({
         </motion.h1>
 
         <motion.div
-          style={{
-            fontFamily: '"Playfair Display", serif',
-            fontStyle: 'italic',
-            fontSize: 'clamp(24px, 3vw, 32px)',
-            color: 'rgba(255,255,255,0.8)',
-            marginBottom: '60px',
-            background: 'rgba(0,0,0,0.6)',
-            padding: '8px 24px',
-            borderRadius: '100px',
-            backdropFilter: 'blur(12px)',
-            border: '1px solid rgba(255,255,255,0.1)',
-          }}
+          style={styles.subtitle}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -205,14 +246,10 @@ export default function AtmosphericGallery({
           {subtitle}
         </motion.div>
 
-        {/* Glass Search Input */}
-        <motion.form
+        {/* Glass Search Input - Hidden */}
+        {/* <motion.form
           onSubmit={handleSearchSubmit}
-          className="pointer-events-auto relative"
-          style={{
-            width: '100%',
-            maxWidth: '500px',
-          }}
+          style={styles.inputWrapper}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -245,14 +282,41 @@ export default function AtmosphericGallery({
               e.target.style.borderColor = 'rgba(255,255,255,0.1)';
             }}
           />
-          <button
+          <motion.button
             type="submit"
-            className="absolute right-2 top-2 bottom-2 px-5 bg-white text-black rounded-[10px] font-semibold text-sm flex items-center cursor-pointer hover:bg-gray-100 transition-colors"
+            className="absolute right-2 top-2 bottom-2 px-5 rounded-[10px] font-semibold text-sm flex items-center cursor-pointer transition-all"
+            style={{
+              background: 'linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)',
+              color: '#FFFFFF',
+              boxShadow: '0 0 20px rgba(6, 182, 212, 0.5), 0 4px 12px rgba(0,0,0,0.3)',
+            }}
+            whileHover={{
+              boxShadow: '0 0 30px rgba(6, 182, 212, 0.8), 0 6px 20px rgba(0,0,0,0.4)',
+              scale: 1.02,
+            }}
+            whileTap={{ scale: 0.98 }}
           >
             Search
-          </button>
-        </motion.form>
+          </motion.button>
+        </motion.form> */}
       </div>
+
+      {/* --- SCROLL INDICATOR --- */}
+      <motion.div
+        style={styles.scrollIndicator}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 1 }}
+      >
+        <motion.span
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+          style={{ fontSize: '18px', lineHeight: 1 }}
+        >
+          ↓
+        </motion.span>
+        Scroll to explore
+      </motion.div>
     </div>
   );
 }
@@ -260,25 +324,30 @@ export default function AtmosphericGallery({
 // --- SUB-COMPONENT: ATMOSPHERIC CARD ---
 interface AtmosphericCardProps {
   src?: string;
-  mouseX: MotionValue<number>;
-  mouseY: MotionValue<number>;
+  mouseX: ReturnType<typeof useSpring>;
+  mouseY: ReturnType<typeof useSpring>;
   index: number;
 }
 
 function AtmosphericCard({ src, mouseX, mouseY, index }: AtmosphericCardProps) {
+  // Generate placeholder if no image
   const hasImage = Boolean(src);
 
   return (
     <motion.div
-      className="w-full h-full relative rounded-xl overflow-hidden"
       style={{
+        width: '100%',
+        height: '100%',
         minHeight: '240px',
+        borderRadius: '12px',
+        position: 'relative',
         backgroundColor: '#050505',
+        overflow: 'hidden',
         border: '1px solid rgba(255,255,255,0.05)',
       }}
       whileHover={{
         scale: 1.05,
-        z: 50,
+        z: 50, // Lifts the card up towards camera
         borderColor: 'rgba(255,255,255,0.4)',
         boxShadow: '0 20px 50px -10px rgba(0,0,0,1)',
       }}
@@ -308,9 +377,13 @@ function AtmosphericCard({ src, mouseX, mouseY, index }: AtmosphericCardProps) {
         </motion.div>
       ) : (
         <div
-          className="w-full h-full flex items-center justify-center"
           style={{
+            width: '100%',
+            height: '100%',
             background: 'linear-gradient(45deg, #0a0a0a, #111)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             color: '#333',
             fontWeight: 700,
             letterSpacing: '2px',
@@ -323,9 +396,11 @@ function AtmosphericCard({ src, mouseX, mouseY, index }: AtmosphericCardProps) {
 
       {/* Dynamic Reflection Layer */}
       <motion.div
-        className="absolute inset-0 pointer-events-none"
         style={{
+          position: 'absolute',
+          inset: 0,
           background: 'linear-gradient(125deg, rgba(255,255,255,0.1) 0%, transparent 40%)',
+          pointerEvents: 'none',
         }}
       />
     </motion.div>

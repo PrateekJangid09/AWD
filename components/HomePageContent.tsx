@@ -4,7 +4,9 @@ import { useState } from 'react';
 import AtmosphericGallery from '@/components/AtmosphericGallery';
 import MetricGrid from '@/components/MetricGrid';
 import RelicGrid from '@/components/RelicGrid';
+import VelocityVault from '@/components/VelocityVault';
 import PrismBrowserGrid from '@/components/PrismBrowserGrid';
+import NebulaFilter from '@/components/NebulaFilter';
 import { Website } from '@/lib/types';
 import AutoScrollTicker from '@/components/AutoScrollTicker';
 
@@ -24,10 +26,19 @@ export default function HomePageContent({
   featuredWebsites,
 }: HomePageContentProps) {
   const [heroSearchQuery, setHeroSearchQuery] = useState('');
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const handleHeroSearch = (query: string) => {
     setHeroSearchQuery(query);
     // Scroll to browse section
+    setTimeout(() => {
+      document.getElementById('browse')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
+  const handleCategoryChange = (selected: string[]) => {
+    setSelectedCategories(selected);
+    // Scroll to website list when filter is applied
     setTimeout(() => {
       document.getElementById('browse')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
@@ -52,9 +63,23 @@ export default function HomePageContent({
 
       {/* Featured Section */}
       <RelicGrid
-        title="The Pantheon"
-        subtitle="A collection of digital masterpieces that have achieved legendary status."
+        title="HALL OF LEGENDS"
+        subtitle="Digital Masterpieces That Define Excellence"
         websites={featuredWebsites}
+      />
+
+      {/* Velocity Vault Section - Hidden */}
+      {/* <VelocityVault
+        title="Velocity Deck"
+        websites={websites}
+      /> */}
+
+      {/* Filter Section */}
+      <NebulaFilter
+        title="Browse by Sector"
+        categories={categories}
+        selectedCategories={selectedCategories}
+        onCategoryChange={handleCategoryChange}
       />
 
       {/* Main Content Section */}
@@ -63,6 +88,7 @@ export default function HomePageContent({
         subtitle="A showcase of high-fidelity digital products."
         websites={websites}
         initialSearchQuery={heroSearchQuery}
+        selectedCategories={selectedCategories}
       />
     </>
   );

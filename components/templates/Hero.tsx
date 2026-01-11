@@ -93,8 +93,10 @@ function usePrefersReducedMotion() {
 function useElementWidth<T extends HTMLElement>() {
     const ref = React.useRef<T | null>(null)
     const [width, setWidth] = React.useState(1200)
+    const [isMounted, setIsMounted] = React.useState(false)
 
     React.useEffect(() => {
+        setIsMounted(true)
         const el = ref.current
         if (!el || typeof window === "undefined") return
         const ro = new ResizeObserver((entries) => {
@@ -105,7 +107,8 @@ function useElementWidth<T extends HTMLElement>() {
         return () => ro.disconnect()
     }, [])
 
-    return { ref, width }
+    // Return consistent width during SSR and initial client render
+    return { ref, width: isMounted ? width : 1200 }
 }
 
 function clamp(n: number, a: number, b: number) {
@@ -173,6 +176,8 @@ export default function Hero(props: HeroProps) {
 
     const resolvedTheme: "light" | "dark" = theme === "light" || theme === "dark" ? theme : contextTheme
 
+    // Use consistent width (1200) for SSR to prevent hydration mismatches
+    // The useElementWidth hook already returns 1200 during SSR
     const isMobile = width <= 720
     const isTablet = width > 720 && width <= 980
 

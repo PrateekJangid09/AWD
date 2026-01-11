@@ -9,17 +9,14 @@ import {
   useTransform,
   useMotionTemplate,
   useTime,
-  MotionValue,
 } from 'framer-motion';
 import { Website } from '@/lib/types';
-import { getCategoryColor } from '@/lib/categories';
 
 /**
- * THE ZENITH HORIZON HERO
- * - "Living" Aurora Background
- * - Volumetric Glass Physics (Refraction simulation)
- * - Layered Depth (Text behind Glass)
- * - Heavy, Cinematic Inertia
+ * THE ZENITH HORIZON HERO (Final Polish)
+ * - Category Word: Static, Huge, Background Watermark
+ * - Cards: 3D Physics
+ * - Title: Parallax
  */
 
 const theme = {
@@ -29,6 +26,10 @@ const theme = {
   accent: '#3B82F6',
   glassBorder: 'rgba(255,255,255,0.15)',
 };
+
+const fontStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Inter:wght@300;800;900&display=swap');
+`;
 
 interface CategoryHeroProps {
   category: string;
@@ -41,158 +42,178 @@ export default function CategoryHero({
   websites,
   description = 'The Collection',
 }: CategoryHeroProps) {
-  // Filter websites for this category
-  const categoryWebsites = websites.filter(
-    (site) => (site.displayCategory || site.category) === category
-  );
+  // Get featured images for the cards
+  const featuredWebsites = websites
+    .filter((w) => (w.displayCategory || w.category) === category)
+    .slice(0, 3);
 
-  // Get top 3 websites for the glass monoliths (featured first, then by quality)
-  const featuredWebsites = React.useMemo(() => {
-    const sorted = [...categoryWebsites]
-      .sort((a, b) => {
-        if (a.featured && !b.featured) return -1;
-        if (!a.featured && b.featured) return 1;
-        return (b.qualityScore || 0) - (a.qualityScore || 0);
-      })
-      .slice(0, 3);
-    
-    // Ensure we have 3 images (repeat if necessary)
-    while (sorted.length < 3) {
-      sorted.push(sorted[0] || categoryWebsites[0]);
-    }
-    return sorted;
-  }, [categoryWebsites]);
+  const imageHero = featuredWebsites[0]?.screenshotUrl || '';
+  const imageLeft = featuredWebsites[1]?.screenshotUrl || '';
+  const imageRight = featuredWebsites[2]?.screenshotUrl || '';
 
-  // Default subtitle - use description or category
-  const subtitle = description || category;
+  const titleLarge = category.toUpperCase();
 
   // --- PHYSICS ENGINE ---
   const time = useTime();
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
 
-  // Very heavy mass for that "Cinematic Slow Motion" feel
   const mouseX = useSpring(x, { stiffness: 30, damping: 40, mass: 3 });
   const mouseY = useSpring(y, { stiffness: 30, damping: 40, mass: 3 });
 
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    const { currentTarget, clientX, clientY } = event;
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLDivElement>) {
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     x.set((clientX - left) / width);
     y.set((clientY - top) / height);
   }
 
-  // 1. SCENE ROTATION (The Camera Move)
+  // 1. SCENE ROTATION
   const rotateX = useTransform(mouseY, [0, 1], [8, -8]);
   const rotateY = useTransform(mouseX, [0, 1], [-8, 8]);
 
-  // 2. DYNAMIC LIGHTING (The Sun)
-  // Light moves opposite to mouse to simulate 3D source
+  // 2. DYNAMIC LIGHTING
   const lightX = useTransform(mouseX, [0, 1], ['120%', '-20%']);
   const lightY = useTransform(mouseY, [0, 1], ['-20%', '120%']);
   const sheenGradient = useMotionTemplate`radial-gradient(800px circle at ${lightX} ${lightY}, rgba(255,255,255,0.2), transparent 60%)`;
 
-  // 3. ORGANIC DRIFT (The Soul)
+  // 3. ORGANIC DRIFT
   const auroraRotate = useTransform(time, [0, 20000], [0, 360]);
-  const floatingY = useTransform(time, (t) => Math.sin(t / 2000) * 10);
+  const floatingY = useTransform(time, (t: number) => Math.sin(t / 2000) * 10);
 
-  // Parallax for background text
-  const textParallax = useTransform(mouseX, [0, 1], [40, -40]);
+  // 4. PARALLAX FOR TITLE
+  const textParallaxX = useTransform(mouseX, [0, 1], [40, -40]);
+
+  const styles = {
+    container: {
+      width: '100%',
+      height: '950px',
+      backgroundColor: theme.bg,
+      color: theme.text,
+      display: 'flex',
+      flexDirection: 'column' as const,
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative' as const,
+      overflow: 'hidden' as const,
+      perspective: '1500px',
+    },
+    aurora: {
+      position: 'absolute' as const,
+      top: '-50%',
+      left: '-50%',
+      right: '-50%',
+      bottom: '-50%',
+      background:
+        'conic-gradient(from 0deg at 50% 50%, #010101 0deg, #050505 120deg, #1a1a1a 240deg, #010101 360deg)',
+      opacity: 0.6,
+      filter: 'blur(100px)',
+      zIndex: 0,
+      transform: 'scale(1.5)',
+    },
+    noise: {
+      position: 'absolute' as const,
+      inset: 0,
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`,
+      opacity: 0.07,
+      zIndex: 5,
+      mixBlendMode: 'overlay' as const,
+      pointerEvents: 'none' as const,
+    },
+    // Moving Title Container
+    bgTextContainer: {
+      position: 'absolute' as const,
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 2,
+      textAlign: 'center' as const,
+      width: '100%',
+      pointerEvents: 'none' as const,
+    },
+    bigText: {
+      fontFamily: '"Inter", sans-serif',
+      fontSize: 'clamp(100px, 15vw, 280px)',
+      fontWeight: 800,
+      color: '#080808', // Very dark foreground text
+      textShadow: '0 40px 80px rgba(0,0,0,0.8), 0 -1px 0 rgba(255,255,255,0.1)',
+      lineHeight: 0.8,
+      letterSpacing: '-0.06em',
+      whiteSpace: 'nowrap' as const,
+    },
+    // --- STATIC CATEGORY WATERMARK ---
+    categoryWatermark: {
+      position: 'absolute' as const,
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)', // Perfectly centered
+      fontFamily: '"Inter", sans-serif',
+      fontSize: 'clamp(150px, 25vw, 500px)', // Massive size
+      fontWeight: 900,
+      color: 'rgba(255, 255, 255, 0.03)', // Ultra subtle opacity
+      zIndex: 1, // Behind the 3D stage
+      pointerEvents: 'none' as const,
+      whiteSpace: 'nowrap' as const,
+      letterSpacing: '-0.08em',
+      textAlign: 'center' as const,
+      width: '100%',
+    },
+    stage: {
+      width: '100%',
+      maxWidth: '1200px',
+      height: '600px',
+      position: 'relative' as const,
+      zIndex: 10,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transformStyle: 'preserve-3d' as const,
+    },
+    mobileCss: `
+      @media (max-width: 900px) {
+        .stage-container { transform: scale(0.6); }
+        .zenith-title { font-size: 80px !important; }
+        .category-watermark { font-size: 120px !important; }
+      }
+    `,
+  };
 
   return (
-    <div
-      className="relative w-full overflow-hidden"
-      style={{
-        height: '950px',
-        backgroundColor: theme.bg,
-        color: theme.text,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        perspective: '1500px',
-      }}
-      onMouseMove={handleMouseMove}
-    >
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Inter:wght@300;800&display=swap');
-        
-        @media (max-width: 900px) {
-          .stage-container {
-            transform: scale(0.6);
-          }
-          .zenith-title {
-            font-size: 100px !important;
-          }
-        }
-      `}</style>
+    <div style={styles.container} onMouseMove={handleMouseMove}>
+      <style jsx global>{`${fontStyles}${styles.mobileCss}`}</style>
 
       {/* 1. ATMOSPHERE */}
-      <motion.div
-        className="absolute"
-        style={{
-          top: '-50%',
-          left: '-50%',
-          right: '-50%',
-          bottom: '-50%',
-          background:
-            'conic-gradient(from 0deg at 50% 50%, #010101 0deg, #050505 120deg, #1a1a1a 240deg, #010101 360deg)',
-          opacity: 0.6,
-          filter: 'blur(100px)',
-          zIndex: 0,
-          transform: 'scale(1.5)',
-          rotate: auroraRotate,
-        }}
-      />
-      {/* Noise texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`,
-          opacity: 0.07,
-          zIndex: 5,
-          mixBlendMode: 'overlay',
-        }}
-      />
+      <motion.div style={{ ...styles.aurora, rotate: auroraRotate }} />
+      <div style={styles.noise} />
 
-      {/* 2. BACKGROUND DEPTH TEXT */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] text-center w-full pointer-events-none"
-      >
+      {/* 2. STATIC CATEGORY WATERMARK */}
+      <div style={styles.categoryWatermark} className="category-watermark">
+        {category}
+      </div>
+
+      {/* 3. MOVING BIG TITLE (Parallax) */}
+      <div style={styles.bgTextContainer}>
         <motion.div
           className="zenith-title"
           style={{
-            fontFamily: '"Inter", sans-serif',
-            fontSize: 'clamp(120px, 18vw, 300px)',
-            fontWeight: 800,
-            color: '#080808',
-            textShadow:
-              '0 40px 80px rgba(0,0,0,0.8), 0 -1px 0 rgba(255,255,255,0.1)',
-            lineHeight: 0.8,
-            letterSpacing: '-0.06em',
-            whiteSpace: 'nowrap',
-            x: textParallax,
+            ...styles.bigText,
+            x: textParallaxX,
           }}
         >
-          {category}
+          {titleLarge}
         </motion.div>
       </div>
 
-      {/* 3. 3D STAGE */}
+      {/* 4. 3D STAGE */}
       <motion.div
-        className="stage-container relative z-10 flex items-center justify-center"
+        className="stage-container"
         style={{
-          width: '100%',
-          maxWidth: '1200px',
-          height: '600px',
-          transformStyle: 'preserve-3d',
+          ...styles.stage,
           rotateX: rotateX,
           rotateY: rotateY,
         }}
       >
-        {/* Left Satellite */}
         <GlassMonolith
-          image={featuredWebsites[1]?.screenshotUrl}
+          image={imageLeft}
           width={280}
           height={360}
           x={-350}
@@ -202,10 +223,8 @@ export default function CategoryHero({
           sheen={sheenGradient}
           delay={0.1}
         />
-
-        {/* Right Satellite */}
         <GlassMonolith
-          image={featuredWebsites[2]?.screenshotUrl}
+          image={imageRight}
           width={280}
           height={360}
           x={350}
@@ -215,10 +234,8 @@ export default function CategoryHero({
           sheen={sheenGradient}
           delay={0.2}
         />
-
-        {/* Center Hero */}
         <GlassMonolith
-          image={featuredWebsites[0]?.screenshotUrl}
+          image={imageHero}
           width={440}
           height={580}
           x={0}
@@ -231,9 +248,15 @@ export default function CategoryHero({
         />
       </motion.div>
 
-      {/* 4. FOREGROUND TEXT */}
+      {/* 5. FOREGROUND SUBTITLE */}
       <motion.div
-        className="absolute bottom-20 z-20 text-center pointer-events-none"
+        style={{
+          position: 'absolute',
+          bottom: '80px',
+          zIndex: 20,
+          textAlign: 'center',
+          pointerEvents: 'none',
+        }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
@@ -247,7 +270,7 @@ export default function CategoryHero({
             textShadow: '0 4px 10px rgba(0,0,0,0.5)',
           }}
         >
-          {subtitle}
+          {description}
         </div>
       </motion.div>
     </div>
@@ -256,16 +279,16 @@ export default function CategoryHero({
 
 // --- SUB-COMPONENT: THE GLASS MONOLITH ---
 interface GlassMonolithProps {
-  image?: string;
+  image: string;
   width: number;
   height: number;
   x: number;
   y: number;
   z: number;
   rotation: number;
-  sheen: MotionValue<string>;
+  sheen: ReturnType<typeof useMotionTemplate>;
   isHero?: boolean;
-  floatingY?: MotionValue<number>;
+  floatingY?: ReturnType<typeof useTransform<number, number>>;
   delay?: number;
 }
 
@@ -278,27 +301,29 @@ function GlassMonolith({
   z,
   rotation,
   sheen,
-  isHero,
+  isHero = false,
   floatingY,
   delay = 0,
 }: GlassMonolithProps) {
   return (
     <motion.div
-      className="absolute rounded-3xl overflow-hidden"
       style={{
-        width: `${width}px`,
-        height: `${height}px`,
+        width: width,
+        height: height,
+        position: 'absolute',
+        borderRadius: '24px',
         backgroundColor: 'rgba(10, 10, 10, 0.4)',
         backdropFilter: 'blur(12px)',
         border: `1px solid ${theme.glassBorder}`,
         boxShadow: '0 40px 80px -20px rgba(0,0,0,0.8)',
+        overflow: 'hidden',
         x: x,
-        y: isHero && floatingY ? floatingY : y,
+        y: isHero ? floatingY : y,
         z: z,
         rotateY: rotation,
       }}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.8, y: y + 100 }}
+      animate={{ opacity: 1, scale: 1, y: y }}
       transition={{
         duration: 1.2,
         delay: delay,
@@ -306,7 +331,6 @@ function GlassMonolith({
       }}
       whileHover={{ scale: 1.05, z: z + 50, rotateY: 0 }}
     >
-      {/* Image Layer (Slightly transparent to blend with glass) */}
       {image ? (
         <Image
           src={image}
@@ -314,48 +338,54 @@ function GlassMonolith({
           fill
           className="object-cover"
           style={{ opacity: 0.8 }}
-          sizes="(max-width: 900px) 280px, 440px"
+          sizes="(max-width: 900px) 50vw, 440px"
           unoptimized
         />
       ) : (
         <div
-          className="w-full h-full flex items-center justify-center"
           style={{
+            width: '100%',
+            height: '100%',
             background: '#050505',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             color: '#333',
             fontWeight: 800,
             letterSpacing: '2px',
+            fontSize: '12px',
           }}
         >
           VISUAL
         </div>
       )}
 
-      {/* Inner Light (Volumetric) */}
       <motion.div
-        className="absolute pointer-events-none"
         style={{
+          position: 'absolute',
           inset: -100,
           background: sheen,
           mixBlendMode: 'overlay',
+          pointerEvents: 'none',
         }}
       />
-
-      {/* Reflection Layer (Surface Gloss) */}
       <div
-        className="absolute inset-0 pointer-events-none"
         style={{
+          position: 'absolute',
+          inset: 0,
           background:
             'linear-gradient(105deg, rgba(255,255,255,0.05) 20%, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.05) 30%)',
+          pointerEvents: 'none',
           mixBlendMode: 'plus-lighter',
         }}
       />
-
-      {/* Border Highlight (Sharp Edges) */}
       <div
-        className="absolute inset-0 rounded-3xl pointer-events-none"
         style={{
+          position: 'absolute',
+          inset: 0,
+          borderRadius: '24px',
           border: '1px solid rgba(255,255,255,0.1)',
+          pointerEvents: 'none',
         }}
       />
     </motion.div>

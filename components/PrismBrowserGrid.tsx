@@ -9,14 +9,14 @@ import { motion } from 'framer-motion';
 import { Website } from '@/lib/types';
 import { getCategoryColor } from '@/lib/categories';
 
-// --- THEME ---
+// --- THEME (Light Mode) ---
 const THEME = {
-  bg: '#050505',
-  cardBg: '#0A0A0A',
-  text: '#FFFFFF',
-  sub: '#888888',
-  border: 'rgba(255,255,255,0.08)',
-  glassBorder: 'rgba(255,255,255,0.04)',
+  bg: '#FAFAFA',
+  cardBg: '#FFFFFF',
+  text: '#1A1A1A',
+  sub: '#666666',
+  border: 'rgba(0,0,0,0.08)',
+  glassBorder: 'rgba(0,0,0,0.04)',
   activeGlowOpacity: 0.4,
 };
 
@@ -26,6 +26,7 @@ interface PrismBrowserGridProps {
   websites: Website[];
   initialSearchQuery?: string;
   initialCategory?: string;
+  selectedCategories?: string[];
 }
 
 export default function PrismBrowserGrid({
@@ -34,11 +35,15 @@ export default function PrismBrowserGrid({
   websites,
   initialSearchQuery = '',
   initialCategory = 'Browse All',
+  selectedCategories = [],
 }: PrismBrowserGridProps) {
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
   const [activeCategory] = useState(initialCategory);
   const [visibleCount, setVisibleCount] = useState(30);
   const [autoLoadCount, setAutoLoadCount] = useState(0);
+  
+  // Use selectedCategories if provided, otherwise fall back to activeCategory
+  const effectiveSelectedCategories = selectedCategories.length > 0 ? selectedCategories : (activeCategory !== 'Browse All' ? [activeCategory] : []);
 
   // Update search query when hero search changes
   useEffect(() => {
@@ -63,13 +68,14 @@ export default function PrismBrowserGrid({
     let results = websites;
 
     // Check if we're in default/homepage view (no filters applied)
-    const isDefaultView = activeCategory === 'Browse All' && !searchQuery.trim();
+    const isDefaultView = effectiveSelectedCategories.length === 0 && !searchQuery.trim();
 
-    // Apply category filter
-    if (activeCategory !== 'Browse All') {
-      results = results.filter(
-        (site) => (site.displayCategory || site.category) === activeCategory
-      );
+    // Apply category filter (supports multiple categories)
+    if (effectiveSelectedCategories.length > 0) {
+      results = results.filter((site) => {
+        const siteCategory = site.displayCategory || site.category;
+        return effectiveSelectedCategories.includes(siteCategory);
+      });
     }
 
     // Apply search
@@ -99,13 +105,13 @@ export default function PrismBrowserGrid({
     }
 
     return results;
-  }, [websites, activeCategory, searchQuery, fuse]);
+  }, [websites, effectiveSelectedCategories, searchQuery, fuse]);
 
   // Reset pagination when filters change
   useEffect(() => {
     setVisibleCount(30);
     setAutoLoadCount(0);
-  }, [activeCategory, searchQuery]);
+  }, [effectiveSelectedCategories, searchQuery]);
 
   // Auto-load more when scrolling (up to 2 times)
   const hasMore = visibleCount < filteredWebsites.length;
@@ -145,23 +151,39 @@ export default function PrismBrowserGrid({
     >
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
+        
+        .prism-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+        
+        @media (max-width: 1024px) {
+          .prism-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .prism-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
       `}</style>
 
       {/* BACKGROUND: Technical Dot Grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          opacity: 0.1,
-          backgroundImage: 'radial-gradient(#555 1px, transparent 1px)',
+          opacity: 0.06,
+          backgroundImage: 'radial-gradient(#999 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
 
-      {/* BACKGROUND: Vignette */}
+      {/* BACKGROUND: Light Vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at 50% 0%, transparent 50%, #050505 100%)',
+          background: 'radial-gradient(circle at 50% 0%, transparent 50%, rgba(0,0,0,0.02) 100%)',
         }}
       />
 
@@ -186,7 +208,7 @@ export default function PrismBrowserGrid({
           style={{
             width: '100%',
             height: '1px',
-            background: 'rgba(255,255,255,0.1)',
+            background: 'rgba(0,0,0,0.1)',
           }}
         />
         <div
@@ -206,7 +228,6 @@ export default function PrismBrowserGrid({
       <div
         className="prism-grid relative z-10 w-full max-w-[1200px] grid gap-15"
         style={{
-          gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
           gap: '60px 40px',
         }}
       >
@@ -221,13 +242,13 @@ export default function PrismBrowserGrid({
           onClick={() => setVisibleCount((c) => c + 30)}
           className="mt-16 px-8 py-4 rounded-lg border backdrop-blur-xl font-semibold text-sm transition-all"
           style={{
-            backgroundColor: 'rgba(255,255,255,0.03)',
+            backgroundColor: 'rgba(0,0,0,0.03)',
             borderColor: THEME.border,
             color: THEME.text,
           }}
           whileHover={{
-            backgroundColor: 'rgba(255,255,255,0.08)',
-            borderColor: 'rgba(255,255,255,0.2)',
+            backgroundColor: 'rgba(0,0,0,0.06)',
+            borderColor: 'rgba(0,0,0,0.15)',
           }}
         >
           Load More
@@ -268,8 +289,8 @@ function PrismCard({ website }: PrismCardProps) {
             y: isHovered ? -10 : 0,
             borderColor: isHovered ? accentColor : THEME.border,
             boxShadow: isHovered
-              ? `0 20px 60px -10px ${accentColor}30, 0 0 0 1px ${accentColor}`
-              : '0 10px 30px -10px rgba(0,0,0,0.3)',
+              ? `0 20px 60px -10px ${accentColor}40, 0 0 0 1px ${accentColor}`
+              : '0 10px 30px -10px rgba(0,0,0,0.08)',
           }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
           className="w-full flex flex-col overflow-hidden rounded-xl"
@@ -286,17 +307,17 @@ function PrismCard({ website }: PrismCardProps) {
             style={{
               height: '44px',
               borderBottom: `1px solid ${THEME.glassBorder}`,
-              backgroundColor: 'rgba(255,255,255,0.02)',
+              backgroundColor: 'rgba(0,0,0,0.02)',
             }}
           >
             {/* Dots */}
-            <div className="flex gap-1.5" style={{ opacity: 0.4 }}>
+            <div className="flex gap-1.5" style={{ opacity: 0.3 }}>
               <div
                 className="rounded-full"
                 style={{
                   width: 6,
                   height: 6,
-                  background: '#FFF',
+                  background: '#666',
                 }}
               />
               <div
@@ -304,7 +325,7 @@ function PrismCard({ website }: PrismCardProps) {
                 style={{
                   width: 6,
                   height: 6,
-                  background: '#FFF',
+                  background: '#666',
                 }}
               />
             </div>
@@ -314,8 +335,8 @@ function PrismCard({ website }: PrismCardProps) {
               animate={{
                 backgroundColor: isHovered
                   ? accentColor
-                  : 'rgba(255,255,255,0.05)',
-                color: isHovered ? '#000' : '#888',
+                  : 'rgba(0,0,0,0.04)',
+                color: isHovered ? '#FFF' : '#666',
               }}
               className="px-2 py-1 rounded flex items-center gap-1.5"
             >
@@ -337,7 +358,7 @@ function PrismCard({ website }: PrismCardProps) {
           <div
             className="flex-1 w-full relative overflow-hidden"
             style={{
-              backgroundColor: '#020202',
+              backgroundColor: '#F5F5F5',
             }}
           >
             {imageUrl ? (
@@ -375,7 +396,7 @@ function PrismCard({ website }: PrismCardProps) {
               <div
                 className="w-full h-full flex items-center justify-center"
                 style={{
-                  color: '#333',
+                  color: '#999',
                   fontSize: '10px',
                 }}
               >
@@ -393,11 +414,12 @@ function PrismCard({ website }: PrismCardProps) {
           }}
         >
           <motion.h3
-            animate={{ color: isHovered ? '#FFF' : '#AAA' }}
+            animate={{ color: isHovered ? THEME.text : '#666' }}
             style={{
               fontSize: '16px',
               fontWeight: 500,
               margin: 0,
+              color: THEME.text,
             }}
           >
             {name}
@@ -406,7 +428,7 @@ function PrismCard({ website }: PrismCardProps) {
           <motion.div
             animate={{
               x: isHovered ? 4 : 0,
-              color: isHovered ? accentColor : '#555',
+              color: isHovered ? accentColor : '#999',
             }}
             style={{ fontSize: '14px' }}
           >

@@ -99,17 +99,25 @@ export default function Header({ variant = 'default' }: HeaderProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 min-w-[320px] p-3 bg-black/95 backdrop-blur-xl border border-white/15 rounded-xl shadow-2xl z-[100] grid grid-cols-2 gap-1"
+                  className="absolute top-full left-0 mt-2 min-w-[320px] p-3 bg-black/95 backdrop-blur-xl border border-white/15 rounded-xl shadow-2xl z-[100]"
                 >
-                  {MACRO_CATEGORIES.filter(cat => cat !== 'Browse All').map((category) => (
-                    <Link
-                      key={category}
-                      href={`/c/${slugifyCategory(category)}`}
-                      className="block px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors"
-                    >
-                      {category}
-                    </Link>
-                  ))}
+                  <Link
+                    href="/c"
+                    className="block px-3 py-2 mb-1 text-sm font-semibold text-white hover:bg-white/10 rounded-md transition-colors border-b border-white/10 pb-2"
+                  >
+                    All Categories
+                  </Link>
+                  <div className="grid grid-cols-2 gap-1 mt-1">
+                    {MACRO_CATEGORIES.filter(cat => cat !== 'Browse All').map((category) => (
+                      <Link
+                        key={category}
+                        href={`/c/${slugifyCategory(category)}`}
+                        className="block px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                      >
+                        {category}
+                      </Link>
+                    ))}
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

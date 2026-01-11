@@ -4,7 +4,7 @@ import Header from '@/components/HeaderFramer';
 import Footer from '@/components/Footer';
 import CategoryHero from '@/components/CategoryHero';
 import PrismBrowserGrid from '@/components/PrismBrowserGrid';
-import KineticPortal from '@/components/KineticPortal';
+import SectorFanHero from '@/components/SectorFanHero';
 import ChameleonHUD from '@/components/ChameleonHUD';
 import { MACRO_CATEGORIES, categoryFromSlug, slugifyCategory, getCategoryColor } from '@/lib/categories';
 import { getWebsites } from '@/lib/data';
@@ -86,18 +86,6 @@ export default async function CategoryPage({ params }: PageProps) {
           websites={websites}
           description={`Explore curated ${category} landing pages and hero sections.`}
         />
-        <PrismBrowserGrid
-          title={`${category} Projects`}
-          subtitle={`A showcase of high-fidelity ${category.toLowerCase()} digital products.`}
-          websites={websites}
-          initialCategory={category}
-        />
-        <KineticPortal 
-          currentCategory={category}
-          websites={websites}
-          title="Universe"
-          subtitle="Explore the"
-        />
         <ChameleonHUD
           stat1_val={`${categoryCount}`}
           stat1_lbl="Archive"
@@ -112,8 +100,19 @@ export default async function CategoryPage({ params }: PageProps) {
           stat4_lbl="Categories"
           stat4_color={colorPalette[3]}
         />
+        <PrismBrowserGrid
+          title={`${category} Projects`}
+          subtitle={`A showcase of high-fidelity ${category.toLowerCase()} digital products.`}
+          websites={websites}
+          initialCategory={category}
+        />
+        <SectorFanHero 
+          currentCategory={category}
+          websites={websites}
+          title="THE SECTORS"
+        />
       </main>
-      <Footer />
+      <Footer variant="inverted" />
     </>
   );
 }

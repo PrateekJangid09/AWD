@@ -15,6 +15,11 @@ type ThemeContextType = {
 const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
+    // Use a ref to track if we're updating from our own code to prevent infinite loops
+    const isInternalUpdate = React.useRef(false)
+    // Use a ref to store current theme to avoid closure issues
+    const themeRef = React.useRef<Theme>("dark")
+    
     const [theme, setThemeState] = React.useState<Theme>(() => {
         if (typeof window === "undefined") return "dark" // Default to dark
         // Check if theme-light class is already set (from main app)
@@ -25,9 +30,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         if (stored === "light" || stored === "dark") return stored
         return "dark" // Default to dark
     })
+    
+    // Keep ref in sync with state
+    React.useEffect(() => {
+        themeRef.current = theme
+    }, [theme])
 
     const applyThemeToDocument = React.useCallback((newTheme: Theme) => {
         if (typeof window === "undefined") return
+        // Mark as internal update to prevent observer from triggering
+        isInternalUpdate.current = true
         document.documentElement.setAttribute("data-theme", newTheme)
         if (newTheme === "dark") {
             document.documentElement.classList.add("dark")
@@ -38,6 +50,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
             document.documentElement.classList.add("theme-light")
             document.documentElement.classList.remove("dark")
         }
+        // Reset flag after DOM update
+        setTimeout(() => {
+            isInternalUpdate.current = false
+        }, 0)
     }, [])
 
     const setTheme = React.useCallback((newTheme: Theme) => {
@@ -68,15 +84,21 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         
         // Function to sync theme from main app
         const syncTheme = () => {
+            // Skip if this is our own update
+            if (isInternalUpdate.current) return
+            
             const hasThemeLight = document.documentElement.classList.contains('theme-light')
             const currentTheme = hasThemeLight ? 'light' : 'dark'
-            if (currentTheme !== theme) {
+            // Use ref to get current theme value
+            if (currentTheme !== themeRef.current) {
+                isInternalUpdate.current = true
                 setThemeState(currentTheme)
+                // Reset flag after state update
+                setTimeout(() => {
+                    isInternalUpdate.current = false
+                }, 0)
             }
         }
-        
-        // Initial sync
-        syncTheme()
         
         // Listen for theme changes from main app (Header toggle)
         const observer = new MutationObserver(syncTheme)
@@ -86,7 +108,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         })
         
         return () => observer.disconnect()
-    }, [theme])
+    }, []) // Remove theme from dependencies to prevent infinite loop
 
     // Update document when theme changes (for template components that need it)
     React.useEffect(() => {
