@@ -17,11 +17,10 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // Performance optimizations
-  // Temporarily disabled to fix React module resolution issue
-  // experimental: {
-  //   optimizePackageImports: ['@/components', '@/lib'],
-  // },
+  // Performance optimizations - optimize heavy packages
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'fuse.js'],
+  },
 
   // Generate ETags for caching
   generateEtags: true,

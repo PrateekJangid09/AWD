@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Header from '@/components/HeaderFramer';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LuminousGateway from '@/components/LuminousGateway';
 import MetricGrid from '@/components/MetricGrid';
@@ -45,6 +45,7 @@ export default async function AllCategoriesPage() {
     vaultProps[`t${i}`] = site.name;
     vaultProps[`tag${i}`] = site.displayCategory || site.category || 'Featured';
     vaultProps[`img${i}`] = site.screenshotUrl || '';
+    vaultProps[`slug${i}`] = site.slug || '';
   });
 
   return (

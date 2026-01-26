@@ -372,7 +372,6 @@ function AtmosphericCard({ src, mouseX, mouseY, index }: AtmosphericCardProps) {
             fill
             className="object-cover"
             sizes="(max-width: 900px) 50vw, 25vw"
-            unoptimized
           />
         </motion.div>
       ) : (

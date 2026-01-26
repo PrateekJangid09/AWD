@@ -683,7 +683,6 @@ function DeckCard({
             fill
             className="object-cover"
             sizes="340px"
-            unoptimized
           />
         ) : (
           <div style={{ width: '100%', height: '100%' }} />
@@ -749,7 +748,6 @@ function GridCard({ item, index }: { item: DeckCardItem; index: number }) {
           fill
           className="object-cover"
           sizes="(max-width: 900px) 50vw, 200px"
-          unoptimized
         />
       ) : (
         <div

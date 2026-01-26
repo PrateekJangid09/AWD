@@ -311,7 +311,6 @@ function RelicCard({ item, index }: { item: RelicCardItem; index: number }) {
                   fill
                   className="object-cover"
                   sizes="(max-width: 900px) 100vw, 33vw"
-                  unoptimized
                 />
               </motion.div>
             ) : (

@@ -1,6 +1,7 @@
-﻿import fs from 'fs';
+import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
+import { cache } from 'react';
 import { Website } from './types';
 import { mapToMacroCategory } from './categories';
 
@@ -86,7 +87,8 @@ function isValidOfficialUrl(url: string, name: string): boolean {
   }
 }
 
-export async function getWebsites(): Promise<Website[]> {
+// Internal function to fetch and parse websites
+async function fetchWebsites(): Promise<Website[]> {
   try {
     const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
     
@@ -185,6 +187,9 @@ export async function getWebsites(): Promise<Website[]> {
     return [];
   }
 }
+
+// Cached version - deduplicates calls within the same request
+export const getWebsites = cache(fetchWebsites);
 
 function sortWebsitesByQuality(websites: Website[]): Website[] {
   return websites.sort((a, b) => {

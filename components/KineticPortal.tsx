@@ -333,7 +333,6 @@ function PortalCard({ data, onHoverChange, innerRef }: PortalCardProps) {
               fill
               className="object-cover"
               sizes="(max-width: 900px) 260px, 400px"
-              unoptimized
             />
           ) : (
             <div

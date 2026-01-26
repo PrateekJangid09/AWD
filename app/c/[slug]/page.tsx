@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Header from '@/components/HeaderFramer';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CategoryHero from '@/components/CategoryHero';
 import PrismBrowserGrid from '@/components/PrismBrowserGrid';

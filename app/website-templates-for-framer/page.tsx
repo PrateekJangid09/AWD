@@ -1,4 +1,4 @@
-import Header from "@/components/HeaderFramer";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Hero from "@/components/templates/Hero";

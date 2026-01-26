@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useTheme } from "@/contexts/ThemeContext"
 
@@ -1163,8 +1164,14 @@ export default function BrowseTemplates(props: BrowseTemplatesProps) {
                                 })
                             }
                         >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={t.imageUrl} alt={t.title} style={img} />
+                            <Image 
+                                src={t.imageUrl} 
+                                alt={t.title} 
+                                width={400}
+                                height={280}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                style={img} 
+                            />
                             <div style={cardBody}>
                                 <p style={cardTitle}>{t.title}</p>
                                 <p style={cardSub}>{t.subtitle}</p>

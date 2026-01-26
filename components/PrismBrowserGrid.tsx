@@ -146,7 +146,7 @@ export default function PrismBrowserGrid({
       className="relative w-full flex flex-col items-center overflow-hidden scroll-mt-20"
       style={{
         backgroundColor: THEME.bg,
-        padding: '120px 20px',
+        padding: 'clamp(60px, 10vw, 120px) clamp(16px, 4vw, 40px)',
       }}
     >
       <style jsx global>{`
@@ -194,7 +194,7 @@ export default function PrismBrowserGrid({
         <h2
           style={{
             fontFamily: '"Inter", sans-serif',
-            fontSize: '48px',
+            fontSize: 'clamp(28px, 5vw, 48px)',
             fontWeight: 600,
             color: THEME.text,
             margin: 0,
@@ -228,7 +228,7 @@ export default function PrismBrowserGrid({
       <div
         className="prism-grid relative z-10 w-full max-w-[1200px] grid gap-15"
         style={{
-          gap: '60px 40px',
+          gap: 'clamp(30px, 5vw, 60px) clamp(20px, 3vw, 40px)',
         }}
       >
         {filteredWebsites.slice(0, visibleCount).map((website) => (
@@ -379,9 +379,12 @@ function PrismCard({ website }: PrismCardProps) {
                     repeat: isHovered ? Infinity : 0,
                   }}
                 >
-                  <img
+                  <Image
                     src={imageUrl}
                     alt={name}
+                    width={600}
+                    height={900}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="w-full h-auto block"
                     style={{
                       objectFit: 'cover',

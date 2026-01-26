@@ -62,8 +62,8 @@ export default function AdvancedFilterBar({
     <div className="space-y-4">
       {/* Main Category Filter */}
       <div className="relative">
-        <div className="pb-2">
-          <div className="flex flex-wrap gap-2 px-1">
+        <div className="pb-2 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible">
+          <div className="flex flex-nowrap sm:flex-wrap gap-2 px-1 min-w-max sm:min-w-0">
             {['Browse All', ...categories.filter(c => c !== 'Browse All')].map((category) => {
               const isActive = activeCategory === category;
               const count = category === 'Browse All' ? totalCount : websiteCounts[category] || 0;

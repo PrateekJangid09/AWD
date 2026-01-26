@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
+import Image from 'next/image';
 import Link from 'next/link';
 import { Website } from '@/lib/types';
 import { MACRO_CATEGORIES, getCategoryColor, slugifyCategory } from '@/lib/categories';
@@ -312,19 +313,17 @@ function SectorCard({
                                 zIndex: 0,
                             }}
                         >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src={item.image}
                                 alt={item.label}
+                                fill
+                                sizes="400px"
+                                className="object-cover transition-all duration-300"
                                 style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
                                     opacity: isSelfHovered ? 0.5 : (isFanOpen ? 0.3 : 0.15),
                                     filter: isSelfHovered 
                                         ? "grayscale(50%) brightness(0.6)" 
                                         : "grayscale(100%) brightness(0.4)",
-                                    transition: "opacity 0.3s, filter 0.3s",
                                 }}
                             />
                         </div>

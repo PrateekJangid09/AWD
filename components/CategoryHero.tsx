@@ -86,7 +86,7 @@ export default function CategoryHero({
   const styles = {
     container: {
       width: '100%',
-      height: '950px',
+      minHeight: '100vh',
       backgroundColor: theme.bg,
       color: theme.text,
       display: 'flex',
@@ -96,6 +96,7 @@ export default function CategoryHero({
       position: 'relative' as const,
       overflow: 'hidden' as const,
       perspective: '1500px',
+      padding: '60px 20px',
     },
     aurora: {
       position: 'absolute' as const,
@@ -160,7 +161,7 @@ export default function CategoryHero({
     stage: {
       width: '100%',
       maxWidth: '1200px',
-      height: '600px',
+      height: 'clamp(400px, 60vh, 600px)',
       position: 'relative' as const,
       zIndex: 10,
       display: 'flex',
@@ -169,10 +170,21 @@ export default function CategoryHero({
       transformStyle: 'preserve-3d' as const,
     },
     mobileCss: `
-      @media (max-width: 900px) {
-        .stage-container { transform: scale(0.6); }
-        .zenith-title { font-size: 80px !important; }
-        .category-watermark { font-size: 120px !important; }
+      @media (max-width: 1024px) {
+        .stage-container { transform: scale(0.7); }
+        .zenith-title { font-size: clamp(60px, 12vw, 120px) !important; }
+        .category-watermark { font-size: clamp(80px, 18vw, 200px) !important; }
+      }
+      @media (max-width: 768px) {
+        .stage-container { transform: scale(0.5); }
+        .zenith-title { font-size: clamp(48px, 10vw, 80px) !important; }
+        .category-watermark { font-size: clamp(60px, 15vw, 120px) !important; }
+      }
+      @media (max-width: 480px) {
+        .stage-container { transform: scale(0.35); }
+        .zenith-title { font-size: clamp(36px, 9vw, 60px) !important; }
+        .category-watermark { font-size: clamp(48px, 12vw, 80px) !important; }
+        .subtitle-text { font-size: 18px !important; bottom: 40px !important; }
       }
     `,
   };
@@ -250,12 +262,14 @@ export default function CategoryHero({
 
       {/* 5. FOREGROUND SUBTITLE */}
       <motion.div
+        className="subtitle-text"
         style={{
           position: 'absolute',
-          bottom: '80px',
+          bottom: 'clamp(40px, 8vh, 80px)',
           zIndex: 20,
           textAlign: 'center',
           pointerEvents: 'none',
+          padding: '0 20px',
         }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -265,7 +279,7 @@ export default function CategoryHero({
           style={{
             fontFamily: '"Playfair Display", serif',
             fontStyle: 'italic',
-            fontSize: '24px',
+            fontSize: 'clamp(18px, 3vw, 24px)',
             color: theme.text,
             textShadow: '0 4px 10px rgba(0,0,0,0.5)',
           }}
@@ -339,7 +353,6 @@ function GlassMonolith({
           className="object-cover"
           style={{ opacity: 0.8 }}
           sizes="(max-width: 900px) 50vw, 440px"
-          unoptimized
         />
       ) : (
         <div

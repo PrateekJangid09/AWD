@@ -252,7 +252,6 @@ function PrismCard({ item }: { item: PrismCardItem }) {
                   fill
                   className="object-cover"
                   sizes="(max-width: 900px) 100vw, 33vw"
-                  unoptimized
                 />
               </motion.div>
             ) : (

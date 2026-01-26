@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useTheme } from "@/contexts/ThemeContext"
 
@@ -748,10 +749,12 @@ export default function Hero(props: HeroProps) {
                         <div style={right}>
                             {safeCards.map((c, i) => (
                                 <div key={i} style={cardWrap(i)}>
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
+                                    <Image
                                         src={c.imageUrl}
                                         alt={c.title}
+                                        width={300}
+                                        height={170}
+                                        sizes="300px"
                                         style={cardImg}
                                     />
                                     <div style={cardBody}>

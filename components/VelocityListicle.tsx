@@ -372,7 +372,6 @@ function CinematicCard({
                   className="object-cover"
                   sizes="(max-width: 900px) 100vw, 33vw"
                   style={{ objectPosition: 'top' }}
-                  unoptimized
                 />
               </motion.div>
             </motion.div>

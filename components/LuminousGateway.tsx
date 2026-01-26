@@ -1,7 +1,9 @@
 'use client';
 
 import * as React from "react";
+import Link from "next/link";
 import { motion, useTime, useTransform, useMotionTemplate } from "framer-motion";
+import { slugifyCategory } from "@/lib/categories";
 
 // --- 1. THEME: LIQUID METAL & VOID ---
 const THEME = {
@@ -291,18 +293,22 @@ export default function LuminousGateway({
                         Trending:
                     </span>
                     {["SaaS", "AI Agents", "Portfolio"].map((tag) => (
-                        <span
+                        <Link
                             key={tag}
+                            href={`/c/${slugifyCategory(tag)}`}
                             style={{
                                 fontSize: "12px",
                                 color: THEME.sub,
                                 cursor: "pointer",
                                 textDecoration: "underline",
                                 textUnderlineOffset: "4px",
+                                transition: "color 0.2s ease",
                             }}
+                            onMouseEnter={(e) => (e.currentTarget.style.color = "#FFF")}
+                            onMouseLeave={(e) => (e.currentTarget.style.color = THEME.sub)}
                         >
                             {tag}
-                        </span>
+                        </Link>
                     ))}
                 </motion.div>
             </div>

@@ -20,7 +20,7 @@ const trackStyle: React.CSSProperties = {
   gap: 12,
   width: '100%',
   height: '100%',
-  padding: '0 40px',
+  padding: '0 clamp(16px, 4vw, 40px)',
   userSelect: 'none',
 };
 

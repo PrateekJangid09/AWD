@@ -69,7 +69,6 @@ export default function WebsiteCardTest({ website }: WebsiteCardTestProps) {
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               onError={() => setImageError(true)}
               priority={false}
-              unoptimized={true}
             />
             
               {/* Liquid glass overlay effect */}

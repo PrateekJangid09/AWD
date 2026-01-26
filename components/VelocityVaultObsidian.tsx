@@ -8,6 +8,8 @@ import {
     useMotionValue,
     useTransform,
 } from "framer-motion"
+import Image from 'next/image';
+import Link from 'next/link';
 
 // --- 1. THEME: OBSIDIAN BLACK ---
 const THEME = {
@@ -36,27 +38,35 @@ interface VelocityVaultObsidianProps {
     t1?: string;
     tag1?: string;
     img1?: string;
+    slug1?: string;
     t2?: string;
     tag2?: string;
     img2?: string;
+    slug2?: string;
     t3?: string;
     tag3?: string;
     img3?: string;
+    slug3?: string;
     t4?: string;
     tag4?: string;
     img4?: string;
+    slug4?: string;
     t5?: string;
     tag5?: string;
     img5?: string;
+    slug5?: string;
     t6?: string;
     tag6?: string;
     img6?: string;
+    slug6?: string;
     t7?: string;
     tag7?: string;
     img7?: string;
+    slug7?: string;
     t8?: string;
     tag8?: string;
     img8?: string;
+    slug8?: string;
 }
 
 // --- 2. MAIN COMPONENT ---
@@ -86,6 +96,7 @@ export default function VelocityVaultObsidian(props: VelocityVaultObsidianProps)
                 title: props[`t${propIndex}` as keyof VelocityVaultObsidianProps] as string || '',
                 tag: props[`tag${propIndex}` as keyof VelocityVaultObsidianProps] as string || '',
                 img: props[`img${propIndex}` as keyof VelocityVaultObsidianProps] as string || '',
+                slug: props[`slug${propIndex}` as keyof VelocityVaultObsidianProps] as string || '',
             })
         }
         return newItems
@@ -94,7 +105,7 @@ export default function VelocityVaultObsidian(props: VelocityVaultObsidianProps)
     // -- STATE --
     const [level, setLevel] = React.useState(1)
     const [queue, setQueue] = React.useState(generateLevelData(1))
-    const [bank, setBank] = React.useState<Array<{ uniqueId: string; title: string; tag: string; img: string }>>([])
+    const [bank, setBank] = React.useState<Array<{ uniqueId: string; title: string; tag: string; img: string; slug: string }>>([])
     const [mode, setMode] = React.useState<"deck" | "grid" | "community">("deck")
 
     // Dynamic Color based on Level
@@ -813,16 +824,13 @@ function DeckCard({ item, index, onSwipe, accent }: DeckCardProps) {
                 }}
             >
                 {item.img ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                         src={item.img}
                         alt={item.title}
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            opacity: 0.8,
-                        }}
+                        fill
+                        sizes="340px"
+                        className="object-cover"
+                        style={{ opacity: 0.8 }}
                     />
                 ) : (
                     <div style={{ width: "100%", height: "100%" }} />
@@ -876,13 +884,14 @@ function DeckCard({ item, index, onSwipe, accent }: DeckCardProps) {
 
 // --- SUB: GRID CARD ---
 interface GridCardProps {
-    item: { uniqueId: string; title: string; tag: string; img: string };
+    item: { uniqueId: string; title: string; tag: string; img: string; slug: string };
     index: number;
     accent: string;
 }
 
 function GridCard({ item, index, accent }: GridCardProps) {
     return (
+        <Link href={`/sites/${item.slug}`} style={{ textDecoration: 'none' }}>
         <motion.div
             layoutId={item.uniqueId}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -904,17 +913,13 @@ function GridCard({ item, index, accent }: GridCardProps) {
             }}
         >
             {item.img ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                     src={item.img}
                     alt={item.title}
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        opacity: 0.7,
-                        transition: "opacity 0.3s ease",
-                    }}
+                    fill
+                    sizes="(max-width: 900px) 50vw, 200px"
+                    className="object-cover transition-opacity duration-300"
+                    style={{ opacity: 0.7 }}
                 />
             ) : (
                 <div
@@ -970,5 +975,6 @@ function GridCard({ item, index, accent }: GridCardProps) {
                 </div>
             </div>
         </motion.div>
+        </Link>
     )
 }

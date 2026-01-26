@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useTheme } from "@/contexts/ThemeContext"
 
@@ -521,15 +522,12 @@ export default function Footer(props: FooterProps) {
                                 {showLogoImage ? (
                                     <div style={logoMark} aria-hidden="true">
                                         {logoImageUrl ? (
-                                            // eslint-disable-next-line @next/next/no-img-element
-                                            <img
+                                            <Image
                                                 src={logoImageUrl}
                                                 alt=""
-                                                style={{
-                                                    width: "100%",
-                                                    height: "100%",
-                                                    objectFit: "cover",
-                                                }}
+                                                fill
+                                                sizes="40px"
+                                                className="object-cover"
                                             />
                                         ) : (
                                             <span

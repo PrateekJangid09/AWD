@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { motion, useMotionValue, useMotionTemplate } from 'framer-motion';
+import Image from 'next/image';
 
 interface SingleSiteHeroProps {
   siteName: string;
@@ -60,15 +61,12 @@ export default function SingleSiteHero({
         }}
       >
         {image ? (
-          <img
+          <Image
             src={image}
             alt={`${siteName} background`}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'top center',
-            }}
+            fill
+            sizes="100vw"
+            className="object-cover object-top"
           />
         ) : (
           <div
@@ -93,15 +91,12 @@ export default function SingleSiteHero({
         }}
       >
         {image && (
-          <img
+          <Image
             src={image}
             alt={`${siteName} spotlight`}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'top center',
-            }}
+            fill
+            sizes="100vw"
+            className="object-cover object-top"
           />
         )}
       </motion.div>

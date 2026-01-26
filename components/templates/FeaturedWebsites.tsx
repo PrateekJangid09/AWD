@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useTheme } from "@/contexts/ThemeContext"
 
@@ -574,10 +575,12 @@ export default function FeaturedWebsites(props: FeaturedWebsitesProps) {
                                         : `0 18px 44px ${colors.shadow}`
                             }}
                         >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src={c.imageUrl}
                                 alt={c.title}
+                                width={400}
+                                height={260}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 style={imgStyle}
                             />
                             <div style={body}>

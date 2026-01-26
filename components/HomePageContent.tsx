@@ -1,14 +1,23 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import AtmosphericGallery from '@/components/AtmosphericGallery';
 import MetricGrid from '@/components/MetricGrid';
-import RelicGrid from '@/components/RelicGrid';
-import VelocityVault from '@/components/VelocityVault';
-import PrismBrowserGrid from '@/components/PrismBrowserGrid';
-import NebulaFilter from '@/components/NebulaFilter';
 import { Website } from '@/lib/types';
-import AutoScrollTicker from '@/components/AutoScrollTicker';
+
+// Dynamic imports for below-the-fold components to reduce initial bundle size
+const RelicGrid = dynamic(() => import('@/components/RelicGrid'), {
+  loading: () => <div className="h-96 animate-pulse bg-neutral-900" />,
+});
+
+const NebulaFilter = dynamic(() => import('@/components/NebulaFilter'), {
+  loading: () => <div className="h-48 animate-pulse bg-neutral-900" />,
+});
+
+const PrismBrowserGrid = dynamic(() => import('@/components/PrismBrowserGrid'), {
+  loading: () => <div className="h-screen animate-pulse bg-neutral-900" />,
+});
 
 interface HomePageContentProps {
   websites: Website[];

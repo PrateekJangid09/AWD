@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useTheme } from "@/contexts/ThemeContext"
 
@@ -579,10 +580,11 @@ export default function DetailsSection(props: DetailsSectionProps) {
                                     }}
                                 >
                                     {it.logoUrl ? (
-                                        // eslint-disable-next-line @next/next/no-img-element
-                                        <img
+                                        <Image
                                             src={it.logoUrl}
                                             alt=""
+                                            width={18}
+                                            height={18}
                                             style={logo}
                                         />
                                     ) : null}

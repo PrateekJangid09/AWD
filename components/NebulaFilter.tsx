@@ -76,7 +76,7 @@ export default function NebulaFilter({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '100px 20px',
+        padding: 'clamp(60px, 10vw, 100px) clamp(16px, 4vw, 40px)',
         fontFamily: '"Inter", sans-serif',
         position: 'relative',
         overflow: 'hidden',
@@ -91,7 +91,7 @@ export default function NebulaFilter({
           top: '20%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: '600px',
+          width: 'min(600px, 90vw)',
           height: '300px',
           background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.02) 0%, transparent 70%)',
           pointerEvents: 'none',
@@ -112,7 +112,7 @@ export default function NebulaFilter({
           animate={{ opacity: 1, y: 0 }}
           style={{
             fontFamily: '"Space Grotesk", sans-serif',
-            fontSize: '42px',
+            fontSize: 'clamp(28px, 5vw, 42px)',
             color: THEME.text, // Dark text
             margin: '0 0 16px 0',
             letterSpacing: '-1.5px',
@@ -172,7 +172,7 @@ export default function NebulaFilter({
           backdropFilter: 'blur(40px)', // Heavy frost
           borderRadius: '24px',
           border: `1px solid ${THEME.border}`, // Dark border
-          padding: '32px',
+          padding: 'clamp(16px, 4vw, 32px)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

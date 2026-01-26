@@ -3,6 +3,7 @@
 import * as React from 'react';
 import type { CSSProperties, MouseEvent, FormEvent } from 'react';
 import { motion, useMotionValue, useMotionTemplate } from 'framer-motion';
+import Image from 'next/image';
 import { Website } from '@/lib/types';
 
 interface HeroSketchbookProps {
@@ -289,15 +290,14 @@ function GridItem({ src, index, isColor }: GridItemProps) {
       }}
     >
       {src ? (
-        <img
+        <Image
           src={src}
           alt={`Site ${index + 1}`}
+          fill
+          sizes="(max-width: 768px) 50vw, 200px"
+          className="object-cover transition-transform duration-400"
           style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
             transform: isColor ? 'scale(1.1)' : 'scale(1)',
-            transition: 'transform 0.4s ease',
           }}
         />
       ) : (

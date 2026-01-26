@@ -146,9 +146,12 @@ export default function CollageSitePage({
                 className="custom-scrollbar"
               >
                 {/* Use full screenshot if available, otherwise regular screenshot */}
-                <img
+                <Image
                   src={fullImage || image}
                   alt={`${title} screenshot`}
+                  width={1200}
+                  height={2400}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   style={{
                     width: '100%',
                     height: 'auto',

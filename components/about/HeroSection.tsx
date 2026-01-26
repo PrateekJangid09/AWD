@@ -62,7 +62,6 @@ const MarqueeColumn: React.FC<MarqueeColumnProps> = ({ images, speed = 20, rever
                   height: '100%',
                   objectFit: 'cover',
                 }}
-                unoptimized
               />
             ) : (
               <div

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Website } from '@/lib/types';
 
@@ -211,11 +212,15 @@ function MagneticCard({ website, accent, isNew }: MagneticCardProps) {
               animate={{ y: isHovered ? '-30%' : '0%' }}
               transition={{ duration: 4, ease: 'linear' }}
             >
-              <img
+              <Image
                 src={screenshotUrl}
                 alt={title}
+                width={400}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 style={{
                   width: '100%',
+                  height: 'auto',
                   objectFit: 'cover',
                   display: 'block',
                 }}

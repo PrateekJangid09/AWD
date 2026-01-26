@@ -282,7 +282,6 @@ function EtherealCard({ item, index }: { item: EtherealCardItem; index: number }
                     fill
                     className="object-cover"
                     sizes="(max-width: 900px) 100vw, 33vw"
-                    unoptimized
                   />
                 </motion.div>
               ) : (
