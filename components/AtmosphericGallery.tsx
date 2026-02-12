@@ -19,11 +19,6 @@ const theme = {
   accent: '#3B82F6',
 };
 
-// --- FONTS ---
-const fontStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Inter:wght@300;400;600&display=swap');
-`;
-
 interface AtmosphericGalleryProps {
   title?: string;
   subtitle?: string;
@@ -153,16 +148,16 @@ export default function AtmosphericGallery({
       padding: '0 20px',
     },
     h1: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: 'var(--font-sora), sans-serif',
       fontSize: 'clamp(60px, 8vw, 120px)',
-      fontWeight: 800,
+      fontWeight: 700,
       letterSpacing: '-0.04em',
       color: '#FFF',
       marginBottom: '20px',
       textShadow: '0 30px 60px rgba(0,0,0,0.8)', // Lift off background
     },
     subtitle: {
-      fontFamily: '"Playfair Display", serif',
+      fontFamily: 'var(--font-sora), sans-serif',
       fontStyle: 'italic' as const,
       fontSize: 'clamp(24px, 3vw, 32px)',
       color: 'rgba(255,255,255,0.8)',
@@ -189,7 +184,7 @@ export default function AtmosphericGallery({
       alignItems: 'center',
       gap: '8px',
       color: theme.dim,
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: 'var(--font-sora), sans-serif',
       fontSize: '12px',
       letterSpacing: '1px',
       textTransform: 'uppercase' as const,
@@ -199,8 +194,6 @@ export default function AtmosphericGallery({
 
   return (
     <div style={styles.container} onMouseMove={handleMouseMove}>
-      <style jsx global>{fontStyles}</style>
-
       <div style={styles.noise} />
       <div style={styles.vignette} />
       <motion.div style={styles.flashlight} />
@@ -372,6 +365,7 @@ function AtmosphericCard({ src, mouseX, mouseY, index }: AtmosphericCardProps) {
             fill
             className="object-cover"
             sizes="(max-width: 900px) 50vw, 25vw"
+            priority={index < 6}
           />
         </motion.div>
       ) : (

@@ -65,7 +65,6 @@ export default async function HomePage() {
       
       <main className="min-h-screen">
         <HomePageContent
-          websites={websites}
           categories={categories}
           totalWebsites={totalWebsites}
           totalCategories={totalCategories}

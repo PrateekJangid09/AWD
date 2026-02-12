@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
 import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 import { Website } from './types';
 import { mapToMacroCategory } from './categories';
 
@@ -188,8 +189,15 @@ async function fetchWebsites(): Promise<Website[]> {
   }
 }
 
+// Cache parsed CSV across requests to reduce TTFB (revalidate every 5 min)
+const getWebsitesCached = unstable_cache(
+  fetchWebsites,
+  ['websites-list'],
+  { revalidate: 300 }
+);
+
 // Cached version - deduplicates calls within the same request
-export const getWebsites = cache(fetchWebsites);
+export const getWebsites = cache(getWebsitesCached);
 
 function sortWebsitesByQuality(websites: Website[]): Website[] {
   return websites.sort((a, b) => {

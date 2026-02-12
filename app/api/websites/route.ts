@@ -7,11 +7,16 @@ export async function GET() {
     const websites = await getWebsites();
     const categories = await getCategories();
     
-    return NextResponse.json({
+    const response = NextResponse.json({
       websites,
       categories, // original/raw categories
       macroCategories: MACRO_CATEGORIES,
     });
+    response.headers.set(
+      'Cache-Control',
+      'public, s-maxage=300, stale-while-revalidate=60'
+    );
+    return response;
   } catch (error) {
     console.error('Error fetching websites:', error);
     return NextResponse.json(

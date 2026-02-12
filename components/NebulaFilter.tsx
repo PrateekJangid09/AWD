@@ -14,10 +14,6 @@ const THEME = {
   activeBorder: 'rgba(0,0,0,0.15)',
 };
 
-const fontStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
-`;
-
 interface NebulaFilterProps {
   title?: string;
   categories?: string[];
@@ -77,13 +73,11 @@ export default function NebulaFilter({
         flexDirection: 'column',
         alignItems: 'center',
         padding: 'clamp(60px, 10vw, 100px) clamp(16px, 4vw, 40px)',
-        fontFamily: '"Inter", sans-serif',
+        fontFamily: 'var(--font-sora), sans-serif',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      <style jsx global>{fontStyles}</style>
-
       {/* Background Ambient Glow */}
       <div
         style={{
@@ -111,7 +105,7 @@ export default function NebulaFilter({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           style={{
-            fontFamily: '"Space Grotesk", sans-serif',
+            fontFamily: 'var(--font-sora), sans-serif',
             fontSize: 'clamp(28px, 5vw, 42px)',
             color: THEME.text, // Dark text
             margin: '0 0 16px 0',
@@ -219,7 +213,7 @@ export default function NebulaFilter({
               padding: '12px 24px',
               fontSize: '13px',
               fontWeight: 700,
-              fontFamily: '"Inter", sans-serif',
+              fontFamily: 'var(--font-sora), sans-serif',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -277,7 +271,7 @@ export default function NebulaFilter({
                   padding: '12px 20px',
                   fontSize: '13px',
                   fontWeight: 600,
-                  fontFamily: '"Inter", sans-serif',
+                  fontFamily: 'var(--font-sora), sans-serif',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',

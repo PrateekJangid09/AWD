@@ -23,7 +23,8 @@ const THEME = {
 interface PrismBrowserGridProps {
   title?: string;
   subtitle?: string;
-  websites: Website[];
+  /** If empty, component fetches from /api/websites on mount */
+  websites?: Website[];
   initialSearchQuery?: string;
   initialCategory?: string;
   selectedCategories?: string[];
@@ -32,16 +33,34 @@ interface PrismBrowserGridProps {
 export default function PrismBrowserGrid({
   title = 'Selected Projects',
   subtitle = 'A showcase of high-fidelity digital products.',
-  websites,
+  websites: initialWebsites = [],
   initialSearchQuery = '',
   initialCategory = 'Browse All',
   selectedCategories = [],
 }: PrismBrowserGridProps) {
+  const [websites, setWebsites] = useState<Website[]>(initialWebsites);
+  const [websitesLoading, setWebsitesLoading] = useState(initialWebsites.length === 0);
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
   const [activeCategory] = useState(initialCategory);
   const [visibleCount, setVisibleCount] = useState(30);
   const [autoLoadCount, setAutoLoadCount] = useState(0);
-  
+
+  // When no websites passed, fetch from API on mount
+  useEffect(() => {
+    if (initialWebsites.length > 0) return;
+    let cancelled = false;
+    fetch('/api/websites')
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled && data?.websites) setWebsites(data.websites);
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (!cancelled) setWebsitesLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, [initialWebsites.length]);
+
   // Use selectedCategories if provided, otherwise fall back to activeCategory
   const effectiveSelectedCategories = selectedCategories.length > 0 ? selectedCategories : (activeCategory !== 'Browse All' ? [activeCategory] : []);
 
@@ -139,6 +158,39 @@ export default function PrismBrowserGrid({
   }, [hasMore, autoLoadCount]);
 
   const showManualLoadButton = hasMore && autoLoadCount >= 2;
+
+  if (websitesLoading) {
+    return (
+      <section
+        id="browse"
+        className="relative w-full flex flex-col items-center overflow-hidden scroll-mt-20"
+        style={{
+          backgroundColor: THEME.bg,
+          padding: 'clamp(60px, 10vw, 120px) clamp(16px, 4vw, 40px)',
+        }}
+      >
+        <div className="relative z-10 w-full max-w-[1200px] mb-20 flex flex-col gap-6">
+          <div className="h-12 w-64 rounded bg-neutral-200 animate-pulse" />
+          <div className="w-full h-px bg-neutral-200" />
+        </div>
+        <div
+          className="prism-grid relative z-10 w-full max-w-[1200px] grid gap-15"
+          style={{
+            gap: 'clamp(30px, 5vw, 60px) clamp(20px, 3vw, 40px)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+          }}
+        >
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden bg-neutral-200 animate-pulse"
+              style={{ aspectRatio: '3/4' }}
+            />
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section

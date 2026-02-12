@@ -8,13 +8,13 @@ import "./globals.css";
 const geist = Geist({ 
   subsets: ["latin"],
   variable: "--font-geist",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  weight: ["400", "500", "600", "700"],
 });
 
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"]
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://allwebsites.design"),
   alternates: {
     canonical: "/",
+  },
+  verification: {
+    google: "Rya537NqhNiUvRDcCE4XNLwGj4cY6TR7JfbPBmkRttU",
   },
   icons: {
     icon: "/Vector.png",

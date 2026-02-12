@@ -20,19 +20,20 @@ const PrismBrowserGrid = dynamic(() => import('@/components/PrismBrowserGrid'), 
 });
 
 interface HomePageContentProps {
-  websites: Website[];
   categories: string[];
   totalWebsites: number;
   totalCategories: number;
   featuredWebsites: Website[];
+  /** Optional: when omitted, PrismBrowserGrid fetches from /api/websites on the client */
+  websites?: Website[];
 }
 
 export default function HomePageContent({
-  websites,
   categories,
   totalWebsites,
   totalCategories,
   featuredWebsites,
+  websites = [],
 }: HomePageContentProps) {
   const [heroSearchQuery, setHeroSearchQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -91,7 +92,7 @@ export default function HomePageContent({
         onCategoryChange={handleCategoryChange}
       />
 
-      {/* Main Content Section */}
+      {/* Main Content Section - websites empty: grid fetches from /api/websites on mount */}
       <PrismBrowserGrid
         title="Selected Projects"
         subtitle="A showcase of high-fidelity digital products."
