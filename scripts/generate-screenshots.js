@@ -237,6 +237,20 @@ async function processWebsites() {
   const seen = new Set();
   websites = websites.filter(w => (seen.has(w.slug) ? false : (seen.add(w.slug), true)));
 
+  const includeSlugsEnv = (process.env.INCLUDE_SLUGS || '').trim();
+  const includeSlugsFile = (process.env.INCLUDE_SLUGS_FILE || '').trim();
+  const includeSet = new Set();
+  if (includeSlugsEnv) {
+    includeSlugsEnv.split(',').map(s => s.trim()).filter(Boolean).forEach(s => includeSet.add(s));
+  }
+  if (includeSlugsFile && fs.existsSync(includeSlugsFile)) {
+    const fileContent = fs.readFileSync(includeSlugsFile, 'utf-8');
+    fileContent.split(/[\n,]/).map(s => s.trim()).filter(Boolean).forEach(s => includeSet.add(s));
+  }
+  if (includeSet.size > 0) {
+    websites = websites.filter(w => includeSet.has(w.slug));
+  }
+
   const maxSites = parseInt(process.env.MAX_SITES || '0', 10);
   if (maxSites > 0) {
     websites = websites.slice(0, maxSites);
@@ -253,6 +267,9 @@ async function processWebsites() {
     
     const results = await Promise.allSettled(
       batch.map(site => {
+        if (process.env.FALLBACK_ONLY === 'true') {
+          return generateFallbackImage(site.name, site.category, site.slug).then(() => false);
+        }
         // Skip known placeholders or empty URLs → generate fallback immediately
         if (!site.url || site.url.includes('impossiblefoods.com')) {
           return generateFallbackImage(site.name, site.category, site.slug).then(() => false);

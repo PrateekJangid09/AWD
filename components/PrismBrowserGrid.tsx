@@ -8,6 +8,7 @@ import Fuse from 'fuse.js';
 import { motion } from 'framer-motion';
 import { Website } from '@/lib/types';
 import { getCategoryColor } from '@/lib/categories';
+import { PAGE_TYPE_OPTIONS } from '@/components/PrecisionFilter';
 
 // --- THEME (Light Mode) ---
 const THEME = {
@@ -28,6 +29,8 @@ interface PrismBrowserGridProps {
   initialSearchQuery?: string;
   initialCategory?: string;
   selectedCategories?: string[];
+  /** Page-type labels from PrecisionFilter (e.g. "Landing page", "Blog"); grid filters by keyword in name/description */
+  selectedPageTypes?: string[];
 }
 
 export default function PrismBrowserGrid({
@@ -37,6 +40,7 @@ export default function PrismBrowserGrid({
   initialSearchQuery = '',
   initialCategory = 'Browse All',
   selectedCategories = [],
+  selectedPageTypes = [],
 }: PrismBrowserGridProps) {
   const [websites, setWebsites] = useState<Website[]>(initialWebsites);
   const [websitesLoading, setWebsitesLoading] = useState(initialWebsites.length === 0);
@@ -82,18 +86,40 @@ export default function PrismBrowserGrid({
     });
   }, [websites]);
 
+  // Keywords for selected page types (e.g. "Landing page" -> "landing")
+  const pageTypeKeywords = useMemo(() => {
+    if (selectedPageTypes.length === 0) return [];
+    const set = new Set<string>();
+    for (const label of selectedPageTypes) {
+      const opt = PAGE_TYPE_OPTIONS.find((o) => o.label === label);
+      if (opt) set.add(opt.keyword.toLowerCase());
+    }
+    return Array.from(set);
+  }, [selectedPageTypes]);
+
   // Filter and search websites
   const filteredWebsites = useMemo(() => {
     let results = websites;
 
     // Check if we're in default/homepage view (no filters applied)
-    const isDefaultView = effectiveSelectedCategories.length === 0 && !searchQuery.trim();
+    const isDefaultView =
+      effectiveSelectedCategories.length === 0 &&
+      !searchQuery.trim() &&
+      pageTypeKeywords.length === 0;
 
     // Apply category filter (supports multiple categories)
     if (effectiveSelectedCategories.length > 0) {
       results = results.filter((site) => {
         const siteCategory = site.displayCategory || site.category;
         return effectiveSelectedCategories.includes(siteCategory);
+      });
+    }
+
+    // Apply page-type filter (name or description contains any selected keyword)
+    if (pageTypeKeywords.length > 0) {
+      results = results.filter((site) => {
+        const text = `${site.name ?? ''} ${site.description ?? ''}`.toLowerCase();
+        return pageTypeKeywords.some((kw) => text.includes(kw));
       });
     }
 
@@ -124,13 +150,13 @@ export default function PrismBrowserGrid({
     }
 
     return results;
-  }, [websites, effectiveSelectedCategories, searchQuery, fuse]);
+  }, [websites, effectiveSelectedCategories, pageTypeKeywords, searchQuery, fuse]);
 
   // Reset pagination when filters change
   useEffect(() => {
     setVisibleCount(30);
     setAutoLoadCount(0);
-  }, [effectiveSelectedCategories, searchQuery]);
+  }, [effectiveSelectedCategories, selectedPageTypes, searchQuery]);
 
   // Auto-load more when scrolling (up to 2 times)
   const hasMore = visibleCount < filteredWebsites.length;

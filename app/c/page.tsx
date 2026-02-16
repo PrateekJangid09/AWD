@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LuminousGateway from '@/components/LuminousGateway';
-import MetricGrid from '@/components/MetricGrid';
 import SpectrumGrid from '@/components/SpectrumGrid';
 import VelocityVaultObsidian from '@/components/VelocityVaultObsidian';
 import { getWebsites } from '@/lib/data';
@@ -17,8 +16,6 @@ export const metadata: Metadata = {
 
 export default async function AllCategoriesPage() {
   const websites = await getWebsites();
-  const totalWebsites = websites.length;
-  const totalCategories = MACRO_CATEGORIES.filter(c => c !== 'Browse All').length;
 
   // Extract and randomize websites for VelocityVaultObsidian
   // Use featured websites if available, otherwise use all websites
@@ -56,10 +53,6 @@ export default async function AllCategoriesPage() {
           title="THE ARCHIVE"
           subtitle="A curated collection of digital design systems and templates."
           placeholder="What are you building today?"
-        />
-        <MetricGrid
-          totalWebsites={totalWebsites}
-          totalCategories={totalCategories}
         />
         <SpectrumGrid 
           title="BROWSE SECTORS"

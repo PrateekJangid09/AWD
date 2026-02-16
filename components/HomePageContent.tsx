@@ -2,17 +2,16 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import AtmosphericGallery from '@/components/AtmosphericGallery';
-import MetricGrid from '@/components/MetricGrid';
+import QuantumDirectoryHero from '@/components/QuantumDirectoryHero';
+import type { CategoryPill } from '@/components/QuantumDirectoryHero';
 import { Website } from '@/lib/types';
 
-// Dynamic imports for below-the-fold components to reduce initial bundle size
-const RelicGrid = dynamic(() => import('@/components/RelicGrid'), {
-  loading: () => <div className="h-96 animate-pulse bg-neutral-900" />,
+const LumosGalleryGrid = dynamic(() => import('@/components/LumosGalleryGrid'), {
+  loading: () => <div className="h-96 animate-pulse bg-neutral-200" />,
 });
 
-const NebulaFilter = dynamic(() => import('@/components/NebulaFilter'), {
-  loading: () => <div className="h-48 animate-pulse bg-neutral-900" />,
+const PrecisionFilter = dynamic(() => import('@/components/PrecisionFilter'), {
+  loading: () => <div className="h-20 animate-pulse bg-neutral-200" />,
 });
 
 const PrismBrowserGrid = dynamic(() => import('@/components/PrismBrowserGrid'), {
@@ -21,8 +20,7 @@ const PrismBrowserGrid = dynamic(() => import('@/components/PrismBrowserGrid'), 
 
 interface HomePageContentProps {
   categories: string[];
-  totalWebsites: number;
-  totalCategories: number;
+  categoryPills: CategoryPill[];
   featuredWebsites: Website[];
   /** Optional: when omitted, PrismBrowserGrid fetches from /api/websites on the client */
   websites?: Website[];
@@ -30,21 +28,13 @@ interface HomePageContentProps {
 
 export default function HomePageContent({
   categories,
-  totalWebsites,
-  totalCategories,
+  categoryPills,
   featuredWebsites,
   websites = [],
 }: HomePageContentProps) {
-  const [heroSearchQuery, setHeroSearchQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-
-  const handleHeroSearch = (query: string) => {
-    setHeroSearchQuery(query);
-    // Scroll to browse section
-    setTimeout(() => {
-      document.getElementById('browse')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
+  const [selectedPageTypes, setSelectedPageTypes] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleCategoryChange = (selected: string[]) => {
     setSelectedCategories(selected);
@@ -57,39 +47,45 @@ export default function HomePageContent({
   return (
     <>
       {/* Hero Section */}
-      <AtmosphericGallery
-        title="DESIGN INTELLIGENCE"
-        subtitle="Curating the finest digital experiences."
-        placeholder="Search the archive..."
-        featuredWebsites={featuredWebsites}
-        onSearch={handleHeroSearch}
+      <QuantumDirectoryHero
+        headline="The Encyclopedia of Digital Design."
+        subheadline="Curated inspiration for designers, developers, and founders. Browse by category to find exactly what you need."
+        categories={categoryPills}
+        browseButtonText="Browse All Templates"
+        browseButtonLink="#browse"
+        textColor="#050505"
+        accentColor="#3B82F6"
+        bgColor="#FFFFFF"
       />
 
-      {/* Metric strip section */}
-      <MetricGrid
-        totalWebsites={totalWebsites}
-        totalCategories={totalCategories}
+      {/* Featured Section (Hall of Fame) */}
+      <LumosGalleryGrid
+        headline="Fresh from the Community"
+        subheadline="Hand-picked websites showcasing the best in digital product design."
+        items={featuredWebsites.map((w) => ({
+          title: w.name,
+          author: w.name,
+          tag: w.displayCategory || w.category,
+          image: w.screenshotUrl,
+          slug: w.slug,
+        }))}
+        textColor="#050505"
+        bgColor="#FFFFFF"
       />
-
-      {/* Featured Section */}
-      <RelicGrid
-        title="HALL OF LEGENDS"
-        subtitle="Digital Masterpieces That Define Excellence"
-        websites={featuredWebsites}
-      />
-
-      {/* Velocity Vault Section - Hidden */}
-      {/* <VelocityVault
-        title="Velocity Deck"
-        websites={websites}
-      /> */}
 
       {/* Filter Section */}
-      <NebulaFilter
-        title="Browse by Sector"
+      <PrecisionFilter
         categories={categories}
         selectedCategories={selectedCategories}
         onCategoryChange={handleCategoryChange}
+        selectedPageTypes={selectedPageTypes}
+        onPageTypeChange={setSelectedPageTypes}
+        showSearch
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        textColor="#050505"
+        bgColor="rgba(255, 255, 255, 0.95)"
+        borderColor="rgba(0, 0, 0, 0.08)"
       />
 
       {/* Main Content Section - websites empty: grid fetches from /api/websites on mount */}
@@ -97,8 +93,9 @@ export default function HomePageContent({
         title="Selected Projects"
         subtitle="A showcase of high-fidelity digital products."
         websites={websites}
-        initialSearchQuery={heroSearchQuery}
+        initialSearchQuery={searchQuery}
         selectedCategories={selectedCategories}
+        selectedPageTypes={selectedPageTypes}
       />
     </>
   );

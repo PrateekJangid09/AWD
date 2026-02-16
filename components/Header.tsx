@@ -1,214 +1,420 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MACRO_CATEGORIES, slugifyCategory } from '@/lib/categories';
 
-interface HeaderProps {
+/**
+ * QUANTUM FLOATING DOCK HEADER (2026 Edition - Mobile Optimized)
+ */
+
+export interface NavItem {
+  title: string;
+  link: string;
+}
+
+export interface QuantumHeaderProps {
+  logoText?: string;
+  badgeText?: string;
+  navItems?: NavItem[];
+  ctaText?: string;
+  ctaLink?: string;
+  glassTint?: string;
+  textColor?: string;
+  accentColor?: string;
   variant?: 'default' | 'slug';
 }
 
-export default function Header({ variant = 'default' }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isBrowseDropdownOpen, setIsBrowseDropdownOpen] = useState(false);
+export default function Header(props: QuantumHeaderProps) {
+  const {
+    logoText = 'ALLWEBSITES',
+    badgeText = '',
+    navItems = [
+      { title: 'Browse', link: '/' },
+      { title: 'Website Templates', link: '/website-templates-for-framer' },
+      { title: 'About', link: '/about' },
+    ],
+    ctaText = 'Try Web‑to‑Figma',
+    ctaLink = 'https://www.figma.com/community/plugin/1297530151115228662/web-to-figma-convert-any-website-or-html-code-to-design',
+    glassTint = 'rgba(255, 255, 255, 0.85)',
+    textColor = '#050505',
+    accentColor = '#FF3B30',
+    variant = 'default',
+  } = props;
 
-  useEffect(() => {
-    if (variant === 'slug') {
-      // For slug pages, always show the dark bar
-      setIsScrolled(true);
-      return;
-    }
-    
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.href =
+      'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    const handleScroll = () =>
+      setScrolled(variant === 'slug' || window.scrollY > 50);
     handleScroll();
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const handleResize = () => setIsMobile(window.innerWidth <= 810);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      if (document.head.contains(link)) document.head.removeChild(link);
+    };
   }, [variant]);
 
-  const ACCENT_COLOR = '#CCFF00';
-  const isSlugPage = variant === 'slug';
+  const dockStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: isMobile ? '16px' : scrolled ? '16px' : '24px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: isMobile ? 'calc(100% - 32px)' : 'auto',
+    minWidth: isMobile ? 'unset' : '600px',
+    maxWidth: '1200px',
+    height: '64px',
+    backgroundColor: glassTint,
+    backdropFilter: 'blur(24px) saturate(180%)',
+    WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+    borderRadius: '20px',
+    border: `1px solid ${textColor}15`,
+    boxShadow: scrolled
+      ? '0 20px 40px -10px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1) inset'
+      : '0 10px 30px -10px rgba(0,0,0,0.05), 0 0 0 1px rgba(255,255,255,0.2) inset',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0 24px',
+    gap: '24px',
+    zIndex: 1000,
+    fontFamily: '"Poppins", sans-serif',
+    transition: 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)',
+  };
+
+  const dividerStyle: React.CSSProperties = {
+    width: '1px',
+    height: '20px',
+    backgroundColor: textColor,
+    opacity: 0.1,
+    display: isMobile ? 'none' : 'block',
+  };
+
+  const logoGroupStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    cursor: 'pointer',
+    flexShrink: 0,
+  };
+
+  const badgeStyle: React.CSSProperties = {
+    padding: '4px 8px',
+    borderRadius: '6px',
+    backgroundColor: accentColor,
+    color: '#FFF',
+    fontSize: '10px',
+    fontWeight: 700,
+    letterSpacing: '0.5px',
+    textTransform: 'uppercase',
+    display: badgeText ? 'block' : 'none',
+  };
+
+  const navStyle: React.CSSProperties = {
+    display: isMobile ? 'none' : 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    height: '100%',
+  };
+
+  const itemStyle = (i: number): React.CSSProperties => ({
+    position: 'relative',
+    padding: '8px 16px',
+    fontSize: '14px',
+    fontWeight: 500,
+    color: textColor,
+    textDecoration: 'none',
+    cursor: 'pointer',
+    opacity: hoveredIndex === i ? 1 : 0.6,
+    transition: 'opacity 0.3s ease',
+  });
+
+  const dotStyle = (isActive: boolean): React.CSSProperties => ({
+    position: 'absolute',
+    bottom: '0px',
+    left: '50%',
+    transform: isActive
+      ? 'translateX(-50%) scale(1)'
+      : 'translateX(-50%) scale(0)',
+    width: '4px',
+    height: '4px',
+    borderRadius: '50%',
+    backgroundColor: accentColor,
+    transition: 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+  });
+
+  const ctaStyle: React.CSSProperties = {
+    padding: '10px 20px',
+    backgroundColor: textColor,
+    color: '#FFFFFF',
+    borderRadius: '12px',
+    fontSize: '14px',
+    fontWeight: 600,
+    textDecoration: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    display: isMobile ? 'none' : 'block',
+    transition: 'transform 0.2s ease',
+    whiteSpace: 'nowrap',
+  };
+
+  const isExternalCta = ctaLink.startsWith('http');
 
   return (
-    <header 
-      className="fixed top-0 left-0 right-0 w-full z-[1000] flex justify-center px-5"
-    >
-      <nav
-        className={`
-          w-full max-w-[1400px] flex items-center justify-between
-          px-8 transition-all duration-300
-          ${isSlugPage 
-            ? 'h-[72px] bg-[#0F0F0F] rounded-b-2xl border-b border-white/5' 
-            : isScrolled || isBrowseDropdownOpen 
-              ? 'h-[72px] bg-black/85 backdrop-blur-xl border-b border-white/10 rounded-b-2xl' 
-              : 'h-[88px] bg-transparent border-b border-transparent rounded-b-2xl'
-          }
-        `}
-      >
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-xl font-extrabold tracking-tight text-white no-underline z-[1001]"
-        >
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            <Image
-              src="/Vector.png"
-              alt="AllWebsites.Design Logo"
-              width={32}
-              height={32}
-              className="object-contain w-auto h-auto"
-              priority
-            />
-          </div>
-          ALLWEBSITES
+    <>
+      <div style={dockStyle}>
+        <Link href="/" style={logoGroupStyle}>
+          <span
+            style={{
+              fontWeight: 700,
+              fontSize: '18px',
+              color: textColor,
+              letterSpacing: '-0.5px',
+            }}
+          >
+            {logoText}
+          </span>
+          {badgeText ? <span style={badgeStyle}>{badgeText}</span> : null}
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-2">
-          {/* Browse Templates with Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setIsBrowseDropdownOpen(true)}
-            onMouseLeave={() => setIsBrowseDropdownOpen(false)}
-          >
-            <Link
-              href="/"
-              className={`
-                px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
-                ${isBrowseDropdownOpen 
-                  ? 'text-white bg-white/15' 
-                  : 'text-white/60 hover:text-white hover:bg-white/10'
-                }
-              `}
-            >
-              Browse Templates
-              <svg className="inline-block ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </Link>
-            
-            {/* Dropdown Menu */}
-            <AnimatePresence>
-              {isBrowseDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-[calc(100vw-2rem)] sm:w-auto sm:min-w-[320px] max-w-[90vw] p-3 bg-black/95 backdrop-blur-xl border border-white/15 rounded-xl shadow-2xl z-[100]"
+        <div style={dividerStyle} />
+
+        <nav style={navStyle}>
+          {navItems.map((item, i) => {
+            const isExternal = item.link.startsWith('http');
+            const content = (
+              <>
+                {item.title}
+                <div style={dotStyle(hoveredIndex === i)} />
+              </>
+            );
+            const style = itemStyle(i);
+            if (isExternal) {
+              return (
+                <a
+                  key={i}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={style}
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <Link
-                    href="/c"
-                    className="block px-3 py-2 mb-1 text-sm font-semibold text-white hover:bg-white/10 rounded-md transition-colors border-b border-white/10 pb-2"
-                  >
-                    All Categories
-                  </Link>
-                  <div className="grid grid-cols-2 gap-1 mt-1">
-                    {MACRO_CATEGORIES.filter(cat => cat !== 'Browse All').map((category) => (
-                      <Link
-                        key={category}
-                        href={`/c/${slugifyCategory(category)}`}
-                        className="block px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors"
-                      >
-                        {category}
-                      </Link>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          
-          <Link
-            href="/website-templates-for-framer"
-            className="px-4 py-2 text-sm font-medium text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-          >
-            Website Templates
-          </Link>
-          
-          <Link
-            href="/about"
-            className="px-4 py-2 text-sm font-medium text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-          >
-            About
-          </Link>
-          
-          {/* Desktop CTA */}
-          <Link 
-            href="https://www.figma.com/community/plugin/1297530151115228662/web-to-figma-convert-any-website-or-html-code-to-design"
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="ml-2 px-5 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:scale-105 transition-transform shadow-lg"
-          >
-            Try Web‑to‑Figma
-          </Link>
-        </div>
-
-        {/* Mobile Hamburger */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-white z-[1001]"
-          aria-label="Toggle menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            {isMobileMenuOpen 
-              ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  {content}
+                </a>
+              );
             }
-          </svg>
-        </button>
-      </nav>
+            return (
+              <Link
+                key={i}
+                href={item.link}
+                style={style}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {content}
+              </Link>
+            );
+          })}
+        </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-[80px] left-0 w-full h-screen bg-black z-[999] flex flex-col p-10 gap-6"
-          >
-            <Link 
-              href="/" 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold text-white"
-            >
-              Browse Templates
-            </Link>
-            <Link 
-              href="/website-templates-for-framer" 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold text-white"
-            >
-              Website Templates
-            </Link>
-            <Link 
-              href="/about" 
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold text-white"
-            >
-              About
-            </Link>
+        {!isMobile ? <div style={dividerStyle} /> : null}
 
-            <div className="h-px bg-white/10 my-4" />
-
-            <Link 
-              href="https://www.figma.com/community/plugin/1297530151115228662/web-to-figma-convert-any-website-or-html-code-to-design"
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+          }}
+        >
+          {isExternalCta ? (
+            <a
+              href={ctaLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 text-center font-bold uppercase rounded-lg"
-              style={{ background: ACCENT_COLOR, color: '#000' }}
+              style={ctaStyle}
             >
-              Try Web‑to‑Figma
+              {ctaText}
+            </a>
+          ) : (
+            <Link href={ctaLink} style={ctaStyle}>
+              {ctaText}
             </Link>
-          </motion.div>
+          )}
+
+          {isMobile ? (
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '10px',
+                backgroundColor: `${textColor}08`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                border: 'none',
+              }}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  width: '18px',
+                  height: '14px',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: isOpen ? '6px' : '0',
+                    width: '100%',
+                    height: '2px',
+                    background: textColor,
+                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0)',
+                    transition: '0.3s',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '6px',
+                    width: '100%',
+                    height: '2px',
+                    background: textColor,
+                    opacity: isOpen ? 0 : 1,
+                    transition: '0.3s',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: isOpen ? '6px' : '0',
+                    width: '100%',
+                    height: '2px',
+                    background: textColor,
+                    transform: isOpen ? 'rotate(-45deg)' : 'rotate(0)',
+                    transition: '0.3s',
+                  }}
+                />
+              </div>
+            </button>
+          ) : null}
+        </div>
+      </div>
+
+      {/* Mobile Full Screen Menu */}
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundColor: glassTint,
+          backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
+          zIndex: 999,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '32px',
+          pointerEvents: isOpen ? 'all' : 'none',
+          opacity: isOpen ? 1 : 0,
+          transform: isOpen ? 'scale(1)' : 'scale(0.95)',
+          transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      >
+        {navItems.map((item, i) => {
+          const isExternal = item.link.startsWith('http');
+          const linkStyle: React.CSSProperties = {
+            fontSize: '24px',
+            fontWeight: 600,
+            color: textColor,
+            textDecoration: 'none',
+            opacity: isOpen ? 1 : 0,
+            transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+            transition: `all 0.4s ease ${i * 0.1}s`,
+          };
+          if (isExternal) {
+            return (
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                style={linkStyle}
+              >
+                {item.title}
+              </a>
+            );
+          }
+          return (
+            <Link
+              key={i}
+              href={item.link}
+              onClick={() => setIsOpen(false)}
+              style={linkStyle}
+            >
+              {item.title}
+            </Link>
+          );
+        })}
+        {isExternalCta ? (
+          <a
+            href={ctaLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            style={{
+              marginTop: '20px',
+              padding: '16px 32px',
+              backgroundColor: textColor,
+              color: '#FFF',
+              borderRadius: '16px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              opacity: isOpen ? 1 : 0,
+              transition: 'opacity 0.4s ease 0.3s',
+            }}
+          >
+            {ctaText}
+          </a>
+        ) : (
+          <Link
+            href={ctaLink}
+            onClick={() => setIsOpen(false)}
+            style={{
+              marginTop: '20px',
+              padding: '16px 32px',
+              backgroundColor: textColor,
+              color: '#FFF',
+              borderRadius: '16px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              opacity: isOpen ? 1 : 0,
+              transition: 'opacity 0.4s ease 0.3s',
+            }}
+          >
+            {ctaText}
+          </Link>
         )}
-      </AnimatePresence>
-    </header>
+      </div>
+    </>
   );
 }

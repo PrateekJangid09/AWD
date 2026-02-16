@@ -1,8 +1,6 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { getWebsiteBySlug, getAllSlugs, getRelatedWebsites, getWebsites } from '@/lib/data';
-import { MACRO_CATEGORIES, getCategoryColor } from '@/lib/categories';
+import { getWebsiteBySlug, getAllSlugs, getRelatedWebsites } from '@/lib/data';
+import { getCategoryColor } from '@/lib/categories';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import RelatedExhibits from '@/components/RelatedExhibits';
@@ -10,7 +8,6 @@ import NewsletterPostcard from '@/components/NewsletterPostcard';
 import { generateBreadcrumbListSchema } from '@/lib/schema';
 import CollageSitePage from '@/components/CollageSitePage';
 import SingleSiteHero from '@/components/SingleSiteHero';
-import MetricGrid from '@/components/MetricGrid';
 import type { Metadata } from 'next';
 
 interface PageProps {
@@ -70,11 +67,6 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
   const relatedWebsites = await getRelatedWebsites(website, 6);
   const displayCategory = website.displayCategory || website.category;
 
-  // Get totals for metrics section
-  const allWebsites = await getWebsites();
-  const totalWebsites = allWebsites.length;
-  const totalCategories = MACRO_CATEGORIES.length - 1; // Exclude "Browse All"
-
   // Generate breadcrumb schema
   const breadcrumbSchema = generateBreadcrumbListSchema([
     { label: 'Home', href: '/' },
@@ -105,12 +97,6 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
         accentColor={accentColor}
         spotlightSize={300}
         image={website.screenshotUrl}
-      />
-
-      {/* Metrics Section */}
-      <MetricGrid
-        totalWebsites={totalWebsites}
-        totalCategories={totalCategories}
       />
 
       {/* Detailed Collage Section */}

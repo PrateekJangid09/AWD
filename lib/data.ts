@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
 import { cache } from 'react';
-import { unstable_cache } from 'next/cache';
 import { Website } from './types';
 import { mapToMacroCategory } from './categories';
 
@@ -189,15 +188,8 @@ async function fetchWebsites(): Promise<Website[]> {
   }
 }
 
-// Cache parsed CSV across requests to reduce TTFB (revalidate every 5 min)
-const getWebsitesCached = unstable_cache(
-  fetchWebsites,
-  ['websites-list'],
-  { revalidate: 300 }
-);
-
-// Cached version - deduplicates calls within the same request
-export const getWebsites = cache(getWebsitesCached);
+// Deduplicate getWebsites within the same request (no unstable_cache - payload exceeds 2MB limit)
+export const getWebsites = cache(fetchWebsites);
 
 function sortWebsitesByQuality(websites: Website[]): Website[] {
   return websites.sort((a, b) => {
@@ -234,44 +226,6 @@ function calculateQualityScore(website: Website): number {
   if (website.name && website.name.length > 2) score += 5;
 
   return score;
-}
-
-export async function getCategories(): Promise<string[]> {
-  const websites = await getWebsites();
-  const categorySet = new Set<string>();
-  websites.forEach(site => {
-    const primaryCategory = site.category.split('/')[0].trim();
-    categorySet.add(primaryCategory);
-  });
-  return Array.from(categorySet).sort();
-}
-
-export async function getWebsitesByCategory(category: string): Promise<Website[]> {
-  const websites = await getWebsites();
-  if (category === 'All') return websites;
-  return websites.filter(site => site.category.startsWith(category));
-}
-
-export function getCategoryColor(category: string): string {
-  const colors: Record<string, string> = {
-    'SaaS': '#3B82F6',
-    'Design Studio': '#8B5CF6',
-    'Fintech': '#10B981',
-    'E-commerce': '#F59E0B',
-    'Portfolio': '#EC4899',
-    'AI Tool': '#6366F1',
-    'Creative Studio': '#A855F7',
-    'Media': '#14B8A6',
-    'Template': '#84CC16',
-    'Education': '#F97316',
-    'Health': '#EF4444',
-    'Crypto': '#06B6D4',
-    'DevTool': '#8B5CF6',
-    'Cloud': '#3B82F6',
-    'Marketing': '#F59E0B',
-  };
-  const primaryCategory = category.split('/')[0].trim();
-  return colors[primaryCategory] || '#6B7280';
 }
 
 export async function getWebsiteBySlug(slug: string): Promise<Website | null> {

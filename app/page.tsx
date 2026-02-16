@@ -35,15 +35,17 @@ export default async function HomePage() {
   const websites = await getWebsites();
   const categories = MACRO_CATEGORIES;
 
-  // Calculate stats
-  const totalWebsites = websites.length;
-  const totalCategories = categories.length - 1; // Exclude "Browse All"
-  
   // Get featured websites
   const featuredWebsites = websites.filter(w => w.featured).slice(0, 20);
 
+  // Category pills with counts for hero (exclude "Browse All")
+  const categoryPills = MACRO_CATEGORIES.filter((c) => c !== 'Browse All').map((title) => ({
+    title,
+    count: String(websites.filter((w) => (w.displayCategory || w.category) === title).length),
+  }));
+
   // Generate schema markup
-  const collectionPageSchema = generateCollectionPageSchema(totalWebsites);
+  const collectionPageSchema = generateCollectionPageSchema(websites.length);
   const organizationSchema = generateOrganizationSchema();
   const webSiteSchema = generateWebSiteSchema();
 
@@ -66,8 +68,7 @@ export default async function HomePage() {
       <main className="min-h-screen">
         <HomePageContent
           categories={categories}
-          totalWebsites={totalWebsites}
-          totalCategories={totalCategories}
+          categoryPills={categoryPills}
           featuredWebsites={featuredWebsites}
         />
         
