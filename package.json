@@ -10,7 +10,9 @@
     "screenshots": "node scripts/generate-screenshots.js",
     "screenshots:advanced": "node scripts/advanced-screenshot-system.js",
     "screenshots:hero": "MAX_SITES=50 npm run screenshots:advanced",
-    "screenshots:fullpage": "node scripts/capture-fullpage.js"
+    "screenshots:fullpage": "node scripts/capture-fullpage.js",
+    "studio:init": "npx create-sanity@latest -y --project ntdty3f6 --dataset production --template clean --output-path studio-awd",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

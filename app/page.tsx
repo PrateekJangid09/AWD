@@ -11,6 +11,9 @@ import {
 
 import type { Metadata } from 'next';
 
+/** Revalidate at most every 5 minutes (ISR). */
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: '1,700+ Best Website Design Examples | SaaS, AI, Agency Inspiration 2026 - AllWebsites.Design',
   description: 'Discover 1,700+ curated website designs from top companies. Browse SaaS, AI, Agency, Fintech landing pages. Free design inspiration for designers & developers.',

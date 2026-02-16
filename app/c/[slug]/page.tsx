@@ -15,6 +15,9 @@ import {
 
 type PageProps = { params: Promise<{ slug: string }> };
 
+/** Revalidate at most every 5 minutes (ISR). */
+export const revalidate = 300;
+
 export async function generateStaticParams() {
   // Exclude 'Browse All'
   const slugs = MACRO_CATEGORIES.filter(c => c !== 'Browse All').map(c => ({ slug: slugifyCategory(c) }));

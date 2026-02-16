@@ -151,6 +151,36 @@ Edit `scripts/generate-screenshots.js`:
 await page.setViewport({ width: 1280, height: 720 });
 ```
 
+## 🔄 Revalidation (ISR)
+
+Pages use **Incremental Static Regeneration**: they revalidate at most every 5 minutes. To refresh content immediately after updating `data/websites.csv` or SEO, use on-demand revalidation.
+
+### 1. Set the secret
+
+In **Vercel** (and locally for testing), add an environment variable:
+
+- **Name:** `REVALIDATE_SECRET`
+- **Value:** a long random string (e.g. from `openssl rand -hex 32`)
+
+### 2. Trigger revalidation
+
+**Revalidate homepage only:**
+```bash
+curl -X POST "https://allwebsites.design/api/revalidate?secret=YOUR_SECRET&path=/"
+```
+
+**Revalidate one site page:**
+```bash
+curl -X POST "https://allwebsites.design/api/revalidate?secret=YOUR_SECRET&path=/sites/my-site-slug"
+```
+
+**Revalidate entire site (all cached pages):**
+```bash
+curl -X POST "https://allwebsites.design/api/revalidate?secret=YOUR_SECRET&path=all"
+```
+
+Use GET with the same query params if you prefer. Invalid or missing `secret` returns 401.
+
 ## 🐛 Troubleshooting
 
 ### Issue: Missing URLs (101 placeholder sites)

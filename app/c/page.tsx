@@ -7,6 +7,9 @@ import VelocityVaultObsidian from '@/components/VelocityVaultObsidian';
 import { getWebsites } from '@/lib/data';
 import { MACRO_CATEGORIES } from '@/lib/categories';
 
+/** Revalidate at most every 5 minutes (ISR). */
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: 'All Categories – AllWebsites.Design',
   description: 'Explore all website categories in our comprehensive archive.',
