@@ -1,105 +1,68 @@
+export const MACRO_CATEGORIES = [
+  'Browse All', 'SaaS', 'Agency/Studio', 'Portfolio', 'Fintech', 'E-commerce',
+  'Developer', 'AI', 'AI Agent', 'Crypto/Web3', 'Health', 'Education',
+  'Media/Entertainment', 'Architecture/Real Estate', 'Food & Beverage',
+  'Travel/Hospitality', 'Nonprofit', 'Fashion/Retail', 'Music/Audio',
+  'Photography', 'Typography', 'Template', 'Other',
+] as const;
+
 export function getCategoryColor(category: string): string {
-	// Handle undefined/null category
-	if (!category) {
-		return '#ADADAD'; // Light gray default
-	}
-
-	// Dark mode highlight palette
-  // Distinct bright palette for all categories (no repeats)
   const colors: Record<string, string> = {
-    'SaaS': '#4F46E5',        // Indigo
-    'Agency/Studio': '#EC4899',// Pink
-    'Portfolio': '#10B981',    // Emerald
-    'Fintech': '#0D9488',      // Teal
-    'E-commerce': '#F59E0B',   // Amber
-    'Developer': '#8B5CF6',    // Violet
-    'AI': '#06B6D4',           // Cyan
-    'AI Agent': '#FF6B6B',     // Coral
-    'Crypto/Web3': '#F97316',  // Orange
-    'Health': '#84CC16',       // Lime
-    'Education': '#2563EB',    // Blue (deeper)
-    'Template': '#9CA3AF',     // Gray
-    'Other': '#64748B',        // Slate
+    SaaS: '#4F46E5', 'Agency/Studio': '#EC4899', Portfolio: '#10B981',
+    Fintech: '#0D9488', 'E-commerce': '#F59E0B', Developer: '#8B5CF6',
+    AI: '#06B6D4', 'AI Agent': '#FF6B6B', 'Crypto/Web3': '#F97316',
+    Health: '#84CC16', Education: '#2563EB', 'Media/Entertainment': '#DB2777',
+    'Architecture/Real Estate': '#A16207', 'Food & Beverage': '#DC2626',
+    'Travel/Hospitality': '#0284C7', Nonprofit: '#059669',
+    'Fashion/Retail': '#C026D3', 'Music/Audio': '#7C3AED',
+    Photography: '#475569', Typography: '#9333EA', Template: '#9CA3AF', Other: '#64748B',
   };
-
-	return colors[category] || '#ADADAD'; // Light gray default
+  return colors[category] || '#ADADAD';
 }
 
-// Map noisy/compound CSV categories into one of a small set of macro categories
 export function mapToMacroCategory(inputCategory: string): string {
-    const c = inputCategory.toLowerCase();
+  const c = inputCategory.toLowerCase().replace(/[_-]+/g, ' ');
+  const has = (...terms: string[]) => terms.some((term) => c.includes(term));
+  const hasWord = (term: string) => new RegExp(`(^|[^a-z0-9])${term}([^a-z0-9]|$)`, 'i').test(c);
 
-    // PRIORITY: classify AI Agents and AI before the broad 'tool/platform' bucket
-    if (c.includes('ai tool / agents') || c.includes('ai agent')) return 'AI Agent';
-    if (c.includes('ai')) return 'AI';
-
-    if (c.includes('saas') || c.includes('software') || c.includes('tool') || c.includes('platform')) return 'SaaS';
-    if (c.includes('fintech') || c.includes('finance') || c.includes('payments') || c.includes('bank')) return 'Fintech';
-    if (c.includes('e-commerce') || c.includes('ecommerce') || c.includes('store') || c.includes('shop')) return 'E-commerce';
-    if (c.includes('agency') || c.includes('design studio') || c.includes('studio') || c.includes('creative')) return 'Agency/Studio';
-    if (c.includes('portfolio')) return 'Portfolio';
-    if (c.includes('devtool') || c.includes('developer') || c.includes('docs') || c.includes('library')) return 'Developer';
-    if (c.includes('crypto') || c.includes('web3') || c.includes('defi') || c.includes('nft')) return 'Crypto/Web3';
-    if (c.includes('health') || c.includes('wellness') || c.includes('fitness') || c.includes('medical')) return 'Health';
-    if (c.includes('education') || c.includes('course')) return 'Education';
-    if (c.includes('template')) return 'Template';
-    return 'Other';
+  if (has('ai agent', 'agents', 'agentic')) return 'AI Agent';
+  if (hasWord('ai') || has('artificial intelligence', 'machine learning')) return 'AI';
+  if (has('fintech', 'finance', 'payment', 'banking', 'investment')) return 'Fintech';
+  if (has('fashion', 'apparel', 'beauty', 'jewelry')) return 'Fashion/Retail';
+  if (has('e commerce', 'ecommerce', 'retail', 'store', 'shop', 'marketplace')) return 'E-commerce';
+  if (has('agency', 'design studio', 'creative studio', 'studio', 'creative')) return 'Agency/Studio';
+  if (has('portfolio', 'personal')) return 'Portfolio';
+  if (has('developer', 'devtool', 'developer tool', 'documentation', 'library')) return 'Developer';
+  if (has('crypto', 'web3', 'defi', 'nft', 'blockchain')) return 'Crypto/Web3';
+  if (has('health', 'wellness', 'fitness', 'medical', 'healthcare')) return 'Health';
+  if (has('education', 'course', 'learning', 'school', 'university')) return 'Education';
+  if (has('media', 'entertainment', 'film', 'publishing', 'magazine')) return 'Media/Entertainment';
+  if (has('architecture', 'real estate', 'property', 'interior')) return 'Architecture/Real Estate';
+  if (has('food', 'beverage', 'restaurant', 'coffee', 'bakery')) return 'Food & Beverage';
+  if (has('travel', 'hospitality', 'hotel', 'tourism')) return 'Travel/Hospitality';
+  if (has('nonprofit', 'non profit', 'charity', 'foundation', 'conservation')) return 'Nonprofit';
+  if (has('music', 'audio', 'podcast')) return 'Music/Audio';
+  if (has('photography', 'photo')) return 'Photography';
+  if (has('typography', 'typeface', 'font')) return 'Typography';
+  if (has('template', 'ui kit')) return 'Template';
+  if (hasWord('saas') || has('software', 'tool', 'platform', 'productivity', 'business')) return 'SaaS';
+  return 'Other';
 }
 
-export const MACRO_CATEGORIES: string[] = [
-	'Browse All',
-	'SaaS',
-	'Agency/Studio',
-	'Portfolio',
-	'Fintech',
-	'E-commerce',
-	'Developer',
-	'AI',
-	'AI Agent',
-	'Crypto/Web3',
-	'Health',
-	'Education',
-	'Template',
-	'Other',
-];
+const SLUGS: Record<string, string> = {
+  SaaS: 'saas', 'Agency/Studio': 'agency-studio', Portfolio: 'portfolio', Fintech: 'fintech',
+  'E-commerce': 'e-commerce', Developer: 'developer', AI: 'ai', 'AI Agent': 'ai-agent',
+  'Crypto/Web3': 'crypto-web3', Health: 'health', Education: 'education',
+  'Media/Entertainment': 'media-entertainment', 'Architecture/Real Estate': 'architecture-real-estate',
+  'Food & Beverage': 'food-beverage', 'Travel/Hospitality': 'travel-hospitality', Nonprofit: 'nonprofit',
+  'Fashion/Retail': 'fashion-retail', 'Music/Audio': 'music-audio', Photography: 'photography',
+  Typography: 'typography', Template: 'template', Other: 'other', 'Browse All': 'all',
+};
 
-// Slug helpers for category routes
 export function slugifyCategory(name: string): string {
-  const map: Record<string, string> = {
-    'SaaS': 'saas',
-    'Agency/Studio': 'agency-studio',
-    'Portfolio': 'portfolio',
-    'Fintech': 'fintech',
-    'E-commerce': 'e-commerce',
-    'Developer': 'developer',
-    'AI': 'ai',
-    'AI Agent': 'ai-agent',
-    'Crypto/Web3': 'crypto-web3',
-    'Health': 'health',
-    'Education': 'education',
-    'Template': 'template',
-    'Other': 'other',
-    'Browse All': 'all'
-  };
-  return map[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  return SLUGS[name] || name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 }
 
 export function categoryFromSlug(slug: string): string | null {
-  const reverse: Record<string, string> = {
-    'saas': 'SaaS',
-    'agency-studio': 'Agency/Studio',
-    'portfolio': 'Portfolio',
-    'fintech': 'Fintech',
-    'e-commerce': 'E-commerce',
-    'developer': 'Developer',
-    'ai': 'AI',
-    'ai-agent': 'AI Agent',
-    'crypto-web3': 'Crypto/Web3',
-    'health': 'Health',
-    'education': 'Education',
-    'template': 'Template',
-    'other': 'Other',
-    'all': 'Browse All'
-  };
-  return reverse[slug] || null;
+  return Object.entries(SLUGS).find(([, value]) => value === slug)?.[0] || null;
 }

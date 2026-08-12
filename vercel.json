@@ -1,4 +1,6 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs"
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "allwebsites.design" }], "destination": "https://www.allwebsites.design/:path*", "permanent": true },
+    { "source": "/website-templates-for-framer/:path*", "destination": "/archive", "permanent": true }
+  ]
 }

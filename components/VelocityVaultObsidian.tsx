@@ -29,9 +29,7 @@ const LEVEL_COLORS = {
     3: "#FFD700", // Level 3: Gold
 }
 
-const fontStyles = `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=Space+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@700&display=swap');
-`
+const fontStyles = '';
 
 interface VelocityVaultObsidianProps {
     title?: string;

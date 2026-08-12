@@ -15,6 +15,11 @@ interface CollageSitePageProps {
   fontName: string;
   colors: string[];
   accentColor: string;
+  categorySlug: string;
+  editorialNote: string;
+  verificationLabel: string;
+  lastReviewedAt: string;
+  tags: string[];
 }
 
 export default function CollageSitePage({
@@ -27,6 +32,11 @@ export default function CollageSitePage({
   fontName,
   colors,
   accentColor,
+  categorySlug,
+  editorialNote,
+  verificationLabel,
+  lastReviewedAt,
+  tags,
 }: CollageSitePageProps) {
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -74,7 +84,7 @@ export default function CollageSitePage({
           }}
         >
           <Link
-            href="/"
+            href={`/c/${categorySlug}`}
             style={{
               textDecoration: 'none',
               color: '#111',
@@ -86,11 +96,11 @@ export default function CollageSitePage({
               paddingBottom: '2px',
             }}
           >
-← Back To Collection
+← Back to {category} collection
           </Link>
 
           {/* Massive Title with Negative Spacing */}
-          <h1
+          <h2
             style={{
               fontSize: 'clamp(56px, 8vw, 100px)',
               fontWeight: 900,
@@ -102,7 +112,7 @@ export default function CollageSitePage({
             }}
           >
             {title}
-          </h1>
+          </h2>
         </div>
 
         {/* --- 2. THE COLLAGE LAYOUT --- */}
@@ -148,7 +158,7 @@ export default function CollageSitePage({
                 {/* Use full screenshot if available, otherwise regular screenshot */}
                 <Image
                   src={fullImage || image}
-                  alt={`${title} screenshot`}
+                  alt={`${title} ${category} website design, full-page screenshot`}
                   width={1200}
                   height={2400}
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -270,7 +280,7 @@ export default function CollageSitePage({
                   fontWeight: 700,
                 }}
               >
-                // EDITOR_NOTES.TXT
+                // SOURCE_SUMMARY.TXT
               </h3>
               <p
                 style={{
@@ -283,6 +293,13 @@ export default function CollageSitePage({
                 {description}
               </p>
             </motion.div>
+
+            <div style={{ padding: '24px', border: '1px solid #D8D8D8', background: '#FFF' }}>
+              <h3 style={{ margin: '0 0 10px', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Editorial status</h3>
+              <p style={{ margin: 0, color: '#555', lineHeight: 1.65 }}>{editorialNote}</p>
+              <dl style={{ margin: '18px 0 0', display: 'grid', gap: '8px', fontSize: '13px' }}><div><dt style={{ display: 'inline', fontWeight: 700 }}>Verification: </dt><dd style={{ display: 'inline' }}>{verificationLabel}</dd></div><div><dt style={{ display: 'inline', fontWeight: 700 }}>Archive review: </dt><dd style={{ display: 'inline' }}>{new Date(`${lastReviewedAt}T00:00:00`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</dd></div></dl>
+              <ul aria-label="Source taxonomy" style={{ listStyle: 'none', padding: 0, margin: '18px 0 0', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>{tags.map((tag) => <li key={tag} style={{ border: '1px solid #DDD', borderRadius: 999, padding: '6px 10px', fontSize: '12px' }}>{tag}</li>)}</ul>
+            </div>
 
             {/* 2. The Color Strip (Pantone Style) */}
             <motion.div
@@ -350,7 +367,7 @@ export default function CollageSitePage({
               </div>
             </motion.div>
 
-            {/* 4. CTA (Big Sticker Button - Import to Figma) */}
+            {/* 4. CTA */}
             <motion.a
               href={`https://www.figma.com/community/plugin/1297530151115228662/web-to-figma-convert-any-website-or-html-code-to-design?url=${encodeURIComponent(siteUrl)}`}
               target="_blank"
@@ -389,7 +406,7 @@ export default function CollageSitePage({
                   <rect x="3" y="14" width="7" height="7" />
                   <rect x="14" y="14" width="7" height="7" />
                 </svg>
-                Import to Figma →
+                Open Web-to-Figma →
               </motion.button>
             </motion.a>
 

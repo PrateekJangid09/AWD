@@ -20,12 +20,13 @@ export default function NewsletterPostcard({
 }: NewsletterPostcardProps) {
   const [focused, setFocused] = React.useState(false);
   const [email, setEmail] = React.useState('');
+  const [status, setStatus] = React.useState('');
+  const [busy, setBusy] = React.useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter subscription here
-    console.log('Subscribe:', email);
-    // You can add your newsletter API call here
+    setBusy(true); setStatus('');
+    try { const response = await fetch('/api/newsletter', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email }) }); const result = await response.json(); if (!response.ok) throw new Error(result.error); setEmail(''); setStatus('Subscribed successfully.'); } catch (error) { setStatus(error instanceof Error ? error.message : 'Unable to subscribe.'); } finally { setBusy(false); }
   };
 
   return (
@@ -228,6 +229,7 @@ export default function NewsletterPostcard({
             {/* SUBMIT BUTTON (Sticker) */}
             <motion.button
               type="submit"
+              disabled={busy}
               whileHover={{ scale: 1.05, rotate: 2 }}
               whileTap={{ scale: 0.95 }}
               style={{
@@ -245,8 +247,9 @@ export default function NewsletterPostcard({
                 boxShadow: '4px 4px 0px rgba(0,0,0,0.2)',
               }}
             >
-              {buttonText}
+              {busy ? 'Sending…' : buttonText}
             </motion.button>
+            <p role="status" style={{ color: '#333', fontSize: '13px' }}>{status}</p>
           </form>
         </div>
       </motion.div>

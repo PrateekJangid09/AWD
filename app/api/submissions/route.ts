@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server';
+import { email, forwardForm, text } from '@/lib/form-webhooks';
+export async function POST(request: Request) { const body = await request.json().catch(() => ({})); if (text(body.company)) return NextResponse.json({ ok: true }); const address = email(body.email); const siteUrl = text(body.siteUrl, 500); const notes = text(body.notes, 3000); try { new URL(siteUrl); } catch { return NextResponse.json({ error: 'Enter a valid website URL.' }, { status: 400 }); } if (!address) return NextResponse.json({ error: 'Enter a valid email address.' }, { status: 400 }); return forwardForm('SUBMISSION_WEBHOOK_URL', { type: 'site-submission', email: address, siteUrl, notes, submittedAt: new Date().toISOString() }); }

@@ -1,10 +1,10 @@
 # AllWebsites.Design 🚀
 
-A high-performance directory of 700+ curated landing pages with automated screenshot generation, category filtering, and fuzzy search. Built with Next.js 15, TypeScript, and Tailwind CSS.
+A high-performance directory of curated website references with automated screenshot generation, category filtering, and fuzzy search. Built with Next.js 16, TypeScript, and Tailwind CSS.
 
 ## ✨ Features
 
-- **700+ Curated Websites** - Handpicked landing pages from SaaS, Fintech, E-commerce, and more
+- **Curated Website Archive** - Public counts are generated from the cleaned catalogue rather than hardcoded
 - **Smart Filtering** - Horizontal scrollable category pills with real-time counts
 - **Fuzzy Search** - Powered by Fuse.js for intelligent search across names, descriptions, and categories
 - **Automated Screenshots** - Puppeteer-based screenshot generation with fallback gradients
@@ -14,7 +14,7 @@ A high-performance directory of 700+ curated landing pages with automated screen
 
 ## 🏗️ Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Search**: Fuse.js (fuzzy search)

@@ -226,7 +226,7 @@ function PolaroidCard({ title, category, image, rotation, slug }: PolaroidCardPr
           {image ? (
             <Image
               src={image}
-              alt={title}
+              alt={`${title} ${category} website design screenshot`}
               fill
               style={{
                 objectFit: 'cover',

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 interface MarqueeColumnProps {
-  images: string[];
+  images: Array<{ src: string; alt: string }>;
   speed?: number;
   reverse?: boolean;
 }
@@ -51,10 +51,10 @@ const MarqueeColumn: React.FC<MarqueeColumnProps> = ({ images, speed = 20, rever
               border: '1px solid rgba(255,255,255,0.1)',
             }}
           >
-            {img ? (
+            {img?.src ? (
               <Image
-                src={img}
-                alt={`Website screenshot ${i + 1}`}
+                src={img.src}
+                alt={i < images.length ? img.alt : ''}
                 width={400}
                 height={250}
                 style={{
@@ -99,14 +99,14 @@ interface HeroSectionProps {
   title?: string;
   description?: string;
   statsText?: string;
-  imagesCol1?: string[];
-  imagesCol2?: string[];
+  imagesCol1?: Array<{ src: string; alt: string }>;
+  imagesCol2?: Array<{ src: string; alt: string }>;
 }
 
 export default function HeroSection({
   title = "We curate the internet's finest digital experiences.",
-  description = "AllWebsites.Design is a curated directory of 954+ website designs from top companies. Our mission is to provide designers with a comprehensive resource for inspiration.",
-  statsText = '954+ Active Sites Tracked',
+  description = 'AllWebsites.Design is a curated directory of website designs. Our mission is to provide designers with a transparent resource for inspiration.',
+  statsText = 'Active sites tracked',
   imagesCol1 = [],
   imagesCol2 = [],
 }: HeroSectionProps) {

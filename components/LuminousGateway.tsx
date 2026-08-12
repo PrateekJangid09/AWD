@@ -41,8 +41,6 @@ const CATEGORIES_TICKER = [
 ];
 
 const fontStyles = `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap');
-    
     .gradient-text {
         background: linear-gradient(to bottom, #FFFFFF 20%, #666666 100%);
         -webkit-background-clip: text;
@@ -202,7 +200,9 @@ export default function LuminousGateway({
                 </motion.p>
 
                 {/* --- THE HALO SEARCH --- */}
-                <motion.div
+                <motion.form
+                    action="/archive"
+                    method="get"
                     initial={{ width: "80%", opacity: 0 }}
                     animate={{ width: "100%", opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
@@ -228,6 +228,7 @@ export default function LuminousGateway({
                         <SearchIcon />
 
                         <input
+                            name="q"
                             placeholder={placeholder}
                             style={{
                                 flex: 1,
@@ -274,7 +275,7 @@ export default function LuminousGateway({
                             zIndex: -1,
                         }}
                     />
-                </motion.div>
+                </motion.form>
 
                 {/* Quick Links */}
                 <motion.div
@@ -292,7 +293,7 @@ export default function LuminousGateway({
                     <span style={{ fontSize: "12px", color: "#444" }}>
                         Trending:
                     </span>
-                    {["SaaS", "AI Agents", "Portfolio"].map((tag) => (
+                    {["SaaS", "AI Agent", "Portfolio"].map((tag) => (
                         <Link
                             key={tag}
                             href={`/c/${slugifyCategory(tag)}`}

@@ -9,13 +9,7 @@ import FaqSection from '@/components/about/FaqSection';
 import ActionGrid from '@/components/about/ActionGrid';
 import { getWebsites } from '@/lib/data';
 
-export const metadata: Metadata = {
-  title: 'About Us - AllWebsites.Design',
-  description: 'Learn about AllWebsites.Design, a curated directory of 954+ website designs for designers and developers seeking inspiration.',
-  alternates: {
-    canonical: '/about',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> { const count = (await getWebsites()).length; return { title: 'About AllWebsites.Design', description: `Learn how AllWebsites.Design maintains a cleaned archive of ${count.toLocaleString()} website design references.`, alternates: { canonical: '/about' } }; }
 
 export default async function AboutPage() {
   // Fetch websites to populate the marquee
@@ -28,8 +22,8 @@ export default async function AboutPage() {
   const firstWebsites = visibleWebsites.slice(0, 80);
   
   // Split into two columns for the marquee - each column gets 40 unique images
-  const imagesCol1 = firstWebsites.slice(0, 40).map(w => w.screenshotUrl);
-  const imagesCol2 = firstWebsites.slice(40, 80).map(w => w.screenshotUrl);
+  const imagesCol1 = firstWebsites.slice(0, 40).map(w => ({ src: w.screenshotUrl, alt: `${w.name} ${w.displayCategory || w.category} website design screenshot` }));
+  const imagesCol2 = firstWebsites.slice(40, 80).map(w => ({ src: w.screenshotUrl, alt: `${w.name} ${w.displayCategory || w.category} website design screenshot` }));
   
   // Get total count
   const totalCount = visibleWebsites.length;
@@ -48,7 +42,7 @@ export default async function AboutPage() {
         <HeroSection
           title="We curate the internet's finest digital experiences."
           description="AllWebsites.Design is a curated directory of website designs from top companies. Our mission is to provide designers with a comprehensive resource for inspiration."
-          statsText={`${totalCount}+ Active Sites Tracked`}
+            statsText={`${totalCount.toLocaleString()} Active Sites Tracked`}
           imagesCol1={imagesCol1}
           imagesCol2={imagesCol2}
         />
@@ -56,7 +50,7 @@ export default async function AboutPage() {
         {/* Mission / Stats Bento Section */}
         <section className="border-t border-foreground/20">
           <AllWebsitesAbout
-            stat1Value={`${totalCount}+`}
+            stat1Value={totalCount.toLocaleString()}
             stat1Label="Curated Designs"
             stat2Value={`${categoryCount}+`}
             stat2Label="Categories"

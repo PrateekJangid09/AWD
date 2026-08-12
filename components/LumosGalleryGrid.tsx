@@ -32,16 +32,11 @@ export default function LumosGalleryGrid({
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
     const checkRes = () => setIsMobile(window.innerWidth <= 810);
     checkRes();
     window.addEventListener('resize', checkRes);
     return () => {
       window.removeEventListener('resize', checkRes);
-      if (document.head.contains(link)) document.head.removeChild(link);
     };
   }, []);
 
@@ -101,7 +96,7 @@ export default function LumosGalleryGrid({
 
       <div style={{ marginTop: '40px' }}>
         <Link
-          href="/c"
+          href="/archive"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -163,7 +158,7 @@ function DesignCard({
         >
           <Image
             src={item.image}
-            alt={item.title}
+            alt={`${item.title} ${item.tag} website design screenshot`}
             width={400}
             height={711}
             style={{

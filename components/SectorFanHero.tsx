@@ -16,9 +16,7 @@ const THEME = {
     border: "rgba(255,255,255,0.1)",
 }
 
-const fontStyles = `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
-`
+const fontStyles = '';
 
 interface SectorFanHeroProps {
     title?: string;
@@ -161,7 +159,7 @@ export default function SectorFanHero(props: SectorFanHeroProps) {
                 >
                     Category Index
                 </div>
-                <h1
+                <h2
                     style={{
                         fontFamily: `"Space Grotesk", sans-serif`,
                         fontSize: "80px",
@@ -172,7 +170,7 @@ export default function SectorFanHero(props: SectorFanHeroProps) {
                     }}
                 >
                     {title}
-                </h1>
+                </h2>
             </motion.div>
 
             {/* THE FAN DECK CONTAINER */}
@@ -236,7 +234,7 @@ export default function SectorFanHero(props: SectorFanHeroProps) {
                     letterSpacing: "1px",
                 }}
             >
-                HOVER TO EXPLORE SECTORS
+                EXPLORE WEBSITE SECTORS
             </motion.div>
         </section>
     )

@@ -15,9 +15,7 @@ const THEME = {
     sub: "#888888",
 };
 
-const fontStyles = `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
-`;
+const fontStyles = '';
 
 interface SpectrumGridProps {
     title?: string;

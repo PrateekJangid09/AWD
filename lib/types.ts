@@ -16,6 +16,10 @@ export interface Website {
 	featured?: boolean;
 	/** Whether this website is hidden from the directory */
 	hidden?: boolean;
+	/** Source taxonomy retained for transparency and deterministic related results. */
+	tags?: string[];
+	verificationStatus?: 'automated' | 'manually-reviewed';
+	lastReviewedAt?: string;
+	descriptionSanitized?: boolean;
 }
-
 

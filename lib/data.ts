@@ -4,242 +4,127 @@ import Papa from 'papaparse';
 import { cache } from 'react';
 import { Website } from './types';
 import { mapToMacroCategory } from './categories';
+import { AUDIT_REVIEW_DATE } from './site';
 
-function createSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+const PLACEHOLDER_DOMAINS = new Set([
+  'e-commerce.com', 'music-related.com', 'non-profit.com', 'r-sum.com',
+  'portfolio-website.com', 'personal-portfolio.com',
+]);
+
+const CATEGORY_OVERRIDES: Record<string, string> = {
+  'bassettespresso.com': 'Food & Beverage',
+  'coastalconservationleague.org': 'Nonprofit',
+  'a24films.com': 'Media/Entertainment',
+  '5pointfilm.org': 'Media/Entertainment',
+  'adamunderwear.com': 'Fashion/Retail',
+  'aghoststore.com': 'E-commerce',
+};
+
+const UNSAFE_DESCRIPTIONS = [
+  /ai-powered platform leveraging machine learning/i,
+  /innovative digital platform providing modern solutions/i,
+  /professional portfolio website showcasing creative work/i,
+  /leading ecommerce platform offering seamless online shopping/i,
+];
+
+function createSlug(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-// Check if category is specific (not "Other" or empty)
-function hasSpecificCategory(category: string): boolean {
-  const cat = category?.trim() || '';
-  return cat !== '' && 
-         cat !== 'Uncategorized' && 
-         cat !== 'Other' &&
-         cat.toLowerCase() !== 'other';
+function normalizeText(value: string) {
+  return value.normalize('NFC').replace(/AÃRK/gi, 'AARK').replace(/â€™/g, '’')
+    .replace(/â€“/g, '–').replace(/â€”/g, '—').replace(/Â/g, '').replace(/\s+/g, ' ').trim();
 }
 
-// Check if URL is a valid official website (not platform link, not inferred)
-function isValidOfficialUrl(url: string, name: string): boolean {
+function domainFor(value: string) {
+  try { return new URL(value).hostname.toLowerCase().replace(/^www\./, ''); } catch { return ''; }
+}
+
+function canonicalUrlKey(value: string) {
   try {
-    if (!url || typeof url !== 'string' || !url.trim()) return false;
-    if (!name || typeof name !== 'string') return false;
-    
-    const urlLower = url.toLowerCase().trim();
-    
-    // Must start with http:// or https://
-    if (!urlLower.startsWith('http://') && !urlLower.startsWith('https://')) {
-      return false;
-    }
-    
-    // Exclude platform links
-    const platformDomains = [
-      'land-book.com',
-      'saaslandingpage.com',
-      'onepagelove.com',
-      'webflow.com/made-in-webflow',
-      'webflow.com/@',
-      'a1.gallery',
-    ];
-    
-    for (const platform of platformDomains) {
-      if (urlLower.includes(platform)) {
-        return false;
-      }
-    }
-    
-    // Extract domain from URL
-    const urlObj = new URL(url);
-    let domain = urlObj.hostname.toLowerCase().replace(/^www\./, '');
-    const domainParts = domain.split('.');
-    if (domainParts.length === 0) return false;
-    
-    const domainWithoutTld = domainParts[0];
-    
-    // Check if domain is too long (likely inferred)
-    // If domain is longer than 30 chars, it's likely inferred
-    if (domainWithoutTld.length > 30) {
-      return false;
-    }
-    
-    // Check if domain matches slugified name pattern (likely inferred)
-    const nameSlug = createSlug(name);
-    if (nameSlug && nameSlug.length > 15 && domainWithoutTld.length > 20) {
-      // If domain contains a significant portion of the slugified name and is very long
-      const nameSlugStart = nameSlug.substring(0, Math.min(20, nameSlug.length));
-      if (domainWithoutTld.includes(nameSlugStart) && domainWithoutTld.length > 25) {
-        return false;
-      }
-    }
-    
-    // Check for obvious inferred patterns: very long domains with multiple hyphens
-    const hyphenCount = (domainWithoutTld.match(/-/g) || []).length;
-    if (domainWithoutTld.length > 25 && hyphenCount > 3) {
-      return false;
-    }
-    
-    return true;
-  } catch (e) {
-    // Invalid URL format or any error
-    return false;
-  }
+    const url = new URL(value);
+    return `${url.hostname.toLowerCase().replace(/^www\./, '')}${url.pathname.replace(/\/+$/, '') || '/'}`;
+  } catch { return null; }
 }
 
-// Internal function to fetch and parse websites
+function isPlaceholderRecord(name: string, url: string) {
+  return PLACEHOLDER_DOMAINS.has(domainFor(url)) || /^(e-?commerce|music related|non ?profit|résumé|resume|portfolio website|personal portfolio)$/i.test(name.trim());
+}
+
+function sanitizeDescription(name: string, value: string, category: string) {
+  if (!UNSAFE_DESCRIPTIONS.some((pattern) => pattern.test(value))) return { description: value, sanitized: false };
+  return {
+    description: `${name} is included as a ${category.toLowerCase()} website design reference. Review the captured page, visual system, and official source before using it as factual company information.`,
+    sanitized: true,
+  };
+}
+
+function hasSpecificCategory(category: string) {
+  const value = category?.trim().toLowerCase();
+  return Boolean(value && value !== 'uncategorized' && value !== 'other');
+}
+
+function isValidOfficialUrl(url: string, name: string) {
+  try {
+    if (!url || !name || !/^https?:\/\//i.test(url)) return false;
+    const lower = url.toLowerCase();
+    if (['land-book.com', 'saaslandingpage.com', 'onepagelove.com', 'webflow.com/made-in-webflow', 'webflow.com/@', 'a1.gallery'].some((item) => lower.includes(item))) return false;
+    const domain = new URL(url).hostname.replace(/^www\./, '').split('.')[0];
+    if (domain.length > 30) return false;
+    const hyphens = (domain.match(/-/g) || []).length;
+    return !(domain.length > 25 && hyphens > 3);
+  } catch { return false; }
+}
+
+function score(website: Website) {
+  return (website.featured ? 100 : 0) + website.description.length;
+}
+
 async function fetchWebsites(): Promise<Website[]> {
-  try {
-    const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
-    
-    if (!fs.existsSync(csvPath)) {
-      console.error(`CSV file not found at: ${csvPath}`);
-      return [];
-    }
-    
-    const fileContent = fs.readFileSync(csvPath, 'utf-8');
+  const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
+  if (!fs.existsSync(csvPath)) return [];
+  const parsed = Papa.parse<string[]>(fs.readFileSync(csvPath, 'utf8'), { header: false, skipEmptyLines: true });
+  const websites = parsed.data.slice(1).map((row, index) => {
+    const name = normalizeText(String(row[0]?.trim() || 'Unnamed'));
+    const url = String(row[1]?.trim() || '');
+    const category = normalizeText(String(row[2]?.trim() || 'Uncategorized'));
+    const rawDescription = normalizeText(String(row[3]?.trim() || 'No description available'));
+    const slug = createSlug(name);
+    const displayCategory = CATEGORY_OVERRIDES[domainFor(url)] || mapToMacroCategory(category);
+    const clean = sanitizeDescription(name, rawDescription, displayCategory);
+    return {
+      id: String(index + 1), name, url, category, description: clean.description, slug, displayCategory,
+      screenshotUrl: `/screenshots/${slug}.webp`, fullScreenshotUrl: `/fullshots/${slug}.webp`,
+      featured: row[4]?.trim().toLowerCase() === 'true', hidden: row[5]?.trim().toLowerCase() === 'true',
+      tags: category.split('/').map(normalizeText).filter(Boolean), verificationStatus: 'automated' as const,
+      lastReviewedAt: AUDIT_REVIEW_DATE, descriptionSanitized: clean.sanitized,
+    } satisfies Website;
+  }).filter((website) => !website.hidden && website.name !== 'Unnamed' && hasSpecificCategory(website.category)
+    && isValidOfficialUrl(website.url, website.name) && !isPlaceholderRecord(website.name, website.url));
 
-    if (!fileContent || fileContent.trim() === '') {
-      console.error('CSV file is empty');
-      return [];
-    }
-
-    const { data } = Papa.parse<string[]>(fileContent, {
-      header: false,
-      skipEmptyLines: true,
-    });
-
-    if (!data || data.length === 0) {
-      console.error('No data parsed from CSV');
-      return [];
-    }
-
-    const websites: Website[] = data.slice(1)
-      .map((row, index) => {
-        try {
-          const name = (row[0]?.trim() || 'Unnamed').toString();
-          const url = (row[1]?.trim() || '').toString();
-          const category = (row[2]?.trim() || 'Uncategorized').toString();
-          const description = (row[3]?.trim() || 'No description available').toString();
-          const featured = (row[4]?.trim().toLowerCase() === 'true');
-          const hidden = (row[5]?.trim().toLowerCase() === 'true');
-          const slug = createSlug(name);
-          const displayCategory = mapToMacroCategory(category);
-
-          // Return URLs directly - let the client handle 404s for missing images
-          // This prevents Vercel from bundling screenshot files into the serverless function
-          const screenshotUrl = `/screenshots/${slug}.webp`;
-
-          return {
-            id: `${index + 1}`,
-            name,
-            url,
-            category,
-            description,
-            screenshotUrl,
-            slug,
-            displayCategory: displayCategory || category,
-            fullScreenshotUrl: `/fullshots/${slug}.webp`,
-            featured,
-            hidden,
-          } as Website;
-        } catch (rowError) {
-          console.error(`Error processing row ${index + 1}:`, rowError);
-          return null;
-        }
-      })
-      .filter((website): website is Website => website !== null && website !== undefined);
-
-    // Filter out hidden websites
-    let visibleWebsites = websites.filter(website => !website.hidden);
-    
-    // Filter to only include valid websites:
-    // 1. Must have specific category (not "Other" or empty)
-    // 2. Must have valid official URL (not platform link, not inferred)
-    // 3. Must have a name
-    visibleWebsites = visibleWebsites.filter(website => {
-      try {
-        // Check name
-        if (!website.name || typeof website.name !== 'string' || website.name.trim() === '' || website.name === 'Unnamed') {
-          return false;
-        }
-        
-        // Check category
-        if (!website.category || !hasSpecificCategory(website.category)) {
-          return false;
-        }
-        
-        // Check URL
-        if (!website.url || !isValidOfficialUrl(website.url, website.name)) {
-          return false;
-        }
-        
-        return true;
-      } catch (e) {
-        // If any error occurs during filtering, exclude the website
-        return false;
-      }
-    });
-
-    return sortWebsitesByQuality(visibleWebsites);
-  } catch (error) {
-    console.error('Error in getWebsites:', error);
-    return [];
+  const byDestination = new Map<string, Website>();
+  for (const website of websites) {
+    const key = canonicalUrlKey(website.url) || `slug:${website.slug}`;
+    const current = byDestination.get(key);
+    if (!current || score(website) > score(current)) byDestination.set(key, website);
   }
+  const bySlug = new Map<string, Website>();
+  for (const website of byDestination.values()) {
+    const current = bySlug.get(website.slug);
+    if (!current || score(website) > score(current)) bySlug.set(website.slug, website);
+  }
+  return [...bySlug.values()].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.name.localeCompare(b.name));
 }
 
-// Deduplicate getWebsites within the same request (no unstable_cache - payload exceeds 2MB limit)
 export const getWebsites = cache(fetchWebsites);
+export async function getWebsiteBySlug(slug: string) { return (await getWebsites()).find((site) => site.slug === slug) || null; }
+export async function getAllSlugs() { return (await getWebsites()).map((site) => site.slug); }
 
-function sortWebsitesByQuality(websites: Website[]): Website[] {
-  return websites.sort((a, b) => {
-    // First, prioritize featured websites
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    
-    // If both are featured or both are not featured, sort alphabetically
-    if (a.featured === b.featured) {
-      return a.name.localeCompare(b.name);
-    }
-    
-    // Fallback to quality score
-    const scoreA = calculateQualityScore(a);
-    const scoreB = calculateQualityScore(b);
-    return scoreB - scoreA;
-  });
-}
-
-function calculateQualityScore(website: Website): number {
-  let score = 0;
-
-  // Removed file system checks to reduce serverless function size
-  // Files in public/ are served statically, so we can assume they exist
-  // Featured websites get bonus points
-  if (website.featured) score += 50;
-
-  if (website.url && website.url.startsWith('http')) score += 15;
-
-  // Assume screenshots exist (they're in public/)
-  score += 20;
-
-  if (website.description && website.description.length > 20) score += 5;
-  if (website.name && website.name.length > 2) score += 5;
-
-  return score;
-}
-
-export async function getWebsiteBySlug(slug: string): Promise<Website | null> {
-  const websites = await getWebsites();
-  return websites.find(site => site.slug === slug) || null;
-}
-
-export async function getAllSlugs(): Promise<string[]> {
-  const websites = await getWebsites();
-  return websites.map(site => site.slug);
-}
-
-export async function getRelatedWebsites(website: Website, limit: number = 6): Promise<Website[]> {
-  const websites = await getWebsites();
-  const related = websites.filter(site => site.displayCategory === website.displayCategory && site.id !== website.id);
-  return related.sort(() => Math.random() - 0.5).slice(0, limit);
+export async function getRelatedWebsites(website: Website, limit = 6) {
+  const sourceTokens = new Set([...(website.tags || []), ...website.description.toLowerCase().split(/[^a-z0-9]+/).filter((token) => token.length > 4)]);
+  return (await getWebsites()).filter((site) => site.id !== website.id).map((site) => {
+    const tokens = new Set([...(site.tags || []), ...site.description.toLowerCase().split(/[^a-z0-9]+/).filter((token) => token.length > 4)]);
+    const overlap = [...sourceTokens].filter((token) => tokens.has(token)).length;
+    return { site, score: (site.displayCategory === website.displayCategory ? 20 : 0) + overlap + (site.featured ? 2 : 0) };
+  }).filter(({ score }) => score > 0).sort((a, b) => b.score - a.score || a.site.name.localeCompare(b.site.name)).slice(0, limit).map(({ site }) => site);
 }

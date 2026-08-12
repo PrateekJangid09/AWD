@@ -28,9 +28,9 @@ interface AllWebsitesAboutProps {
 export default function AllWebsitesAbout({
   title = 'AllWebsites.Design',
   missionText = 'We curate the internet\'s finest digital experiences. Our mission is to provide designers and developers with a comprehensive resource for design inspiration and best practices.',
-  stat1Value = '954+',
+  stat1Value = 'Current',
   stat1Label = 'Curated Designs',
-  stat2Value = '13+',
+  stat2Value = 'Governed',
   stat2Label = 'Categories',
   section1Title = 'What We Do',
   section1Body = 'We carefully curate hero sections and landing pages from top SaaS, agencies, and fintech platforms.',
@@ -155,7 +155,7 @@ export default function AllWebsitesAbout({
         >
           <div>
             <span style={styles.badge}>// Our Mission</span>
-            <h1 style={styles.h1}>{title}</h1>
+            <h2 style={styles.h1}>{title}</h2>
             <p style={styles.pMain}>{missionText}</p>
           </div>
         </motion.div>
@@ -219,4 +219,3 @@ export default function AllWebsitesAbout({
     </div>
   );
 }
-

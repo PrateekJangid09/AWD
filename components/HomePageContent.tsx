@@ -24,6 +24,7 @@ interface HomePageContentProps {
   featuredWebsites: Website[];
   /** Optional: when omitted, PrismBrowserGrid fetches from /api/websites on the client */
   websites?: Website[];
+  archiveCount: number;
 }
 
 export default function HomePageContent({
@@ -31,6 +32,7 @@ export default function HomePageContent({
   categoryPills,
   featuredWebsites,
   websites = [],
+  archiveCount,
 }: HomePageContentProps) {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedPageTypes, setSelectedPageTypes] = useState<string[]>([]);
@@ -48,11 +50,11 @@ export default function HomePageContent({
     <>
       {/* Hero Section */}
       <QuantumDirectoryHero
-        headline="The Encyclopedia of Digital Design."
-        subheadline="Curated inspiration for designers, developers, and founders. Browse by category to find exactly what you need."
+        headline={`Website Design Inspiration: ${archiveCount.toLocaleString()} Curated Examples`}
+        subheadline="The encyclopedia of digital design for designers, developers, and founders. Browse verified references by category or explore the complete archive."
         categories={categoryPills}
-        browseButtonText="Browse All Templates"
-        browseButtonLink="#browse"
+        browseButtonText="Browse Full Archive"
+        browseButtonLink="/archive"
         textColor="#050505"
         accentColor="#3B82F6"
         bgColor="#FFFFFF"
@@ -100,4 +102,3 @@ export default function HomePageContent({
     </>
   );
 }
-

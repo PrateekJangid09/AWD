@@ -2,16 +2,8 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Poppins } from 'next/font/google';
 import { motion } from 'framer-motion';
 import { slugifyCategory } from '@/lib/categories';
-
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-});
 
 export interface CategoryPill {
   title: string;
@@ -71,8 +63,8 @@ export default function QuantumDirectoryHero(props: QuantumDirectoryHeroProps) {
     headline = 'The Encyclopedia of Digital Design.',
     subheadline = 'Curated inspiration for designers, developers, and founders. Browse by category to find exactly what you need.',
     categories = DEFAULT_CATEGORIES,
-    browseButtonText = 'Browse All Templates',
-    browseButtonLink = '#browse',
+    browseButtonText = 'Browse Full Archive',
+    browseButtonLink = '/archive',
     textColor = '#050505',
     accentColor = '#3B82F6',
     bgColor = '#FFFFFF',
@@ -101,7 +93,7 @@ export default function QuantumDirectoryHero(props: QuantumDirectoryHeroProps) {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '48px',
-    fontFamily: poppins.style.fontFamily,
+    fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
     color: textColor,
     boxSizing: 'border-box',
     textAlign: 'center',
@@ -139,7 +131,7 @@ export default function QuantumDirectoryHero(props: QuantumDirectoryHeroProps) {
   const isExternal = browseButtonLink.startsWith('http') || browseButtonLink.startsWith('//');
 
   return (
-    <section style={sectionStyle} className={poppins.variable}>
+    <section style={sectionStyle}>
       <div
         style={{
           position: 'absolute',
@@ -179,7 +171,7 @@ export default function QuantumDirectoryHero(props: QuantumDirectoryHeroProps) {
           const pillColor = getCategoryColor(cat.title);
           const isHovered = hoveredIndex === i;
           const slug = slugifyCategory(cat.title);
-          const href = slug ? `/c/${slug}` : '#browse';
+          const href = slug ? `/c/${slug}` : '/c';
 
           return (
             <Link key={i} href={href} style={{ textDecoration: 'none' }}>

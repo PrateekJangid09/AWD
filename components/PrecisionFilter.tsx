@@ -62,16 +62,11 @@ export default function PrecisionFilter({
   );
 
   React.useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
     const checkRes = () => setIsMobile(window.innerWidth <= 810);
     checkRes();
     window.addEventListener('resize', checkRes);
     return () => {
       window.removeEventListener('resize', checkRes);
-      if (document.head.contains(link)) document.head.removeChild(link);
     };
   }, []);
 

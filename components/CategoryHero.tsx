@@ -27,9 +27,7 @@ const theme = {
   glassBorder: 'rgba(255,255,255,0.15)',
 };
 
-const fontStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Inter:wght@300;800;900&display=swap');
-`;
+const fontStyles = '';
 
 interface CategoryHeroProps {
   category: string;
@@ -369,7 +367,7 @@ function GlassMonolith({
             fontSize: '12px',
           }}
         >
-          VISUAL
+          Website preview
         </div>
       )}
 

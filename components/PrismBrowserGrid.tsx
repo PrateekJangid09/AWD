@@ -66,7 +66,7 @@ export default function PrismBrowserGrid({
   }, [initialWebsites.length]);
 
   // Use selectedCategories if provided, otherwise fall back to activeCategory
-  const effectiveSelectedCategories = selectedCategories.length > 0 ? selectedCategories : (activeCategory !== 'Browse All' ? [activeCategory] : []);
+  const effectiveSelectedCategories = useMemo(() => selectedCategories.length > 0 ? selectedCategories : (activeCategory !== 'Browse All' ? [activeCategory] : []), [activeCategory, selectedCategories]);
 
   // Update search query when hero search changes
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function PrismBrowserGrid({
       setVisibleCount(30);
       setAutoLoadCount(0);
     }
-  }, [initialSearchQuery]);
+  }, [initialSearchQuery, searchQuery]);
 
   // Setup Fuse.js for fuzzy search
   const fuse = useMemo(() => {
@@ -228,7 +228,6 @@ export default function PrismBrowserGrid({
       }}
     >
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
         
         .prism-grid {
           grid-template-columns: repeat(3, 1fr) !important;

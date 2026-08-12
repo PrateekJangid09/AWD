@@ -1,123 +1,46 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CategoryHero from '@/components/CategoryHero';
 import PrismBrowserGrid from '@/components/PrismBrowserGrid';
-import SectorFanHero from '@/components/SectorFanHero';
-import ChameleonHUD from '@/components/ChameleonHUD';
-import { MACRO_CATEGORIES, categoryFromSlug, slugifyCategory, getCategoryColor } from '@/lib/categories';
+import Pagination from '@/components/Pagination';
+import { MACRO_CATEGORIES, categoryFromSlug, slugifyCategory } from '@/lib/categories';
 import { getWebsites } from '@/lib/data';
-import {
-  generateItemListSchema,
-  generateBreadcrumbListSchema,
-} from '@/lib/schema';
+import { getCategoryContent } from '@/lib/category-content';
+import { generateBreadcrumbListSchema, generateItemListSchema } from '@/lib/schema';
+import { PAGE_SIZE, SITE_URL, pageCount, validPage } from '@/lib/site';
 
-type PageProps = { params: Promise<{ slug: string }> };
-
-/** Revalidate at most every 5 minutes (ISR). */
+type Props = { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 export const revalidate = 300;
+export async function generateStaticParams() { return MACRO_CATEGORIES.filter((category) => category !== 'Browse All').map((category) => ({ slug: slugifyCategory(category) })); }
 
-export async function generateStaticParams() {
-  // Exclude 'Browse All'
-  const slugs = MACRO_CATEGORIES.filter(c => c !== 'Browse All').map(c => ({ slug: slugifyCategory(c) }));
-  return slugs;
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { slug } = await params;
   const category = categoryFromSlug(slug);
   if (!category) return { title: 'Category Not Found' };
-  return {
-    title: `${category} Websites – AllWebsites.Design`,
-    description: `Explore curated ${category} landing pages and hero sections.`,
-    robots: { index: true },
-    alternates: { canonical: `/c/${slug}` },
-  };
+  const content = getCategoryContent(category);
+  const websites = (await getWebsites()).filter((website) => (website.displayCategory || website.category) === category);
+  const pages = pageCount(websites.length);
+  const page = validPage((await searchParams).page, pages);
+  const canonical = `/c/${slug}${page > 1 ? `?page=${page}` : ''}`;
+  const title = `${content.title}: ${websites.length.toLocaleString()} Examples${page > 1 ? ` — Page ${page}` : ''}`;
+  return { title, description: content.description, alternates: { canonical }, robots: category === 'Other' || websites.length < 30 ? { index: false, follow: true } : { index: true, follow: true }, openGraph: { title, description: content.description, url: `${SITE_URL}${canonical}`, type: 'website' }, twitter: { card: 'summary_large_image', title, description: content.description } };
 }
 
-export default async function CategoryPage({ params }: PageProps) {
+export default async function CategoryPage({ params, searchParams }: Props) {
   const { slug } = await params;
   const category = categoryFromSlug(slug);
-  if (!category) return notFound();
-
-  const websites = await getWebsites();
-  const categories = MACRO_CATEGORIES;
-
-  // Calculate category-specific stats
-  const categoryWebsites = websites.filter(
-    (site) => (site.displayCategory || site.category) === category
-  );
-  const categoryCount = categoryWebsites.length;
-  const featuredCount = categoryWebsites.filter((w) => w.featured).length;
-  const avgQuality = categoryWebsites.length > 0
-    ? categoryWebsites.reduce((acc, w) => acc + (w.qualityScore || 50), 0) / categoryWebsites.length
-    : 0;
-  const totalCategories = MACRO_CATEGORIES.filter(c => c !== 'Browse All').length;
-
-  // Get category color and create a color palette
-  const categoryColor = getCategoryColor(category);
-  // Use category color as primary, then use other category colors for variety
-  const colorPalette = [
-    categoryColor,
-    getCategoryColor('AI') !== categoryColor ? getCategoryColor('AI') : getCategoryColor('Fintech'),
-    getCategoryColor('Agency/Studio') !== categoryColor ? getCategoryColor('Agency/Studio') : getCategoryColor('Developer'),
-    getCategoryColor('E-commerce') !== categoryColor ? getCategoryColor('E-commerce') : getCategoryColor('Portfolio'),
-  ];
-
-  // Generate schema markup
-  const itemListSchema = generateItemListSchema(category, websites, `/c/${slug}`);
-  const breadcrumbSchema = generateBreadcrumbListSchema([
-    { label: 'Home', href: '/' },
-    { label: category },
-  ]);
-
+  if (!category) notFound();
+  const content = getCategoryContent(category);
+  const all = await getWebsites();
+  const categoryWebsites = all.filter((website) => (website.displayCategory || website.category) === category);
+  const pages = pageCount(categoryWebsites.length);
+  const page = validPage((await searchParams).page, pages);
+  const items = categoryWebsites.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const route = `/c/${slug}${page > 1 ? `?page=${page}` : ''}`;
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Header />
-      <main className="min-h-screen bg-background">
-        <CategoryHero 
-          category={category} 
-          websites={websites}
-          description={`Explore curated ${category} landing pages and hero sections.`}
-        />
-        <ChameleonHUD
-          stat1_val={`${categoryCount}`}
-          stat1_lbl="Archive"
-          stat1_color={colorPalette[0]}
-          stat2_val={`${featuredCount}`}
-          stat2_lbl="Featured"
-          stat2_color={colorPalette[1]}
-          stat3_val={`${(avgQuality / 10).toFixed(1)}`}
-          stat3_lbl="Quality"
-          stat3_color={colorPalette[2]}
-          stat4_val={`${totalCategories}`}
-          stat4_lbl="Categories"
-          stat4_color={colorPalette[3]}
-        />
-        <PrismBrowserGrid
-          title={`${category} Projects`}
-          subtitle={`A showcase of high-fidelity ${category.toLowerCase()} digital products.`}
-          websites={websites}
-          initialCategory={category}
-        />
-        <SectorFanHero 
-          currentCategory={category}
-          websites={websites}
-          title="THE SECTORS"
-        />
-      </main>
-      <Footer variant="inverted" />
-    </>
+    <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateItemListSchema(category, items, route, categoryWebsites.length, (page - 1) * PAGE_SIZE + 1)) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbListSchema([{ label: 'Home', href: '/' }, { label: 'Categories', href: '/c' }, { label: category, href: `/c/${slug}` }])) }} /><Header /><main className="min-h-screen bg-background"><nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-5 pb-2 pt-28 text-sm"><Link href="/">Home</Link> / <Link href="/c">Categories</Link> / {category}</nav><CategoryHero category={category} websites={all} description={content.description} /><section className="mx-auto max-w-5xl px-5 py-12"><h2 className="text-3xl font-bold">About this collection</h2><p className="mt-4 text-lg leading-8">{content.intro}</p><p className="mt-3 text-neutral-600">{content.secondary}</p><ul className="mt-5 flex flex-wrap gap-2">{content.focusTags.map((tag) => <li key={tag} className="rounded-full border px-3 py-1 text-sm">{tag}</li>)}</ul></section><PrismBrowserGrid title={`${categoryWebsites.length.toLocaleString()} ${category} Website Examples`} subtitle={`Page ${page} of ${pages}`} websites={items} /><Pagination page={page} totalPages={pages} pathname={`/c/${slug}`} /></main><Footer variant="inverted" /></>
   );
 }
-
-

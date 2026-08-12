@@ -63,7 +63,7 @@ export default function SingleSiteHero({
         {image ? (
           <Image
             src={image}
-            alt={`${siteName} background`}
+            alt={`${siteName} ${category} website design screenshot`}
             fill
             sizes="100vw"
             className="object-cover object-top"
@@ -93,7 +93,7 @@ export default function SingleSiteHero({
         {image && (
           <Image
             src={image}
-            alt={`${siteName} spotlight`}
+            alt=""
             fill
             sizes="100vw"
             className="object-cover object-top"
