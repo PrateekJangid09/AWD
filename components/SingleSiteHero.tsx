@@ -10,7 +10,7 @@ interface SingleSiteHeroProps {
   category: string;
   accentColor: string;
   spotlightSize?: number;
-  image: string;
+  image?: string;
 }
 
 export default function SingleSiteHero({

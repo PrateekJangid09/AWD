@@ -1,0 +1,2 @@
+# Keep this folder so exported screenshots have a home.
+# Files here are produced by: cd engine && npm run export -- --copy-shots

@@ -1,78 +1,62 @@
 # Local intelligence engine — AllWebsites.design
-#
-# Run this on your machine. Private SQLite profiles stay local.
-# Export allowlisted JSON into the parent repo for public page templates.
 
-## Quick start
+Run this **on your Windows/Mac machine**. It is not a Vercel/cloud service.
+Private SQLite profiles stay on disk. Public records are exported into the Next.js app as **slug pages** at `/sites/<domain>`.
 
-```bash
-cd engine
-cp .env.example .env   # set ADMIN_SECRET and SESSION_SECRET
+## Windows PowerShell (from scratch)
+
+The engine is **inside the AWD repo**, not in `C:\Users\DIKSHA`.
+
+```powershell
+cd C:\Users\DIKSHA
+git clone -b cursor/secure-engine-local-export-8772 https://github.com/PrateekJangid09/AWD.git
+cd AWD\engine
+Copy-Item .env.example .env
+notepad .env
+```
+
+Set `ADMIN_SECRET` and `SESSION_SECRET` in `.env`, save, then:
+
+```powershell
 npm install
-npx playwright install chromium   # optional; enables screenshots
+node scripts\import.js data\final-list.csv --no-shot --concurrency=4
+npm run export -- --copy-shots
+```
 
-# Demo rows (offline) or live crawl:
-npm run seed
-# npm run seed -- https://linear.app
+That writes:
 
-# Start local server (binds 127.0.0.1 by default)
+- `C:\Users\DIKSHA\AWD\data\engine-sites.json`  (public fields only)
+- `C:\Users\DIKSHA\AWD\public\engine-shots\`    (screenshots, if captured)
+
+Then start the **website** (not the engine) to see slug pages:
+
+```powershell
+cd C:\Users\DIKSHA\AWD
+npm install
+npm run dev
+```
+
+Open:
+
+- Directory: http://localhost:3000/
+- One site: http://localhost:3000/sites/linearly.app  (slug = domain)
+
+## What not to run in the cloud
+
+- Do not deploy `engine/` to Vercel. `.vercelignore` excludes it.
+- Do not expect Cursor Cloud to crawl 5,800 sites for you on a laptop path.
+- The Vercel site only reads `data/engine-sites.json` after you export locally and commit/push that JSON (optional).
+
+## Optional: engine admin UI
+
+```powershell
+cd C:\Users\DIKSHA\AWD\engine
 npm start
-# Gallery:  http://127.0.0.1:3000/
-# Admin:    http://127.0.0.1:3000/admin
 ```
 
-## Local workflow (recommended for large lists)
+- Gallery preview: http://127.0.0.1:3000/
+- Admin: http://127.0.0.1:3000/admin
 
-1. Put URLs in a CSV (header `url` / `website` / `domain`, or one URL per line).
-2. Run the private engine on your laptop:
+If the Next.js app is already on port 3000, set `PORT=3456` in `engine\.env`.
 
-```bash
-node scripts/import.js sites.csv --no-shot          # fast classify-first
-node scripts/import.js sites.csv --concurrency=3    # with screenshots
-node scripts/import.js sites.csv --reanalyze        # refresh existing
-```
-
-3. Export **public** fields into the shared repo (for page templates later):
-
-```bash
-npm run export
-# writes ../data/engine-sites.json  (allowlisted only — no evidence/profile)
-npm run export -- --copy-shots      # also copies screenshots to ../public/engine-shots
-```
-
-4. Build website template pages from `data/engine-sites.json` (Next.js or engine `site.html`).
-
-**Never commit** `data/allwebsites.db` — it contains full private intelligence profiles.
-
-## Security model
-
-| Surface | Access |
-|---------|--------|
-| `GET /api/sites`, `/api/facets`, `/api/sites/:domain` | Public read-only allowlist |
-| `POST /api/admin/analyze`, `/batch`, `/reanalyze`, job polls, `/site/:domain/internal` | Admin only |
-| `/admin` | Admin session (HttpOnly cookie) or login page |
-| Legacy `/api/analyze`, `/api/job`, `/api/batch` | Removed (404) |
-
-Auth:
-
-- Env: `ADMIN_SECRET`, `SESSION_SECRET` (never put these in frontend JS).
-- Browser: `POST /api/admin/login` `{ "secret": "..." }` → HttpOnly `SameSite=Lax` cookie.
-- CLI/curl: `Authorization: Bearer <ADMIN_SECRET>`.
-
-Public JSON never includes `profile`, `evidence`, confidence metadata, candidates, `_debug`, etc.
-
-## Scripts
-
-| Command | Purpose |
-|---------|---------|
-| `npm start` | Local Express server |
-| `npm run seed` | Seed demo / crawl URLs |
-| `npm run export` | Write public `data/engine-sites.json` |
-| `npm run check` | Re-check stored domains |
-| `npm test` | Taxonomy + leakage/auth tests |
-
-## Notes
-
-- Default bind is `127.0.0.1` (`HOST` / `PORT` overridable).
-- Pipeline algorithms under `src/pipeline/` are proprietary — keep this repo private.
-- The public directory UI no longer runs analysis; use `/admin` or CLI.
+**Never commit** `engine/data/allwebsites.db`.

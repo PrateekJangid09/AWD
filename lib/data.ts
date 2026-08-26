@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 import { cache } from 'react';
 import { Website } from './types';
 import { mapToMacroCategory } from './categories';
+import { getEngineWebsites } from './engineSites';
 
 function createSlug(name: string): string {
   return name
@@ -188,8 +189,32 @@ async function fetchWebsites(): Promise<Website[]> {
   }
 }
 
+async function fetchMergedWebsites(): Promise<Website[]> {
+  const [csvSites, engineSites] = await Promise.all([
+    fetchWebsites(),
+    getEngineWebsites(),
+  ]);
+
+  if (!engineSites.length) return csvSites;
+
+  const bySlug = new Map<string, Website>();
+  for (const site of csvSites) {
+    bySlug.set(site.slug.toLowerCase(), site);
+    try {
+      const host = new URL(site.url).hostname.replace(/^www\./, '').toLowerCase();
+      bySlug.set(host, site);
+    } catch {
+      /* ignore */
+    }
+  }
+  for (const site of engineSites) {
+    bySlug.set(site.slug.toLowerCase(), site);
+  }
+  return sortWebsitesByQuality([...bySlug.values()]);
+}
+
 // Deduplicate getWebsites within the same request (no unstable_cache - payload exceeds 2MB limit)
-export const getWebsites = cache(fetchWebsites);
+export const getWebsites = cache(fetchMergedWebsites);
 
 function sortWebsitesByQuality(websites: Website[]): Website[] {
   return websites.sort((a, b) => {
@@ -230,7 +255,8 @@ function calculateQualityScore(website: Website): number {
 
 export async function getWebsiteBySlug(slug: string): Promise<Website | null> {
   const websites = await getWebsites();
-  return websites.find(site => site.slug === slug) || null;
+  const needle = decodeURIComponent(slug).toLowerCase();
+  return websites.find(site => site.slug.toLowerCase() === needle) || null;
 }
 
 export async function getAllSlugs(): Promise<string[]> {

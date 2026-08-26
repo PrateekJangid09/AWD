@@ -1,5 +1,5 @@
 {
-  "name": "allwebsites-design",
+  "name": "allwebsites-design-engine",
   "version": "0.1.0",
   "description": "Design-directory intelligence: per-datapoint micro-algorithms that extract name, description, category/subcategory/type/audience, key pages, palette, fonts, style, socials and a precise full-page screenshot.",
   "type": "module",

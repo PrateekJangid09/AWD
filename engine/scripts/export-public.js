@@ -51,8 +51,24 @@ mkdirSync(dirname(outPath), { recursive: true });
 const payload = {
   exported_at: new Date().toISOString(),
   count: sites.length,
-  sites
+  sites: sites.map((s) => ({
+    ...s,
+    slug: s.domain,
+    screenshot: rewriteShot(s.screenshot),
+    favicon: rewriteShot(s.favicon),
+    page_shots: (s.page_shots || []).map((ps) => ({
+      ...ps,
+      path: rewriteShot(ps.path)
+    }))
+  }))
 };
+
+function rewriteShot(p) {
+  if (!p) return p;
+  if (p.startsWith("/engine-shots/") || p.startsWith("/screenshots/") || p.startsWith("/fullshots/")) return p;
+  const file = String(p).replace(/^\/shots\//, "").replace(/^shots\//, "");
+  return file ? `/engine-shots/${file}` : p;
+}
 writeFileSync(outPath, JSON.stringify(payload, null, 2));
 console.log(`Exported ${sites.length} public site(s) → ${outPath}`);
 

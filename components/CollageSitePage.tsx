@@ -15,6 +15,9 @@ interface CollageSitePageProps {
   fontName: string;
   colors: string[];
   accentColor: string;
+  websiteType?: string;
+  techSummary?: string;
+  hasScreenshot?: boolean;
 }
 
 export default function CollageSitePage({
@@ -27,6 +30,9 @@ export default function CollageSitePage({
   fontName,
   colors,
   accentColor,
+  websiteType,
+  techSummary,
+  hasScreenshot = true,
 }: CollageSitePageProps) {
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -146,6 +152,7 @@ export default function CollageSitePage({
                 className="custom-scrollbar"
               >
                 {/* Use full screenshot if available, otherwise regular screenshot */}
+                {hasScreenshot ? (
                 <Image
                   src={fullImage || image}
                   alt={`${title} screenshot`}
@@ -159,6 +166,11 @@ export default function CollageSitePage({
                     filter: 'grayscale(10%) contrast(105%)',
                   }}
                 />
+                ) : (
+                  <div style={{ height: '60vh', display: 'grid', placeItems: 'center', color: '#888', background: '#f3f3f3' }}>
+                    Screenshot not captured yet
+                  </div>
+                )}
               </div>
 
               {/* --- COLLAGE ELEMENT: TAPE --- */}
@@ -219,6 +231,9 @@ export default function CollageSitePage({
                 >
                   {category}
                 </div>
+                {websiteType ? (
+                  <div style={{ fontSize: '12px', marginTop: '6px', color: '#444' }}>{websiteType}</div>
+                ) : null}
               </motion.div>
             </motion.div>
           </div>
@@ -349,6 +364,13 @@ export default function CollageSitePage({
                 {fontName}
               </div>
             </motion.div>
+
+            {techSummary ? (
+              <div style={{ fontSize: '14px', color: '#444' }}>
+                <div style={{ fontSize: '12px', color: '#888', fontWeight: 700, textTransform: 'uppercase' }}>Tech</div>
+                <div style={{ fontWeight: 600, marginTop: '4px' }}>{techSummary}</div>
+              </div>
+            ) : null}
 
             {/* 4. CTA (Big Sticker Button - Import to Figma) */}
             <motion.a

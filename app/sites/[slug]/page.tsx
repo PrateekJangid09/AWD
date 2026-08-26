@@ -67,19 +67,22 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
   const relatedWebsites = await getRelatedWebsites(website, 6);
   const displayCategory = website.displayCategory || website.category;
 
-  // Generate breadcrumb schema
   const breadcrumbSchema = generateBreadcrumbListSchema([
     { label: 'Home', href: '/' },
     { label: displayCategory, href: `/?category=${encodeURIComponent(displayCategory)}` },
     { label: website.name },
   ]);
 
-  // Generate color palette from category color
-  const accentColor = getCategoryColor(displayCategory);
-  const colors = generateColorPalette(accentColor);
-
-  // Infer font name (default to common web fonts)
-  const fontName = inferFontName(website.name);
+  const paletteHexes = (website.palette || []).map((p) => p.hex).filter(Boolean);
+  const accentColor = paletteHexes[0] || getCategoryColor(displayCategory);
+  const colors = paletteHexes.length ? paletteHexes : generateColorPalette(accentColor);
+  const fontName =
+    website.fonts && website.fonts.length
+      ? website.fonts.map((f) => f.name).filter(Boolean).join(' / ')
+      : inferFontName(website.name);
+  const hasScreenshot = website.fromEngine
+    ? Boolean(website.fullScreenshotUrl)
+    : true;
 
   return (
     <>
@@ -89,17 +92,15 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
       />
       <Header />
 
-      {/* Hero Section with Spotlight Effect */}
       <SingleSiteHero
         siteName={website.name}
         siteDescription={website.description}
         category={displayCategory}
         accentColor={accentColor}
         spotlightSize={300}
-        image={website.screenshotUrl}
+        image={hasScreenshot ? website.screenshotUrl : undefined}
       />
 
-      {/* Detailed Collage Section */}
       <CollageSitePage
         title={website.name}
         category={displayCategory}
@@ -110,6 +111,9 @@ export default async function WebsiteDetailPage({ params }: PageProps) {
         fontName={fontName}
         colors={colors}
         accentColor={accentColor}
+        websiteType={website.websiteType}
+        techSummary={website.techSummary}
+        hasScreenshot={hasScreenshot}
       />
 
       {/* Related Exhibits Section */}

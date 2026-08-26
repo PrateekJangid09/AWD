@@ -63,9 +63,9 @@ next-env.d.ts
 /engine/data/*.db-*
 /engine/.env
 
-# engine local screenshots (export copies public assets separately when needed)
-# /engine/public/shots/*
-# !/engine/public/shots/.gitkeep
+# engine local screenshots/favicons copied by npm run export -- --copy-shots
+/public/engine-shots/*
+!/public/engine-shots/.gitkeep
 
 # scripts output files
 /scripts/*.json
