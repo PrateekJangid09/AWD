@@ -1,6 +1,314 @@
 {
-  "exported_at": null,
-  "count": 0,
-  "sites": [],
-  "_note": "Run `cd engine && npm run export` on your machine after importing URLs. This file is the public allowlist handoff for website template pages."
+  "exported_at": "2026-08-26T09:00:23.559Z",
+  "count": 5,
+  "sites": [
+    {
+      "domain": "groveschool.org",
+      "url": "https://groveschool.org",
+      "name": "Grove Learning",
+      "description": "Enroll in expert-led online courses. Learn at your own pace.",
+      "category": "Education",
+      "subcategory": "Online Courses",
+      "website_type": "Course Platform",
+      "audience": [
+        "Students"
+      ],
+      "palette": [
+        {
+          "hex": "#ff8a5b",
+          "role": "primary"
+        },
+        {
+          "hex": "#ffd166",
+          "role": "secondary"
+        }
+      ],
+      "fonts": [
+        {
+          "name": "Nunito",
+          "role": null
+        }
+      ],
+      "style": [
+        "Minimal"
+      ],
+      "favicon": null,
+      "screenshot": null,
+      "linkedin": null,
+      "x": null,
+      "contact_email": null,
+      "contact_address": null,
+      "date_added": "2026-08-26T09:00:21.348Z",
+      "last_checked": "2026-08-26T09:00:21.348Z",
+      "tech_summary": "PHP",
+      "tech": {
+        "summary": "PHP",
+        "builder_cms": [],
+        "framework": [],
+        "language": [
+          "PHP"
+        ],
+        "frontend": [],
+        "web_server": [
+          "Apache"
+        ],
+        "hosting": [],
+        "cdn": [],
+        "storage": [],
+        "ecommerce": []
+      },
+      "key_pages": {
+        "Homepage": {
+          "url": "https://groveschool.org/"
+        }
+      },
+      "page_shots": []
+    },
+    {
+      "domain": "nord-goods.com",
+      "url": "https://nord-goods.com",
+      "name": "NORD",
+      "description": "Shop our collection of everyday essentials. Free shipping.",
+      "category": "Ecommerce & Retail",
+      "subcategory": "Ecommerce",
+      "website_type": "Ecommerce Store",
+      "audience": [
+        "B2C",
+        "Consumers"
+      ],
+      "palette": [
+        {
+          "hex": "#1a1a1a",
+          "role": "primary"
+        }
+      ],
+      "fonts": [
+        {
+          "name": "Plus Jakarta Sans",
+          "role": null
+        }
+      ],
+      "style": [
+        "Minimal"
+      ],
+      "favicon": null,
+      "screenshot": null,
+      "linkedin": null,
+      "x": null,
+      "contact_email": null,
+      "contact_address": null,
+      "date_added": "2026-08-26T09:00:21.337Z",
+      "last_checked": "2026-08-26T09:00:21.337Z",
+      "tech_summary": "Shopify on Shopify (managed)",
+      "tech": {
+        "summary": "Shopify on Shopify (managed)",
+        "builder_cms": [],
+        "framework": [],
+        "language": [
+          "Ruby"
+        ],
+        "frontend": [],
+        "web_server": [],
+        "hosting": [
+          "Shopify (managed)"
+        ],
+        "cdn": [],
+        "storage": [],
+        "ecommerce": [
+          "Shopify"
+        ]
+      },
+      "key_pages": {
+        "Homepage": {
+          "url": "https://nord-goods.com/"
+        }
+      },
+      "page_shots": []
+    },
+    {
+      "domain": "studio-meridian.com",
+      "url": "https://studio-meridian.com",
+      "name": "Studio Meridian",
+      "description": "We craft brand identities and digital products for ambitious companies.",
+      "category": "Agency & Studio",
+      "subcategory": "Design",
+      "website_type": "Studio Website",
+      "audience": [],
+      "palette": [
+        {
+          "hex": "#111111",
+          "role": "primary"
+        },
+        {
+          "hex": "#b4472a",
+          "role": "secondary"
+        }
+      ],
+      "fonts": [
+        {
+          "name": "Playfair Display",
+          "role": null
+        }
+      ],
+      "style": [
+        "Minimal"
+      ],
+      "favicon": null,
+      "screenshot": null,
+      "linkedin": null,
+      "x": null,
+      "contact_email": "studio@studio-meridian.com",
+      "contact_address": null,
+      "date_added": "2026-08-26T09:00:21.323Z",
+      "last_checked": "2026-08-26T09:00:21.323Z",
+      "tech_summary": "Static HTML",
+      "tech": {
+        "summary": "Static HTML",
+        "builder_cms": [],
+        "framework": [],
+        "language": [
+          "Static HTML / CSS / JS"
+        ],
+        "frontend": [],
+        "web_server": [
+          "nginx"
+        ],
+        "hosting": [],
+        "cdn": [
+          "Cloudflare"
+        ],
+        "storage": [],
+        "ecommerce": []
+      },
+      "key_pages": {
+        "Homepage": {
+          "url": "https://studio-meridian.com/"
+        }
+      },
+      "page_shots": []
+    },
+    {
+      "domain": "linearly.app",
+      "url": "https://linearly.app",
+      "name": "Linearly",
+      "description": "The issue tracker built for high-performing teams. Start free trial or book a demo.",
+      "category": "Technology & SaaS",
+      "subcategory": "SaaS",
+      "website_type": "SaaS Landing Page",
+      "audience": [
+        "Developers",
+        "B2B"
+      ],
+      "palette": [
+        {
+          "hex": "#5e6ad2",
+          "role": "primary"
+        },
+        {
+          "hex": "#08090a",
+          "role": "ink"
+        },
+        {
+          "hex": "#a8b0ff",
+          "role": "accent"
+        }
+      ],
+      "fonts": [
+        {
+          "name": "Inter",
+          "role": null
+        }
+      ],
+      "style": [
+        "Minimal"
+      ],
+      "favicon": null,
+      "screenshot": null,
+      "linkedin": "https://linkedin.com/company/linearly",
+      "x": "https://x.com/linearly",
+      "contact_email": null,
+      "contact_address": null,
+      "date_added": "2026-08-26T09:00:21.304Z",
+      "last_checked": "2026-08-26T09:00:21.304Z",
+      "tech_summary": "Static HTML on Vercel",
+      "tech": {
+        "summary": "Static HTML on Vercel",
+        "builder_cms": [],
+        "framework": [],
+        "language": [
+          "Static HTML / CSS / JS"
+        ],
+        "frontend": [],
+        "web_server": [],
+        "hosting": [
+          "Vercel"
+        ],
+        "cdn": [],
+        "storage": [],
+        "ecommerce": []
+      },
+      "key_pages": {
+        "Homepage": {
+          "url": "https://linearly.app/"
+        }
+      },
+      "page_shots": []
+    },
+    {
+      "domain": "leak-test.example",
+      "url": "https://leak-test.example/",
+      "name": "Leak Test",
+      "description": "Private-rich fixture",
+      "category": "SaaS",
+      "subcategory": "Tools",
+      "website_type": "Marketing Site",
+      "audience": [
+        "B2B"
+      ],
+      "palette": [
+        {
+          "hex": "#000000",
+          "role": "primary"
+        }
+      ],
+      "fonts": [
+        {
+          "name": "Inter",
+          "role": "body"
+        }
+      ],
+      "style": [
+        "Minimal"
+      ],
+      "favicon": null,
+      "screenshot": null,
+      "linkedin": null,
+      "x": null,
+      "contact_email": "a@leak-test.example",
+      "contact_address": null,
+      "date_added": "2026-08-26T08:58:57.492Z",
+      "last_checked": "2026-08-26T08:59:49.009Z",
+      "tech_summary": "Next.js",
+      "tech": {
+        "summary": "Next.js",
+        "builder_cms": [],
+        "framework": [
+          "Next.js"
+        ],
+        "language": [],
+        "frontend": [],
+        "web_server": [],
+        "hosting": [],
+        "cdn": [],
+        "storage": [],
+        "ecommerce": []
+      },
+      "key_pages": {
+        "Homepage": {
+          "url": "https://leak-test.example/"
+        }
+      },
+      "page_shots": []
+    }
+  ]
 }
