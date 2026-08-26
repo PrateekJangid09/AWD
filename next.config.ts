@@ -36,6 +36,11 @@ const nextConfig: NextConfig = {
 
   // Exclude large packages from serverless functions to reduce bundle size
   serverExternalPackages: ['puppeteer', 'puppeteer-core', 'canvas'],
+
+  // Extractor lives in /engine and is never bundled into the public site.
+  outputFileTracingExcludes: {
+    '*': ['./engine/**', './nextjs-awd/**', './studio-awd/**'],
+  },
 };
 
 export default nextConfig;

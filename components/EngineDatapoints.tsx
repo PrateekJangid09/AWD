@@ -1,6 +1,7 @@
+import type { ReactNode } from 'react';
 import type { Website } from '@/lib/types';
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({ label, children }: { label: string; children: ReactNode }) {
   if (!children) return null;
   return (
     <div className="border-b border-neutral-200 py-4">
