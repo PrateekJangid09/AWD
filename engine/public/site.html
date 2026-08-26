@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site profile - AllWebsites.design</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">AllWebsites<span class="dot">.</span><em>design</em></a>
+  </div>
+</header>
+
+<main class="detail" id="detail">
+  <a class="back" href="/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+    Back to directory
+  </a>
+  <div id="content"><p style="color:var(--ink-3)">Loading profile…</p></div>
+</main>
+
+<script>
+const domain = new URLSearchParams(location.search).get("d");
+
+function field(k, body) {
+  return `<div class="dp"><div class="k">${esc(k)}</div>${body}</div>`;
+}
+
+(async () => {
+  if (!domain) { document.getElementById("content").innerHTML = "<p>No site specified.</p>"; return; }
+  const site = await fetch("/api/sites/" + encodeURIComponent(domain)).then(r => r.ok ? r.json() : null);
+  if (!site) { document.getElementById("content").innerHTML = "<p>Site not found.</p>"; return; }
+
+  const shot = site.screenshot;
+  const pages = site.key_pages || {};
+  const pageShots = site.page_shots || [];
+  const palette = site.palette || [];
+  const fonts = site.fonts || [];
+  const tech = site.tech || null;
+
+  const shotBlock = shot
+    ? `<div class="shot-frame"><img src="${esc(shot)}" alt="Full-page screenshot of ${esc(site.name||domain)}"></div>`
+    : `<div class="shot-frame"><div class="noshot" style="aspect-ratio:4/3;display:grid;place-items:center;color:var(--ink-3)">Screenshot not available</div></div>`;
+
+  const pagesGallery = pageShots.length > 1 ? `
+    <div class="pages-gallery">
+      <h3 class="pg-title">Pages captured (${pageShots.length})</h3>
+      <div class="pg-grid">
+        ${pageShots.map(ps => `
+          <a class="pg-item" ${ps.url ? `href="${esc(ps.url)}" target="_blank" rel="noopener"` : ""}>
+            <div class="pg-shot">${ps.path ? `<img src="${esc(ps.path)}" alt="${esc(ps.label || "")} page" loading="lazy" onerror="this.parentElement.classList.add('miss')">` : ""}</div>
+            <span class="pg-label">${esc(ps.label || "")}</span>
+          </a>`).join("")}
+      </div>
+    </div>` : "";
+
+  const pageOrder = ["Homepage","About","Contact","Pricing","Jobs/Careers"];
+  const pageLinks = pageOrder.map(label => {
+    const pg = pages[label];
+    return pg && pg.url
+      ? `<a href="${esc(pg.url)}" target="_blank" rel="noopener">${esc(label)} <span class="u">${esc(shortPath(pg.url))}</span></a>`
+      : `<a class="missing">${esc(label)} <span class="u">not found</span></a>`;
+  }).join("");
+
+  document.getElementById("content").innerHTML = `
+    <div class="detail-head">
+      <div class="head-id">
+        ${site.favicon ? `<img class="head-fav" src="${esc(site.favicon)}" alt="" onerror="this.remove()">` : ""}
+        <div>
+          <h1>${esc(site.name || domain)}</h1>
+          <div class="dom">${esc(domain)}</div>
+        </div>
+      </div>
+      <div class="detail-actions">
+        <a class="btn ghost" href="${esc(site.url)}" target="_blank" rel="noopener">Visit site
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div>${shotBlock}${pagesGallery}</div>
+      <div class="panel">
+        ${field("Short description", site.description ? `<div class="sub">${esc(site.description)}</div>` : `<div class="v" style="color:var(--ink-3)">—</div>`)}
+        ${field("Category", `<div class="v">${esc(site.category || "—")}</div>${site.subcategory ? `<div class="sub">${esc(site.subcategory)}</div>` : ""}`)}
+        ${field("Website type", `<div class="v">${esc(site.website_type || "—")}</div>`)}
+        ${field("Audience", `<div class="v">${(site.audience||[]).map(esc).join(", ") || "—"}</div>`)}
+        ${field("Style", `<div class="v">${(site.style||[]).map(esc).join(" · ") || "—"}</div>`)}
+        ${field("Color palette", palette.length
+          ? `<div class="swatches">${palette.map(c => `<span class="swatch" style="background:${esc(c.hex)}" title="${esc((c.role? c.role+' · ':'')+c.hex)}"><code>${esc(c.hex)}</code></span>`).join("")}</div>`
+          : `<div class="v" style="color:var(--ink-3)">—</div>`)}
+        ${field("Fonts", `<div class="v">${fonts.map(f => `${esc(f.name)}${f.role ? ` <span class="frole">${esc(f.role)}</span>` : ""}`).join(" · ") || "—"}</div>`)}
+        ${techBlock(tech, site.tech_summary)}
+        ${field("Official link", `<div class="v mono">${esc(site.url || "—")}</div>`)}
+        <div class="dp">
+          <div class="k">Key pages</div>
+          <div class="pagelinks">${pageLinks}</div>
+        </div>
+        <div class="dp">
+          <div class="k">Contact</div>
+          ${site.contact_email
+            ? `<div class="v mono"><a href="mailto:${esc(site.contact_email)}">${esc(site.contact_email)}</a></div>`
+            : `<div class="v" style="color:var(--ink-3);font-weight:500">No email listed</div>`}
+          ${site.contact_address ? `<div class="sub">${esc(site.contact_address)}</div>` : ""}
+        </div>
+        <div class="dp">
+          <div class="k">Social</div>
+          <div class="pagelinks">
+            ${site.linkedin ? `<a href="${esc(site.linkedin)}" target="_blank" rel="noopener">LinkedIn <span class="u">${esc(shortPath(site.linkedin))}</span></a>` : `<a class="missing">LinkedIn <span class="u">not found</span></a>`}
+            ${site.x ? `<a href="${esc(site.x)}" target="_blank" rel="noopener">X <span class="u">${esc(shortPath(site.x))}</span></a>` : `<a class="missing">X <span class="u">not found</span></a>`}
+          </div>
+        </div>
+        <div class="dp">
+          <div class="k">Directory</div>
+          <div class="sub">Added ${esc(fmt(site.date_added))} · last checked ${esc(fmt(site.last_checked))}</div>
+        </div>
+      </div>
+    </div>`;
+})();
+
+function shortPath(u){ try { const x = new URL(u); return (x.hostname.replace(/^www\./,"") + x.pathname).replace(/\/$/,"").slice(0,42); } catch { return u; } }
+
+function techBlock(tech, summary) {
+  if (!tech && !summary) {
+    return `<div class="dp"><div class="k">Tech stack</div><div class="v" style="color:var(--ink-3);font-weight:500">Not listed</div></div>`;
+  }
+  const t = tech || {};
+  const rows = [
+    ["Builder / CMS", t.builder_cms], ["Framework", t.framework], ["Language", t.language],
+    ["Frontend", t.frontend], ["Ecommerce", t.ecommerce], ["Web server", t.web_server],
+    ["Hosting", t.hosting], ["CDN", t.cdn], ["Storage / media", t.storage]
+  ].filter(([, arr]) => arr && arr.length);
+  const line = (arr) => arr.map(esc).join(", ");
+  return `<div class="dp">
+    <div class="k">Tech stack</div>
+    <div class="v" style="margin-bottom:8px">${esc(summary || t.summary || "")}</div>
+    ${rows.length ? `<table class="tech-table">${rows.map(([k, arr]) => `<tr><td>${esc(k)}</td><td>${line(arr)}</td></tr>`).join("")}</table>` : ""}
+  </div>`;
+}
+function fmt(s){ try { return new Date(s).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"}); } catch { return s; } }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+</script>
+</body>
+</html>

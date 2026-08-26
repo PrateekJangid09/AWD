@@ -58,6 +58,15 @@ next-env.d.ts
 /data/missing-urls.json
 /data/websites.backup.*.csv
 
+# private intelligence engine DB (full profiles — never commit)
+/engine/data/*.db
+/engine/data/*.db-*
+/engine/.env
+
+# engine local screenshots (export copies public assets separately when needed)
+# /engine/public/shots/*
+# !/engine/public/shots/.gitkeep
+
 # scripts output files
 /scripts/*.json
 

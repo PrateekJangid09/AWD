@@ -1,0 +1,6 @@
+node_modules/
+data/*.db
+data/*.db-*
+.env
+public/shots/*
+!public/shots/.gitkeep

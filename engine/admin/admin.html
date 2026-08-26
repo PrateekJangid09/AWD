@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — AllWebsites.design engine</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/app.css">
+<style>
+  .admin-wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 80px; }
+  .admin-bar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:20px; }
+  .admin-panel { border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:16px; background:var(--paper); }
+  .admin-panel h2 { font-size:1rem; margin:0 0 10px; }
+  .row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .chk { display:flex; align-items:center; gap:6px; font-size:0.9rem; color:var(--ink-2); }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:0.85rem; }
+  #internalOut { white-space:pre-wrap; max-height:420px; overflow:auto; background:#0b0b0b; color:#e8e8e8; padding:12px; border-radius:8px; font-size:12px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">AllWebsites<span class="dot">.</span><em>design</em></a>
+    <span style="color:var(--ink-3);font-size:0.85rem">Private admin</span>
+  </div>
+</header>
+
+<main class="admin-wrap">
+  <div class="admin-bar">
+    <h1 style="font-size:1.5rem;margin:0">Intelligence engine</h1>
+    <button class="btn ghost" type="button" id="logoutBtn">Sign out</button>
+  </div>
+
+  <section class="admin-panel">
+    <h2>Analyze website</h2>
+    <form class="analyze" id="analyzeForm" style="width:100%">
+      <input id="urlInput" type="text" inputmode="url" autocomplete="off" placeholder="URL, e.g. linear.app" aria-label="Website URL" style="flex:1">
+      <label class="chk"><input type="checkbox" id="shotToggle" checked> Screenshots</label>
+      <button class="btn" type="submit" id="analyzeBtn">Analyze</button>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <h2>Bulk CSV import</h2>
+    <div class="row">
+      <button class="btn ghost" type="button" id="importBtn">Choose CSV / URL list</button>
+      <label class="chk"><input type="checkbox" id="batchShotToggle" checked> Screenshots</label>
+      <label class="chk"><input type="checkbox" id="reanalyzeToggle"> Re-analyze existing</label>
+      <input id="csvInput" type="file" accept=".csv,.txt" hidden>
+    </div>
+  </section>
+
+  <section class="admin-panel">
+    <h2>Re-analyze existing domain</h2>
+    <form class="analyze" id="reanalyzeForm" style="width:100%">
+      <input id="reDomainInput" type="text" placeholder="domain.com" aria-label="Domain to reanalyze" style="flex:1">
+      <button class="btn ghost" type="submit">Re-analyze</button>
+    </form>
+  </section>
+
+  <section class="admin-panel">
+    <h2>Inspect internal profile</h2>
+    <form class="analyze" id="internalForm" style="width:100%">
+      <input id="internalDomain" type="text" placeholder="domain.com" aria-label="Domain" style="flex:1">
+      <button class="btn ghost" type="submit">Load internal</button>
+    </form>
+    <pre id="internalOut" hidden></pre>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <h5 id="toastTitle">Analyzing site</h5>
+    <div class="dom" id="toastDom"></div>
+    <div class="stages" id="toastStages"></div>
+  </div>
+
+  <div class="toast batch" id="batchToast" role="status" aria-live="polite">
+    <div class="batch-head">
+      <h5 id="batchTitle">Importing sites</h5>
+      <button class="xclose" id="batchClose" aria-label="Hide">&times;</button>
+    </div>
+    <div class="dom" id="batchSub"></div>
+    <div class="bar"><div class="bar-fill" id="batchFill"></div></div>
+    <div class="batch-stats" id="batchStats"></div>
+    <div class="batch-feed" id="batchFeed"></div>
+  </div>
+</main>
+
+<script>
+const STAGE_LABELS = {
+  resolve: "Resolving URL", static_fetch: "Fetching HTML", identity: "Name & description",
+  classify: "Category, type & audience", design: "Palette, fonts & style",
+  pages: "Finding key pages", contact: "Contact", social: "Social links",
+  techstack: "Tech stack", favicon: "Favicon", screenshot: "Full-page screenshot", assemble: "Saving"
+};
+
+async function api(path, opts = {}) {
+  const res = await fetch(path, { credentials: "same-origin", ...opts });
+  if (res.status === 401) { location.href = "/admin"; throw new Error("unauthorized"); }
+  return res;
+}
+
+document.getElementById("logoutBtn").onclick = async () => {
+  await api("/api/admin/logout", { method: "POST" });
+  location.href = "/admin";
+};
+
+document.getElementById("analyzeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const url = document.getElementById("urlInput").value.trim();
+  if (!url) return;
+  const btn = document.getElementById("analyzeBtn"); btn.disabled = true;
+  try {
+    const res = await api("/api/admin/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url, screenshot: document.getElementById("shotToggle").checked })
+    });
+    if (!res.ok) { const err = await res.json().catch(()=>({})); alert(err.error || "Could not start"); return; }
+    const { job_id } = await res.json();
+    showToast(url); pollJob(job_id);
+    document.getElementById("urlInput").value = "";
+  } finally { btn.disabled = false; }
+});
+
+document.getElementById("reanalyzeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const domain = document.getElementById("reDomainInput").value.trim();
+  if (!domain) return;
+  const res = await api("/api/admin/reanalyze", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ domain, screenshot: document.getElementById("shotToggle").checked })
+  });
+  if (!res.ok) { const err = await res.json().catch(()=>({})); alert(err.error || "Failed"); return; }
+  const { job_id } = await res.json();
+  showToast(domain); pollJob(job_id);
+});
+
+document.getElementById("internalForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const domain = document.getElementById("internalDomain").value.trim();
+  if (!domain) return;
+  const res = await api("/api/admin/site/" + encodeURIComponent(domain) + "/internal");
+  const out = document.getElementById("internalOut");
+  if (!res.ok) { out.hidden = false; out.textContent = "Not found or error"; return; }
+  const data = await res.json();
+  out.hidden = false;
+  out.textContent = JSON.stringify(data, null, 2);
+});
+
+function showToast(dom) {
+  const t = document.getElementById("toast");
+  document.getElementById("toastTitle").textContent = "Analyzing site";
+  document.getElementById("toastDom").textContent = String(dom).replace(/^https?:\/\//,"");
+  document.getElementById("toastStages").innerHTML = Object.keys(STAGE_LABELS)
+    .map(k => `<div class="stage" data-k="${k}"><span class="s"></span>${STAGE_LABELS[k]}</div>`).join("");
+  t.classList.add("show");
+}
+
+async function pollJob(id) {
+  const tick = async () => {
+    const j = await api("/api/admin/job/" + id).then(x => x.json());
+    for (const [k, v] of Object.entries(j.stages || {})) {
+      const row = document.querySelector(`.stage[data-k="${k}"]`);
+      if (row) row.className = "stage " + (v.status || "");
+    }
+    if (j.status === "done") {
+      document.getElementById("toastTitle").textContent = "Saved";
+      setTimeout(() => document.getElementById("toast").classList.remove("show"), 2200);
+      return;
+    }
+    if (j.status === "error") {
+      document.getElementById("toastTitle").textContent = "Failed: " + (j.error || "error");
+      setTimeout(() => document.getElementById("toast").classList.remove("show"), 4000);
+      return;
+    }
+    setTimeout(tick, 800);
+  };
+  tick();
+}
+
+const importBtn = document.getElementById("importBtn");
+const csvInput = document.getElementById("csvInput");
+importBtn.addEventListener("click", () => csvInput.click());
+csvInput.addEventListener("change", async () => {
+  const file = csvInput.files[0];
+  if (!file) return;
+  const text = await file.text();
+  csvInput.value = "";
+  const res = await api("/api/admin/batch", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      csv: text,
+      screenshot: document.getElementById("batchShotToggle").checked,
+      reanalyze: document.getElementById("reanalyzeToggle").checked
+    })
+  });
+  if (!res.ok) { const e = await res.json().catch(()=>({})); alert(e.error || "Import failed"); return; }
+  const { batch_id, total, requested, skipped } = await res.json();
+  showBatch(total, requested, skipped);
+  if (total > 0) pollBatch(batch_id);
+});
+
+function showBatch(total, requested, skipped) {
+  document.getElementById("batchToast").classList.add("show");
+  document.getElementById("batchTitle").textContent = total ? "Importing sites" : "Nothing to import";
+  document.getElementById("batchSub").textContent =
+    `${total} queued` + (skipped ? ` · ${skipped} already stored` : "") + (requested !== total + skipped ? ` · ${requested} rows read` : "");
+  document.getElementById("batchFeed").innerHTML = "";
+  document.getElementById("batchFill").style.width = "0%";
+}
+
+async function pollBatch(id) {
+  const tick = async () => {
+    const b = await api("/api/admin/batch/" + id).then(x => x.json());
+    const processed = b.done + b.failed;
+    const pct = b.total ? Math.round((processed / b.total) * 100) : 100;
+    document.getElementById("batchFill").style.width = pct + "%";
+    document.getElementById("batchStats").innerHTML =
+      `<span>${processed}/${b.total} done</span>` +
+      (b.running ? `<span class="run">${b.running} running</span>` : "") +
+      (b.failed ? `<span class="fail">${b.failed} failed</span>` : "");
+    const recent = b.items.filter(i => i.status === "done" || i.status === "error").slice(-6).reverse();
+    document.getElementById("batchFeed").innerHTML = recent.map(i =>
+      `<div class="feed-row ${i.status}"><span class="fd">${esc(i.domain)}</span><span class="fc">${i.status === "error" ? "failed" : esc(i.category || "ok")}</span></div>`
+    ).join("");
+    if (b.finished) {
+      document.getElementById("batchTitle").textContent = "Import complete";
+      return;
+    }
+    setTimeout(tick, 1200);
+  };
+  tick();
+}
+document.getElementById("batchClose").onclick = () => document.getElementById("batchToast").classList.remove("show");
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+</script>
+</body>
+</html>

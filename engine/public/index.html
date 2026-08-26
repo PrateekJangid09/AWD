@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllWebsites.design - a directory of the web, classified</title>
+<meta name="description" content="A curated directory of websites with category, type, audience, palette, fonts, style, and full-page screenshots.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">AllWebsites<span class="dot">.</span><em>design</em></a>
+  </div>
+</header>
+
+<main class="layout">
+  <aside class="rail" id="rail" aria-label="Filter by category">
+    <h3>Categories</h3>
+    <div id="facets"></div>
+  </aside>
+
+  <section>
+    <div class="headline">
+      <div>
+        <h1 id="hTitle">All websites</h1>
+        <p id="hSub">Browse curated website profiles — design, category, and technology at a glance.</p>
+      </div>
+      <select class="sortsel" id="sortSel" aria-label="Sort order">
+        <option value="recent">Recently added</option>
+        <option value="az">A to Z</option>
+        <option value="category">By category</option>
+      </select>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <p>No sites in the directory yet.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+const state = { category: "", style: "", q: "", sort: "recent" };
+
+async function loadFacets() {
+  const r = await fetch("/api/facets").then(x => x.json());
+  const el = document.getElementById("facets");
+  const all = `<button class="facet" data-cat="" aria-pressed="${!state.category}">All websites <span class="n">${r.total}</span></button>`;
+  el.innerHTML = all + r.categories.map(c =>
+    `<button class="facet" data-cat="${esc(c.name)}" aria-pressed="${state.category===c.name}">${esc(c.name)} <span class="n">${c.n}</span></button>`
+  ).join("");
+  el.querySelectorAll(".facet").forEach(b => b.onclick = () => {
+    state.category = b.dataset.cat;
+    document.getElementById("hTitle").textContent = state.category || "All websites";
+    loadFacets(); loadGrid();
+  });
+}
+
+async function loadGrid() {
+  const grid = document.getElementById("grid");
+  const params = new URLSearchParams();
+  if (state.category) params.set("category", state.category);
+  if (state.sort) params.set("sort", state.sort);
+  grid.setAttribute("aria-busy", "true");
+  const rows = await fetch("/api/sites?" + params).then(x => x.json());
+  document.getElementById("empty").hidden = rows.length > 0;
+  grid.innerHTML = rows.map(cardHTML).join("");
+  grid.setAttribute("aria-busy", "false");
+}
+
+function cardHTML(s) {
+  const pal = (s.palette || []).slice(0, 6);
+  const strip = pal.length ? `<div class="palette-strip">${pal.map(p => {
+    const hex = typeof p === "string" ? p : p.hex;
+    return `<span style="background:${esc(hex)}" title="${esc(hex)}"></span>`;
+  }).join("")}</div>` : "";
+  const shot = `<div class="shot ${s.screenshot ? "tall" : ""}">
+      <span class="ph">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        No screenshot yet
+      </span>
+      ${s.screenshot ? `<img loading="lazy" src="${esc(s.screenshot)}" alt="Full-page screenshot of ${esc(s.name || s.domain)}" onerror="this.remove()">` : ""}
+    </div>`;
+  const style = (s.style || [])[0];
+  return `<a class="card" href="/site.html?d=${encodeURIComponent(s.domain)}">
+    ${shot}
+    ${strip}
+    <div class="card-body">
+      <div class="card-title">
+        ${s.favicon ? `<img class="fav" src="${esc(s.favicon)}" alt="" loading="lazy" onerror="this.remove()">` : `<span class="fav ph-fav">${esc((s.name||s.domain||"?").slice(0,1).toUpperCase())}</span>`}
+        <h4>${esc(s.name || s.domain)}</h4>
+      </div>
+      <div class="card-dom">${esc(s.domain)}</div>
+      ${s.contact_email ? `<div class="card-mail"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>${esc(s.contact_email)}</div>` : ""}
+      ${s.description ? `<p class="card-desc">${esc(s.description)}</p>` : ""}
+      <div class="tags">
+        ${s.category ? `<span class="tag cat">${esc(s.category)}</span>` : ""}
+        ${s.website_type ? `<span class="tag type">${esc(s.website_type)}</span>` : ""}
+        ${style ? `<span class="tag">${esc(style)}</span>` : ""}
+        ${s.tech_summary ? `<span class="tag tech" title="Tech stack">${esc(s.tech_summary)}</span>` : ""}
+      </div>
+    </div>
+  </a>`;
+}
+
+document.getElementById("sortSel").onchange = (e) => { state.sort = e.target.value; loadGrid(); };
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+loadFacets(); loadGrid();
+</script>
+</body>
+</html>
