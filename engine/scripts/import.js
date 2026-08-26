@@ -24,6 +24,8 @@ const file = args.find((a) => !a.startsWith("--"));
 const noShot = args.includes("--no-shot");
 const reanalyze = args.includes("--reanalyze");
 const concArg = args.find((a) => a.startsWith("--concurrency="));
+const timeoutArg = args.find((a) => a.startsWith("--timeout="));
+const siteTimeoutMs = Math.max(15000, parseInt(timeoutArg ? timeoutArg.split("=")[1] : "90000", 10) || 90000);
 const concurrency = Math.max(1, Math.min(8, concArg ? parseInt(concArg.split("=")[1]) : 3));
 
 if (!file) { console.error("usage: node scripts/import.js <file.csv> [--no-shot] [--concurrency=N] [--reanalyze]"); process.exit(1); }
@@ -66,7 +68,12 @@ async function work() {
       setStage: () => {}
     };
     try {
-      await runPipeline(item.url, ctx);
+      await Promise.race([
+        runPipeline(item.url, ctx),
+        new Promise((_, reject) => {
+          setTimeout(() => reject(new Error(`site timeout after ${siteTimeoutMs}ms`)), siteTimeoutMs);
+        })
+      ]);
       const saved = upsertSite(db, fields);
       done++;
       console.log(`  [${n}/${queue.length}] ${item.domain} -> ${saved.category || "uncategorized"}${saved.subcategory ? " / " + saved.subcategory : ""}`);
