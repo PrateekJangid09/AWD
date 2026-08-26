@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: theme("colors.paper");
+    color: theme("colors.ink");
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    background: theme("colors.orange.DEFAULT");
+    color: #fff;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid theme("colors.orange.DEFAULT");
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8;
+  }
+
+  /* Section eyebrow — small caps label with an orange dot (editorial).
+     Colour is inherited so it reads on both light and dark sections. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-sans text-[11px] font-semibold uppercase tracking-[0.2em];
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: theme("colors.orange.DEFAULT");
+    flex: none;
+  }
+
+  /* Cards — hairline, quiet, lift softly on hover */
+  .card,
+  .card-brutal {
+    @apply border border-line bg-paper transition-all duration-300 ease-out;
+  }
+  .card:hover,
+  .card-brutal:hover {
+    @apply -translate-y-1 border-line-strong shadow-soft;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-orange px-6 py-3.5 text-white hover:bg-orange-600;
+  }
+  .btn-dark {
+    @apply btn bg-ink px-6 py-3.5 text-white hover:bg-black;
+  }
+  .btn-ghost {
+    @apply btn border border-ink bg-transparent px-6 py-3.5 text-ink hover:bg-ink hover:text-white;
+  }
+
+  .tag {
+    @apply inline-flex items-center border border-line px-2.5 py-1 font-sans text-[10.5px] font-medium uppercase tracking-[0.12em] text-muted;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-orange after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Long-form legal / editorial copy */
+  .prose > * + * {
+    margin-top: 1.05rem;
+  }
+  .prose h2 {
+    font-family: var(--font-archivo), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-top: 2.8rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid theme("colors.line");
+  }
+  .prose h3 {
+    font-family: var(--font-archivo), sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 1.8rem;
+  }
+  .prose p,
+  .prose li {
+    color: theme("colors.soft");
+    line-height: 1.75;
+    font-size: 0.97rem;
+  }
+  .prose ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .prose ul > li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .prose ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: theme("colors.orange.DEFAULT");
+  }
+  .prose a {
+    color: theme("colors.ink");
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: theme("colors.orange.DEFAULT");
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .prose strong {
+    font-weight: 700;
+    color: theme("colors.ink");
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Giant condensed editorial display */
+  .mega {
+    font-family: var(--font-anton), Impact, sans-serif;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+  }
+  /* Heavy grotesk for section + card headings */
+  .display {
+    font-family: var(--font-archivo), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.022em;
+    line-height: 1;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hairline {
+    border-color: theme("colors.line");
+  }
+  /* Very faint blueprint grid for hero/panel backgrounds */
+  .grid-bg {
+    background-image: linear-gradient(
+        rgba(20, 20, 20, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .grid-bg-sm {
+    background-image: linear-gradient(
+        rgba(20, 20, 20, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
