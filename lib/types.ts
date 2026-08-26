@@ -83,6 +83,7 @@ export interface Website {
 	linkedin?: string;
 	x?: string;
 	faviconUrl?: string;
+	domain?: string;
 }
 
 

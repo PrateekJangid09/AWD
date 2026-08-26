@@ -1,13 +1,29 @@
-# Run the engine on your PC (not in the cloud)
+# Local engine → 5,800 dedicated pages
 
-Cursor Cloud / Vercel will **not** crawl your 5,800 URLs. Clone the repo and run locally.
+The extractor is the **backend**. The public site only shows final datapoints.
+
+```text
+CSV of URLs
+  → engine/scripts/import.js   (background, private)
+  → SQLite full profile         (never public)
+  → npm run export              (allowlisted JSON)
+  → Next.js pages
+      allwebsites.design/category/saas/rankbeaver
+```
+
+Example: extract rankbeaver.com → page at:
+
+`/category/saas/rankbeaver`
+
+showing fonts, color scheme, tech stack, category, subcategory, website type, etc.
+
+## Run extraction (your PC)
 
 ```powershell
-cd C:\Users\DIKSHA
-git clone -b cursor/secure-engine-local-export-8772 https://github.com/PrateekJangid09/AWD.git
-cd AWD\engine
+cd C:\Users\DIKSHA\AWD
+git checkout cursor/secure-engine-local-export-8772
+cd engine
 Copy-Item .env.example .env
-# set ADMIN_SECRET and SESSION_SECRET in .env
 npm install
 node scripts\import.js data\final-list.csv --no-shot --concurrency=4
 npm run export -- --copy-shots
@@ -16,10 +32,8 @@ npm install
 npm run dev
 ```
 
-Then open a slug page:
+Then open:
 
-`http://localhost:3000/sites/<domain>`
+`http://localhost:3000/category/saas/rankbeaver`
 
-Example: `http://localhost:3000/sites/onepagelove.com`
-
-Full notes: [engine/README.md](engine/README.md)
+(Use the real category + brand slug from the export.)

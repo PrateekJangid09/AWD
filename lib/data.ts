@@ -5,6 +5,7 @@ import { cache } from 'react';
 import { Website } from './types';
 import { mapToMacroCategory } from './categories';
 import { getEngineWebsites } from './engineSites';
+import { categorySlugForWebsite } from './paths';
 
 function createSlug(name: string): string {
   return name
@@ -257,6 +258,24 @@ export async function getWebsiteBySlug(slug: string): Promise<Website | null> {
   const websites = await getWebsites();
   const needle = decodeURIComponent(slug).toLowerCase();
   return websites.find(site => site.slug.toLowerCase() === needle) || null;
+}
+
+export async function getWebsiteByCategoryAndSlug(
+  categorySlug: string,
+  slug: string
+): Promise<Website | null> {
+  const website = await getWebsiteBySlug(slug);
+  if (!website) return null;
+  if (categorySlugForWebsite(website) !== categorySlug.toLowerCase()) return null;
+  return website;
+}
+
+export async function getAllCategorySiteParams(): Promise<{ category: string; slug: string }[]> {
+  const websites = await getWebsites();
+  return websites.map((site) => ({
+    category: categorySlugForWebsite(site),
+    slug: site.slug,
+  }));
 }
 
 export async function getAllSlugs(): Promise<string[]> {

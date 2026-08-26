@@ -8,6 +8,7 @@ import Fuse from 'fuse.js';
 import { motion } from 'framer-motion';
 import { Website } from '@/lib/types';
 import { getCategoryColor } from '@/lib/categories';
+import { siteHref } from '@/lib/paths';
 import { PAGE_TYPE_OPTIONS } from '@/components/PrecisionFilter';
 
 // --- THEME (Light Mode) ---
@@ -342,7 +343,7 @@ interface PrismCardProps {
 }
 
 function PrismCard({ website }: PrismCardProps) {
-  const { name, description, screenshotUrl, fullScreenshotUrl, displayCategory, category, slug } =
+  const { name, description, screenshotUrl, fullScreenshotUrl, displayCategory, category } =
     website;
   const tag = displayCategory || category;
   const accentColor = getCategoryColor(tag);
@@ -351,7 +352,7 @@ function PrismCard({ website }: PrismCardProps) {
   const imageUrl = fullScreenshotUrl || screenshotUrl;
 
   return (
-    <Link href={`/sites/${slug}`} style={{ textDecoration: 'none' }}>
+    <Link href={siteHref(website)} style={{ textDecoration: 'none' }}>
       <motion.div
         className="w-full cursor-pointer relative"
         onHoverStart={() => setIsHovered(true)}

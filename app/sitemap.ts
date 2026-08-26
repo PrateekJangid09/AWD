@@ -1,12 +1,12 @@
 import { MetadataRoute } from 'next';
-import { getWebsites, getAllSlugs } from '@/lib/data';
+import { getAllCategorySiteParams } from '@/lib/data';
 import { MACRO_CATEGORIES, slugifyCategory } from '@/lib/categories';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.allwebsites.design';
 
   // Get all websites for individual site pages
-  const slugs = await getAllSlugs();
+  const siteParams = await getAllCategorySiteParams();
 
   // Generate sitemap entries
   const entries: MetadataRoute.Sitemap = [];
@@ -40,9 +40,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   // Individual site pages
-  for (const slug of slugs) {
+  for (const site of siteParams) {
     entries.push({
-      url: `${baseUrl}/sites/${slug}`,
+      url: `${baseUrl}/category/${site.category}/${site.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,

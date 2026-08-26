@@ -1,5 +1,6 @@
 import { Website } from './types';
 import { MACRO_CATEGORIES, slugifyCategory } from './categories';
+import { siteHref } from './paths';
 
 const SITE_URL = 'https://www.allwebsites.design';
 
@@ -138,9 +139,9 @@ export function generateItemListSchema(
       position: index + 1,
       item: {
         '@type': 'WebSite',
-        '@id': `${SITE_URL}/sites/${website.slug}`,
+        '@id': `${SITE_URL}${siteHref(website)}`,
         name: website.name,
-        url: `${SITE_URL}/sites/${website.slug}`,
+        url: `${SITE_URL}${siteHref(website)}`,
         image: `${SITE_URL}${website.screenshotUrl}`,
       },
     })),

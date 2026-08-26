@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getCategoryColor } from '@/lib/categories';
 import { Website } from '@/lib/types';
+import { siteHref } from '@/lib/paths';
 
 interface RelatedExhibitsProps {
   sectionTitle?: string;
@@ -26,6 +27,7 @@ export default function RelatedExhibits({
     cat: website.displayCategory || website.category,
     img: website.screenshotUrl,
     slug: website.slug,
+    href: siteHref(website),
     rot: [-2, 1.5, -1.5, 2, -1, 1][i] || 0,
   }));
 
@@ -97,7 +99,7 @@ export default function RelatedExhibits({
             category={item.cat}
             image={item.img}
             rotation={item.rot}
-            slug={item.slug}
+            href={item.href}
           />
         ))}
       </div>
@@ -168,13 +170,14 @@ interface PolaroidCardProps {
   image: string;
   rotation: number;
   slug: string;
+  href: string;
 }
 
-function PolaroidCard({ title, category, image, rotation, slug }: PolaroidCardProps) {
+function PolaroidCard({ title, category, image, rotation, href }: PolaroidCardProps) {
   const tapeColor = getCategoryColor(category);
 
   return (
-    <Link href={`/sites/${slug}`} style={{ textDecoration: 'none' }}>
+    <Link href={href} style={{ textDecoration: 'none' }}>
       <motion.div
         initial={{ rotate: rotation }}
         whileHover={{

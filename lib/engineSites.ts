@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { cache } from 'react';
 import { mapToMacroCategory } from './categories';
+import { brandSlugFromDomain } from './paths';
 import type { EnginePublicSite, Website } from './types';
 
 function publicShotPath(p: string | null | undefined): string | undefined {
@@ -20,7 +21,7 @@ export function engineSiteToWebsite(site: EnginePublicSite): Website | null {
   const name = (site.name || domain).trim();
   const url = (site.url || `https://${domain}`).trim();
   const category = (site.category || 'Uncategorized').trim();
-  const slug = (site.slug || domain).toLowerCase();
+  const slug = brandSlugFromDomain(domain);
   const shot = publicShotPath(site.screenshot);
   const displayCategory = mapToMacroCategory(category) || category;
 
@@ -37,6 +38,7 @@ export function engineSiteToWebsite(site: EnginePublicSite): Website | null {
     featured: false,
     hidden: false,
     fromEngine: true,
+    domain,
     subcategory: site.subcategory || undefined,
     websiteType: site.website_type || undefined,
     audience: site.audience || [],
@@ -68,9 +70,19 @@ function readEngineExport(): EnginePublicSite[] {
 }
 
 export const getEngineWebsites = cache(async (): Promise<Website[]> => {
-  return readEngineExport()
+  const mapped = readEngineExport()
     .map(engineSiteToWebsite)
     .filter((w): w is Website => w !== null);
+
+  const used = new Map<string, number>();
+  return mapped.map((site) => {
+    const key = site.slug;
+    const n = used.get(key) || 0;
+    used.set(key, n + 1);
+    if (n === 0) return site;
+    const tld = (site.domain || '').split('.').pop() || String(n + 1);
+    return { ...site, slug: `${site.slug}-${tld}` };
+  });
 });
 
 export async function getEngineWebsiteBySlug(slug: string): Promise<Website | null> {
