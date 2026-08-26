@@ -169,7 +169,6 @@ interface PolaroidCardProps {
   category: string;
   image: string;
   rotation: number;
-  slug: string;
   href: string;
 }
 
