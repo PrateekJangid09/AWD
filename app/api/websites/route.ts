@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getWebsites } from '@/lib/data';
+import { getWebsites } from '@/lib/websites';
 import { MACRO_CATEGORIES } from '@/lib/categories';
 
 export async function GET() {

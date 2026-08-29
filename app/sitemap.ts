@@ -1,75 +1,61 @@
-import { MetadataRoute } from 'next';
-import { getWebsites, getAllSlugs } from '@/lib/data';
-import { MACRO_CATEGORIES, slugifyCategory } from '@/lib/categories';
+import type { MetadataRoute } from "next";
+import { CATEGORIES, SITES, TOOLS } from "@/lib/data";
+import { CANONICAL } from "@/lib/canonical";
+import { getAllSlugs } from "@/lib/websites";
+
+const base = "https://www.allwebsites.design";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.allwebsites.design';
-
-  // Get all websites for individual site pages
+  const now = new Date();
   const slugs = await getAllSlugs();
+  const staticRoutes = [
+    "",
+    "/archive",
+    "/c",
+    "/tools",
+    "/research/website-design-index-2026",
+    "/blogs",
+    "/about",
+    "/manifesto",
+    "/editorial-guidelines",
+    "/submit",
+    "/contact",
+    "/privacy-policy",
+    "/terms",
+    "/cookie-preference",
+    "/website-templates-for-framer",
+  ];
 
-  // Generate sitemap entries
-  const entries: MetadataRoute.Sitemap = [];
+  const siteSlugs = new Set([
+    ...CANONICAL.map((s) => s.identity.slug),
+    ...SITES.map((s) => s.slug),
+    ...slugs,
+  ]);
 
-  // Homepage
-  entries.push({
-    url: baseUrl,
-    lastModified: new Date(),
-    changeFrequency: 'daily',
-    priority: 1.0,
-  });
-
-  // Category pages (exclude "Browse All")
-  const categoryPages = MACRO_CATEGORIES.filter((c) => c !== 'Browse All');
-  for (const category of categoryPages) {
-    const slug = slugifyCategory(category);
-    entries.push({
-      url: `${baseUrl}/c/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+  return [
+    ...staticRoutes.map((r) => ({
+      url: `${base}${r}`,
+      lastModified: now,
+      changeFrequency: r === "" || r === "/archive" ? "daily" as const : "weekly" as const,
+      priority: r === "" ? 1 : 0.7,
+    })),
+    ...CATEGORIES.map((c) => ({
+      url: `${base}/c/${c.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
       priority: 0.8,
-    });
-  }
-
-  // Template page
-  entries.push({
-    url: `${baseUrl}/website-templates-for-framer`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  });
-
-  // Individual site pages
-  for (const slug of slugs) {
-    entries.push({
-      url: `${baseUrl}/sites/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+    })),
+    ...[...siteSlugs].map((slug) => ({
+      url: `${base}/archive/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
       priority: 0.6,
-    });
-  }
-
-  // Legal pages
-  entries.push({
-    url: `${baseUrl}/about`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.5,
-  });
-
-  entries.push({
-    url: `${baseUrl}/privacy`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.5,
-  });
-
-  entries.push({
-    url: `${baseUrl}/terms`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.5,
-  });
-
-  return entries;
+    })),
+    ...TOOLS.map((t) => ({
+      url: `${base}/tools/${t.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
+  ];
 }

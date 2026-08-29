@@ -1,52 +1,81 @@
 import type { Metadata } from "next";
-import { Geist, Sora } from "next/font/google";
+import { Anton, Archivo, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
-const geist = Geist({ 
+const anton = Anton({
   subsets: ["latin"],
-  variable: "--font-geist",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400"],
+  variable: "--font-anton",
+  display: "swap",
 });
-
-const sora = Sora({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-sora",
-  weight: ["400", "600", "700"],
+  weight: ["500", "600", "700", "800", "900"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "AllWebsites.Design - Design Inspiration & Resources",
-  description: "A curated directory of 800+ landing pages from SaaS, Fintech, E-commerce, and more. Find inspiration for your next project.",
-  keywords: ["landing pages", "design inspiration", "SaaS", "Fintech", "E-commerce", "web design"],
-  metadataBase: new URL("https://allwebsites.design"),
-  alternates: {
-    canonical: "/",
+  metadataBase: new URL("https://www.allwebsites.design"),
+  title: {
+    default: "AllWebsites.Design — The Website Design Research Archive",
+    template: "%s — AllWebsites.Design",
+  },
+  description:
+    "Explore real websites by industry, style, color, typography, and technology. 5,896 curated, cleaned and deduplicated design references for designers, developers and founders.",
+  keywords: [
+    "website design inspiration",
+    "web design archive",
+    "design references",
+    "UI inspiration",
+    "website gallery",
+  ],
+  openGraph: {
+    title: "AllWebsites.Design — The Website Design Research Archive",
+    description:
+      "Discover, compare and study how real websites are designed. Structured design intelligence, not just screenshots.",
+    url: "https://www.allwebsites.design",
+    siteName: "AllWebsites.Design",
+    type: "website",
   },
   verification: {
     google: "Rya537NqhNiUvRDcCE4XNLwGj4cY6TR7JfbPBmkRttU",
   },
   icons: {
-    icon: "/Vector.png",
-    shortcut: "/Vector.png",
-    apple: "/Vector.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${sora.className} ${geist.variable} ${sora.variable}`}
-        style={{ backgroundColor: '#FAFAFA' }}
-      >
-        {/* Google tag (gtag.js) */}
+    <html
+      lang="en"
+      className={`${anton.variable} ${archivo.variable} ${inter.variable} ${mono.variable}`}
+    >
+      <body className="min-h-screen bg-paper text-ink antialiased">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-3ERMWX5HNN"
           strategy="afterInteractive"
@@ -59,17 +88,16 @@ export default function RootLayout({
             gtag('config', 'G-3ERMWX5HNN');
           `}
         </Script>
-        {/* theme container; toggled by Header */}
-        <div id="app-root" className="transition-colors duration-300">{children}</div>
-        <script dangerouslySetInnerHTML={{__html: `
-          (function(){
-            try {
-              var stored = localStorage.getItem('theme');
-              var root = document.documentElement; // <html>
-              if (stored === 'light') { root.classList.add('theme-light'); }
-            } catch(e) {}
-          })();
-        `}} />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:text-white"
+        >
+          Skip to content
+        </a>
+        <Nav />
+        <main id="main">{children}</main>
+        <Footer />
+        <CookieBanner />
         <Analytics />
         <SpeedInsights />
       </body>

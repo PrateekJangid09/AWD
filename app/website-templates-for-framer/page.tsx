@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Hero from "@/components/templates/Hero";
 import FeaturedWebsites from "@/components/templates/FeaturedWebsites";
@@ -15,8 +13,7 @@ export const metadata = {
 export default function WebsiteTemplatesPage() {
   return (
     <ThemeProvider>
-      <Header />
-      <main className="min-h-screen" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
+      <div className="min-h-screen bg-paper text-ink">
         <Hero
           badgeText="Curated website templates"
           title="Discover beautiful website templates for your next project."
@@ -517,8 +514,7 @@ export default function WebsiteTemplatesPage() {
           supportSecondaryNewTab={false}
           showSupportSecondary={true}
         />
-      </main>
-      <Footer />
+      </div>
     </ThemeProvider>
   );
 }

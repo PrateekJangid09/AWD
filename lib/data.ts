@@ -1,245 +1,324 @@
-import fs from 'fs';
-import path from 'path';
-import Papa from 'papaparse';
-import { cache } from 'react';
-import { Website } from './types';
-import { mapToMacroCategory } from './categories';
+// AllWebsites.Design — content model
+// Public, curated records. Counts mirror the 2026 Design Index (5,896 total).
 
-function createSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+export type Category = {
+  slug: string;
+  name: string;
+  count: number;
+  share: string;
+  blurb: string;
+  descriptors: string[];
+  accent: string; // swatch used for category color-coding
+};
+
+export type PaletteRole = { role: string; hex: string; coverage?: string };
+
+export type SiteRecord = {
+  slug: string;
+  name: string;
+  domain: string;
+  officialUrl: string;
+  category: string; // category slug
+  categoryName: string;
+  summary: string;
+  tags: string[];
+  style: string;
+  websiteType: string;
+  audience: string;
+  palette: PaletteRole[];
+  typography: { display: string; body: string; mono?: string; weights: string };
+  technology: { cms?: string; framework?: string; hosting?: string; cdn?: string };
+  reviewedAt: string;
+  lastChecked: string;
+  verification: string;
+  similar: string[]; // slugs
+};
+
+// Minimal shape used by SiteCard + the archive grid. Both the sample
+// SiteRecord and mapped canonical records satisfy this.
+export type CardSite = {
+  slug: string;
+  name: string;
+  domain: string;
+  categoryName: string;
+  style: string;
+  summary: string;
+  palette: PaletteRole[];
+  thumb?: string; // real screenshot URL, when available
+};
+
+export const STATS = {
+  total: 5896,
+  categories: 22,
+  perPage: 30,
+  pages: 197,
+  library: "Library v4.0",
+  method: "awd-2026.08.13-a",
+};
+
+export const CATEGORIES: Category[] = [
+  { slug: "portfolio", name: "Portfolio", count: 1990, share: "33.8%", blurb: "Personal sites, folios and CVs where the work is the interface.", descriptors: ["Personal", "Photography", "CV"], accent: "#FF6112" },
+  { slug: "agency-studio", name: "Agency / Studio", count: 975, share: "16.5%", blurb: "Creative shops, design studios and production houses selling taste.", descriptors: ["Creative", "Design", "Video"], accent: "#2536FF" },
+  { slug: "saas", name: "SaaS", count: 943, share: "16.0%", blurb: "Dashboards, CRMs and B2B products explaining themselves fast.", descriptors: ["Dashboards", "CRM", "B2B"], accent: "#0A0A0A" },
+  { slug: "other", name: "Other", count: 462, share: "7.8%", blurb: "References still awaiting a governed home in the taxonomy.", descriptors: ["Mixed", "Unsorted", "Emerging"], accent: "#7A7A7A" },
+  { slug: "media-entertainment", name: "Media / Entertainment", count: 198, share: "3.4%", blurb: "Streaming, publishing and culture brands built for attention.", descriptors: ["Streaming", "Publishing", "Culture"], accent: "#E4005B" },
+  { slug: "ecommerce", name: "E-commerce", count: 187, share: "3.2%", blurb: "Storefronts and DTC brands optimised for the add-to-cart.", descriptors: ["Shopify", "DTC", "Fashion"], accent: "#0F9D58" },
+  { slug: "architecture-real-estate", name: "Architecture / Real Estate", count: 168, share: "2.8%", blurb: "Studios and property brands where space becomes typography.", descriptors: ["Studios", "Property", "Interior"], accent: "#8B5E34" },
+  { slug: "ai", name: "AI", count: 163, share: "2.8%", blurb: "LLMs, chat and model products racing to explain the new.", descriptors: ["LLMs", "Agents", "Chat"], accent: "#6E56CF" },
+  { slug: "food-beverage", name: "Food & Beverage", count: 157, share: "2.7%", blurb: "Restaurants, brands and makers plating design on the web.", descriptors: ["Restaurants", "Brands", "Makers"], accent: "#E8590C" },
+  { slug: "fintech", name: "Fintech", count: 125, share: "2.1%", blurb: "Banking, wallets and crypto rails built to earn trust.", descriptors: ["Banking", "Crypto", "Wallets"], accent: "#00A389" },
+  { slug: "developer", name: "Developer", count: 90, share: "1.5%", blurb: "Dev tools, docs and APIs designed for people who read source.", descriptors: ["Docs", "APIs", "Open Source"], accent: "#111827" },
+  { slug: "ai-agent", name: "AI Agent", count: 79, share: "1.3%", blurb: "Autonomous agents and automation tools staking early ground.", descriptors: ["Agents", "Automation", "Tools"], accent: "#7C3AED" },
+  { slug: "health", name: "Health", count: 69, share: "1.2%", blurb: "Wellness, clinics and care apps balancing calm and clarity.", descriptors: ["Wellness", "Clinics", "Apps"], accent: "#0EA5E9" },
+  { slug: "typography", name: "Typography", count: 67, share: "1.1%", blurb: "Type foundries and lettering sites where the font is the pitch.", descriptors: ["Foundries", "Lettering", "Specimens"], accent: "#0A0A0A" },
+  { slug: "music-audio", name: "Music / Audio", count: 47, share: "0.8%", blurb: "Artists, labels and audio tools tuned for rhythm and motion.", descriptors: ["Artists", "Labels", "Tools"], accent: "#DB2777" },
+  { slug: "education", name: "Education", count: 45, share: "0.8%", blurb: "Courses, learning platforms and schools structuring knowledge.", descriptors: ["Courses", "Learning", "Platforms"], accent: "#2563EB" },
+  { slug: "template", name: "Template", count: 32, share: "0.5%", blurb: "Actual downloadable design kits, themes and resources.", descriptors: ["Designs", "Resources", "Kits"], accent: "#FF6112" },
+  { slug: "travel-hospitality", name: "Travel / Hospitality", count: 31, share: "0.5%", blurb: "Hotels, tourism and experiences selling a place to be.", descriptors: ["Hotels", "Tourism", "Stays"], accent: "#0891B2" },
+  { slug: "photography", name: "Photography", count: 30, share: "0.5%", blurb: "Photographers and galleries where the grid carries the mood.", descriptors: ["Galleries", "Studios", "Prints"], accent: "#0A0A0A" },
+  { slug: "nonprofit", name: "Nonprofit", count: 16, share: "0.3%", blurb: "Causes and foundations turning mission into momentum.", descriptors: ["Causes", "Foundations", "NGOs"], accent: "#16A34A" },
+  { slug: "crypto-web3", name: "Crypto / Web3", count: 15, share: "0.3%", blurb: "DeFi, NFT and DAO projects designing for the on-chain.", descriptors: ["DeFi", "NFT", "DAO"], accent: "#F59E0B" },
+  { slug: "fashion-retail", name: "Fashion / Retail", count: 7, share: "0.1%", blurb: "Labels and boutiques treating the site like a lookbook.", descriptors: ["Labels", "Boutiques", "Lookbooks"], accent: "#0A0A0A" },
+];
+
+export const TRENDING = ["saas", "ai-agent", "portfolio"];
+
+export const SITES: SiteRecord[] = [
+  {
+    slug: "aboard",
+    name: "Aboard",
+    domain: "aboard.com",
+    officialUrl: "https://aboard.com",
+    category: "saas",
+    categoryName: "SaaS",
+    summary: "Lightweight HR platform for time off, onboarding, contracts, and culture.",
+    tags: ["SaaS", "HR", "B2B"],
+    style: "Minimal",
+    websiteType: "Product Website",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#DCDAFA", coverage: "58%" },
+      { role: "Primary", hex: "#4F46E5", coverage: "22%" },
+      { role: "Deep", hex: "#3731A0", coverage: "9%" },
+      { role: "Ink", hex: "#111111", coverage: "11%" },
+    ],
+    typography: { display: "Inter", body: "Inter", weights: "400 – 700" },
+    technology: { framework: "Next.js", hosting: "Vercel", cdn: "Vercel Edge" },
+    reviewedAt: "11 Aug 2026",
+    lastChecked: "24 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["algolia", "arthur", "deel-clone", "later-clone"],
+  },
+  {
+    slug: "algolia",
+    name: "Algolia",
+    domain: "algolia.com",
+    officialUrl: "https://algolia.com",
+    category: "developer",
+    categoryName: "Developer",
+    summary: "Hosted search and discovery API with docs-first developer onboarding.",
+    tags: ["SaaS", "Developer Tool", "Search"],
+    style: "Bold",
+    websiteType: "Developer Platform",
+    audience: "Developer",
+    palette: [
+      { role: "Surface", hex: "#E8DEFD", coverage: "54%" },
+      { role: "Primary", hex: "#8B5CF6", coverage: "24%" },
+      { role: "Deep", hex: "#6140AC", coverage: "10%" },
+      { role: "Ink", hex: "#111111", coverage: "12%" },
+    ],
+    typography: { display: "System UI", body: "System UI", mono: "JetBrains Mono", weights: "400 – 800" },
+    technology: { framework: "Next.js", hosting: "Netlify", cdn: "Fastly" },
+    reviewedAt: "11 Aug 2026",
+    lastChecked: "22 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["aboard", "arthur", "readme-clone", "stripe-clone"],
+  },
+  {
+    slug: "arthur",
+    name: "Arthur",
+    domain: "arthur.ai",
+    officialUrl: "https://arthur.ai",
+    category: "ai",
+    categoryName: "AI",
+    summary: "Monitoring and observability platform for production machine-learning models.",
+    tags: ["AI Platform", "ML Ops"],
+    style: "Motion-Driven",
+    websiteType: "Product Website",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#CDF0F6", coverage: "50%" },
+      { role: "Primary", hex: "#06B6D4", coverage: "26%" },
+      { role: "Deep", hex: "#047F94", coverage: "12%" },
+      { role: "Ink", hex: "#111111", coverage: "12%" },
+    ],
+    typography: { display: "Inter", body: "Inter", weights: "400 – 700" },
+    technology: { framework: "Nuxt", hosting: "Vercel", cdn: "Cloudflare" },
+    reviewedAt: "11 Aug 2026",
+    lastChecked: "20 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["aboard", "algolia", "levels-clone"],
+  },
+  {
+    slug: "meridian-studio",
+    name: "Meridian Studio",
+    domain: "meridian.studio",
+    officialUrl: "https://meridian.studio",
+    category: "agency-studio",
+    categoryName: "Agency / Studio",
+    summary: "Independent brand and motion studio with a case-study-led portfolio.",
+    tags: ["Agency", "Branding", "Motion"],
+    style: "Editorial",
+    websiteType: "Studio Portfolio",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#F4F1E9", coverage: "60%" },
+      { role: "Ink", hex: "#0A0A0A", coverage: "26%" },
+      { role: "Accent", hex: "#FF6112", coverage: "8%" },
+      { role: "Muted", hex: "#7A7A7A", coverage: "6%" },
+    ],
+    typography: { display: "Archivo", body: "Inter", weights: "400 – 900" },
+    technology: { cms: "Webflow", hosting: "Webflow", cdn: "AWS CloudFront" },
+    reviewedAt: "18 Aug 2026",
+    lastChecked: "25 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["osli-folio", "north-atlas", "aboard"],
+  },
+  {
+    slug: "osli-folio",
+    name: "Osli",
+    domain: "osli.design",
+    officialUrl: "https://osli.design",
+    category: "portfolio",
+    categoryName: "Portfolio",
+    summary: "Product designer portfolio with a restrained grid and long-form case studies.",
+    tags: ["Portfolio", "Personal", "Product Design"],
+    style: "Minimal",
+    websiteType: "Personal Portfolio",
+    audience: "Consumer",
+    palette: [
+      { role: "Surface", hex: "#FBFAF6", coverage: "66%" },
+      { role: "Ink", hex: "#111111", coverage: "24%" },
+      { role: "Accent", hex: "#2536FF", coverage: "6%" },
+      { role: "Muted", hex: "#9A9A9A", coverage: "4%" },
+    ],
+    typography: { display: "Archivo", body: "Inter", weights: "400 – 800" },
+    technology: { framework: "Astro", hosting: "Vercel", cdn: "Vercel Edge" },
+    reviewedAt: "16 Aug 2026",
+    lastChecked: "25 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["meridian-studio", "north-atlas", "arthur"],
+  },
+  {
+    slug: "north-atlas",
+    name: "North Atlas",
+    domain: "northatlas.co",
+    officialUrl: "https://northatlas.co",
+    category: "fintech",
+    categoryName: "Fintech",
+    summary: "Business banking and treasury product with a security-forward marketing site.",
+    tags: ["Fintech", "Banking", "B2B"],
+    style: "Corporate",
+    websiteType: "Product Website",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#0B1220", coverage: "56%" },
+      { role: "Primary", hex: "#00A389", coverage: "20%" },
+      { role: "Ink", hex: "#F5F5F5", coverage: "16%" },
+      { role: "Accent", hex: "#FF6112", coverage: "8%" },
+    ],
+    typography: { display: "Archivo", body: "Inter", mono: "IBM Plex Mono", weights: "400 – 800" },
+    technology: { framework: "Next.js", hosting: "AWS", cdn: "CloudFront" },
+    reviewedAt: "14 Aug 2026",
+    lastChecked: "23 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["aboard", "meridian-studio", "algolia"],
+  },
+];
+
+// Fresh-from-community discovery strip
+export const FRESH = [
+  "Aboard",
+  "airdev.co",
+  "AirPods Pro 3",
+  "algolia.com",
+  "Andersen",
+  "Arthur",
+  "Meridian Studio",
+  "North Atlas",
+  "Osli",
+];
+
+export type Tool = {
+  slug: string;
+  name: string;
+  tagline: string;
+  desc: string;
+  tags: string[];
+  swatches: string[];
+  status: "live" | "soon";
+};
+
+export const TOOLS: Tool[] = [
+  {
+    slug: "colorhyme",
+    name: "Colorhyme",
+    tagline: "Precision color transformer",
+    desc: "Start with one color. Shift its hue by exact degrees, tune saturation and lightness, and copy repeatable color recipes.",
+    tags: ["Hue shift", "HSL", "Recipes"],
+    swatches: ["#3389F9", "#F933A3", "#6A788A", "#1F5FAE"],
+    status: "live",
+  },
+  {
+    slug: "mockupalettes",
+    name: "Mockupalettes",
+    tagline: "Website palette preview",
+    desc: "See any 4-colour palette on a full website mockup. Map primary, secondary, accent and dark roles, then compare directions in context.",
+    tags: ["Palette", "Roles", "Compare"],
+    swatches: ["#3978F6", "#3DD6D0", "#8658E8", "#111827"],
+    status: "live",
+  },
+  {
+    slug: "chromary",
+    name: "Chromary",
+    tagline: "Color dictionary",
+    desc: "Search named colors by name or HEX, find perceptually nearby matches, and compare how different sources define the same name.",
+    tags: ["Names", "HEX", "Sources"],
+    swatches: ["#87AE73", "#BCB88A", "#D2AE69", "#681F2A"],
+    status: "live",
+  },
+  {
+    slug: "truegradient",
+    name: "TrueGradient",
+    tagline: "OKLCH gradient tool",
+    desc: "Compare the same gradient stops in sRGB and native OKLCH, inspect the hue route, and copy production-ready CSS.",
+    tags: ["OKLCH", "Gradients", "CSS"],
+    swatches: ["#3389F9", "#7BE0B0", "#FFD76B", "#FF6112"],
+    status: "live",
+  },
+  {
+    slug: "webpalette",
+    name: "WebPalette Studio",
+    tagline: "Website color-system builder",
+    desc: "Keep your brand colors and complete the full website palette around them — semantic roles, contrast checks and CSS export.",
+    tags: ["Roles", "Contrast", "Export"],
+    swatches: ["#E6E7EA", "#25282D", "#FF6112", "#7AB8FF"],
+    status: "live",
+  },
+];
+
+export function getCategory(slug: string) {
+  return CATEGORIES.find((c) => c.slug === slug);
 }
 
-// Check if category is specific (not "Other" or empty)
-function hasSpecificCategory(category: string): boolean {
-  const cat = category?.trim() || '';
-  return cat !== '' && 
-         cat !== 'Uncategorized' && 
-         cat !== 'Other' &&
-         cat.toLowerCase() !== 'other';
+export function getTool(slug: string) {
+  return TOOLS.find((t) => t.slug === slug);
 }
 
-// Check if URL is a valid official website (not platform link, not inferred)
-function isValidOfficialUrl(url: string, name: string): boolean {
-  try {
-    if (!url || typeof url !== 'string' || !url.trim()) return false;
-    if (!name || typeof name !== 'string') return false;
-    
-    const urlLower = url.toLowerCase().trim();
-    
-    // Must start with http:// or https://
-    if (!urlLower.startsWith('http://') && !urlLower.startsWith('https://')) {
-      return false;
-    }
-    
-    // Exclude platform links
-    const platformDomains = [
-      'land-book.com',
-      'saaslandingpage.com',
-      'onepagelove.com',
-      'webflow.com/made-in-webflow',
-      'webflow.com/@',
-      'a1.gallery',
-    ];
-    
-    for (const platform of platformDomains) {
-      if (urlLower.includes(platform)) {
-        return false;
-      }
-    }
-    
-    // Extract domain from URL
-    const urlObj = new URL(url);
-    let domain = urlObj.hostname.toLowerCase().replace(/^www\./, '');
-    const domainParts = domain.split('.');
-    if (domainParts.length === 0) return false;
-    
-    const domainWithoutTld = domainParts[0];
-    
-    // Check if domain is too long (likely inferred)
-    // If domain is longer than 30 chars, it's likely inferred
-    if (domainWithoutTld.length > 30) {
-      return false;
-    }
-    
-    // Check if domain matches slugified name pattern (likely inferred)
-    const nameSlug = createSlug(name);
-    if (nameSlug && nameSlug.length > 15 && domainWithoutTld.length > 20) {
-      // If domain contains a significant portion of the slugified name and is very long
-      const nameSlugStart = nameSlug.substring(0, Math.min(20, nameSlug.length));
-      if (domainWithoutTld.includes(nameSlugStart) && domainWithoutTld.length > 25) {
-        return false;
-      }
-    }
-    
-    // Check for obvious inferred patterns: very long domains with multiple hyphens
-    const hyphenCount = (domainWithoutTld.match(/-/g) || []).length;
-    if (domainWithoutTld.length > 25 && hyphenCount > 3) {
-      return false;
-    }
-    
-    return true;
-  } catch (e) {
-    // Invalid URL format or any error
-    return false;
-  }
+export function getSite(slug: string) {
+  return SITES.find((s) => s.slug === slug);
 }
 
-// Internal function to fetch and parse websites
-async function fetchWebsites(): Promise<Website[]> {
-  try {
-    const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
-    
-    if (!fs.existsSync(csvPath)) {
-      console.error(`CSV file not found at: ${csvPath}`);
-      return [];
-    }
-    
-    const fileContent = fs.readFileSync(csvPath, 'utf-8');
-
-    if (!fileContent || fileContent.trim() === '') {
-      console.error('CSV file is empty');
-      return [];
-    }
-
-    const { data } = Papa.parse<string[]>(fileContent, {
-      header: false,
-      skipEmptyLines: true,
-    });
-
-    if (!data || data.length === 0) {
-      console.error('No data parsed from CSV');
-      return [];
-    }
-
-    const websites: Website[] = data.slice(1)
-      .map((row, index) => {
-        try {
-          const name = (row[0]?.trim() || 'Unnamed').toString();
-          const url = (row[1]?.trim() || '').toString();
-          const category = (row[2]?.trim() || 'Uncategorized').toString();
-          const description = (row[3]?.trim() || 'No description available').toString();
-          const featured = (row[4]?.trim().toLowerCase() === 'true');
-          const hidden = (row[5]?.trim().toLowerCase() === 'true');
-          const slug = createSlug(name);
-          const displayCategory = mapToMacroCategory(category);
-
-          // Return URLs directly - let the client handle 404s for missing images
-          // This prevents Vercel from bundling screenshot files into the serverless function
-          const screenshotUrl = `/screenshots/${slug}.webp`;
-
-          return {
-            id: `${index + 1}`,
-            name,
-            url,
-            category,
-            description,
-            screenshotUrl,
-            slug,
-            displayCategory: displayCategory || category,
-            fullScreenshotUrl: `/fullshots/${slug}.webp`,
-            featured,
-            hidden,
-          } as Website;
-        } catch (rowError) {
-          console.error(`Error processing row ${index + 1}:`, rowError);
-          return null;
-        }
-      })
-      .filter((website): website is Website => website !== null && website !== undefined);
-
-    // Filter out hidden websites
-    let visibleWebsites = websites.filter(website => !website.hidden);
-    
-    // Filter to only include valid websites:
-    // 1. Must have specific category (not "Other" or empty)
-    // 2. Must have valid official URL (not platform link, not inferred)
-    // 3. Must have a name
-    visibleWebsites = visibleWebsites.filter(website => {
-      try {
-        // Check name
-        if (!website.name || typeof website.name !== 'string' || website.name.trim() === '' || website.name === 'Unnamed') {
-          return false;
-        }
-        
-        // Check category
-        if (!website.category || !hasSpecificCategory(website.category)) {
-          return false;
-        }
-        
-        // Check URL
-        if (!website.url || !isValidOfficialUrl(website.url, website.name)) {
-          return false;
-        }
-        
-        return true;
-      } catch (e) {
-        // If any error occurs during filtering, exclude the website
-        return false;
-      }
-    });
-
-    return sortWebsitesByQuality(visibleWebsites);
-  } catch (error) {
-    console.error('Error in getWebsites:', error);
-    return [];
-  }
-}
-
-// Deduplicate getWebsites within the same request (no unstable_cache - payload exceeds 2MB limit)
-export const getWebsites = cache(fetchWebsites);
-
-function sortWebsitesByQuality(websites: Website[]): Website[] {
-  return websites.sort((a, b) => {
-    // First, prioritize featured websites
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    
-    // If both are featured or both are not featured, sort alphabetically
-    if (a.featured === b.featured) {
-      return a.name.localeCompare(b.name);
-    }
-    
-    // Fallback to quality score
-    const scoreA = calculateQualityScore(a);
-    const scoreB = calculateQualityScore(b);
-    return scoreB - scoreA;
-  });
-}
-
-function calculateQualityScore(website: Website): number {
-  let score = 0;
-
-  // Removed file system checks to reduce serverless function size
-  // Files in public/ are served statically, so we can assume they exist
-  // Featured websites get bonus points
-  if (website.featured) score += 50;
-
-  if (website.url && website.url.startsWith('http')) score += 15;
-
-  // Assume screenshots exist (they're in public/)
-  score += 20;
-
-  if (website.description && website.description.length > 20) score += 5;
-  if (website.name && website.name.length > 2) score += 5;
-
-  return score;
-}
-
-export async function getWebsiteBySlug(slug: string): Promise<Website | null> {
-  const websites = await getWebsites();
-  return websites.find(site => site.slug === slug) || null;
-}
-
-export async function getAllSlugs(): Promise<string[]> {
-  const websites = await getWebsites();
-  return websites.map(site => site.slug);
-}
-
-export async function getRelatedWebsites(website: Website, limit: number = 6): Promise<Website[]> {
-  const websites = await getWebsites();
-  const related = websites.filter(site => site.displayCategory === website.displayCategory && site.id !== website.id);
-  return related.sort(() => Math.random() - 0.5).slice(0, limit);
+export function sitesInCategory(slug: string) {
+  return SITES.filter((s) => s.category === slug);
 }
