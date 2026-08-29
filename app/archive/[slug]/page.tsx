@@ -4,10 +4,15 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import SiteCard from "@/components/SiteCard";
 import SitePreview from "@/components/SitePreview";
+import SiteRecord from "@/components/SiteRecord";
 import { SITES, getSite, getCategory } from "@/lib/data";
+import { CANONICAL, getCanonical } from "@/lib/canonical";
 
 export function generateStaticParams() {
-  return SITES.map((s) => ({ slug: s.slug }));
+  // Real canonical records + the remaining sample records.
+  const canonicalSlugs = CANONICAL.map((s) => s.identity.slug);
+  const sampleSlugs = SITES.map((s) => s.slug).filter((s) => !canonicalSlugs.includes(s));
+  return [...canonicalSlugs, ...sampleSlugs].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -16,6 +21,18 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const rec = getCanonical(slug);
+  if (rec) {
+    const type = [rec.classification.category, rec.classification.website_type]
+      .filter(Boolean)
+      .join(" · ");
+    return {
+      title: `${rec.identity.name} — ${type || "Website Design"}`,
+      description:
+        rec.seo.description ??
+        `Study the palette, typography, style and technology behind ${rec.identity.name}.`,
+    };
+  }
   const site = getSite(slug);
   if (!site) return { title: "Record not found" };
   return {
@@ -62,6 +79,12 @@ export default async function SitePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  // Real canonical record → rich template.
+  const canonical = getCanonical(slug);
+  if (canonical) return <SiteRecord site={canonical} />;
+
+  // Fallback: sample record → original render.
   const site = getSite(slug);
   if (!site) notFound();
 
@@ -214,7 +237,7 @@ export default async function SitePage({
               </p>
             </div>
 
-            <div className="border border-line bg-ink p-6 text-paper">
+            <div className="rounded-xl border border-line bg-ink p-6 text-paper">
               <p className="font-mono text-[11px] uppercase tracking-widest text-orange">
                 Editorial status
               </p>

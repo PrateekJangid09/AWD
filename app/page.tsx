@@ -4,6 +4,7 @@ import SiteCard from "@/components/SiteCard";
 import CategoryCard from "@/components/CategoryCard";
 import SitePreview from "@/components/SitePreview";
 import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import {
   CATEGORIES,
   SITES,
@@ -11,13 +12,23 @@ import {
   TRENDING,
   TOOLS,
   getCategory,
+  type CardSite,
 } from "@/lib/data";
+import { canonicalCards } from "@/lib/canonical";
 
 export default function Home() {
   const trending = TRENDING.map(getCategory).filter(Boolean);
   const heroCards = SITES.slice(0, 3);
+  const curated: CardSite[] = [...canonicalCards(), ...SITES].slice(0, 6);
   const distribution = CATEGORIES.slice(0, 6);
   const distMax = Math.max(...distribution.map((c) => c.count));
+
+  const stats = [
+    { to: STATS.total, format: true, suffix: "", v: "Curated references" },
+    { to: STATS.categories, suffix: "", v: "Categories" },
+    { to: STATS.pages, suffix: "", v: "Crawlable pages" },
+    { to: 100, suffix: "%", v: "Source-verified" },
+  ];
 
   return (
     <>
@@ -26,9 +37,14 @@ export default function Home() {
         <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
         <div className="wrap relative grid gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-20">
           <div>
-            <p className="eyebrow text-ink">The Website Design Archive</p>
+            <p className="eyebrow anim-up text-ink" style={{ animationDelay: "40ms" }}>
+              The Website Design Archive
+            </p>
 
-            <h1 className="mega mt-7 text-6xl leading-[0.86] sm:text-8xl lg:text-[7.5rem]">
+            <h1
+              className="mega anim-up mt-7 text-6xl leading-[0.86] sm:text-8xl lg:text-[7.5rem]"
+              style={{ animationDelay: "120ms" }}
+            >
               Study the
               <br />
               web&apos;s best
@@ -36,13 +52,20 @@ export default function Home() {
               <span className="text-orange">design.</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-soft">
+            <p
+              className="anim-up mt-7 max-w-xl text-pretty text-lg leading-relaxed text-soft"
+              style={{ animationDelay: "220ms" }}
+            >
               Discover, compare and study how real websites are designed — by
               industry, style, colour, typography and technology. Structured design
               intelligence, not just screenshots.
             </p>
 
-            <form action="/archive" className="mt-8 flex max-w-xl border border-ink">
+            <form
+              action="/archive"
+              className="anim-up mt-8 flex max-w-xl border border-ink transition-shadow focus-within:shadow-soft"
+              style={{ animationDelay: "300ms" }}
+            >
               <span className="grid place-items-center px-4 text-lg text-muted">⌕</span>
               <input
                 name="q"
@@ -51,12 +74,15 @@ export default function Home() {
                 aria-label="Search the archive"
                 className="min-w-0 flex-1 bg-transparent py-4 text-sm outline-none placeholder:text-muted"
               />
-              <button type="submit" className="btn bg-ink px-6 text-white hover:bg-black">
+              <button type="submit" className="btn bg-ink px-6 text-white transition-colors hover:bg-black">
                 Search
               </button>
             </form>
 
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <div
+              className="anim-up mt-6 flex flex-wrap items-center gap-4"
+              style={{ animationDelay: "380ms" }}
+            >
               <Link href="/archive" className="btn-primary">
                 Browse full archive <span aria-hidden>↗</span>
               </Link>
@@ -66,25 +92,34 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero visual: orange block + card cluster */}
+          {/* Hero visual: orange block + floating card cluster */}
           <div className="relative hidden h-[460px] lg:block" aria-hidden>
-            <div className="absolute right-4 top-8 h-[360px] w-[300px] bg-orange" />
-            <div className="absolute left-10 top-3 z-30 -rotate-3">
-              <div className="w-64 border border-ink shadow-soft-lg">
+            <div className="anim-pop absolute right-4 top-8 h-[360px] w-[300px] bg-orange" style={{ animationDelay: "200ms" }} />
+            <div className="anim-pop absolute left-10 top-3 z-30" style={{ animationDelay: "320ms" }}>
+              <div
+                className="float-slow w-64 border border-ink shadow-soft-lg"
+                style={{ ["--tilt"]: "rotate(-3deg)" } as React.CSSProperties}
+              >
                 <SitePreview palette={heroCards[0].palette} label={heroCards[0].domain} />
               </div>
             </div>
-            <div className="absolute right-0 top-24 z-20 rotate-3">
-              <div className="w-56 border border-ink shadow-soft-lg">
+            <div className="anim-pop absolute right-0 top-24 z-20" style={{ animationDelay: "440ms" }}>
+              <div
+                className="float-med w-56 border border-ink shadow-soft-lg"
+                style={{ ["--tilt"]: "rotate(3deg)", animationDelay: "1.2s" } as React.CSSProperties}
+              >
                 <SitePreview palette={heroCards[1].palette} label={heroCards[1].domain} />
               </div>
             </div>
-            <div className="absolute bottom-0 left-24 z-40 -rotate-1">
-              <div className="w-60 border border-ink shadow-soft-lg">
+            <div className="anim-pop absolute bottom-0 left-24 z-40" style={{ animationDelay: "560ms" }}>
+              <div
+                className="float-slow w-60 border border-ink shadow-soft-lg"
+                style={{ ["--tilt"]: "rotate(-1deg)", animationDelay: "0.6s" } as React.CSSProperties}
+              >
                 <SitePreview palette={heroCards[2].palette} label={heroCards[2].domain} />
               </div>
             </div>
-            <span className="absolute -right-4 top-1/2 z-40 origin-center -translate-y-1/2 rotate-90 text-[11px] font-semibold uppercase tracking-[0.3em] text-ink">
+            <span className="anim-in absolute -right-4 top-1/2 z-40 origin-center -translate-y-1/2 rotate-90 text-[11px] font-semibold uppercase tracking-[0.3em] text-ink" style={{ animationDelay: "700ms" }}>
               5,896 references
             </span>
           </div>
@@ -93,17 +128,14 @@ export default function Home() {
         {/* Stat strip */}
         <div className="relative border-t border-line">
           <div className="wrap grid grid-cols-2 md:grid-cols-4">
-            {[
-              { k: STATS.total.toLocaleString(), v: "Curated references" },
-              { k: STATS.categories.toString(), v: "Governed categories" },
-              { k: STATS.pages.toString(), v: "Crawlable pages" },
-              { k: "100%", v: "Source-verified" },
-            ].map((s, i) => (
+            {stats.map((s, i) => (
               <div
                 key={i}
                 className={`px-2 py-7 md:px-6 ${i > 0 ? "md:border-l md:border-line" : ""} ${i === 1 ? "border-l border-line md:border-l" : ""} ${i === 3 ? "border-l border-line" : ""}`}
               >
-                <div className="mega text-4xl text-ink sm:text-5xl">{s.k}</div>
+                <div className="mega text-4xl text-ink sm:text-5xl">
+                  <CountUp to={s.to} suffix={s.suffix} format={s.format} />
+                </div>
                 <div className="mt-2 text-[11px] uppercase tracking-[0.16em] text-muted">
                   {s.v}
                 </div>
@@ -115,7 +147,7 @@ export default function Home() {
 
       <Marquee items={["Industry", "Style", "Colour", "Typography", "Technology", "Layout"]} />
 
-      {/* ─────────────────── SELECTED REFERENCES (up top) ─────────────────── */}
+      {/* ─────────────────── SELECTED REFERENCES ─────────────────── */}
       <section className="border-b border-line py-16 sm:py-20">
         <div className="wrap">
           <div className="flex flex-col justify-between gap-6 border-b border-line pb-8 sm:flex-row sm:items-end">
@@ -140,8 +172,8 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {SITES.map((site, i) => (
-              <Reveal key={site.slug} delay={(i % 3) * 70}>
+            {curated.map((site, i) => (
+              <Reveal key={site.slug} delay={(i % 3) * 90}>
                 <SiteCard site={site} index={i} />
               </Reveal>
             ))}
@@ -160,7 +192,7 @@ export default function Home() {
         <div className="wrap">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="eyebrow text-ink">Governed collections</p>
+              <p className="eyebrow text-ink">Explore the archive</p>
               <h2 className="mega mt-5 text-4xl sm:text-5xl">Browse by category.</h2>
             </div>
             <Link href="/c" className="btn-ghost self-start sm:self-auto">
@@ -169,8 +201,10 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {trending.map((c) => (
-              <CategoryCard key={c!.slug} category={c!} featured />
+            {trending.map((c, i) => (
+              <Reveal key={c!.slug} delay={i * 90}>
+                <CategoryCard category={c!} featured />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -182,9 +216,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="eyebrow text-ink">Free design tools</p>
-              <h2 className="mega mt-5 text-4xl sm:text-6xl">
-                Colour tools, built in.
-              </h2>
+              <h2 className="mega mt-5 text-4xl sm:text-6xl">Colour tools, built in.</h2>
               <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-soft">
                 Five free, no-signup tools that run in your browser — palette
                 building, gradients, colour naming and more.
@@ -197,10 +229,10 @@ export default function Home() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((t, i) => (
-              <Reveal key={t.slug} delay={(i % 3) * 60}>
+              <Reveal key={t.slug} delay={(i % 3) * 80}>
                 <a
                   href={`/tools/${t.slug}`}
-                  className="group flex h-full flex-col justify-between border border-line bg-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-soft"
+                  className="hover-lift group flex h-full flex-col justify-between rounded-xl border border-line bg-paper p-6 hover:border-line-strong hover:shadow-soft"
                 >
                   <div>
                     <div className="flex items-center justify-between">
@@ -221,16 +253,15 @@ export default function Home() {
                   </div>
                   <div className="mt-6 flex h-8 overflow-hidden border border-line">
                     {t.swatches.map((s) => (
-                      <span key={s} className="flex-1" style={{ backgroundColor: s }} />
+                      <span key={s} className="flex-1 transition-transform duration-500 group-hover:scale-y-110" style={{ backgroundColor: s }} />
                     ))}
                   </div>
                 </a>
               </Reveal>
             ))}
-            {/* trailing CTA card */}
             <Link
               href="/tools"
-              className="group flex min-h-[220px] flex-col items-start justify-between border border-dashed border-line-strong bg-bone p-6 transition-colors hover:border-orange"
+              className="hover-lift group flex min-h-[220px] flex-col items-start justify-between rounded-xl border border-dashed border-line-strong bg-bone p-6 hover:border-orange"
             >
               <span className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted">
                 The suite
@@ -239,7 +270,7 @@ export default function Home() {
                 See all
                 <br />
                 five tools
-                <span className="text-orange"> →</span>
+                <span className="text-orange transition-transform group-hover:inline-block group-hover:translate-x-1"> →</span>
               </span>
             </Link>
           </div>
@@ -258,16 +289,12 @@ export default function Home() {
             {[
               { t: "Design tokens", d: "Area-weighted palettes with roles, and typography split into display, body and mono — read from the rendered page." },
               { t: "Technology signals", d: "Builder, framework, hosting and CDN from headers and DOM — labelled detected, likely or unknown." },
-              { t: "Governed taxonomy", d: "22 maintained categories with reviewed corrections that override automated mapping." },
+              { t: "Real taxonomy", d: "Maintained categories with reviewed corrections that override automated mapping." },
               { t: "Editorial provenance", d: "Integrity checks, review dates and correction paths. The official site is always the authority." },
               { t: "Similar aesthetics", d: "A design-similarity graph that turns one reference into an exploration path." },
               { t: "Free tools", d: "Colorhyme, TrueGradient, WebPalette and more — free colour tools built alongside the archive." },
             ].map((f, i) => (
-              <Reveal
-                key={f.t}
-                delay={(i % 3) * 60}
-                className="bg-ink p-7"
-              >
+              <Reveal key={f.t} delay={(i % 3) * 70} className="bg-ink p-7 transition-colors hover:bg-[#1c1c1c]">
                 <div className="flex items-center gap-3">
                   <span className="h-2.5 w-2.5 bg-orange" />
                   <span className="text-[11px] uppercase tracking-[0.16em] text-white/45">
@@ -302,20 +329,22 @@ export default function Home() {
           </div>
           <div className="space-y-5">
             {distribution.map((c) => (
-              <Link key={c.slug} href={`/c/${c.slug}`} className="group block">
-                <div className="flex items-baseline justify-between">
-                  <span className="text-sm font-semibold tracking-tight">{c.name}</span>
-                  <span className="text-[12px] tabular-nums text-muted">
-                    {c.count.toLocaleString()} · {c.share}
-                  </span>
-                </div>
-                <div className="mt-2 h-2 w-full bg-paper-dark">
-                  <div
-                    className="h-full bg-ink transition-all duration-500 group-hover:bg-orange"
-                    style={{ width: `${(c.count / distMax) * 100}%` }}
-                  />
-                </div>
-              </Link>
+              <Reveal key={c.slug}>
+                <Link href={`/c/${c.slug}`} className="group block">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-sm font-semibold tracking-tight">{c.name}</span>
+                    <span className="font-mono text-[12px] tabular-nums text-muted">
+                      {c.count.toLocaleString()} · {c.share}
+                    </span>
+                  </div>
+                  <div className="mt-2 h-2 w-full overflow-hidden bg-paper-dark">
+                    <div
+                      className="h-full origin-left bg-ink transition-all duration-700 ease-out group-hover:bg-orange"
+                      style={{ width: `${(c.count / distMax) * 100}%` }}
+                    />
+                  </div>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -325,22 +354,24 @@ export default function Home() {
       <section className="bg-ink py-24 text-paper sm:py-32">
         <div className="wrap text-center">
           <p className="eyebrow justify-center text-white/90">Start exploring</p>
-          <h2 className="mega mt-6 text-6xl leading-[0.9] sm:text-8xl">
-            Build the
-            <br />
-            archive <span className="text-orange">with us.</span>
-          </h2>
+          <Reveal>
+            <h2 className="mega mt-6 text-6xl leading-[0.9] sm:text-8xl">
+              The definitive place
+              <br />
+              to <span className="text-orange">study websites.</span>
+            </h2>
+          </Reveal>
           <p className="mx-auto mt-7 max-w-xl text-pretty text-lg text-white/60">
-            Submit a site, request a correction, or just start studying 5,896 of the
-            web&apos;s best-designed pages.
+            Discover real websites, understand how they work, and experiment with the
+            colours behind them.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/archive" className="btn bg-orange px-7 py-4 text-white hover:bg-orange-600">
+            <Link href="/archive" className="btn bg-orange px-7 py-4 text-white transition-colors hover:bg-orange-600">
               Explore the archive ↗
             </Link>
             <Link
               href="/submit"
-              className="btn border border-white/30 px-7 py-4 text-white hover:bg-white hover:text-ink"
+              className="btn border border-white/30 px-7 py-4 text-white transition-colors hover:bg-white hover:text-ink"
             >
               Submit a site
             </Link>

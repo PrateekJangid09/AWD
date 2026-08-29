@@ -34,6 +34,19 @@ export type SiteRecord = {
   similar: string[]; // slugs
 };
 
+// Minimal shape used by SiteCard + the archive grid. Both the sample
+// SiteRecord and mapped canonical records satisfy this.
+export type CardSite = {
+  slug: string;
+  name: string;
+  domain: string;
+  categoryName: string;
+  style: string;
+  summary: string;
+  palette: PaletteRole[];
+  thumb?: string; // real screenshot URL, when available
+};
+
 export const STATS = {
   total: 5896,
   categories: 22,
@@ -296,6 +309,10 @@ export const TOOLS: Tool[] = [
 
 export function getCategory(slug: string) {
   return CATEGORIES.find((c) => c.slug === slug);
+}
+
+export function getTool(slug: string) {
+  return TOOLS.find((t) => t.slug === slug);
 }
 
 export function getSite(slug: string) {

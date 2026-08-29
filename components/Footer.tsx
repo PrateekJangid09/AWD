@@ -4,81 +4,46 @@ import { STATS } from "@/lib/data";
 
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
-    title: "Discover",
+    title: "Explore",
     links: [
-      { href: "/archive", label: "Full Archive" },
+      { href: "/archive", label: "Archive" },
       { href: "/c", label: "Categories" },
-      { href: "/tools", label: "Free Tools" },
-      { href: "/research/website-design-index-2026", label: "2026 Design Index" },
+      { href: "/tools", label: "Tools" },
+      { href: "/research/website-design-index-2026", label: "Research" },
+      { href: "/blogs", label: "Journal" },
     ],
   },
   {
-    title: "Contribute",
-    links: [
-      { href: "/submit", label: "Submit a Site" },
-      { href: "/editorial-guidelines", label: "Editorial Guidelines" },
-      { href: "/contact", label: "Contact" },
-    ],
-  },
-  {
-    title: "Company",
+    title: "About",
     links: [
       { href: "/about", label: "About" },
       { href: "/manifesto", label: "Manifesto" },
-      { href: "/privacy", label: "Privacy" },
-      { href: "/terms", label: "Terms" },
+      { href: "/editorial-guidelines", label: "Editorial Guidelines" },
+      { href: "/submit", label: "Submit a Site" },
+      { href: "/contact", label: "Contact" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms & Conditions" },
-      { href: "/cookies", label: "Cookie Preferences" },
+      { href: "/privacy-policy", label: "Privacy" },
+      { href: "/terms", label: "Terms" },
+      { href: "/cookie-preference", label: "Cookies" },
     ],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-paper">
-      {/* Newsletter band */}
-      <div className="border-b border-white/10">
-        <div className="wrap flex flex-col gap-8 py-14 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-xl">
-            <p className="eyebrow text-white/90">The Monday Dispatch</p>
-            <h3 className="mega mt-4 text-3xl text-paper sm:text-4xl">
-              One email. Every Monday.
-              <br />
-              The best of the archive.
-            </h3>
-          </div>
-          <form
-            className="flex w-full max-w-md gap-2 md:w-auto"
-            action="#"
-            aria-label="Newsletter signup"
-          >
-            <input
-              type="email"
-              required
-              placeholder="you@studio.com"
-              className="min-w-0 flex-1 border-b border-white/25 bg-transparent px-1 py-3 text-sm text-paper placeholder:text-white/35 focus:border-orange"
-            />
-            <button type="submit" className="btn bg-orange px-5 py-3 text-white hover:bg-orange-600">
-              Join
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Columns */}
-      <div className="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-6">
+    <footer className="border-t border-line bg-ink text-paper">
+      <div className="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-5">
         <div className="col-span-2">
           <div className="[&_span]:text-paper">
             <Logo />
           </div>
           <p className="mt-6 max-w-xs text-pretty text-sm leading-relaxed text-white/55">
-            Independent website-design research, curated for people building the web.
+            A searchable design archive and a connected set of tools, for people who
+            study how the web is made.
           </p>
           <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/35">
             {STATS.total.toLocaleString()} references · {STATS.categories} categories
@@ -106,14 +71,13 @@ export default function Footer() {
         ))}
       </div>
 
-      {/* Baseline */}
       <div className="border-t border-white/10">
         <div className="wrap flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[11px] uppercase tracking-[0.16em] text-white/40">
             © {new Date().getFullYear()} AllWebsites.Design
           </p>
           <p className="text-[11px] uppercase tracking-[0.16em] text-white/40">
-            Discover · Compare · Study
+            Discover · Understand · Explore
           </p>
         </div>
       </div>

@@ -31,13 +31,13 @@ export default function CookieBanner() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-[60] p-3 sm:p-5">
       <div className="wrap">
-        <div className="flex flex-col gap-4 border border-line bg-paper p-5 shadow-soft-lg md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 rounded-xl border border-line bg-paper p-5 shadow-soft-lg md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow text-ink">Cookies</p>
             <p className="mt-2.5 text-sm leading-relaxed text-soft">
               We use essential cookies to run the archive and optional analytics
               cookies to understand how references are discovered. You choose.{" "}
-              <Link href="/cookies" className="link-underline font-medium text-ink">
+              <Link href="/cookie-preference" className="link-underline font-medium text-ink">
                 Manage preferences
               </Link>
               .

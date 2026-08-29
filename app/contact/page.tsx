@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import UtilityHero from "@/components/UtilityHero";
 
 export const metadata: Metadata = {
   title: "Contact — Corrections & Editorial",
@@ -18,7 +18,7 @@ const REASONS = [
 export default function ContactPage() {
   return (
     <>
-      <PageHero
+      <UtilityHero
         eyebrow="CONTACT"
         title="Corrections, questions, and everything editorial."
         intro="Websites change and automated classification isn't perfect. If a record needs fixing — or you just have a question — this reaches the editorial team."
@@ -29,24 +29,32 @@ export default function ContactPage() {
         <div className="wrap grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
           {/* Form */}
           <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6 sm:p-8">
-            <p className="eyebrow">SEND_A_MESSAGE</p>
-            <form action="#" className="mt-6 space-y-5" aria-label="Contact form">
+            <p className="eyebrow">Send a message</p>
+            <form
+              action="mailto:hello@allwebsites.design"
+              method="post"
+              encType="text/plain"
+              className="mt-6 space-y-5"
+              aria-label="Contact form"
+            >
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="block">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-ink/60">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
                     Name
                   </span>
                   <input
+                    name="Name"
                     type="text"
                     required
                     className="mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
                   />
                 </label>
                 <label className="block">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-ink/60">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
                     Email
                   </span>
                   <input
+                    name="From"
                     type="email"
                     required
                     className="mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
@@ -55,7 +63,7 @@ export default function ContactPage() {
               </div>
 
               <fieldset>
-                <legend className="font-mono text-[11px] uppercase tracking-wider text-ink/60">
+                <legend className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
                   Reason
                 </legend>
                 <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -84,6 +92,7 @@ export default function ContactPage() {
                   Website URL <span className="text-ink/30">(optional)</span>
                 </span>
                 <input
+                  name="Website URL"
                   type="url"
                   placeholder="https://"
                   className="mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
@@ -91,10 +100,11 @@ export default function ContactPage() {
               </label>
 
               <label className="block">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink/60">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
                   Message
                 </span>
                 <textarea
+                  name="Message"
                   required
                   rows={5}
                   className="mt-2 w-full resize-y border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
@@ -106,7 +116,7 @@ export default function ContactPage() {
               </button>
               <p className="font-mono text-[10px] leading-relaxed text-ink/45">
                 By sending, you agree to our{" "}
-                <Link href="/privacy" className="underline decoration-orange decoration-2 underline-offset-2">
+                <Link href="/privacy-policy" className="underline decoration-orange decoration-2 underline-offset-2">
                   privacy policy
                 </Link>
                 . We only use your details to respond.
@@ -116,25 +126,22 @@ export default function ContactPage() {
 
           {/* Sidebar */}
           <aside className="flex flex-col gap-5">
-            <div className="border border-line bg-ink p-6 text-paper">
-              <p className="font-mono text-[11px] uppercase tracking-widest text-orange">
-                RESPONSE_TIME
-              </p>
-              <p className="display mt-3 text-3xl text-paper">2–3 days</p>
-              <p className="mt-2 text-sm text-paper/60">
+            <div className="rounded-xl border border-line bg-ink p-6 text-paper">
+              <p className="eyebrow text-white/90">How we handle it</p>
+              <p className="mt-3 text-sm leading-relaxed text-paper/70">
                 Corrections are prioritised. The official site always remains the
-                authority for current facts.
+                authority for current facts — we update records as they change.
               </p>
             </div>
 
             <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6">
-              <p className="eyebrow">FASTER_ROUTES</p>
+              <p className="eyebrow">Elsewhere</p>
               <ul className="mt-4 space-y-3">
                 {[
                   ["Submit a site", "/submit"],
                   ["Editorial guidelines", "/editorial-guidelines"],
                   ["Manifesto", "/manifesto"],
-                  ["Cookie preferences", "/cookies"],
+                  ["Cookie preferences", "/cookie-preference"],
                 ].map(([label, href]) => (
                   <li key={href}>
                     <Link

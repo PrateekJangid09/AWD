@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000001",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "RankBeaver",
+    "domain": "rankbeaver.com",
+    "url": "https://rankbeaver.com",
+    "slug": "rankbeaver",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": "SEO",
+    "website_type": "Agency Website",
+    "audience": [
+      "Local Service Businesses",
+      "Marketers"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.79,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#3389f9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#2563eb",
+      "#bfdbfe"
+    ],
+    "background_colors": [
+      "#f7fafc",
+      "#dbeafe"
+    ],
+    "text_color": "#1d4ed8",
+    "palette": [
+      {
+        "hex": "#f7fafc",
+        "role": "background",
+        "coverage": 1
+      },
+      {
+        "hex": "#1d4ed8",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#3389f9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#dbeafe",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#2563eb",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#bfdbfe",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Sans",
+        "role": "body",
+        "weights": [
+          400,
+          500,
+          600,
+          700
+        ],
+        "sizes": [
+          12,
+          48
+        ]
+      },
+      {
+        "name": "Fraunces",
+        "role": "display",
+        "weights": [
+          500,
+          600,
+          700
+        ],
+        "sizes": [
+          14,
+          68
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Astro",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "vijay@rankbeaver.com",
+    "on_official_domain": true,
+    "other_emails": [
+      "touchvijay@rankbeaver.combook",
+      "gener@edgoogle.com"
+    ],
+    "address": "Sharjah Media City, Sharjah, UAE, Sharjah, AE"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "RankBeaver",
+    "description": "50+ pest and lawn businesses trust RankBeaver for Local SEO and GBP optimization that has generated $17M+ in leads. Want your phone to ring consistently? Book a free consultation today."
+  },
+  "pages": {
+    "homepage": "https://rankbeaver.com/",
+    "about": "https://rankbeaver.com/about",
+    "contact": "https://rankbeaver.com/contact",
+    "pricing": "https://rankbeaver.com/pricing",
+    "careers": "https://rankbeaver.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.png",
+    "pages": [
+      {
+        "label": "Homepage",
+        "file": "homepage.png"
+      },
+      {
+        "label": "About",
+        "file": "about.png"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.png"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.png"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.png"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "artifacts": {
+    "html_file": "rankbeaver.com.html",
+    "standalone_html_path": "previews/rankbeaver.com.html",
+    "canonical_file": "canonical.json",
+    "raw_file": "raw.json"
+  },
+  "extraction": {
+    "status": "complete",
+    "attempts": 1,
+    "extracted_at": "2026-08-28T09:33:26.753Z",
+    "duration_seconds": null,
+    "extractor_version": "2.2.0",
+    "module_status": {
+      "identity": true,
+      "description": true,
+      "category": true,
+      "subcategory": true,
+      "website_type": true,
+      "audience": true,
+      "palette": true,
+      "fonts": true,
+      "style": true,
+      "tech_stack": true,
+      "key_pages": true,
+      "contact": true,
+      "social": true,
+      "favicon": true,
+      "screenshot": true
+    },
+    "completeness": 100
+  }
+}

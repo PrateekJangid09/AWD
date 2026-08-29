@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import UtilityHero from "@/components/UtilityHero";
 import CategoryCard from "@/components/CategoryCard";
 import Reveal from "@/components/Reveal";
 import { CATEGORIES, STATS, TRENDING, getCategory } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "All Categories — Governed Website Design Collections",
+  title: "Categories — Explore Website Design by Industry",
   description:
-    "Browse 22 governed collections of website design examples, organized for useful comparison across industry, product type and audience.",
+    "Study how different industries approach typography, layout, colour and interaction across 22 categories of real website design.",
 };
 
 export default function CategoriesPage() {
@@ -16,18 +16,18 @@ export default function CategoriesPage() {
 
   return (
     <>
-      <PageHero
-        eyebrow="LIBRARY_V4.0"
-        title="Governed collections, organized for comparison."
-        intro="Twenty-two categories. Each one deliberate, maintained and mapped through a governed taxonomy — not a raw tag dump. Pick a lane and study how a whole sector presents itself."
+      <UtilityHero
+        eyebrow="Categories"
+        title="Explore by category."
+        intro="Study how different industries approach typography, layout, colour and interaction. Pick a lane and see how a whole sector presents itself."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Categories" }]}
-        meta={`${STATS.total.toLocaleString()} website examples · ${STATS.categories} categories · ${STATS.library}`}
+        meta={`${STATS.total.toLocaleString()} references · ${STATS.categories} categories`}
       />
 
       {/* Trending */}
       <section className="border-b border-ink bg-bone py-14">
         <div className="wrap">
-          <p className="eyebrow">TRENDING_NOW</p>
+          <p className="eyebrow">Trending</p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {trending.map((c) => (
               <CategoryCard key={c!.slug} category={c!} featured />
@@ -62,9 +62,7 @@ export default function CategoriesPage() {
       {/* Terminology note */}
       <section className="border-t border-ink bg-ink py-12 text-paper">
         <div className="wrap flex flex-col gap-3">
-          <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-orange">
-            NOTE
-          </p>
+          <p className="eyebrow text-white/90">On the counts</p>
           <p className="max-w-3xl text-pretty text-paper/70">
             Counts describe <strong className="text-paper">website examples</strong> —
             curated references and inspiration, not downloadable templates. Only the

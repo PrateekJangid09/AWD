@@ -24,6 +24,13 @@
     color: #fff;
   }
 
+  /* Softer, more modern form controls */
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    border-radius: 10px;
+  }
+
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
@@ -56,7 +63,7 @@
   /* Cards — hairline, quiet, lift softly on hover */
   .card,
   .card-brutal {
-    @apply border border-line bg-paper transition-all duration-300 ease-out;
+    @apply rounded-xl border border-line bg-paper transition-all duration-300 ease-out;
   }
   .card:hover,
   .card-brutal:hover {
@@ -65,10 +72,10 @@
 
   /* Buttons */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-200;
   }
   .btn-primary {
-    @apply btn bg-orange px-6 py-3.5 text-white hover:bg-orange-600;
+    @apply btn bg-orange px-6 py-3.5 text-white shadow-[0_6px_18px_-6px_rgba(255,97,18,0.6)] hover:bg-orange-600 hover:shadow-[0_10px_24px_-8px_rgba(255,97,18,0.7)];
   }
   .btn-dark {
     @apply btn bg-ink px-6 py-3.5 text-white hover:bg-black;
@@ -78,7 +85,7 @@
   }
 
   .tag {
-    @apply inline-flex items-center border border-line px-2.5 py-1 font-sans text-[10.5px] font-medium uppercase tracking-[0.12em] text-muted;
+    @apply inline-flex items-center rounded-full border border-line px-3 py-1 font-sans text-[10.5px] font-medium uppercase tracking-[0.12em] text-muted;
   }
 
   .link-underline {
@@ -201,4 +208,43 @@
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   Motion system — transform/opacity only (GPU-friendly),
+   fully disabled under prefers-reduced-motion (see media query
+   at the top of the reduced-motion block below).
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translate3d(0, 0, 0) var(--tilt, rotate(0deg)); }
+  50%      { transform: translate3d(0, -10px, 0) var(--tilt, rotate(0deg)); }
+}
+@keyframes barGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@layer utilities {
+  /* On-load entrance — add a stagger with inline style="animation-delay:..." */
+  .anim-up   { opacity: 0; animation: fadeUp 0.75s cubic-bezier(0.22, 0.7, 0.2, 1) both; }
+  .anim-in   { opacity: 0; animation: fadeIn 0.9s ease both; }
+  .anim-pop  { opacity: 0; animation: scaleIn 0.7s cubic-bezier(0.22, 0.7, 0.2, 1) both; }
+  .float-slow { animation: floatY 7s ease-in-out infinite; will-change: transform; }
+  .float-med  { animation: floatY 5.5s ease-in-out infinite; will-change: transform; }
+
+  /* Underlines / links get a smoother feel */
+  .hover-lift { transition: transform 0.3s cubic-bezier(0.22, 0.7, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease; }
+  .hover-lift:hover { transform: translateY(-4px); }
 }

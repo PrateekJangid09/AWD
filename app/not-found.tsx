@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <StatusPage
       code="404"
-      tag="ROUTE_NOT_FOUND"
+      tag="Not found"
       title="This reference isn't in the archive."
       message="The page you're after moved, changed slug, or never existed. The archive, however, is very much alive — 5,896 references and counting."
       actions={[

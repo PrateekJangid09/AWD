@@ -162,7 +162,7 @@ export default function CookiesPage() {
           <p className="mt-8 font-mono text-[11px] leading-relaxed text-ink/45">
             Preferences are stored only in your browser via localStorage — they never
             reach our servers or other devices. See the{" "}
-            <Link href="/privacy" className="underline decoration-orange decoration-2 underline-offset-2">
+            <Link href="/privacy-policy" className="underline decoration-orange decoration-2 underline-offset-2">
               privacy policy
             </Link>{" "}
             for the full picture.

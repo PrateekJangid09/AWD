@@ -1,116 +1,128 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/PageHero";
-import Reveal from "@/components/Reveal";
-import { TOOLS } from "@/lib/data";
+import UtilityHero from "@/components/UtilityHero";
+import { TOOLS, getTool } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Free Color & Design Tools",
+  title: "Tools for Studying and Building the Web",
   description:
-    "A growing suite of free, no-signup design tools from AllWebsites.design — color transformation, palette preview and a color dictionary. Runs in your browser.",
+    "A connected set of free, no-signup design tools — find, transform, build, preview, test and interpolate colour. Everything runs in your browser.",
 };
+
+type Job = {
+  job: string;
+  verb: string;
+  slug: string | null;
+  soon?: { name: string; tagline: string; swatches: string[] };
+};
+
+const JOBS: Job[] = [
+  { job: "Find", verb: "Find and understand colours.", slug: "chromary" },
+  { job: "Transform", verb: "Create controlled related colours from one.", slug: "colorhyme" },
+  { job: "Build", verb: "Turn brand colours into a complete system.", slug: "webpalette" },
+  { job: "Preview", verb: "See a palette in real interface context.", slug: "mockupalettes" },
+  { job: "Interpolate", verb: "Control the space between gradient stops.", slug: "truegradient" },
+  {
+    job: "Test",
+    verb: "Check role behaviour, contrast and usability.",
+    slug: null,
+    soon: { name: "Palette Checker", tagline: "Role & contrast testing", swatches: ["#F4F2EC", "#141414", "#FF6112", "#6B6660"] },
+  },
+];
 
 export default function ToolsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Free Design Tools"
-        title="Tools for people who sweat the details."
-        intro="A growing suite of free, no-signup tools built alongside the archive. Everything runs locally in your browser — paste a colour, get to work."
+      <UtilityHero
+        title="Tools for studying and building the web."
+        intro="Six focused tools, one design language. Each owns a single job — find, transform, build, preview, test or interpolate. Free, no signup, everything runs in your browser."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Tools" }]}
-        meta="No signup · Runs locally · Copy-ready output"
       />
 
-      <section className="py-16 sm:py-24">
-        <div className="wrap grid gap-6 md:grid-cols-2">
-          {TOOLS.map((tool, i) => {
-            const live = tool.status !== "soon";
-            const Card = (
-              <div
-                className={`group relative flex h-full flex-col justify-between border border-line bg-paper p-7 transition-all duration-300 sm:p-8 ${
-                  live ? "hover:-translate-y-1 hover:border-line-strong hover:shadow-soft" : "opacity-70"
-                }`}
-              >
-                <div>
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <span className="text-[11px] uppercase tracking-[0.16em] text-muted">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span
-                        className={`text-[10.5px] font-semibold uppercase tracking-[0.14em] ${live ? "text-orange" : "text-muted"}`}
-                      >
-                        {live ? "● Live" : "Soon"}
-                      </span>
-                    </div>
-                    {live && (
-                      <span
-                        className="text-lg text-muted transition-all duration-300 group-hover:translate-x-1 group-hover:text-orange"
-                        aria-hidden
-                      >
-                        ↗
-                      </span>
-                    )}
-                  </div>
+      <section>
+        <div className="wrap">
+          {JOBS.map((j, i) => {
+            const tool = j.slug ? getTool(j.slug) : undefined;
+            const live = Boolean(tool);
+            const name = tool?.name ?? j.soon!.name;
+            const tagline = tool?.tagline ?? j.soon!.tagline;
+            const swatches = tool?.swatches ?? j.soon!.swatches;
 
-                  <h2 className="mega mt-5 text-4xl sm:text-5xl">{tool.name}</h2>
-                  <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-muted">
-                    {tool.tagline}
-                  </p>
-                  <p className="mt-4 max-w-md text-pretty text-[14.5px] leading-relaxed text-soft">
-                    {tool.desc}
+            const inner = (
+              <div className="grid items-center gap-6 py-10 sm:py-12 lg:grid-cols-[minmax(0,0.9fr)_1fr_auto] lg:gap-10">
+                {/* Job label */}
+                <div className="flex items-baseline gap-4">
+                  <span className="font-mono text-[12px] text-muted tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="display text-3xl uppercase tracking-tight sm:text-5xl">
+                    {j.job}
+                  </span>
+                </div>
+
+                {/* Tool + verb */}
+                <div>
+                  <div className="flex items-center gap-3">
+                    <h2 className="text-xl font-bold tracking-tight">{name}</h2>
+                    <span
+                      className={`text-[10.5px] font-semibold uppercase tracking-[0.14em] ${live ? "text-orange" : "text-muted"}`}
+                    >
+                      {live ? "● Live" : "Soon"}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-pretty text-[15px] leading-relaxed text-soft">
+                    {j.verb}{" "}
+                    <span className="text-muted">{tagline}.</span>
                   </p>
                 </div>
 
-                <div className="mt-8">
-                  <div className="flex h-9 overflow-hidden border border-line">
-                    {tool.swatches.map((c) => (
-                      <span key={c} className="flex-1" style={{ backgroundColor: c }} />
+                {/* Swatches + action */}
+                <div className="flex items-center gap-5">
+                  <span className="hidden h-10 w-28 overflow-hidden border border-line sm:flex">
+                    {swatches.map((s) => (
+                      <span key={s} className="flex-1" style={{ backgroundColor: s }} />
                     ))}
-                  </div>
-                  <div className="mt-4 flex items-center justify-between">
-                    <div className="flex flex-wrap gap-x-4 gap-y-1">
-                      {tool.tags.map((t) => (
-                        <span key={t} className="text-[11px] uppercase tracking-[0.1em] text-muted">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    {live && (
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ink">
-                        Open tool →
-                      </span>
-                    )}
-                  </div>
+                  </span>
+                  {live ? (
+                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors group-hover:text-orange">
+                      Open
+                      <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>→</span>
+                    </span>
+                  ) : (
+                    <span className="whitespace-nowrap text-[12px] font-semibold uppercase tracking-[0.12em] text-muted">
+                      In progress
+                    </span>
+                  )}
                 </div>
               </div>
             );
 
-            return (
-              <Reveal key={tool.name} delay={(i % 2) * 80} className="h-full">
-                {live ? (
-                  <a href={`/tools/${tool.slug}`} className="block h-full">
-                    {Card}
-                  </a>
-                ) : (
-                  Card
-                )}
-              </Reveal>
+            return live ? (
+              <a
+                key={j.job}
+                href={`/tools/${j.slug}`}
+                className="group block border-t border-line transition-colors last:border-b hover:bg-bone"
+              >
+                {inner}
+              </a>
+            ) : (
+              <div key={j.job} className="border-t border-line opacity-60 last:border-b">
+                {inner}
+              </div>
             );
           })}
         </div>
+      </section>
 
-        {/* strip */}
-        <div className="wrap mt-16">
-          <div className="flex flex-col items-center gap-4 border-t border-line pt-12 text-center">
-            <p className="eyebrow text-ink">Built for the archive</p>
-            <h3 className="mega max-w-2xl text-3xl sm:text-4xl">
-              Same taste, every tool.
-            </h3>
-            <p className="max-w-xl text-pretty text-soft">
-              Each tool shares the design language of the archive — restrained,
-              precise and free. More are on the way.
-            </p>
-          </div>
+      {/* One system note */}
+      <section className="border-t border-line bg-ink py-16 text-paper sm:py-20">
+        <div className="wrap max-w-3xl">
+          <p className="eyebrow text-white/90">One system</p>
+          <p className="mt-6 text-balance text-2xl font-bold leading-snug tracking-tight sm:text-3xl">
+            Not free SEO widgets — a connected set of design instruments that share a
+            shell, so a colour can travel from{" "}
+            <span className="text-orange">find</span> to{" "}
+            <span className="text-orange">build</span> without leaving the language.
+          </p>
         </div>
       </section>
     </>

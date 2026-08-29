@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import DocumentHero from "@/components/DocumentHero";
 
 export const metadata: Metadata = {
   title: "Editorial Guidelines",
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function EditorialGuidelinesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="POLICY"
+      <DocumentHero
         title="Editorial Guidelines"
-        intro="How records get in, how they're classified, and how we keep the archive honest."
+        description="How records get in, how they're classified, and how we keep the archive honest."
+        updated="11 August 2026"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Editorial Guidelines" }]}
       />
 

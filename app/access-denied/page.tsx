@@ -11,7 +11,7 @@ export default function AccessDeniedPage() {
   return (
     <StatusPage
       code="403"
-      tag="ACCESS_DENIED"
+      tag="Access denied"
       title="This area is off-limits."
       message="You don't have permission to view this resource. Admin and internal intelligence surfaces are kept strictly separate from the public archive. If you think this is a mistake, get in touch."
       accent="#0A0A0A"

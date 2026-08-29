@@ -24,14 +24,20 @@ npm start
 4. Build Command: `npm run build`.
 5. Deploy.
 
-No environment variables are required for the current static/content build.
+No environment variables are required for the current build.
 
-The `/tools/*` routes are rewritten to static HTML in `public/tools` (Colorhyme, Mockupalettes, Chromary, TrueGradient, WebPalette).
+`/privacy` and `/cookies` permanently redirect to `/privacy-policy` and `/cookie-preference`. Tool routes under `/tools/*` rewrite to static HTML in `public/tools`.
+
+## Adding a website record
+
+Drop a canonical JSON file at `content/sites/<slug>.json` and screenshots at `public/sites/<slug>/` (`desktop.png`, `about.png`, …). Records are discovered at build time — no code change required.
 
 ## Project structure
 
 - `app/` — Next.js App Router pages
 - `components/` — shared UI
-- `lib/data.ts` — categories, site records, and archive stats
+- `content/sites/` — canonical website records
+- `lib/` — archive data and canonical loaders
 - `public/tools/` — shipped design tools
-- `tools-src/webpalette-studio/` — WebPalette source (built output lives in `public/tools/webpalette`)
+- `public/sites/` — record screenshots
+- `tools-src/webpalette-studio/` — WebPalette source

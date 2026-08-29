@@ -11,7 +11,7 @@ export default function MaintenancePage() {
   return (
     <StatusPage
       code="503"
-      tag="SCHEDULED_MAINTENANCE"
+      tag="Maintenance"
       title="Re-indexing the archive."
       message="We're running a batch import and quality pass — new references, cleaner taxonomy, fresher captures. The archive will be back in a few minutes."
       accent="#2536FF"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import DocumentHero from "@/components/DocumentHero";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="LEGAL"
+      <DocumentHero
         title="Terms & Conditions"
+        description="The terms that govern use of the archive, including third-party ownership and accuracy limitations."
+        updated="11 August 2026"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Terms" }]}
-        meta="Last updated: 11 August 2026"
       />
 
       <section className="py-14 sm:py-20">

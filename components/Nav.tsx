@@ -11,8 +11,8 @@ const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null> }[] = 
   { href: "/archive", label: "Archive" },
   { href: "/c", label: "Categories", menu: "categories" },
   { href: "/tools", label: "Tools", menu: "tools" },
-  { href: "/research/website-design-index-2026", label: "2026 Index" },
-  { href: "/about", label: "About" },
+  { href: "/research/website-design-index-2026", label: "Research" },
+  { href: "/blogs", label: "Journal" },
 ];
 
 export default function Nav() {
@@ -64,12 +64,6 @@ export default function Nav() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <Link
-            href="/contact"
-            className="text-[13px] font-medium tracking-wide text-soft hover:text-ink"
-          >
-            Contact
-          </Link>
           <Link href="/submit" className="btn-dark !py-2.5 !text-[12px]">
             Submit a Site <span aria-hidden>↗</span>
           </Link>
@@ -98,7 +92,7 @@ export default function Nav() {
           onMouseLeave={scheduleClose}
         >
           <div className="wrap">
-            <div className="ml-auto w-full border border-line bg-paper shadow-soft-lg">
+            <div className="anim-up ml-auto w-full border border-line bg-paper shadow-soft-lg" style={{ animationDuration: "0.28s" }}>
               {menu === "categories" ? (
                 <div className="p-6">
                   <div className="mb-4 flex items-center justify-between">

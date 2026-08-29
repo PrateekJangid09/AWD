@@ -1,6 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+  async redirects() {
+    return [
+      // Legal-page renames only. Website records live permanently at /archive/<slug>.
+      { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      { source: "/cookies", destination: "/cookie-preference", permanent: true },
+    ];
+  },
   async rewrites() {
     return [
       { source: "/tools/colorhyme", destination: "/tools/colorhyme.html" },

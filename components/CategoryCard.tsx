@@ -11,7 +11,7 @@ export default function CategoryCard({
   return (
     <Link
       href={`/c/${category.slug}`}
-      className="group relative flex flex-col justify-between border border-line bg-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-soft"
+      className="group relative flex flex-col justify-between rounded-xl border border-line bg-paper p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-soft"
     >
       <div className="flex items-start justify-between gap-3">
         <div>

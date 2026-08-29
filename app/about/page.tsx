@@ -37,7 +37,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="ABOUT_ALLWEBSITES"
+        eyebrow="About"
         title="A design-research layer for the public web."
         intro="Not another inspiration gallery. AllWebsites.Design is a structured, cleaned, governed archive of how real websites are actually designed — built for the people building the web."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "About" }]}
@@ -47,7 +47,7 @@ export default function AboutPage() {
       <section className="border-b border-ink py-16 sm:py-20">
         <div className="wrap grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
-            <p className="eyebrow">THE_SHORT_VERSION</p>
+            <p className="eyebrow">The short version</p>
             <p className="mt-5 text-balance font-display text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
               We help designers, developers and founders{" "}
               <span className="text-orange">discover, compare and study</span>{" "}
@@ -76,7 +76,7 @@ export default function AboutPage() {
       {/* Three layers */}
       <section className="border-b border-ink bg-ink py-16 text-paper sm:py-20">
         <div className="wrap">
-          <p className="eyebrow">THREE_STRATEGIC_ASSETS</p>
+          <p className="eyebrow">Three layers</p>
           <h2 className="display mt-3 max-w-2xl text-4xl text-paper sm:text-5xl">
             Archive → Intelligence → Workflow.
           </h2>
@@ -126,7 +126,7 @@ export default function AboutPage() {
       {/* Principles */}
       <section className="py-16 sm:py-20">
         <div className="wrap">
-          <p className="eyebrow">OPERATING_PRINCIPLES</p>
+          <p className="eyebrow">What we believe</p>
           <h2 className="display mt-3 text-4xl sm:text-5xl">What we believe.</h2>
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {PRINCIPLES.map((p) => (
