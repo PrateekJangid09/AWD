@@ -10,16 +10,15 @@ export default function SiteCard({
   index?: number;
 }) {
   return (
-    <Link href={`/archive/${site.slug}`} className="group flex flex-col">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-xl border border-line bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:border-line-strong group-hover:shadow-soft">
+    <Link href={`/archive/${site.slug}`} className="flex flex-col">
+      <div className="relative aspect-[9/16] overflow-hidden rounded-xl border border-line bg-white">
         {site.thumb ? (
-          /* Real capture — top-aligned, gently pans up on hover */
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={site.thumb}
             alt={`${site.name} website screenshot`}
             loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-[1.6s] ease-out group-hover:translate-y-[-18%] group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-cover object-top"
             style={{ objectPosition: "top" }}
           />
         ) : (
@@ -33,7 +32,7 @@ export default function SiteCard({
       <div className="flex flex-1 flex-col pt-4">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="text-[17px] font-bold tracking-tight">{site.name}</h3>
-          <span className="shrink-0 text-[11px] uppercase tracking-[0.14em] text-muted transition-colors group-hover:text-orange">
+          <span className="shrink-0 text-[11px] uppercase tracking-[0.14em] text-muted">
             {site.categoryName}
           </span>
         </div>
@@ -55,9 +54,7 @@ export default function SiteCard({
           </div>
           <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-ink">
             Inspect
-            <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
-              →
-            </span>
+            <span aria-hidden>→</span>
           </span>
         </div>
       </div>
