@@ -261,7 +261,7 @@ export default async function SitePage({
               </Link>
             )}
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
             {filled.map((s, i) => (
               <SiteCard key={s.slug} site={s} index={i} />
             ))}

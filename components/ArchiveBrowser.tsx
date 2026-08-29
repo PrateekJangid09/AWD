@@ -107,7 +107,7 @@ export default function ArchiveBrowser({
 
         {/* Results */}
         {results.length > 0 ? (
-          <div className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {results.map((site, i) => (
               <SiteCard key={site.slug} site={site} index={i} />
             ))}

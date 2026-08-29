@@ -11,7 +11,7 @@ export default function SiteCard({
 }) {
   return (
     <Link href={`/archive/${site.slug}`} className="group flex flex-col">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:border-line-strong group-hover:shadow-soft">
+      <div className="relative aspect-[9/16] overflow-hidden rounded-xl border border-line bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:border-line-strong group-hover:shadow-soft">
         {site.thumb ? (
           /* Real capture — top-aligned, gently pans up on hover */
           /* eslint-disable-next-line @next/next/no-img-element */

@@ -20,12 +20,12 @@ export default function SitePreview({
 
   return (
     <div
-      className={`relative overflow-hidden ${className}`}
+      className={`relative flex h-full flex-col overflow-hidden ${className}`}
       style={{ backgroundColor: surface }}
     >
       {/* browser chrome */}
       <div
-        className="flex items-center gap-1.5 px-3.5 py-2.5"
+        className="flex shrink-0 items-center gap-1.5 px-3.5 py-2.5"
         style={{ backgroundColor: ink }}
       >
         <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
@@ -38,28 +38,31 @@ export default function SitePreview({
         )}
       </div>
 
-      {/* faux layout */}
-      <div className="space-y-3 p-5">
-        <div className="flex items-center justify-between">
-          <div className="h-2 w-9" style={{ backgroundColor: primary }} />
-          <div className="flex gap-1.5">
-            <div className="h-1.5 w-6" style={{ backgroundColor: ink, opacity: 0.2 }} />
-            <div className="h-1.5 w-6" style={{ backgroundColor: ink, opacity: 0.2 }} />
-            <div className="h-1.5 w-6" style={{ backgroundColor: primary }} />
+      {/* faux mobile layout — fills a 9:16 frame */}
+      <div className="flex min-h-0 flex-1 flex-col justify-between p-4 sm:p-5">
+        <div>
+          <div className="flex items-center justify-between">
+            <div className="h-2 w-9" style={{ backgroundColor: primary }} />
+            <div className="flex gap-1.5">
+              <div className="h-1.5 w-5" style={{ backgroundColor: ink, opacity: 0.2 }} />
+              <div className="h-1.5 w-5" style={{ backgroundColor: ink, opacity: 0.2 }} />
+              <div className="h-1.5 w-5" style={{ backgroundColor: primary }} />
+            </div>
+          </div>
+
+          <div className="pt-5">
+            <div className="h-3.5 w-4/5" style={{ backgroundColor: ink, opacity: 0.88 }} />
+            <div className="mt-2 h-3.5 w-1/2" style={{ backgroundColor: ink, opacity: 0.88 }} />
+            <div className="mt-4 h-1.5 w-2/3" style={{ backgroundColor: ink, opacity: 0.3 }} />
+            <div className="mt-1.5 h-1.5 w-1/2" style={{ backgroundColor: ink, opacity: 0.2 }} />
+            <div className="mt-4 h-6 w-20" style={{ backgroundColor: primary }} />
           </div>
         </div>
 
-        <div className="pt-3">
-          <div className="h-4 w-4/5" style={{ backgroundColor: ink, opacity: 0.88 }} />
-          <div className="mt-2 h-4 w-2/5" style={{ backgroundColor: ink, opacity: 0.88 }} />
-          <div className="mt-4 h-1.5 w-2/3" style={{ backgroundColor: ink, opacity: 0.3 }} />
-          <div className="mt-4 inline-block h-6 w-20" style={{ backgroundColor: primary }} />
-        </div>
-
-        <div className="grid grid-cols-3 gap-2.5 pt-3">
-          <div className="h-10" style={{ backgroundColor: primary, opacity: 0.92 }} />
-          <div className="h-10" style={{ backgroundColor: deep, opacity: 0.85 }} />
-          <div className="h-10" style={{ backgroundColor: ink, opacity: 0.12 }} />
+        <div className="mt-4 grid flex-1 grid-rows-3 gap-2 pt-2">
+          <div className="rounded-sm" style={{ backgroundColor: primary, opacity: 0.92 }} />
+          <div className="rounded-sm" style={{ backgroundColor: deep, opacity: 0.85 }} />
+          <div className="rounded-sm" style={{ backgroundColor: ink, opacity: 0.12 }} />
         </div>
       </div>
     </div>

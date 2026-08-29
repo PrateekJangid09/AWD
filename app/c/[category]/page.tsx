@@ -88,7 +88,7 @@ export default async function CategoryPage({
                   Search the archive →
                 </Link>
               </div>
-              <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
                 {records.map((site, i) => (
                   <Reveal key={site.slug} delay={(i % 3) * 70}>
                     <SiteCard site={site} index={i} />
