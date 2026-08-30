@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How AllWebsites.Design collects, uses and protects information across the archive.",
-};
+const title = "Privacy Policy";
+const description =
+  "How AllWebsites.Design collects, uses and protects information across the archive.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/privacy-policy",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Privacy", path: "/privacy-policy" },
+          ],
+        })}
+      />
       <DocumentHero
         title="Privacy Policy"
         description="What AllWebsites.Design collects, why, and the controls you have. We aim to collect as little as possible."
@@ -105,6 +123,7 @@ export default function PrivacyPage() {
           </article>
         </div>
       </section>
+      <ExploreMore />
     </>
   );
 }

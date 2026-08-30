@@ -10,6 +10,9 @@ import {
   liveCategories,
   resolveCategory,
 } from "@/lib/canonical";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   const slugs = new Set([
@@ -27,10 +30,11 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
-  return {
+  return pageMeta({
     title: `${cat.name} Website Design — ${cat.count} References`,
     description: `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`,
-  };
+    path: `/c/${category}`,
+  });
 }
 
 export default async function CategoryPage({
@@ -44,8 +48,34 @@ export default async function CategoryPage({
 
   const records = canonicalCardsInCategory(cat.slug);
 
+  const title = `${cat.name} Website Design — ${cat.count} References`;
+  const description = `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`;
+  const related = liveCategories()
+    .filter((c) => c.slug !== cat.slug && c.count > 0)
+    .slice(0, 12);
+
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: `/c/${cat.slug}`,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Categories", path: "/c" },
+            { name: cat.name, path: `/c/${cat.slug}` },
+          ],
+          extra: [
+            collectionJsonLd({
+              name: title,
+              description,
+              path: `/c/${cat.slug}`,
+              count: records.length,
+            }),
+          ],
+        })}
+      />
       {/* Header — colour-forward */}
       <section className="relative overflow-hidden border-b border-line bg-paper">
         <div
@@ -151,9 +181,7 @@ export default async function CategoryPage({
         <div className="wrap">
           <p className="eyebrow text-white/90">Explore more</p>
           <div className="mt-6 flex flex-wrap gap-2.5">
-            {CATEGORIES.filter((c) => c.slug !== cat.slug)
-              .slice(0, 12)
-              .map((c) => (
+            {related.map((c) => (
                 <Link
                   key={c.slug}
                   href={`/c/${c.slug}`}
@@ -172,6 +200,7 @@ export default async function CategoryPage({
           </div>
         </div>
       </section>
+      <ExploreMore except={["/c"]} />
     </>
   );
 }

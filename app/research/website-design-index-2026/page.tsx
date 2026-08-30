@@ -1,28 +1,56 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { CATEGORIES, STATS } from "@/lib/data";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "2026 Website Design Index",
-  description:
-    "A transparent snapshot of 5,896 cleaned and deduplicated website design records across 22 categories.",
-};
+const title = "2026 Website Design Index";
+const description =
+  "A transparent snapshot of cleaned and deduplicated website design records across the AllWebsites.Design archive.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/research/website-design-index-2026",
+  type: "article",
+});
 
 export default function DesignIndexPage() {
-  const max = Math.max(...CATEGORIES.map((c) => c.count));
+  const categories = liveCategories().filter((c) => c.count > 0);
+  const max = Math.max(1, ...categories.map((c) => c.count));
+  const total = CANONICAL.length;
 
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/research/website-design-index-2026",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "2026 Design Index", path: "/research/website-design-index-2026" },
+          ],
+          extra: [
+            collectionJsonLd({
+              name: title,
+              description,
+              path: "/research/website-design-index-2026",
+              count: total,
+            }),
+          ],
+        })}
+      />
       <PageHero
         eyebrow="RESEARCH"
         title="The 2026 Website Design Index."
-        intro="A transparent snapshot of the current 5,896 cleaned and deduplicated website records. Counts describe the AllWebsites.Design catalogue — not the entire web."
+        intro={`A transparent snapshot of the current ${total.toLocaleString()} cleaned and deduplicated website records. Counts describe the AllWebsites.Design catalogue — not the entire web.`}
         breadcrumb={[{ href: "/", label: "Home" }, { label: "2026 Design Index" }]}
-        meta={`${STATS.total.toLocaleString()} records · ${STATS.categories} categories`}
+        meta={`${total.toLocaleString()} records · ${categories.length} categories`}
       />
 
-      {/* Distribution — colourful bars */}
       <section className="py-14 sm:py-20">
         <div className="wrap">
           <div className="flex items-end justify-between">
@@ -31,7 +59,7 @@ export default function DesignIndexPage() {
           </div>
 
           <div className="mt-10 space-y-3">
-            {CATEGORIES.map((c) => (
+            {categories.map((c) => (
               <Link
                 key={c.slug}
                 href={`/c/${c.slug}`}
@@ -56,7 +84,6 @@ export default function DesignIndexPage() {
         </div>
       </section>
 
-      {/* Methodology */}
       <section className="border-t border-line bg-bone py-14 sm:py-20">
         <div className="wrap grid gap-10 lg:grid-cols-2">
           <div>
@@ -75,6 +102,14 @@ export default function DesignIndexPage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/archive" className="btn-primary">
+                Browse the archive
+              </Link>
+              <Link href="/c" className="btn-ghost">
+                All categories
+              </Link>
+            </div>
           </div>
           <div className="rounded-2xl border border-line bg-orange/[0.06] p-6">
             <p className="eyebrow text-ink">A note on accuracy</p>
@@ -86,6 +121,7 @@ export default function DesignIndexPage() {
           </div>
         </div>
       </section>
+      <ExploreMore except={["/research/website-design-index-2026"]} />
     </>
   );
 }

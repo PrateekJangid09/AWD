@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Editorial Guidelines",
-  description:
-    "The inclusion, integrity and taxonomy policy behind the AllWebsites.Design archive.",
-};
+const title = "Editorial Guidelines";
+const description =
+  "The inclusion, integrity and taxonomy policy behind the AllWebsites.Design archive.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/editorial-guidelines",
+});
 
 export default function EditorialGuidelinesPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/editorial-guidelines",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Editorial Guidelines", path: "/editorial-guidelines" },
+          ],
+        })}
+      />
       <DocumentHero
         title="Editorial Guidelines"
         description="How records get in, how they're classified, and how we keep the archive honest."
@@ -60,6 +78,7 @@ export default function EditorialGuidelinesPage() {
           </article>
         </div>
       </section>
+      <ExploreMore except={["/about"]} />
     </>
   );
 }

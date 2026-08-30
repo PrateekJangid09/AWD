@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import StatusPage from "@/components/StatusPage";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "403 — Access Denied",
   description: "You don't have permission to view this resource.",
-  robots: { index: false, follow: false },
-};
+  path: "/access-denied",
+  index: false,
+});
 
 export default function AccessDeniedPage() {
   return (

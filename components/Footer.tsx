@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { STATS } from "@/lib/data";
+import { CANONICAL, liveCategories } from "@/lib/canonical";
 
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
@@ -34,6 +34,8 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
 ];
 
 export default function Footer() {
+  const categories = liveCategories().filter((c) => c.count > 0).slice(0, 8);
+
   return (
     <footer className="border-t border-line bg-ink text-paper">
       <div className="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-5">
@@ -46,7 +48,7 @@ export default function Footer() {
             study how the web is made.
           </p>
           <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/35">
-            {STATS.total.toLocaleString()} references · {STATS.categories} categories
+            {CANONICAL.length.toLocaleString()} references · {liveCategories().filter((c) => c.count > 0).length} categories
           </p>
         </div>
 
@@ -70,6 +72,33 @@ export default function Footer() {
           </div>
         ))}
       </div>
+
+      {categories.length > 0 && (
+        <div className="border-t border-white/10">
+          <div className="wrap py-7">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+              Popular categories
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {categories.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/c/${c.slug}`}
+                  className="rounded-full border border-white/10 px-3 py-1.5 text-[12px] text-white/70 transition-colors hover:border-orange hover:text-orange"
+                >
+                  {c.name}
+                </Link>
+              ))}
+              <Link
+                href="/c"
+                className="rounded-full bg-orange px-3 py-1.5 text-[12px] font-medium text-white"
+              >
+                All categories
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="border-t border-white/10">
         <div className="wrap flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:justify-between">

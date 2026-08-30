@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import SiteCard from "./SiteCard";
-import { assetBase, canonicalCards, type CanonicalSite } from "@/lib/canonical";
-import { CATEGORIES, categoryColor, type CardSite } from "@/lib/data";
+import { assetBase, canonicalCards, categorySlug, type CanonicalSite } from "@/lib/canonical";
+import { categoryColor, type CardSite } from "@/lib/data";
 
 /* ── small building blocks ─────────────────────────────────────── */
 
@@ -157,9 +157,8 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
 
   // ── Similar sites in the same category (keeps the user in a loop) ──
   const catName = classification.category ?? "";
-  const cat = catName
-    ? CATEGORIES.find((c) => c.name === catName || c.slug === catName)
-    : undefined;
+  const catSlug = catName ? categorySlug(catName) : "";
+  const cat = catSlug ? { slug: catSlug, name: catName } : undefined;
   const accent = categoryColor(catName);
   const pool: CardSite[] = canonicalCards().filter((s) => s.slug !== identity.slug);
   const sameCat = pool.filter((s) => s.categoryName === catName);
@@ -189,6 +188,9 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
             items={[
               { href: "/", label: "Home" },
               { href: "/archive", label: "Archive" },
+              ...(cat
+                ? [{ href: `/c/${cat.slug}`, label: cat.name }]
+                : []),
               { label: identity.name },
             ]}
           />
@@ -257,6 +259,11 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 >
                   Visit website ↗
                 </a>
+                {cat && (
+                  <Link href={`/c/${cat.slug}`} className="btn-ghost">
+                    More {cat.name}
+                  </Link>
+                )}
                 <Link href="/contact" className="btn-ghost">
                   Report incorrect info
                 </Link>

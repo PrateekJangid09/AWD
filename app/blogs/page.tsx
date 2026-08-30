@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Resources — Notes on How the Web Is Designed",
-  description:
-    "Essays and research from the AllWebsites.Design archive — colour, typography, technology and the decisions behind great websites.",
-};
+const title = "Resources — Notes on How the Web Is Designed";
+const description =
+  "Essays and research from the AllWebsites.Design archive — colour, typography, technology and the decisions behind great websites.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/blogs",
+});
 
 const POSTS = [
   {
@@ -33,6 +40,24 @@ const POSTS = [
 export default function BlogsPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/blogs",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Resources", path: "/blogs" },
+          ],
+          extra: [
+            collectionJsonLd({
+              name: title,
+              description,
+              path: "/blogs",
+            }),
+          ],
+        })}
+      />
       <UtilityHero
         eyebrow="Resources"
         title="Notes on how the web is designed."
@@ -84,10 +109,14 @@ export default function BlogsPage() {
               <Link href="/submit" className="btn-ghost">
                 Submit a site
               </Link>
+              <Link href="/research/website-design-index-2026" className="btn-ghost">
+                Read the 2026 Index
+              </Link>
             </div>
           </div>
         </div>
       </section>
+      <ExploreMore except={["/blogs"]} />
     </>
   );
 }

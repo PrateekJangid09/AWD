@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
 import { TOOLS, getTool } from "@/lib/data";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Tools for Studying and Building the Web",
-  description:
-    "A connected set of free, no-signup design tools — find, transform, build, preview, test and interpolate colour. Everything runs in your browser.",
-};
+const title = "Tools for Studying and Building the Web";
+const description =
+  "A connected set of free, no-signup design tools — find, transform, build, preview, test and interpolate colour. Everything runs in your browser.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/tools",
+});
 
 type Job = {
   job: string;
@@ -31,6 +39,27 @@ const JOBS: Job[] = [
 export default function ToolsPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/tools",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Tools", path: "/tools" },
+          ],
+          extra: TOOLS.map((t) => ({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: t.name,
+            description: t.desc,
+            url: `https://www.allwebsites.design/tools/${t.slug}`,
+            applicationCategory: "DesignApplication",
+            operatingSystem: "Any",
+            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          })),
+        })}
+      />
       <UtilityHero
         eyebrow="Tools"
         title="Tools for studying and building the web."
@@ -108,8 +137,17 @@ export default function ToolsPage() {
             shell, so a colour can travel from one to the next without leaving the
             language.
           </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link href="/archive" className="btn-ghost">
+              Browse the archive
+            </Link>
+            <Link href="/c" className="btn-ghost">
+              Explore categories
+            </Link>
+          </div>
         </div>
       </section>
+      <ExploreMore except={["/tools"]} />
     </>
   );
 }

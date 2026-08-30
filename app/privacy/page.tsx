@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How AllWebsites.Design collects, uses and protects information across the archive.",
+  alternates: { canonical: "https://www.allwebsites.design/privacy-policy" },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {

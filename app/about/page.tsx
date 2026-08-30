@@ -2,13 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { STATS } from "@/lib/data";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About — A Design-Research Layer for the Public Web",
-  description:
-    "AllWebsites.Design is an independent website-design research archive. Learn how the archive, the intelligence engine and the workflow layer reinforce each other.",
-};
+const title = "About — A Design-Research Layer for the Public Web";
+const description =
+  "AllWebsites.Design is an independent website-design research archive. Learn how the archive, the intelligence engine and the workflow layer reinforce each other.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/about",
+});
 
 const PRINCIPLES = [
   {
@@ -34,8 +41,21 @@ const PRINCIPLES = [
 ];
 
 export default function AboutPage() {
+  const total = CANONICAL.length;
+  const cats = liveCategories().filter((c) => c.count > 0).length;
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/about",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="About"
         title="A design-research layer for the public web."
@@ -57,8 +77,8 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              [STATS.total.toLocaleString(), "Curated references"],
-              [STATS.categories.toString(), "Governed categories"],
+              [total.toLocaleString(), "Curated references"],
+              [cats.toString(), "Governed categories"],
               ["17", "Data points per record"],
               ["2026", "Design Index published"],
             ].map(([k, v]) => (
@@ -84,7 +104,7 @@ export default function AboutPage() {
             {[
               {
                 t: "The Archive",
-                d: "A public, curated, searchable and crawlable corpus of 5,896 website-design references across 22 categories.",
+                d: `A public, curated, searchable and crawlable corpus of ${total.toLocaleString()} website-design references across ${cats} categories.`,
                 tags: ["Curated", "Deduplicated", "Crawlable"],
               },
               {
@@ -152,8 +172,8 @@ export default function AboutPage() {
               Build the archive with us.
             </h2>
             <p className="mt-4 max-w-xl text-pretty text-lg text-white/90">
-              Submit a site, request a correction, or just start exploring 5,896
-              references.
+              Submit a site, request a correction, or just start exploring{" "}
+              {total.toLocaleString()} references.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -166,6 +186,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <ExploreMore except={["/about"]} />
     </>
   );
 }

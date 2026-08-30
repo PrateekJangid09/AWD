@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteCard from "@/components/SiteCard";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/data";
 import { CANONICAL, canonicalCards, liveCategories } from "@/lib/canonical";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  collectionJsonLd,
+  pageJsonLd,
+  pageMeta,
+} from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...pageMeta({
+    title: "The Website Design Research Archive",
+    description: DEFAULT_DESCRIPTION,
+    path: "/",
+  }),
+  title: { absolute: DEFAULT_TITLE },
+};
 
 export default function Home() {
   const all = canonicalCards();
@@ -19,6 +37,22 @@ export default function Home() {
 
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: DEFAULT_TITLE,
+          description: DEFAULT_DESCRIPTION,
+          path: "/",
+          crumbs: [{ name: "Home", path: "/" }],
+          extra: [
+            collectionJsonLd({
+              name: "AllWebsites.Design archive",
+              description: DEFAULT_DESCRIPTION,
+              path: "/archive",
+              count: all.length || CANONICAL.length,
+            }),
+          ],
+        })}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         {/* soft colour glow */}
@@ -198,6 +232,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/archive" className="btn-primary !px-6 !py-3.5">Explore the archive</Link>
+            <Link href="/research/website-design-index-2026" className="btn-ghost !px-6 !py-3.5">2026 Design Index</Link>
             <Link href="/submit" className="btn-ghost !px-6 !py-3.5">Submit a site</Link>
           </div>
         </div>

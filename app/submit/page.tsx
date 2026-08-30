@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Submit a Site",
-  description:
-    "Submit a website for review. Every submission is checked against our editorial guidelines.",
-};
+const title = "Submit a Site";
+const description =
+  "Submit a website for review. Every submission is checked against our editorial guidelines.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/submit",
+});
 
 export default function SubmitPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/submit",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Submit", path: "/submit" },
+          ],
+        })}
+      />
       <UtilityHero
         eyebrow="CONTRIBUTE"
         title="Submit a site to the archive."
@@ -96,11 +114,16 @@ export default function SubmitPage() {
               <Link href="/editorial-guidelines" className="text-orange underline decoration-2 underline-offset-2">
                 editorial guidelines
               </Link>
+              {" "}or browse the{" "}
+              <Link href="/archive" className="text-orange underline decoration-2 underline-offset-2">
+                archive
+              </Link>
               .
             </p>
           </div>
         </div>
       </section>
+      <ExploreMore except={["/submit"]} />
     </>
   );
 }

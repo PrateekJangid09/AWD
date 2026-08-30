@@ -9,6 +9,7 @@ const nextConfig = {
       // Legal-page renames only. Website records live permanently at /archive/<slug>.
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
       { source: "/cookies", destination: "/cookie-preference", permanent: true },
+      { source: "/sites/:slug", destination: "/archive/:slug", permanent: true },
     ];
   },
   async rewrites() {

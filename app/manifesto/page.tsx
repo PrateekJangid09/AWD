@@ -1,15 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Manifesto",
-  description: "Useful inspiration needs context. The philosophy behind the archive.",
-};
+const title = "Manifesto";
+const description = "Useful inspiration needs context. The philosophy behind the archive.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/manifesto",
+});
 
 export default function ManifestoPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/manifesto",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Manifesto", path: "/manifesto" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="PHILOSOPHY"
         title="Useful inspiration needs context."
@@ -52,6 +70,7 @@ export default function ManifestoPage() {
           </div>
         </div>
       </section>
+      <ExploreMore except={["/about"]} />
     </>
   );
 }

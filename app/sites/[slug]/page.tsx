@@ -21,6 +21,8 @@ export async function generateMetadata({
   return {
     title: `${site.name} — ${site.categoryName} Website Design`,
     description: `${site.summary} Study the palette, typography, style and technology behind ${site.name}.`,
+    alternates: { canonical: `https://www.allwebsites.design/archive/${slug}` },
+    robots: { index: false, follow: true },
   };
 }
 

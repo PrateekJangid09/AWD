@@ -3,14 +3,21 @@ import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import CategoryCard from "@/components/CategoryCard";
 import Reveal from "@/components/Reveal";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
 import { TRENDING } from "@/lib/data";
 import { CANONICAL, liveCategories, resolveCategory } from "@/lib/canonical";
+import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Categories — Explore Website Design by Industry",
-  description:
-    "Study how different industries approach typography, layout, colour and interaction across 22 categories of real website design.",
-};
+const title = "Categories — Explore Website Design by Industry";
+const description =
+  "Study how different industries approach typography, layout, colour and interaction across real website design categories.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/c",
+});
 
 export default function CategoriesPage() {
   const categories = liveCategories();
@@ -18,6 +25,25 @@ export default function CategoriesPage() {
 
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/c",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Categories", path: "/c" },
+          ],
+          extra: [
+            collectionJsonLd({
+              name: title,
+              description,
+              path: "/c",
+              count: categories.length,
+            }),
+          ],
+        })}
+      />
       <UtilityHero
         eyebrow="Categories"
         title="Explore by category."
@@ -76,6 +102,7 @@ export default function CategoriesPage() {
           </p>
         </div>
       </section>
+      <ExploreMore except={["/c"]} />
     </>
   );
 }

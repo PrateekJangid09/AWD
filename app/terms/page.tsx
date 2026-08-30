@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description:
-    "The terms that govern use of the AllWebsites.Design archive, including third-party ownership and accuracy limitations.",
-};
+const title = "Terms & Conditions";
+const description =
+  "The terms that govern use of the AllWebsites.Design archive, including third-party ownership and accuracy limitations.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/terms",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Terms", path: "/terms" },
+          ],
+        })}
+      />
       <DocumentHero
         title="Terms & Conditions"
         description="The terms that govern use of the archive, including third-party ownership and accuracy limitations."
@@ -95,6 +113,7 @@ export default function TermsPage() {
           </article>
         </div>
       </section>
+      <ExploreMore />
     </>
   );
 }

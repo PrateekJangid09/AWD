@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { pageJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact — Corrections & Editorial",
-  description:
-    "Request a correction, ask about a record, or reach the AllWebsites.Design editorial team.",
-};
+const title = "Contact — Corrections & Editorial";
+const description =
+  "Request a correction, ask about a record, or reach the AllWebsites.Design editorial team.";
+
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/contact",
+});
 
 const REASONS = [
   { t: "Correction", d: "A record is wrong, outdated or miscategorised." },
@@ -18,6 +25,17 @@ const REASONS = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: title,
+          description,
+          path: "/contact",
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ],
+        })}
+      />
       <UtilityHero
         eyebrow="CONTACT"
         title="Corrections, questions, and everything editorial."
@@ -158,6 +176,7 @@ export default function ContactPage() {
           </aside>
         </div>
       </section>
+      <ExploreMore except={["/contact"]} />
     </>
   );
 }

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import StatusPage from "@/components/StatusPage";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Down for Maintenance",
   description: "The archive is being updated. Back shortly.",
-  robots: { index: false, follow: false },
-};
+  path: "/maintenance",
+  index: false,
+});
 
 export default function MaintenancePage() {
   return (
