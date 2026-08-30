@@ -29,30 +29,25 @@ export default function CookieBanner() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[60] p-3 sm:p-5">
+    <div className="fixed inset-x-0 bottom-0 z-[60] p-3">
       <div className="wrap">
-        <div className="glass-strong flex flex-col gap-4 rounded-2xl p-5 shadow-soft-lg md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <p className="eyebrow text-ink">Cookies</p>
-            <p className="mt-2.5 text-sm leading-relaxed text-soft">
-              We use essential cookies to run the archive and optional analytics
-              cookies to understand how references are discovered. You choose.{" "}
-              <Link href="/cookie-preference" className="link-underline font-medium text-ink">
-                Manage preferences
-              </Link>
-              .
-            </p>
-          </div>
-          <div className="flex shrink-0 flex-wrap gap-2.5">
+        <div className="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-3.5 shadow-soft-lg sm:flex-row sm:items-center sm:justify-between sm:p-5">
+          <p className="max-w-2xl text-[13px] leading-relaxed text-soft">
+            Essential cookies run the archive. Analytics stay off unless you opt in.{" "}
+            <Link href="/cookie-preference" className="font-medium text-ink underline decoration-orange decoration-2 underline-offset-2">
+              Preferences
+            </Link>
+          </p>
+          <div className="flex shrink-0 gap-2">
             <button
               onClick={() => decide("essential")}
-              className="btn-ghost !px-4 !py-2.5 !text-[12px]"
+              className="btn-ghost !px-3.5 !py-2 !text-[12px]"
             >
               Essential only
             </button>
             <button
               onClick={() => decide("all")}
-              className="btn-primary !px-4 !py-2.5 !text-[12px]"
+              className="btn-primary !px-3.5 !py-2 !text-[12px]"
             >
               Accept all
             </button>
