@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000219",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Mark Gerkules",
+    "domain": "markgerkules.com",
+    "url": "https://www.markgerkules.com/",
+    "slug": "markgerkules",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": null,
+    "website_type": "Personal Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": null,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f7f89d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#9bd4d7"
+    ],
+    "background_colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f7f89d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9bd4d7",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#333333",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#b1b1b0",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          259
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "markgerkules@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/markgerkules",
+    "x": null
+  },
+  "seo": {
+    "title": "Mark Gerkules",
+    "description": "Experienced freelance product and web designer based in Israel, available remotely."
+  },
+  "pages": {
+    "homepage": "https://www.markgerkules.com/",
+    "about": "https://www.markgerkules.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000186",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Sezione Tascabili",
+    "domain": "sezionetascabili.it",
+    "url": "https://sezionetascabili.it/en/",
+    "slug": "sezionetascabili",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [],
+    "confidence": 0.73,
+    "field_confidence": {
+      "category": 0.73,
+      "subcategory": 0.68,
+      "website_type": 0.73,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0000ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0000ff",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Arial",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          147
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Sezione Tascabili",
+    "description": "This website archives the contents of the exhibition held from 17 to 19 September 2021 at Recontemporary. Curated by Turin based design studio Norma, as part of the 'Graphic Days in the city' festival."
+  },
+  "pages": {
+    "homepage": "https://sezionetascabili.it/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

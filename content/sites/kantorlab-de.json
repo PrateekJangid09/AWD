@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000005",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "luis kantor",
+    "domain": "kantorlab.de",
+    "url": "https://kantorlab.de/",
+    "slug": "kantorlab-de",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Legal & Government",
+    "subcategory": null,
+    "website_type": "Landing Page",
+    "audience": [
+      "Government Agencies"
+    ],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": null,
+      "website_type": 0.78,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#d8cfbf",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#d8cfbf",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#121212",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#262523",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          24
+        ]
+      },
+      {
+        "name": "Fragment Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "luis@kantorlab.de",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "luis kantor",
+    "description": "designing, crafting, building, creating (something like that) digital sites for agencies and start-ups. explore to learn more."
+  },
+  "pages": {
+    "homepage": "https://kantorlab.de/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

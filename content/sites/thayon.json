@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000004",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Thayon",
+    "domain": "thayon.com",
+    "url": "https://thayon.com/",
+    "slug": "thayon",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Recruitment Website",
+    "audience": [],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.72,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#272a2d",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#111113",
+      "#fcfcfd"
+    ],
+    "text_color": "#edeef0",
+    "palette": [
+      {
+        "hex": "#111113",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#edeef0",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#272a2d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#fcfcfd",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#363a3f",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geist",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          40
+        ]
+      },
+      {
+        "name": "Source Serif 4",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          40,
+          48
+        ]
+      },
+      {
+        "name": "Geist Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "joe@thayon.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/joenyiri",
+    "x": null
+  },
+  "seo": {
+    "title": "Thayon",
+    "description": "A founder-led, data-driven search firm connecting frontier AI researchers and engineers with work worth doing."
+  },
+  "pages": {
+    "homepage": "https://thayon.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000031",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Beauty with Intuition",
+    "domain": "beautywithintuition.com",
+    "url": "https://beautywithintuition.com/",
+    "slug": "beautywithintuition",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Fashion & Beauty",
+    "subcategory": null,
+    "website_type": "Resume Website",
+    "audience": [
+      "B2C",
+      "Consumers",
+      "Beauty Professionals"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": null,
+      "website_type": 0.82,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#482f1e",
+    "secondary_color": null,
+    "accent_colors": [
+      "#a97456"
+    ],
+    "background_colors": [
+      "#ece9e7",
+      "#f7f5f4"
+    ],
+    "text_color": "#4e4e4e",
+    "palette": [
+      {
+        "hex": "#ece9e7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#4e4e4e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#482f1e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f7f5f4",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#a97456",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Karla",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      },
+      {
+        "name": "ivypresto-display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          19,
+          46
+        ]
+      },
+      {
+        "name": "bicyclette",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Beauty with Intuition",
+    "description": "I\u2019m Love, and I\u2019ve been a licensed cosmetologist for 15 years. For the past eight years, I\u2019ve been specializing in lash extensions, and I absolutely love it! Paying attention to the little details is my passion, which helps me create unique styles and long-lasting sets."
+  },
+  "pages": {
+    "homepage": "https://beautywithintuition.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

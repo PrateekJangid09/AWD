@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000125",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Poch Studio",
+    "domain": "poch.studio",
+    "url": "https://poch.studio/",
+    "slug": "poch",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Studio Website",
+    "audience": [
+      "B2B"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.84,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ffffff",
+      "#4f4f4f",
+      "#ffa5c6",
+      "#fff6c6"
+    ],
+    "text_color": "#0099ff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#4f4f4f",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffa5c6",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0099ff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff6c6",
+        "role": "background",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Season Sans SemiBold",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Season Mix Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "400",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "tourist@traction.avant",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/pochstudio",
+    "x": null
+  },
+  "seo": {
+    "title": "Poch Studio",
+    "description": "A design studio of skilled, passionate and talented friends who came together to help brands bloom through conscious, smart, and fresh design."
+  },
+  "pages": {
+    "homepage": "https://poch.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

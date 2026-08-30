@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000338",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "OVAL",
+    "domain": "weareoval.eu",
+    "url": "https://weareoval.eu/",
+    "slug": "weareoval-eu",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Creative",
+    "website_type": "Agency Website",
+    "audience": [],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.78,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#45394b",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff5e47"
+    ],
+    "background_colors": [
+      "#17071e",
+      "#e2ded1"
+    ],
+    "text_color": "#fff4df",
+    "palette": [
+      {
+        "hex": "#17071e",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff4df",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#45394b",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e2ded1",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff5e47",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "manrope",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          102
+        ]
+      },
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          125,
+          125
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "JavaScript",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "info@weareoval.eu",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Mechelsesteenweg 64 b., Antwerp, 801 2018, Belgium"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/weareoval-eu",
+    "x": null
+  },
+  "seo": {
+    "title": "OVAL",
+    "description": "OVAL is a creative agency, born in Europe. We create Employee Experiences, Citizen & Consumer Experiences and Business Experiences that stick with people."
+  },
+  "pages": {
+    "homepage": "https://weareoval.eu/",
+    "about": "https://weareoval.eu/about",
+    "contact": "https://weareoval.eu/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

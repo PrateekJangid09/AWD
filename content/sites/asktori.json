@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000038",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "AskTori",
+    "domain": "asktori.ai",
+    "url": "https://asktori.ai/",
+    "slug": "asktori",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": "Customer Success",
+    "website_type": "Pricing Website",
+    "audience": [],
+    "confidence": 0.59,
+    "field_confidence": {
+      "category": 0.59,
+      "subcategory": 0.54,
+      "website_type": 0.84,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#2563eb",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#1e3a8a",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1e3a8a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2563eb",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          56
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "convers@ion.step",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "AskTori",
+    "description": "Tori helps customer success teams answer complex questions from help docs, product pages, and company knowledge."
+  },
+  "pages": {
+    "homepage": "https://asktori.ai/",
+    "about": "not found",
+    "contact": "https://asktori.ai/contact",
+    "pricing": "https://asktori.ai/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

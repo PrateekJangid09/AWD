@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000181",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Anthony Bruno \u2022 Engineering Manager",
+    "domain": "abruno.net",
+    "url": "https://www.abruno.net/",
+    "slug": "abruno",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": "SaaS Website",
+    "audience": [],
+    "confidence": 0.75,
+    "field_confidence": {
+      "category": 0.75,
+      "subcategory": 0.7,
+      "website_type": 0.59,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#008560",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#fffcfa"
+    ],
+    "text_color": "#77736f",
+    "palette": [
+      {
+        "hex": "#fffcfa",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#77736f",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#008560",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#b0aaa7",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f1f1f",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Anthony Bruno \u2022 Engineering Manager",
+    "description": "Engineering Manager with 15+ years in frontend. Led projects for Google and Meta, scaled SaaS to acquisition, and now focus on DX and AI workflows."
+  },
+  "pages": {
+    "homepage": "https://www.abruno.net/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

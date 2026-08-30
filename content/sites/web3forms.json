@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000232",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Just a moment...",
+    "domain": "web3forms.com",
+    "url": "https://web3forms.com/",
+    "slug": "web3forms",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": 0.72,
+      "website_type": 0.8,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#1c263c",
+    "secondary_color": null,
+    "accent_colors": [
+      "#334155",
+      "#4f46e5"
+    ],
+    "background_colors": [
+      "#0f172a"
+    ],
+    "text_color": "#c7d2fe",
+    "palette": [
+      {
+        "hex": "#0f172a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c7d2fe",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c263c",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#334155",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#4f46e5",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Graphik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          53
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Just a moment...",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://web3forms.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

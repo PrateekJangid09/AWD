@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000015",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Aspen Search",
+    "domain": "aspensearch.com",
+    "url": "https://www.aspensearch.com/",
+    "slug": "aspensearch",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Recruitment Website",
+    "audience": [],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.74,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#08225a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "background_colors": [
+      "#08225a",
+      "#004b87",
+      "#009aa6",
+      "#262160"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#08225a",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#004b87",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#009aa6",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#262160",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "ben@aspensearch.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/aspen-search",
+    "x": null
+  },
+  "seo": {
+    "title": "Aspen Search",
+    "description": "Boutique executive search specialists connecting exceptional engineering and research talent with leading quantitative trading firms and venture-backed technology companies"
+  },
+  "pages": {
+    "homepage": "https://www.aspensearch.com/",
+    "about": "https://www.aspensearch.com/about",
+    "contact": "https://www.aspensearch.com/contact",
+    "pricing": "https://www.aspensearch.com/pricing",
+    "careers": "https://www.aspensearch.com/careers"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

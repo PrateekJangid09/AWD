@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000288",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Fey",
+    "domain": "fey.com",
+    "url": "https://fey.com/",
+    "slug": "fey",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Banking",
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#fafafa",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#fafafa"
+    ],
+    "text_color": "#595959",
+    "palette": [
+      {
+        "hex": "#fafafa",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#595959",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1c1c",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Wealthsimple Sans Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          21,
+          21
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/brotzky"
+  },
+  "seo": {
+    "title": "Fey",
+    "description": "Fey, the financial research platform built for the modern investor, has joined Wealthsimple \u2014 now helping shape the future of investing and banking."
+  },
+  "pages": {
+    "homepage": "https://fey.com/",
+    "about": "https://fey.com/about",
+    "contact": "https://fey.com/contact",
+    "pricing": "https://fey.com/pricing",
+    "careers": "https://fey.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

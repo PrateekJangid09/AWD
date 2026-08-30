@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000077",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Raja Vijayaraman",
+    "domain": "rajavijayaraman.com",
+    "url": "https://rajavijayaraman.com/",
+    "slug": "rajavijayaraman",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Directory",
+    "audience": [],
+    "confidence": 0.66,
+    "field_confidence": {
+      "category": 0.66,
+      "subcategory": 0.61,
+      "website_type": 0.71,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#1985f1",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#e0e0e0"
+    ],
+    "text_color": "#555555",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#555555",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1985f1",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0e0e0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#777777",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          19
+        ]
+      },
+      {
+        "name": "Roboto Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "raja@waplestuff.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/rajavijayaraman"
+  },
+  "seo": {
+    "title": "Raja Vijayaraman",
+    "description": "Indie app maker. Tinkering with Lumy, Calzy and Currenzy. Writing to discover."
+  },
+  "pages": {
+    "homepage": "https://rajavijayaraman.com/",
+    "about": "https://rajavijayaraman.com/about",
+    "contact": "https://rajavijayaraman.com/contact",
+    "pricing": "https://rajavijayaraman.com/pricing",
+    "careers": "https://rajavijayaraman.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

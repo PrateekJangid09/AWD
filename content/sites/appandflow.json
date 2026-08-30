@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000134",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "App and Flow",
+    "domain": "appandflow.com",
+    "url": "https://appandflow.com/",
+    "slug": "appandflow",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": null,
+    "audience": [
+      "B2B",
+      "Enterprises",
+      "Engineers"
+    ],
+    "confidence": 0.78,
+    "field_confidence": {
+      "category": 0.78,
+      "subcategory": 0.73,
+      "website_type": null,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#e438ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f0f0f0",
+      "#ffffff"
+    ],
+    "text_color": "#121212",
+    "palette": [
+      {
+        "hex": "#f0f0f0",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#121212",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e438ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#828282",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          24
+        ]
+      },
+      {
+        "name": "Maru",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          32
+        ]
+      },
+      {
+        "name": "DM Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          10,
+          10
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "sales@appandflow.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Montreal, CA"
+  },
+  "social": {
+    "linkedin": "https://ca.linkedin.com/company/app-and-flow",
+    "x": "https://x.com/appandflow"
+  },
+  "seo": {
+    "title": "App and Flow",
+    "description": "App&Flow is a Canadian React Native and Design Engineering studio. We partner with the world's top companies to help them unlock the full potential of RN and Expo."
+  },
+  "pages": {
+    "homepage": "https://appandflow.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000001",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Jon Lamb",
+    "domain": "jonlamb.com",
+    "url": "https://jonlamb.com/",
+    "slug": "jonlamb",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Case Study Website",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.63,
+    "field_confidence": {
+      "category": 0.63,
+      "subcategory": 0.58,
+      "website_type": 0.68,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#6e7481",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#edeef1",
+      "#ffffff"
+    ],
+    "text_color": "#1c1c21",
+    "palette": [
+      {
+        "hex": "#edeef1",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1c21",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6e7481",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "formular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          82
+        ]
+      },
+      {
+        "name": "formularMedium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Corporate / Clean"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "jon.lamb@jonklamb.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://uk.linkedin.com/in/jon-lamb-ux",
+    "x": null
+  },
+  "seo": {
+    "title": "Jon Lamb",
+    "description": "Jon Lamb | Product Design Lead"
+  },
+  "pages": {
+    "homepage": "https://jonlamb.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

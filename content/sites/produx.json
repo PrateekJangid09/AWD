@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000145",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "PRODUX",
+    "domain": "produx.design",
+    "url": "https://www.produx.design/",
+    "slug": "produx",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Studio Website",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": 0.72,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#5f5136",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0e0e0e",
+      "#d4cccc",
+      "#f2f2f2"
+    ],
+    "text_color": "#303930",
+    "palette": [
+      {
+        "hex": "#0e0e0e",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#303930",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#5f5136",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#545e54",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#d4cccc",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2f2f2",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          10,
+          24
+        ]
+      },
+      {
+        "name": "At Aero Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          24
+        ]
+      },
+      {
+        "name": "At Aero",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          64
+        ]
+      },
+      {
+        "name": "At Aero Medium",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@produx.design",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/produxdesign",
+    "x": "https://x.com/produx_design"
+  },
+  "seo": {
+    "title": "PRODUX",
+    "description": "Strategy-led brand identity and web design studio. We build distinctive brands for startups, SaaS, fintech, and AI companies."
+  },
+  "pages": {
+    "homepage": "https://www.produx.design/",
+    "about": "not found",
+    "contact": "https://www.produx.design/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

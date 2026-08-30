@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000139",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "099 SUPPLY",
+    "domain": "099.supply",
+    "url": "https://099.supply/",
+    "slug": "099",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Small Businesses"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.59,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#e0e0e0"
+    ],
+    "text_color": "#999999",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#999999",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0e0e0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#222222",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#555555",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#101010",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Soehne Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          8,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "099 SUPPLY",
+    "description": "099 Supply helps you create faster with free and premium Framer components, overrides, and high-resolution 3D mockups for polished design presentations."
+  },
+  "pages": {
+    "homepage": "https://099.supply/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

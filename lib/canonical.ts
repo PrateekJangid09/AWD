@@ -120,7 +120,7 @@ export function assetBase(site: CanonicalSite) {
   return `/sites/${site.identity.slug}`;
 }
 
-import type { CardSite } from "./data";
+import { CATEGORIES, categoryColor, type CardSite, type Category } from "./data";
 
 // Map a canonical record into the lightweight archive-card shape,
 // with a real screenshot thumbnail.
@@ -133,10 +133,82 @@ export function canonicalToCard(s: CanonicalSite): CardSite {
     style: s.design.style_tags[0] ?? "Site",
     summary: s.seo.description ?? "",
     palette: s.design.palette.map((p) => ({ role: p.role, hex: p.hex })),
-    thumb: `${assetBase(s)}/${s.screenshots.desktop ?? "desktop.png"}`,
+    thumb: s.screenshots.desktop
+      ? `${assetBase(s)}/${s.screenshots.desktop}`
+      : undefined,
   };
 }
 
 export function canonicalCards(): CardSite[] {
   return CANONICAL.map(canonicalToCard);
+}
+
+export function categorySlug(name: string | null | undefined) {
+  return (
+    (name ?? "other")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "other"
+  );
+}
+
+export function canonicalCardsInCategory(slug: string) {
+  return CANONICAL.filter((s) => categorySlug(s.classification.category) === slug).map(
+    canonicalToCard,
+  );
+}
+
+export function canonicalCategoryStats() {
+  const map = new Map<string, { name: string; count: number }>();
+  for (const s of CANONICAL) {
+    const name = s.classification.category ?? "Other";
+    const slug = categorySlug(name);
+    const cur = map.get(slug) ?? { name, count: 0 };
+    cur.count += 1;
+    map.set(slug, cur);
+  }
+  return [...map.entries()]
+    .map(([slug, v]) => ({ slug, ...v }))
+    .sort((a, b) => b.count - a.count);
+}
+
+export function resolveCategory(slug: string): Category | undefined {
+  const live = canonicalCategoryStats().find((c) => c.slug === slug);
+  const known = CATEGORIES.find((c) => c.slug === slug);
+  const total = Math.max(CANONICAL.length, 1);
+  const count = live?.count ?? 0;
+  const share = `${((count / total) * 100).toFixed(1)}%`;
+  if (known) {
+    return { ...known, count, share };
+  }
+  if (live) {
+    return {
+      slug,
+      name: live.name,
+      count,
+      share,
+      blurb: `Website design references classified as ${live.name}.`,
+      descriptors: [],
+      accent: categoryColor(live.name),
+    };
+  }
+  return undefined;
+}
+
+export function liveCategories(): Category[] {
+  const live = canonicalCategoryStats();
+  const seen = new Set<string>();
+  const out: Category[] = [];
+  for (const row of live) {
+    const cat = resolveCategory(row.slug);
+    if (cat) {
+      out.push(cat);
+      seen.add(row.slug);
+    }
+  }
+  for (const c of CATEGORIES) {
+    if (!seen.has(c.slug)) out.push({ ...c, count: 0, share: "0%" });
+  }
+  return out;
 }

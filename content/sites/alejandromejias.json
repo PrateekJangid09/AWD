@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000029",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Alejandro Mejias",
+    "domain": "alejandromejias.com.au",
+    "url": "https://www.alejandromejias.com.au/",
+    "slug": "alejandromejias",
+    "favicon": null
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Portfolio",
+    "audience": [
+      "Developers",
+      "Investors",
+      "Agencies"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.76,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#ebff00",
+    "secondary_color": null,
+    "accent_colors": [
+      "#505e45"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#c8c8c8"
+    ],
+    "text_color": "#080707",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#080707",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ebff00",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#c8c8c8",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#505e45",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#383838",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Be Vietnam Pro",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "IBM Plex Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          18
+        ]
+      },
+      {
+        "name": "FK Raster Grotesk Compact Trial Sharp",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          32,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "callemailalejandromejias.work@gmail.comalejandromejias.work",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/alejandromejiasdesign",
+    "x": "https://twitter.com/alejandromejias"
+  },
+  "seo": {
+    "title": "Alejandro Mejias",
+    "description": "Design portfolio of Alejandro Mejias. A Melbourne-based experience designer and creative partnering with global brands to create memorable digital experiences."
+  },
+  "pages": {
+    "homepage": "https://www.alejandromejias.com.au/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

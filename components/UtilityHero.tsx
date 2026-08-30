@@ -18,8 +18,9 @@ export default function UtilityHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="border-b border-line bg-paper">
-      <div className="wrap py-10 sm:py-12">
+    <section className="relative overflow-hidden border-b border-line bg-paper">
+      <span className="aura" aria-hidden />
+      <div className="wrap relative py-10 sm:py-12">
         {breadcrumb && (
           <div className="mb-6">
             <Breadcrumb items={breadcrumb} />

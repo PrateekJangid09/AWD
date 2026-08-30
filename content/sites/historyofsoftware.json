@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000121",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "History of Software Design",
+    "domain": "historyofsoftware.org",
+    "url": "https://historyofsoftware.org/",
+    "slug": "historyofsoftware",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": "Waitlist Page",
+    "audience": [],
+    "confidence": 0.7,
+    "field_confidence": {
+      "category": 0.7,
+      "subcategory": null,
+      "website_type": 0.67,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0000ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0000ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#121212",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#3b3b3b",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#6f6f6f",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Helvetica",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          92
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "History of Software Design",
+    "description": "How did we get here? No one really knows. Even those of us working in software know very little about it. There are few books, documentaries, or interactive exhibitions. Seminal works are lost to time every year, and with them, the stories of how things came to be."
+  },
+  "pages": {
+    "homepage": "https://historyofsoftware.org/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

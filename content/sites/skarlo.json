@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000089",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Skarlo",
+    "domain": "skarlo.co",
+    "url": "https://skarlo.co/",
+    "slug": "skarlo",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [
+      "B2B",
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.84,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ababab"
+    ],
+    "background_colors": [
+      "#000000",
+      "#e11438"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0099ff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e11438",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ababab",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#560319",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Feature Deck Web Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "400",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "italic",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "expertstermshej@skarlo.cocopiedtwitter",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/skarlo",
+    "x": "https://x.com/skarlo_"
+  },
+  "seo": {
+    "title": "Skarlo",
+    "description": "Based in Copenhagen and London, Skarlo is a product studio building beautiful brands, sites, apps and tools for teams who are building with AI. Our clients include Framer, Y Combinator and more."
+  },
+  "pages": {
+    "homepage": "https://skarlo.co/",
+    "about": "not found",
+    "contact": "https://skarlo.co/get-started",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

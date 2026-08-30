@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000017",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Weppy",
+    "domain": "weppy.app",
+    "url": "https://weppy.app/",
+    "slug": "weppy",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Productivity",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.81,
+    "field_confidence": {
+      "category": 0.81,
+      "subcategory": 0.76,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f53003",
+    "secondary_color": null,
+    "accent_colors": [
+      "#16a34a"
+    ],
+    "background_colors": [
+      "#f5f4f0",
+      "#ffffff"
+    ],
+    "text_color": "#6b6b6b",
+    "palette": [
+      {
+        "hex": "#f5f4f0",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b6b6b",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f53003",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a0a0a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#16a34a",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "proxima-soft",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          76
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@weppy.app",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Weppy",
+    "description": "Batch resize and compress PNG, JPEG and WebP on Mac \u2014 offline, non-destructive, lossless by default. Free download for macOS."
+  },
+  "pages": {
+    "homepage": "https://weppy.app/",
+    "about": "not found",
+    "contact": "https://weppy.app/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

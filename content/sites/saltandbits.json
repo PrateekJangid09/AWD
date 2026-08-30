@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000094",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Salt&Bits",
+    "domain": "saltandbits.com",
+    "url": "https://saltandbits.com/en",
+    "slug": "saltandbits",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": 0.63,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#b4a493",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#171514",
+      "#ecf0ed"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#171514",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#b4a493",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#929687",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ecf0ed",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Poppins-Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          23
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "info@saltandbits.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Salt&Bits",
+    "description": "Starting from simplicity and style, Salt&Bits creates custom-made websites, branding and more. From the first concept to the final line of code, and from logo to print \u2013 always stylish, thoughtful, and tailor-made."
+  },
+  "pages": {
+    "homepage": "https://saltandbits.com/",
+    "about": "https://saltandbits.com/en/about",
+    "contact": "https://saltandbits.com/en/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

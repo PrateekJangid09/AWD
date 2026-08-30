@@ -41,7 +41,7 @@
       {
         "hex": "#f7fafc",
         "role": "background",
-        "coverage": 1
+        "coverage": 0
       },
       {
         "hex": "#1d4ed8",
@@ -73,12 +73,7 @@
       {
         "name": "DM Sans",
         "role": "body",
-        "weights": [
-          400,
-          500,
-          600,
-          700
-        ],
+        "weights": [],
         "sizes": [
           12,
           48
@@ -87,11 +82,7 @@
       {
         "name": "Fraunces",
         "role": "display",
-        "weights": [
-          500,
-          600,
-          700
-        ],
+        "weights": [],
         "sizes": [
           14,
           68
@@ -121,11 +112,8 @@
   },
   "contact": {
     "email": "vijay@rankbeaver.com",
-    "on_official_domain": true,
-    "other_emails": [
-      "touchvijay@rankbeaver.combook",
-      "gener@edgoogle.com"
-    ],
+    "on_official_domain": null,
+    "other_emails": [],
     "address": "Sharjah Media City, Sharjah, UAE, Sharjah, AE"
   },
   "social": {
@@ -144,62 +132,33 @@
     "careers": "https://rankbeaver.com/careers"
   },
   "screenshots": {
-    "desktop": "desktop.png",
+    "desktop": "desktop.webp",
     "pages": [
       {
-        "label": "Homepage",
-        "file": "homepage.png"
-      },
-      {
         "label": "About",
-        "file": "about.png"
+        "file": "about.webp"
       },
       {
         "label": "Contact",
-        "file": "contact.png"
+        "file": "contact.webp"
       },
       {
         "label": "Pricing",
-        "file": "pricing.png"
+        "file": "pricing.webp"
       },
       {
         "label": "Jobs/Careers",
-        "file": "jobs-careers.png"
+        "file": "jobs-careers.webp"
       }
     ]
   },
   "assets": {
     "favicon": "favicon.png"
   },
-  "artifacts": {
-    "html_file": "rankbeaver.com.html",
-    "standalone_html_path": "previews/rankbeaver.com.html",
-    "canonical_file": "canonical.json",
-    "raw_file": "raw.json"
-  },
   "extraction": {
     "status": "complete",
-    "attempts": 1,
-    "extracted_at": "2026-08-28T09:33:26.753Z",
-    "duration_seconds": null,
-    "extractor_version": "2.2.0",
-    "module_status": {
-      "identity": true,
-      "description": true,
-      "category": true,
-      "subcategory": true,
-      "website_type": true,
-      "audience": true,
-      "palette": true,
-      "fonts": true,
-      "style": true,
-      "tech_stack": true,
-      "key_pages": true,
-      "contact": true,
-      "social": true,
-      "favicon": true,
-      "screenshot": true
-    },
-    "completeness": 100
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
   }
 }

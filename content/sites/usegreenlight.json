@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000240",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Greenlight makes it easy to leave feedback on any website.",
+    "domain": "usegreenlight.com",
+    "url": "https://www.usegreenlight.com/",
+    "slug": "usegreenlight",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": null,
+    "website_type": "Product Website",
+    "audience": [
+      "Event Attendees"
+    ],
+    "confidence": 0.59,
+    "field_confidence": {
+      "category": 0.59,
+      "subcategory": null,
+      "website_type": 0.74,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#2982ff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#af40ff",
+      "#00ddeb"
+    ],
+    "background_colors": [
+      "#010d1a",
+      "#ecf1f6"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#010d1a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2982ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ecf1f6",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#af40ff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#00ddeb",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Phantomsans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          64
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "authentific@ion.made",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "MaxDesigner"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Greenlight makes it easy to leave feedback on any website.",
+    "description": "Greenlight makes it easy to leave feedback on any website. With Greenlight, you can receive, resolve and act on comments faster. Download the extension and get started today."
+  },
+  "pages": {
+    "homepage": "https://www.usegreenlight.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

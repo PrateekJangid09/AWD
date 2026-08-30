@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000018",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Zachary Kai",
+    "domain": "zacharykai.net",
+    "url": "https://zacharykai.net/notes/pb/",
+    "slug": "zacharykai",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Productivity",
+    "website_type": "Portfolio",
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.75,
+    "field_confidence": {
+      "category": 0.75,
+      "subcategory": 0.7,
+      "website_type": 0.82,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#d4c29c",
+    "secondary_color": null,
+    "accent_colors": [
+      "#4e148c"
+    ],
+    "background_colors": [
+      "#faebd7",
+      "#fffaf0"
+    ],
+    "text_color": "#2c0735",
+    "palette": [
+      {
+        "hex": "#faebd7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#2c0735",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d4c29c",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#fffaf0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#4e148c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Vollkorn",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          26
+        ]
+      },
+      {
+        "name": "Smythe",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          44,
+          61
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hi@zacharykai.net",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Zachary Kai",
+    "description": "People and Blogs is a weekly series where interesting people talk about themselves and their blogs. Founded by Manuel Moreale, now run by Zachary Kai. 155 conversations and counting."
+  },
+  "pages": {
+    "homepage": "https://zacharykai.net/",
+    "about": "https://zacharykai.net/about",
+    "contact": "https://zacharykai.net/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

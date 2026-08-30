@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000105",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Arcade Labs",
+    "domain": "arcade.la",
+    "url": "https://arcade.la/",
+    "slug": "arcade-la",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.84,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0f0f0f",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0f0f0f",
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#0f0f0f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      },
+      {
+        "name": "OffBit Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          28,
+          48
+        ]
+      },
+      {
+        "name": "OffBit 101 Bold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          48,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@arcade.la",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Arcade Labs",
+    "description": "Arcade Labs is a small creative lab based in Los Angeles founded by Mason Watson. I partner with early-stage startups designing zero to one brand and product design. I do web design, UI/UX design, industrial design, and brand identity design."
+  },
+  "pages": {
+    "homepage": "https://arcade.la/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

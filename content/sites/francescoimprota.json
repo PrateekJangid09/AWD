@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000154",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Francesco Improta",
+    "domain": "francescoimprota.com",
+    "url": "https://francescoimprota.com/",
+    "slug": "francescoimprota",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "UI/UX",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": 0.72,
+      "website_type": 0.85,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#080b12",
+    "secondary_color": null,
+    "accent_colors": [
+      "#f59e0b",
+      "#676f7e"
+    ],
+    "background_colors": [
+      "#111a23",
+      "#ffffff"
+    ],
+    "text_color": "#9da3ae",
+    "palette": [
+      {
+        "hex": "#111a23",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9da3ae",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#080b12",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f59e0b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#676f7e",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Mona Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "me@francescoimprota.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "http://www.twitter.com/zetareticoli"
+  },
+  "seo": {
+    "title": "Francesco Improta",
+    "description": "Personal website of Francesco Improta, product designer from Rome, Italy. Write about design, front-end and building stuff on the web."
+  },
+  "pages": {
+    "homepage": "https://francescoimprota.com/",
+    "about": "https://francescoimprota.com/about/",
+    "contact": "https://francescoimprota.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000044",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "\u00c7a\u011fda\u015f \u00dcnal",
+    "domain": "cagd.as",
+    "url": "https://cagd.as/",
+    "slug": "cagd-as",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Developer",
+    "website_type": "Personal Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.81,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#146ef5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ededed",
+      "#ffffff"
+    ],
+    "text_color": "#bdbdbd",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#bdbdbd",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#146ef5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ededed",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#0e0e0e",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "S\u00f6hne",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          19
+        ]
+      },
+      {
+        "name": "Lyon Text",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "cagdas@cagdasunal.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "\u0130zmit, Kocaeli, TR"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/cagdasunal",
+    "x": "https://x.com/cagdasunal"
+  },
+  "seo": {
+    "title": "\u00c7a\u011fda\u015f \u00dcnal",
+    "description": "Accepting new projects. Freelance Webflow developer building clean, custom-coded sites with a CMS your team can manage."
+  },
+  "pages": {
+    "homepage": "https://cagd.as/",
+    "about": "not found",
+    "contact": "https://cagd.as/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

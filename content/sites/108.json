@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000099",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "108\u2122 Supply",
+    "domain": "108.supply",
+    "url": "https://108.supply/",
+    "slug": "108",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Graphic Design",
+    "website_type": "Resource Website",
+    "audience": [
+      "Designers"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.85,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0a0a0c",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0a0a0c",
+      "#e8e3dd"
+    ],
+    "text_color": "#eff1f0",
+    "palette": [
+      {
+        "hex": "#0a0a0c",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#eff1f0",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#232323",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e8e3dd",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Gt Alpina Condensed",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          28,
+          56
+        ]
+      },
+      {
+        "name": "Season Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          20
+        ]
+      },
+      {
+        "name": "Geist Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "arielinstagram@108.supplyyour",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "108\u2122 Supply",
+    "description": "A curated collection of premium Jitter motion templates for web designers. Clean transitions, bold effects, ready to drop into your workflow."
+  },
+  "pages": {
+    "homepage": "https://108.supply/",
+    "about": "https://108.supply/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

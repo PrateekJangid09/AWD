@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000123",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Framer",
+    "domain": "framer.com",
+    "url": "https://www.framer.com/",
+    "slug": "framer-2",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Developers",
+      "B2B",
+      "B2C"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.79,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0099ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0099ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#111111",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#242424",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#888888",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          9,
+          20
+        ]
+      },
+      {
+        "name": "Inter Variable",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          6,
+          22
+        ]
+      },
+      {
+        "name": "GT Walsheim Medium",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          44,
+          54
+        ]
+      },
+      {
+        "name": "Input Mono Regular",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@framer.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/framer",
+    "x": "https://x.com/framer"
+  },
+  "seo": {
+    "title": "Framer",
+    "description": "Go from idea to launch with an agent that designs and builds on the canvas. Keep each change editable, with hosting, security, analytics, CMS, and SEO built in."
+  },
+  "pages": {
+    "homepage": "https://www.framer.com/",
+    "about": "https://www.framer.com/about",
+    "contact": "https://www.framer.com/contact/",
+    "pricing": "https://www.framer.com/pricing",
+    "careers": "https://www.framer.com/careers/"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

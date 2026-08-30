@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000054",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Hello Comrade",
+    "domain": "hellocomradestudio.com",
+    "url": "https://hellocomradestudio.com/",
+    "slug": "hellocomradestudio",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Company Website",
+    "audience": [],
+    "confidence": 0.81,
+    "field_confidence": {
+      "category": 0.81,
+      "subcategory": 0.76,
+      "website_type": 0.79,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Switzer",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "SvelteKit on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "SvelteKit"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@hellocomradestudio.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Amstelkade 165-3, Amsterdam, North Holland, 1078 AX, NL"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/hello-comrade",
+    "x": null
+  },
+  "seo": {
+    "title": "Hello Comrade",
+    "description": "Hello Comrade is a full-service design and branding collective based in Amsterdam, specializing in creating impactful brand identities and creative solutions that resonate globally."
+  },
+  "pages": {
+    "homepage": "https://hellocomradestudio.com/",
+    "about": "https://hellocomradestudio.com/about",
+    "contact": "https://hellocomradestudio.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

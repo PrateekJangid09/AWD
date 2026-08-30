@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000107",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Radial",
+    "domain": "radial.org",
+    "url": "https://radial.org/",
+    "slug": "radial",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Prototyping",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.74,
+    "field_confidence": {
+      "category": 0.74,
+      "subcategory": 0.69,
+      "website_type": 0.59,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#4a5760",
+    "secondary_color": null,
+    "accent_colors": [
+      "#62d4f6",
+      "#c6e758"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#d9d9d9"
+    ],
+    "text_color": "#1e1e1e",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1e1e1e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#4a5760",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#62d4f6",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#c6e758",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9d9d9",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Helvetica Now Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          110
+        ]
+      },
+      {
+        "name": "DM Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Fastly",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "contact@radial.org",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Radial",
+    "description": "Radial is Astera's systems-level intervention. We design, fund, and operate high-impact programs that prototype a new model for how science is done, shared, and scaled for real-world utility."
+  },
+  "pages": {
+    "homepage": "https://radial.org/",
+    "about": "https://radial.org/about",
+    "contact": "https://radial.org/contact",
+    "pricing": "https://radial.org/pricing",
+    "careers": "https://radial.org/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

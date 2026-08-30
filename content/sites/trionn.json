@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000072",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "TRIONN",
+    "domain": "trionn.com",
+    "url": "https://trionn.com/",
+    "slug": "trionn",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [
+      "Enterprises",
+      "B2B"
+    ],
+    "confidence": 0.93,
+    "field_confidence": {
+      "category": 0.93,
+      "subcategory": 0.88,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#24262e",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#040508",
+      "#ffffff",
+      "#c3c3c3",
+      "#d8d8d8"
+    ],
+    "text_color": "#434343",
+    "palette": [
+      {
+        "hex": "#040508",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#434343",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#24262e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c3c3c3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d8d8d8",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "familjen",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          132
+        ]
+      },
+      {
+        "name": "neueHaas",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "Apache"
+    ]
+  },
+  "contact": {
+    "email": "hello@trionn.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "216-4Plus Complex, Astron Chowk, Rajkot, Gujarat, India"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/trionnstudio",
+    "x": null
+  },
+  "seo": {
+    "title": "TRIONN",
+    "description": "TRIONN is an independent AI-powered digital studio crafting meaningful brand experiences through strategy, design, and technology. Based in Rajkot, Gujarat, India, we create premium websites, immersive digital products, and interactive experiences for ambitious brands worldwide."
+  },
+  "pages": {
+    "homepage": "https://trionn.com/",
+    "about": "https://trionn.com/about",
+    "contact": "https://trionn.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000091",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "STUDIO HERRSTR\u00d6M",
+    "domain": "studioherrstrom.com",
+    "url": "https://www.studioherrstrom.com/",
+    "slug": "studioherrstrom",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.84,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#5a5a5a",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SH-SANS",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          43
+        ]
+      },
+      {
+        "name": "SH-MIX",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          64,
+          64
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "Apache"
+    ]
+  },
+  "contact": {
+    "email": "hello@studioherrstrom.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/studio-herrstrom",
+    "x": "https://x.com/studioherrstrom"
+  },
+  "seo": {
+    "title": "STUDIO HERRSTR\u00d6M",
+    "description": "STUDIO HERRSTR\u00d6M is a global design studio shaping brands in music, tech, and culture."
+  },
+  "pages": {
+    "homepage": "https://www.studioherrstrom.com/",
+    "about": "https://studioherrstrom.com/about",
+    "contact": "https://studioherrstrom.com/contact",
+    "pricing": "not found",
+    "careers": "https://www.studioherrstrom.com/jobs"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

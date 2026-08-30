@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000222",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Mary & Maurizio - Quattro Studio Photography",
+    "domain": "quattrostudio.eu",
+    "url": "https://www.quattrostudio.eu/",
+    "slug": "quattrostudio-eu",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Hotels",
+    "website_type": "Blog",
+    "audience": [
+      "Guests"
+    ],
+    "confidence": 0.78,
+    "field_confidence": {
+      "category": 0.78,
+      "subcategory": 0.73,
+      "website_type": 0.8,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#d2c69e",
+    "secondary_color": null,
+    "accent_colors": [
+      "#b55324"
+    ],
+    "background_colors": [
+      "#f5f1e5",
+      "#ffffff",
+      "#e8e5d6"
+    ],
+    "text_color": "#282923",
+    "palette": [
+      {
+        "hex": "#f5f1e5",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#282923",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d2c69e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e8e5d6",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b55324",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Aneliza",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          30
+        ]
+      },
+      {
+        "name": "Classy Vogue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          36,
+          115
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "quattro@quattrostudio.eu",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Amalfi Coast, IT"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Mary & Maurizio - Quattro Studio Photography",
+    "description": "Wedding Photographers from Italy. We passionately capture your love stories everywhere in the world."
+  },
+  "pages": {
+    "homepage": "https://www.quattrostudio.eu/",
+    "about": "https://www.quattrostudio.eu/aboutus",
+    "contact": "https://www.quattrostudio.eu/contacts",
+    "pricing": "https://www.quattrostudio.eu/pricing",
+    "careers": "https://www.quattrostudio.eu/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

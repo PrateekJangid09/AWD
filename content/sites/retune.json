@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000095",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Retune",
+    "domain": "retune.dev",
+    "url": "https://www.retune.dev/",
+    "slug": "retune",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "Startups"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.81,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1c1917",
+    "secondary_color": null,
+    "accent_colors": [
+      "#00983f"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#78716c",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#78716c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1917",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#00983f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#a8a29e",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "InterVariable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          4,
+          32
+        ]
+      },
+      {
+        "name": "SF Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          5,
+          11
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "immedi@ely.retune",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/___sujan"
+  },
+  "seo": {
+    "title": "Retune",
+    "description": "Select any element in your running app, tweak it visually, and let your AI coding tool write the changes. The visual layer for vibe coding."
+  },
+  "pages": {
+    "homepage": "https://www.retune.dev/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

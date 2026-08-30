@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000077",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Qount",
+    "domain": "qount.io",
+    "url": "https://qount.io/",
+    "slug": "qount",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Enterprises",
+      "Developers",
+      "B2C"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.83,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1a1a1a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#1a1a1a",
+      "#ffffff",
+      "#d9ff42"
+    ],
+    "background_colors": [],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#1a1a1a",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9ff42",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress on HubSpot (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [
+      "HubSpot (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/qount",
+    "x": "https://x.com/qount_io"
+  },
+  "seo": {
+    "title": "Qount",
+    "description": "Go beyond practice management software. Consolidate time & billing, CRM, docs, client portal & more into one AI-native practice management system."
+  },
+  "pages": {
+    "homepage": "https://qount.io/",
+    "about": "https://qount.io/about/",
+    "contact": "https://qount.io/contact-us/",
+    "pricing": "https://qount.io/pricing/",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

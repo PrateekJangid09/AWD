@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000044",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Artem Astakhov \u2014 Account Manager for hire",
+    "domain": "hiartem.com",
+    "url": "https://hiartem.com/",
+    "slug": "hiartem",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "SaaS Website",
+    "audience": [
+      "Developers",
+      "Startups"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.84,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1537b3",
+    "secondary_color": null,
+    "accent_colors": [
+      "#62ecb5",
+      "#1395a1"
+    ],
+    "background_colors": [
+      "#000000",
+      "#ffffff",
+      "#f3f3f3"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#1537b3",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f3f3f3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#62ecb5",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#1395a1",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          48
+        ]
+      },
+      {
+        "name": "Instrument Sans Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          48,
+          120
+        ]
+      },
+      {
+        "name": "Caveat",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "artastakhov@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Porto, PT"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/artemastakhov",
+    "x": "https://x.com/mordehaus"
+  },
+  "seo": {
+    "title": "Artem Astakhov \u2014 Account Manager for hire",
+    "description": "Account Manager with product context. $1.6M+ in closed deals across fintech, cybersec, and web3 SaaS. Remote from Porto, CET/EST-friendly."
+  },
+  "pages": {
+    "homepage": "https://hiartem.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

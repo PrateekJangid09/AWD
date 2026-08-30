@@ -4,7 +4,7 @@ import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Journal — Notes on How the Web Is Designed",
+  title: "Resources — Notes on How the Web Is Designed",
   description:
     "Essays and research from the AllWebsites.Design archive — colour, typography, technology and the decisions behind great websites.",
 };
@@ -34,10 +34,10 @@ export default function BlogsPage() {
   return (
     <>
       <UtilityHero
-        eyebrow="The Journal"
+        eyebrow="Resources"
         title="Notes on how the web is designed."
         intro="Short, opinionated pieces drawn from the archive — colour, typography, technology and the decisions behind websites worth studying."
-        breadcrumb={[{ href: "/", label: "Home" }, { label: "Journal" }]}
+        breadcrumb={[{ href: "/", label: "Home" }, { label: "Resources" }]}
       />
 
       <section className="py-14 sm:py-20">

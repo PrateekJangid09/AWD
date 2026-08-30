@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000084",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Presentable",
+    "domain": "makepresentable.com",
+    "url": "https://www.makepresentable.com/",
+    "slug": "makepresentable",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Studio Website",
+    "audience": [
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.88,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#ff00bf",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#06060a"
+    ],
+    "text_color": "#fafafa",
+    "palette": [
+      {
+        "hex": "#06060a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fafafa",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff00bf",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Poppins",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          48
+        ]
+      },
+      {
+        "name": "Outfit Variable",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "Young Serif",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          48,
+          237
+        ]
+      },
+      {
+        "name": "Gambetta",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@makepresentable.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Gurugram, Haryana, 122016, IN"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/presentableofficial",
+    "x": "https://x.com/makepresentable?s=21"
+  },
+  "seo": {
+    "title": "Presentable",
+    "description": "Brand identity and design studio in Gurugram, India. Celebration design, lifestyle branding, packaging design, digital experiences, retail environments, and spatial design."
+  },
+  "pages": {
+    "homepage": "https://www.makepresentable.com/",
+    "about": "https://www.makepresentable.com/about",
+    "contact": "https://www.makepresentable.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

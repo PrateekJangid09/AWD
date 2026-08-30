@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import UtilityHero from "@/components/UtilityHero";
+import Reveal from "@/components/Reveal";
 import { TOOLS, getTool } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -10,22 +11,20 @@ export const metadata: Metadata = {
 
 type Job = {
   job: string;
-  verb: string;
   slug: string | null;
   soon?: { name: string; tagline: string; swatches: string[] };
 };
 
 const JOBS: Job[] = [
-  { job: "Find", verb: "Find and understand colours.", slug: "chromary" },
-  { job: "Transform", verb: "Create controlled related colours from one.", slug: "colorhyme" },
-  { job: "Build", verb: "Turn brand colours into a complete system.", slug: "webpalette" },
-  { job: "Preview", verb: "See a palette in real interface context.", slug: "mockupalettes" },
-  { job: "Interpolate", verb: "Control the space between gradient stops.", slug: "truegradient" },
+  { job: "Find", slug: "chromary" },
+  { job: "Transform", slug: "colorhyme" },
+  { job: "Build", slug: "webpalette" },
+  { job: "Preview", slug: "mockupalettes" },
+  { job: "Interpolate", slug: "truegradient" },
   {
     job: "Test",
-    verb: "Check role behaviour, contrast and usability.",
     slug: null,
-    soon: { name: "Palette Checker", tagline: "Role & contrast testing", swatches: ["#F4F2EC", "#141414", "#FF6112", "#6B6660"] },
+    soon: { name: "Palette Checker", tagline: "Role & contrast testing", swatches: ["#F4F4F5", "#0E0E10", "#FF6112", "#8B8B92"] },
   },
 ];
 
@@ -33,95 +32,81 @@ export default function ToolsPage() {
   return (
     <>
       <UtilityHero
+        eyebrow="Tools"
         title="Tools for studying and building the web."
-        intro="Six focused tools, one design language. Each owns a single job — find, transform, build, preview, test or interpolate. Free, no signup, everything runs in your browser."
+        intro="Six focused tools, one design language. Each owns a single job. Free, no signup, everything runs in your browser."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Tools" }]}
       />
 
-      <section>
-        <div className="wrap">
-          {JOBS.map((j, i) => {
-            const tool = j.slug ? getTool(j.slug) : undefined;
-            const live = Boolean(tool);
-            const name = tool?.name ?? j.soon!.name;
-            const tagline = tool?.tagline ?? j.soon!.tagline;
-            const swatches = tool?.swatches ?? j.soon!.swatches;
+      <section className="relative overflow-hidden py-12 sm:py-16">
+        <span className="aura" aria-hidden />
+        <div className="wrap relative">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {JOBS.map((j, i) => {
+              const tool = j.slug ? getTool(j.slug) : undefined;
+              const live = Boolean(tool);
+              const name = tool?.name ?? j.soon!.name;
+              const tagline = tool?.tagline ?? j.soon!.tagline;
+              const desc = tool?.desc ?? "In progress — coming soon.";
+              const swatches = tool?.swatches ?? j.soon!.swatches;
 
-            const inner = (
-              <div className="grid items-center gap-6 py-10 sm:py-12 lg:grid-cols-[minmax(0,0.9fr)_1fr_auto] lg:gap-10">
-                {/* Job label */}
-                <div className="flex items-baseline gap-4">
-                  <span className="font-mono text-[12px] text-muted tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="display text-3xl uppercase tracking-tight sm:text-5xl">
-                    {j.job}
-                  </span>
-                </div>
-
-                {/* Tool + verb */}
-                <div>
-                  <div className="flex items-center gap-3">
-                    <h2 className="text-xl font-bold tracking-tight">{name}</h2>
+              const card = (
+                <div
+                  className={`glass-card group flex h-full flex-col overflow-hidden ${live ? "hover:-translate-y-1" : "opacity-70"}`}
+                >
+                  {/* colour cover */}
+                  <div className="relative flex h-32 overflow-hidden">
+                    {swatches.map((s) => (
+                      <span
+                        key={s}
+                        className="flex-1 transition-transform duration-500 group-hover:scale-y-105"
+                        style={{ backgroundColor: s }}
+                      />
+                    ))}
+                    <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[11px] font-medium text-ink shadow-sm backdrop-blur">
+                      {j.job}
+                    </span>
                     <span
-                      className={`text-[10.5px] font-semibold uppercase tracking-[0.14em] ${live ? "text-orange" : "text-muted"}`}
+                      className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[10.5px] font-medium ${live ? "bg-orange text-white" : "bg-white/85 text-muted"}`}
                     >
-                      {live ? "● Live" : "Soon"}
+                      {live ? "Live" : "Soon"}
                     </span>
                   </div>
-                  <p className="mt-1.5 text-pretty text-[15px] leading-relaxed text-soft">
-                    {j.verb}{" "}
-                    <span className="text-muted">{tagline}.</span>
-                  </p>
-                </div>
 
-                {/* Swatches + action */}
-                <div className="flex items-center gap-5">
-                  <span className="hidden h-10 w-28 overflow-hidden border border-line sm:flex">
-                    {swatches.map((s) => (
-                      <span key={s} className="flex-1" style={{ backgroundColor: s }} />
-                    ))}
-                  </span>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h2 className="text-lg font-medium tracking-tight">{name}</h2>
+                    <p className="mt-0.5 text-[13px] text-muted">{tagline}</p>
+                    <p className="mt-3 flex-1 text-pretty text-[14px] leading-relaxed text-soft">
+                      {desc}
+                    </p>
+                    {live && (
+                      <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-ink">
+                        Open tool
+                        <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>→</span>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+
+              return (
+                <Reveal key={j.job} delay={(i % 3) * 70} className="h-full">
                   {live ? (
-                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-semibold uppercase tracking-[0.12em] text-ink transition-colors group-hover:text-orange">
-                      Open
-                      <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>→</span>
-                    </span>
+                    <a href={`/tools/${j.slug}`} className="block h-full">
+                      {card}
+                    </a>
                   ) : (
-                    <span className="whitespace-nowrap text-[12px] font-semibold uppercase tracking-[0.12em] text-muted">
-                      In progress
-                    </span>
+                    card
                   )}
-                </div>
-              </div>
-            );
+                </Reveal>
+              );
+            })}
+          </div>
 
-            return live ? (
-              <a
-                key={j.job}
-                href={`/tools/${j.slug}`}
-                className="group block border-t border-line transition-colors last:border-b hover:bg-bone"
-              >
-                {inner}
-              </a>
-            ) : (
-              <div key={j.job} className="border-t border-line opacity-60 last:border-b">
-                {inner}
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* One system note */}
-      <section className="border-t border-line bg-ink py-16 text-paper sm:py-20">
-        <div className="wrap max-w-3xl">
-          <p className="eyebrow text-white/90">One system</p>
-          <p className="mt-6 text-balance text-2xl font-bold leading-snug tracking-tight sm:text-3xl">
+          <p className="mx-auto mt-16 max-w-2xl text-center text-pretty text-lg leading-relaxed text-soft">
             Not free SEO widgets — a connected set of design instruments that share a
-            shell, so a colour can travel from{" "}
-            <span className="text-orange">find</span> to{" "}
-            <span className="text-orange">build</span> without leaving the language.
+            shell, so a colour can travel from one to the next without leaving the
+            language.
           </p>
         </div>
       </section>

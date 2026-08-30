@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000192",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Balestra",
+    "domain": "balestraroma.com",
+    "url": "https://balestraroma.com/en/",
+    "slug": "balestraroma",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": null,
+    "website_type": "Ecommerce Store",
+    "audience": [],
+    "confidence": 0.71,
+    "field_confidence": {
+      "category": 0.71,
+      "subcategory": null,
+      "website_type": 0.73,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#f7f7f7",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f7f7f7"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#f7f7f7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Arial",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Piazza Verdi 9, Roma, 00187, IT"
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/balestra_roma"
+  },
+  "seo": {
+    "title": "Balestra",
+    "description": "Past and future come together to inspire new generations. We design to evolve, innovate and voice freedom. We celebrate and empower women. Balestra is creativity through generations."
+  },
+  "pages": {
+    "homepage": "https://balestraroma.com/",
+    "about": "https://balestraroma.com/en/maison/",
+    "contact": "https://balestraroma.com/en/contacts/",
+    "pricing": "https://balestraroma.com/pricing",
+    "careers": "https://balestraroma.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

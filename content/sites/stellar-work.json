@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000189",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Stellar",
+    "domain": "stellar.work",
+    "url": "https://www.stellar.work/",
+    "slug": "stellar-work",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Social Networks",
+    "website_type": "Recruitment Website",
+    "audience": [
+      "Members",
+      "Fans"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.79,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#6a48f2",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#f3f3f3"
+    ],
+    "text_color": "#888888",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#888888",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6a48f2",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#171718",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#2c2c2e",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#f3f3f3",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Neue Montreal",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          104
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "delivered@lightspeed.your",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Stellar",
+    "description": "Stellar is a collective of designers who design brands and websites in ultra-fast, 2-week sprints."
+  },
+  "pages": {
+    "homepage": "https://www.stellar.work/",
+    "about": "not found",
+    "contact": "https://www.stellar.work/contact",
+    "pricing": "https://www.stellar.work/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

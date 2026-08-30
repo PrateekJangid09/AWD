@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000003",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Billow \u22c5 Run on facts, not guesswork.",
+    "domain": "billow.so",
+    "url": "https://www.billow.so/",
+    "slug": "billow",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.76,
+    "field_confidence": {
+      "category": 0.76,
+      "subcategory": 0.71,
+      "website_type": 0.82,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#dbf3ff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#001c2e"
+    ],
+    "background_colors": [
+      "#fcfdff"
+    ],
+    "text_color": "#446278",
+    "palette": [
+      {
+        "hex": "#fcfdff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#446278",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#dbf3ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#001c2e",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#121212",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Open Runde",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          17
+        ]
+      },
+      {
+        "name": "Lastik Variable Variable Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          92
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          4,
+          24
+        ]
+      },
+      {
+        "name": "Lastik Test Bold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/billow_app"
+  },
+  "seo": {
+    "title": "Billow \u22c5 Run on facts, not guesswork.",
+    "description": "Billow connects your clients, invoices, time, and cash flow, then shows you who's profitable, who pays late, and what's actually working. No more guessing."
+  },
+  "pages": {
+    "homepage": "https://www.billow.so/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://www.billow.so/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

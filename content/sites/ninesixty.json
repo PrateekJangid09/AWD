@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000061",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Nine Sixty",
+    "domain": "ninesixty.co.uk",
+    "url": "https://ninesixty.co.uk/",
+    "slug": "ninesixty",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.84,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#3c73ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#3c73ff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#3c73ff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABC Favorit",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          58
+        ]
+      },
+      {
+        "name": "ABC Whyte Inktrap",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          200,
+          200
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@ninesixty.co.uk",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Nine Sixty",
+    "description": "We\u2019re a design and digital studio based in Manchester and Chester. We deliver beautifully crafted brands and websites that help you grow."
+  },
+  "pages": {
+    "homepage": "https://ninesixty.co.uk/",
+    "about": "not found",
+    "contact": "https://ninesixty.co.uk/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

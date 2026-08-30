@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000108",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Lumnea",
+    "domain": "trylumnea.com",
+    "url": "https://trylumnea.com/",
+    "slug": "trylumnea",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Music",
+    "website_type": "Media Website",
+    "audience": [],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.71,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#007aff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#fefaf1",
+      "#ededed"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#007aff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#fefaf1",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#171717",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#2b2b2b",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ededed",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Spline Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          42
+        ]
+      },
+      {
+        "name": "IBM Plex Serif",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          20,
+          20
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "immedi@ely.wh",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/gaddafirusli"
+  },
+  "seo": {
+    "title": "Lumnea",
+    "description": "Learn something new everyday. Turn any topic into mini podcast and flashcard in seconds."
+  },
+  "pages": {
+    "homepage": "https://trylumnea.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

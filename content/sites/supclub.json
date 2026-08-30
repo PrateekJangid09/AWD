@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000034",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "SupClub",
+    "domain": "supclub.xyz",
+    "url": "https://www.supclub.xyz/",
+    "slug": "supclub",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Events",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Travellers",
+      "B2C",
+      "Event Attendees"
+    ],
+    "confidence": 0.62,
+    "field_confidence": {
+      "category": 0.62,
+      "subcategory": 0.57,
+      "website_type": 0.8,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#ff5120",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#e5dac3",
+      "#ffffff"
+    ],
+    "text_color": "#003120",
+    "palette": [
+      {
+        "hex": "#e5dac3",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#003120",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff5120",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "degular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          40
+        ]
+      },
+      {
+        "name": "BN Dime",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          96,
+          96
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "me@levidjones.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/theonlymaria",
+    "x": "https://x.com/soren_iverson"
+  },
+  "seo": {
+    "title": "SupClub",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://www.supclub.xyz/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

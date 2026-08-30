@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000341",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Design Boost",
+    "domain": "designboost.com.br",
+    "url": "https://ia.designboost.com.br/",
+    "slug": "designboost-com-br",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "UI/UX",
+    "website_type": "Resource Website",
+    "audience": [
+      "Developers",
+      "Designers"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.84,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#070708",
+    "secondary_color": null,
+    "accent_colors": [
+      "#721ae7",
+      "#6816d6"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#efeff0"
+    ],
+    "text_color": "#525252",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#525252",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#070708",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#efeff0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#721ae7",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#6816d6",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "__Inter_f367f3",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          64
+        ]
+      },
+      {
+        "name": "__vinilla_3a2dd4",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          135
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Design Boost",
+    "description": "A primeira plataforma de estudos focada em Design de Interfaces do zero ao avan\u00e7ado"
+  },
+  "pages": {
+    "homepage": "https://ia.designboost.com.br/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

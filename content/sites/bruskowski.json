@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000294",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Richard Bruskowski, Freelance Designer",
+    "domain": "bruskowski.design",
+    "url": "https://bruskowski.design/",
+    "slug": "bruskowski",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.82,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#141414",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#141414"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#141414",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Boogy",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          141,
+          141
+        ]
+      },
+      {
+        "name": "Cadiz",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          25
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Gatsby on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Gatsby"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Richard Bruskowski, Freelance Designer",
+    "description": "Offering interface design (UX/UI): visual design, digital product design, interaction design, hi-fi prototyping, design systems, brand design."
+  },
+  "pages": {
+    "homepage": "https://bruskowski.design/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

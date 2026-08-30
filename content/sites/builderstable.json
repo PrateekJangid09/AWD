@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000012",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "MakeReign",
+    "domain": "builderstable.net",
+    "url": "https://builderstable.net/",
+    "slug": "builderstable",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Sports & Recreation",
+    "subcategory": "Teams",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Consumers"
+    ],
+    "confidence": 0.78,
+    "field_confidence": {
+      "category": 0.78,
+      "subcategory": 0.73,
+      "website_type": 0.67,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#dafa9c",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#111111",
+      "#ffffff",
+      "#e9e9e9"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#111111",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#dafa9c",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e9e9e9",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f1f1f",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Laygrotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          90
+        ]
+      },
+      {
+        "name": "Mesotrial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          32,
+          113
+        ]
+      },
+      {
+        "name": "Geistmono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "AWS CloudFront",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "liamlr95@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "MakeReign",
+    "description": "Builders Table is a two-day hackathon hosted by MakeReign, built around a 24-hour build sprint. It brings together South Africa's designers, developers, strategists, founders and creative technologists to build real working prototypes under real time pressure."
+  },
+  "pages": {
+    "homepage": "https://builderstable.net/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

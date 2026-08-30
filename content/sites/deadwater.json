@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000062",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "DEADWATER",
+    "domain": "deadwater.fr",
+    "url": "https://www.deadwater.fr/",
+    "slug": "deadwater",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": "Documentation Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": null,
+      "website_type": 0.75,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#111111",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#111111",
+      "#ffffff"
+    ],
+    "text_color": "#cfcfcf",
+    "palette": [
+      {
+        "hex": "#111111",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#cfcfcf",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#323232",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#616161",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter-dcbae5534c949be2",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          46
+        ]
+      },
+      {
+        "name": "Humane-e7e4f97560e0ec4c",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          184
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Astro on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@deadwater.fr",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/quentinpetitjean",
+    "x": null
+  },
+  "seo": {
+    "title": "DEADWATER",
+    "description": "Studio de cr\u00e9ation et de production ind\u00e9pendant"
+  },
+  "pages": {
+    "homepage": "https://www.deadwater.fr/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

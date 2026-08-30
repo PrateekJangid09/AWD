@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000210",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Harold AO \u2014 Self-taught Creative Developer & Designer specialized in Shopify DTC Brands",
+    "domain": "haroldao.com",
+    "url": "https://haroldao.com/",
+    "slug": "haroldao",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Developer",
+    "website_type": "Resume Website",
+    "audience": [],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.76,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#cb947e",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#cb947e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#808080",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SuisseIntl-Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          21
+        ]
+      },
+      {
+        "name": "MonumentExtended-Regular",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          28,
+          173
+        ]
+      },
+      {
+        "name": "Canela-Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          19,
+          19
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "contact@haroldao.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "France"
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/harold_arb"
+  },
+  "seo": {
+    "title": "Harold AO \u2014 Self-taught Creative Developer & Designer specialized in Shopify DTC Brands",
+    "description": "Harold AO is a 21 year-old UI Developer and Designer based in France. He has experience in design and web development for over 5 years."
+  },
+  "pages": {
+    "homepage": "https://haroldao.com/",
+    "about": "https://haroldao.com/about/",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

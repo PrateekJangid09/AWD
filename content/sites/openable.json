@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000066",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Openable.dev",
+    "domain": "openable.dev",
+    "url": "https://openable.dev/",
+    "slug": "openable",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.77,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#c17812",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#191919",
+      "#b5b5b5"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#191919",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#c17812",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#b5b5b5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#808080",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Host Grotesk Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on GitHub Pages",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "office@wunderlabs.dev",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/vtemian"
+  },
+  "seo": {
+    "title": "Openable.dev",
+    "description": "Run AI-generated apps without hassle. Import, run, and edit AI-generated projects in Cursor. No Node.js, no terminal, no configuration."
+  },
+  "pages": {
+    "homepage": "https://openable.dev/",
+    "about": "not found",
+    "contact": "https://openable.dev/cdn-cgi/l/email-protection#0a656c6c63696f4a7d7f646e6f78666b6879246e6f7c",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

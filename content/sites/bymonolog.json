@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000047",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "MONOLOG",
+    "domain": "bymonolog.com",
+    "url": "https://bymonolog.com/",
+    "slug": "bymonolog",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Studio Website",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.76,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#181715",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#080807",
+      "#ddddd5"
+    ],
+    "text_color": "#e8e8e3",
+    "palette": [
+      {
+        "hex": "#080807",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e8e8e3",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#181715",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#938f8a",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ddddd5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#393632",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Khteka",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          94
+        ]
+      },
+      {
+        "name": "Animo",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          140,
+          140
+        ]
+      },
+      {
+        "name": "Suisse Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          8,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "Bunny CDN",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@bymonolog.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/byhuy",
+    "x": null
+  },
+  "seo": {
+    "title": "MONOLOG",
+    "description": "We building change-making branding and websites for established creative brands who refuse to be underestimated. Trusted by OH Architecture, Vinamilk, and many other leading brands."
+  },
+  "pages": {
+    "homepage": "https://bymonolog.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

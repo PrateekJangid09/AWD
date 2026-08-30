@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000047",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Cape Town Dam Levels",
+    "domain": "capetowndamlevels.co.za",
+    "url": "https://capetowndamlevels.co.za/",
+    "slug": "capetowndamlevels-co-za",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Newsletters",
+    "website_type": "Blog",
+    "audience": [],
+    "confidence": 0.72,
+    "field_confidence": {
+      "category": 0.72,
+      "subcategory": 0.67,
+      "website_type": 0.83,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#00c8e8",
+    "secondary_color": null,
+    "accent_colors": [
+      "#faa80f"
+    ],
+    "background_colors": [
+      "#040c16",
+      "#f5efd9",
+      "#eef3ff"
+    ],
+    "text_color": "#c8e1ff",
+    "palette": [
+      {
+        "hex": "#040c16",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c8e1ff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#00c8e8",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5efd9",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#faa80f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#eef3ff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Barlow",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          17
+        ]
+      },
+      {
+        "name": "Playfair Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          120
+        ]
+      },
+      {
+        "name": "IBM Plex Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          9,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Astro on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@capetowndamlevels.co.za",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Cape Town Dam Levels",
+    "description": "Cape Town dam levels updated daily: 76.5% combined storage as of 26 August 2026, down 17% YoY. Live readings for all six dams + Day Zero predictor."
+  },
+  "pages": {
+    "homepage": "https://capetowndamlevels.co.za/",
+    "about": "https://capetowndamlevels.co.za/about",
+    "contact": "https://capetowndamlevels.co.za/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

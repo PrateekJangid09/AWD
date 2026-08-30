@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000344",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Eleken",
+    "domain": "eleken.co",
+    "url": "https://www.eleken.co/",
+    "slug": "eleken",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "Recruitment Website",
+    "audience": [
+      "Developers",
+      "Startups",
+      "B2C"
+    ],
+    "confidence": 0.81,
+    "field_confidence": {
+      "category": 0.81,
+      "subcategory": 0.76,
+      "website_type": 0.83,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#948981",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f9f7f3",
+      "#e6e4e0"
+    ],
+    "text_color": "#1d1e22",
+    "palette": [
+      {
+        "hex": "#f9f7f3",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1d1e22",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#948981",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e6e4e0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#717171",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Variable Local",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          40
+        ]
+      },
+      {
+        "name": "Regolapro",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          52
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          16
+        ]
+      },
+      {
+        "name": "Regolapro book",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "Bunny CDN",
+      "jsDelivr",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "collabor@ion.tanay",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Kyiv, Ukraine, Dehtiarivska str. 33B"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/eleken/mycompany",
+    "x": null
+  },
+  "seo": {
+    "title": "Eleken",
+    "description": "SaaS application design. Custom web design services. UI/UX design agency. We're a full-service product design agency focused on creating the best SaaS products."
+  },
+  "pages": {
+    "homepage": "https://www.eleken.co/",
+    "about": "https://www.eleken.co/about-us",
+    "contact": "https://www.eleken.co/contact-us",
+    "pricing": "https://www.eleken.co/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

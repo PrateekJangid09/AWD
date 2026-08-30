@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000045",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Redefining Healthcare Quality with AI",
+    "domain": "101gen.ai",
+    "url": "https://www.101gen.ai/",
+    "slug": "101gen",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Healthcare & Wellness",
+    "subcategory": "Medical",
+    "website_type": "Healthcare Website",
+    "audience": [
+      "Enterprises",
+      "Patients",
+      "Healthcare Professionals"
+    ],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.87,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#630d26",
+    "secondary_color": null,
+    "accent_colors": [
+      "#200202",
+      "#8b1538",
+      "#ffaa82"
+    ],
+    "background_colors": [
+      "#fbfaf8"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#fbfaf8",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#630d26",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#200202",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#8b1538",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffaa82",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Laygrotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          72
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "requestschat@101gen.ai",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/janardanprasad",
+    "x": null
+  },
+  "seo": {
+    "title": "Redefining Healthcare Quality with AI",
+    "description": "Improve clinical and operational performance to maximize care quality, patient safety, and financial outcomes."
+  },
+  "pages": {
+    "homepage": "https://www.101gen.ai/",
+    "about": "not found",
+    "contact": "https://www.101gen.ai/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

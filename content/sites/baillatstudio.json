@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000264",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "One moment, please...",
+    "domain": "baillatstudio.com",
+    "url": "https://baillatstudio.com/",
+    "slug": "baillatstudio",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#467c45",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#467c45"
+    ],
+    "text_color": "#267a48",
+    "palette": [
+      {
+        "hex": "#467c45",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#267a48",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Montserrat",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          48,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@baillat.ca",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Baillat Studio 773 rue Rachel E Montr\u00e9al, Canada \u2197\ufe0e \u2197\ufe0e"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "One moment, please...",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://baillatstudio.com/",
+    "about": "https://baillatstudio.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

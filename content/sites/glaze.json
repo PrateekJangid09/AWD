@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000117",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Glaze",
+    "domain": "glaze.app",
+    "url": "https://www.glaze.app/",
+    "slug": "glaze",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": "Directory",
+    "audience": [
+      "Developers",
+      "B2B",
+      "B2C"
+    ],
+    "confidence": 0.94,
+    "field_confidence": {
+      "category": 0.94,
+      "subcategory": null,
+      "website_type": 0.65,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#245aca",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#121212"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#121212",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#245aca",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#232323",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      },
+      {
+        "name": "Instrument Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          30,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "inspir@ion.how",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/glazeapp"
+  },
+  "seo": {
+    "title": "Glaze",
+    "description": "Create software for you and your team. Lives on your Mac, connects to your files, tools and hardware."
+  },
+  "pages": {
+    "homepage": "https://www.glaze.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://www.glaze.app/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

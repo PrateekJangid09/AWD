@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000329",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Interface In Game",
+    "domain": "interfaceingame.com",
+    "url": "https://interfaceingame.com/",
+    "slug": "interfaceingame",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Gaming",
+    "website_type": "Blog",
+    "audience": [
+      "B2C",
+      "Gamers"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.8,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#fafafa",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fafafa",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#333333",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "din-2014",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          65
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "interfaceingame@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/interfaceingame"
+  },
+  "seo": {
+    "title": "Interface In Game",
+    "description": "Explore a collection of video games UI interfaces, screenshots and videos. This creative tool is for video games lovers and game designers to get inspiration and help the creative process."
+  },
+  "pages": {
+    "homepage": "https://interfaceingame.com/",
+    "about": "https://interfaceingame.com/about/",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

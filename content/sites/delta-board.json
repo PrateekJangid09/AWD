@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000276",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Deltaboard",
+    "domain": "delta-board.com",
+    "url": "https://www.delta-board.com/",
+    "slug": "delta-board",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Manufacturing",
+    "website_type": "Ecommerce Store",
+    "audience": [
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": 0.62,
+      "website_type": 0.89,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "background_colors": [],
+    "text_color": "#232323",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#232323",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#bf570a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#c8c8c8",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#5c5c5c",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Montserrat",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Jost",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "300",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "200",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Shopify on Shopify (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Ruby",
+    "hosting": [
+      "Shopify (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Deltaboard",
+    "description": "D\u00e9couvrez nos poutres d'escalade Deltaboard innovantes, faciles \u00e0 installer sans percer. Parfaites pour l'entra\u00eenement \u00e0 domicile et la progression en escalade."
+  },
+  "pages": {
+    "homepage": "https://www.delta-board.com/",
+    "about": "not found",
+    "contact": "https://www.delta-board.com/pages/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

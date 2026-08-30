@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000011",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "MONONYM COMPANY WEBSITE",
+    "domain": "mononym.com",
+    "url": "https://www.mononym.com/",
+    "slug": "mononym",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": null,
+    "audience": [
+      "Developers",
+      "Businesses"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "text_color": "#979797",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#979797",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#181818",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#242424",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Suisseintlmono Webxl",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          176
+        ]
+      },
+      {
+        "name": "Suisseintlcond Webxl",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "contact@mononym.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/madebymononym"
+  },
+  "seo": {
+    "title": "MONONYM COMPANY WEBSITE",
+    "description": "MONONYM IS A BRANDING AND INTERACTION COMMITMENT BASED IN SAN FRANCISCO"
+  },
+  "pages": {
+    "homepage": "https://www.mononym.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

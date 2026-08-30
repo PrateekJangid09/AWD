@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000112",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Belka.ai en",
+    "domain": "belka.ai",
+    "url": "https://belka.ai/",
+    "slug": "belka",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Home & Lifestyle",
+    "subcategory": "Gardening",
+    "website_type": "Product Website",
+    "audience": [],
+    "confidence": 0.68,
+    "field_confidence": {
+      "category": 0.68,
+      "subcategory": 0.63,
+      "website_type": 0.8,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#eb5b5d",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#181818",
+      "#e9e9e9"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#181818",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#eb5b5d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#2f2f2f",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e9e9e9",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#a1a1a1",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          220
+        ]
+      },
+      {
+        "name": "TildaSans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@belka.ai",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Belka.ai en",
+    "description": "Belka is an AI based Process Control System (AIPC) for minerals processing"
+  },
+  "pages": {
+    "homepage": "https://belka.ai/",
+    "about": "https://belka.ai/en/belka",
+    "contact": "https://belka.ai/en/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

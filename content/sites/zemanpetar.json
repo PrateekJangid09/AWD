@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000284",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Petar",
+    "domain": "zemanpetar.com",
+    "url": "https://zemanpetar.com/",
+    "slug": "zemanpetar",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Product Website",
+    "audience": [
+      "Investors"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f0ebe6",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f0ebe6"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#f0ebe6",
+        "role": "background",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "IBM Plex Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          50
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "JavaScript on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "AWS CloudFront",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "zemanpetar@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Petar",
+    "description": "Petar Zeman is a product designer living in Zagreb, Croatia. Occasionally designing & animating pixels, capturing moments, writing positive stuff. Otherwise just watching basketball and enjoying life."
+  },
+  "pages": {
+    "homepage": "https://zemanpetar.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

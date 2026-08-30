@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000083",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Unpack.so",
+    "domain": "unpack.so",
+    "url": "https://www.unpack.so/",
+    "slug": "unpack",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.93,
+    "field_confidence": {
+      "category": 0.93,
+      "subcategory": 0.88,
+      "website_type": 0.8,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#dcc9b9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#6a2e1d",
+      "#c5ae8d"
+    ],
+    "background_colors": [
+      "#0a0a0a"
+    ],
+    "text_color": "#adadad",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#adadad",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#dcc9b9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#444444",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#6a2e1d",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#c5ae8d",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geist",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "ppNeueMontreal",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          26
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "sam@won.agency",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/samalfaro?ref=unpack.so",
+    "x": "https://x.com/samalfaroo?ref=unpack.so"
+  },
+  "seo": {
+    "title": "Unpack.so",
+    "description": "A curated platform by Sam Alfaro from Won Agency showcasing handpicked design case studies from the world's best designers and agencies. Get inspired by real-world solutions across websites, branding, and product design."
+  },
+  "pages": {
+    "homepage": "https://www.unpack.so/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

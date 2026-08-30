@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000265",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "SYNTH\u00c8SE: At the heart of digital creation in Quebec",
+    "domain": "polesynthese.com",
+    "url": "https://polesynthese.com/en",
+    "slug": "polesynthese",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "News",
+    "website_type": "Resume Website",
+    "audience": [],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.84,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#2d3748",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff6625"
+    ],
+    "background_colors": [
+      "#000000",
+      "#eaeef7"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2d3748",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#999999",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#eaeef7",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff6625",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "BasisGrotesquePro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          58
+        ]
+      },
+      {
+        "name": "Basis Grotesque Pro",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          20,
+          20
+        ]
+      },
+      {
+        "name": "Material Icons",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          28,
+          30
+        ]
+      },
+      {
+        "name": "Roboto",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "OpenResty"
+    ]
+  },
+  "contact": {
+    "email": "info@polesynthese.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/37900213",
+    "x": "https://x.com/poleSYNTHESE"
+  },
+  "seo": {
+    "title": "SYNTH\u00c8SE: At the heart of digital creation in Quebec",
+    "description": "Discover the digital creation ecosystem in Quebec and its resources: training, educational institutions, professions, businesses, innovations."
+  },
+  "pages": {
+    "homepage": "https://polesynthese.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

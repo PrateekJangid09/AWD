@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000019",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Housemait",
+    "domain": "housemait.com",
+    "url": "https://housemait.com/",
+    "slug": "housemait",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Home & Lifestyle",
+    "subcategory": "Parenting",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Families",
+      "Consumers"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#6d38ad",
+    "secondary_color": null,
+    "accent_colors": [
+      "#171126",
+      "#5f5971"
+    ],
+    "background_colors": [
+      "#faf6ef",
+      "#e8e5ec"
+    ],
+    "text_color": "#262626",
+    "palette": [
+      {
+        "hex": "#faf6ef",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#262626",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6d38ad",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#171126",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#5f5971",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#e8e5ec",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          20
+        ]
+      },
+      {
+        "name": "Recoleta",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          26,
+          76
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@housemait.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Housemait",
+    "description": "One home for the family calendar, meal plans, shopping lists and chores, with an AI assistant in WhatsApp that does the typing for you. Free 14-day trial, no card to start."
+  },
+  "pages": {
+    "homepage": "https://housemait.com/",
+    "about": "https://housemait.com/about",
+    "contact": "https://housemait.com/support",
+    "pricing": "https://housemait.com/pricing",
+    "careers": "https://housemait.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

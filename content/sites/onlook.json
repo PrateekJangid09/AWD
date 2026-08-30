@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000036",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Onlook: Bring your Ring cameras to your Mac.",
+    "domain": "onlook.cam",
+    "url": "https://onlook.cam/",
+    "slug": "onlook",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Restaurants",
+    "website_type": "Travel Blog",
+    "audience": [
+      "B2C"
+    ],
+    "confidence": 0.58,
+    "field_confidence": {
+      "category": 0.58,
+      "subcategory": 0.53,
+      "website_type": 0.7,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#101112",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#101112",
+      "#ffffff"
+    ],
+    "text_color": "#eaebec",
+    "palette": [
+      {
+        "hex": "#101112",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#eaebec",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#888c90",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#7a7f86",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SF Pro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          80
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/onlook_cam"
+  },
+  "seo": {
+    "title": "Onlook: Bring your Ring cameras to your Mac.",
+    "description": "Bring your Ring devices to your Mac's menu bar."
+  },
+  "pages": {
+    "homepage": "https://onlook.cam/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

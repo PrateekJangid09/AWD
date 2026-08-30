@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000122",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "AuthKit by WorkOS",
+    "domain": "authkit.com",
+    "url": "https://www.authkit.com/",
+    "slug": "authkit",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Enterprise",
+    "website_type": "Landing Page",
+    "audience": [
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.63,
+    "field_confidence": {
+      "category": 0.63,
+      "subcategory": 0.58,
+      "website_type": 0.79,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#b3b3ff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#663af3",
+      "#d1e4fa"
+    ],
+    "background_colors": [
+      "#05060f",
+      "#ffffff"
+    ],
+    "text_color": "#c7d3ea",
+    "palette": [
+      {
+        "hex": "#05060f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c7d3ea",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#b3b3ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#663af3",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#d1e4fa",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Untitled Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          24
+        ]
+      },
+      {
+        "name": "aeonikPro",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          28,
+          48
+        ]
+      },
+      {
+        "name": "dotDigital",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "HubSpot CMS Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "HubL (managed)",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "d@a.maximum",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/authkit"
+  },
+  "seo": {
+    "title": "AuthKit by WorkOS",
+    "description": "The world's best login box, powered by WorkOS + Radix."
+  },
+  "pages": {
+    "homepage": "https://www.authkit.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

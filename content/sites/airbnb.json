@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000254",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Redirecting to www.airbnb.co.in",
+    "domain": "airbnb.com",
+    "url": "https://www.airbnb.com/",
+    "slug": "airbnb",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Vacation Rentals",
+    "website_type": "Search Engine",
+    "audience": [
+      "Guests"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.81,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ff385c",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#dddddd",
+      "#f2f2f2"
+    ],
+    "text_color": "#222222",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#222222",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff385c",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#dddddd",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2f2f2",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Airbnb Cereal VF",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Akamai",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Redirecting to www.airbnb.co.in",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://www.airbnb.com/",
+    "about": "not found",
+    "contact": "https://www.airbnb.com/contact",
+    "pricing": "not found",
+    "careers": "https://www.airbnb.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

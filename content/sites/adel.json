@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000156",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Adel Miljkovic",
+    "domain": "adel.digital",
+    "url": "https://adel.digital/",
+    "slug": "adel",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Architect",
+    "website_type": "Personal Portfolio",
+    "audience": [],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": 0.62,
+      "website_type": 0.79,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ffd60a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#f87171"
+    ],
+    "background_colors": [
+      "#0c0c0c",
+      "#fbfbfc"
+    ],
+    "text_color": "#999999",
+    "palette": [
+      {
+        "hex": "#0c0c0c",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#999999",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffd60a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#fbfbfc",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f87171",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#808080",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Adel Miljkovic",
+    "description": "Customized software and hardware solutions."
+  },
+  "pages": {
+    "homepage": "https://adel.digital/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

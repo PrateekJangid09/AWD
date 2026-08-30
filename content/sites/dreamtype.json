@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000086",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Dreamtype\u2122",
+    "domain": "dreamtype.xyz",
+    "url": "https://dreamtype.xyz/",
+    "slug": "dreamtype",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": "Pricing Website",
+    "audience": [
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.89,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#e4a7ff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff5331"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#e4a7ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff5331",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Mirage",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          130
+        ]
+      },
+      {
+        "name": "Index",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          16
+        ]
+      },
+      {
+        "name": "BRICK",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          200,
+          200
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "l@er.culturecampus",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Dreamtype\u2122",
+    "description": "The new type foundry by Magic as a Service\u2122 offers sophisticated fonts based on simple terms and transparent pricing for teams of any size."
+  },
+  "pages": {
+    "homepage": "https://dreamtype.xyz/",
+    "about": "not found",
+    "contact": "https://dreamtype.xyz/contact",
+    "pricing": "https://dreamtype.xyz/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

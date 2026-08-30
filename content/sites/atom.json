@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000159",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Just a moment...",
+    "domain": "atom.com",
+    "url": "https://domains.atom.com/lpd/name/www.slim.app",
+    "slug": "atom",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Healthcare & Wellness",
+    "subcategory": "Fitness",
+    "website_type": "Listing Website",
+    "audience": [],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.7,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#637cf7",
+    "secondary_color": null,
+    "accent_colors": [
+      "#232346"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e2e8f0",
+      "#dddddd"
+    ],
+    "text_color": "#475569",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#475569",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#637cf7",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e2e8f0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#232346",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#dddddd",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          16
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          46
+        ]
+      },
+      {
+        "name": "Space Grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          19,
+          46
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Just a moment...",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://domains.atom.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { CATEGORIES, SITES, TOOLS } from "@/lib/data";
+import { TOOLS } from "@/lib/data";
+import { CANONICAL, liveCategories } from "@/lib/canonical";
 
 const base = "https://www.allwebsites.design";
 
@@ -24,8 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes.map((r) => ({ url: `${base}${r}`, lastModified: now })),
-    ...CATEGORIES.map((c) => ({ url: `${base}/c/${c.slug}`, lastModified: now })),
-    ...SITES.map((s) => ({ url: `${base}/archive/${s.slug}`, lastModified: now })),
+    ...liveCategories().map((c) => ({ url: `${base}/c/${c.slug}`, lastModified: now })),
+    ...CANONICAL.map((s) => ({ url: `${base}/archive/${s.identity.slug}`, lastModified: now })),
     ...TOOLS.map((t) => ({ url: `${base}/tools/${t.slug}`, lastModified: now })),
   ];
 }

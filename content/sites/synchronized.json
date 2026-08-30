@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000282",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Synchronized is a full-service creative studio.",
+    "domain": "synchronized.studio",
+    "url": "https://synchronized.studio/",
+    "slug": "synchronized",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Creative",
+    "website_type": "Studio Website",
+    "audience": [],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.88,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#deebc8",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#deebc8",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#151515",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#979797",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#4d4d4d",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Font-C",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          9,
+          26
+        ]
+      },
+      {
+        "name": "Font-A",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          76,
+          230
+        ]
+      },
+      {
+        "name": "Font-B",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          44
+        ]
+      },
+      {
+        "name": "Font-E",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          75,
+          75
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hey@synchronized.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/synchronized-studio",
+    "x": "https://twitter.com/synchronized_st"
+  },
+  "seo": {
+    "title": "Synchronized is a full-service creative studio.",
+    "description": "Synchronized is a full-service creative studio crafting unparalleled digital experiences that bring strategic value and make our partners' businesses thrive."
+  },
+  "pages": {
+    "homepage": "https://synchronized.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

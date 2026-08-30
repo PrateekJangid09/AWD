@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000146",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "C\u00e9dric",
+    "domain": "cedric.design",
+    "url": "https://www.cedric.design/",
+    "slug": "cedric",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Newsletters",
+    "website_type": "Newsletter Website",
+    "audience": [
+      "Creators",
+      "Fans"
+    ],
+    "confidence": 0.69,
+    "field_confidence": {
+      "category": 0.69,
+      "subcategory": 0.64,
+      "website_type": 0.69,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#8f90a6",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#141414",
+      "#f2f2f2"
+    ],
+    "text_color": "#878787",
+    "palette": [
+      {
+        "hex": "#141414",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#878787",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#8f90a6",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#262626",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2f2f2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SuisseIntl-Regular-WebXL \u00b6",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          15
+        ]
+      },
+      {
+        "name": "SuisseIntl-Book-WebXL \u00b6",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          16
+        ]
+      },
+      {
+        "name": "SuisseWorks-Book-WebXL \u00b6",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          17
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hey@cedric.design",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/cedric_design"
+  },
+  "seo": {
+    "title": "C\u00e9dric",
+    "description": "I design, I (vibe) code, I own and run several companies. From digital agency to software products to a publication documenting the whole messy, but beautiful process of building my agency Trueform."
+  },
+  "pages": {
+    "homepage": "https://www.cedric.design/",
+    "about": "https://www.cedric.design/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

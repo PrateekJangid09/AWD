@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000045",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "ELEKTROKID",
+    "domain": "elektrokid.be",
+    "url": "https://www.elektrokid.be/",
+    "slug": "elektrokid",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Music",
+    "website_type": "Pricing Website",
+    "audience": [
+      "B2C",
+      "Viewers"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.71,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#202228",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#131417",
+      "#e9e9ec"
+    ],
+    "text_color": "#b9bbc3",
+    "palette": [
+      {
+        "hex": "#131417",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b9bbc3",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#202228",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e9e9ec",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#84878f",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          16
+        ]
+      },
+      {
+        "name": "Space Grotesk",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          36
+        ]
+      },
+      {
+        "name": "Space Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          7,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "LiteSpeed"
+    ]
+  },
+  "contact": {
+    "email": "contact@elektrokid.be",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Bruxelles, R\u00e9gion de Bruxelles-Capitale, BE"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/elektrokid",
+    "x": "https://twitter.com/Elektrokid_"
+  },
+  "seo": {
+    "title": "ELEKTROKID",
+    "description": "Studio de mixing & mastering \u00e0 Bruxelles. 20 ans d'exp\u00e9rience, 220 releases. David Deneyer aka Elektrokid mixe et masterise vos tracks \u00e9lectro, pop, hip-hop."
+  },
+  "pages": {
+    "homepage": "https://www.elektrokid.be/",
+    "about": "https://www.elektrokid.be/about",
+    "contact": "https://www.elektrokid.be/pages/contact",
+    "pricing": "https://www.elektrokid.be/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000007",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Juggle",
+    "domain": "joinjuggle.com",
+    "url": "https://www.joinjuggle.com/",
+    "slug": "joinjuggle",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Productivity",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "B2C",
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.7,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#2e2eff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff3b1f",
+      "#1c1917"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#f5f3ef"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#2e2eff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff3b1f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a0a0a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5f3ef",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1917",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Helvetica Now",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          9,
+          21
+        ]
+      },
+      {
+        "name": "Helvetica Now Display Cn",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          32
+        ]
+      },
+      {
+        "name": "Geist",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          18
+        ]
+      },
+      {
+        "name": "Acme Gothic SemiBold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          62,
+          108
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Astro on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@joinjuggle.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/joinjuggle",
+    "x": null
+  },
+  "seo": {
+    "title": "Juggle",
+    "description": "Juggle listens to your calls, organises everything by client, and surfaces your next step \u2014 before you have to ask. Built for consultants, fractionals, and solo operators."
+  },
+  "pages": {
+    "homepage": "https://www.joinjuggle.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

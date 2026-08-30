@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000042",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Oxide Computer Company",
+    "domain": "oxide.computer",
+    "url": "https://oxide.computer/",
+    "slug": "oxide-computer",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Corporate Website",
+    "audience": [
+      "Developers",
+      "Enterprises",
+      "B2B"
+    ],
+    "confidence": 0.93,
+    "field_confidence": {
+      "category": 0.93,
+      "subcategory": 0.88,
+      "website_type": 0.83,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#563160",
+    "secondary_color": null,
+    "accent_colors": [
+      "#236a4c"
+    ],
+    "background_colors": [
+      "#1f2124"
+    ],
+    "text_color": "#434547",
+    "palette": [
+      {
+        "hex": "#1f2124",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#434547",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#563160",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#303235",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#236a4c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SuisseIntl",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          65
+        ]
+      },
+      {
+        "name": "GT America Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "sales@oxide.computer",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/oxidecomputer",
+    "x": null
+  },
+  "seo": {
+    "title": "Oxide Computer Company",
+    "description": "The cloud you own. Hardware, with the software baked in, for running infrastructure at scale."
+  },
+  "pages": {
+    "homepage": "https://oxide.computer/",
+    "about": "https://oxide.computer/about",
+    "contact": "https://oxide.computer/contact",
+    "pricing": "not found",
+    "careers": "https://oxide.computer/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

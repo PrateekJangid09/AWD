@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000116",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Madiyar",
+    "domain": "madiyour.com",
+    "url": "https://madiyour.com/",
+    "slug": "madiyour",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Designer",
+    "website_type": "Personal Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#70d4ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0a0a0a",
+      "#e6e4de"
+    ],
+    "text_color": "#f5f5f5",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5f5f5",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#70d4ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#181818",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e6e4de",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#333333",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter-Light",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          28
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          24
+        ]
+      },
+      {
+        "name": "Switzer",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          148
+        ]
+      },
+      {
+        "name": "Test S\u00f6hne Buch",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@verstack.design",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/madiyar-ismagulov-73b49a1a3",
+    "x": "https://twitter.com/madiyour"
+  },
+  "seo": {
+    "title": "Madiyar",
+    "description": "Madiyar Ismagulov \u2014 Technical UI Artist. Designing/developing UI for video games, web, mobile, touchscreen applications and interactive apps. Personal website where you can find a lot about me and what I do"
+  },
+  "pages": {
+    "homepage": "https://madiyour.com/",
+    "about": "https://madiyour.com/about",
+    "contact": "https://madiyour.com/contacts",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

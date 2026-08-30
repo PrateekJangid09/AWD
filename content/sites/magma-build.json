@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000012",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Magma",
+    "domain": "magma.build",
+    "url": "https://www.magma.build/",
+    "slug": "magma-build",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Automation",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "B2C",
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.78,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#e4a649",
+    "secondary_color": null,
+    "accent_colors": [
+      "#eb7457"
+    ],
+    "background_colors": [
+      "#060819"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#060819",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e4a649",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#eb7457",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Ppneuemontreal",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          24
+        ]
+      },
+      {
+        "name": "Feature deck light",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          32,
+          153
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "Bunny CDN",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "organiz@ion.learn",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/magma-ai",
+    "x": null
+  },
+  "seo": {
+    "title": "Magma",
+    "description": "Transforming Operational Know-How into Proprietary AI Infrastructures through Automation, Custom Engineering, Expert-Trained AI Agents & Team Adoption"
+  },
+  "pages": {
+    "homepage": "https://www.magma.build/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

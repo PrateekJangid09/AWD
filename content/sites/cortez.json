@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000157",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Joseph Cortez",
+    "domain": "cortez.io",
+    "url": "https://cortez.io/",
+    "slug": "cortez",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.69,
+    "field_confidence": {
+      "category": 0.69,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#fdfdfc",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#fdfdfc"
+    ],
+    "text_color": "#111111",
+    "palette": [
+      {
+        "hex": "#fdfdfc",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#111111",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "TASA Orbiter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "New York, NY, US"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/seph",
+    "x": null
+  },
+  "seo": {
+    "title": "Joseph Cortez",
+    "description": "Joseph Cortez is a design engineer in New York City. He designs and builds fast, accessible user interfaces for impactful organizations."
+  },
+  "pages": {
+    "homepage": "https://cortez.io/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

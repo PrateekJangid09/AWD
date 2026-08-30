@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000014",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Anidachi",
+    "domain": "anidachi.com",
+    "url": "https://anidachi.com/",
+    "slug": "anidachi",
+    "favicon": null
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Developers",
+      "Guests"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.59,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#24c0fe",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ffffff"
+    ],
+    "background_colors": [],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#24c0fe",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Anidachi",
+    "description": "Anidachi is a new digital companion that can clip to your bag. Coming late 2026."
+  },
+  "pages": {
+    "homepage": "https://anidachi.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000021",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Architecture of Socialist-Era Belgrade",
+    "domain": "klmln.com",
+    "url": "https://belgrade.klmln.com/",
+    "slug": "klmln",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Real Estate & Construction",
+    "subcategory": "Architecture",
+    "website_type": "Documentation Website",
+    "audience": [
+      "B2C"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": null,
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#111111",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "ilnur@klmln.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Architecture of Socialist-Era Belgrade",
+    "description": "An independent guide to Belgrade\u2019s post-war modernist heritage"
+  },
+  "pages": {
+    "homepage": "https://belgrade.klmln.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

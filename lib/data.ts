@@ -315,6 +315,16 @@ export function getTool(slug: string) {
   return TOOLS.find((t) => t.slug === slug);
 }
 
+// A stable accent colour for any category name — from the known set,
+// else a pleasant deterministic hue. Gives the archive its colour.
+export function categoryColor(name: string): string {
+  const c = CATEGORIES.find((c) => c.name === name);
+  if (c) return c.accent;
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) % 360;
+  return `hsl(${h} 68% 52%)`;
+}
+
 export function getSite(slug: string) {
   return SITES.find((s) => s.slug === slug);
 }

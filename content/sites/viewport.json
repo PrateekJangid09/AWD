@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000026",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Viewport",
+    "domain": "viewport.co",
+    "url": "https://viewport.co/",
+    "slug": "viewport",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Automation",
+    "website_type": "Pricing Website",
+    "audience": [
+      "B2B",
+      "Developers"
+    ],
+    "confidence": 0.75,
+    "field_confidence": {
+      "category": 0.75,
+      "subcategory": 0.7,
+      "website_type": 0.88,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#18edbb",
+    "secondary_color": null,
+    "accent_colors": [
+      "#00caf2"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#f0f2f5",
+      "#c8c9cf"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#18edbb",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f0f2f5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c8c9cf",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#00caf2",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Silka SemiBold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      },
+      {
+        "name": "HK Sentiments Bold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          32
+        ]
+      },
+      {
+        "name": "Silka Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          18
+        ]
+      },
+      {
+        "name": "Silka Regular",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          14,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@viewport.co",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/viewport_app"
+  },
+  "seo": {
+    "title": "Viewport",
+    "description": "Viewport helps you organize and present your design process in a clear, shareable way\u2014made for freelancers and design teams who need to communicate with clarity."
+  },
+  "pages": {
+    "homepage": "https://viewport.co/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://viewport.co/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

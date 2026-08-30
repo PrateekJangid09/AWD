@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000012",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Nick",
+    "domain": "nick.design",
+    "url": "https://nick.design/",
+    "slug": "nick",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": null,
+    "website_type": "Studio Website",
+    "audience": [],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": null,
+      "website_type": 0.8,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2b2b2b",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f1f1f",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#808080",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          72
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "jsDelivr",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@nick.design",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Nick",
+    "description": "We craft websites, brands, and marketing assets to amplify the vision of tech founders"
+  },
+  "pages": {
+    "homepage": "https://nick.design/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

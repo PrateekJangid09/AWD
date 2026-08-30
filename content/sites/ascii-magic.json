@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000057",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "ASCII Magic",
+    "domain": "ascii-magic.com",
+    "url": "https://www.ascii-magic.com/",
+    "slug": "ascii-magic",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Blogs",
+    "website_type": "Recipe Blog",
+    "audience": [],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.83,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#141418",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff8a3c"
+    ],
+    "background_colors": [
+      "#040406"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#040406",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#141418",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff8a3c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Satoshi",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          18
+        ]
+      },
+      {
+        "name": "GeistPixel-Square",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          52
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/kail_designs"
+  },
+  "seo": {
+    "title": "ASCII Magic",
+    "description": "Free ASCII art generator. Turn any photo or video into ASCII, pixel art, voxel, mosaic, halftone, glitch or LEGO, in your browser, no signup, no upload."
+  },
+  "pages": {
+    "homepage": "https://www.ascii-magic.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

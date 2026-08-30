@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000050",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Add a right-click brand menu to your website logo.",
+    "domain": "rightclicklogo.com",
+    "url": "https://rightclicklogo.com/",
+    "slug": "rightclicklogo",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Documentation Website",
+    "audience": [
+      "B2C",
+      "Developers"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.93,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#2b2818",
+    "secondary_color": null,
+    "accent_colors": [
+      "#625c3b",
+      "#4d4830"
+    ],
+    "background_colors": [
+      "#fdfcfa",
+      "#e5e7eb"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#fdfcfa",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#2b2818",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#625c3b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e7eb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c0c0d",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#4d4830",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Astro",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Add a right-click brand menu to your website logo.",
+    "description": "Paste our prompt into your AI coding tool and it wires the simple menu to your site logo."
+  },
+  "pages": {
+    "homepage": "https://rightclicklogo.com/",
+    "about": "https://rightclicklogo.com/about",
+    "contact": "https://rightclicklogo.com/contact",
+    "pricing": "https://rightclicklogo.com/pricing",
+    "careers": "https://rightclicklogo.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

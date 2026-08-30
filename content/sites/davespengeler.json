@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000138",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Dave Spengeler",
+    "domain": "davespengeler.ch",
+    "url": "https://davespengeler.ch/",
+    "slug": "davespengeler",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": 0.72,
+      "website_type": 0.78,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#1c1e21",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#1c1e21"
+    ],
+    "text_color": "#ccd0d7",
+    "palette": [
+      {
+        "hex": "#1c1e21",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ccd0d7",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "TWKLausanne",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          23,
+          141
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "mail@davespengeler.ch",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Baar, ZG, CH"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Dave Spengeler",
+    "description": "Grafiker und Webentwickler in Zug. Markenentwicklung, Logo Design und Websites mit Kirby & Craft CMS \u2014 Studio Dave Spengeler."
+  },
+  "pages": {
+    "homepage": "https://davespengeler.ch/",
+    "about": "https://davespengeler.ch/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

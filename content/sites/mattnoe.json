@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000257",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Matthew Noe",
+    "domain": "mattnoe.com",
+    "url": "https://mattnoe.com/",
+    "slug": "mattnoe",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Product Website",
+    "audience": [],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.67,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ec6940",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#1c1c1f",
+      "#b7b7c7"
+    ],
+    "text_color": "#dfdfe4",
+    "palette": [
+      {
+        "hex": "#1c1c1f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#dfdfe4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ec6940",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#b7b7c7",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Everett web",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          17,
+          40
+        ]
+      },
+      {
+        "name": "Favorit Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          40
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@mattnoe.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/mmnoe",
+    "x": null
+  },
+  "seo": {
+    "title": "Matthew Noe",
+    "description": "A designer, educator, creative director for digital products, brands, and experiences. Based in Portland, Oregon."
+  },
+  "pages": {
+    "homepage": "https://mattnoe.com/",
+    "about": "https://mattnoe.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

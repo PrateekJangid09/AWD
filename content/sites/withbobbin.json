@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000030",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Bobbin by TutorCruncher",
+    "domain": "withbobbin.com",
+    "url": "https://withbobbin.com/",
+    "slug": "withbobbin",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Education",
+    "subcategory": "Online Courses",
+    "website_type": "Course Platform",
+    "audience": [
+      "Teachers",
+      "Parents",
+      "Students"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#fbf27e",
+    "secondary_color": null,
+    "accent_colors": [
+      "#2a241d",
+      "#413c33"
+    ],
+    "background_colors": [
+      "#000000",
+      "#f7f4f0",
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fbf27e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f7f4f0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#2a241d",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#413c33",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GT Standard",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          60
+        ]
+      },
+      {
+        "name": "GT Alpina",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          20,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "gre@lessons.the",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/tutorcruncher",
+    "x": null
+  },
+  "seo": {
+    "title": "Bobbin by TutorCruncher",
+    "description": "Bobbin is an AI tutoring platform from TutorCruncher that plans lessons, captures live notes, and writes parent reports \u2014 so tutors spend more time teaching."
+  },
+  "pages": {
+    "homepage": "https://withbobbin.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

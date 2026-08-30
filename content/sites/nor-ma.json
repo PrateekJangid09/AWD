@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000097",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Norma",
+    "domain": "nor.ma",
+    "url": "https://nor.ma/",
+    "slug": "nor-ma",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": "Subscription Commerce",
+    "website_type": "Product Website",
+    "audience": [
+      "Consumers",
+      "B2C",
+      "B2B"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.82,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#e3e3e3"
+    ],
+    "text_color": "#111111",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#111111",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b6b6b",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#a1a1a1",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e3e3e3",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "suisse",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          56
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "contact@nor.ma",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/nordotma"
+  },
+  "seo": {
+    "title": "Norma",
+    "description": "Norma is a stainless steel NFC disc. Scan it with your iPhone and the distracting apps you choose disappear \u2014 until you scan again. No subscription, no battery, no charging. A physical focus tool to cut screen time and stay present."
+  },
+  "pages": {
+    "homepage": "https://nor.ma/",
+    "about": "https://nor.ma/story",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

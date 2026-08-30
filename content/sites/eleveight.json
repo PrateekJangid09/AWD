@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000069",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Eleveight Studio",
+    "domain": "eleveight.studio",
+    "url": "https://www.eleveight.studio/",
+    "slug": "eleveight",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Real Estate & Construction",
+    "subcategory": "Construction",
+    "website_type": "Property Website",
+    "audience": [
+      "B2C"
+    ],
+    "confidence": 0.74,
+    "field_confidence": {
+      "category": 0.74,
+      "subcategory": 0.69,
+      "website_type": 0.67,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0066ff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f0f0f0",
+      "#fffcfc",
+      "#dedede"
+    ],
+    "text_color": "#919191",
+    "palette": [
+      {
+        "hex": "#f0f0f0",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#919191",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0066ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#fffcfc",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#212121",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#dedede",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          2,
+          80
+        ]
+      },
+      {
+        "name": "Albert Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          42,
+          80
+        ]
+      },
+      {
+        "name": "Apfel Grotezk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          71,
+          71
+        ]
+      },
+      {
+        "name": "Satoshi",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          26
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "inquiries@eleveight.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/fabiuix"
+  },
+  "seo": {
+    "title": "Eleveight Studio",
+    "description": "Web design and development in Framer, shaping digital success on the web for Startups and Companies in SaaS, Fintech, eSports, eCommerce, AI, Real Estate, and Automotive Industries."
+  },
+  "pages": {
+    "homepage": "https://www.eleveight.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

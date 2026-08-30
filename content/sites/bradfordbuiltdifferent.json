@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000133",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Bradford - Built Different",
+    "domain": "bradfordbuiltdifferent.co.uk",
+    "url": "https://www.bradfordbuiltdifferent.co.uk/",
+    "slug": "bradfordbuiltdifferent",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Automotive & Mobility",
+    "subcategory": "Transportation",
+    "website_type": "Documentation Website",
+    "audience": [
+      "B2B",
+      "Drivers"
+    ],
+    "confidence": 0.68,
+    "field_confidence": {
+      "category": 0.68,
+      "subcategory": 0.63,
+      "website_type": 0.7,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#4f0b54",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ffbffd",
+      "#a33da2"
+    ],
+    "background_colors": [
+      "#fffcf3"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#fffcf3",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#4f0b54",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffbffd",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#131313",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#a33da2",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Roboto",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          24
+        ]
+      },
+      {
+        "name": "Roboto Condensed",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          20,
+          104
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@investinbradford.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/invest-in-bradford",
+    "x": "https://x.com/InvestBradford"
+  },
+  "seo": {
+    "title": "Bradford - Built Different",
+    "description": "Bradford is positioning itself as a leading UK city, driven by innovation, culture, and inclusive growth. Building on the success of City of Culture 2025, the district is embracing change with regeneration, new infrastructure, and a strong commitment to clean growth and technology."
+  },
+  "pages": {
+    "homepage": "https://www.bradfordbuiltdifferent.co.uk/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

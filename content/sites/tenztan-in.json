@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000016",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Tenztan",
+    "domain": "tenztan.in",
+    "url": "https://www.tenztan.in/",
+    "slug": "tenztan-in",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "AI",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.66,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#4a81c2",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#fdfbf2"
+    ],
+    "text_color": "#1a1a1a",
+    "palette": [
+      {
+        "hex": "#fdfbf2",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#4a81c2",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#666666",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#888888",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Space Grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          9,
+          310
+        ]
+      },
+      {
+        "name": "Noto Serif JP",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          32
+        ]
+      },
+      {
+        "name": "Noto Sans JP",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          9,
+          13
+        ]
+      },
+      {
+        "name": "Dancing Script",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          23,
+          23
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "tanmaypremee@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/tanmay-premee-33468b252",
+    "x": "https://x.com/minoru200"
+  },
+  "seo": {
+    "title": "Tenztan",
+    "description": "Portfolio of Tanmay Premee, an AI Engineer and Full-Stack Developer specializing in creative coding, WebGL, and advanced neural architecture."
+  },
+  "pages": {
+    "homepage": "https://www.tenztan.in/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

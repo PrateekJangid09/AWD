@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000036",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "City of Angels \u2013 A Book About L.A Style",
+    "domain": "cityxofxangels.com",
+    "url": "https://cityxofxangels.com/",
+    "slug": "cityxofxangels",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Fashion & Beauty",
+    "subcategory": "Salons",
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#06aeef",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#06aeef",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABC Diatype",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          144
+        ]
+      },
+      {
+        "name": "Founders Grotesk Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Astro",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@cityxofxangels.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "City of Angels \u2013 A Book About L.A Style",
+    "description": "City of Angels is Jasmine Benjamin\u2019s visual love letter to L.A.\u2014120+ portraits capturing the city\u2019s true style, spirit and subcultural power."
+  },
+  "pages": {
+    "homepage": "https://cityxofxangels.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

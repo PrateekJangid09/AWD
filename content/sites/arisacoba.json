@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000267",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Aris Acoba \u2022 Product designer",
+    "domain": "arisacoba.com",
+    "url": "https://www.arisacoba.com/",
+    "slug": "arisacoba",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "AI Agents",
+    "website_type": "Resume Website",
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.82,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#f5facf",
+    "secondary_color": null,
+    "accent_colors": [
+      "#d6ecff"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#f1f2f6"
+    ],
+    "text_color": "#090e24",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#090e24",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5facf",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#d6ecff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#f1f2f6",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#757676",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "UncutSans-Semibold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          28,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Astro on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "aris.acoba@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/aris-acoba",
+    "x": "https://twitter.com/aris_acoba"
+  },
+  "seo": {
+    "title": "Aris Acoba \u2022 Product designer",
+    "description": "I\u2019m a senior product designer at GitHub, currently working on pull requests with GitHub Copilot. Over the past 3 years, I\u2019ve had the opportunity to work on a diverse array of products, including GitHub Copilot, pull requests, GitHub Actions, deployments, GitHub Mobile, enterprise, packages, and npm"
+  },
+  "pages": {
+    "homepage": "https://www.arisacoba.com/",
+    "about": "https://www.arisacoba.com/about",
+    "contact": "https://www.arisacoba.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

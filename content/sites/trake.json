@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000008",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Trake.app",
+    "domain": "trake.app",
+    "url": "https://www.trake.app/",
+    "slug": "trake",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Music",
+    "website_type": "Product Website",
+    "audience": [
+      "B2C"
+    ],
+    "confidence": 0.91,
+    "field_confidence": {
+      "category": 0.91,
+      "subcategory": 0.86,
+      "website_type": 0.68,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#d6f600",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#d6f600",
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#d6f600",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geist Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@trake.app",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Trake.app",
+    "description": "Trake is a free music visualizer app. Upload a track, style a reactive visualizer, and export a 1080p MP4 \u2014 all in your browser."
+  },
+  "pages": {
+    "homepage": "https://www.trake.app/",
+    "about": "https://www.trake.app/about",
+    "contact": "not found",
+    "pricing": "https://www.trake.app/about#pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

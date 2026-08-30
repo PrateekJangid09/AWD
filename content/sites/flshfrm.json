@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000167",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Flashfom: the fastest and easiest way to connect with your customer",
+    "domain": "flshfrm.com",
+    "url": "https://www.flshfrm.com/",
+    "slug": "flshfrm",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "No-Code",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Developers",
+      "B2C",
+      "Enterprises"
+    ],
+    "confidence": 0.81,
+    "field_confidence": {
+      "category": 0.81,
+      "subcategory": 0.76,
+      "website_type": 0.73,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#111606",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#111606"
+    ],
+    "text_color": "#b1dd40",
+    "palette": [
+      {
+        "hex": "#111606",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b1dd40",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "NeueHaas",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          83
+        ]
+      },
+      {
+        "name": "Aeonik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          150
+        ]
+      },
+      {
+        "name": "Recife",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          113,
+          150
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@emotion-agency.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Flashfom: the fastest and easiest way to connect with your customer",
+    "description": "Flashform is an easy in use data sender from a website\u2019s contact form to different messengers and emails: What\u2019s App, Discord, Telegram and etc."
+  },
+  "pages": {
+    "homepage": "https://www.flshfrm.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

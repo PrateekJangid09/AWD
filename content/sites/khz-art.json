@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000058",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "KHZ ART",
+    "domain": "khz-art.com",
+    "url": "https://khz-art.com/",
+    "slug": "khz-art",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Legal & Government",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.63,
+    "field_confidence": {
+      "category": 0.63,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0a0a0a",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0a0a0a",
+      "#d8d8d1",
+      "#ffffff"
+    ],
+    "text_color": "#f5f5f0",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5f5f0",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#333330",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d8d8d1",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#a9a9a2",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Hiragino Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          17
+        ]
+      },
+      {
+        "name": "Cormorant Garamond",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          101,
+          101
+        ]
+      },
+      {
+        "name": "Hiragino Mincho ProN",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          43,
+          72
+        ]
+      },
+      {
+        "name": "Noto Serif JP",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          46
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "khzarttt@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Tokyo, JP"
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/khz_art"
+  },
+  "seo": {
+    "title": "KHZ ART",
+    "description": "AI\u6620\u50cf\u5236\u4f5c\u30fbAI\u30d3\u30b8\u30e5\u30a2\u30eb\u5236\u4f5c\u30fbAI\u30a6\u30a7\u30d6\u5236\u4f5c\u30fbAI\u30b5\u30a6\u30f3\u30c9\u5236\u4f5c\u3002KHZ ART\u306f\u6771\u4eac\u3092\u62e0\u70b9\u306b\u3001\u30d6\u30e9\u30f3\u30c9\u306e\u201c\u4e16\u754c\u89b3\u201d\u3092\u8a8c\u9762\u57fa\u6e96\u306e\u7f8e\u5b66\u3067\u8a2d\u8a08\u3059\u308bAI Creative Agent Team\u3002"
+  },
+  "pages": {
+    "homepage": "https://khz-art.com/",
+    "about": "https://khz-art.com/about",
+    "contact": "https://khz-art.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

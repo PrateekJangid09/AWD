@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000165",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Every Shipment Matters | Tive",
+    "domain": "tive.com",
+    "url": "https://www.tive.com/",
+    "slug": "tive",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Logistics",
+    "website_type": "Company Website",
+    "audience": [
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1d232e",
+    "secondary_color": null,
+    "accent_colors": [
+      "#273041",
+      "#16ad7b",
+      "#5cbf8f"
+    ],
+    "background_colors": [
+      "#0c0f14"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#0c0f14",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1d232e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#273041",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#16ad7b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#5cbf8f",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "acumin-pro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          54
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "m@ters.get",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/tiveinc",
+    "x": "https://twitter.com/tiveinc"
+  },
+  "seo": {
+    "title": "Every Shipment Matters | Tive",
+    "description": "Track your valuable shipments in real time with Tive's cutting-edge technology. Ensure they arrive safely and on time because every shipment matters. Book a demo today and take control of your logistics with the push of a button."
+  },
+  "pages": {
+    "homepage": "https://www.tive.com/",
+    "about": "https://www.tive.com/company",
+    "contact": "https://www.tive.com/contact",
+    "pricing": "not found",
+    "careers": "https://www.tive.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

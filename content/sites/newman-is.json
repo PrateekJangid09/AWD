@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000180",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "dan.newman.is",
+    "domain": "newman.is",
+    "url": "https://dan.newman.is/",
+    "slug": "newman-is",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Photography",
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.66,
+    "field_confidence": {
+      "category": 0.66,
+      "subcategory": 0.61,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#aaff00",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#aaff00",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Berkeley Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          14
+        ]
+      },
+      {
+        "name": "Die Grotesk A",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          36,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "dan@newman.is",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/danserif",
+    "x": "https://twitter.com/danserif"
+  },
+  "seo": {
+    "title": "dan.newman.is",
+    "description": "Kia ora. Hello. I\u2019m Dan (aka @danserif), a designer and photographer from Wellington, New Zealand."
+  },
+  "pages": {
+    "homepage": "https://dan.newman.is/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000206",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Copilot Money",
+    "domain": "copilot.money",
+    "url": "https://www.copilot.money/",
+    "slug": "copilot-money",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "AI Agents",
+    "website_type": "Web Application",
+    "audience": [
+      "B2C",
+      "Enterprises"
+    ],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": 0.7,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#00cc4b",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff4433",
+      "#fece4c",
+      "#1c6cff"
+    ],
+    "background_colors": [
+      "#000814"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000814",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#00cc4b",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff4433",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#fece4c",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c6cff",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Matter Variable Thin",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          56
+        ]
+      },
+      {
+        "name": "Jokker Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          64
+        ]
+      },
+      {
+        "name": "Jokker Semibold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          148
+        ]
+      },
+      {
+        "name": "Jokker Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          24
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "recommend@ions.available",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/copilotmoney",
+    "x": "https://twitter.com/copilotmoney"
+  },
+  "seo": {
+    "title": "Copilot Money",
+    "description": "Track spending, budgets, investments & net worth all in one beautifully designed place. The personal finance app powered by smart automation and built with privacy at the center. Available on Web, iPhone, Mac & iPad. Start your 1-month free trial today!"
+  },
+  "pages": {
+    "homepage": "https://www.copilot.money/",
+    "about": "https://www.copilot.money/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://www.copilot.money/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

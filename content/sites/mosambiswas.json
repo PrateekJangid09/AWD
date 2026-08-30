@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000051",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Mosam Biswas Portfolio",
+    "domain": "mosambiswas.com",
+    "url": "https://www.mosambiswas.com/",
+    "slug": "mosambiswas",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "AI",
+    "website_type": "Portfolio",
+    "audience": [
+      "Developers",
+      "B2B"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.82,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0b0b0a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0891b2",
+      "#0ea5e9"
+    ],
+    "background_colors": [],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#0b0b0a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#065f46",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#0891b2",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#0ea5e9",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Syne",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Instrument Serif",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Manrope",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Space Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "mosambiswas999@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/mosambiswas",
+    "x": null
+  },
+  "seo": {
+    "title": "Mosam Biswas Portfolio",
+    "description": "Portfolio of Mosam Biswas, an AI & data science engineer in Navi Mumbai building machine-learning systems, web platforms and Android apps, with published IEEE research."
+  },
+  "pages": {
+    "homepage": "https://www.mosambiswas.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

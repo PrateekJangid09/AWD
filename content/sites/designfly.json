@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000061",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Designfly",
+    "domain": "designfly.io",
+    "url": "https://www.designfly.io/",
+    "slug": "designfly",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "Product Website",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.64,
+    "field_confidence": {
+      "category": 0.64,
+      "subcategory": 0.59,
+      "website_type": 0.65,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#00be3f",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#00be3f",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          13
+        ]
+      },
+      {
+        "name": "PP Neue Montreal",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          20,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hey@designfly.io",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "CA, US"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Designfly",
+    "description": "We help early-stage SaaS founders craft premium, investor-ready brands and product experiences."
+  },
+  "pages": {
+    "homepage": "https://www.designfly.io/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

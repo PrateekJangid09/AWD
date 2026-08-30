@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000007",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "ONMI",
+    "domain": "onmi.io",
+    "url": "https://onmi.io/",
+    "slug": "onmi",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Gaming",
+    "website_type": "Mobile App Website",
+    "audience": [
+      "B2C",
+      "Gamers"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.82,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#d6f82e",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0f0f0f",
+      "#ffffff"
+    ],
+    "text_color": "#595959",
+    "palette": [
+      {
+        "hex": "#0f0f0f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#595959",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d6f82e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#282828",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "__HelveticaNeue_76f145",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          5,
+          68
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "onmi@onmi.io",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/onmi_ar"
+  },
+  "seo": {
+    "title": "ONMI",
+    "description": "next-gen app that combines entertainment and financial services within an engaging XR game."
+  },
+  "pages": {
+    "homepage": "https://onmi.io/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

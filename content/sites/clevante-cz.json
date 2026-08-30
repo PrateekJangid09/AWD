@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000056",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "clevante",
+    "domain": "clevante.cz",
+    "url": "https://clevante.cz/",
+    "slug": "clevante-cz",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": "Documentation Website",
+    "audience": [
+      "B2B"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": null,
+      "website_type": 0.72,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#7da3c0",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#08090b",
+      "#f4f5f7"
+    ],
+    "text_color": "#888d96",
+    "palette": [
+      {
+        "hex": "#08090b",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#888d96",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#7da3c0",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f5f7",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Montserrat Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          189
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "studio@clevante.cz",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "\u010cesk\u00e9 Bud\u011bjovice, Jiho\u010desk\u00fd kraj, CZ"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "clevante",
+    "description": "clevante \u2013 digit\u00e1ln\u00ed studio. Tvo\u0159\u00edme weby, aplikace, AI automatizace a syst\u00e9my na m\u00edru, kter\u00e9 zna\u010dk\u00e1m d\u00e1vaj\u00ed v\u00fdraznou digit\u00e1ln\u00ed podobu."
+  },
+  "pages": {
+    "homepage": "https://clevante.cz/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

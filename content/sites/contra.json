@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000194",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Contra",
+    "domain": "contra.com",
+    "url": "https://contra.com/",
+    "slug": "contra",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Recruitment & HR",
+    "subcategory": "Recruitment",
+    "website_type": "Recruitment Website",
+    "audience": [
+      "Employers",
+      "Job Seekers"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.79,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#222834",
+    "secondary_color": null,
+    "accent_colors": [
+      "#14171f",
+      "#f04438"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e5e7eb"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#222834",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#14171f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e7eb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f04438",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GT Standard M",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "GT Standard L",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          8,
+          58
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@contra.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "London"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/contrahq",
+    "x": "https://x.com/contra"
+  },
+  "seo": {
+    "title": "Contra",
+    "description": "Connect with next-gen talent and tools to get work underway. Hire more independents. Start more projects. Get more creative."
+  },
+  "pages": {
+    "homepage": "https://contra.com/",
+    "about": "not found",
+    "contact": "https://contra.com/contact-us",
+    "pricing": "https://contra.com/community/dpoUfMUB-i-designed-a-premium-framer-website",
+    "careers": "https://contra.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000038",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Cogito",
+    "domain": "cogito.md",
+    "url": "https://cogito.md/",
+    "slug": "cogito-md",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Productivity",
+    "website_type": "Blog",
+    "audience": [
+      "B2C",
+      "Developers"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.79,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#c45d2c",
+    "secondary_color": null,
+    "accent_colors": [
+      "#d9621a"
+    ],
+    "background_colors": [
+      "#fdfcfb"
+    ],
+    "text_color": "#5c5c5c",
+    "palette": [
+      {
+        "hex": "#fdfcfb",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#5c5c5c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#c45d2c",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1c1c",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a0a0a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9621a",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SF Pro Text",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "SF Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@cogito.md",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/linuz90"
+  },
+  "seo": {
+    "title": "Cogito",
+    "description": "Minimal, fast, and Mac-native. Built for reading, editing, and browsing Markdown files without friction. Download the free public beta."
+  },
+  "pages": {
+    "homepage": "https://cogito.md/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

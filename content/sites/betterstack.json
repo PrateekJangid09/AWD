@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000050",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Better Stack",
+    "domain": "betterstack.com",
+    "url": "https://betterstack.com/",
+    "slug": "betterstack",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "SaaS Landing Page",
+    "audience": [
+      "Developers",
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1f2433",
+    "secondary_color": null,
+    "accent_colors": [
+      "#171824",
+      "#939db8"
+    ],
+    "background_colors": [
+      "#0b0c14"
+    ],
+    "text_color": "#646e87",
+    "palette": [
+      {
+        "hex": "#0b0c14",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#646e87",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f2433",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#171824",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#939db8",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Helvetica Now Text",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          36
+        ]
+      },
+      {
+        "name": "Helvetica Now Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          53
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@betterstack.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/betterstack",
+    "x": "https://twitter.com/betterstackhq"
+  },
+  "seo": {
+    "title": "Better Stack",
+    "description": "AI SRE and MCP server, incident management, on-call, logs, metrics, traces, and error tracking. 7,000+ happy customers. 60-day money back guarantee."
+  },
+  "pages": {
+    "homepage": "https://betterstack.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://betterstack.com/pricing",
+    "careers": "https://betterstack.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

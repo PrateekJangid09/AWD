@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000022",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Peter Hinton Design",
+    "domain": "peterhintondesign.co.uk",
+    "url": "https://www.peterhintondesign.co.uk/",
+    "slug": "peterhintondesign",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.81,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#dc3232",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#f4f5f8",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f5f8",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#dc3232",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1d1d1d",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#4a4b4d",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Montserrat",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          60
+        ]
+      },
+      {
+        "name": "Cinzel",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "info@peterhintondesign.co.uk",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/peterhinton"
+  },
+  "seo": {
+    "title": "Peter Hinton Design",
+    "description": "Award-Winning Design & Development"
+  },
+  "pages": {
+    "homepage": "https://www.peterhintondesign.co.uk/",
+    "about": "https://www.peterhintondesign.co.uk/about/",
+    "contact": "https://www.peterhintondesign.co.uk/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

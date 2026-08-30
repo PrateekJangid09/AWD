@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000107",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "A guide to the professional world of brand identity",
+    "domain": "myflodesk.com",
+    "url": "https://willpatersondesign.myflodesk.com/",
+    "slug": "myflodesk",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#f46036",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f7f4ed",
+      "#d7d7d7",
+      "#ffffff"
+    ],
+    "text_color": "#383838",
+    "palette": [
+      {
+        "hex": "#f7f4ed",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#383838",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f46036",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d7d7d7",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "pp-editorial-new",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          36
+        ]
+      },
+      {
+        "name": "acumin-pro",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "sebastian-bobby-slanted",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          88,
+          88
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on AWS",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "AWS"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "A guide to the professional world of brand identity",
+    "description": "From beginner designers, to seasoned vets, I love to share my brand identity process and the behind-the-scenes of my creative agency."
+  },
+  "pages": {
+    "homepage": "https://willpatersondesign.myflodesk.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

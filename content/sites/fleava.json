@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000266",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Transform with Fleava",
+    "domain": "fleava.com",
+    "url": "https://transform.fleava.com/",
+    "slug": "fleava",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.57,
+    "field_confidence": {
+      "category": 0.57,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#5857e7",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#1a1a21"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#1a1a21",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#5857e7",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Graphik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          216
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Transform with Fleava",
+    "description": "Digital Transformation became the very key to an organization's survival. Now is the perfect time to do a Digital Transformation with Fleava."
+  },
+  "pages": {
+    "homepage": "https://transform.fleava.com/",
+    "about": "https://transform.fleava.com/about",
+    "contact": "https://transform.fleava.com/contact",
+    "pricing": "https://transform.fleava.com/pricing",
+    "careers": "https://transform.fleava.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

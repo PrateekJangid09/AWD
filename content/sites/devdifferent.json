@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000009",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Dev Different",
+    "domain": "devdifferent.io",
+    "url": "https://devdifferent.io/",
+    "slug": "devdifferent",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": "Product Website",
+    "audience": [
+      "B2B",
+      "B2C"
+    ],
+    "confidence": 0.68,
+    "field_confidence": {
+      "category": 0.68,
+      "subcategory": null,
+      "website_type": 0.7,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#2ac670",
+    "secondary_color": null,
+    "accent_colors": [
+      "#e65f3f"
+    ],
+    "background_colors": [
+      "#0c0c0e",
+      "#eeecea"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#0c0c0e",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2ac670",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#eeecea",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e65f3f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geistmono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          15
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          31
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "team@devdifferent.io",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Dev Different",
+    "description": "Add a web front-end developer to your team or build your engineering team \u2014 as simple as a monthly subscription."
+  },
+  "pages": {
+    "homepage": "https://devdifferent.io/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://devdifferent.io/jobs"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000009",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "ScreenTune",
+    "domain": "screentune.app",
+    "url": "https://screentune.app/",
+    "slug": "screentune",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": "Product Website",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": null,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f6f0eb",
+    "secondary_color": null,
+    "accent_colors": [
+      "#000000"
+    ],
+    "background_colors": [],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#f6f0eb",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Stack Sans Headline",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "Stack Sans Text",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@screentune.app",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/ScreenTuneApp"
+  },
+  "seo": {
+    "title": "ScreenTune",
+    "description": "Capture, edit, and export screenshots and screen recordings in one Mac app. Download ScreenTune and start your 7-day free trial."
+  },
+  "pages": {
+    "homepage": "https://screentune.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

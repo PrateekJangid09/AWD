@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000253",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Piet Terheyden",
+    "domain": "piet.page",
+    "url": "https://piet.page/",
+    "slug": "piet",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.72,
+    "field_confidence": {
+      "category": 0.72,
+      "subcategory": null,
+      "website_type": 0.59,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#22c55e",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#f0f0f0"
+    ],
+    "text_color": "#0d0d0d",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0d0d0d",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#22c55e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f0f0f0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#adadad",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Pretendard",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Piet Terheyden",
+    "description": "Co-founder of Random Access Memories Co. (POOL). Previously built Literal, Minimal Gallery & Some Studio."
+  },
+  "pages": {
+    "homepage": "https://piet.page/",
+    "about": "https://piet.page/about",
+    "contact": "https://piet.page/contact",
+    "pricing": "https://piet.page/pricing",
+    "careers": "https://piet.page/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

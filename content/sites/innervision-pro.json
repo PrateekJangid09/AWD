@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000033",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Inner Vision Pro",
+    "domain": "innervision.pro",
+    "url": "https://innervision.pro/",
+    "slug": "innervision-pro",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Music",
+    "website_type": "Media Website",
+    "audience": [
+      "Listeners"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.93,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#025a4d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#00ff41",
+      "#1da1f2",
+      "#f00075"
+    ],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#fff2f0",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff2f0",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#025a4d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#00ff41",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#1da1f2",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#f00075",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Helvetica Neue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          130
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "PHP",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "be@s.when",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/earth_fm_live"
+  },
+  "seo": {
+    "title": "Inner Vision Pro",
+    "description": "Instead of spending thousands on more screens to glue to your face, take a few moments right now to pause, listen, and be amazed."
+  },
+  "pages": {
+    "homepage": "https://innervision.pro/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000345",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "The Content Architecture",
+    "domain": "contentarchitecture.dev",
+    "url": "https://www.contentarchitecture.dev/",
+    "slug": "contentarchitecture",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": "Ecommerce",
+    "website_type": "Documentation Website",
+    "audience": [],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.73,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ff9100",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#232323",
+      "#f1eee7",
+      "#ffffff"
+    ],
+    "text_color": "#dedede",
+    "palette": [
+      {
+        "hex": "#232323",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#dedede",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff9100",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f1eee7",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GeistMono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          17
+        ]
+      },
+      {
+        "name": "GeistSans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          46
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@edoardolunardi.dev",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "The Content Architecture",
+    "description": "The agent-ready Sanity kit for Next.js and Astro. Six years of decisions committed: page builder, fetch layer, AGENTS.md, skills, MCP servers, llms.txt. Buy once, own it forever."
+  },
+  "pages": {
+    "homepage": "https://www.contentarchitecture.dev/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

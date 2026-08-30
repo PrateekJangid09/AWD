@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000026",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Canopy",
+    "domain": "canopyseo.com",
+    "url": "https://canopyseo.com/",
+    "slug": "canopyseo",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Comparison Website",
+    "audience": [
+      "Consumers",
+      "Businesses"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.72,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#3ca370",
+    "secondary_color": null,
+    "accent_colors": [
+      "#323a2c"
+    ],
+    "background_colors": [
+      "#fdfdfc",
+      "#edf0e9",
+      "#d7ded1"
+    ],
+    "text_color": "#6f7e64",
+    "palette": [
+      {
+        "hex": "#fdfdfc",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#6f7e64",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#3ca370",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#edf0e9",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d7ded1",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#323a2c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "PP Neue Montreal",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          18
+        ]
+      },
+      {
+        "name": "Martina Plantijn",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          28,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@canopyseo.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Canopy",
+    "description": "Canopy builds your content strategy, writes every post from your real search data, and publishes to Squarespace in one click. Get found in Google and in AI answers."
+  },
+  "pages": {
+    "homepage": "https://canopyseo.com/",
+    "about": "not found",
+    "contact": "https://canopyseo.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

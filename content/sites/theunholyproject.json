@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000071",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "The Unholy Project",
+    "domain": "theunholyproject.com",
+    "url": "https://theunholyproject.com/",
+    "slug": "theunholyproject",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Gaming",
+    "website_type": "Media Website",
+    "audience": [],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.7,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#9b0000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#010608",
+      "#dbd9d5",
+      "#bbbbbb"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#010608",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9b0000",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#dbd9d5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#bbbbbb",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Fira Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          19
+        ]
+      },
+      {
+        "name": "Gloock",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          32,
+          75
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/max-zareei",
+    "x": "https://x.com/UnholyProject"
+  },
+  "seo": {
+    "title": "The Unholy Project",
+    "description": "Co-Op horror ARPG genre-defining PC game, made by Xebra Lab team."
+  },
+  "pages": {
+    "homepage": "https://theunholyproject.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

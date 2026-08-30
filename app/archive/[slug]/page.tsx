@@ -10,9 +10,7 @@ import { CANONICAL, getCanonical } from "@/lib/canonical";
 
 export function generateStaticParams() {
   // Real canonical records + the remaining sample records.
-  const canonicalSlugs = CANONICAL.map((s) => s.identity.slug);
-  const sampleSlugs = SITES.map((s) => s.slug).filter((s) => !canonicalSlugs.includes(s));
-  return [...canonicalSlugs, ...sampleSlugs].map((slug) => ({ slug }));
+  return CANONICAL.map((s) => ({ slug: s.identity.slug }));
 }
 
 export async function generateMetadata({
@@ -284,7 +282,7 @@ export default async function SitePage({
               </Link>
             )}
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filled.map((s, i) => (
               <SiteCard key={s.slug} site={s} index={i} />
             ))}

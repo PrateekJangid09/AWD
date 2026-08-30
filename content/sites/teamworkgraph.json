@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000064",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Atlassian Teamwork Graph",
+    "domain": "teamworkgraph.com",
+    "url": "https://teamworkgraph.com/",
+    "slug": "teamworkgraph",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Information Portal",
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.7,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1c2b42",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#111213",
+      "#f0f1f2"
+    ],
+    "text_color": "#6d7078",
+    "palette": [
+      {
+        "hex": "#111213",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#6d7078",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c2b42",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f1f21",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#f0f1f2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Atlassian Sans",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "Atlassian Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          28
+        ]
+      },
+      {
+        "name": "Charlie Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          20,
+          32
+        ]
+      },
+      {
+        "name": "Charlie Text",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on AWS",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "AWS"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Atlassian Teamwork Graph",
+    "description": "Visualize your connected work context, query the graph, surface personal insights, and build AI experiences - all from Teamwork Graph Explorer."
+  },
+  "pages": {
+    "homepage": "https://teamworkgraph.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000243",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "SVZ Agency",
+    "domain": "svz.io",
+    "url": "https://www.svz.io/",
+    "slug": "svz",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Enterprise",
+    "website_type": "Corporate Website",
+    "audience": [
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.69,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#fe1e34",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#080808",
+      "#ffffff"
+    ],
+    "text_color": "#f3efef",
+    "palette": [
+      {
+        "hex": "#080808",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f3efef",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#fe1e34",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#262525",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#171617",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Kmr Waldenburg",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          160
+        ]
+      },
+      {
+        "name": "Editorialnew",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          32
+        ]
+      },
+      {
+        "name": "Dirtyline 36 Daysoftype 2022",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          64,
+          64
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "thrive@scale.check",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Los Angeles, CA, US"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/svz-agency",
+    "x": null
+  },
+  "seo": {
+    "title": "SVZ Agency",
+    "description": "SVZ is a design agency and embedded partner for AI, cybersecurity, defense-tech, government, and enterprise teams \u2014 building brands, Webflow sites, and AI systems since 2013."
+  },
+  "pages": {
+    "homepage": "https://www.svz.io/",
+    "about": "https://www.svz.io/about",
+    "contact": "https://www.svz.io/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

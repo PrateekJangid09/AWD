@@ -3,7 +3,8 @@ import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import CategoryCard from "@/components/CategoryCard";
 import Reveal from "@/components/Reveal";
-import { CATEGORIES, STATS, TRENDING, getCategory } from "@/lib/data";
+import { TRENDING } from "@/lib/data";
+import { CANONICAL, liveCategories, resolveCategory } from "@/lib/canonical";
 
 export const metadata: Metadata = {
   title: "Categories — Explore Website Design by Industry",
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function CategoriesPage() {
-  const trending = TRENDING.map(getCategory).filter(Boolean);
+  const categories = liveCategories();
+  const trending = TRENDING.map(resolveCategory).filter(Boolean);
 
   return (
     <>
@@ -21,7 +23,7 @@ export default function CategoriesPage() {
         title="Explore by category."
         intro="Study how different industries approach typography, layout, colour and interaction. Pick a lane and see how a whole sector presents itself."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Categories" }]}
-        meta={`${STATS.total.toLocaleString()} references · ${STATS.categories} categories`}
+        meta={`${CANONICAL.length.toLocaleString()} references · ${categories.length} categories`}
       />
 
       {/* Trending */}
@@ -40,7 +42,7 @@ export default function CategoriesPage() {
       <section className="py-16 sm:py-20">
         <div className="wrap">
           <div className="flex items-end justify-between">
-            <h2 className="display text-3xl sm:text-4xl">All 22 categories</h2>
+            <h2 className="display text-3xl sm:text-4xl">All {categories.length} categories</h2>
             <Link
               href="/archive"
               className="font-mono text-[11px] uppercase tracking-wider text-ink/60 hover:text-orange"
@@ -50,7 +52,7 @@ export default function CategoriesPage() {
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CATEGORIES.map((c, i) => (
+            {categories.map((c, i) => (
               <Reveal key={c.slug} delay={(i % 3) * 60}>
                 <CategoryCard category={c} />
               </Reveal>

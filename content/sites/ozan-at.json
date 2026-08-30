@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000033",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "ozan.at",
+    "domain": "ozan.at",
+    "url": "https://ozan.at/mar",
+    "slug": "ozan-at",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Real Estate & Construction",
+    "subcategory": "Construction",
+    "website_type": "SaaS Landing Page",
+    "audience": [],
+    "confidence": 0.61,
+    "field_confidence": {
+      "category": 0.61,
+      "subcategory": 0.56,
+      "website_type": 0.75,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#956820",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f7f6f2"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#f7f6f2",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#956820",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#737378",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#5a5a60",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#2a2a2e",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          15,
+          36
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "ozan@ozan.at",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Varna, BG"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/ozanatmar",
+    "x": null
+  },
+  "seo": {
+    "title": "ozan.at",
+    "description": "I build the workflows, integrations, and small apps that founders need shipped this month."
+  },
+  "pages": {
+    "homepage": "https://ozan.at/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

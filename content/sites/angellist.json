@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000021",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "AngelList",
+    "domain": "angellist.com",
+    "url": "https://www.angellist.com/",
+    "slug": "angellist",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Investing",
+    "website_type": "Corporate Website",
+    "audience": [
+      "Investors",
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.91,
+    "field_confidence": {
+      "category": 0.91,
+      "subcategory": 0.86,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#001d21",
+    "secondary_color": null,
+    "accent_colors": [
+      "#002b31",
+      "#bdbbff"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#f3f4f2"
+    ],
+    "text_color": "#b2bfc1",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#b2bfc1",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#001d21",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f3f4f2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#002b31",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#bdbbff",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "angellist",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          18
+        ]
+      },
+      {
+        "name": "angellistDisplay",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          22,
+          80
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "team@nova.net",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/angellist",
+    "x": "https://www.x.com/angellist"
+  },
+  "seo": {
+    "title": "AngelList",
+    "description": "How GPs manage their funds, investors invest in startups, and capital moves between them."
+  },
+  "pages": {
+    "homepage": "https://www.angellist.com/",
+    "about": "https://www.angellist.com/about",
+    "contact": "https://www.angellist.com/contact",
+    "pricing": "https://www.angellist.com/pricing/venture-funds",
+    "careers": "https://www.angellist.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

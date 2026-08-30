@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000063",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Beacon",
+    "domain": "findyourbeacon.app",
+    "url": "https://findyourbeacon.app/",
+    "slug": "findyourbeacon",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Banking",
+    "website_type": "Web Application",
+    "audience": [
+      "Investors"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.84,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#223556",
+    "secondary_color": null,
+    "accent_colors": [
+      "#3f476a"
+    ],
+    "background_colors": [
+      "#0d1b2e",
+      "#e4e6ef"
+    ],
+    "text_color": "#f4f6f8",
+    "palette": [
+      {
+        "hex": "#0d1b2e",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f6f8",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#223556",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e4e6ef",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#3f476a",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          80
+        ]
+      },
+      {
+        "name": "Playfair Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          26,
+          96
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/find-your-beacon",
+    "x": null
+  },
+  "seo": {
+    "title": "Beacon",
+    "description": "Beacon is a private financial dashboard for exploring a transparent FI date based on the assumptions you choose."
+  },
+  "pages": {
+    "homepage": "https://findyourbeacon.app/",
+    "about": "https://findyourbeacon.app/about",
+    "contact": "https://findyourbeacon.app/cdn-cgi/l/email-protection#b6dfd8d0d9f6d0dfd8d2cfd9c3c4d4d3d7d5d9d898d7c6c6",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

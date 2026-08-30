@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
-import { assetBase, type CanonicalSite } from "@/lib/canonical";
+import SiteCard from "./SiteCard";
+import { assetBase, canonicalCards, type CanonicalSite } from "@/lib/canonical";
+import { CATEGORIES, categoryColor, type CardSite } from "@/lib/data";
 
 /* ── small building blocks ─────────────────────────────────────── */
 
@@ -20,8 +22,8 @@ function Shot({
   className?: string;
 }) {
   return (
-    <figure className={`overflow-hidden rounded-xl border border-line bg-chalk shadow-soft ${className}`}>
-      <figcaption className="flex items-center gap-1.5 border-b border-line bg-bone px-3.5 py-2.5">
+    <figure className={`overflow-hidden rounded-xl glass ${className}`}>
+      <figcaption className="flex items-center gap-1.5 border-b border-white/40 bg-white/30 px-3.5 py-2.5">
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
@@ -41,7 +43,7 @@ function Shot({
       </figcaption>
       {/* Full-page capture scrolls inside the window */}
       <div
-        className="no-scrollbar overflow-y-auto bg-white"
+        className="skeleton no-scrollbar overflow-y-auto"
         style={{ height }}
         tabIndex={0}
         aria-label={`${label} — scroll to view the full page`}
@@ -51,6 +53,7 @@ function Shot({
           src={src}
           alt={`${label} full-page screenshot`}
           loading={eager ? "eager" : "lazy"}
+          decoding="async"
           className="block w-full"
         />
       </div>
@@ -152,6 +155,20 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
       })),
   ];
 
+  // ── Similar sites in the same category (keeps the user in a loop) ──
+  const catName = classification.category ?? "";
+  const cat = catName
+    ? CATEGORIES.find((c) => c.name === catName || c.slug === catName)
+    : undefined;
+  const accent = categoryColor(catName);
+  const pool: CardSite[] = canonicalCards().filter((s) => s.slug !== identity.slug);
+  const sameCat = pool.filter((s) => s.categoryName === catName);
+  const similar = (
+    sameCat.length >= 4
+      ? sameCat
+      : [...sameCat, ...pool.filter((s) => !sameCat.includes(s))]
+  ).slice(0, 4);
+
   const techRows: { label: string; value?: string; state: "Detected" | "Likely" | "Not detected" }[] = [
     { label: "Framework", value: technology.framework.join(", "), state: technology.framework.length ? "Detected" : "Not detected" },
     { label: "CMS / Builder", value: technology.builder_cms.join(", "), state: technology.builder_cms.length ? "Detected" : "Not detected" },
@@ -165,8 +182,9 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="border-b border-line bg-paper">
-        <div className="wrap py-8 sm:py-10">
+      <section className="relative overflow-hidden border-b border-line bg-paper">
+        <span className="aura" aria-hidden />
+        <div className="wrap relative py-8 sm:py-10">
           <Breadcrumb
             items={[
               { href: "/", label: "Home" },
@@ -193,7 +211,9 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                     alt=""
                     width={40}
                     height={40}
-                    className="h-10 w-10 border border-line object-contain"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-10 w-10 rounded-lg border border-line bg-white object-contain p-1"
                   />
                 )}
                 <span className="font-mono text-sm uppercase tracking-wider text-muted">
@@ -266,7 +286,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
             </p>
             <div className="mt-4 space-y-2">
               {design.palette.map((p, i) => (
-                <div key={`${p.hex}-${i}`} className="flex items-center gap-4 border border-line bg-chalk p-2">
+                <div key={`${p.hex}-${i}`} className="glass flex items-center gap-4 rounded-lg p-2">
                   <span className="h-10 w-10 shrink-0 border border-line" style={{ backgroundColor: p.hex }} />
                   <div className="flex-1">
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">
@@ -289,7 +309,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
             </p>
             <div className="mt-4 space-y-3">
               {design.fonts.map((f) => (
-                <div key={f.name} className="border border-line bg-chalk p-4">
+                <div key={f.name} className="glass rounded-xl p-4">
                   <div className="flex items-baseline justify-between">
                     <span className="text-lg font-bold tracking-tight">{f.name}</span>
                     <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-orange">
@@ -314,7 +334,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
       {/* ── Technology + Confidence ── */}
       <Section eyebrow="Technology" title={technology.summary ? `Built with ${technology.summary}` : "Detected stack"}>
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-xl border border-line bg-chalk p-6">
+          <div className="glass-card p-6">
             {techRows.map((r) => (
               <Tech key={r.label} label={r.label} value={r.value} state={r.state} />
             ))}
@@ -324,7 +344,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
             </p>
           </div>
 
-          <div className="rounded-xl border border-line bg-chalk p-6">
+          <div className="glass-card p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
               Classification confidence
               {classification.confidence != null && (
@@ -362,7 +382,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
       <section className="py-12 sm:py-16">
         <div className="wrap grid gap-6 lg:grid-cols-2">
           {/* Contact */}
-          <div className="rounded-xl border border-line bg-chalk p-6">
+          <div className="glass-card p-6">
             <p className="eyebrow text-ink">Contact</p>
             <dl className="mt-5 space-y-3">
               {contact.email && (
@@ -424,6 +444,41 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
           </div>
         </div>
       </section>
+
+      {/* ── Similar sites — keep the user in a discovery loop ── */}
+      {similar.length > 0 && (
+        <section className="relative overflow-hidden border-t border-line bg-bone py-14 sm:py-20">
+          <span className="aura" aria-hidden />
+          <div className="wrap relative">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="eyebrow text-ink">More like this</p>
+                <h2 className="display mt-3 text-3xl sm:text-4xl">
+                  Similar {catName} sites
+                </h2>
+                <p className="mt-2 max-w-xl text-pretty text-[15px] leading-relaxed text-soft">
+                  Keep exploring the same corner of the archive — related brands
+                  studied the same way.
+                </p>
+              </div>
+              <Link
+                href={cat ? `/c/${cat.slug}` : "/archive"}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-medium transition-colors"
+                style={{ backgroundColor: `${accent}18`, color: accent }}
+              >
+                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: accent }} />
+                {cat ? `All ${cat.name}` : "Browse archive"} →
+              </Link>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
+              {similar.map((s, i) => (
+                <SiteCard key={s.slug} site={s} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

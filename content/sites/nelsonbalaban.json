@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000260",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "GlobalAppeal\u00ae",
+    "domain": "nelsonbalaban.com",
+    "url": "https://nelsonbalaban.com/",
+    "slug": "nelsonbalaban",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": null,
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.59,
+    "field_confidence": {
+      "category": 0.59,
+      "subcategory": null,
+      "website_type": 0.67,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ffffff",
+      "#e0e0e0"
+    ],
+    "text_color": "#292a2c",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#292a2c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0e0e0",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Open Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      },
+      {
+        "name": "Host Grotesk",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          100
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Corporate / Clean"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "Apache"
+    ]
+  },
+  "contact": {
+    "email": "nelson@nelsonbalaban.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "GlobalAppeal\u00ae",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://nelsonbalaban.com/",
+    "about": "https://nelsonbalaban.com/about",
+    "contact": "https://nelsonbalaban.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

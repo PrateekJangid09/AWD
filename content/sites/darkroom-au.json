@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000101",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Darkroom",
+    "domain": "darkroom.au",
+    "url": "https://www.darkroom.au/",
+    "slug": "darkroom-au",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Graphic Design",
+    "website_type": "Product Website",
+    "audience": [],
+    "confidence": 0.78,
+    "field_confidence": {
+      "category": 0.78,
+      "subcategory": 0.73,
+      "website_type": 0.82,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#2426fa",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0d0d0d",
+      "#efeee8"
+    ],
+    "text_color": "#b3b2ac",
+    "palette": [
+      {
+        "hex": "#0d0d0d",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b3b2ac",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2426fa",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#2f2f2f",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#212121",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#efeee8",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Suisseintlmono Webs",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "Suisseintl Webs",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          40
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "Bunny CDN",
+      "jsDelivr",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@darkroom.au",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Melbourne, VIC, AU"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Darkroom",
+    "description": "Premium product mockups with complete control. Can mockups, bottle mockups, box mockups, screen mockups and more. Made in Melbourne, Australia. @darkroom.psd"
+  },
+  "pages": {
+    "homepage": "https://www.darkroom.au/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://www.darkroom.au/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000078",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Runey",
+    "domain": "runey.app",
+    "url": "https://runey.app/",
+    "slug": "runey",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.74,
+    "field_confidence": {
+      "category": 0.74,
+      "subcategory": null,
+      "website_type": 0.86,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#d1fae5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#fafafa",
+      "#ebebeb"
+    ],
+    "text_color": "#1a1a1a",
+    "palette": [
+      {
+        "hex": "#fafafa",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d1fae5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ebebeb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#757575",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Poppins",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          64
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Runey",
+    "description": "Manage your freelance business in one place \u2014 invoices, projects, clients, expenses, and proposals."
+  },
+  "pages": {
+    "homepage": "https://runey.app/",
+    "about": "https://runey.app/about",
+    "contact": "https://runey.app/contact",
+    "pricing": "https://runey.app/pricing",
+    "careers": "https://runey.app/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

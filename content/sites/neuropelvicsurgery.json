@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000046",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Neuropelvic Surgery",
+    "domain": "neuropelvicsurgery.com",
+    "url": "https://neuropelvicsurgery.com/",
+    "slug": "neuropelvicsurgery",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Healthcare & Wellness",
+    "subcategory": "Medical",
+    "website_type": "Healthcare Website",
+    "audience": [
+      "Patients",
+      "B2C",
+      "Healthcare Professionals"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ff5900",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#121212",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#121212",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff5900",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Aspekta",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          81
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "LiteSpeed"
+    ]
+  },
+  "contact": {
+    "email": "office@wpsnj.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Neuropelvic Surgery",
+    "description": "Embrace a unique opportunity to enter the first-ever fellowship in minimally invasive and robotic neuropelvic surgery. Under Dr. Khashayar Shakiba\u2019s leadership, help shape and elevate the future of this crucial, underserved specialty"
+  },
+  "pages": {
+    "homepage": "https://neuropelvicsurgery.com/",
+    "about": "https://neuropelvicsurgery.com/about-us/",
+    "contact": "https://neuropelvicsurgery.com/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

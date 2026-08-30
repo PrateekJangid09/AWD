@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000021",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Johnyvino",
+    "domain": "johnyvino.com",
+    "url": "https://johnyvino.com/",
+    "slug": "johnyvino",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Professional Services",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": 0.63,
+    "field_confidence": {
+      "category": 0.63,
+      "subcategory": 0.58,
+      "website_type": 0.67,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#09090b",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#09090b",
+      "#ffffff"
+    ],
+    "text_color": "#e6e6e6",
+    "palette": [
+      {
+        "hex": "#09090b",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e6e6e6",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#999999",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#666666",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Johnyvino Text",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          17,
+          180
+        ]
+      },
+      {
+        "name": "Johnyvino Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          17
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hi@johnyvino.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/johnyvino",
+    "x": "https://x.com/johnyvinoo"
+  },
+  "seo": {
+    "title": "Johnyvino",
+    "description": "Product and UX/UI designer specializing in crafting functional, visually appealing experiences. With expertise in interaction and motion design, he combines strategic thinking and creativity to deliver impactful, user-focused designs."
+  },
+  "pages": {
+    "homepage": "https://johnyvino.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

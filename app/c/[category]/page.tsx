@@ -4,10 +4,19 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import SiteCard from "@/components/SiteCard";
 import Reveal from "@/components/Reveal";
-import { CATEGORIES, getCategory, sitesInCategory } from "@/lib/data";
+import { CATEGORIES } from "@/lib/data";
+import {
+  canonicalCardsInCategory,
+  liveCategories,
+  resolveCategory,
+} from "@/lib/canonical";
 
 export function generateStaticParams() {
-  return CATEGORIES.map((c) => ({ category: c.slug }));
+  const slugs = new Set([
+    ...CATEGORIES.map((c) => c.slug),
+    ...liveCategories().map((c) => c.slug),
+  ]);
+  return [...slugs].map((category) => ({ category }));
 }
 
 export async function generateMetadata({
@@ -16,7 +25,7 @@ export async function generateMetadata({
   params: Promise<{ category: string }>;
 }): Promise<Metadata> {
   const { category } = await params;
-  const cat = getCategory(category);
+  const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
   return {
     title: `${cat.name} Website Design — ${cat.count} References`,
@@ -30,18 +39,21 @@ export default async function CategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
-  const cat = getCategory(category);
+  const cat = resolveCategory(category);
   if (!cat) notFound();
 
-  // Show ONLY records that genuinely belong to this category.
-  const records = sitesInCategory(cat.slug);
+  const records = canonicalCardsInCategory(cat.slug);
 
   return (
     <>
-      {/* Header (compact / utility) */}
-      <section className="border-b border-line bg-paper">
-        <span className="block h-1 w-full" style={{ backgroundColor: cat.accent }} />
-        <div className="wrap py-10 sm:py-12">
+      {/* Header — colour-forward */}
+      <section className="relative overflow-hidden border-b border-line bg-paper">
+        <div
+          className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full opacity-20 blur-[80px]"
+          style={{ background: cat.accent }}
+          aria-hidden
+        />
+        <div className="wrap relative py-10 sm:py-14">
           <Breadcrumb
             items={[
               { href: "/", label: "Home" },
@@ -49,21 +61,21 @@ export default async function CategoryPage({
               { label: cat.name },
             ]}
           />
-          <h1 className="display mt-6 text-4xl sm:text-6xl">{cat.name}</h1>
+          <span
+            className="mt-6 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[12px] font-medium"
+            style={{ backgroundColor: `${cat.accent}18`, color: cat.accent }}
+          >
+            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: cat.accent }} />
+            {cat.count.toLocaleString()} references · {cat.share} of archive
+          </span>
+          <h1 className="display mt-4 text-4xl sm:text-6xl">{cat.name}</h1>
           <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-soft">
             {cat.blurb}
           </p>
-          <div className="mt-5 flex flex-wrap items-center gap-4">
-            <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">
-              {cat.count.toLocaleString()} references · {cat.share} of archive
-            </span>
-            <span className="flex flex-wrap gap-2">
-              {cat.descriptors.map((d) => (
-                <span key={d} className="tag">
-                  {d}
-                </span>
-              ))}
-            </span>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {cat.descriptors.map((d) => (
+              <span key={d} className="tag">{d}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -88,10 +100,10 @@ export default async function CategoryPage({
                   Search the archive →
                 </Link>
               </div>
-              <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+              <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
                 {records.map((site, i) => (
-                  <Reveal key={site.slug} delay={(i % 3) * 70}>
-                    <SiteCard site={site} index={i} />
+                  <Reveal key={site.slug} delay={(i % 4) * 60}>
+                    <SiteCard site={site} />
                   </Reveal>
                 ))}
               </div>
@@ -134,25 +146,26 @@ export default async function CategoryPage({
         </div>
       </section>
 
-      {/* Related categories */}
-      <section className="bg-ink py-12 text-paper">
+      {/* Related categories — colourful */}
+      <section className="bg-ink py-14 text-paper">
         <div className="wrap">
           <p className="eyebrow text-white/90">Explore more</p>
-          <div className="mt-5 flex flex-wrap gap-2.5">
+          <div className="mt-6 flex flex-wrap gap-2.5">
             {CATEGORIES.filter((c) => c.slug !== cat.slug)
-              .slice(0, 10)
+              .slice(0, 12)
               .map((c) => (
                 <Link
                   key={c.slug}
                   href={`/c/${c.slug}`}
-                  className="border border-white/25 px-3 py-1.5 text-[12px] uppercase tracking-wider text-white/70 transition-colors hover:border-orange hover:text-orange"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[13px] text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                 >
+                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
                   {c.name}
                 </Link>
               ))}
             <Link
               href="/c"
-              className="border border-orange bg-orange px-3 py-1.5 text-[12px] uppercase tracking-wider text-white"
+              className="inline-flex items-center rounded-full bg-orange px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-orange-600"
             >
               All categories →
             </Link>

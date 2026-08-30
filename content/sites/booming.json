@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000131",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Booming Agency",
+    "domain": "booming.agency",
+    "url": "https://booming.agency/",
+    "slug": "booming",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": "SEO",
+    "website_type": "Product Website",
+    "audience": [],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.64,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#141313",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ffffff",
+      "#ff6900",
+      "#cf2e2e",
+      "#fcb900"
+    ],
+    "background_colors": [],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#141313",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff6900",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#cf2e2e",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#fcb900",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "HelveticaNowDisplay",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "13px",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "20px",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      },
+      {
+        "name": "36px",
+        "role": "body",
+        "weights": [],
+        "sizes": []
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "say.hi@booming.agency",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Boldershof 69 3811GS Amersfoort"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/booming-agency",
+    "x": null
+  },
+  "seo": {
+    "title": "Booming Agency",
+    "description": "Impact maken met datagedreven en resultaatgerichte \u2713 landingspagina\u2019s \u2713 websites \u2713 webshops \u2713 online marketing campagnes!"
+  },
+  "pages": {
+    "homepage": "https://booming.agency/",
+    "about": "not found",
+    "contact": "https://booming.agency/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

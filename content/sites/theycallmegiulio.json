@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000116",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "They Call Me Giulio :: Creative Technologist & Developer",
+    "domain": "theycallmegiulio.com",
+    "url": "https://www.theycallmegiulio.com/",
+    "slug": "theycallmegiulio",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Developer",
+    "website_type": "Personal Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.66,
+    "field_confidence": {
+      "category": 0.66,
+      "subcategory": 0.61,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#566e7f",
+    "secondary_color": null,
+    "accent_colors": [
+      "#7f9eb3",
+      "#30383e"
+    ],
+    "background_colors": [
+      "#000000",
+      "#d9eaf5"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#566e7f",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#7f9eb3",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#30383e",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9eaf5",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ubuntu-mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "They Call Me Giulio :: Creative Technologist & Developer",
+    "description": "The portfolio of Giulio, a Creative Technologist building high-performance digital experiences through interactive design and advanced front-end engineering"
+  },
+  "pages": {
+    "homepage": "https://www.theycallmegiulio.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

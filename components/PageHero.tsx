@@ -15,6 +15,7 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-line bg-paper">
+      <span className="aura" aria-hidden />
       <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
       <div className="wrap relative py-16 sm:py-24">
         {breadcrumb && (

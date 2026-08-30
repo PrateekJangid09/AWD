@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000300",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "mprez\u00ae",
+    "domain": "mprez.fr",
+    "url": "https://www.mprez.fr/",
+    "slug": "mprez",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Professional Services",
+    "website_type": "Web Application",
+    "audience": [
+      "B2B",
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.69,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#06282d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#5237f9",
+      "#dbff9b"
+    ],
+    "background_colors": [
+      "#010211",
+      "#ffffff"
+    ],
+    "text_color": "#c4cadf",
+    "palette": [
+      {
+        "hex": "#010211",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c4cadf",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#06282d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#5237f9",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#dbff9b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Aeonik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          28
+        ]
+      },
+      {
+        "name": "National 2 Compressed",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          56,
+          173
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "contact@mprez.fr",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "77 Rue des Archives, Paris, 250, 75003, FR"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/mprez",
+    "x": null
+  },
+  "seo": {
+    "title": "mprez\u00ae",
+    "description": "L\u2019agence PowerPoint de r\u00e9f\u00e9rence, avec +10000 pr\u00e9sentations \u00e0 son actif. Nous designons vos slides, vous marquez les esprits."
+  },
+  "pages": {
+    "homepage": "https://www.mprez.fr/",
+    "about": "not found",
+    "contact": "https://www.mprez.fr/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

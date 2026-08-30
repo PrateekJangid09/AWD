@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000119",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Fudali Studio",
+    "domain": "fudali.studio",
+    "url": "https://fudali.studio/",
+    "slug": "fudali",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.72,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#6f63e9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#241b4b"
+    ],
+    "background_colors": [
+      "#000000",
+      "#d1d3dd"
+    ],
+    "text_color": "#85838e",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#85838e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6f63e9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#d1d3dd",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#18181b",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#241b4b",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Mona Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          27
+        ]
+      },
+      {
+        "name": "Nohemi Light",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          39,
+          120
+        ]
+      },
+      {
+        "name": "Nohemi Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          20,
+          36
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hi@fudali.studiocopiedcopied",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/krzysztof-adamski",
+    "x": null
+  },
+  "seo": {
+    "title": "Fudali Studio",
+    "description": "Building brands ready for tommorow // brand strategy, brand design, web design, no-code development."
+  },
+  "pages": {
+    "homepage": "https://fudali.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

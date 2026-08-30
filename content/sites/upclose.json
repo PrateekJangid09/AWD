@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000088",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Upclose",
+    "domain": "upclose.studio",
+    "url": "https://upclose.studio/",
+    "slug": "upclose",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Development",
+    "website_type": "Portfolio",
+    "audience": [
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.83,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#181816",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#181816",
+      "#dadada",
+      "#cecece",
+      "#f2f0ec"
+    ],
+    "text_color": "#b3b3b3",
+    "palette": [
+      {
+        "hex": "#181816",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b3b3b3",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#dadada",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#cecece",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2f0ec",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABCDiatype",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      },
+      {
+        "name": "IvoryLLSub",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          26,
+          48
+        ]
+      },
+      {
+        "name": "ABCDiatypeSemiMono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@upclose.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/weareupclose",
+    "x": null
+  },
+  "seo": {
+    "title": "Upclose",
+    "description": "It\u2019s not every day you find web coders with a design eye. Upclose is a design-driven web development studio. We turn refined designs into responsive, high-performance websites that look as good as they perform."
+  },
+  "pages": {
+    "homepage": "https://upclose.studio/",
+    "about": "https://upclose.studio/about",
+    "contact": "https://upclose.studio/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

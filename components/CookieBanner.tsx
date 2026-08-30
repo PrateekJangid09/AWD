@@ -31,7 +31,7 @@ export default function CookieBanner() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-[60] p-3 sm:p-5">
       <div className="wrap">
-        <div className="flex flex-col gap-4 rounded-xl border border-line bg-paper p-5 shadow-soft-lg md:flex-row md:items-center md:justify-between">
+        <div className="glass-strong flex flex-col gap-4 rounded-2xl p-5 shadow-soft-lg md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow text-ink">Cookies</p>
             <p className="mt-2.5 text-sm leading-relaxed text-soft">

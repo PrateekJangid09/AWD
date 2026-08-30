@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000176",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Remote Jobs",
+    "domain": "remotejobs.com",
+    "url": "https://www.remotejobs.com/",
+    "slug": "remotejobs",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Job Board",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Consumers"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.81,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0d6efd",
+    "secondary_color": null,
+    "accent_colors": [
+      "#64748b"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e2e8f0"
+    ],
+    "text_color": "#1e293b",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1e293b",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0d6efd",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e2e8f0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#64748b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#171717",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          30
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "JavaScript",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/remotejobs"
+  },
+  "seo": {
+    "title": "Remote Jobs",
+    "description": "Find remote jobs in design, development, marketing, finance, management, customer support and more. Remote work is here!"
+  },
+  "pages": {
+    "homepage": "https://www.remotejobs.com/",
+    "about": "not found",
+    "contact": "https://www.remotejobs.com/contact",
+    "pricing": "https://www.remotejobs.com/pricing",
+    "careers": "https://www.remotejobs.com/jobs?page=2"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

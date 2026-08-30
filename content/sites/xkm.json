@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000277",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "XKM Studio",
+    "domain": "xkm.studio",
+    "url": "https://xkm.studio/",
+    "slug": "xkm",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": null,
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": null,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#ececec",
+      "#bbbbbb",
+      "#d9d9d9"
+    ],
+    "text_color": "#8f8f8f",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#8f8f8f",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ececec",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#bbbbbb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9d9d9",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "TeX Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          35
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@xkm.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "XKM Studio",
+    "description": "A Comprehensive Creative Company"
+  },
+  "pages": {
+    "homepage": "https://xkm.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

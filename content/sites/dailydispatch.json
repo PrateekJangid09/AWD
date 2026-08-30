@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000085",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "The Daily Dispatch",
+    "domain": "dailydispatch.app",
+    "url": "https://www.dailydispatch.app/",
+    "slug": "dailydispatch",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Social Networks",
+    "website_type": null,
+    "audience": [
+      "Fans"
+    ],
+    "confidence": 0.72,
+    "field_confidence": {
+      "category": 0.72,
+      "subcategory": 0.67,
+      "website_type": null,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f54001",
+    "secondary_color": null,
+    "accent_colors": [
+      "#8a7d6b"
+    ],
+    "background_colors": [
+      "#ece4d9",
+      "#f4f0ea"
+    ],
+    "text_color": "#4f483e",
+    "palette": [
+      {
+        "hex": "#ece4d9",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#4f483e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f54001",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f0ea",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#8a7d6b",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          8,
+          26
+        ]
+      },
+      {
+        "name": "Perfectly Nineties",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          24,
+          108
+        ]
+      },
+      {
+        "name": "Myfont",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          22,
+          22
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "The Daily Dispatch",
+    "description": "The Daily Dispatch is a personalized digital publication that delivers daily briefings on people or companies you follow, topics or stocks you're interested in, by sourcing Twitter, blogs, substacks, stocks and other sources."
+  },
+  "pages": {
+    "homepage": "https://www.dailydispatch.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

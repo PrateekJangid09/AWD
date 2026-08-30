@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000080",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "WebInspoo",
+    "domain": "webinspoo.com",
+    "url": "https://webinspoo.com/",
+    "slug": "webinspoo",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "SaaS Website",
+    "audience": [
+      "Enterprises",
+      "Developers",
+      "Startups"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.8,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#266df0",
+    "secondary_color": null,
+    "accent_colors": [
+      "#9162f9",
+      "#fd9038",
+      "#3b82f6"
+    ],
+    "background_colors": [
+      "#141414"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#141414",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#266df0",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#9162f9",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#fd9038",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#3b82f6",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "sanss",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow Next.js on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "experiences@scale.load",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/taher_max_"
+  },
+  "seo": {
+    "title": "WebInspoo",
+    "description": "Browse 1,200+ curated SaaS websites and filter by category, font, color palette, tech stack, and page type. Updated daily."
+  },
+  "pages": {
+    "homepage": "https://webinspoo.com/",
+    "about": "https://webinspoo.com/category/saas-about-page-examples",
+    "contact": "https://webinspoo.com/category/saas-contact-us-page-examples",
+    "pricing": "https://webinspoo.com/inspiration/zamp-landing-page",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -12,7 +12,7 @@ const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null> }[] = 
   { href: "/c", label: "Categories", menu: "categories" },
   { href: "/tools", label: "Tools", menu: "tools" },
   { href: "/research/website-design-index-2026", label: "Research" },
-  { href: "/blogs", label: "Journal" },
+  { href: "/blogs", label: "Resources" },
 ];
 
 export default function Nav() {
@@ -31,7 +31,7 @@ export default function Nav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/50 bg-white/60 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/55">
       <div className="wrap flex h-16 items-center justify-between gap-4">
         <Logo />
 
@@ -92,13 +92,13 @@ export default function Nav() {
           onMouseLeave={scheduleClose}
         >
           <div className="wrap">
-            <div className="anim-up ml-auto w-full border border-line bg-paper shadow-soft-lg" style={{ animationDuration: "0.28s" }}>
+            <div className="glass-strong anim-up ml-auto mt-2 w-full overflow-hidden rounded-2xl shadow-soft-lg" style={{ animationDuration: "0.28s" }}>
               {menu === "categories" ? (
                 <div className="p-6">
                   <div className="mb-4 flex items-center justify-between">
                     <p className="eyebrow text-ink">Browse by category</p>
-                    <Link href="/c" className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink hover:text-orange">
-                      All 22 categories →
+                    <Link href="/c" className="text-[13px] font-medium text-soft hover:text-ink">
+                      All 22 →
                     </Link>
                   </div>
                   <div className="grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3 lg:grid-cols-4">
@@ -110,12 +110,12 @@ export default function Nav() {
                         className="group flex items-center justify-between border-b border-line/60 py-2.5"
                       >
                         <span className="flex items-center gap-2.5">
-                          <span className="h-2 w-2" style={{ backgroundColor: c.accent }} />
-                          <span className="text-sm font-medium text-soft group-hover:text-orange">
+                          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
+                          <span className="text-sm text-soft group-hover:text-ink">
                             {c.name}
                           </span>
                         </span>
-                        <span className="font-mono text-[11px] text-muted">{c.count.toLocaleString()}</span>
+                        <span className="text-[11px] text-muted">{c.count.toLocaleString()}</span>
                       </Link>
                     ))}
                   </div>
@@ -124,25 +124,25 @@ export default function Nav() {
                 <div className="p-6">
                   <div className="mb-4 flex items-center justify-between">
                     <p className="eyebrow text-ink">Free design tools</p>
-                    <Link href="/tools" className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink hover:text-orange">
+                    <Link href="/tools" className="text-[13px] font-medium text-soft hover:text-ink">
                       All tools →
                     </Link>
                   </div>
-                  <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                     {TOOLS.map((t) => (
                       <a
                         key={t.slug}
                         href={`/tools/${t.slug}`}
                         onClick={() => setMenu(null)}
-                        className="group flex items-center gap-3 border border-line bg-paper p-3 transition-colors hover:border-line-strong"
+                        className="glass-card group flex items-center gap-3 p-3 hover:-translate-y-0.5"
                       >
-                        <span className="flex h-9 w-9 shrink-0 overflow-hidden border border-line">
+                        <span className="flex h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-line">
                           {t.swatches.map((s) => (
                             <span key={s} className="flex-1" style={{ backgroundColor: s }} />
                           ))}
                         </span>
                         <span className="min-w-0">
-                          <span className="block truncate text-sm font-bold tracking-tight group-hover:text-orange">
+                          <span className="block truncate text-sm font-medium tracking-tight group-hover:text-ink">
                             {t.name}
                           </span>
                           <span className="block truncate text-[11px] text-muted">{t.tagline}</span>
@@ -159,7 +159,7 @@ export default function Nav() {
 
       {/* ── Mobile menu ── */}
       {open && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-paper lg:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-white/50 bg-white/80 backdrop-blur-xl lg:hidden">
           <div className="wrap flex flex-col py-3">
             {LINKS.map((l) =>
               l.menu ? (

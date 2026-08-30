@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000318",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "GT Walsheim Font Family \u2022 Supports Latin and Cyrillic Languages \u2022 Exclusively available at Grilli Type \u2022 Download Free Trial Fonts",
+    "domain": "gt-walsheim.com",
+    "url": "https://gt-walsheim.com/",
+    "slug": "gt-walsheim",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": "Comparison Website",
+    "audience": [
+      "Developers",
+      "B2C"
+    ],
+    "confidence": 0.61,
+    "field_confidence": {
+      "category": 0.61,
+      "subcategory": null,
+      "website_type": 0.79,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#111111",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GT-Walsheim-Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          50
+        ]
+      },
+      {
+        "name": "gt-walsheim-medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          101,
+          432
+        ]
+      },
+      {
+        "name": "gt-walsheim-bold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          64,
+          64
+        ]
+      },
+      {
+        "name": "gt-walsheim-condensed-medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          173,
+          173
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "GT Walsheim Font Family \u2022 Supports Latin and Cyrillic Languages \u2022 Exclusively available at Grilli Type \u2022 Download Free Trial Fonts",
+    "description": "Inspired by the lettering of Swiss poster designer legend Otto Baumberger from the 1930s, GT Walsheim is a friendly geometric sans serif. Exclusively available at Grilli Type."
+  },
+  "pages": {
+    "homepage": "https://gt-walsheim.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

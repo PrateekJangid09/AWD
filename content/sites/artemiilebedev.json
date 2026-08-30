@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000158",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Artemii Lebedev - Art Director & Designer Portfolio",
+    "domain": "artemiilebedev.com",
+    "url": "https://artemiilebedev.com/",
+    "slug": "artemiilebedev",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Designer",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.58,
+    "field_confidence": {
+      "category": 0.58,
+      "subcategory": 0.53,
+      "website_type": 0.62,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "text_color": "#f1f1f1",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f1f1f1",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Fragment Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "projectscommissionshello@artemiilebedev.comcurrently",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/art-lebedev-design",
+    "x": "https://x.com/artemiulebedev"
+  },
+  "seo": {
+    "title": "Artemii Lebedev - Art Director & Designer Portfolio",
+    "description": "Art director and designer creating meaningful brand experiences. View recent launches including Ponder AI, Cantor8, and more. Based in Belgrade & New York."
+  },
+  "pages": {
+    "homepage": "https://artemiilebedev.com/",
+    "about": "not found",
+    "contact": "https://artemiilebedev.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

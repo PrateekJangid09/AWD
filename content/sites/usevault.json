@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000008",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Vault AI",
+    "domain": "usevault.ai",
+    "url": "https://www.usevault.ai/",
+    "slug": "usevault",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Automation",
+    "website_type": "Product Website",
+    "audience": [
+      "B2C",
+      "Startups"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.75,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#25222c",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#03020b",
+      "#ededfa",
+      "#bfbfbf"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#03020b",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#25222c",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ededfa",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#bfbfbf",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Outfit",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          18
+        ]
+      },
+      {
+        "name": "clashDisplay",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          20,
+          64
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/usevault-ai",
+    "x": null
+  },
+  "seo": {
+    "title": "Vault AI",
+    "description": "AI-native platform to track transactions, generate reports, and automate manual financial work, built for SMBs."
+  },
+  "pages": {
+    "homepage": "https://www.usevault.ai/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

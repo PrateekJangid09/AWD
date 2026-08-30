@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000302",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Mcube",
+    "domain": "mcube.fr",
+    "url": "https://www.mcube.fr/",
+    "slug": "mcube",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Telecommunications",
+    "subcategory": null,
+    "website_type": "Documentation Website",
+    "audience": [],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": null,
+      "website_type": 0.59,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ee5f8f",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff1c65",
+      "#ff407d"
+    ],
+    "background_colors": [
+      "#1a122a"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#1a122a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ee5f8f",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff1c65",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff407d",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Ogg",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          25,
+          77
+        ]
+      },
+      {
+        "name": "Inconsolata",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "contact@mcube.fr",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/mcube-l'agence-web/about",
+    "x": null
+  },
+  "seo": {
+    "title": "Mcube",
+    "description": "Mcube est une agence web \u00e0 Lyon. Nous sommes sp\u00e9cialis\u00e9s dans le d\u00e9veloppement de sites Internet et la strat\u00e9gie digitale. D\u00e9couvrez notre agence digitale et nos expertises dans la cr\u00e9ation de sites web."
+  },
+  "pages": {
+    "homepage": "https://www.mcube.fr/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

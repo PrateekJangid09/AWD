@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000225",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Wicked Templates",
+    "domain": "wickedtemplates.com",
+    "url": "https://www.wickedtemplates.com/",
+    "slug": "wickedtemplates",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Graphic Design",
+    "website_type": "Product Website",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#313340",
+    "secondary_color": null,
+    "accent_colors": [
+      "#e34f26"
+    ],
+    "background_colors": [
+      "#1e2028"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#1e2028",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#313340",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#a0a1b2",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e34f26",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          80
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "JavaScript on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "wickedtempl@es.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/WickedTemplates"
+  },
+  "seo": {
+    "title": "Wicked Templates",
+    "description": "Wicked templates offers premium Tailwind UI Kits. Uniquely designed, each set ships with hundreds of perfectly crafted HTML files ready to use in your next project."
+  },
+  "pages": {
+    "homepage": "https://www.wickedtemplates.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://www.wickedtemplates.com/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

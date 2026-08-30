@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000244",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Magic as a Service\u2122",
+    "domain": "maas.engineering",
+    "url": "https://maas.engineering/",
+    "slug": "maas-engineering",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": "Resource Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.66,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#ffb31a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0a85ff",
+      "#ff531a"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffb31a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a85ff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff531a",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#141415",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Mirage",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          22
+        ]
+      },
+      {
+        "name": "Index",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "elev@e.interaction",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Magic as a Service\u2122",
+    "description": "Magic as a Service\u2122 is a creative-engineering company, delivering digital products and services that equip others to build cutting-edge experiences."
+  },
+  "pages": {
+    "homepage": "https://maas.engineering/",
+    "about": "https://maas.engineering/about",
+    "contact": "https://maas.engineering/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

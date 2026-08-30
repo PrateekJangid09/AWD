@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000076",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Revone",
+    "domain": "revone.app",
+    "url": "https://revone.app/",
+    "slug": "revone",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "Web Application",
+    "audience": [],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.74,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#5f61ed",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#5f61ed",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#0d0d0d",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#2e2e2e",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Satoshi",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          169
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/soltwagner"
+  },
+  "seo": {
+    "title": "Revone",
+    "description": "Revone is a native macOS app that helps you track revenue across Stripe, Gumroad, Lemon Squeezy, Polar, Paddle, RevenueCat, and more \u2014 with dashboards, orders, subscribers, widgets, and menu bar insights."
+  },
+  "pages": {
+    "homepage": "https://revone.app/",
+    "about": "not found",
+    "contact": "https://revone.app/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

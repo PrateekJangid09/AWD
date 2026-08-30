@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000034",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Printable Mockups",
+    "domain": "printablemockups.com",
+    "url": "https://www.printablemockups.com/",
+    "slug": "printablemockups",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Graphic Design",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "Designers",
+      "Agencies"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.83,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0f1428",
+    "secondary_color": null,
+    "accent_colors": [
+      "#e85d1f"
+    ],
+    "background_colors": [
+      "#fbfaf7",
+      "#eceae3"
+    ],
+    "text_color": "#6b6b6b",
+    "palette": [
+      {
+        "hex": "#fbfaf7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b6b6b",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0f1428",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#111111",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e85d1f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#eceae3",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Onest",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          88
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "githubcontact@printablemockups.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Printable Mockups",
+    "description": "Design your own printable UI mockups and wireframes with the drag-and-drop builder. Pick device frames, arrange your layout, export and print. Free and open source."
+  },
+  "pages": {
+    "homepage": "https://www.printablemockups.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

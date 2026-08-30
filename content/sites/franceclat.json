@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000044",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Rendez-vous Franc\u00e9clat",
+    "domain": "franceclat.fr",
+    "url": "https://rendez-vous.franceclat.fr/",
+    "slug": "franceclat",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Magazines",
+    "website_type": "Blog",
+    "audience": [],
+    "confidence": 0.7,
+    "field_confidence": {
+      "category": 0.7,
+      "subcategory": 0.65,
+      "website_type": 0.74,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#de184b",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#de184b",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABC Diatype",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          68
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "emergence@franceclat.fr",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Rendez-vous Franc\u00e9clat",
+    "description": "La nouvelle sc\u00e8ne cr\u00e9ative de la bijouterie/joaillerie fran\u00e7aise : il s'agit d'un nouvel \u00e9v\u00e9nement professionnel lanc\u00e9 par Franc\u00e9clat."
+  },
+  "pages": {
+    "homepage": "https://rendez-vous.franceclat.fr/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

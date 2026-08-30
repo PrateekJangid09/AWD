@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000234",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "INSIDE",
+    "domain": "insd.pro",
+    "url": "https://insd.pro/",
+    "slug": "insd-pro",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.62,
+    "field_confidence": {
+      "category": 0.62,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#050505",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#050505"
+    ],
+    "text_color": "#f4f4f4",
+    "palette": [
+      {
+        "hex": "#050505",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f4f4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#8a8a8a",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "TT Commons Pro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          91
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "INSIDE",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://insd.pro/",
+    "about": "https://insd.pro/about",
+    "contact": "https://insd.pro/contact",
+    "pricing": "https://insd.pro/pricing",
+    "careers": "https://insd.pro/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000068",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Download Playbook: Ship Apps & Product Features That Users Adopt Instantly",
+    "domain": "consumerapp.studio",
+    "url": "https://www.consumerapp.studio/",
+    "slug": "consumerapp",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": null,
+    "website_type": "Product Website",
+    "audience": [
+      "B2C",
+      "Consumers"
+    ],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": null,
+      "website_type": 0.86,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#3279f2",
+    "secondary_color": null,
+    "accent_colors": [
+      "#b9f0b0"
+    ],
+    "background_colors": [
+      "#f8f8f8"
+    ],
+    "text_color": "#0a0a0a",
+    "palette": [
+      {
+        "hex": "#f8f8f8",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a0a0a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#3279f2",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#b9f0b0",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#444447",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b6c6e",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Open Sauce Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          52
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "bartek@consumerapp.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/pwellgraf",
+    "x": "https://x.com/bartek_marzec"
+  },
+  "seo": {
+    "title": "Download Playbook: Ship Apps & Product Features That Users Adopt Instantly",
+    "description": "Solve high-leverage product challenges in any scenario."
+  },
+  "pages": {
+    "homepage": "https://www.consumerapp.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000043",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Mockup Lab",
+    "domain": "kevin.tools",
+    "url": "https://kevin.tools/",
+    "slug": "kevin-tools",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Prototyping",
+    "website_type": "Product Website",
+    "audience": [
+      "Designers",
+      "Developers"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.79,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#f1f1f1",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f1f1f1",
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#f1f1f1",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#262323",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#171717",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Reddit Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          14,
+          15
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          21
+        ]
+      },
+      {
+        "name": "Stringer",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          30,
+          104
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/kevin_tools_hq"
+  },
+  "seo": {
+    "title": "Mockup Lab",
+    "description": "Build custom mockup scenes, edit and upscale, organize by project & share with anyone."
+  },
+  "pages": {
+    "homepage": "https://kevin.tools/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

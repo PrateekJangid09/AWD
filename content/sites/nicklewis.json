@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000147",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Nick Lewis freelance web developer",
+    "domain": "nicklewis.dev",
+    "url": "https://nicklewis.dev/",
+    "slug": "nicklewis",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Nonprofit & Social Impact",
+    "subcategory": "Sustainability",
+    "website_type": "Personal Portfolio",
+    "audience": [],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.89,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ffcb70",
+    "secondary_color": null,
+    "accent_colors": [
+      "#4158d0"
+    ],
+    "background_colors": [
+      "#151411",
+      "#ffffff"
+    ],
+    "text_color": "#cccccc",
+    "palette": [
+      {
+        "hex": "#151411",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#cccccc",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffcb70",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#4158d0",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#262522",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Safiro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          17,
+          68
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "LiteSpeed"
+    ]
+  },
+  "contact": {
+    "email": "hello@nicklewis.dev",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/nick-lewis-sustainable-dev",
+    "x": "https://x.com/nickylewlew"
+  },
+  "seo": {
+    "title": "Nick Lewis freelance web developer",
+    "description": "Sustainable web design and development delivering high impact. High performance WordPress websites that are low-carbon and lighter on the planet."
+  },
+  "pages": {
+    "homepage": "https://nicklewis.dev/",
+    "about": "https://nicklewis.dev/about/",
+    "contact": "https://nicklewis.dev/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

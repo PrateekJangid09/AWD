@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000279",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "FIL - SUMI LIMITED",
+    "domain": "fillinglife.co",
+    "url": "https://sumi.fillinglife.co/",
+    "slug": "fillinglife",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Home & Lifestyle",
+    "subcategory": "Furniture",
+    "website_type": "Ecommerce Store",
+    "audience": [],
+    "confidence": 0.79,
+    "field_confidence": {
+      "category": 0.79,
+      "subcategory": 0.74,
+      "website_type": 0.87,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#1a1a1a",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#1a1a1a"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#1a1a1a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#868686",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Maison Neue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          132
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/FIL_fulfilling"
+  },
+  "seo": {
+    "title": "FIL - SUMI LIMITED",
+    "description": "MASS Series \u201dSUMI LIMITED\u201d\u306f\u3001\u963f\u8607\u306e\u98a8\u7269\u8a69 \u201c\u91ce\u713c\u304d\u201d\u306b\u3088\u3063\u3066\u751f\u307e\u308c\u308b\u300c\u9ed2\u58a8\u8272\u300d\u306e\u666f\u89b3\u306b\u30a4\u30f3\u30b9\u30d1\u30a4\u30a2\u3055\u308c\u305f\u70ad\u5316\u3057\u305f\u6749\u6750\u3068\u3001\u30b9\u30c1\u30fc\u30eb\u30d5\u30ec\u30fc\u30e0\u306b\u3088\u308b\u3001\u7570\u7d20\u6750\u306e\u30b3\u30f3\u30c8\u30e9\u30b9\u30c8\u3092\u30c6\u30fc\u30de\u306b\u3057\u305f\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u3067\u3059\u3002"
+  },
+  "pages": {
+    "homepage": "https://sumi.fillinglife.co/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

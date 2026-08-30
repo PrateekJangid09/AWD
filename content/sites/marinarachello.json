@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000020",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Marina Rachello",
+    "domain": "marinarachello.com",
+    "url": "https://www.marinarachello.com/",
+    "slug": "marinarachello",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Travel Blog",
+    "audience": [
+      "Developers",
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.67,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#e84025",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#e84025",
+      "#d5d5d5",
+      "#ffffff"
+    ],
+    "text_color": "#f2ede4",
+    "palette": [
+      {
+        "hex": "#e84025",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2ede4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2a2a2a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d5d5d5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          112
+        ]
+      },
+      {
+        "name": "Averia Serif Libre",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          112,
+          374
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "marina.rachello@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/marina-rachello-4159ba36",
+    "x": null
+  },
+  "seo": {
+    "title": "Marina Rachello",
+    "description": "Marina Rachello \u2014 visual designer with a product mindset. Portfolio."
+  },
+  "pages": {
+    "homepage": "https://www.marinarachello.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

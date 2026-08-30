@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000096",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Cursouls",
+    "domain": "cursouls.xyz",
+    "url": "https://cursouls.xyz/",
+    "slug": "cursouls",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#fdf6e3",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#fdf6e3"
+    ],
+    "text_color": "#0f0e0a",
+    "palette": [
+      {
+        "hex": "#fdf6e3",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0f0e0a",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Pix32",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on GitHub Pages",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/vtemian"
+  },
+  "seo": {
+    "title": "Cursouls",
+    "description": "Turn your Cursor AI agents into tiny pixel characters who live in a cozy caf\u00e9, reacting, assisting, and keeping you company while you work."
+  },
+  "pages": {
+    "homepage": "https://cursouls.xyz/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

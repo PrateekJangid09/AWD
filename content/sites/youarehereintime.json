@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000063",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "You Are Here in Time",
+    "domain": "youarehereintime.com",
+    "url": "https://www.youarehereintime.com/",
+    "slug": "youarehereintime",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Music",
+    "website_type": null,
+    "audience": [
+      "B2C"
+    ],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": 0.62,
+      "website_type": null,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#74b6b0",
+    "secondary_color": null,
+    "accent_colors": [
+      "#9c9cb8",
+      "#ffb3a2"
+    ],
+    "background_colors": [
+      "#ff5cc8",
+      "#c2c2d2"
+    ],
+    "text_color": "#f2f2f8",
+    "palette": [
+      {
+        "hex": "#ff5cc8",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2f2f8",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#74b6b0",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#c2c2d2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9c9cb8",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffb3a2",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Newsreader Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          26,
+          42
+        ]
+      },
+      {
+        "name": "Space Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          88
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "You Are Here in Time",
+    "description": "Everything happening in the world and in your body, right now, since you opened this page. A live, scrolling portrait of the present moment."
+  },
+  "pages": {
+    "homepage": "https://www.youarehereintime.com/",
+    "about": "https://www.youarehereintime.com/about",
+    "contact": "https://www.youarehereintime.com/contact",
+    "pricing": "https://www.youarehereintime.com/pricing",
+    "careers": "https://www.youarehereintime.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

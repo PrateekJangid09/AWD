@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000179",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Zoox",
+    "domain": "zoox.com",
+    "url": "https://zoox.com/",
+    "slug": "zoox",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Automotive & Mobility",
+    "subcategory": "Automotive",
+    "website_type": "Landing Page",
+    "audience": [
+      "Drivers"
+    ],
+    "confidence": 0.94,
+    "field_confidence": {
+      "category": 0.94,
+      "subcategory": 0.89,
+      "website_type": 0.65,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#34484a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#64d5b3",
+      "#5b8279"
+    ],
+    "background_colors": [
+      "#d3e4df",
+      "#ffffff"
+    ],
+    "text_color": "#0b0e0e",
+    "palette": [
+      {
+        "hex": "#d3e4df",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0b0e0e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#34484a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#64d5b3",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#5b8279",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "__gtStandardS_412463",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          40
+        ]
+      },
+      {
+        "name": "__gtStandardL_53dfc7",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          28,
+          120
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on AWS",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "AWS"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/zoox-inc",
+    "x": "https://x.com/zoox"
+  },
+  "seo": {
+    "title": "Zoox",
+    "description": "Zoox is a purpose-built autonomous vehicle designed for riders, not drivers. Learn more about the Zoox robotaxi and the future of ride-hailing."
+  },
+  "pages": {
+    "homepage": "https://zoox.com/",
+    "about": "https://zoox.com/about",
+    "contact": "https://zoox.com/contact",
+    "pricing": "not found",
+    "careers": "https://zoox.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

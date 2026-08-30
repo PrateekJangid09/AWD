@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000013",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Leedlime",
+    "domain": "leedlime.com",
+    "url": "https://leedlime.com/",
+    "slug": "leedlime",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "Product Website",
+    "audience": [
+      "B2C",
+      "Developers"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.81,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#84cc16",
+    "secondary_color": null,
+    "accent_colors": [
+      "#da7756"
+    ],
+    "background_colors": [
+      "#f9f8f6"
+    ],
+    "text_color": "#0a0a0a",
+    "palette": [
+      {
+        "hex": "#f9f8f6",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a0a0a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#84cc16",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#262626",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#da7756",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b6b6b",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          8,
+          36
+        ]
+      },
+      {
+        "name": "Newsreader",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          72
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Astro",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@leedlime.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/leedlime",
+    "x": "https://x.com/leedlimeHQ"
+  },
+  "seo": {
+    "title": "Leedlime",
+    "description": "Leedlime finds and verifies LinkedIn profiles of people who actually fit your ICP. Accurate, current, and ready for outreach."
+  },
+  "pages": {
+    "homepage": "https://leedlime.com/",
+    "about": "https://leedlime.com/about/",
+    "contact": "https://leedlime.com/contact/",
+    "pricing": "https://leedlime.com/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

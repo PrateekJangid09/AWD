@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000127",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Matteo Modica",
+    "domain": "matteomodica.com",
+    "url": "https://matteomodica.com/",
+    "slug": "matteomodica",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Personal Portfolio",
+    "audience": [],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.86,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#444444",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#444444",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#020202",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "TTCommons-Medium",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          90,
+          90
+        ]
+      },
+      {
+        "name": "Poppins",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "LiteSpeed"
+    ]
+  },
+  "contact": {
+    "email": "matteo@sublimio.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "http://linkedin.com/in/matteomodica",
+    "x": null
+  },
+  "seo": {
+    "title": "Matteo Modica",
+    "description": "Matteo Modica is an Italian designer, working as founder and creative director at Sublimio, an award-winning boutique branding agency."
+  },
+  "pages": {
+    "homepage": "https://matteomodica.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

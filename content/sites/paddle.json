@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000197",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Paddle - Subscriptions, Payments & Tax Compliance for SaaS & Mobile Apps",
+    "domain": "paddle.com",
+    "url": "https://www.paddle.com/",
+    "slug": "paddle",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "Product Website",
+    "audience": [
+      "Enterprises",
+      "B2B",
+      "B2C"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ffd400",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f9f8f7",
+      "#ebe7df",
+      "#d6cbb6"
+    ],
+    "text_color": "#1c1a15",
+    "palette": [
+      {
+        "hex": "#f9f8f7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1a15",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffd400",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ebe7df",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d6cbb6",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          20
+        ]
+      },
+      {
+        "name": "serrifCondensed",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          64
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "proven@scale.see",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/paddle",
+    "x": "https://x.com/PaddleHQ"
+  },
+  "seo": {
+    "title": "Paddle - Subscriptions, Payments & Tax Compliance for SaaS & Mobile Apps",
+    "description": "Increase revenue, reduce risk and reduce cost with Paddle, the payment solution powering global revenue for n8n, Letterboxd & AdGuard. One platform that handles billing, tax and compliance."
+  },
+  "pages": {
+    "homepage": "https://www.paddle.com/",
+    "about": "https://www.paddle.com/about",
+    "contact": "https://www.paddle.com/contact",
+    "pricing": "https://www.paddle.com/pricing",
+    "careers": "https://www.paddle.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

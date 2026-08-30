@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000002",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Coding Bio",
+    "domain": "coding.bio",
+    "url": "https://www.coding.bio/",
+    "slug": "coding-bio",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.68,
+    "field_confidence": {
+      "category": 0.68,
+      "subcategory": 0.63,
+      "website_type": 0.69,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f8f441",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#bbbbbf"
+    ],
+    "text_color": "#010a21",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#010a21",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f8f441",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#bbbbbf",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      },
+      {
+        "name": "Gilroy",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "OX3 0BP OXFORDUnited Kingdom"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/coding-bio",
+    "x": "https://twitter.com/coding_bio"
+  },
+  "seo": {
+    "title": "Coding Bio",
+    "description": "Coding Bio unites a high throughput wet lab and ML platform to screen, build, and deliver fully-assembled modular therapies like CARs and BiTEs in only months."
+  },
+  "pages": {
+    "homepage": "https://www.coding.bio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

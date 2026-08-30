@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000285",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "GoSquared",
+    "domain": "gosquared.com",
+    "url": "https://www.gosquared.com/",
+    "slug": "gosquared",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "B2C",
+      "B2B"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.82,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#10344e",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0095ff"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e5ecf1"
+    ],
+    "text_color": "#1f2122",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f2122",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#10344e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5ecf1",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#0095ff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter var",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          64
+        ]
+      },
+      {
+        "name": "Helvetica Neue",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "support@gosquared.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "GoSquared",
+    "description": "The award-winning Google Analytics alternative. Real-time, intuitive, accurate, privacy-focused website analytics."
+  },
+  "pages": {
+    "homepage": "https://www.gosquared.com/",
+    "about": "https://www.gosquared.com/about/",
+    "contact": "https://www.gosquared.com/contact/",
+    "pricing": "https://www.gosquared.com/plans/",
+    "careers": "https://www.gosquared.com/careers/"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

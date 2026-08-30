@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000061",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Overmind",
+    "domain": "overmindlab.ai",
+    "url": "https://www.overmindlab.ai/",
+    "slug": "overmindlab",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Education",
+    "subcategory": null,
+    "website_type": "Pricing Website",
+    "audience": [],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": null,
+      "website_type": 0.82,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ed670f",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#16120f",
+      "#cecdc9"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#16120f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ed670f",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#292623",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#cecdc9",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GeistPixelSquare",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          24
+        ]
+      },
+      {
+        "name": "Pixelify Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          23
+        ]
+      },
+      {
+        "name": "mondwest",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          28,
+          96
+        ]
+      },
+      {
+        "name": "neueBit",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          16,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "pl@form.promost",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/over-mind-ai",
+    "x": "https://x.com/overmindlab"
+  },
+  "seo": {
+    "title": "Overmind",
+    "description": "Overmind is the model training platform for AI teams. Turn your production traces into specialised models you own, trained, benchmarked, and served."
+  },
+  "pages": {
+    "homepage": "https://www.overmindlab.ai/",
+    "about": "https://www.overmindlab.ai/about",
+    "contact": "https://www.overmindlab.ai/contact",
+    "pricing": "https://www.overmindlab.ai/pricing",
+    "careers": "https://www.overmindlab.ai/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}
