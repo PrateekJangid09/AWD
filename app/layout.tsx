@@ -8,6 +8,7 @@ import CookieBanner from "@/components/CookieBanner";
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,
+  OG_IMAGE,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/seo";
@@ -57,11 +58,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     type: "website",
     locale: "en_US",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
   icons: { icon: "/logo.png" },
   other: {
