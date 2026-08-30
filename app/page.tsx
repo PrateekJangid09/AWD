@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SiteCard from "@/components/SiteCard";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
@@ -55,7 +56,6 @@ export default function Home() {
       />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-line">
-        {/* soft colour glow */}
         <div
           className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-[0.10] blur-[90px]"
           style={{ background: "conic-gradient(from 0deg, #FF6112, #2563eb, #16a34a, #db2777, #f59e0b, #FF6112)" }}
@@ -91,7 +91,6 @@ export default function Home() {
           </form>
         </div>
 
-        {/* ── Numbers ticker (count-up) ── */}
         <div className="relative border-t border-line bg-bone/60">
           <div className="wrap grid grid-cols-2 divide-x divide-line md:grid-cols-4">
             {stats.map((s, i) => (
@@ -103,6 +102,66 @@ export default function Home() {
                   {s.label}
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Tools — featured up top ── */}
+      <section className="relative overflow-hidden border-b border-line py-16 sm:py-20">
+        <span className="aura" aria-hidden />
+        <div className="wrap relative">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow text-ink">The toolkit</p>
+              <h2 className="display mt-3 max-w-2xl text-3xl sm:text-4xl">
+                Free design tools that share one language.
+              </h2>
+              <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-soft">
+                Find, transform, build, preview and interpolate colour — no signup,
+                everything runs in your browser. The same instruments we use to study
+                the archive.
+              </p>
+            </div>
+            <Link href="/tools" className="btn-dark shrink-0 self-start sm:self-auto">
+              Explore all tools ↗
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {TOOLS.map((t, i) => (
+              <Reveal key={t.slug} delay={(i % 3) * 70}>
+                <a
+                  href={`/tools/${t.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-soft-lg"
+                >
+                  <span className="relative block aspect-[16/10] overflow-hidden border-b border-line bg-bone">
+                    <Image
+                      src={`/tools/previews/${t.slug}.png`}
+                      alt={`${t.name} — ${t.tagline}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[10.5px] font-semibold text-ink shadow-sm backdrop-blur">
+                      Live tool
+                    </span>
+                  </span>
+                  <span className="flex flex-1 items-center gap-4 p-5">
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-[16px] font-semibold tracking-tight text-ink">
+                        {t.name}
+                      </span>
+                      <span className="mt-0.5 block truncate text-[13px] text-muted">
+                        {t.tagline}
+                      </span>
+                    </span>
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden>
+                      →
+                    </span>
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -154,7 +213,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Categories — colourful ── */}
+      {/* ── Categories ── */}
       <section className="border-t border-line bg-bone py-16 sm:py-20">
         <div className="wrap">
           <div className="flex items-end justify-between">
@@ -186,41 +245,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Tools ── */}
-      <section className="border-t border-line py-16 sm:py-20">
-        <div className="wrap">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="eyebrow text-ink">Tools</p>
-              <h2 className="display mt-3 text-2xl sm:text-3xl">Experiment with colour.</h2>
-            </div>
-            <Link href="/tools" className="text-[13px] font-medium text-soft hover:text-ink">
-              All tools →
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {TOOLS.map((t) => (
-              <a
-                key={t.slug}
-                href={`/tools/${t.slug}`}
-                className="group flex items-center gap-4 rounded-2xl border border-line bg-paper p-4 transition-all hover:-translate-y-0.5 hover:border-line-strong hover:shadow-soft"
-              >
-                <span className="flex h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-line">
-                  {t.swatches.map((s) => (
-                    <span key={s} className="flex-1" style={{ backgroundColor: s }} />
-                  ))}
-                </span>
-                <span className="min-w-0">
-                  <span className="block truncate text-[15px] font-medium tracking-tight">{t.name}</span>
-                  <span className="block truncate text-[12.5px] text-muted">{t.tagline}</span>
-                </span>
-                <span className="ml-auto text-muted transition-all group-hover:translate-x-1 group-hover:text-ink" aria-hidden>→</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
       <section className="border-t border-line py-24 sm:py-32">
         <div className="wrap text-center">
@@ -232,7 +256,6 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/archive" className="btn-primary !px-6 !py-3.5">Explore the archive</Link>
-            <Link href="/research/website-design-index-2026" className="btn-ghost !px-6 !py-3.5">2026 Design Index</Link>
             <Link href="/submit" className="btn-ghost !px-6 !py-3.5">Submit a site</Link>
           </div>
         </div>

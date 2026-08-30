@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.2 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
     { path: "/cookie-preference", changeFrequency: "yearly", priority: 0.2 },
+    { path: "/llms.txt", changeFrequency: "monthly", priority: 0.3 },
   ];
 
   return [

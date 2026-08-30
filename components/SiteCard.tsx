@@ -14,7 +14,7 @@ export default function SiteCard({ site }: { site: CardSite; index?: number }) {
   return (
     <Link href={`/archive/${site.slug}`} className="group block">
       <div
-        className={`relative aspect-[9/16] overflow-hidden rounded-2xl border border-line ${site.thumb ? "skeleton" : ""}`}
+        className={`relative aspect-[9/16] overflow-hidden rounded-2xl border border-line transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:shadow-soft-lg ${site.thumb ? "skeleton" : ""}`}
       >
         {site.thumb ? (
           /* eslint-disable-next-line @next/next/no-img-element */
@@ -23,7 +23,7 @@ export default function SiteCard({ site }: { site: CardSite; index?: number }) {
             alt={`${site.name} website`}
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 h-full w-full object-cover object-top"
+            className="autoscroll absolute inset-0 h-full w-full"
           />
         ) : (
           <div

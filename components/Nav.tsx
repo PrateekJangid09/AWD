@@ -31,7 +31,7 @@ export default function Nav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/50 bg-white/60 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/55">
+    <header className="sticky top-0 z-50 border-b border-line bg-white">
       <div className="wrap flex h-16 items-center justify-between gap-4">
         <Logo />
 
@@ -92,7 +92,7 @@ export default function Nav() {
           onMouseLeave={scheduleClose}
         >
           <div className="wrap">
-            <div className="glass-strong anim-up ml-auto mt-2 w-full overflow-hidden rounded-2xl shadow-soft-lg" style={{ animationDuration: "0.28s" }}>
+            <div className="anim-up ml-auto mt-2 w-full overflow-hidden rounded-2xl border border-line bg-white shadow-soft-lg" style={{ animationDuration: "0.28s" }}>
               {menu === "categories" ? (
                 <div className="p-6">
                   <div className="mb-4 flex items-center justify-between">
@@ -134,7 +134,7 @@ export default function Nav() {
                         key={t.slug}
                         href={`/tools/${t.slug}`}
                         onClick={() => setMenu(null)}
-                        className="glass-card group flex items-center gap-3 p-3 hover:-translate-y-0.5"
+                        className="group flex items-center gap-3 rounded-xl border border-line bg-white p-3 transition-all hover:-translate-y-0.5 hover:border-line-strong hover:shadow-soft"
                       >
                         <span className="flex h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-line">
                           {t.swatches.map((s) => (
@@ -159,7 +159,7 @@ export default function Nav() {
 
       {/* ── Mobile menu ── */}
       {open && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-white/50 bg-white/80 backdrop-blur-xl lg:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-white lg:hidden">
           <div className="wrap flex flex-col py-3">
             {LINKS.map((l) =>
               l.menu ? (

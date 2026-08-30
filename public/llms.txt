@@ -1,0 +1,52 @@
+# AllWebsites.Design
+
+> A curated website-design research archive. Study real websites by industry, style, colour, typography and technology — then use free in-browser colour tools that share the same language.
+
+AllWebsites.Design publishes constructed, source-verified records. We do not invent missing facts: unproven technology or design fields stay unknown. The official destination of each site remains the authority.
+
+Canonical site: https://www.allwebsites.design
+
+## Discover
+
+- [Home](https://www.allwebsites.design/): Overview of the archive, tools and categories
+- [Archive](https://www.allwebsites.design/archive): Search and filter every published website record
+- [Categories](https://www.allwebsites.design/c): Browse website design by industry
+- [2026 Website Design Index](https://www.allwebsites.design/research/website-design-index-2026): Transparent snapshot of catalogue composition
+- [Journal](https://www.allwebsites.design/blogs): Notes on colour, typography and technology
+
+## Tools
+
+Free, no-signup design instruments. Each owns one job and runs in the browser.
+
+- [Chromary](https://www.allwebsites.design/tools/chromary): Color name finder and dictionary
+- [Colorhyme](https://www.allwebsites.design/tools/colorhyme): Hue-shift and colour transformer
+- [WebPalette Studio](https://www.allwebsites.design/tools/webpalette): Role-based website palette builder
+- [Mockupalettes](https://www.allwebsites.design/tools/mockupalettes): Preview a 4-colour palette on a website mockup
+- [TrueGradient](https://www.allwebsites.design/tools/truegradient): Compare sRGB and OKLCH gradient interpolation
+- [All tools](https://www.allwebsites.design/tools): Toolkit overview
+
+## About
+
+- [About](https://www.allwebsites.design/about): How the archive, intelligence layer and workflow fit together
+- [Manifesto](https://www.allwebsites.design/manifesto): Useful inspiration needs context
+- [Editorial guidelines](https://www.allwebsites.design/editorial-guidelines): Inclusion, classification and corrections
+- [Submit a site](https://www.allwebsites.design/submit): Nominate a website for review
+- [Contact](https://www.allwebsites.design/contact): Corrections and editorial questions
+
+## Legal
+
+- [Privacy policy](https://www.allwebsites.design/privacy-policy)
+- [Terms](https://www.allwebsites.design/terms)
+- [Cookie preferences](https://www.allwebsites.design/cookie-preference)
+
+## Records
+
+Website records live at `/archive/<slug>` (for example https://www.allwebsites.design/archive/rankbeaver). Each record can include identity, category, palette, typography, detected technology, screenshots and similar sites. Prefer the official URL on the record over archive commentary.
+
+Category pages live at `/c/<category-slug>`.
+
+## Optional
+
+- [Sitemap](https://www.allwebsites.design/sitemap.xml)
+- [Ads.txt](https://www.allwebsites.design/ads.txt)
+- [Robots](https://www.allwebsites.design/robots.txt)

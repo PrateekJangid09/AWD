@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
@@ -83,16 +84,23 @@ export default function ToolsPage() {
                 <div
                   className={`glass-card group flex h-full flex-col overflow-hidden ${live ? "hover:-translate-y-1" : "opacity-70"}`}
                 >
-                  {/* colour cover */}
-                  <div className="relative flex h-32 overflow-hidden">
-                    {swatches.map((s) => (
-                      <span
-                        key={s}
-                        className="flex-1 transition-transform duration-500 group-hover:scale-y-105"
-                        style={{ backgroundColor: s }}
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-bone">
+                    {live ? (
+                      <Image
+                        src={`/tools/previews/${j.slug}.png`}
+                        alt={`${name} — ${tagline}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                       />
-                    ))}
-                    <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[11px] font-medium text-ink shadow-sm backdrop-blur">
+                    ) : (
+                      <div className="flex h-full">
+                        {swatches.map((s) => (
+                          <span key={s} className="flex-1" style={{ backgroundColor: s }} />
+                        ))}
+                      </div>
+                    )}
+                    <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-ink shadow-sm backdrop-blur">
                       {j.job}
                     </span>
                     <span
