@@ -34,6 +34,7 @@ export async function generateMetadata({
     title: `${cat.name} Website Design — ${cat.count} References`,
     description: `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`,
     path: `/c/${category}`,
+    index: cat.count > 0,
   });
 }
 
