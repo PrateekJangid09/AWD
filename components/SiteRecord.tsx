@@ -2,7 +2,7 @@ import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import SiteCard from "./SiteCard";
 import { assetBase, canonicalCards, categorySlug, type CanonicalSite } from "@/lib/canonical";
-import { categoryColor, type CardSite } from "@/lib/data";
+import { categoryColor, type CardSite } from "@/lib/catalog";
 
 /* ── small building blocks ─────────────────────────────────────── */
 

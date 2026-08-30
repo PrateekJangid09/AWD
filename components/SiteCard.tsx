@@ -1,9 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
-import { categoryColor, type CardSite } from "@/lib/data";
+import { categoryColor, type CardSite } from "@/lib/catalog";
 
-// Modern-minimal gallery card: 9:16 frame, real capture that auto-scrolls
-// on hover, skeleton while loading, category colour accent, quiet meta.
-export default function SiteCard({ site }: { site: CardSite; index?: number }) {
+export default function SiteCard({
+  site,
+  priority = false,
+}: {
+  site: CardSite;
+  index?: number;
+  priority?: boolean;
+}) {
   const accent = categoryColor(site.categoryName);
   const primary =
     site.palette.find((p) => p.role === "primary")?.hex ??
@@ -13,17 +19,15 @@ export default function SiteCard({ site }: { site: CardSite; index?: number }) {
 
   return (
     <Link href={`/archive/${site.slug}`} className="group block">
-      <div
-        className={`relative aspect-[9/16] overflow-hidden rounded-2xl border border-line transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:shadow-soft-lg ${site.thumb ? "skeleton" : ""}`}
-      >
+      <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-line bg-bone transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
         {site.thumb ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
+          <Image
             src={site.thumb}
             alt={`${site.name} website`}
-            loading="lazy"
-            decoding="async"
-            className="autoscroll absolute inset-0 h-full w-full"
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            priority={priority}
+            className="autoscroll-img object-cover object-top"
           />
         ) : (
           <div
@@ -37,17 +41,15 @@ export default function SiteCard({ site }: { site: CardSite; index?: number }) {
           </div>
         )}
 
-        {/* colour accent bar (category) — grows on hover */}
         <div
           className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
           style={{ backgroundColor: accent }}
         />
 
-        <span className="glass-chip absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10.5px] font-medium text-ink opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100">
+        <span className="glass-chip absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10.5px] font-medium text-ink opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100">
           {site.style}
         </span>
 
-        {/* palette strip peeks up on hover */}
         <div className="absolute inset-x-0 bottom-0 flex h-1.5 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
           {site.palette.slice(0, 6).map((p, i) => (
             <span key={`${p.hex}-${i}`} className="flex-1" style={{ backgroundColor: p.hex }} />
@@ -59,10 +61,7 @@ export default function SiteCard({ site }: { site: CardSite; index?: number }) {
         <h3 className="truncate text-[15px] font-medium tracking-tight text-ink">
           {site.name}
         </h3>
-        <span
-          className="flex shrink-0 items-center gap-1.5 text-[12px] font-medium"
-          style={{ color: accent }}
-        >
+        <span className="flex shrink-0 items-center gap-1.5 text-[12px] font-medium text-soft">
           <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accent }} />
           {site.categoryName}
         </span>

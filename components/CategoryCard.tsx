@@ -22,7 +22,7 @@ export default function CategoryCard({
       />
       <div className="relative flex items-start justify-between gap-3">
         <div>
-          <span className="mb-3 inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-[11px] font-medium" style={{ backgroundColor: `${c}18`, color: c }}>
+          <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-bone px-2.5 py-1 text-[11px] font-medium text-soft">
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: c }} />
             {category.share}
           </span>
@@ -34,8 +34,7 @@ export default function CategoryCard({
           </p>
         </div>
         <span
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-lg transition-transform duration-300 group-hover:translate-x-0.5"
-          style={{ backgroundColor: `${c}18`, color: c }}
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink text-lg text-white transition-transform duration-300 group-hover:translate-x-0.5"
           aria-hidden
         >
           →
@@ -48,7 +47,7 @@ export default function CategoryCard({
             <span key={d} className="text-[11px] text-muted">{d}</span>
           ))}
         </div>
-        <span className="text-xl font-semibold tracking-tight" style={{ color: c }}>
+        <span className="text-xl font-semibold tracking-tight text-ink">
           {category.count.toLocaleString()}
         </span>
       </div>

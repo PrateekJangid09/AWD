@@ -14,10 +14,10 @@ const config: Config = {
           600: "#E8500A",
           700: "#C23A08",
         },
-        // Cool, modern neutral scale
+        // Cool, modern neutral scale. muted meets 4.5:1 on white.
         ink: "#0E0E10",
-        soft: "#52525B",
-        muted: "#8B8B92",
+        soft: "#3F3F46",
+        muted: "#59595F",
         paper: "#FFFFFF",
         chalk: "#FFFFFF",
         "paper-dark": "#F1F1F3",

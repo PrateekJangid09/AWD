@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import SiteCard from "@/components/SiteCard";
-import Reveal from "@/components/Reveal";
-import CountUp from "@/components/CountUp";
 import JsonLd from "@/components/JsonLd";
-import { TOOLS, type CardSite } from "@/lib/data";
+import { TOOLS, type CardSite } from "@/lib/catalog";
 import { CANONICAL, canonicalCards, liveCategories } from "@/lib/canonical";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
 
@@ -36,27 +34,27 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div
-          className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-[0.10] blur-[90px]"
+          className="pointer-events-none absolute -top-40 left-1/2 hidden h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-[0.10] blur-[90px] sm:block"
           style={{ background: "conic-gradient(from 0deg, #FF6112, #2563eb, #16a34a, #db2777, #f59e0b, #FF6112)" }}
           aria-hidden
         />
         <div className="wrap relative py-16 text-center sm:py-24">
-          <p className="anim-up mx-auto flex w-fit items-center gap-2 rounded-full border border-line bg-paper/70 px-3.5 py-1.5 text-[12px] text-soft backdrop-blur" style={{ animationDelay: "40ms" }}>
+          <p className="mx-auto flex w-fit items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-1.5 text-[12px] text-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-orange" />
             {all.length.toLocaleString()} websites, studied in depth
           </p>
 
-          <h1 className="mega anim-up mx-auto mt-7 max-w-4xl text-[2.6rem] leading-[1.03] sm:text-6xl lg:text-7xl" style={{ animationDelay: "120ms" }}>
+          <h1 className="mega mx-auto mt-7 max-w-4xl text-[2.6rem] leading-[1.03] sm:text-6xl lg:text-7xl">
             A premium archive of the
             <br className="hidden sm:block" /> web&apos;s best-designed sites.
           </h1>
 
-          <p className="anim-up mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-soft sm:text-lg" style={{ animationDelay: "220ms" }}>
+          <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-soft sm:text-lg">
             Explore real websites and the colour, type and technology behind them —
             then experiment with the tools that share the same language.
           </p>
 
-          <form action="/archive" className="anim-up mx-auto mt-9 flex w-full max-w-md items-center gap-2 rounded-full border border-line bg-paper p-1.5 pl-5 shadow-soft focus-within:border-line-strong" style={{ animationDelay: "300ms" }}>
+          <form action="/archive" className="mx-auto mt-9 flex w-full max-w-md items-center gap-2 rounded-full border border-line bg-paper p-1.5 pl-5 shadow-soft focus-within:border-line-strong">
             <span className="text-muted">⌕</span>
             <input
               name="q"
@@ -75,7 +73,8 @@ export default function Home() {
             {stats.map((s, i) => (
               <div key={i} className={`px-3 py-6 text-center sm:py-8 ${i === 2 ? "border-t border-line md:border-t-0" : ""} ${i === 3 ? "border-t border-line md:border-t-0" : ""}`}>
                 <div className="mega text-3xl text-ink sm:text-5xl">
-                  <CountUp to={s.to} suffix={s.suffix} format={s.format} />
+                  {s.format ? s.to.toLocaleString() : s.to}
+                  {s.suffix}
                 </div>
                 <div className="mt-1.5 text-[11px] uppercase tracking-[0.14em] text-muted sm:text-[12px]">
                   {s.label}
@@ -88,7 +87,7 @@ export default function Home() {
 
       {/* ── Tools — featured up top ── */}
       <section className="relative overflow-hidden border-b border-line py-16 sm:py-20">
-        <span className="aura" aria-hidden />
+        <span className="aura hidden sm:block" aria-hidden />
         <div className="wrap relative">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -109,16 +108,17 @@ export default function Home() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((t, i) => (
-              <Reveal key={t.slug} delay={(i % 3) * 70}>
                 <a
+                  key={t.slug}
                   href={`/tools/${t.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-soft-lg"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-transform duration-300 hover:-translate-y-1"
                 >
                   <span className="relative block aspect-[16/10] overflow-hidden border-b border-line bg-bone">
                     <Image
-                      src={`/tools/previews/${t.slug}.png`}
+                      src={`/tools/previews/${t.slug}.webp`}
                       alt={`${t.name} — ${t.tagline}`}
                       fill
+                      priority={i === 0}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                     />
@@ -140,7 +140,6 @@ export default function Home() {
                     </span>
                   </span>
                 </a>
-              </Reveal>
             ))}
           </div>
         </div>
@@ -157,7 +156,7 @@ export default function Home() {
             >
               <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
               {c.name}
-              <span className="text-white/40">{c.count.toLocaleString()}</span>
+              <span className="text-white/70">{c.count.toLocaleString()}</span>
             </Link>
           ))}
         </div>
@@ -178,9 +177,7 @@ export default function Home() {
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
             {gallery.map((site, i) => (
-              <Reveal key={site.slug} delay={(i % 4) * 60}>
-                <SiteCard site={site} />
-              </Reveal>
+              <SiteCard key={site.slug} site={site} priority={i < 2} />
             ))}
           </div>
 
@@ -209,11 +206,7 @@ export default function Home() {
               <Link
                 key={c.slug}
                 href={`/c/${c.slug}`}
-                className="group inline-flex items-center gap-2 rounded-full border bg-paper px-4 py-2 text-[13px] font-medium transition-all hover:-translate-y-0.5"
-                style={{
-                  borderColor: `${c.accent}44`,
-                  color: c.accent,
-                }}
+                className="group inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-[13px] font-medium text-ink transition-transform hover:-translate-y-0.5"
               >
                 <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
                 {c.name}

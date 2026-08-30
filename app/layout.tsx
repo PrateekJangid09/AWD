@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { Anton, Archivo, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import AdSense from "@/components/AdSense";
 import JsonLd from "@/components/JsonLd";
 import {
   DEFAULT_DESCRIPTION,
@@ -15,26 +15,15 @@ import {
   globalGraph,
 } from "@/lib/seo";
 
-const anton = Anton({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-anton",
-  display: "swap",
-});
-const archivo = Archivo({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  variable: "--font-archivo",
-  display: "swap",
-});
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
 const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -80,19 +69,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${anton.variable} ${archivo.variable} ${inter.variable} ${mono.variable}`}
-    >
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="min-h-screen bg-paper text-ink antialiased">
         <JsonLd data={globalGraph()} />
-        <Script
-          id="adsense"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9336436557815535"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        <AdSense />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:text-white"

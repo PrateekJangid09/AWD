@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import SiteCard from "./SiteCard";
-import { categoryColor, type CardSite } from "@/lib/data";
+import { categoryColor, type CardSite } from "@/lib/catalog";
 
 export default function ArchiveBrowser({
   items,

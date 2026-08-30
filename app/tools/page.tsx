@@ -83,9 +83,10 @@ export default function ToolsPage() {
                   <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-bone">
                     {live ? (
                       <Image
-                        src={`/tools/previews/${j.slug}.png`}
+                        src={`/tools/previews/${j.slug}.webp`}
                         alt={`${name} — ${tagline}`}
                         fill
+                        priority={i === 0}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                       />

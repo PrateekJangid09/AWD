@@ -43,18 +43,18 @@ export default function Footer() {
           <div className="[&_span]:text-paper">
             <Logo />
           </div>
-          <p className="mt-6 max-w-xs text-pretty text-sm leading-relaxed text-white/55">
+          <p className="mt-6 max-w-xs text-pretty text-sm leading-relaxed text-white/75">
             A searchable design archive and a connected set of tools, for people who
             study how the web is made.
           </p>
-          <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/35">
+          <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/70">
             {CANONICAL.length.toLocaleString()} references · {liveCategories().filter((c) => c.count > 0).length} categories
           </p>
         </div>
 
         {COLS.map((col) => (
           <div key={col.title}>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
               {col.title}
             </p>
             <ul className="mt-5 space-y-3">
@@ -62,7 +62,7 @@ export default function Footer() {
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="text-sm text-white/70 transition-colors hover:text-orange"
+                    className="text-sm text-white/80 transition-colors hover:text-orange"
                   >
                     {l.label}
                   </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
       {categories.length > 0 && (
         <div className="border-t border-white/10">
           <div className="wrap py-7">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/45">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
               Popular categories
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -84,7 +84,7 @@ export default function Footer() {
                 <Link
                   key={c.slug}
                   href={`/c/${c.slug}`}
-                  className="rounded-full border border-white/10 px-3 py-1.5 text-[12px] text-white/70 transition-colors hover:border-orange hover:text-orange"
+                  className="rounded-full border border-white/10 px-3 py-1.5 text-[12px] text-white/80 transition-colors hover:border-orange hover:text-orange"
                 >
                   {c.name}
                 </Link>
@@ -102,10 +102,10 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="wrap flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-white/40">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
             © {new Date().getFullYear()} AllWebsites.Design
           </p>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-white/40">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
             Discover · Understand · Explore
           </p>
         </div>

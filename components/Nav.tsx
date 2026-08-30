@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import Logo from "./Logo";
-import { CATEGORIES, TOOLS } from "@/lib/data";
+import { CATEGORIES, TOOLS } from "@/lib/catalog";
 
 type MenuKey = "categories" | "tools" | null;
 
@@ -186,7 +186,7 @@ export default function Nav() {
                               {t.name}
                             </a>
                           ))}
-                      <Link href={l.href} onClick={() => setOpen(false)} className="mt-1 block py-2 text-[12px] font-semibold uppercase tracking-[0.1em] text-orange">
+                      <Link href={l.href} onClick={() => setOpen(false)} className="mt-1 block py-2 text-[12px] font-semibold uppercase tracking-[0.1em] text-orange-700">
                         {l.menu === "categories" ? "All categories →" : "All tools →"}
                       </Link>
                     </div>
