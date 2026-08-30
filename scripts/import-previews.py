@@ -17,6 +17,7 @@ ZIP_PATH = Path("/tmp/awd-html-pack/file")
 ROOT = Path("/workspace")
 CONTENT = ROOT / "content" / "sites"
 PUBLIC = ROOT / "public" / "sites"
+REMOVED = ROOT / "content" / "removed-sites.txt"
 
 IGNORE_RAW = """
 Make Garden
@@ -145,6 +146,8 @@ def norm(value: str) -> str:
 
 
 IGNORE = {norm(x) for x in IGNORE_RAW if x.strip()}
+if REMOVED.exists():
+    IGNORE |= {norm(x) for x in REMOVED.read_text().splitlines() if x.strip() and not x.startswith("#")}
 
 
 def is_ignored(domain: str, name: str) -> bool:

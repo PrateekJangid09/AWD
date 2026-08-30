@@ -28,7 +28,7 @@ No environment variables are required for the current build.
 
 `/privacy` and `/cookies` permanently redirect to `/privacy-policy` and `/cookie-preference`. Tool routes under `/tools/*` rewrite to static HTML in `public/tools`.
 
-The archive currently publishes **477** extracted website records (ignored domains from the source pack are not listed). Each record uses the RankBeaver slug template at `/archive/<slug>`.
+The archive currently publishes **304** extracted website records (ignored and removed domains are not listed). Each record uses the RankBeaver slug template at `/archive/<slug>`.
 
 ## Adding a website record
 
