@@ -8,8 +8,8 @@ import SiteRecord from "@/components/SiteRecord";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { SITES, getSite, getCategory } from "@/lib/data";
-import { CANONICAL, categorySlug, getCanonical } from "@/lib/canonical";
-import { pageJsonLd, pageMeta, siteRecordJsonLd } from "@/lib/seo";
+import { CANONICAL, getCanonical } from "@/lib/canonical";
+import { archiveRecordGraph, archiveSampleGraph, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   // Real canonical records + the remaining sample records.
@@ -86,49 +86,9 @@ export default async function SitePage({
   // Real canonical record → rich template.
   const canonical = getCanonical(slug);
   if (canonical) {
-    const type = [
-      canonical.classification.category,
-      canonical.classification.website_type,
-    ]
-      .filter(Boolean)
-      .join(" · ");
-    const title = `${canonical.identity.name} — ${type || "Website Design"}`;
-    const description =
-      canonical.seo.description ??
-      `Study the palette, typography, style and technology behind ${canonical.identity.name}.`;
-    const catPath = canonical.classification.category
-      ? `/c/${categorySlug(canonical.classification.category)}`
-      : "/c";
     return (
       <>
-        <JsonLd
-          data={pageJsonLd({
-            name: title,
-            description,
-            path: `/archive/${slug}`,
-            crumbs: [
-              { name: "Home", path: "/" },
-              { name: "Archive", path: "/archive" },
-              ...(canonical.classification.category
-                ? [{ name: canonical.classification.category, path: catPath }]
-                : []),
-              { name: canonical.identity.name, path: `/archive/${slug}` },
-            ],
-            extra: [
-              siteRecordJsonLd({
-                name: canonical.identity.name,
-                description,
-                path: `/archive/${slug}`,
-                url: canonical.identity.url,
-                domain: canonical.identity.domain,
-                image: canonical.screenshots.desktop
-                  ? `/sites/${canonical.identity.slug}/${canonical.screenshots.desktop}`
-                  : undefined,
-                category: canonical.classification.category,
-              }),
-            ],
-          })}
-        />
+        <JsonLd data={archiveRecordGraph(canonical)} />
         <SiteRecord site={canonical} />
         <ExploreMore except={["/archive"]} />
       </>
@@ -151,29 +111,16 @@ export default async function SitePage({
 
   return (
     <>
-      <JsonLd
-        data={pageJsonLd({
-          name: `${site.name} — ${site.categoryName} Website Design`,
-          description: `${site.summary} Study the palette, typography, style and technology behind ${site.name}.`,
-          path: `/archive/${slug}`,
-          crumbs: [
-            { name: "Home", path: "/" },
-            { name: "Archive", path: "/archive" },
-            { name: site.categoryName, path: `/c/${site.category}` },
-            { name: site.name, path: `/archive/${slug}` },
-          ],
-          extra: [
-            siteRecordJsonLd({
-              name: site.name,
-              description: site.summary,
-              path: `/archive/${slug}`,
-              url: site.officialUrl,
-              domain: site.domain,
-              category: site.categoryName,
-            }),
-          ],
-        })}
-      />
+        <JsonLd
+          data={archiveSampleGraph({
+            slug,
+            name: site.name,
+            description: `${site.summary} Study the palette, typography, style and technology behind ${site.name}.`,
+            officialUrl: site.officialUrl,
+            categoryName: site.categoryName,
+            categorySlug: site.category,
+          })}
+        />
       {/* Hero */}
       <section className="border-b border-ink bg-paper">
         <div className="wrap py-10 sm:py-12">

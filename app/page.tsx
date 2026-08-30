@@ -7,13 +7,7 @@ import CountUp from "@/components/CountUp";
 import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/data";
 import { CANONICAL, canonicalCards, liveCategories } from "@/lib/canonical";
-import {
-  DEFAULT_DESCRIPTION,
-  DEFAULT_TITLE,
-  collectionJsonLd,
-  pageJsonLd,
-  pageMeta,
-} from "@/lib/seo";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...pageMeta({
@@ -38,22 +32,7 @@ export default function Home() {
 
   return (
     <>
-      <JsonLd
-        data={pageJsonLd({
-          name: DEFAULT_TITLE,
-          description: DEFAULT_DESCRIPTION,
-          path: "/",
-          crumbs: [{ name: "Home", path: "/" }],
-          extra: [
-            collectionJsonLd({
-              name: "AllWebsites.Design archive",
-              description: DEFAULT_DESCRIPTION,
-              path: "/archive",
-              count: all.length || CANONICAL.length,
-            }),
-          ],
-        })}
-      />
+      <JsonLd data={homePageGraph()} />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div

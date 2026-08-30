@@ -3,7 +3,7 @@ import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Privacy Policy";
 const description =
@@ -19,13 +19,14 @@ export default function PrivacyPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={typedPageGraph({
+          type: "WebPage",
+          path: "/privacy-policy",
           name: title,
           description,
-          path: "/privacy-policy",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Privacy", path: "/privacy-policy" },
+            { name: "Privacy" },
           ],
         })}
       />

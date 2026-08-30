@@ -18,15 +18,43 @@
 <meta name="twitter:image" content="https://www.allwebsites.design/og.jpg">
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Chromary",
-  "url":"https://www.allwebsites.design/tools/chromary",
-  "description":"A source-aware color name finder and color dictionary for designers.",
-  "applicationCategory":"DesignApplication",
-  "operatingSystem":"Any",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-  "creator":{"@type":"Organization","name":"AllWebsites.design"}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.allwebsites.design/#organization",
+      "name": "AllWebsites.Design",
+      "url": "https://www.allwebsites.design"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.allwebsites.design/#website",
+      "url": "https://www.allwebsites.design",
+      "name": "AllWebsites.Design",
+      "publisher": { "@id": "https://www.allwebsites.design/#organization" }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.allwebsites.design/tools/chromary/#app",
+      "name": "Chromary",
+      "url": "https://www.allwebsites.design/tools/chromary",
+      "description": "Search named colors by name or HEX, find perceptually nearby matches, compare alternate definitions, and browse CSS, community-survey and designer-curated color references.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web browser",
+      "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Search colors by name or HEX",
+        "Perceptual nearby-name matching",
+        "CSS, community-survey and curated sources",
+        "Compare alternate definitions of the same name",
+        "Runs locally in the browser, no signup"
+      ],
+      "publisher": { "@id": "https://www.allwebsites.design/#organization" },
+      "isPartOf": { "@id": "https://www.allwebsites.design/#website" }
+    }
+  ]
 }
 </script>
 <style>

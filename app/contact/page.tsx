@@ -3,7 +3,7 @@ import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Contact — Corrections & Editorial";
 const description =
@@ -26,14 +26,18 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
-          name: title,
-          description,
+        data={typedPageGraph({
+          type: "ContactPage",
           path: "/contact",
+          name: "Contact AllWebsites.Design",
+          description,
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Contact", path: "/contact" },
+            { name: "Contact" },
           ],
+          extra: {
+            about: { "@id": ORG_ID },
+          },
         })}
       />
       <UtilityHero

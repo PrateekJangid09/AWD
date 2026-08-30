@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Cookie Preferences";
 const description =
@@ -21,13 +21,14 @@ export default function CookiePreferenceLayout({
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={typedPageGraph({
+          type: "WebPage",
+          path: "/cookie-preference",
           name: title,
           description,
-          path: "/cookie-preference",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Cookies", path: "/cookie-preference" },
+            { name: "Cookies" },
           ],
         })}
       />

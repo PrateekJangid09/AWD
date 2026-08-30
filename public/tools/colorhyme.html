@@ -22,15 +22,95 @@
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"Colorhyme",
-    "url":"https://www.allwebsites.design/tools/colorhyme",
-    "description":"A precision color transformation tool for exact hue shifts, saturation adjustment, darkening and related color exploration.",
-    "applicationCategory":"DesignApplication",
-    "operatingSystem":"Any",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "creator":{"@type":"Organization","name":"AllWebsites.design"}
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.allwebsites.design/#organization",
+        "name": "AllWebsites.Design",
+        "url": "https://www.allwebsites.design"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.allwebsites.design/#website",
+        "url": "https://www.allwebsites.design",
+        "name": "AllWebsites.Design",
+        "publisher": { "@id": "https://www.allwebsites.design/#organization" }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.allwebsites.design/tools/colorhyme/#app",
+        "name": "Colorhyme",
+        "url": "https://www.allwebsites.design/tools/colorhyme",
+        "description": "Transform any HEX color with exact hue shifts, saturation and lightness controls. Create related accents and tonal variants, compare them and copy the results.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web browser",
+        "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Exact hue shift to 0.1 degrees",
+          "Saturation and lightness controls",
+          "Base, accent, muted and darker variants",
+          "Copy-ready HEX output",
+          "Runs locally in the browser, no signup"
+        ],
+        "publisher": { "@id": "https://www.allwebsites.design/#organization" },
+        "isPartOf": { "@id": "https://www.allwebsites.design/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.allwebsites.design/tools/colorhyme/#faq",
+        "isPartOf": { "@id": "https://www.allwebsites.design/#website" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Colorhyme a palette generator?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not in the usual sense. It starts with a color you already have and creates controlled related colors from it." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does hue shift mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hue shift moves a color around the color wheel by a specified number of degrees." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I enter an exact hue angle?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Colorhyme supports numerical input to 0.1°." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the 137.5° preset do?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It applies a 137.5° hue shift, close to the mathematical golden angle. It is a starting relationship, not a guarantee of harmony." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Colorhyme create a perfect palette?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Final quality still depends on context, saturation, lightness, contrast and usage." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Colorhyme use AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The core transformation engine does not need AI. It uses deterministic color calculations." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Colorhyme free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The core transformation workflow is designed to remain free." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are colors uploaded?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No server processing is required for the core calculations. They run locally in your browser." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is HSL perceptually uniform?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. HSL values are repeatable, but equal numerical changes do not always look equally strong." }
+          }
+        ]
+      }
+    ]
   }
   </script>
 

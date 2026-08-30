@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { CANONICAL, liveCategories } from "@/lib/canonical";
-import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
+import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "2026 Website Design Index";
 const description =
@@ -25,22 +25,27 @@ export default function DesignIndexPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
-          name: title,
-          description,
+        data={typedPageGraph({
+          type: "Report",
           path: "/research/website-design-index-2026",
+          name: "The 2026 Website Design Index",
+          description,
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "2026 Design Index", path: "/research/website-design-index-2026" },
+            { name: "Research" },
           ],
-          extra: [
-            collectionJsonLd({
-              name: title,
-              description,
-              path: "/research/website-design-index-2026",
-              count: total,
-            }),
-          ],
+          idSuffix: "report",
+          extra: {
+            headline: "The 2026 Website Design Index",
+            author: { "@id": ORG_ID },
+            publisher: { "@id": ORG_ID },
+            image: {
+              "@type": "ImageObject",
+              url: "https://www.allwebsites.design/og.jpg",
+              width: 1200,
+              height: 630,
+            },
+          },
         })}
       />
       <PageHero

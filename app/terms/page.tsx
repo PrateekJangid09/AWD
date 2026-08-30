@@ -3,7 +3,7 @@ import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Terms & Conditions";
 const description =
@@ -19,13 +19,14 @@ export default function TermsPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={typedPageGraph({
+          type: "WebPage",
+          path: "/terms",
           name: title,
           description,
-          path: "/terms",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Terms", path: "/terms" },
+            { name: "Terms" },
           ],
         })}
       />

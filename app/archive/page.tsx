@@ -5,7 +5,7 @@ import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import type { CardSite } from "@/lib/data";
 import { CANONICAL, canonicalCards } from "@/lib/canonical";
-import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
+import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Archive — Every Website, Searchable";
 const description =
@@ -29,22 +29,19 @@ export default async function ArchivePage({
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={collectionPageGraph({
+          path: "/archive",
           name: title,
           description,
-          path: "/archive",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Archive", path: "/archive" },
+            { name: "Archive" },
           ],
-          extra: [
-            collectionJsonLd({
-              name: title,
-              description,
-              path: "/archive",
-              count: items.length || CANONICAL.length,
-            }),
-          ],
+          listName: "Published website design records",
+          items: items.map((site) => ({
+            name: site.name,
+            url: absUrl(`/archive/${site.slug}`),
+          })),
         })}
       />
       <UtilityHero

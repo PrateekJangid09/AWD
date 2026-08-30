@@ -5,8 +5,8 @@ import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { TOOLS, getTool } from "@/lib/data";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { getTool } from "@/lib/data";
+import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Tools for Studying and Building the Web";
 const description =
@@ -41,24 +41,20 @@ export default function ToolsPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={collectionPageGraph({
+          path: "/tools",
           name: title,
           description,
-          path: "/tools",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Tools", path: "/tools" },
+            { name: "Tools" },
           ],
-          extra: TOOLS.map((t) => ({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: t.name,
-            description: t.desc,
-            url: `https://www.allwebsites.design/tools/${t.slug}`,
-            applicationCategory: "DesignApplication",
-            operatingSystem: "Any",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          })),
+          listName: "Free design tools",
+          items: JOBS.flatMap((job) => {
+            const tool = job.slug ? getTool(job.slug) : undefined;
+            if (!tool) return [];
+            return [{ name: tool.name, url: absUrl(`/tools/${tool.slug}`) }];
+          }),
         })}
       />
       <UtilityHero

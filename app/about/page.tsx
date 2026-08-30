@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { CANONICAL, liveCategories } from "@/lib/canonical";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "About — A Design-Research Layer for the Public Web";
 const description =
@@ -46,14 +46,18 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
-          name: title,
-          description,
+        data={typedPageGraph({
+          type: "AboutPage",
           path: "/about",
+          name: "About AllWebsites.Design",
+          description,
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "About", path: "/about" },
+            { name: "About" },
           ],
+          extra: {
+            about: { "@id": ORG_ID },
+          },
         })}
       />
       <PageHero

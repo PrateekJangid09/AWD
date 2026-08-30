@@ -1,8 +1,4 @@
-export default function JsonLd({
-  data,
-}: {
-  data: Record<string, unknown> | Record<string, unknown>[];
-}) {
+export default function JsonLd({ data }: { data: unknown }) {
   return (
     <script
       type="application/ld+json"

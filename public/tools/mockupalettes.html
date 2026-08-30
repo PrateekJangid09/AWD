@@ -19,7 +19,47 @@
 <meta property="og:image" content="https://www.allwebsites.design/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.allwebsites.design/og.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Mockupalettes","url":"https://www.allwebsites.design/tools/mockupalettes","description":"A website color palette preview tool that applies primary, secondary, accent and dark colors to a realistic full-page mockup.","applicationCategory":"DesignApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Organization","name":"AllWebsites.design"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.allwebsites.design/#organization",
+      "name": "AllWebsites.Design",
+      "url": "https://www.allwebsites.design"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.allwebsites.design/#website",
+      "url": "https://www.allwebsites.design",
+      "name": "AllWebsites.Design",
+      "publisher": { "@id": "https://www.allwebsites.design/#organization" }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.allwebsites.design/tools/mockupalettes/#app",
+      "name": "Mockupalettes",
+      "url": "https://www.allwebsites.design/tools/mockupalettes",
+      "description": "Preview any 4-color palette on a full website mockup. Map primary, secondary, accent and dark roles, compare directions and see your colors in context.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web browser",
+      "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Four-role website palette preview",
+        "Primary, secondary, accent and dark mapping",
+        "Full-page mockup context",
+        "Compare palette directions",
+        "Runs locally in the browser, no signup"
+      ],
+      "publisher": { "@id": "https://www.allwebsites.design/#organization" },
+      "isPartOf": { "@id": "https://www.allwebsites.design/#website" }
+    }
+  ]
+}
+</script>
 <style>
 :root{--canvas:#F4F5F3;--surface:#FFF;--ink:#151515;--muted:#6F706B;--line:#E3E4DF;--frame:#18191B;--primary:#3978F6;--secondary:#3DD6D0;--accent:#8658E8;--dark:#111827;--primaryText:#FFF;--secondaryText:#151515;--accentText:#FFF;--darkText:#FFF;--primarySoft:#EEF4FF;--secondarySoft:#ECFBF9;--accentSoft:#F4EEFF}
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Satoshi","Avenir Next","Segoe UI",Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased} button,input,textarea,select,code{font:inherit} button{cursor:pointer} button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #151515;outline-offset:2px}

@@ -7,7 +7,7 @@ import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { TRENDING } from "@/lib/data";
 import { CANONICAL, liveCategories, resolveCategory } from "@/lib/canonical";
-import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
+import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Categories — Explore Website Design by Industry";
 const description =
@@ -26,22 +26,19 @@ export default function CategoriesPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={collectionPageGraph({
+          path: "/c",
           name: title,
           description,
-          path: "/c",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Categories", path: "/c" },
+            { name: "Categories" },
           ],
-          extra: [
-            collectionJsonLd({
-              name: title,
-              description,
-              path: "/c",
-              count: categories.length,
-            }),
-          ],
+          listName: "Website design categories",
+          items: categories.map((category) => ({
+            name: category.name,
+            url: absUrl(`/c/${category.slug}`),
+          })),
         })}
       />
       <UtilityHero

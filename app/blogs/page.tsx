@@ -4,7 +4,7 @@ import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
+import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Resources — Notes on How the Web Is Designed";
 const description =
@@ -41,21 +41,19 @@ export default function BlogsPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
-          name: title,
-          description,
+        data={typedPageGraph({
+          type: "Blog",
           path: "/blogs",
+          name: "AllWebsites.Design Journal",
+          description: "Notes on how the web is designed.",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Resources", path: "/blogs" },
+            { name: "Resources" },
           ],
-          extra: [
-            collectionJsonLd({
-              name: title,
-              description,
-              path: "/blogs",
-            }),
-          ],
+          idSuffix: "blog",
+          extra: {
+            publisher: { "@id": ORG_ID },
+          },
         })}
       />
       <UtilityHero

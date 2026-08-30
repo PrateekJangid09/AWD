@@ -3,7 +3,7 @@ import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Editorial Guidelines";
 const description =
@@ -19,13 +19,14 @@ export default function EditorialGuidelinesPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={typedPageGraph({
+          type: "WebPage",
+          path: "/editorial-guidelines",
           name: title,
           description,
-          path: "/editorial-guidelines",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Editorial Guidelines", path: "/editorial-guidelines" },
+            { name: "Editorial Guidelines" },
           ],
         })}
       />

@@ -23,31 +23,88 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "TrueGradient",
-    "url": "https://www.allwebsites.design/tools/truegradient",
-    "description": "A native OKLCH gradient and interpolation tool for comparing CSS gradients in sRGB and OKLCH.",
-    "applicationCategory": "DesignApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "creator": {
-      "@type": "Organization",
-      "name": "AllWebsites.design"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"AllWebsites.design","item":"https://www.allwebsites.design/"},
-      {"@type":"ListItem","position":2,"name":"Tools","item":"https://www.allwebsites.design/tools"},
-      {"@type":"ListItem","position":3,"name":"TrueGradient","item":"https://www.allwebsites.design/tools/truegradient"}
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.allwebsites.design/#organization",
+        "name": "AllWebsites.Design",
+        "url": "https://www.allwebsites.design"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.allwebsites.design/#website",
+        "url": "https://www.allwebsites.design",
+        "name": "AllWebsites.Design",
+        "publisher": { "@id": "https://www.allwebsites.design/#organization" }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.allwebsites.design/tools/truegradient/#app",
+        "name": "TrueGradient",
+        "url": "https://www.allwebsites.design/tools/truegradient",
+        "description": "Convert HEX gradients to native CSS OKLCH, compare the same stops in sRGB, inspect hue routes and perceptual differences, and copy production-ready CSS.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web browser",
+        "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Native OKLCH CSS gradient interpolation",
+          "Same-stop sRGB comparison",
+          "Hue-route inspection",
+          "HEX fallback sampling",
+          "Runs locally in the browser, no signup"
+        ],
+        "publisher": { "@id": "https://www.allwebsites.design/#organization" },
+        "isPartOf": { "@id": "https://www.allwebsites.design/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.allwebsites.design/tools/truegradient/#faq",
+        "isPartOf": { "@id": "https://www.allwebsites.design/#website" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is TrueGradient an OKLCH gradient generator?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, but its main purpose is controlling and comparing gradient interpolation rather than simply picking two colors." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does TrueGradient change my endpoint colors?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The native comparison keeps the same stops and positions while changing the interpolation space." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the live OKLCH result native CSS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes when the browser supports CSS gradient interpolation in OKLCH. TrueGradient detects support and clearly labels the status." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the HEX fallback native OKLCH?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. It samples the OKLCH path and converts the result into ordinary sRGB-compatible HEX stops." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is OKLCH always better than sRGB?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. They are different interpolation choices. Use the path that produces the result you want." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I import any CSS gradient?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not yet. The current parser intentionally supports HEX-based linear-gradient() values." }
+          },
+          {
+            "@type": "Question",
+            "name": "How many stops can I use?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The current editor supports 2–6 stops." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is ΔEOK?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It is a perceptual color-distance measure in OKLab. TrueGradient uses it to compare results; it is not a quality score." }
+          }
+        ]
+      }
     ]
   }
   </script>

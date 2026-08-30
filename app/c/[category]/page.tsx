@@ -12,7 +12,7 @@ import {
 } from "@/lib/canonical";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { collectionJsonLd, pageJsonLd, pageMeta } from "@/lib/seo";
+import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   const slugs = new Set([
@@ -49,7 +49,6 @@ export default async function CategoryPage({
 
   const records = canonicalCardsInCategory(cat.slug);
 
-  const title = `${cat.name} Website Design — ${cat.count} References`;
   const description = `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`;
   const related = liveCategories()
     .filter((c) => c.slug !== cat.slug && c.count > 0)
@@ -58,23 +57,20 @@ export default async function CategoryPage({
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
-          name: title,
-          description,
+        data={collectionPageGraph({
           path: `/c/${cat.slug}`,
+          name: `${cat.name} website designs`,
+          description,
           crumbs: [
             { name: "Home", path: "/" },
             { name: "Categories", path: "/c" },
-            { name: cat.name, path: `/c/${cat.slug}` },
+            { name: cat.name },
           ],
-          extra: [
-            collectionJsonLd({
-              name: title,
-              description,
-              path: `/c/${cat.slug}`,
-              count: records.length,
-            }),
-          ],
+          listName: `${cat.name} sites`,
+          items: records.map((site) => ({
+            name: site.name,
+            url: absUrl(`/archive/${site.slug}`),
+          })),
         })}
       />
       {/* Header — colour-forward */}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Submit a Site";
 const description =
@@ -19,13 +19,14 @@ export default function SubmitPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={typedPageGraph({
+          type: "WebPage",
+          path: "/submit",
           name: title,
           description,
-          path: "/submit",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Submit", path: "/submit" },
+            { name: "Submit" },
           ],
         })}
       />

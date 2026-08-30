@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageJsonLd, pageMeta } from "@/lib/seo";
+import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Manifesto";
 const description = "Useful inspiration needs context. The philosophy behind the archive.";
@@ -18,13 +18,14 @@ export default function ManifestoPage() {
   return (
     <>
       <JsonLd
-        data={pageJsonLd({
+        data={typedPageGraph({
+          type: "WebPage",
+          path: "/manifesto",
           name: title,
           description,
-          path: "/manifesto",
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Manifesto", path: "/manifesto" },
+            { name: "Manifesto" },
           ],
         })}
       />

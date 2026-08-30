@@ -5,12 +5,14 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import JsonLd from "@/components/JsonLd";
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,
   OG_IMAGE,
   SITE_NAME,
   SITE_URL,
+  globalGraph,
 } from "@/lib/seo";
 
 const anton = Anton({
@@ -83,6 +85,7 @@ export default function RootLayout({
       className={`${anton.variable} ${archivo.variable} ${inter.variable} ${mono.variable}`}
     >
       <body className="min-h-screen bg-paper text-ink antialiased">
+        <JsonLd data={globalGraph()} />
         <Script
           id="adsense"
           async
