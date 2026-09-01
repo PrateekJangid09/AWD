@@ -35,7 +35,7 @@ export type Tool = {
 };
 
 export const STATS = {
-  total: 5896,
+  total: 304,
   categories: 22,
   perPage: 30,
   pages: 197,

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import Logo from "./Logo";
 import { CATEGORIES, TOOLS } from "@/lib/catalog";
+import type { Category } from "@/lib/catalog";
 
 type MenuKey = "categories" | "tools" | null;
 
@@ -15,7 +16,11 @@ const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null> }[] = 
   { href: "/blogs", label: "Resources" },
 ];
 
-export default function Nav() {
+export default function Nav({
+  categories = CATEGORIES,
+}: {
+  categories?: Pick<Category, "slug" | "name" | "count" | "accent">[];
+}) {
   const [open, setOpen] = useState(false); // mobile
   const [menu, setMenu] = useState<MenuKey>(null); // desktop dropdown
   const [mobileSub, setMobileSub] = useState<MenuKey>(null);
@@ -98,11 +103,11 @@ export default function Nav() {
                   <div className="mb-4 flex items-center justify-between">
                     <p className="eyebrow text-ink">Browse by category</p>
                     <Link href="/c" className="text-[13px] font-medium text-soft hover:text-ink">
-                      All 22 →
+                      All {categories.length} →
                     </Link>
                   </div>
                   <div className="grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3 lg:grid-cols-4">
-                    {CATEGORIES.map((c) => (
+                    {categories.map((c) => (
                       <Link
                         key={c.slug}
                         href={`/c/${c.slug}`}
@@ -175,7 +180,7 @@ export default function Nav() {
                   {mobileSub === l.menu && (
                     <div className="pb-3">
                       {l.menu === "categories"
-                        ? [...CATEGORIES.slice(0, 8)].map((c) => (
+                        ? categories.slice(0, 8).map((c) => (
                             <Link key={c.slug} href={`/c/${c.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-2 py-2 text-[13px] text-soft">
                               <span className="h-1.5 w-1.5" style={{ backgroundColor: c.accent }} />
                               {c.name}

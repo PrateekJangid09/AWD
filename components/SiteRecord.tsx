@@ -108,6 +108,17 @@ function Tech({
   );
 }
 
+function isRecordedValue(value?: string | null) {
+  if (!value) return false;
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+  return !/^(not\s*found|n\/?a|none|unknown|null|-)$/i.test(trimmed);
+}
+
+function isRecordedEmail(value?: string | null) {
+  return isRecordedValue(value) && Boolean(value?.includes("@"));
+}
+
 function Section({
   eyebrow,
   title,
@@ -153,7 +164,10 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
           pages[p.label.toLowerCase()] ??
           undefined,
       })),
-  ];
+  ].map((item) => ({
+    ...item,
+    href: isRecordedValue(item.href) && /^https?:\/\//i.test(item.href ?? "") ? item.href : undefined,
+  }));
 
   // ── Similar sites in the same category (keeps the user in a loop) ──
   const catName = classification.category ?? "";
@@ -392,7 +406,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
           <div className="glass-card p-6">
             <p className="eyebrow text-ink">Contact</p>
             <dl className="mt-5 space-y-3">
-              {contact.email && (
+              {isRecordedEmail(contact.email) && (
                 <div className="flex items-center justify-between gap-4 border-b border-line pb-3">
                   <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">Email</dt>
                   <dd className="flex items-center gap-2 text-sm">
@@ -407,7 +421,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                   </dd>
                 </div>
               )}
-              {contact.address && (
+              {isRecordedValue(contact.address) && (
                 <div className="flex items-start justify-between gap-4 border-b border-line pb-3">
                   <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">Address</dt>
                   <dd className="text-right text-sm text-soft">{contact.address}</dd>

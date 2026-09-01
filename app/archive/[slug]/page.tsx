@@ -9,7 +9,13 @@ import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { SITES, getSite, getCategory } from "@/lib/data";
 import { CANONICAL, getCanonical } from "@/lib/canonical";
-import { archiveRecordGraph, archiveSampleGraph, pageMeta } from "@/lib/seo";
+import {
+  archiveRecordGraph,
+  archiveSampleGraph,
+  pageMeta,
+  studyDescription,
+  studyTitle,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   // Real canonical records + the remaining sample records.
@@ -24,22 +30,22 @@ export async function generateMetadata({
   const { slug } = await params;
   const rec = getCanonical(slug);
   if (rec) {
-    const type = [rec.classification.category, rec.classification.website_type]
-      .filter(Boolean)
-      .join(" · ");
+    const shot = rec.screenshots.desktop ?? "desktop.webp";
     return pageMeta({
-      title: `${rec.identity.name} — ${type || "Website Design"}`,
-      description:
-        rec.seo.description ??
-        `Study the palette, typography, style and technology behind ${rec.identity.name}.`,
+      title: studyTitle(rec.identity.name),
+      description: studyDescription(rec),
       path: `/archive/${slug}`,
+      image: {
+        url: `/sites/${slug}/${shot}`,
+        alt: `${rec.identity.name} full-page screenshot`,
+      },
     });
   }
   const site = getSite(slug);
   if (!site) return { title: "Record not found" };
   return pageMeta({
-    title: `${site.name} — ${site.categoryName} Website Design`,
-    description: `${site.summary} Study the palette, typography, style and technology behind ${site.name}.`,
+    title: studyTitle(site.name),
+    description: `A design study of ${site.name}: ${site.style} styling, palette, type and detected technology.`,
     path: `/archive/${slug}`,
   });
 }

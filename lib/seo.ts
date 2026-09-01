@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { CanonicalSite } from "./canonical";
 
-export const SITE_URL = "https://www.allwebsites.design";
+export const SITE_URL = "https://allwebsites.design";
 export const SITE_NAME = "AllWebsites.Design";
 export const DEFAULT_TITLE =
   "AllWebsites.Design — The Website Design Research Archive";
@@ -27,20 +27,37 @@ export function absUrl(path = "/") {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+export type OgImage = {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+};
+
 export function pageMeta({
   title,
   description,
   path,
   index = true,
   type = "website",
+  image,
 }: {
   title: string;
   description: string;
   path: string;
   index?: boolean;
   type?: "website" | "article";
+  image?: OgImage;
 }): Metadata {
   const url = absUrl(path);
+  const ogImage = image
+    ? {
+        url: image.url,
+        width: image.width ?? 1200,
+        height: image.height ?? 630,
+        alt: image.alt ?? title,
+      }
+    : OG_IMAGE;
   return {
     title,
     description,
@@ -55,15 +72,80 @@ export function pageMeta({
       siteName: SITE_NAME,
       type,
       locale: "en_US",
-      images: [OG_IMAGE],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE.url],
+      images: [ogImage.url],
     },
   };
+}
+
+function uniqueStrings(values: (string | null | undefined)[]) {
+  const out: string[] = [];
+  for (const value of values) {
+    const trimmed = value?.trim();
+    if (trimmed && !out.includes(trimmed)) out.push(trimmed);
+  }
+  return out;
+}
+
+function joinList(items: string[]) {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
+}
+
+function hexChroma(hex: string) {
+  const raw = hex.replace("#", "").trim();
+  if (raw.length < 6) return 1;
+  const r = parseInt(raw.slice(0, 2), 16) / 255;
+  const g = parseInt(raw.slice(2, 4), 16) / 255;
+  const b = parseInt(raw.slice(4, 6), 16) / 255;
+  return Math.max(r, g, b) - Math.min(r, g, b);
+}
+
+function paletteLooksMonochrome(palette: { hex: string }[]) {
+  if (palette.length < 3) return false;
+  return palette.every((swatch) => hexChroma(swatch.hex) < 0.12);
+}
+
+export function studyTitle(name: string) {
+  return `${name}, design study (palette, type, tech)`;
+}
+
+export function studyDescription(site: CanonicalSite) {
+  const styles = site.design.style_tags.slice(0, 3);
+  const paletteCount = site.design.palette.length;
+  const fonts = uniqueStrings(site.design.fonts.map((font) => font.name)).slice(0, 2);
+  const bits: string[] = [];
+  if (styles.length) bits.push(`${joinList(styles)} styling`);
+  if (paletteCount) {
+    const tone = paletteLooksMonochrome(site.design.palette)
+      ? " near-monochrome"
+      : "";
+    bits.push(`a ${paletteCount}-colour${tone} palette`);
+  }
+  if (fonts.length) bits.push(`${joinList(fonts)} type`);
+  if (site.technology.summary?.trim()) {
+    const summary = site.technology.summary.trim();
+    bits.push(`built as ${summary.charAt(0).toLowerCase()}${summary.slice(1)}`);
+  } else {
+    const stack = uniqueStrings([
+      ...site.technology.builder_cms,
+      ...site.technology.framework,
+      site.technology.language,
+      ...site.technology.hosting,
+    ]).slice(0, 3);
+    if (stack.length) bits.push(`built with ${joinList(stack)}`);
+  }
+  if (bits.length === 0) {
+    return `A design study of ${site.identity.name}: palette, typography, style and detected technology.`;
+  }
+  return `A design study of ${site.identity.name}: ${bits.join(", ")}.`;
 }
 
 export function pageGraph(nodes: JsonLdNode[]) {
@@ -276,10 +358,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
   const url = absUrl(path);
   const category = site.classification.category;
   const websiteType = site.classification.website_type;
-  const typeLabel = [category, websiteType].filter(Boolean).join(", ");
-  const description =
-    site.seo.description ??
-    `Study the palette, typography, style and technology behind ${site.identity.name}.`;
+  const description = studyDescription(site);
   const screenshotFile = site.screenshots.desktop ?? "desktop.webp";
   const screenshotId = `${url}/#screenshot`;
   const studiedId = `${url}/#studied-site`;
@@ -344,9 +423,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       "@type": "ItemPage",
       "@id": `${url}/#webpage`,
       url,
-      name: typeLabel
-        ? `${site.identity.name}: ${typeLabel}`
-        : `${site.identity.name}: Website Design`,
+      name: studyTitle(site.identity.name),
       description,
       isPartOf: { "@id": WEBSITE_ID },
       breadcrumb: { "@id": crumbId(path) },

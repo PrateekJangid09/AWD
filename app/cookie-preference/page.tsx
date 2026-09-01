@@ -23,7 +23,7 @@ const GROUPS: {
   {
     id: "analytics",
     title: "Analytics",
-    desc: "Aggregate, privacy-respecting metrics on how references are discovered, so we can improve the archive.",
+    desc: "Google Analytics 4 and Google Tag Manager measure how the archive and tools are used.",
   },
   {
     id: "functional",

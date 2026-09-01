@@ -14,6 +14,7 @@ export const metadata: Metadata = pageMeta({
   title,
   description,
   path: "/blogs",
+  index: false,
 });
 
 const POSTS = [

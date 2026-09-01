@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NL9HNRBM');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZPWN6GTTE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3ZPWN6GTTE');
+</script>
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="canonical" href="https://allwebsites.design/field-guide" />
+<meta property="og:title" content="AllWebsites.Design — Interactive Product Field Guide" />
+<meta property="og:url" content="https://allwebsites.design/field-guide" />
+<meta property="og:image" content="https://allwebsites.design/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="description" content="An independent interactive field guide to AllWebsites.Design, its archive, research, tools, workflows, and public product experience.">
+  <title>AllWebsites.Design — Interactive Product Field Guide</title>
+  <style>
+    :root {
+      --paper: #f4f2ec;
+      --ink: #101012;
+      --muted: #656568;
+      --line: #d8d5ce;
+      --panel: rgba(255, 255, 255, .72);
+      --panel-solid: #fbfaf7;
+      --purple: #7057ff;
+      --coral: #ff6b5e;
+      --mint: #44d6b0;
+      --blue: #3389f9;
+      --yellow: #ffd84d;
+      --shadow: 0 20px 60px rgba(25, 22, 17, .09);
+      --radius: 22px;
+      --max: 1240px;
+    }
+
+    [data-theme="dark"] {
+      --paper: #111113;
+      --ink: #f5f3ed;
+      --muted: #aaa8a2;
+      --line: #303034;
+      --panel: rgba(30, 30, 33, .82);
+      --panel-solid: #1b1b1e;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .3);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 5% 0%, color-mix(in srgb, var(--purple) 12%, transparent), transparent 25rem),
+        radial-gradient(circle at 95% 18%, color-mix(in srgb, var(--coral) 12%, transparent), transparent 23rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 3px solid color-mix(in srgb, var(--purple) 70%, transparent); outline-offset: 3px; }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 50; }
+    .skip:focus { left: 12px; background: var(--ink); color: var(--paper); padding: 10px 14px; border-radius: 999px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
+      background: color-mix(in srgb, var(--paper) 83%, transparent);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 750; white-space: nowrap; }
+    .brand-mark { width: 15px; height: 15px; border-radius: 50%; background: conic-gradient(var(--purple), var(--coral), var(--yellow), var(--mint), var(--purple)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--purple) 11%, transparent); }
+    .topnav { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+    .topnav::-webkit-scrollbar { display: none; }
+    .topnav a { padding: 7px 10px; border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 13px; white-space: nowrap; }
+    .topnav a:hover { background: var(--panel); color: var(--ink); }
+
+    .icon-button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    main { overflow: clip; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+    .hero { min-height: 78vh; display: grid; align-items: center; padding: 88px 0 58px; }
+    .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 750; }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--coral); }
+    h1, h2, h3 { line-height: 1.04; letter-spacing: -.04em; margin: 0; }
+    h1 { max-width: 1020px; font-size: clamp(52px, 9vw, 116px); font-weight: 770; }
+    h2 { font-size: clamp(36px, 5vw, 66px); max-width: 860px; }
+    h3 { font-size: clamp(22px, 3vw, 33px); }
+    .hero h1 { margin-top: 24px; }
+    .hero h1 span { color: var(--purple); }
+    .lede { max-width: 760px; margin: 28px 0 0; color: var(--muted); font-size: clamp(18px, 2.2vw, 24px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+    .button {
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 12px 17px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .button.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+    .button:hover { transform: translateY(-1px); }
+
+    .metrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--line); margin-top: 64px; box-shadow: var(--shadow); }
+    .metric { background: var(--panel-solid); padding: 20px; min-height: 124px; }
+    .metric strong { display: block; font-size: clamp(29px, 4vw, 48px); letter-spacing: -.05em; line-height: 1; }
+    .metric span { color: var(--muted); font-size: 13px; display: block; margin-top: 10px; }
+
+    section { padding: 96px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .45fr); gap: 40px; align-items: end; margin-bottom: 44px; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 17px; }
+
+    .pipeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
+    .pipeline::after { content: ""; position: absolute; top: 47px; left: 15%; right: 15%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--purple), var(--coral)); z-index: -1; }
+    .stage { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; backdrop-filter: blur(8px); }
+    .stage-number { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--paper); font-weight: 800; margin-bottom: 28px; }
+    .stage p { color: var(--muted); margin: 12px 0 0; }
+    .stage ul { margin: 18px 0 0; padding-left: 19px; color: var(--muted); }
+
+    .lensbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .lensbar button, .filter-pill, .tool-tab, .journey-tab {
+      border: 1px solid var(--line);
+      background: transparent;
+      border-radius: 999px;
+      padding: 9px 13px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+    .lensbar button[aria-pressed="true"], .tool-tab[aria-selected="true"], .journey-tab[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+    .report-search { margin-left: auto; min-width: min(100%, 280px); position: relative; }
+    .report-search input { width: 100%; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 10px 14px 10px 37px; }
+    .report-search::before { content: "⌕"; position: absolute; left: 14px; top: 7px; font-size: 18px; color: var(--muted); }
+
+    .surface-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .surface-card { border: 1px solid var(--line); background: var(--panel); border-radius: var(--radius); padding: 25px; min-height: 280px; display: flex; flex-direction: column; }
+    .surface-card[hidden] { display: none; }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+    .route { font: 650 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 9px; text-decoration: none; }
+    .surface-card h3 { margin-top: 28px; }
+    .surface-card > p { color: var(--muted); }
+    .cap-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; padding-top: 18px; }
+    .cap-list span { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 9px; }
+    .zero-state { display: none; border: 1px dashed var(--line); border-radius: var(--radius); padding: 38px; color: var(--muted); text-align: center; }
+
+    .record-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 26px; align-items: start; }
+    .record-preview { position: sticky; top: 88px; background: #0e0e10; color: #fff; border-radius: 26px; padding: 28px; min-height: 460px; overflow: hidden; }
+    .record-preview::after { content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%; right: -100px; bottom: -100px; background: radial-gradient(circle at 35% 35%, #fff, #9c9c9c 18%, #303030 42%, #0e0e10 72%); opacity: .85; }
+    .record-preview .mini-label { color: #a8a8ae; text-transform: uppercase; letter-spacing: .1em; font-size: 11px; }
+    .record-preview h3 { margin-top: 95px; max-width: 320px; font-size: 42px; }
+    .record-preview .styles { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; position: relative; z-index: 2; }
+    .record-preview .styles span { border: 1px solid #444; border-radius: 999px; padding: 6px 10px; font-size: 12px; }
+    .record-preview .provenance { position: absolute; left: 28px; bottom: 26px; z-index: 2; font: 12px ui-monospace, monospace; color: #aaa; }
+
+    .accordion { display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); background: var(--panel); border-radius: 18px; overflow: hidden; }
+    summary { list-style: none; padding: 18px 20px; display: flex; justify-content: space-between; gap: 18px; align-items: center; cursor: pointer; font-weight: 750; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--muted); font-size: 24px; font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { border-top: 1px solid var(--line); padding: 18px 20px 22px; color: var(--muted); }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; }
+    .detail-grid div { border-bottom: 1px dashed var(--line); padding: 8px 0; }
+    .detail-grid strong { display: block; color: var(--ink); font-size: 13px; }
+    .detail-grid span { font-size: 13px; }
+
+    .tool-shell { border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: var(--panel-solid); box-shadow: var(--shadow); }
+    .tool-tabs { display: flex; gap: 1px; overflow-x: auto; background: var(--line); padding: 1px; }
+    .tool-tab { border: 0; border-radius: 0; background: var(--panel-solid); flex: 1 0 auto; padding: 15px 16px; }
+    .tool-panel { display: none; grid-template-columns: .8fr 1.2fr; min-height: 590px; }
+    .tool-panel.active { display: grid; }
+    .tool-visual { padding: 34px; color: #101012; position: relative; overflow: hidden; min-height: 420px; }
+    .tool-copy { padding: 34px; border-left: 1px solid var(--line); }
+    .tool-copy .purpose { color: var(--muted); font-size: 18px; }
+    .tool-copy h3 { margin-top: 8px; }
+    .tool-copy h4 { margin: 28px 0 9px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    .feature-list { margin: 0; padding-left: 19px; color: var(--muted); }
+    .feature-list li + li { margin-top: 7px; }
+    .truth-note { margin-top: 24px; border-left: 3px solid var(--coral); padding: 10px 0 10px 14px; color: var(--muted); font-size: 13px; }
+
+    .chromary-viz { background: #f2efe9; }
+    .search-mock { background: #fff; border: 1px solid #cfcac0; border-radius: 999px; padding: 13px 16px; color: #69645e; display: flex; justify-content: space-between; }
+    .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+    .swatch { background: #fff; border: 1px solid #ddd7cd; border-radius: 15px; padding: 10px; }
+    .swatch-color { height: 85px; border-radius: 9px; }
+    .swatch b, .swatch small { display: block; margin-top: 7px; }
+    .swatch small { color: #65615b; }
+    .colorhyme-viz { background: #dcecff; }
+    .big-color { height: 185px; border-radius: 20px; background: #3389f9; display: grid; place-items: center; font-size: 30px; font-weight: 800; color: #fff; }
+    .rhymes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+    .rhyme { height: 95px; border-radius: 15px; padding: 12px; font-weight: 750; }
+    .rhyme:nth-child(1) { background: #f9334f; color: white; }
+    .rhyme:nth-child(2) { background: #6e91be; color: white; }
+    .rhyme:nth-child(3) { background: #1678f8; color: white; }
+    .webpalette-viz { background: #f0edff; }
+    .role-stack { display: grid; gap: 9px; }
+    .role { display: flex; justify-content: space-between; align-items: center; background: white; border-radius: 13px; padding: 13px 15px; box-shadow: 0 8px 20px rgba(60,40,120,.07); }
+    .role i { width: 24px; height: 24px; border-radius: 50%; }
+    .readiness { font-size: 64px; letter-spacing: -.07em; font-weight: 800; margin-bottom: 20px; }
+    .mockup-viz { background: #fff0ee; }
+    .browser-mock { border-radius: 18px; overflow: hidden; box-shadow: 0 20px 60px rgba(82,34,20,.15); background: white; }
+    .browser-top { height: 33px; background: #2f3640; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+    .browser-top i { width: 7px; height: 7px; border-radius: 50%; background: #ff7675; }
+    .mock-hero { background: #ff7675; min-height: 180px; padding: 24px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+    .mock-lines b, .mock-lines span { display: block; height: 10px; border-radius: 999px; background: #2f3640; margin-bottom: 11px; }
+    .mock-lines b { height: 26px; width: 86%; }
+    .mock-lines span { width: 64%; opacity: .55; }
+    .mock-card { background: #55e6c1; border-radius: 13px; }
+    .mock-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; padding: 14px; }
+    .mock-row i { height: 70px; border-radius: 10px; background: #eee; }
+    .gradient-viz { background: #e8f5f3; }
+    .gradient-bar { height: 220px; border-radius: 22px; background: linear-gradient(90deg in oklch shorter hue, #0000ff, #ffff00); position: relative; }
+    .gradient-bar::after { content: "50%"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,.72); color: white; padding: 8px 10px; border-radius: 999px; font: 12px ui-monospace, monospace; }
+    .gradient-code { margin-top: 16px; background: #101012; color: #e8f5f3; border-radius: 14px; padding: 16px; font: 12px/1.6 ui-monospace, monospace; overflow-wrap: anywhere; }
+    .soon-viz { background: #fff4c9; display: grid; place-items: center; }
+    .soon-circle { width: 230px; aspect-ratio: 1; border-radius: 50%; border: 24px solid #101012; display: grid; place-items: center; font-size: 31px; font-weight: 800; text-align: center; transform: rotate(-7deg); }
+
+    .chain { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: 28px; }
+    .chain-step { border-top: 3px solid var(--line); padding-top: 14px; position: relative; }
+    .chain-step::before { content: ""; position: absolute; top: -8px; left: 0; width: 13px; height: 13px; border-radius: 50%; background: var(--ink); }
+    .chain-step b { display: block; }
+    .chain-step span { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+    .journey-wrap { display: grid; grid-template-columns: .34fr .66fr; gap: 26px; }
+    .journey-tabs { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+    .journey-tab { border-radius: 14px; text-align: left; padding: 13px 15px; }
+    .journey-panel { display: none; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 28px; }
+    .journey-panel.active { display: block; }
+    .journey-panel > p { color: var(--muted); max-width: 720px; }
+    .steps { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 17px; overflow: hidden; margin-top: 22px; }
+    .step { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 14px; padding: 14px; background: var(--panel-solid); }
+    .step-num { width: 31px; height: 31px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font-size: 12px; font-weight: 800; }
+    .step small { color: var(--muted); }
+    .step code { font-size: 11px; color: var(--muted); }
+
+    .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .audit-card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 26px; }
+    .audit-card h3 { margin-bottom: 18px; }
+    .audit-item { padding: 14px 0; border-top: 1px solid var(--line); }
+    .audit-item:first-of-type { border-top: 0; }
+    .audit-item b { display: block; }
+    .audit-item p { color: var(--muted); margin: 5px 0 0; font-size: 14px; }
+    .status { display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: .1em; font-size: 10px; font-weight: 800; margin-bottom: 9px; }
+    .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); }
+    .status.watch::before { background: var(--coral); }
+
+    .matrix { width: 100%; border-collapse: collapse; border-spacing: 0; }
+    .matrix th, .matrix td { text-align: left; border-bottom: 1px solid var(--line); padding: 14px 12px; vertical-align: top; }
+    .matrix th { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .matrix td { font-size: 14px; }
+    .matrix code { font-size: 12px; }
+
+    .method { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .method p, .method li { color: var(--muted); }
+    .footer { padding: 42px 0 70px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+    .footer strong { font-size: clamp(28px, 4vw, 48px); letter-spacing: -.05em; }
+    .footer p { color: var(--muted); max-width: 620px; }
+
+    .fade { animation: fade .25s ease; }
+    @keyframes fade { from { opacity: .2; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .metric:last-child { grid-column: span 2; }
+      .section-head, .record-layout, .tool-panel, .journey-wrap, .method { grid-template-columns: 1fr; }
+      .record-preview { position: relative; top: auto; min-height: 350px; }
+      .tool-copy { border-left: 0; border-top: 1px solid var(--line); }
+      .pipeline { grid-template-columns: 1fr; }
+      .pipeline::after { display: none; }
+      .chain { grid-template-columns: repeat(3, 1fr); }
+      .journey-tabs { flex-direction: row; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner { padding-inline: 14px; }
+      .topnav { display: none; }
+      .wrap { padding-inline: 15px; }
+      .hero { padding-top: 66px; min-height: auto; }
+      .metrics, .surface-grid, .audit-grid { grid-template-columns: 1fr; }
+      .metric:last-child { grid-column: auto; }
+      section { padding: 68px 0; }
+      .section-head { margin-bottom: 30px; }
+      .report-search { order: 2; width: 100%; margin-left: 0; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .tool-visual, .tool-copy { padding: 22px; }
+      .swatches { grid-template-columns: 1fr 1fr; }
+      .chain { grid-template-columns: repeat(2, 1fr); }
+      .step { grid-template-columns: 38px 1fr; }
+      .step code { grid-column: 2; }
+      .matrix-wrap { overflow-x: auto; }
+      .matrix { min-width: 720px; }
+      .footer-inner { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL9HNRBM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">Skip to guide</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span> AWD / Field Guide</div>
+      <nav class="topnav" aria-label="Report sections">
+        <a href="#model">Model</a>
+        <a href="#surfaces">Surfaces</a>
+        <a href="#record">Record anatomy</a>
+        <a href="#tools">Tools</a>
+        <a href="#journeys">Journeys</a>
+        <a href="#audit">Audit</a>
+      </nav>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme">◐</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Independent product anatomy · 31 August 2026</div>
+          <h1>AllWebsites.Design, <span>unpacked.</span></h1>
+          <p class="lede">A searchable design archive, a source-aware intelligence layer, and a browser-native color workshop—mapped from homepage to record provenance, from HEX lookup to production CSS.</p>
+          <div class="hero-actions">
+            <a class="button" href="#surfaces">Explore the whole system ↓</a>
+            <a class="button secondary" href="https://allwebsites.design/" target="_blank" rel="noreferrer">Open the live site ↗</a>
+          </div>
+          <div class="metrics" aria-label="Key public product counts">
+            <div class="metric"><strong>304</strong><span>published website references</span></div>
+            <div class="metric"><strong>25</strong><span>populated categories in the index</span></div>
+            <div class="metric"><strong>5 + 1</strong><span>live tools plus one announced</span></div>
+            <div class="metric"><strong>1,104</strong><span>color references in Chromary</span></div>
+            <div class="metric"><strong>38</strong><span>ready-made interface palettes</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="model">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The product model</div>
+            <h2>Archive → Intelligence → Workflow.</h2>
+          </div>
+          <p>The public experience is designed as a loop: discover strong work, understand the decisions underneath it, then use those same concepts to make something of your own.</p>
+        </div>
+        <div class="pipeline">
+          <article class="stage">
+            <div class="stage-number">01</div>
+            <h3>The Archive</h3>
+            <p>A curated, searchable corpus of live website references—not downloadable templates.</p>
+            <ul><li>304 public records</li><li>Industry/category browsing</li><li>Full-page captures and source links</li></ul>
+          </article>
+          <article class="stage">
+            <div class="stage-number">02</div>
+            <h3>The Intelligence</h3>
+            <p>A private extraction and governance engine turns each site into a structured comparison record.</p>
+            <ul><li>Design tokens and typography</li><li>Technology signals with confidence</li><li>Taxonomy, provenance and corrections</li></ul>
+          </article>
+          <article class="stage">
+            <div class="stage-number">03</div>
+            <h3>The Workflow</h3>
+            <p>Free, no-signup tools translate the archive’s color language into practical design work.</p>
+            <ul><li>Find and transform color</li><li>Build and preview systems</li><li>Interpolate and export CSS</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="surfaces">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Every public surface</div>
+            <h2>What’s where—and why it exists.</h2>
+          </div>
+          <p>Filter by intent or search this section. Every route below was opened and inspected directly.</p>
+        </div>
+        <div class="lensbar" aria-label="Filter product surfaces">
+          <button type="button" data-lens="all" aria-pressed="true">Everything</button>
+          <button type="button" data-lens="discover" aria-pressed="false">Discover</button>
+          <button type="button" data-lens="study" aria-pressed="false">Study</button>
+          <button type="button" data-lens="build" aria-pressed="false">Build</button>
+          <button type="button" data-lens="contribute" aria-pressed="false">Contribute</button>
+          <label class="report-search"><span class="skip">Search surfaces</span><input id="surfaceSearch" type="search" placeholder="Search routes or capabilities…"></label>
+        </div>
+        <div class="surface-grid" id="surfaceGrid">
+          <article class="surface-card" data-lens="discover" data-search="home search statistics toolkit recent studied categories submit">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/" target="_blank" rel="noreferrer">/</a></div>
+            <h3>Homepage</h3>
+            <p>The orientation layer: a global archive search, headline public counts, live-tool shortcuts, popular categories, recently studied sites, and the contribution doorway.</p>
+            <div class="cap-list"><span>Archive search</span><span>Tool launchpad</span><span>Category discovery</span><span>Latest records</span></div>
+          </article>
+          <article class="surface-card" data-lens="discover study" data-search="archive search filter name category style technology all cards query">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/archive" target="_blank" rel="noreferrer">/archive</a></div>
+            <h3>Archive</h3>
+            <p>The core discovery surface. Search queries match names and embedded record attributes—including technology terms such as “Webflow”—while category pills narrow the 304-card collection.</p>
+            <div class="cap-list"><span>Text search</span><span>25 populated categories</span><span>Style + tech discovery</span><span>304 cards</span></div>
+          </article>
+          <article class="surface-card" data-lens="study" data-search="record profile screenshot palette typography framework cms hosting confidence provenance related correction">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/archive/099" target="_blank" rel="noreferrer">/archive/[slug]</a></div>
+            <h3>Website record</h3>
+            <p>Each reference becomes a study page with source link, screenshot, summary, style, palette, typography, inferred stack, classification confidence, captured pages, contact signals and provenance.</p>
+            <div class="cap-list"><span>Design DNA</span><span>Stack evidence</span><span>Confidence labels</span><span>Corrections</span><span>Similar sites</span></div>
+          </article>
+          <article class="surface-card" data-lens="discover study" data-search="categories industry taxonomy counts percentage trending classification">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/c" target="_blank" rel="noreferrer">/c</a></div>
+            <h3>Category atlas</h3>
+            <p>Industry-led browsing with counts, percentages, descriptions and trending lanes. Individual category pages gather matching records and state that automated labels may need review.</p>
+            <div class="cap-list"><span>Sector comparison</span><span>Counts + share</span><span>Trending lanes</span><span>Classification note</span></div>
+          </article>
+          <article class="surface-card" data-lens="study" data-search="research design index methodology counts accuracy deduplicate classification snapshot">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/research/website-design-index-2026" target="_blank" rel="noreferrer">/research/…</a></div>
+            <h3>2026 Design Index</h3>
+            <p>A transparent catalogue snapshot: category composition across 304 cleaned, deduplicated records plus methodology, caveats, and direct routes back into the evidence.</p>
+            <div class="cap-list"><span>Category composition</span><span>Methodology</span><span>Accuracy caveat</span><span>Living snapshot</span></div>
+          </article>
+          <article class="surface-card" data-lens="study" data-search="resources journal articles typography neutral framework coming soon newsletter">
+            <div class="card-top"><span class="status watch">Coming next</span><a class="route" href="https://allwebsites.design/blogs" target="_blank" rel="noreferrer">/blogs</a></div>
+            <h3>Resources / Journal</h3>
+            <p>Three editorial directions are previewed—display typography, near-black/off-white dominance, and what framework choice says about a team. The page currently says the first pieces are landing soon.</p>
+            <div class="cap-list"><span>Editorial teasers</span><span>Archive-derived analysis</span><span>Newsletter intent</span></div>
+          </article>
+          <article class="surface-card" data-lens="build" data-search="tools chromary colorhyme webpalette mockupalettes truegradient palette checker browser free no signup">
+            <div class="card-top"><span class="status">5 live</span><a class="route" href="https://allwebsites.design/tools" target="_blank" rel="noreferrer">/tools</a></div>
+            <h3>Color toolkit</h3>
+            <p>A six-job sequence—find, transform, build, preview, interpolate and test. Five are live; Palette Checker is announced as an upcoming role-and-contrast tester.</p>
+            <div class="cap-list"><span>No signup</span><span>Browser-local</span><span>Production exports</span><span>Shared language</span></div>
+          </article>
+          <article class="surface-card" data-lens="contribute" data-search="submit contact corrections press partnership mailto email editorial guidelines">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/submit" target="_blank" rel="noreferrer">/submit + /contact</a></div>
+            <h3>Contribution loop</h3>
+            <p>Users can nominate sites, report bad data, ask questions, or open press/partnership conversations. Both forms compose an email to hello@allwebsites.design rather than posting to an account system.</p>
+            <div class="cap-list"><span>Site nomination</span><span>Priority corrections</span><span>Partnership enquiries</span><span>No account</span></div>
+          </article>
+          <article class="surface-card" data-lens="study contribute" data-search="about manifesto editorial integrity source truth unknown governance privacy cookie">
+            <div class="card-top"><span class="status">Live</span><a class="route" href="https://allwebsites.design/about" target="_blank" rel="noreferrer">/about + policy</a></div>
+            <h3>Trust layer</h3>
+            <p>About, Manifesto and Editorial Guidelines explain selection, governed taxonomy, source authority, honest unknowns and correction priority. Privacy and cookie pages expose collection and consent choices.</p>
+            <div class="cap-list"><span>Selection criteria</span><span>Integrity rules</span><span>Privacy controls</span><span>Source authority</span></div>
+          </article>
+        </div>
+        <div class="zero-state" id="surfaceZero">No matching surface. Try a broader word like “search”, “palette”, or “correction”.</div>
+      </div>
+    </section>
+
+    <section id="record">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The archive’s atomic unit</div>
+            <h2>One website becomes a structured record.</h2>
+          </div>
+          <p>The public page is not a scraped row. It is an assembled comparison object whose claims are separated from inference and whose provenance remains visible.</p>
+        </div>
+        <div class="record-layout">
+          <aside class="record-preview" aria-label="Illustrative archive record">
+            <div class="mini-label">Illustrative profile anatomy</div>
+            <h3>Real site.<br>Queryable evidence.</h3>
+            <div class="styles"><span>Style</span><span>Industry</span><span>Audience</span><span>Stack</span></div>
+            <div class="provenance">AWD-000139 · complete · extractor 2.2.0</div>
+          </aside>
+          <div class="accordion">
+            <details open>
+              <summary>01 · Identity & classification</summary>
+              <div class="detail-body"><div class="detail-grid">
+                <div><strong>Official identity</strong><span>Name, canonical source URL, record title</span></div>
+                <div><strong>Editorial summary</strong><span>Neutral description grounded in source evidence</span></div>
+                <div><strong>Taxonomy</strong><span>Category, subcategory, website type, audience</span></div>
+                <div><strong>Aesthetic labels</strong><span>Examples include Minimal, Brutalist, Playful, Editorial and Motion-Driven</span></div>
+              </div></div>
+            </details>
+            <details>
+              <summary>02 · Visual design DNA</summary>
+              <div class="detail-body"><div class="detail-grid">
+                <div><strong>Full-page evidence</strong><span>Scrollable captures of the homepage and other key pages</span></div>
+                <div><strong>Palette</strong><span>Role labels, HEX values and relative representation</span></div>
+                <div><strong>Typography</strong><span>Font family, use (such as display), and observed size range</span></div>
+                <div><strong>Comparison utility</strong><span>Visual decisions can be compared across records instead of judged from a thumbnail alone</span></div>
+              </div></div>
+            </details>
+            <details>
+              <summary>03 · Technology signals</summary>
+              <div class="detail-body"><div class="detail-grid">
+                <div><strong>Stack dimensions</strong><span>Framework, CMS/builder, language, web server, hosting, CDN and ecommerce</span></div>
+                <div><strong>Evidence boundary</strong><span>Signals come from headers, DOM markers and rendered evidence</span></div>
+                <div><strong>Confidence language</strong><span>Detected, likely, not detected or unknown—backend details are never guaranteed</span></div>
+                <div><strong>Example</strong><span>“Static HTML / CSS / JS” and “Vercel” can be presented as likely rather than fact</span></div>
+              </div></div>
+            </details>
+            <details>
+              <summary>04 · Confidence, contact & provenance</summary>
+              <div class="detail-body"><div class="detail-grid">
+                <div><strong>Classification confidence</strong><span>Percentages for dimensions such as website type and audience</span></div>
+                <div><strong>Contact signals</strong><span>Detected email and social presence—or an explicit “not detected” state</span></div>
+                <div><strong>Record provenance</strong><span>Record ID, status, completeness, last checked and extractor version</span></div>
+                <div><strong>Repair path</strong><span>Report incorrect information; reviewed corrections override automation</span></div>
+              </div></div>
+            </details>
+            <details>
+              <summary>05 · Discovery after the record</summary>
+              <div class="detail-body"><div class="detail-grid">
+                <div><strong>Similar sites</strong><span>Four related records keep the browsing loop moving</span></div>
+                <div><strong>Cross-surface routes</strong><span>Categories, tools, journal, research, submission and archive</span></div>
+                <div><strong>Official-source escape hatch</strong><span>The live website remains the authority for current business facts</span></div>
+                <div><strong>Why it matters</strong><span>It creates a research trail without pretending the archive is the source of truth</span></div>
+              </div></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The connected toolkit</div>
+            <h2>Five live instruments. One shared color language.</h2>
+          </div>
+          <p>Select a tool to see its job, controls, outputs and honest limitations. The illustrations below are explanatory, not embedded versions of the tools.</p>
+        </div>
+        <div class="tool-shell">
+          <div class="tool-tabs" role="tablist" aria-label="Tool explorer">
+            <button class="tool-tab" role="tab" aria-selected="true" aria-controls="tool-chromary" id="tab-chromary" data-tool="chromary">Chromary</button>
+            <button class="tool-tab" role="tab" aria-selected="false" aria-controls="tool-colorhyme" id="tab-colorhyme" data-tool="colorhyme">Colorhyme</button>
+            <button class="tool-tab" role="tab" aria-selected="false" aria-controls="tool-webpalette" id="tab-webpalette" data-tool="webpalette">WebPalette</button>
+            <button class="tool-tab" role="tab" aria-selected="false" aria-controls="tool-mockupalettes" id="tab-mockupalettes" data-tool="mockupalettes">Mockupalettes</button>
+            <button class="tool-tab" role="tab" aria-selected="false" aria-controls="tool-truegradient" id="tab-truegradient" data-tool="truegradient">TrueGradient</button>
+            <button class="tool-tab" role="tab" aria-selected="false" aria-controls="tool-checker" id="tab-checker" data-tool="checker">Palette Checker</button>
+          </div>
+
+          <article class="tool-panel active" id="tool-chromary" role="tabpanel" aria-labelledby="tab-chromary">
+            <div class="tool-visual chromary-viz">
+              <div class="search-mock"><span>Search Sage, Cerulean, #7C3AED…</span><b>⌕</b></div>
+              <div class="swatches">
+                <div class="swatch"><div class="swatch-color" style="background:#bcb88a"></div><b>Sage</b><small>#BCB88A · Curated</small></div>
+                <div class="swatch"><div class="swatch-color" style="background:#663399"></div><b>Rebeccapurple</b><small>#663399 · CSS</small></div>
+                <div class="swatch"><div class="swatch-color" style="background:#06c2ac"></div><b>Turquoise</b><small>#06C2AC · Survey</small></div>
+              </div>
+            </div>
+            <div class="tool-copy">
+              <div class="eyebrow">Find</div><h3>Chromary</h3><p class="purpose">A source-aware color dictionary and perceptual matcher.</p>
+              <h4>What the user can do</h4>
+              <ul class="feature-list"><li>Search 1,104 references by name or HEX, or jump to a random color.</li><li>Filter CSS keywords, xkcd community-survey names, curated designer references, or include unfiltered survey language.</li><li>Sort by relevance, A–Z, hue, lightness, chroma or source; browse by initial letter.</li><li>Open a color drawer with HEX, RGB, HSL, OKLCH, luminance, source, alternate definitions and perceptually nearby names.</li><li>Copy HEX/CSS values or pass the selection into Colorhyme.</li></ul>
+              <h4>How it works</h4><p class="purpose">Nearby matching converts colors to Oklab and ranks them with ΔEOK rather than raw RGB distance.</p>
+              <div class="truth-note">A color name is treated as a reference, not a universal truth. CSS is standardized; human naming sources can disagree.</div>
+              <p><a href="https://allwebsites.design/tools/chromary" target="_blank" rel="noreferrer">Open Chromary ↗</a></p>
+            </div>
+          </article>
+
+          <article class="tool-panel" id="tool-colorhyme" role="tabpanel" aria-labelledby="tab-colorhyme" hidden>
+            <div class="tool-visual colorhyme-viz">
+              <div class="big-color">#3389F9</div>
+              <div class="rhymes"><div class="rhyme">Accent<br>#F9334F</div><div class="rhyme">Muted<br>#6E91BE</div><div class="rhyme">Darker<br>#1678F8</div></div>
+            </div>
+            <div class="tool-copy">
+              <div class="eyebrow">Transform</div><h3>Colorhyme</h3><p class="purpose">A deterministic, exact-angle HSL transformer for the moment after a base color is chosen.</p>
+              <h4>What the user can do</h4>
+              <ul class="feature-list"><li>Paste HEX or use a visual color picker.</li><li>Shift hue from −360° to +360° in 0.1° increments.</li><li>Use relationship presets: 30° analogous, 60° wide analogous, 90° quarter turn, 120° triadic, 137.5° golden angle, 150° split and 180° complement.</li><li>Reduce saturation and lightness with exact percentages.</li><li>Choose a visibility-aware accent for very dark bases or preserve the exact HSL transformation.</li><li>Copy base, accent, muted and darker colors—or copy the complete recipe.</li></ul>
+              <div class="truth-note">Same input + settings = same output. HSL is intuitive but not perceptually uniform; equal numerical shifts may not look equally strong.</div>
+              <p><a href="https://allwebsites.design/tools/colorhyme" target="_blank" rel="noreferrer">Open Colorhyme ↗</a></p>
+            </div>
+          </article>
+
+          <article class="tool-panel" id="tool-webpalette" role="tabpanel" aria-labelledby="tab-webpalette" hidden>
+            <div class="tool-visual webpalette-viz">
+              <div class="readiness">82<small style="font-size:16px"> / 100 readiness</small></div>
+              <div class="role-stack">
+                <div class="role"><b>Primary</b><i style="background:#6c63ff"></i></div>
+                <div class="role"><b>Secondary</b><i style="background:#b49cff"></i></div>
+                <div class="role"><b>Light neutral</b><i style="background:#f7f6fb;border:1px solid #ddd"></i></div>
+                <div class="role"><b>Dark neutral</b><i style="background:#24232a"></i></div>
+                <div class="role"><b>Accent</b><i style="background:#ff6b5e"></i></div>
+              </div>
+            </div>
+            <div class="tool-copy">
+              <div class="eyebrow">Build</div><h3>WebPalette Studio</h3><p class="purpose">A role-based website color-system completer that protects the colors you already chose.</p>
+              <h4>Input & analysis</h4>
+              <ul class="feature-list"><li>Add colors by name search, HEX, native picker, screen eyedropper, RGB or OKLCH; adjust brightness.</li><li>Assign five jobs: Primary, Secondary, Light Neutral, Dark Neutral and Accent.</li><li>Track a 0–100 readiness score as those roles and their contrast become usable.</li><li>Lock user decisions and preserve supplied HEX values.</li></ul>
+              <h4>Completion & output</h4>
+              <ul class="feature-list"><li>Generate only missing roles; compare the same website before and after completion.</li><li>Inspect role fitness, contrast and technical evidence through progressive disclosure.</li><li>Copy semantic CSS variables.</li></ul>
+              <div class="truth-note">The engine is deterministic—not prompt-based AI. It uses sRGB, OKLab/OKLCH, hue relationships, contrast, candidate generation, palette scoring and beam search.</div>
+              <p><a href="https://allwebsites.design/tools/webpalette" target="_blank" rel="noreferrer">Open WebPalette Studio ↗</a></p>
+            </div>
+          </article>
+
+          <article class="tool-panel" id="tool-mockupalettes" role="tabpanel" aria-labelledby="tab-mockupalettes" hidden>
+            <div class="tool-visual mockup-viz">
+              <div class="browser-mock"><div class="browser-top"><i></i><i></i><i></i></div><div class="mock-hero"><div class="mock-lines"><b></b><span></span><span style="width:42%"></span></div><div class="mock-card"></div></div><div class="mock-row"><i></i><i style="background:#6c5ce7"></i><i></i></div></div>
+            </div>
+            <div class="tool-copy">
+              <div class="eyebrow">Preview</div><h3>Mockupalettes</h3><p class="purpose">A controlled interface test: the layout stays fixed while the four-color system changes.</p>
+              <h4>What the user can do</h4>
+              <ul class="feature-list"><li>Paste four HEX colors; apply or reset the set.</li><li>Assign Primary, Secondary, Accent and Dark roles—or use Auto-map as a starting point.</li><li>Edit and copy each role directly.</li><li>Search and filter 38 presets across Branding, Tech, Playful, Editorial, Travel, SaaS, Fintech, Minimal, Luxury, Organic, Food and Beauty.</li><li>Preview desktop, tablet or mobile; compare A/B directions; hide controls for an unobstructed view.</li></ul>
+              <div class="truth-note">Auto-map identifies the darkest color by luminance, then uses saturation to suggest the others. It is explicitly a heuristic—not a design rule.</div>
+              <p><a href="https://allwebsites.design/tools/mockupalettes" target="_blank" rel="noreferrer">Open Mockupalettes ↗</a></p>
+            </div>
+          </article>
+
+          <article class="tool-panel" id="tool-truegradient" role="tabpanel" aria-labelledby="tab-truegradient" hidden>
+            <div class="tool-visual gradient-viz">
+              <div class="gradient-bar"></div>
+              <div class="gradient-code">linear-gradient(90deg in oklch shorter hue, #0000FF 0%, #FFFF00 100%)</div>
+            </div>
+            <div class="tool-copy">
+              <div class="eyebrow">Interpolate</div><h3>TrueGradient</h3><p class="purpose">An OKLCH gradient builder and side-by-side interpolation laboratory.</p>
+              <h4>Build & inspect</h4>
+              <ul class="feature-list"><li>Paste a HEX-based CSS linear-gradient or create stops from scratch.</li><li>Add/remove stops, edit HEX and positions, search named colors, and set the angle.</li><li>Switch OKLCH, sRGB or compare mode; drag an inspector and a split divider to inspect the same point.</li><li>Choose shorter, longer, increasing or decreasing hue routes.</li><li>Control fallback sampling from 9 to 129 points (default 33).</li></ul>
+              <h4>Ship it</h4><ul class="feature-list"><li>Copy native <code>in oklch</code> CSS.</li><li>Copy a portable HEX-stop approximation with gamut mapping noted.</li></ul>
+              <div class="truth-note">The endpoints, positions and angle stay fixed; only the interpolation path changes. Native output and sampled fallback solve different compatibility needs.</div>
+              <p><a href="https://allwebsites.design/tools/truegradient" target="_blank" rel="noreferrer">Open TrueGradient ↗</a></p>
+            </div>
+          </article>
+
+          <article class="tool-panel" id="tool-checker" role="tabpanel" aria-labelledby="tab-checker" hidden>
+            <div class="tool-visual soon-viz"><div class="soon-circle">TEST<br>SOON</div></div>
+            <div class="tool-copy">
+              <div class="eyebrow">Test</div><h3>Palette Checker</h3><p class="purpose">The announced sixth job: role and contrast testing.</p>
+              <h4>Current state</h4><p class="purpose">The tools index labels this instrument “Soon” and “In progress.” No public control surface is available yet.</p>
+              <h4>Place in the suite</h4><p class="purpose">It closes the workflow after interpolation by validating whether a color system survives semantic roles and contrast constraints.</p>
+              <div class="truth-note">Treat this as public roadmap intent, not a shipped capability.</div>
+              <p><a href="https://allwebsites.design/tools" target="_blank" rel="noreferrer">See the tools index ↗</a></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="chain" aria-label="Connected color workflow">
+          <div class="chain-step"><b>1 · Find</b><span>Chromary</span></div>
+          <div class="chain-step"><b>2 · Transform</b><span>Colorhyme</span></div>
+          <div class="chain-step"><b>3 · Build</b><span>WebPalette</span></div>
+          <div class="chain-step"><b>4 · Preview</b><span>Mockupalettes</span></div>
+          <div class="chain-step"><b>5 · Interpolate</b><span>TrueGradient</span></div>
+          <div class="chain-step"><b>6 · Test</b><span>Palette Checker</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journeys">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">What can a user do with it?</div><h2>Start with a real job, not a feature list.</h2></div>
+          <p>Choose a scenario. Each route combines archive intelligence and practical tools into a repeatable workflow.</p>
+        </div>
+        <div class="journey-wrap">
+          <div class="journey-tabs" role="tablist" aria-label="User journey selector">
+            <button class="journey-tab" role="tab" aria-selected="true" data-journey="direction">Find a design direction</button>
+            <button class="journey-tab" role="tab" aria-selected="false" data-journey="brand">Complete a brand palette</button>
+            <button class="journey-tab" role="tab" aria-selected="false" data-journey="gradient">Ship a better gradient</button>
+            <button class="journey-tab" role="tab" aria-selected="false" data-journey="research">Research an industry</button>
+            <button class="journey-tab" role="tab" aria-selected="false" data-journey="contribute">Fix or add a record</button>
+          </div>
+          <div>
+            <article class="journey-panel active" data-panel="direction">
+              <h3>Find a design direction without copying a homepage.</h3><p>Use a sector, aesthetic and stack as comparison lenses, then take only the underlying decisions into your own work.</p>
+              <div class="steps"><div class="step"><span class="step-num">1</span><div><b>Search or choose an industry</b><br><small>Start broad: SaaS, portfolio, finance, studio…</small></div><code>/archive · /c</code></div><div class="step"><span class="step-num">2</span><div><b>Open several record profiles</b><br><small>Compare palette roles, type scale, style labels and technology.</small></div><code>/archive/[slug]</code></div><div class="step"><span class="step-num">3</span><div><b>Move from reference to experiment</b><br><small>Preview a color direction on a fixed interface.</small></div><code>Mockupalettes</code></div></div>
+            </article>
+            <article class="journey-panel" data-panel="brand">
+              <h3>Turn one or two brand colors into a website-ready system.</h3><p>Preserve the identity; generate only the missing semantic roles; then judge the result at interface scale.</p>
+              <div class="steps"><div class="step"><span class="step-num">1</span><div><b>Name or verify the starting color</b><br><small>See competing definitions and copy the exact value.</small></div><code>Chromary</code></div><div class="step"><span class="step-num">2</span><div><b>Explore deliberate relationships</b><br><small>Try analogous, triadic, golden-angle or complementary shifts.</small></div><code>Colorhyme</code></div><div class="step"><span class="step-num">3</span><div><b>Complete the five website jobs</b><br><small>Protect supplied HEX values and generate the missing roles.</small></div><code>WebPalette</code></div><div class="step"><span class="step-num">4</span><div><b>Judge area, hierarchy and context</b><br><small>Test the same palette on the same layout.</small></div><code>Mockupalettes</code></div></div>
+            </article>
+            <article class="journey-panel" data-panel="gradient">
+              <h3>Turn an ordinary gradient into an inspectable production choice.</h3><p>Keep the endpoints fixed, compare color-space journeys, choose the hue route, then export for modern and fallback browsers.</p>
+              <div class="steps"><div class="step"><span class="step-num">1</span><div><b>Paste the CSS gradient</b><br><small>HEX-based linear gradients can be converted directly.</small></div><code>TrueGradient</code></div><div class="step"><span class="step-num">2</span><div><b>Compare sRGB and OKLCH</b><br><small>Inspect identical positions and midpoint measurements.</small></div><code>Compare mode</code></div><div class="step"><span class="step-num">3</span><div><b>Choose the hue path</b><br><small>Shorter, longer, increasing or decreasing.</small></div><code>4 routes</code></div><div class="step"><span class="step-num">4</span><div><b>Copy both delivery formats</b><br><small>Native OKLCH first; sampled HEX fallback second.</small></div><code>CSS export</code></div></div>
+            </article>
+            <article class="journey-panel" data-panel="research">
+              <h3>Study how an industry presents itself.</h3><p>Use the catalogue as a bounded research sample—not as a claim about the entire web.</p>
+              <div class="steps"><div class="step"><span class="step-num">1</span><div><b>Read the current index</b><br><small>Understand counts, exclusions and limitations.</small></div><code>2026 Index</code></div><div class="step"><span class="step-num">2</span><div><b>Open a populated category</b><br><small>See the full set and the classification caveat.</small></div><code>/c/[slug]</code></div><div class="step"><span class="step-num">3</span><div><b>Compare common decisions</b><br><small>Palette, type, style and stack—not just hero imagery.</small></div><code>Record profiles</code></div></div>
+            </article>
+            <article class="journey-panel" data-panel="contribute">
+              <h3>Help maintain the corpus.</h3><p>The public correction loop is part of the product, not a buried support channel.</p>
+              <div class="steps"><div class="step"><span class="step-num">1</span><div><b>Nominate a reference</b><br><small>Supply URL, email and optional rationale.</small></div><code>/submit</code></div><div class="step"><span class="step-num">2</span><div><b>Request a correction</b><br><small>Flag wrong, stale or miscategorised data.</small></div><code>/contact</code></div><div class="step"><span class="step-num">3</span><div><b>Understand the review bar</b><br><small>Real destination, usable capture and reference value.</small></div><code>/editorial-guidelines</code></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="audit">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Independent experience audit</div><h2>Strong now. Tighten next.</h2></div>
+          <p>This section separates observed strengths from seams worth resolving. “Verify” items are questions raised by public behavior—not accusations about internal implementation.</p>
+        </div>
+        <div class="audit-grid">
+          <article class="audit-card">
+            <h3>What is especially strong</h3>
+            <div class="audit-item"><span class="status">Strong</span><b>Product coherence</b><p>The archive and tools share concepts—palette roles, typography, technology, evidence—so the suite feels like one system rather than a widget directory.</p></div>
+            <div class="audit-item"><span class="status">Strong</span><b>Epistemic honesty</b><p>“Detected,” “likely,” “not detected” and “unknown” are treated as real product states. The official source remains authoritative.</p></div>
+            <div class="audit-item"><span class="status">Strong</span><b>Traceable records</b><p>Record ID, status, completeness and extractor version make the archive inspectable and correctable.</p></div>
+            <div class="audit-item"><span class="status">Strong</span><b>Semantic foundation</b><p>Sampled core pages had one H1, a main landmark, named controls and complete image alt text. The archive had 305 images with no missing alt attributes.</p></div>
+            <div class="audit-item"><span class="status">Strong</span><b>Search and crawlability</b><p>Next.js rendering, canonical URLs, Open Graph images and JSON-LD (Organization, WebSite, CollectionPage, ItemList, WebApplication and FAQPage) support discovery.</p></div>
+            <div class="audit-item"><span class="status">Strong</span><b>Large-gallery delivery</b><p>The archive exposes all 304 cards but uses Next image delivery; 303 of 305 images were marked lazy and all 305 used async decoding.</p></div>
+          </article>
+          <article class="audit-card">
+            <h3>What deserves attention</h3>
+            <div class="audit-item"><span class="status watch">Clarify</span><b>25 categories vs 44 category routes</b><p>Homepage, footer and research index say 25 categories; the category atlas says 44 and includes several zero-count legacy/expansion lanes. Label “25 populated / 44 in taxonomy” or consolidate.</p></div>
+            <div class="audit-item"><span class="status watch">Clarify</span><b>304 public records vs “5,896-record archive” copy</b><p>The archive page says the loaded set is 304 while a full 5,896-record production dataset connects behind it. Explain whether this is private corpus, future catalogue or environment-specific copy.</p></div>
+            <div class="audit-item"><span class="status watch">Repair</span><b>Three legacy tool links return 404</b><p>Chromary currently links to <code>/tools/palette-fixer</code>, <code>/tools/website-palette-checker</code> and <code>/tools/true-gradient</code>. The live destinations use newer names/slugs.</p></div>
+            <div class="audit-item"><span class="status watch">Repair</span><b>Unavailable email becomes <code>mailto:not found</code></b><p>At least one sampled record turns an absent email value into an active mail link. Render plain “Not detected” when no valid address exists.</p></div>
+            <div class="audit-item"><span class="status watch">Align</span><b>Tool-shell navigation and skip links</b><p>Core archive pages expose a skip link and primary navigation; sampled standalone tool shells generally do not. Carry the same accessibility affordances across the suite.</p></div>
+            <div class="audit-item"><span class="status watch">Verify</span><b>Consent copy vs AdSense script presence</b><p>The cookie page says ad tracking is not run today, yet the homepage DOM includes Google AdSense scripts before a choice was made. Script presence does not prove tracking; confirm gating and update wording if needed.</p></div>
+            <div class="audit-item"><span class="status watch">Plan</span><b>Scale beyond a 304-card DOM</b><p>Lazy images soften network cost, but the full archive still renders a large card tree. Pagination, incremental rendering or virtualisation may matter as the public corpus grows.</p></div>
+            <div class="audit-item"><span class="status watch">Ship</span><b>Resource teasers are not articles yet</b><p>The editorial topics are strong acquisition and authority material. Publishing them would complete the archive → research → education loop.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="route-map">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Route & capability matrix</div><h2>The whole public footprint at a glance.</h2></div>
+          <p>Use this as a compact operator’s map. “Local” means the tool says processing happens in the browser without signup.</p>
+        </div>
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <thead><tr><th>Surface</th><th>Primary job</th><th>User input</th><th>Output</th><th>State</th></tr></thead>
+            <tbody>
+              <tr><td><code>/archive</code></td><td>Discover references</td><td>Text query + category</td><td>Matching website cards</td><td>Live</td></tr>
+              <tr><td><code>/archive/[slug]</code></td><td>Study a website</td><td>Record selection</td><td>Design, stack and provenance profile</td><td>Live</td></tr>
+              <tr><td><code>/c</code></td><td>Compare industries</td><td>Category choice</td><td>Counts, share and records</td><td>Live</td></tr>
+              <tr><td><code>/research/…</code></td><td>Understand the corpus</td><td>Reading / link navigation</td><td>Composition + methodology</td><td>Live</td></tr>
+              <tr><td><code>/tools/chromary</code></td><td>Find color</td><td>Name or HEX</td><td>Values, source and nearby names</td><td>Live · local</td></tr>
+              <tr><td><code>/tools/colorhyme</code></td><td>Transform color</td><td>HEX + hue/sat/light settings</td><td>4 colors + reproducible recipe</td><td>Live · local</td></tr>
+              <tr><td><code>/tools/webpalette</code></td><td>Build a color system</td><td>1+ protected colors</td><td>5 roles, readiness, preview, CSS</td><td>Live · local</td></tr>
+              <tr><td><code>/tools/mockupalettes</code></td><td>Preview a palette</td><td>4 colors / 38 presets</td><td>Responsive fixed-layout preview</td><td>Live · local</td></tr>
+              <tr><td><code>/tools/truegradient</code></td><td>Interpolate a gradient</td><td>Stops, angle, hue route</td><td>Native OKLCH + HEX fallback CSS</td><td>Live · local</td></tr>
+              <tr><td>Palette Checker</td><td>Test roles and contrast</td><td>Not public yet</td><td>Not public yet</td><td>Announced</td></tr>
+              <tr><td><code>/submit</code></td><td>Nominate a site</td><td>URL, email, rationale</td><td>Composed email to editorial</td><td>Live</td></tr>
+              <tr><td><code>/contact</code></td><td>Correct or enquire</td><td>Name, email, reason, message</td><td>Composed email to editorial</td><td>Live</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Scope & method</div><h2>What this guide does—and does not claim.</h2></div><p>The website is a living product. Counts, routes and capabilities reflect the public site inspected on 31 August 2026.</p></div>
+        <div class="method">
+          <div><h3>Inspection coverage</h3><ul><li>Homepage, archive, search behavior, category index and populated category page</li><li>Representative record profile and its public data schema</li><li>Tools index plus all five live tools and announced checker</li><li>Research, resources, about, manifesto, editorial, submission, contact, privacy, cookies and 404 behavior</li><li>Public semantic markup, structured data, image-loading strategy and legacy routes</li></ul></div>
+          <div><h3>Evidence boundary</h3><p>This is a product and user-experience teardown based on public interfaces and client-visible behavior. It does not claim access to the private extraction engine, private datasets, server logs, analytics results or internal roadmap.</p><p>Observed inconsistencies are framed as verification or repair opportunities. They may reflect ongoing migration, unpublished data, or deployment differences.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><strong>Discover. Understand. Build.</strong><p>AllWebsites.Design’s most interesting move is turning inspiration into a governed, reusable workflow. The archive provides evidence; the tools make the evidence actionable.</p></div>
+      <a class="button secondary" href="#main">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.getElementById('themeToggle');
+      const storedTheme = localStorage.getItem('awd-guide-theme');
+      if (storedTheme) root.dataset.theme = storedTheme;
+      themeButton.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('awd-guide-theme', next);
+        themeButton.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      });
+
+      const lensButtons = [...document.querySelectorAll('[data-lens].lensbar button, .lensbar button[data-lens]')];
+      const cards = [...document.querySelectorAll('.surface-card')];
+      const search = document.getElementById('surfaceSearch');
+      const zero = document.getElementById('surfaceZero');
+      let activeLens = 'all';
+
+      function filterCards() {
+        const query = search.value.trim().toLowerCase();
+        let visible = 0;
+        cards.forEach(card => {
+          const lenses = card.dataset.lens.split(' ');
+          const lensMatch = activeLens === 'all' || lenses.includes(activeLens);
+          const text = (card.dataset.search + ' ' + card.innerText).toLowerCase();
+          const searchMatch = !query || text.includes(query);
+          card.hidden = !(lensMatch && searchMatch);
+          if (!card.hidden) visible += 1;
+        });
+        zero.style.display = visible ? 'none' : 'block';
+      }
+
+      lensButtons.forEach(button => button.addEventListener('click', () => {
+        activeLens = button.dataset.lens;
+        lensButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        filterCards();
+      }));
+      search.addEventListener('input', filterCards);
+
+      const toolTabs = [...document.querySelectorAll('.tool-tab')];
+      const toolPanels = [...document.querySelectorAll('.tool-panel')];
+      function selectTool(tab) {
+        toolTabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+        toolPanels.forEach(panel => {
+          const selected = panel.id === `tool-${tab.dataset.tool}`;
+          panel.hidden = !selected;
+          panel.classList.toggle('active', selected);
+          if (selected) panel.classList.add('fade');
+        });
+      }
+      toolTabs.forEach(tab => {
+        tab.addEventListener('click', () => selectTool(tab));
+        tab.addEventListener('keydown', event => {
+          if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          const current = toolTabs.indexOf(tab);
+          const delta = event.key === 'ArrowRight' ? 1 : -1;
+          const next = toolTabs[(current + delta + toolTabs.length) % toolTabs.length];
+          next.focus(); selectTool(next);
+        });
+      });
+
+      const journeyTabs = [...document.querySelectorAll('.journey-tab')];
+      const journeyPanels = [...document.querySelectorAll('.journey-panel')];
+      journeyTabs.forEach(tab => tab.addEventListener('click', () => {
+        journeyTabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+        journeyPanels.forEach(panel => {
+          const selected = panel.dataset.panel === tab.dataset.journey;
+          panel.classList.toggle('active', selected);
+          if (selected) panel.classList.add('fade');
+        });
+      }));
+    })();
+  </script>
+</body>
+</html>

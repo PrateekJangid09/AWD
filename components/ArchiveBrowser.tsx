@@ -118,8 +118,8 @@ export default function ArchiveBrowser({
         )}
 
         <p className="mt-14 border-t border-line pt-6 text-center text-[13px] leading-relaxed text-muted">
-          Showing the loaded set. The full 5,896-record archive connects to the live
-          dataset in production.
+          {items.length.toLocaleString()} published design studies. The archive grows
+          as records are reviewed.
         </p>
       </div>
     </section>

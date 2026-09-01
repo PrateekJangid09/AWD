@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import AdSense from "@/components/AdSense";
 import JsonLd from "@/components/JsonLd";
+import { GtmNoscript, GTM_HEAD_SCRIPT, GA_HEAD_SCRIPT, GA_ID } from "@/components/Tracking";
+import { liveCategories } from "@/lib/canonical";
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,
@@ -35,13 +37,6 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,
-  keywords: [
-    "website design inspiration",
-    "web design archive",
-    "design references",
-    "UI inspiration",
-    "website gallery",
-  ],
   openGraph: {
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
@@ -68,9 +63,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const navCategories = liveCategories().filter((category) => category.count > 0);
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: GTM_HEAD_SCRIPT }} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script dangerouslySetInnerHTML={{ __html: GA_HEAD_SCRIPT }} />
+      </head>
       <body className="min-h-screen bg-paper text-ink antialiased">
+        <GtmNoscript />
         <JsonLd data={globalGraph()} />
         <AdSense />
         <a
@@ -79,7 +81,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Nav />
+        <Nav categories={navCategories} />
         <main id="main">{children}</main>
         <Footer />
         <CookieBanner />

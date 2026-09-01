@@ -33,7 +33,8 @@ export default function CookieBanner() {
       <div className="wrap">
         <div className="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-3.5 shadow-soft-lg sm:flex-row sm:items-center sm:justify-between sm:p-5">
           <p className="max-w-2xl text-[13px] leading-relaxed text-soft">
-            Essential cookies run the archive. Analytics stay off unless you opt in.{" "}
+            Essential cookies run the archive. We also use Google Analytics and
+            Tag Manager to understand how the site is used.{" "}
             <Link href="/cookie-preference" className="font-medium text-ink underline decoration-orange decoration-2 underline-offset-2">
               Preferences
             </Link>
