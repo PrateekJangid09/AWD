@@ -12,7 +12,6 @@ Canonical site: https://allwebsites.design
 - [Archive](https://allwebsites.design/archive): Search and filter every published website record
 - [Categories](https://allwebsites.design/c): Browse website design by industry
 - [2026 Website Design Index](https://allwebsites.design/research/website-design-index-2026): Transparent snapshot of catalogue composition
-- [Field guide](https://allwebsites.design/field-guide): Interactive product anatomy of the archive and tools
 - [Journal](https://allwebsites.design/blogs): Notes on colour, typography and technology (unpublished placeholders)
 
 ## Tools

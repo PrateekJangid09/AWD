@@ -43,7 +43,6 @@ const nextConfig = {
       { source: "/tools/chromary", destination: "/tools/chromary.html" },
       { source: "/tools/truegradient", destination: "/tools/truegradient/index.html" },
       { source: "/tools/webpalette", destination: "/tools/webpalette/index.html" },
-      { source: "/field-guide", destination: "/field-guide.html" },
     ];
   },
 };

@@ -214,6 +214,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       white-space:nowrap;
     }
     .nav-actions{display:flex;align-items:center;gap:8px}
+    .aw-skip{position:absolute;left:-9999px;top:8px;z-index:100;background:#141414;color:#fff;padding:10px 14px;text-decoration:none;font-size:13px;font-weight:600;border-radius:8px}
+    .aw-skip:focus{left:12px}
 
     .button{
       min-height:42px;
@@ -640,7 +642,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL9HNRBM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<main class="page">
+  <a class="aw-skip" href="#main">Skip to content</a>
+<main class="page" id="main">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="/" aria-label="AllWebsites.design home">
         <img class="brand-mark" src="/tools/logo.png" alt="" width="26" height="26" />
@@ -648,6 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="byline">by AllWebsites.design</span>
       </a>
       <div class="nav-actions">
+        <a class="button" href="/archive">Archive</a>
         <a class="button" href="/tools">← All tools</a>
         <a class="button" href="#how-it-works">How it works</a>
         <button class="button" id="resetBtn" type="button">Reset</button>

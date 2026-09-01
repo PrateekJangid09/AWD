@@ -116,6 +116,8 @@ body{font-family:"Inter",system-ui,"Segoe UI",Arial,sans-serif}
 .brandname{letter-spacing:-.02em}
 .byline-link{margin-left:auto;text-decoration:none;color:var(--muted);font-weight:500}
 .byline-link:hover{color:#FF6112}
+.aw-skip{position:absolute;left:-9999px;top:8px;z-index:100;background:#141414;color:#fff;padding:10px 14px;text-decoration:none;font-size:13px;font-weight:600;border-radius:8px}
+.aw-skip:focus{left:12px}
 .side-head h1{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.92;font-size:27px}
 .seo h2{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.92}
 /* sharpen the tool chrome */
@@ -133,10 +135,11 @@ input[type="range"],input[type="radio"],input[type="checkbox"]{accent-color:#FF6
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL9HNRBM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<a class="aw-skip" href="#tool">Skip to content</a>
 <div class="tool" id="tool">
 <aside class="sidebar" id="controls">
   <div class="side-head">
-    <div class="brandline"><a class="brandhome" href="/" aria-label="AllWebsites.design home"><img class="mark-img" src="/tools/logo.png" alt="" width="26" height="26"><span class="brandname">Mockupalettes</span></a><a class="byline byline-link" href="/tools">← All tools</a></div>
+    <div class="brandline"><a class="brandhome" href="/" aria-label="AllWebsites.design home"><img class="mark-img" src="/tools/logo.png" alt="" width="26" height="26"><span class="brandname">Mockupalettes</span></a><a class="byline byline-link" href="/archive">Archive</a><a class="byline byline-link" href="/tools">← All tools</a></div>
     <h1>See your palette on a real website.</h1>
     <p>A website color palette preview for testing the same interface with different color directions.</p>
   </div>

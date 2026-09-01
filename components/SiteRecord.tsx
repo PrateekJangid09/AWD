@@ -406,21 +406,25 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
           <div className="glass-card p-6">
             <p className="eyebrow text-ink">Contact</p>
             <dl className="mt-5 space-y-3">
-              {isRecordedEmail(contact.email) && (
-                <div className="flex items-center justify-between gap-4 border-b border-line pb-3">
+              <div className="flex items-center justify-between gap-4 border-b border-line pb-3">
                   <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">Email</dt>
                   <dd className="flex items-center gap-2 text-sm">
-                    <a href={`mailto:${contact.email}`} className="font-medium hover:text-orange">
-                      {contact.email}
-                    </a>
-                    {contact.on_official_domain && (
-                      <span className="border border-orange px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-orange">
-                        On-domain
-                      </span>
+                    {isRecordedEmail(contact.email) ? (
+                      <>
+                        <a href={`mailto:${contact.email}`} className="font-medium hover:text-orange">
+                          {contact.email}
+                        </a>
+                        {contact.on_official_domain && (
+                          <span className="border border-orange px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-orange">
+                            On-domain
+                          </span>
+                        )}
+                      </>
+                    ) : (
+                      <span className="text-muted">Not detected</span>
                     )}
                   </dd>
                 </div>
-              )}
               {isRecordedValue(contact.address) && (
                 <div className="flex items-start justify-between gap-4 border-b border-line pb-3">
                   <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">Address</dt>

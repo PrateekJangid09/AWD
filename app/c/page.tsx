@@ -20,8 +20,8 @@ export const metadata: Metadata = pageMeta({
 });
 
 export default function CategoriesPage() {
-  const categories = liveCategories();
-  const trending = TRENDING.map(resolveCategory).filter(Boolean);
+  const categories = liveCategories().filter((category) => category.count > 0);
+  const trending = TRENDING.map(resolveCategory).filter((category) => category && category.count > 0);
 
   return (
     <>

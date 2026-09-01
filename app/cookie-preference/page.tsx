@@ -33,7 +33,7 @@ const GROUPS: {
   {
     id: "marketing",
     title: "Marketing",
-    desc: "We don't run ad-tracking today. This stays off unless that ever changes and you opt in.",
+    desc: "Google AdSense may load to fund the archive. This is advertising, not a separate ad-network cookie of our own.",
   },
 ];
 

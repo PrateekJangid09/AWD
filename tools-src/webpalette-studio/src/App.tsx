@@ -130,6 +130,7 @@ export default function App() {
           <span className="brand-copy"><strong>WebPalette Studio</strong><small>Website Color System Builder</small></span>
         </div>
         <div className="top-actions">
+          <a className="btn ghost" href="/archive">Archive</a>
           <a className="btn ghost" href="/tools">← All tools</a>
           <button className="btn ghost" onClick={resetAll}>Reset</button>
           <button className="btn" onClick={copyCss}>Copy CSS</button>
