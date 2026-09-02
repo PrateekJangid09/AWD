@@ -2,27 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const KEY = "aw-cookie-consent";
+import { readConsent, saveConsent, type ConsentPrefs } from "@/lib/consent";
 
 export default function CookieBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    try {
-      if (!localStorage.getItem(KEY)) setShow(true);
-    } catch {
-      /* storage blocked — stay hidden */
-    }
+    if (!readConsent()) setShow(true);
   }, []);
 
-  function decide(value: "all" | "essential") {
+  function decide(prefs: ConsentPrefs, label: string) {
     try {
-      localStorage.setItem(
-        KEY,
-        JSON.stringify({ value, at: new Date().toISOString() }),
-      );
-    } catch {}
+      saveConsent(prefs, label);
+    } catch {
+      /* storage blocked */
+    }
     setShow(false);
   }
 
@@ -41,13 +35,23 @@ export default function CookieBanner() {
           </p>
           <div className="flex shrink-0 gap-2">
             <button
-              onClick={() => decide("essential")}
+              onClick={() =>
+                decide(
+                  { analytics: false, functional: false, marketing: false },
+                  "essential",
+                )
+              }
               className="btn-ghost !px-3.5 !py-2 !text-[12px]"
             >
               Essential only
             </button>
             <button
-              onClick={() => decide("all")}
+              onClick={() =>
+                decide(
+                  { analytics: true, functional: true, marketing: true },
+                  "all",
+                )
+              }
               className="btn-primary !px-3.5 !py-2 !text-[12px]"
             >
               Accept all

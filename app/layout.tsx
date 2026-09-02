@@ -4,9 +4,8 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
-import AdSense from "@/components/AdSense";
+import ConsentScripts from "@/components/ConsentScripts";
 import JsonLd from "@/components/JsonLd";
-import { GtmNoscript, GTM_HEAD_SCRIPT, GA_HEAD_SCRIPT, GA_ID } from "@/components/Tracking";
 import { liveCategories } from "@/lib/canonical";
 import {
   DEFAULT_DESCRIPTION,
@@ -66,15 +65,9 @@ export default function RootLayout({
   const navCategories = liveCategories().filter((category) => category.count > 0);
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: GTM_HEAD_SCRIPT }} />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-        <script dangerouslySetInnerHTML={{ __html: GA_HEAD_SCRIPT }} />
-      </head>
       <body className="min-h-screen bg-paper text-ink antialiased">
-        <GtmNoscript />
         <JsonLd data={globalGraph()} />
-        <AdSense />
+        <ConsentScripts />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:text-white"

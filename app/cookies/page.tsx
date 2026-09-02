@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import DocumentHero from "@/components/DocumentHero";
-
-const KEY = "aw-cookie-consent";
-
-type Prefs = { analytics: boolean; functional: boolean; marketing: boolean };
+import { readConsent, saveConsent, type ConsentPrefs as Prefs } from "@/lib/consent";
 
 const GROUPS: {
   id: keyof Prefs | "essential";
@@ -46,23 +43,13 @@ export default function CookiesPage() {
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed.prefs) setPrefs(parsed.prefs);
-        else if (parsed.value === "all")
-          setPrefs({ analytics: true, functional: true, marketing: false });
-      }
-    } catch {}
+    const stored = readConsent();
+    if (stored) setPrefs(stored);
   }, []);
 
   function persist(next: Prefs, label: string) {
     try {
-      localStorage.setItem(
-        KEY,
-        JSON.stringify({ value: label, prefs: next, at: new Date().toISOString() }),
-      );
+      saveConsent(next, label);
     } catch {}
     setPrefs(next);
     setSaved(true);
