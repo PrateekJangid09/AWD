@@ -160,12 +160,20 @@ function isoDay(value: string | null | undefined) {
   return match ? match[0] : null;
 }
 
-/** When this record's data was published and last revised (ISO yyyy-mm-dd). */
+/**
+ * When this record's data was published and last revised (ISO yyyy-mm-dd).
+ *
+ * `exact` is true only when the record carries its own extraction timestamp.
+ * Otherwise the dates come from the archive release the record shipped in,
+ * which is honest at the dataset level but must not be presented as a
+ * per-record check.
+ */
 export function recordDates(site: CanonicalSite) {
   const extracted = isoDay(site.extraction.extracted_at);
   return {
     published: extracted ?? DATASET.publishedAt,
     modified: extracted ?? DATASET.updatedAt,
+    exact: extracted != null,
   };
 }
 

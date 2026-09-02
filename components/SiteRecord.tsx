@@ -316,7 +316,11 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
               )}
 
               <p className="mt-5 text-[13px] leading-relaxed text-muted">
-                <span className="font-medium text-ink">Last updated {formatDay(dates.modified)}</span>
+                <span className="font-medium text-ink">
+                  {dates.exact
+                    ? `Last checked ${formatDay(dates.modified)}`
+                    : `Last reviewed in the ${formatDay(dates.modified)} archive revision`}
+                </span>
                 {" · "}
                 Compiled and reviewed by the{" "}
                 <Link
@@ -525,7 +529,12 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 ["Record ID", site.site_id],
                 ["Status", extraction.status],
                 ["Completeness", extraction.completeness != null ? `${extraction.completeness}%` : "—"],
-                ["Last checked", formatDay(dates.modified)],
+                // A per-record "Last checked" is only shown when the record
+                // actually carries its own timestamp. Otherwise the honest
+                // statement is the archive release it shipped in.
+                ...(dates.exact
+                  ? ([["Last checked", formatDay(dates.modified)]] as [string, string][])
+                  : ([["Archive revision", formatDay(dates.modified)]] as [string, string][])),
                 ["First published", formatDay(dates.published)],
                 ["Extractor", extraction.extractor_version],
               ].map(([k, v]) => (
