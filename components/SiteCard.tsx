@@ -23,7 +23,7 @@ export default function SiteCard({
         {site.thumb ? (
           <Image
             src={site.thumb}
-            alt={`${site.name} website`}
+            alt={`${site.name} ${site.categoryName.toLowerCase()} website design, ${site.style.toLowerCase()} style`}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             priority={priority}

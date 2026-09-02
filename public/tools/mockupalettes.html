@@ -50,7 +50,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@id": "https://allwebsites.design/#website",
       "url": "https://allwebsites.design",
       "name": "AllWebsites.Design",
-      "publisher": { "@id": "https://allwebsites.design/#organization" }
+      "publisher": {
+        "@id": "https://allwebsites.design/#organization"
+      }
     },
     {
       "@type": "WebApplication",
@@ -62,7 +64,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "operatingSystem": "Web browser",
       "browserRequirements": "Requires a modern web browser with JavaScript enabled",
       "isAccessibleForFree": true,
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
       "featureList": [
         "Four-role website palette preview",
         "Primary, secondary, accent and dark mapping",
@@ -70,12 +76,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "Compare palette directions",
         "Runs locally in the browser, no signup"
       ],
-      "publisher": { "@id": "https://allwebsites.design/#organization" },
-      "isPartOf": { "@id": "https://allwebsites.design/#website" }
+      "publisher": {
+        "@id": "https://allwebsites.design/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://allwebsites.design/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://allwebsites.design/tools/mockupalettes/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://allwebsites.design/tools/mockupalettes/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://allwebsites.design"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://allwebsites.design/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mockupalettes"
+        }
+      ]
     }
   ]
 }
-</script>
+  </script>
 <style>
 :root{--canvas:#F4F5F3;--surface:#FFF;--ink:#151515;--muted:#6F706B;--line:#E3E4DF;--frame:#18191B;--primary:#3978F6;--secondary:#3DD6D0;--accent:#8658E8;--dark:#111827;--primaryText:#FFF;--secondaryText:#151515;--accentText:#FFF;--darkText:#FFF;--primarySoft:#EEF4FF;--secondarySoft:#ECFBF9;--accentSoft:#F4EEFF}
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--canvas);color:var(--ink);font-family:"Satoshi","Avenir Next","Segoe UI",Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased} button,input,textarea,select,code{font:inherit} button{cursor:pointer} button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #151515;outline-offset:2px}

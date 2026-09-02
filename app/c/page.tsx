@@ -9,9 +9,9 @@ import { TRENDING } from "@/lib/data";
 import { CANONICAL, liveCategories, resolveCategory } from "@/lib/canonical";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
-const title = "Categories — Explore Website Design by Industry";
+const title = "Website Design Examples by Industry";
 const description =
-  "Study how different industries approach typography, layout, colour and interaction across real website design categories.";
+  "Browse website design examples by industry — SaaS, portfolio, agency, e-commerce and more. Each category shows how a sector handles colour, type and layout.";
 
 export const metadata: Metadata = pageMeta({
   title,

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { CONTACT_EMAIL, SUPPORT_URL } from "@/lib/seo";
 
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
@@ -11,6 +12,7 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/tools", label: "Tools" },
       { href: "/research/website-design-index-2026", label: "Research" },
       { href: "/blogs", label: "Resources" },
+      { href: "/site-map", label: "Site Map" },
     ],
   },
   {
@@ -49,6 +51,27 @@ export default function Footer() {
           </p>
           <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/70">
             {CANONICAL.length.toLocaleString()} references · {liveCategories().filter((c) => c.count > 0).length} categories
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href={SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#FFDD00] px-4 py-2 text-[13px] font-semibold text-[#0A0A0A] transition-transform hover:-translate-y-0.5"
+            >
+              <span aria-hidden>☕</span>
+              Buy me a coffee
+            </a>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-[13px] text-white/75 underline decoration-white/30 underline-offset-4 hover:text-orange"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+          <p className="mt-3 max-w-xs text-[12px] leading-relaxed text-white/60">
+            The archive and every tool are free. A coffee keeps the research going.
           </p>
         </div>
 

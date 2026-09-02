@@ -120,6 +120,118 @@ export function assetBase(site: CanonicalSite) {
   return `/sites/${site.identity.slug}`;
 }
 
+/* ── Dataset provenance ──────────────────────────────────────────
+   Dates are declared in content/dataset.json and only move when the
+   records actually change, so datePublished/dateModified never drift
+   with an unrelated deploy. */
+
+type DatasetMeta = {
+  name: string;
+  description: string;
+  method: string;
+  publishedAt: string;
+  updatedAt: string;
+};
+
+function loadDataset(): DatasetMeta {
+  try {
+    const raw = fs.readFileSync(
+      path.join(process.cwd(), "content", "dataset.json"),
+      "utf8",
+    );
+    return JSON.parse(raw) as DatasetMeta;
+  } catch {
+    const today = new Date().toISOString().slice(0, 10);
+    return {
+      name: "AllWebsites.Design website design archive",
+      description: "Constructed, source-verified records of real websites.",
+      method: "unknown",
+      publishedAt: today,
+      updatedAt: today,
+    };
+  }
+}
+
+export const DATASET: DatasetMeta = loadDataset();
+
+function isoDay(value: string | null | undefined) {
+  if (!value) return null;
+  const match = /^\d{4}-\d{2}-\d{2}/.exec(value.trim());
+  return match ? match[0] : null;
+}
+
+/** When this record's data was published and last revised (ISO yyyy-mm-dd). */
+export function recordDates(site: CanonicalSite) {
+  const extracted = isoDay(site.extraction.extracted_at);
+  return {
+    published: extracted ?? DATASET.publishedAt,
+    modified: extracted ?? DATASET.updatedAt,
+  };
+}
+
+/* ── Screenshot dimensions ───────────────────────────────────────
+   Read straight from the file header so <Image> can reserve the right
+   box and emit a resized srcset instead of shipping the full capture. */
+
+function pngSize(buf: Buffer) {
+  if (buf.length < 24) return null;
+  if (buf.readUInt32BE(0) !== 0x89504e47) return null;
+  return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+}
+
+function webpSize(buf: Buffer) {
+  if (buf.length < 30) return null;
+  if (buf.toString("ascii", 0, 4) !== "RIFF") return null;
+  if (buf.toString("ascii", 8, 12) !== "WEBP") return null;
+  const chunk = buf.toString("ascii", 12, 16);
+  if (chunk === "VP8 ") {
+    return {
+      width: buf.readUInt16LE(26) & 0x3fff,
+      height: buf.readUInt16LE(28) & 0x3fff,
+    };
+  }
+  if (chunk === "VP8L") {
+    const bits = buf.readUInt32LE(21);
+    return {
+      width: (bits & 0x3fff) + 1,
+      height: ((bits >> 14) & 0x3fff) + 1,
+    };
+  }
+  if (chunk === "VP8X") {
+    const read24 = (offset: number) =>
+      buf[offset] | (buf[offset + 1] << 8) | (buf[offset + 2] << 16);
+    return { width: read24(24) + 1, height: read24(27) + 1 };
+  }
+  return null;
+}
+
+const sizeCache = new Map<string, { width: number; height: number } | null>();
+
+/** Intrinsic size of a file under /public, or null when it cannot be read. */
+export function imageSize(publicPath: string) {
+  const cached = sizeCache.get(publicPath);
+  if (cached !== undefined) return cached;
+
+  let size: { width: number; height: number } | null = null;
+  try {
+    const file = path.join(process.cwd(), "public", publicPath.replace(/^\//, ""));
+    const handle = fs.openSync(file, "r");
+    try {
+      const buf = Buffer.alloc(40);
+      fs.readSync(handle, buf, 0, 40, 0);
+      size = webpSize(buf) ?? pngSize(buf);
+    } finally {
+      fs.closeSync(handle);
+    }
+  } catch {
+    size = null;
+  }
+
+  if (size && (size.width <= 0 || size.height <= 0)) size = null;
+  sizeCache.set(publicPath, size);
+  return size;
+}
+
 import { CATEGORIES, categoryColor, type CardSite, type Category } from "./data";
 
 // Map a canonical record into the lightweight archive-card shape,

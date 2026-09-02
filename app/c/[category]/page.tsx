@@ -31,8 +31,8 @@ export async function generateMetadata({
   const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
   return pageMeta({
-    title: `${cat.name} Website Design — ${cat.count} References`,
-    description: `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`,
+    title: `${cat.name} Website Design Examples (${cat.count})`,
+    description: `${cat.count} ${cat.name.toLowerCase()} website design examples, each with its colour palette, typefaces and detected technology. ${cat.blurb}`,
     path: `/c/${category}`,
     index: cat.count > 0,
   });

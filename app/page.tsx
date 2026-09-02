@@ -4,12 +4,12 @@ import Image from "next/image";
 import SiteCard from "@/components/SiteCard";
 import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/catalog";
-import { CANONICAL, canonicalCards, liveCategories } from "@/lib/canonical";
+import { CANONICAL, DATASET, canonicalCards, liveCategories } from "@/lib/canonical";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...pageMeta({
-    title: "The Website Design Research Archive",
+    title: "Website Design Examples & Inspiration",
     description: DEFAULT_DESCRIPTION,
     path: "/",
   }),
@@ -30,7 +30,13 @@ export default function Home() {
 
   return (
     <>
-      <JsonLd data={homePageGraph()} />
+      <JsonLd
+        data={homePageGraph({
+          recordCount: all.length,
+          categoryCount: categories.length,
+          updated: DATASET.updatedAt,
+        })}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-line">
         <div
@@ -45,13 +51,15 @@ export default function Home() {
           </p>
 
           <h1 className="mega mx-auto mt-7 max-w-4xl text-[2.6rem] leading-[1.03] sm:text-6xl lg:text-7xl">
-            A premium archive of the
-            <br className="hidden sm:block" /> web&apos;s best-designed sites.
+            Website design examples,
+            <br className="hidden sm:block" /> studied in depth.
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-soft sm:text-lg">
-            Explore real websites and the colour, type and technology behind them —
-            then experiment with the tools that share the same language.
+            {all.length.toLocaleString()} real websites across {categories.length}{" "}
+            categories, each one broken down into its colour palette, typefaces and
+            detected technology. Free to browse, with tools that speak the same
+            language.
           </p>
 
           <form action="/archive" className="mx-auto mt-9 flex w-full max-w-md items-center gap-2 rounded-full border border-line bg-paper p-1.5 pl-5 shadow-soft focus-within:border-line-strong">

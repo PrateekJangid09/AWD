@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/research/website-design-index-2026", label: "2026 Design Index", desc: "What the archive is measuring." },
   { href: "/submit", label: "Submit a site", desc: "Nominate a reference for review." },
   { href: "/about", label: "About the archive", desc: "How we study websites." },
+  { href: "/site-map", label: "Site map", desc: "Every page and record in one list." },
   { href: "/contact", label: "Contact", desc: "Corrections and editorial questions." },
 ];
 

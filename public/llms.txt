@@ -1,18 +1,21 @@
 # AllWebsites.Design
 
-> A curated website-design research archive. Study real websites by industry, style, colour, typography and technology — then use free in-browser colour tools that share the same language.
+> A curated website-design research archive. Browse real website design examples by industry, style, colour, typography and technology, then use free in-browser colour tools that share the same language.
 
-AllWebsites.Design publishes constructed, source-verified records. We do not invent missing facts: unproven technology or design fields stay unknown. The official destination of each site remains the authority.
+AllWebsites.Design publishes constructed, source-verified records. We do not invent missing facts: unproven technology or design fields stay unknown. The official destination of each site remains the authority. Every record shows its palette, typefaces, detected stack, classification confidence and last-updated date.
 
 Canonical site: https://allwebsites.design
+Contact: prateekjangid10@gmail.com
+Support: https://buymeacoffee.com/prateekjangid
 
 ## Discover
 
-- [Home](https://allwebsites.design/): Overview of the archive, tools and categories
+- [Home](https://allwebsites.design/): Website design examples, studied in depth
 - [Archive](https://allwebsites.design/archive): Search and filter every published website record
-- [Categories](https://allwebsites.design/c): Browse website design by industry
-- [2026 Website Design Index](https://allwebsites.design/research/website-design-index-2026): Transparent snapshot of catalogue composition
-- [Journal](https://allwebsites.design/blogs): Notes on colour, typography and technology (unpublished placeholders)
+- [Categories](https://allwebsites.design/c): Website design examples by industry
+- [2026 Website Design Index](https://allwebsites.design/research/website-design-index-2026): How the catalogue breaks down, with the method behind the counts
+- [Site map](https://allwebsites.design/site-map): Every page and record in one list
+- [Journal](https://allwebsites.design/blogs): Notes on colour, typography and technology
 
 ## Tools
 
@@ -28,6 +31,7 @@ Free, no-signup design instruments. Each owns one job and runs in the browser.
 ## About
 
 - [About](https://allwebsites.design/about): How the archive, intelligence layer and workflow fit together
+- [Methodology](https://allwebsites.design/about#method): How a record is captured, extracted, classified and reviewed
 - [Manifesto](https://allwebsites.design/manifesto): Useful inspiration needs context
 - [Editorial guidelines](https://allwebsites.design/editorial-guidelines): Inclusion, classification and corrections
 - [Submit a site](https://allwebsites.design/submit): Nominate a website for review
@@ -41,9 +45,13 @@ Free, no-signup design instruments. Each owns one job and runs in the browser.
 
 ## Records
 
-Website records live at `/archive/<slug>` (for example https://allwebsites.design/archive/rankbeaver). Each record can include identity, category, palette, typography, detected technology, screenshots and similar sites. Prefer the official URL on the record over archive commentary.
+Website records live at `/archive/<slug>` (for example https://allwebsites.design/archive/rankbeaver). Each record opens with a short factual summary and includes identity, category, palette with hex values, typography, detected technology, screenshots, provenance and similar sites. Prefer the official URL on the record over archive commentary.
 
 Category pages live at `/c/<category-slug>`.
+
+## Citation
+
+Attribute to AllWebsites.Design and link the specific record or category URL. Counts describe this catalogue, not the whole web.
 
 ## Optional
 

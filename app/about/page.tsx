@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { CANONICAL, DATASET, liveCategories } from "@/lib/canonical";
 import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "About — A Design-Research Layer for the Public Web";
@@ -165,6 +165,69 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Methodology */}
+      <section id="method" className="scroll-mt-24 border-t border-line bg-bone py-16 sm:py-20">
+        <div className="wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="eyebrow">Methodology</p>
+            <h2 className="display mt-3 text-3xl sm:text-4xl">
+              How a record is built.
+            </h2>
+            <p className="mt-4 max-w-md text-pretty text-[15px] leading-relaxed text-soft">
+              Every published study is assembled from the live site, then reviewed
+              before it appears. Nothing is inferred to fill a gap.
+            </p>
+            <p className="mt-6 text-[13px] leading-relaxed text-muted">
+              Dataset {DATASET.method} · first published {DATASET.publishedAt} · last
+              updated {DATASET.updatedAt}
+            </p>
+          </div>
+          <ol className="space-y-4">
+            {[
+              [
+                "Capture",
+                "The live homepage and key pages are captured full-page, so the screenshot is evidence rather than decoration.",
+              ],
+              [
+                "Extract",
+                "Colour palette, typefaces and technology signals are read from the rendered page and its response headers.",
+              ],
+              [
+                "Classify",
+                "Category, website type and audience are assigned automatically and carry a confidence score you can see on the record.",
+              ],
+              [
+                "Review",
+                "Records are checked against the editorial guidelines. Anything that cannot be verified stays marked as not detected.",
+              ],
+            ].map(([step, detail], i) => (
+              <li key={step} className="flex gap-4 rounded-2xl border border-line bg-paper p-5">
+                <span className="font-mono text-[13px] text-orange">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>
+                  <span className="block text-[15px] font-semibold tracking-tight">{step}</span>
+                  <span className="mt-1 block text-[14px] leading-relaxed text-soft">
+                    {detail}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="wrap mt-8 flex flex-wrap gap-3">
+          <Link href="/editorial-guidelines" className="btn-ghost">
+            Editorial guidelines
+          </Link>
+          <Link href="/research/website-design-index-2026" className="btn-ghost">
+            2026 Design Index
+          </Link>
+          <Link href="/site-map" className="btn-ghost">
+            Site map
+          </Link>
         </div>
       </section>
 

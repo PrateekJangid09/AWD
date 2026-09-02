@@ -7,9 +7,9 @@ import type { CardSite } from "@/lib/data";
 import { CANONICAL, canonicalCards } from "@/lib/canonical";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
-const title = "Archive — Every Website, Searchable";
+const title = "Website Design Inspiration — Searchable Archive";
 const description =
-  "Search and filter the AllWebsites.Design archive by name, category, style and technology. The core discovery surface.";
+  "Search every website design example in the archive by name, industry, style or technology. Each reference lists its palette, typefaces and detected stack.";
 
 export const metadata: Metadata = pageMeta({
   title,

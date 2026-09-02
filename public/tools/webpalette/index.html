@@ -46,46 +46,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:description" content="Turn existing brand colors into a complete five-role website palette without overwriting the colors you want to keep." />
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Organization",
+      "@id": "https://allwebsites.design/#organization",
+      "name": "AllWebsites.Design",
+      "url": "https://allwebsites.design"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://allwebsites.design/#website",
+      "url": "https://allwebsites.design",
+      "name": "AllWebsites.Design",
+      "publisher": {
+        "@id": "https://allwebsites.design/#organization"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://allwebsites.design/tools/webpalette/#app",
+      "name": "WebPalette Studio",
+      "url": "https://allwebsites.design/tools/webpalette",
+      "description": "Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy CSS.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web browser",
+      "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Role-based website color system",
+        "Protect existing brand colors",
+        "Contrast checks",
+        "CSS export",
+        "Runs locally in the browser, no signup"
+      ],
+      "publisher": {
+        "@id": "https://allwebsites.design/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://allwebsites.design/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://allwebsites.design/tools/webpalette/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://allwebsites.design/tools/webpalette/#breadcrumb",
+      "itemListElement": [
         {
-          "@type": "Organization",
-          "@id": "https://allwebsites.design/#organization",
-          "name": "AllWebsites.Design",
-          "url": "https://allwebsites.design"
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://allwebsites.design"
         },
         {
-          "@type": "WebSite",
-          "@id": "https://allwebsites.design/#website",
-          "url": "https://allwebsites.design",
-          "name": "AllWebsites.Design",
-          "publisher": { "@id": "https://allwebsites.design/#organization" }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://allwebsites.design/tools"
         },
         {
-          "@type": "WebApplication",
-          "@id": "https://allwebsites.design/tools/webpalette/#app",
-          "name": "WebPalette Studio",
-          "url": "https://allwebsites.design/tools/webpalette",
-          "description": "Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy CSS.",
-          "applicationCategory": "DesignApplication",
-          "operatingSystem": "Web browser",
-          "browserRequirements": "Requires a modern web browser with JavaScript enabled",
-          "isAccessibleForFree": true,
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-          "featureList": [
-            "Role-based website color system",
-            "Protect existing brand colors",
-            "Contrast checks",
-            "CSS export",
-            "Runs locally in the browser, no signup"
-          ],
-          "publisher": { "@id": "https://allwebsites.design/#organization" },
-          "isPartOf": { "@id": "https://allwebsites.design/#website" }
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WebPalette Studio"
         }
       ]
     }
-    </script>
+  ]
+}
+  </script>
     <script type="module" crossorigin src="/tools/webpalette/assets/index-D4h0foha.js"></script>
     <link rel="stylesheet" crossorigin href="/tools/webpalette/assets/index-Bkst6Kn7.css">
   </head>

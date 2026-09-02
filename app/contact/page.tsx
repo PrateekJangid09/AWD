@@ -3,7 +3,15 @@ import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
+import ContactForm from "@/components/ContactForm";
+import {
+  CONTACT_EMAIL,
+  ORG_ID,
+  SUPPORT_URL,
+  absUrl,
+  pageMeta,
+  typedPageGraph,
+} from "@/lib/seo";
 
 const title = "Contact — Corrections & Editorial";
 const description =
@@ -37,6 +45,13 @@ export default function ContactPage() {
           ],
           extra: {
             about: { "@id": ORG_ID },
+            mainEntity: {
+              "@type": "ContactPoint",
+              contactType: "editorial",
+              email: CONTACT_EMAIL,
+              url: absUrl("/contact"),
+              availableLanguage: "English",
+            },
           },
         })}
       />
@@ -52,98 +67,12 @@ export default function ContactPage() {
           {/* Form */}
           <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6 sm:p-8">
             <p className="eyebrow">Send a message</p>
-            <form
-              action="mailto:hello@allwebsites.design"
-              method="post"
-              encType="text/plain"
-              className="mt-6 space-y-5"
-              aria-label="Contact form"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
-                    Name
-                  </span>
-                  <input
-                    name="Name"
-                    type="text"
-                    required
-                    className="mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
-                  />
-                </label>
-                <label className="block">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
-                    Email
-                  </span>
-                  <input
-                    name="From"
-                    type="email"
-                    required
-                    className="mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
-                  />
-                </label>
-              </div>
-
-              <fieldset>
-                <legend className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
-                  Reason
-                </legend>
-                <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                  {REASONS.map((r, i) => (
-                    <label
-                      key={r.t}
-                      className="flex cursor-pointer items-start gap-3 border border-ink/15 bg-paper p-3 transition-colors has-[:checked]:border-orange has-[:checked]:bg-orange/10"
-                    >
-                      <input
-                        type="radio"
-                        name="reason"
-                        defaultChecked={i === 0}
-                        className="mt-1 accent-orange"
-                      />
-                      <span>
-                        <span className="block text-sm font-semibold">{r.t}</span>
-                        <span className="block text-xs text-ink/60">{r.d}</span>
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-
-              <label className="block">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink/60">
-                  Website URL <span className="text-ink/30">(optional)</span>
-                </span>
-                <input
-                  name="Website URL"
-                  type="url"
-                  placeholder="https://"
-                  className="mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">
-                  Message
-                </span>
-                <textarea
-                  name="Message"
-                  required
-                  rows={5}
-                  className="mt-2 w-full resize-y border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange"
-                />
-              </label>
-
-              <button type="submit" className="btn-primary w-full sm:w-auto">
-                Send message →
-              </button>
-              <p className="font-mono text-[10px] leading-relaxed text-ink/45">
-                By sending, you agree to our{" "}
-                <Link href="/privacy-policy" className="underline decoration-orange decoration-2 underline-offset-2">
-                  privacy policy
-                </Link>
-                . We only use your details to respond.
-              </p>
-            </form>
+            <ContactForm
+              to={CONTACT_EMAIL}
+              reasons={REASONS}
+              defaultReason={REASONS[0].t}
+              websiteLabel="Website URL"
+            />
           </div>
 
           {/* Sidebar */}
@@ -154,6 +83,33 @@ export default function ContactPage() {
                 Corrections are prioritised. The official site always remains the
                 authority for current facts — we update records as they change.
               </p>
+              <p className="mt-4 text-sm leading-relaxed text-paper/70">
+                Prefer your own mail client? Write to{" "}
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="font-medium text-orange underline decoration-2 underline-offset-2"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+                .
+              </p>
+            </div>
+
+            <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6">
+              <p className="eyebrow">Support the archive</p>
+              <p className="mt-3 text-sm leading-relaxed text-soft">
+                Every record and every tool is free. If the archive saved you time,
+                a coffee funds the next batch of studies.
+              </p>
+              <a
+                href={SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#FFDD00] px-4 py-2.5 text-[13px] font-semibold text-[#0A0A0A] transition-transform hover:-translate-y-0.5"
+              >
+                <span aria-hidden>☕</span>
+                Buy me a coffee
+              </a>
             </div>
 
             <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6">

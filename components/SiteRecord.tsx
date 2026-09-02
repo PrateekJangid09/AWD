@@ -1,14 +1,37 @@
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import SiteCard from "./SiteCard";
-import { assetBase, canonicalCards, categorySlug, type CanonicalSite } from "@/lib/canonical";
+import {
+  assetBase,
+  canonicalCards,
+  categorySlug,
+  imageSize,
+  recordDates,
+  type CanonicalSite,
+} from "@/lib/canonical";
 import { categoryColor, type CardSite } from "@/lib/catalog";
+import { studyAnswer } from "@/lib/seo";
+
+const DATE_FORMAT: Intl.DateTimeFormatOptions = {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+};
+
+function formatDay(iso: string) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+    ...DATE_FORMAT,
+    timeZone: "UTC",
+  });
+}
 
 /* ── small building blocks ─────────────────────────────────────── */
 
 function Shot({
   src,
   label,
+  alt,
   href,
   eager = false,
   height = 480,
@@ -16,11 +39,15 @@ function Shot({
 }: {
   src: string;
   label: string;
+  alt: string;
   href?: string;
   eager?: boolean;
   height?: number;
   className?: string;
 }) {
+  // Full-page captures are up to ~900KB at source. Feeding the real intrinsic
+  // size to next/image lets it ship a resized WebP at the width we display.
+  const intrinsic = imageSize(src);
   return (
     <figure className={`overflow-hidden rounded-xl glass ${className}`}>
       <figcaption className="flex items-center gap-1.5 border-b border-white/40 bg-white/30 px-3.5 py-2.5">
@@ -48,14 +75,28 @@ function Shot({
         tabIndex={0}
         aria-label={`${label} — scroll to view the full page`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={src}
-          alt={`${label} full-page screenshot`}
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-          className="block w-full"
-        />
+        {intrinsic ? (
+          <Image
+            src={src}
+            alt={alt}
+            width={intrinsic.width}
+            height={intrinsic.height}
+            sizes="(max-width: 1024px) 100vw, 640px"
+            priority={eager}
+            loading={eager ? undefined : "lazy"}
+            quality={72}
+            className="block h-auto w-full"
+          />
+        ) : (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={src}
+            alt={alt}
+            loading={eager ? "eager" : "lazy"}
+            decoding="async"
+            className="block w-full"
+          />
+        )}
       </div>
     </figure>
   );
@@ -146,6 +187,7 @@ function Section({
 export default function SiteRecord({ site }: { site: CanonicalSite }) {
   const base = assetBase(site);
   const { identity, classification, design, technology, contact, social, seo, pages, extraction } = site;
+  const dates = recordDates(site);
 
   const meta = [classification.category, classification.subcategory, classification.website_type]
     .filter(Boolean)
@@ -213,6 +255,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
             <Shot
               src={`${base}/${site.screenshots.desktop ?? "desktop.png"}`}
               label={identity.domain}
+              alt={`${identity.name} homepage, full-page screenshot`}
               href={identity.url}
               eager
               height={560}
@@ -255,14 +298,41 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 </div>
               )}
 
+              {/* Self-contained answer: quotable without the rest of the page. */}
+              <div className="mt-6 border-l-2 border-orange pl-4">
+                <p className="eyebrow text-ink">In short</p>
+                <p className="mt-2 text-pretty leading-relaxed text-ink/85">
+                  {studyAnswer(site)}
+                </p>
+              </div>
+
               {seo.description && (
-                <div className="mt-6 border-l-2 border-orange pl-4">
-                  <p className="eyebrow text-ink">Summary</p>
+                <div className="mt-5">
+                  <p className="eyebrow text-ink">How the site describes itself</p>
                   <p className="mt-2 text-pretty leading-relaxed text-soft">
                     {seo.description}
                   </p>
                 </div>
               )}
+
+              <p className="mt-5 text-[13px] leading-relaxed text-muted">
+                <span className="font-medium text-ink">Last updated {formatDay(dates.modified)}</span>
+                {" · "}
+                Compiled and reviewed by the{" "}
+                <Link
+                  href="/editorial-guidelines"
+                  className="underline decoration-orange decoration-2 underline-offset-2 hover:text-ink"
+                >
+                  AllWebsites.Design editorial team
+                </Link>
+                {". "}
+                <Link
+                  href="/about#method"
+                  className="underline decoration-line decoration-2 underline-offset-2 hover:text-ink"
+                >
+                  Methodology
+                </Link>
+              </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
@@ -392,6 +462,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
               key={g.label}
               src={`${base}/${g.file}`}
               label={g.label}
+              alt={`${identity.name} ${g.label.toLowerCase()} page, full-page screenshot`}
               href={g.href ?? undefined}
               height={320}
             />
@@ -454,7 +525,8 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 ["Record ID", site.site_id],
                 ["Status", extraction.status],
                 ["Completeness", extraction.completeness != null ? `${extraction.completeness}%` : "—"],
-                ["Last checked", extraction.extracted_at ? new Date(extraction.extracted_at).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }) : "—"],
+                ["Last checked", formatDay(dates.modified)],
+                ["First published", formatDay(dates.published)],
                 ["Extractor", extraction.extractor_version],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-center justify-between border-b border-white/10 pb-3 last:border-0">

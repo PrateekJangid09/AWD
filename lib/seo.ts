@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import type { CanonicalSite } from "./canonical";
+import { recordDates } from "./canonical";
 
 export const SITE_URL = "https://allwebsites.design";
 export const SITE_NAME = "AllWebsites.Design";
+export const CONTACT_EMAIL = "prateekjangid10@gmail.com";
+export const SUPPORT_URL = "https://buymeacoffee.com/prateekjangid";
 export const DEFAULT_TITLE =
-  "AllWebsites.Design — The Website Design Research Archive";
+  "Website Design Examples & Inspiration — AllWebsites.Design";
 export const DEFAULT_DESCRIPTION =
-  "Explore real websites by industry, style, colour, typography and technology. A curated design-research archive for designers, developers and founders.";
+  "Browse real website design examples by industry, style, colour, typography and technology. Every reference is studied in depth, with the palette, type and stack listed.";
 export const OG_IMAGE = {
   url: "/og.jpg",
   width: 1200,
@@ -45,6 +48,7 @@ export function pageMeta({
   title: string;
   description: string;
   path: string;
+  /** false marks a genuine placeholder. Links are always followed. */
   index?: boolean;
   type?: "website" | "article";
   image?: OgImage;
@@ -62,9 +66,9 @@ export function pageMeta({
     title,
     description,
     alternates: { canonical: url },
-    robots: index
-      ? { index: true, follow: true }
-      : { index: false, follow: false },
+    // Never emit nofollow on our own pages: a placeholder still has to pass
+    // link value to whatever it points at.
+    robots: { index, follow: true },
     openGraph: {
       title,
       description,
@@ -148,6 +152,69 @@ export function studyDescription(site: CanonicalSite) {
   return `A design study of ${site.identity.name}: ${bits.join(", ")}.`;
 }
 
+/**
+ * A self-contained factual paragraph for the top of a record page: what the
+ * site is, its palette, its type and its detected stack. Written so it can be
+ * quoted on its own without the surrounding page.
+ */
+export function studyAnswer(site: CanonicalSite) {
+  const { identity, classification, design, technology } = site;
+  const kind = [classification.category, classification.website_type]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const sentences: string[] = [];
+
+  sentences.push(
+    kind
+      ? `${identity.name} (${identity.domain}) is a ${kind} studied in the AllWebsites.Design archive.`
+      : `${identity.name} (${identity.domain}) is a website studied in the AllWebsites.Design archive.`,
+  );
+
+  const styles = design.style_tags.slice(0, 2);
+  const lead = design.palette[0]?.hex ? hexValue(design.palette[0].hex) : null;
+  const paletteBits: string[] = [];
+  if (design.palette.length) {
+    paletteBits.push(
+      lead
+        ? `a ${design.palette.length}-colour palette led by ${lead}`
+        : `a ${design.palette.length}-colour palette`,
+    );
+  }
+  const fonts = uniqueStrings(design.fonts.map((font) => font.name)).slice(0, 2);
+  if (fonts.length) paletteBits.push(`${joinList(fonts)} for type`);
+  if (paletteBits.length) {
+    sentences.push(
+      styles.length
+        ? `The design reads ${joinList(styles).toLowerCase()}, with ${joinList(paletteBits)}.`
+        : `The design uses ${joinList(paletteBits)}.`,
+    );
+  }
+
+  const stack = uniqueStrings([
+    ...technology.builder_cms,
+    ...technology.framework,
+    ...technology.hosting,
+    technology.language,
+  ]).slice(0, 3);
+  if (technology.summary?.trim()) {
+    sentences.push(`Detected technology: ${technology.summary.trim()}.`);
+  } else if (stack.length) {
+    sentences.push(`Detected technology: ${joinList(stack)}.`);
+  } else {
+    sentences.push("No build technology could be detected from public signals.");
+  }
+
+  const confidence = classification.confidence;
+  if (confidence != null) {
+    sentences.push(
+      `Classification confidence is ${Math.round(confidence * 100)}%.`,
+    );
+  }
+
+  return sentences.join(" ");
+}
+
 export function pageGraph(nodes: JsonLdNode[]) {
   return {
     "@context": "https://schema.org",
@@ -198,6 +265,7 @@ export function breadcrumbNode(path: string, items: Crumb[]) {
   };
 }
 
+/** Organization + WebSite. Emitted sitewide; the SearchAction lives on the home page only. */
 export function globalGraph() {
   return pageGraph([
     {
@@ -216,6 +284,15 @@ export function globalGraph() {
         caption: SITE_NAME,
       },
       image: { "@id": LOGO_ID },
+      email: CONTACT_EMAIL,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "editorial",
+        email: CONTACT_EMAIL,
+        url: absUrl("/contact"),
+        availableLanguage: "English",
+      },
+      sameAs: [SUPPORT_URL],
     },
     {
       "@type": "WebSite",
@@ -225,6 +302,24 @@ export function globalGraph() {
       description: DEFAULT_DESCRIPTION,
       inLanguage: "en-US",
       publisher: { "@id": ORG_ID },
+    },
+  ]);
+}
+
+export function homePageGraph({
+  recordCount,
+  categoryCount,
+  updated,
+}: {
+  recordCount: number;
+  categoryCount: number;
+  updated: string;
+}) {
+  return pageGraph([
+    {
+      "@type": "WebSite",
+      "@id": WEBSITE_ID,
+      url: SITE_URL,
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -234,21 +329,30 @@ export function globalGraph() {
         "query-input": "required name=search_term_string",
       },
     },
-  ]);
-}
-
-export function homePageGraph() {
-  return pageGraph([
     {
-      "@type": "WebPage",
+      "@type": "CollectionPage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: "AllWebsites.Design: The Website Design Research Archive",
+      name: "Website design examples, studied in depth",
       description: DEFAULT_DESCRIPTION,
       isPartOf: { "@id": WEBSITE_ID },
       about: { "@id": ORG_ID },
       primaryImageOfPage: ogImageNode(),
       inLanguage: "en-US",
+      dateModified: updated,
+      mainEntity: {
+        "@type": "ItemList",
+        name: "Website design categories",
+        numberOfItems: categoryCount,
+      },
+      significantLink: [
+        absUrl("/archive"),
+        absUrl("/c"),
+        absUrl("/tools"),
+        absUrl("/research/website-design-index-2026"),
+      ],
+      // Mirrors the count shown on the page; never a literal.
+      abstract: `${recordCount} website design examples with palette, typography and detected technology.`,
     },
   ]);
 }
@@ -310,7 +414,13 @@ export function typedPageGraph({
   idSuffix = "webpage",
   extra = {},
 }: {
-  type: "WebPage" | "AboutPage" | "ContactPage" | "Blog" | "Report";
+  type:
+    | "WebPage"
+    | "AboutPage"
+    | "ContactPage"
+    | "Blog"
+    | "Report"
+    | "CollectionPage";
   path: string;
   name: string;
   description?: string;
@@ -361,8 +471,8 @@ export function archiveRecordGraph(site: CanonicalSite) {
   const description = studyDescription(site);
   const screenshotFile = site.screenshots.desktop ?? "desktop.webp";
   const screenshotId = `${url}/#screenshot`;
-  const studiedId = `${url}/#studied-site`;
-  const analysisId = `${url}/#analysis`;
+  const studiedId = `${site.identity.url.replace(/\/+$/, "")}/#studiedsite`;
+  const analysisId = `${url}/#article`;
   const crumbs: Crumb[] = [
     { name: "Home", path: "/" },
     { name: "Archive", path: "/archive" },
@@ -411,11 +521,8 @@ export function archiveRecordGraph(site: CanonicalSite) {
     if (value) additionalProperty.push(property(name, value));
   }
 
-  const extracted = site.extraction.extracted_at;
-  const checkedDate =
-    extracted && /^\d{4}-\d{2}-\d{2}/.test(extracted)
-      ? extracted.slice(0, 10)
-      : undefined;
+  const { published, modified } = recordDates(site);
+  const audience = site.classification.audience.filter(Boolean);
 
   return pageGraph([
     breadcrumbNode(path, crumbs),
@@ -427,39 +534,130 @@ export function archiveRecordGraph(site: CanonicalSite) {
       description,
       isPartOf: { "@id": WEBSITE_ID },
       breadcrumb: { "@id": crumbId(path) },
-      primaryImageOfPage: {
-        "@type": "ImageObject",
-        "@id": screenshotId,
-        url: absUrl(`/sites/${slug}/${screenshotFile}`),
-        caption: `${site.identity.name} full-page screenshot`,
-      },
-      mainEntity: { "@id": studiedId },
+      primaryImageOfPage: { "@id": screenshotId },
+      mainEntity: { "@id": analysisId },
       inLanguage: "en-US",
+      dateModified: modified,
     },
     {
-      "@type": "WebSite",
-      "@id": studiedId,
-      name: site.identity.name,
-      url: site.identity.url,
-      description,
-      image: { "@id": screenshotId },
-      ...(category ? { genre: category } : {}),
-      ...(keywords.length ? { keywords } : {}),
-      ...(additionalProperty.length ? { additionalProperty } : {}),
+      "@type": "ImageObject",
+      "@id": screenshotId,
+      url: absUrl(`/sites/${slug}/${screenshotFile}`),
+      contentUrl: absUrl(`/sites/${slug}/${screenshotFile}`),
+      caption: `${site.identity.name} homepage, full-page screenshot`,
+      representativeOfPage: true,
     },
     {
       "@type": "Article",
       "@id": analysisId,
-      headline: `Design study: ${site.identity.name}`,
+      headline: studyTitle(site.identity.name),
+      description,
       about: { "@id": studiedId },
+      mainEntityOfPage: url,
       isPartOf: { "@id": WEBSITE_ID },
       author: { "@id": ORG_ID },
       publisher: { "@id": ORG_ID },
       image: { "@id": screenshotId },
       inLanguage: "en-US",
-      ...(checkedDate
-        ? { datePublished: checkedDate, dateModified: checkedDate }
+      datePublished: published,
+      dateModified: modified,
+      ...(keywords.length ? { keywords } : {}),
+    },
+    {
+      // Anchored on the studied brand's own domain so engines can link the
+      // analysis to the real entity it is about.
+      "@type": "WebSite",
+      "@id": `${site.identity.url.replace(/\/+$/, "")}/#studiedsite`,
+      name: site.identity.name,
+      url: site.identity.url,
+      ...(site.seo.description ? { description: site.seo.description } : {}),
+      image: { "@id": screenshotId },
+      ...(site.design.style_tags.length ? { genre: site.design.style_tags } : {}),
+      ...(category ? { about: category } : {}),
+      ...(audience.length
+        ? {
+            audience: audience.map((audienceType) => ({
+              "@type": "Audience",
+              audienceType,
+            })),
+          }
         : {}),
+      ...(additionalProperty.length ? { additionalProperty } : {}),
+    },
+  ]);
+}
+
+/** Research report: an Article that presents a Dataset, both dated from the record set. */
+export function researchGraph({
+  path,
+  headline,
+  description,
+  datasetName,
+  datasetDescription,
+  recordCount,
+  categoryCount,
+  method,
+  published,
+  modified,
+  crumbs,
+}: {
+  path: string;
+  headline: string;
+  description: string;
+  datasetName: string;
+  datasetDescription: string;
+  recordCount: number;
+  categoryCount: number;
+  method: string;
+  published: string;
+  modified: string;
+  crumbs: Crumb[];
+}) {
+  const url = absUrl(path);
+  const datasetId = `${url}/#dataset`;
+  return pageGraph([
+    breadcrumbNode(path, crumbs),
+    {
+      "@type": "Article",
+      "@id": `${url}/#article`,
+      headline,
+      description,
+      mainEntityOfPage: url,
+      isPartOf: { "@id": WEBSITE_ID },
+      author: { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+      image: ogImageNode(),
+      inLanguage: "en-US",
+      datePublished: published,
+      dateModified: modified,
+      about: { "@id": datasetId },
+      breadcrumb: { "@id": crumbId(path) },
+    },
+    {
+      "@type": "Dataset",
+      "@id": datasetId,
+      name: datasetName,
+      description: datasetDescription,
+      url,
+      creator: { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+      isAccessibleForFree: true,
+      license: absUrl("/terms"),
+      inLanguage: "en-US",
+      datePublished: published,
+      dateModified: modified,
+      measurementTechnique: method,
+      variableMeasured: [
+        "Category",
+        "Website type",
+        "Colour palette",
+        "Typography",
+        "Detected technology",
+      ],
+      additionalProperty: [
+        property("Records", String(recordCount)),
+        property("Populated categories", String(categoryCount)),
+      ],
     },
   ]);
 }

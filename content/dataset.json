@@ -1,0 +1,8 @@
+{
+  "name": "AllWebsites.Design website design archive",
+  "description": "Constructed, source-verified records of real websites: identity, classification, palette, typography, detected technology and screenshots.",
+  "method": "awd-2026.08.13-a",
+  "publishedAt": "2026-08-13",
+  "updatedAt": "2026-08-30",
+  "note": "Bump updatedAt only when the underlying records in content/sites actually change. Individual records override these dates with extraction.extracted_at when they carry one."
+}

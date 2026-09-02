@@ -3,12 +3,12 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { CANONICAL, liveCategories } from "@/lib/canonical";
-import { ORG_ID, absUrl, pageMeta, typedPageGraph } from "@/lib/seo";
+import { CANONICAL, DATASET, liveCategories } from "@/lib/canonical";
+import { pageMeta, researchGraph } from "@/lib/seo";
 
-const title = "2026 Website Design Index";
+const title = "Website Design Statistics — The 2026 Design Index";
 const description =
-  "A transparent snapshot of cleaned and deduplicated website design records across the AllWebsites.Design archive.";
+  "How 304 studied websites break down by industry, with the method behind the counts. A transparent snapshot of the AllWebsites.Design catalogue.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -17,35 +17,39 @@ export const metadata: Metadata = pageMeta({
   type: "article",
 });
 
+function formatDay(iso: string) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export default function DesignIndexPage() {
   const categories = liveCategories().filter((c) => c.count > 0);
   const max = Math.max(1, ...categories.map((c) => c.count));
   const total = CANONICAL.length;
+  const leader = categories[0];
 
   return (
     <>
       <JsonLd
-        data={typedPageGraph({
-          type: "Report",
+        data={researchGraph({
           path: "/research/website-design-index-2026",
-          name: "The 2026 Website Design Index",
+          headline: "The 2026 Website Design Index",
           description,
+          datasetName: DATASET.name,
+          datasetDescription: DATASET.description,
+          recordCount: total,
+          categoryCount: categories.length,
+          method: DATASET.method,
+          published: DATASET.publishedAt,
+          modified: DATASET.updatedAt,
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Research" },
+            { name: "2026 Design Index" },
           ],
-          idSuffix: "report",
-          extra: {
-            headline: "The 2026 Website Design Index",
-            author: { "@id": ORG_ID },
-            publisher: { "@id": ORG_ID },
-            image: {
-              "@type": "ImageObject",
-              url: absUrl("/og.jpg"),
-              width: 1200,
-              height: 630,
-            },
-          },
         })}
       />
       <PageHero
@@ -55,6 +59,39 @@ export default function DesignIndexPage() {
         breadcrumb={[{ href: "/", label: "Home" }, { label: "2026 Design Index" }]}
         meta={`${total.toLocaleString()} records · ${categories.length} categories`}
       />
+
+      <section className="border-b border-line bg-bone py-10">
+        <div className="wrap">
+          <div className="max-w-3xl border-l-2 border-orange pl-4">
+            <p className="eyebrow text-ink">The short answer</p>
+            <p className="mt-2 text-pretty text-[17px] leading-relaxed text-ink/85">
+              Across {total.toLocaleString()} websites studied in depth, the archive
+              spans {categories.length} populated industry categories
+              {leader
+                ? `, led by ${leader.name} with ${leader.count.toLocaleString()} records (${Math.round((leader.count / Math.max(total, 1)) * 100)}% of the catalogue)`
+                : ""}
+              . Every record is classified from the live site and carries its palette,
+              typefaces and detected technology.
+            </p>
+          </div>
+          <p className="mt-5 text-[13px] leading-relaxed text-muted">
+            <span className="font-medium text-ink">
+              Last updated {formatDay(DATASET.updatedAt)}
+            </span>
+            {" · First published "}
+            {formatDay(DATASET.publishedAt)}
+            {" · Method "}
+            <span className="font-mono">{DATASET.method}</span>
+            {" · Compiled and reviewed by the "}
+            <Link
+              href="/editorial-guidelines"
+              className="underline decoration-orange decoration-2 underline-offset-2 hover:text-ink"
+            >
+              AllWebsites.Design editorial team
+            </Link>
+          </p>
+        </div>
+      </section>
 
       <section className="py-14 sm:py-20">
         <div className="wrap">
