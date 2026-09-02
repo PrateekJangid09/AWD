@@ -34,15 +34,9 @@ export type Tool = {
   status: "live" | "soon";
 };
 
-export const STATS = {
-  total: 304,
-  categories: 22,
-  perPage: 30,
-  pages: 197,
-  library: "Library v4.0",
-  method: "awd-2026.08.13-a",
-};
-
+// Taxonomy seed: name, blurb and accent are real config. The count and share
+// on each row are placeholders — resolveCategory() always replaces them with
+// the live record count, so never read them directly.
 export const CATEGORIES: Category[] = [
   { slug: "portfolio", name: "Portfolio", count: 1990, share: "33.8%", blurb: "Personal sites, folios and CVs where the work is the interface.", descriptors: ["Personal", "Photography", "CV"], accent: "#FF6112" },
   { slug: "agency-studio", name: "Agency / Studio", count: 975, share: "16.5%", blurb: "Creative shops, design studios and production houses selling taste.", descriptors: ["Creative", "Design", "Video"], accent: "#2536FF" },
