@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { publishedPosts } from "@/lib/journal";
 import { CONTACT_EMAIL, SUPPORT_URL } from "@/lib/seo";
 
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
@@ -37,6 +38,7 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
 
 export default function Footer() {
   const categories = liveCategories().filter((c) => c.count > 0).slice(0, 8);
+  const research = publishedPosts().slice(0, 3);
 
   return (
     <footer className="border-t border-line bg-ink text-paper">
@@ -119,6 +121,28 @@ export default function Footer() {
                 All categories
               </Link>
             </div>
+          </div>
+        </div>
+      )}
+
+      {research.length > 0 && (
+        <div className="border-t border-white/10">
+          <div className="wrap py-7">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+              Latest research
+            </p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+              {research.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className="block text-[13px] leading-relaxed text-white/80 transition-colors hover:text-orange"
+                  >
+                    {post.h1}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

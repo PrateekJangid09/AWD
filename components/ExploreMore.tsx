@@ -4,7 +4,7 @@ const LINKS = [
   { href: "/archive", label: "Browse the archive", desc: "Search every published website." },
   { href: "/c", label: "Explore categories", desc: "See how each industry designs." },
   { href: "/tools", label: "Free colour tools", desc: "Palette, gradient and naming tools." },
-  { href: "/blogs", label: "Journal", desc: "Notes on how the web is designed." },
+  { href: "/blogs", label: "Research", desc: "Findings measured from the record set." },
   { href: "/research/website-design-index-2026", label: "2026 Design Index", desc: "What the archive is measuring." },
   { href: "/submit", label: "Submit a site", desc: "Nominate a reference for review." },
   { href: "/about", label: "About the archive", desc: "How we study websites." },

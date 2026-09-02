@@ -9,6 +9,7 @@ import {
   categorySlug,
   liveCategories,
 } from "@/lib/canonical";
+import { publishedPosts } from "@/lib/journal";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Site Map — Every Page in the Archive";
@@ -34,7 +35,7 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
         label: "2026 Design Index",
         desc: "How the catalogue breaks down, and the method behind it.",
       },
-      { href: "/blogs", label: "Resources", desc: "Notes on colour, typography and technology." },
+      { href: "/blogs", label: "Resources", desc: "Original research measured from the archive." },
     ],
   },
   {
@@ -103,6 +104,10 @@ export default function SiteMapPage() {
               name: tool.name,
               url: absUrl(`/tools/${tool.slug}`),
             })),
+            ...publishedPosts().map((post) => ({
+              name: post.h1,
+              url: absUrl(`/blogs/${post.slug}`),
+            })),
           ],
         })}
       />
@@ -143,6 +148,31 @@ export default function SiteMapPage() {
 
       <section className="border-t border-line bg-bone py-12 sm:py-16">
         <div className="wrap">
+          <h2 className="display text-2xl sm:text-3xl">Research and writing</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {publishedPosts().map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blogs/${post.slug}`}
+                className="rounded-2xl border border-line bg-paper p-5 transition-colors hover:border-line-strong"
+              >
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-orange">
+                  {post.kicker}
+                </span>
+                <span className="mt-2 block text-[15px] font-semibold tracking-tight">
+                  {post.h1}
+                </span>
+                <span className="mt-1 block text-[13px] leading-relaxed text-muted">
+                  {post.keyStat.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="wrap">
           <h2 className="display text-2xl sm:text-3xl">Free colour tools</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((tool) => (
@@ -161,7 +191,7 @@ export default function SiteMapPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section className="border-t border-line bg-bone py-12 sm:py-16">
         <div className="wrap">
           <h2 className="display text-2xl sm:text-3xl">
             All {CANONICAL.length.toLocaleString()} records, by category

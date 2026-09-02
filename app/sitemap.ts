@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/data";
 import { CANONICAL, DATASET, liveCategories, recordDates } from "@/lib/canonical";
+import { publishedPosts } from "@/lib/journal";
 import { SITE_URL } from "@/lib/seo";
 
 // lastModified tracks the record set, not the build, so a deploy that changes
@@ -57,6 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: CONTENT_UPDATED,
       changeFrequency: "monthly" as const,
       priority: 0.65,
+    })),
+    // Drafts carry noindex, so they are deliberately absent here.
+    ...publishedPosts().map((post) => ({
+      url: `${SITE_URL}/blogs/${post.slug}`,
+      lastModified: new Date(`${post.modified}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     })),
   ];
 }

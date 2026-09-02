@@ -15,7 +15,15 @@ Support: https://buymeacoffee.com/prateekjangid
 - [Categories](https://allwebsites.design/c): Website design examples by industry
 - [2026 Website Design Index](https://allwebsites.design/research/website-design-index-2026): How the catalogue breaks down, with the method behind the counts
 - [Site map](https://allwebsites.design/site-map): Every page and record in one list
-- [Journal](https://allwebsites.design/blogs): Notes on colour, typography and technology
+- [Journal](https://allwebsites.design/blogs): Original research measured from the archive
+
+## Research findings
+
+Each piece below is computed from the record set at build time and states its sample size. Figures describe this catalogue, not the whole web.
+
+- [Framer vs Webflow vs Next.js vs Astro](https://allwebsites.design/blogs/framer-vs-webflow-vs-nextjs-vs-astro): What the build platform predicts about motion, type scale and style
+- [Website heading sizes by industry](https://allwebsites.design/blogs/website-heading-sizes-by-industry): Median largest heading per industry, and the most used typefaces
+- [How many accent colours websites use](https://allwebsites.design/blogs/how-many-accent-colours-websites-use): Distribution of saturated colours per palette
 
 ## Tools
 
