@@ -148,7 +148,7 @@ function buildPosts(): JournalPost[] {
       kicker: "Colour",
       title: "How Many Accent Colours Websites Use",
       h1: "How many accent colours does a website actually need?",
-      description: `Across ${colour.sample} studied websites, ${colour.restrainedShare}% use one saturated colour or none at all. The measured case for a neutral base and a single accent.`,
+      description: `Across ${colour.sample} studied website palettes, ${colour.restrainedShare}% use one saturated colour or none, and only ${colour.manyShare}% use three or more. The measured case for one accent.`,
       answer: `Across ${colour.sample} website palettes, ${colour.restrainedShare}% carry at most one saturated colour: ${colour.noneShare}% use none at all and ${colour.oneShare}% use exactly one. Only ${colour.manyShare}% reach three or more. The median palette holds ${colour.medianPalette} colours, so most of that palette is doing neutral structural work rather than shouting.`,
       about: ["Colour palette", "Web design", "Accent colour", "Brand colour"],
       published: "2026-09-02",

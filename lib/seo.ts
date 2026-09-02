@@ -117,11 +117,66 @@ function paletteLooksMonochrome(palette: { hex: string }[]) {
   return palette.every((swatch) => hexChroma(swatch.hex) < 0.12);
 }
 
-export function studyTitle(name: string) {
-  return `${name}, design study (palette, type, tech)`;
+/** Longest brand name a title can carry before the page title runs long. */
+const NAME_MAX = 30;
+
+/**
+ * The brand behind a record.
+ *
+ * Some records store the studied page's full <title> in the name field, so a
+ * raw name can be a whole tagline. Split on the separators that conventionally
+ * divide a brand from its strapline, then fall back to a word-boundary trim.
+ */
+export function shortName(raw: string) {
+  const name = raw.trim();
+
+  // "Brand | Tagline" and "Tagline | Brand" both occur, and the brand is
+  // reliably the shorter half, so pick that. Other separators put the brand first.
+  const piped = name.split(/\s*\|\s*/).filter(Boolean);
+  let candidate =
+    piped.length === 2
+      ? piped.reduce((a, b) => (a.length <= b.length ? a : b))
+      : name;
+
+  candidate = candidate.split(/\s+[–—⋅›•·]\s+|\s+-\s+|:\s+/)[0].trim() || name;
+  if (candidate.length <= NAME_MAX) return candidate;
+
+  // "Richard Bruskowski, Freelance Designer" style: the brand precedes the comma.
+  const beforeComma = candidate.split(",")[0].trim();
+  if (beforeComma.length >= 3 && beforeComma.length <= NAME_MAX) return beforeComma;
+  if (beforeComma.length >= 3) candidate = beforeComma;
+
+  // "Greenlight makes it easy to..." style: a sentence, not a name. The brand is
+  // the leading run of capitalised words, before the prose starts.
+  const words = candidate.split(/\s+/);
+  const lead: string[] = [];
+  for (const word of words) {
+    if (lead.length > 0 && /^[a-z]/.test(word)) break;
+    lead.push(word);
+  }
+  const leading = lead.join(" ");
+  if (leading.length >= 3 && leading.length <= NAME_MAX) return leading;
+
+  const clipped = candidate.slice(0, NAME_MAX);
+  const atWord = clipped.slice(0, clipped.lastIndexOf(" "));
+  return (atWord.length >= 12 ? atWord : clipped).replace(/[\s,;:•·-]+$/, "");
 }
 
+export function studyTitle(name: string) {
+  return `${shortName(name)} website design study`;
+}
+
+/**
+ * Descriptions are filled toward this band with factual clauses, never padding.
+ * The core is capped below DESC_MIN so there is always room for a closing
+ * clause to carry a short record up into the band.
+ */
+const DESC_MIN = 150;
+const DESC_MAX = 165;
+const CORE_MAX = 145;
+
 export function studyDescription(site: CanonicalSite) {
+  const name = shortName(site.identity.name);
   const styles = site.design.style_tags.slice(0, 3);
   const paletteCount = site.design.palette.length;
   const fonts = uniqueStrings(site.design.fonts.map((font) => font.name)).slice(0, 2);
@@ -146,10 +201,49 @@ export function studyDescription(site: CanonicalSite) {
     ]).slice(0, 3);
     if (stack.length) bits.push(`built with ${joinList(stack)}`);
   }
-  if (bits.length === 0) {
-    return `A design study of ${site.identity.name}: palette, typography, style and detected technology.`;
+
+  // Drop trailing clauses rather than let the sentence overrun.
+  let core = `${name} website design study: palette, typography and detected technology.`;
+  for (let take = bits.length; take > 0; take -= 1) {
+    const candidate = `${name} website design study: ${bits.slice(0, take).join(", ")}.`;
+    if (candidate.length <= CORE_MAX) {
+      core = candidate;
+      break;
+    }
+    if (take === 1) {
+      // One clause and still too long: clamp on a word boundary.
+      const clipped = candidate.slice(0, CORE_MAX - 1);
+      core = `${clipped.slice(0, clipped.lastIndexOf(" ")).replace(/[\s,;:]+$/, "")}.`;
+    }
   }
-  return `A design study of ${site.identity.name}: ${bits.join(", ")}.`;
+
+  // Fill toward the band by taking the longest clause that still fits, so a
+  // short core is completed rather than left stranded at 120 characters.
+  const category = site.classification.category?.toLowerCase();
+  const tails = [
+    category ? ` A ${category} reference, recorded from the live site.` : "",
+    category ? ` A ${category} reference in the archive.` : "",
+    " See every hex value, typeface and detected technology.",
+    " Palette, typefaces and stack from the live site.",
+    " Screenshots and provenance included.",
+    " With screenshots and provenance.",
+    " Recorded from the live site.",
+    " Full palette and typefaces.",
+    " Screenshots included.",
+    " With screenshots.",
+  ].filter(Boolean);
+
+  let out = core;
+  const used = new Set<string>();
+  while (out.length < DESC_MIN) {
+    const fit = tails
+      .filter((tail) => !used.has(tail) && out.length + tail.length <= DESC_MAX)
+      .sort((a, b) => b.length - a.length)[0];
+    if (!fit) break;
+    used.add(fit);
+    out += fit;
+  }
+  return out;
 }
 
 /**
