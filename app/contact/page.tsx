@@ -15,7 +15,7 @@ import {
 
 const title = "Contact — Corrections & Editorial";
 const description =
-  "Request a correction, ask about a record, or reach the AllWebsites.Design editorial team.";
+  "Request a correction to a record, ask how a website was classified, or reach the AllWebsites.Design editorial team directly. We answer every corrections email.";
 
 export const metadata: Metadata = pageMeta({
   title,

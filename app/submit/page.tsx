@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Submit a Site";
 const description =
-  "Submit a website for review. Every submission is checked against our editorial guidelines.";
+  "Nominate a website for the archive. Every submission is checked against our editorial guidelines, then studied for palette, typography and detected technology.";
 
 export const metadata: Metadata = pageMeta({
   title,

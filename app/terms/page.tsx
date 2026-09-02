@@ -7,7 +7,7 @@ import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Terms & Conditions";
 const description =
-  "The terms that govern use of the AllWebsites.Design archive, including third-party ownership and accuracy limitations.";
+  "The terms governing use of the AllWebsites.Design archive and tools, including third-party brand ownership, accuracy limits and how our records may be cited.";
 
 export const metadata: Metadata = pageMeta({
   title,

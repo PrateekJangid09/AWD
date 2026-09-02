@@ -22,6 +22,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <style>
       .aw-skip{position:absolute;left:-9999px;top:8px;z-index:100;background:#141414;color:#fff;padding:10px 14px;text-decoration:none;font-size:13px;font-weight:600;border-radius:8px}
       .aw-skip:focus{left:12px}
+      /* Pre-hydration shell: gives crawlers and no-JS visitors the heading,
+         the description and real links. React clears #root on first render. */
+      .aw-shell{max-width:720px;margin:0 auto;padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#141414;line-height:1.6}
+      .aw-shell h1{font-size:2rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 .6em}
+      .aw-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#6b6b6b;margin:0 0 20px}
+      .aw-lede{font-size:1.05rem;color:#3d3d3d;margin:0 0 1em}
+      .aw-note{font-size:.9rem;color:#6b6b6b;margin:0 0 1.5em}
+      .aw-links{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+      .aw-links a{font-size:.9rem;color:#141414;border:1px solid #e2e2dc;border-radius:999px;padding:7px 13px;text-decoration:none;display:inline-block}
+      .aw-shell a{color:#141414}
     </style>
 <meta name="google-adsense-account" content="ca-pub-9336436557815535" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9336436557815535" crossorigin="anonymous"></script>
@@ -29,8 +39,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <title>WebPalette Studio – Website Color Palette Generator & System Builder | AllWebsites.design</title>
-    <meta name="description" content="Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy CSS." />
+    <title>WebPalette Studio – Website Color Palette Generator</title>
+    <meta name="description" content="Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy production CSS." />
     <link rel="canonical" href="https://allwebsites.design/tools/webpalette" />
     <meta name="theme-color" content="#F5F5F2" />
 
@@ -132,6 +142,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <a class="aw-skip" href="#root">Skip to content</a>
-<div id="root"></div>
+<div id="root"><div class="aw-shell">
+      <p class="aw-eyebrow"><a href="/">AllWebsites.Design</a> / <a href="/tools">Tools</a> / WebPalette Studio</p>
+      <h1 id="hero-title">Turn your brand colors into a complete website palette.</h1>
+      <p class="aw-lede">Start with the colors you already own. WebPalette Studio assigns them to interface roles, fills the gaps, checks contrast and previews the whole system on a real layout before you copy the CSS.</p>
+      <p class="aw-note">The builder loads in your browser. If it does not appear, enable JavaScript or use the links below.</p>
+      <ul class="aw-links">
+        <li><a href="/tools">All free colour tools</a></li>
+        <li><a href="/tools/chromary">Chromary, colour name finder</a></li>
+        <li><a href="/tools/colorhyme">Colorhyme, hue shift and transformer</a></li>
+        <li><a href="/tools/mockupalettes">Mockupalettes, preview a palette on a mockup</a></li>
+        <li><a href="/tools/truegradient">TrueGradient, sRGB and OKLCH interpolation</a></li>
+        <li><a href="/archive">Browse the website design archive</a></li>
+        <li><a href="/blogs/how-many-accent-colours-websites-use">How many accent colours websites use</a></li>
+      </ul>
+    </div></div>
   </body>
 </html>

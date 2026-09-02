@@ -40,12 +40,42 @@ Extractor preview HTML can be converted with:
 python3 scripts/import-previews.py
 ```
 
+## Publishing to the journal
+
+Journal posts live in two places: metadata in `lib/journal.ts` and the body in
+`content/journal/<slug>.tsx`, registered in `content/journal/index.ts`. The
+sitemap, HTML site map, footer and `llms.txt` pick up published posts
+automatically; drafts carry `noindex` and are excluded from the sitemap.
+
+Every statistic a post quotes is computed in `lib/insights.ts` from
+`content/sites/*.json` at build time and carries its sample size, so a figure
+cannot drift away from the archive behind it.
+
+## SEO and AEO acceptance gate
+
+`docs/page-acceptance-checklist.md` is the definition of done for any page. The
+machine checkable parts run as a script:
+
+```bash
+npm run build
+npm start -- -p 4360 &
+npm run seo:check -- --base http://localhost:4360 --all
+```
+
+It checks robots, canonicals, title and description length, H1 count, Open
+Graph, JSON-LD validity, that `FAQPage` questions are visible on the page, image
+alt attributes, internal link counts, AI crawler access in `robots.txt` and that
+`llms.txt` resolves. It exits non-zero on failure.
+
 ## Project structure
 
 - `app/` — Next.js App Router pages
 - `components/` — shared UI
 - `content/sites/` — canonical website records
-- `lib/` — archive data and canonical loaders
+- `content/journal/` — journal article bodies
+- `docs/` — page acceptance checklist and reindex runbook
+- `lib/` — archive data, canonical loaders, SEO helpers and computed insights
+- `scripts/seo-check.mjs` — the acceptance gate
 - `public/tools/` — shipped design tools
 - `public/sites/` — record screenshots
 - `tools-src/webpalette-studio/` — WebPalette source

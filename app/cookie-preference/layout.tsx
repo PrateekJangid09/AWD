@@ -5,7 +5,7 @@ import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Cookie Preferences";
 const description =
-  "Essential cookies keep the archive running. Everything else is opt-in and saved in your browser.";
+  "Essential cookies keep the archive running. Analytics, functional and marketing cookies are opt-in, saved only in your browser, and changeable here at any time.";
 
 export const metadata: Metadata = pageMeta({
   title,

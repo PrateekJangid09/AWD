@@ -10,7 +10,7 @@ import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Tools for Studying and Building the Web";
 const description =
-  "A connected set of free, no-signup design tools — find, transform, build, preview, test and interpolate colour. Everything runs in your browser.";
+  "Free colour tools with no signup: find and name a colour, transform a hue, build a role-based palette, preview it on a mockup and compare gradient interpolation.";
 
 export const metadata: Metadata = pageMeta({
   title,

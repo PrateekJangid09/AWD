@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <title>WebPalette Studio – Website Color Palette Generator & System Builder | AllWebsites.design</title>
-    <meta name="description" content="Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy CSS." />
+    <title>WebPalette Studio – Website Color Palette Generator</title>
+    <meta name="description" content="Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy production CSS." />
     <link rel="canonical" href="https://allwebsites.design/tools/webpalette-studio" />
     <link rel="icon" type="image/png" href="/aw-logo-orange.png" />
     <meta name="theme-color" content="#F5F5F2" />
@@ -70,7 +70,24 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Pre-hydration shell: gives crawlers and no-JS visitors the heading, the
+         description and real links. React clears #root on its first render, so
+         the H1 here is replaced by the app's own rather than duplicating it. -->
+    <div id="root"><div class="aw-shell">
+      <p class="aw-eyebrow"><a href="/">AllWebsites.Design</a> / <a href="/tools">Tools</a> / WebPalette Studio</p>
+      <h1 id="hero-title">Turn your brand colors into a complete website palette.</h1>
+      <p class="aw-lede">Start with the colors you already own. WebPalette Studio assigns them to interface roles, fills the gaps, checks contrast and previews the whole system on a real layout before you copy the CSS.</p>
+      <p class="aw-note">The builder loads in your browser. If it does not appear, enable JavaScript or use the links below.</p>
+      <ul class="aw-links">
+        <li><a href="/tools">All free colour tools</a></li>
+        <li><a href="/tools/chromary">Chromary, colour name finder</a></li>
+        <li><a href="/tools/colorhyme">Colorhyme, hue shift and transformer</a></li>
+        <li><a href="/tools/mockupalettes">Mockupalettes, preview a palette on a mockup</a></li>
+        <li><a href="/tools/truegradient">TrueGradient, sRGB and OKLCH interpolation</a></li>
+        <li><a href="/archive">Browse the website design archive</a></li>
+        <li><a href="/blogs/how-many-accent-colours-websites-use">How many accent colours websites use</a></li>
+      </ul>
+    </div></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

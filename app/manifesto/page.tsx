@@ -6,7 +6,8 @@ import JsonLd from "@/components/JsonLd";
 import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Manifesto";
-const description = "Useful inspiration needs context. The philosophy behind the archive.";
+const description =
+  "Useful inspiration needs context. Why every website in this archive is studied with its palette, typography and detected technology instead of shown as a thumbnail.";
 
 export const metadata: Metadata = pageMeta({
   title,

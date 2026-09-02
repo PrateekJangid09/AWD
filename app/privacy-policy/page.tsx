@@ -7,7 +7,7 @@ import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Privacy Policy";
 const description =
-  "How AllWebsites.Design collects, uses and protects information across the archive.";
+  "What AllWebsites.Design collects, why, and how long it is kept: analytics, cookie consent, contact messages and the choices you can make about all of them.";
 
 export const metadata: Metadata = pageMeta({
   title,

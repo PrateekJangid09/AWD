@@ -217,10 +217,8 @@ export function studyDescription(site: CanonicalSite) {
     }
   }
 
-  // Fill toward the band by taking the longest clause that still fits, so a
-  // short core is completed rather than left stranded at 120 characters.
   const category = site.classification.category?.toLowerCase();
-  const tails = [
+  return fitDescription(core, [
     category ? ` A ${category} reference, recorded from the live site.` : "",
     category ? ` A ${category} reference in the archive.` : "",
     " See every hex value, typeface and detected technology.",
@@ -231,12 +229,29 @@ export function studyDescription(site: CanonicalSite) {
     " Full palette and typefaces.",
     " Screenshots included.",
     " With screenshots.",
-  ].filter(Boolean);
+  ]);
+}
 
-  let out = core;
+/**
+ * Bring a description into the 150 to 165 band.
+ *
+ * Overlong text is clamped on a word boundary. Short text is completed by
+ * taking the longest supplied clause that still fits, repeatedly. Clauses must
+ * be factual: this fills a description, it does not pad one.
+ */
+export function fitDescription(core: string, tails: (string | false | null | undefined)[] = []) {
+  let out = core.trim();
+
+  if (out.length > DESC_MAX) {
+    const clipped = out.slice(0, DESC_MAX - 1);
+    const atWord = clipped.slice(0, clipped.lastIndexOf(" "));
+    return `${(atWord.length >= 80 ? atWord : clipped).replace(/[\s,;:.]+$/, "")}.`;
+  }
+
+  const pool = tails.filter((tail): tail is string => Boolean(tail));
   const used = new Set<string>();
   while (out.length < DESC_MIN) {
-    const fit = tails
+    const fit = pool
       .filter((tail) => !used.has(tail) && out.length + tail.length <= DESC_MAX)
       .sort((a, b) => b.length - a.length)[0];
     if (!fit) break;

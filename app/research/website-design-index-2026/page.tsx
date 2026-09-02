@@ -8,7 +8,7 @@ import { pageMeta, researchGraph } from "@/lib/seo";
 
 const title = "Website Design Statistics — The 2026 Design Index";
 const description =
-  "How 304 studied websites break down by industry, with the method behind the counts. A transparent snapshot of the AllWebsites.Design catalogue.";
+  "How 304 studied websites break down by industry, with the method behind every count. A transparent, dated snapshot of the AllWebsites.Design research catalogue.";
 
 export const metadata: Metadata = pageMeta({
   title,

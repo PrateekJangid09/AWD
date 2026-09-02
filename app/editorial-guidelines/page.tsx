@@ -7,7 +7,7 @@ import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Editorial Guidelines";
 const description =
-  "The inclusion, integrity and taxonomy policy behind the AllWebsites.Design archive.";
+  "How websites are chosen, classified, verified and corrected in the AllWebsites.Design archive, and what we do when a detected fact turns out to be wrong.";
 
 export const metadata: Metadata = pageMeta({
   title,

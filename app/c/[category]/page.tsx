@@ -12,7 +12,7 @@ import {
 } from "@/lib/canonical";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
+import { absUrl, collectionPageGraph, fitDescription, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   const slugs = new Set([
@@ -30,9 +30,18 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
+  // The count is useful in the title but not worth overrunning it for.
+  const withCount = `${cat.name} Website Design Examples (${cat.count})`;
   return pageMeta({
-    title: `${cat.name} Website Design Examples (${cat.count})`,
-    description: `${cat.count} ${cat.name.toLowerCase()} website design examples, each with its colour palette, typefaces and detected technology. ${cat.blurb}`,
+    title: withCount.length <= 50 ? withCount : `${cat.name} Website Design Examples`,
+    description: fitDescription(
+      `${cat.count} ${cat.name.toLowerCase()} website design examples, each studied with its colour palette, typefaces and detected technology.`,
+      [
+        ` ${cat.blurb}`,
+        " Screenshots and provenance on every record.",
+        " Updated as the archive grows.",
+      ],
+    ),
     path: `/c/${category}`,
     index: cat.count > 0,
   });
