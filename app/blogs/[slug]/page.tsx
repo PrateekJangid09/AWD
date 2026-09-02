@@ -129,46 +129,50 @@ export default async function JournalPostPage({
           </div>
         </header>
 
-        <div className="wrap max-w-3xl py-12 sm:py-16">
-          <Body />
+        {/* The column is left-aligned inside the wrap so it lines up with the
+            hero above it rather than centring against it. */}
+        <div className="wrap py-12 sm:py-16">
+          <div className="max-w-3xl">
+            <Body />
 
-          <section className="mt-16 border-t border-line pt-12">
-            <h2 className="display text-2xl sm:text-3xl">
-              Questions people also ask
-            </h2>
-            <div className="mt-8 divide-y divide-line border-y border-line">
-              {post.faqs.map((faq) => (
-                <details key={faq.question} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[16px] font-medium text-ink">
-                    {faq.question}
-                    <span
-                      className="mt-1 shrink-0 text-orange transition-transform group-open:rotate-45"
-                      aria-hidden
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-pretty text-[15px] leading-relaxed text-soft">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </section>
+            <section className="mt-16 border-t border-line pt-12">
+              <h2 className="display text-2xl sm:text-3xl">
+                Questions people also ask
+              </h2>
+              <div className="mt-8 divide-y divide-line border-y border-line">
+                {post.faqs.map((faq) => (
+                  <details key={faq.question} className="group py-5">
+                    <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[16px] font-medium text-ink">
+                      {faq.question}
+                      <span
+                        className="mt-1 shrink-0 text-orange transition-transform group-open:rotate-45"
+                        aria-hidden
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <p className="mt-3 text-pretty text-[15px] leading-relaxed text-soft">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </section>
 
-          <section className="mt-14">
-            <p className="eyebrow text-ink">Related questions this raises</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {post.fanout.map((question) => (
-                <li
-                  key={question}
-                  className="rounded-full bg-bone px-3.5 py-1.5 text-[13px] text-soft"
-                >
-                  {question}
-                </li>
-              ))}
-            </ul>
-          </section>
+            <section className="mt-14">
+              <p className="eyebrow text-ink">Related questions this raises</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {post.fanout.map((question) => (
+                  <li
+                    key={question}
+                    className="rounded-full bg-bone px-3.5 py-1.5 text-[13px] text-soft"
+                  >
+                    {question}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         </div>
       </article>
 
