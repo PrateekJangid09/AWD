@@ -524,6 +524,18 @@ export function archiveRecordGraph(site: CanonicalSite) {
   const { published, modified } = recordDates(site);
   const audience = site.classification.audience.filter(Boolean);
 
+  // The studied brand as an entity in its own right, anchored on its own
+  // domain so engines can reconcile it with the real-world organisation.
+  const brandRoot = site.identity.url.replace(/\/+$/, "");
+  const studiedOrgId = `${brandRoot}/#organization`;
+  const brandProfiles = [site.social.linkedin, site.social.x].filter(
+    (value): value is string => Boolean(value),
+  );
+  const brandEmail =
+    site.contact.email && site.contact.email.includes("@")
+      ? site.contact.email
+      : null;
+
   return pageGraph([
     breadcrumbNode(path, crumbs),
     {
@@ -552,7 +564,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       "@id": analysisId,
       headline: studyTitle(site.identity.name),
       description,
-      about: { "@id": studiedId },
+      about: [{ "@id": studiedOrgId }, { "@id": studiedId }],
       mainEntityOfPage: url,
       isPartOf: { "@id": WEBSITE_ID },
       author: { "@id": ORG_ID },
@@ -567,11 +579,12 @@ export function archiveRecordGraph(site: CanonicalSite) {
       // Anchored on the studied brand's own domain so engines can link the
       // analysis to the real entity it is about.
       "@type": "WebSite",
-      "@id": `${site.identity.url.replace(/\/+$/, "")}/#studiedsite`,
+      "@id": studiedId,
       name: site.identity.name,
       url: site.identity.url,
       ...(site.seo.description ? { description: site.seo.description } : {}),
       image: { "@id": screenshotId },
+      publisher: { "@id": studiedOrgId },
       ...(site.design.style_tags.length ? { genre: site.design.style_tags } : {}),
       ...(category ? { about: category } : {}),
       ...(audience.length
@@ -583,6 +596,25 @@ export function archiveRecordGraph(site: CanonicalSite) {
           }
         : {}),
       ...(additionalProperty.length ? { additionalProperty } : {}),
+    },
+    {
+      "@type": "Organization",
+      "@id": studiedOrgId,
+      name: site.identity.name,
+      url: site.identity.url,
+      ...(site.seo.description ? { description: site.seo.description } : {}),
+      ...(site.identity.favicon
+        ? {
+            logo: {
+              "@type": "ImageObject",
+              url: absUrl(`/sites/${slug}/${site.identity.favicon}`),
+            },
+          }
+        : {}),
+      ...(brandEmail ? { email: brandEmail } : {}),
+      ...(site.contact.address ? { address: site.contact.address } : {}),
+      ...(brandProfiles.length ? { sameAs: brandProfiles } : {}),
+      subjectOf: { "@id": analysisId },
     },
   ]);
 }
@@ -658,6 +690,112 @@ export function researchGraph({
         property("Records", String(recordCount)),
         property("Populated categories", String(categoryCount)),
       ],
+    },
+  ]);
+}
+
+/**
+ * A journal article: BlogPosting inside the Blog, plus an optional FAQPage
+ * built from the questions the page actually answers on screen.
+ */
+export function articleGraph({
+  path,
+  headline,
+  description,
+  published,
+  modified,
+  crumbs,
+  faqs = [],
+  about = [],
+  wordCount,
+}: {
+  path: string;
+  headline: string;
+  description: string;
+  published: string;
+  modified: string;
+  crumbs: Crumb[];
+  faqs?: { question: string; answer: string }[];
+  about?: string[];
+  wordCount?: number;
+}) {
+  const url = absUrl(path);
+  const articleId = `${url}/#article`;
+  const nodes: JsonLdNode[] = [
+    breadcrumbNode(path, crumbs),
+    {
+      "@type": "BlogPosting",
+      "@id": articleId,
+      headline,
+      description,
+      mainEntityOfPage: url,
+      url,
+      isPartOf: { "@id": `${absUrl("/blogs")}/#blog` },
+      author: { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+      image: ogImageNode(),
+      inLanguage: "en-US",
+      datePublished: published,
+      dateModified: modified,
+      breadcrumb: { "@id": crumbId(path) },
+      isAccessibleForFree: true,
+      ...(about.length ? { about: about.map((name) => ({ "@type": "Thing", name })) } : {}),
+      ...(wordCount ? { wordCount } : {}),
+    },
+  ];
+
+  // Only emitted when the questions are genuinely on the page.
+  if (faqs.length) {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}/#faq`,
+      isPartOf: { "@id": articleId },
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+
+  return pageGraph(nodes);
+}
+
+/** The journal hub: a Blog whose blogPost list mirrors the published cards. */
+export function blogGraph({
+  posts,
+  modified,
+}: {
+  posts: { path: string; headline: string; description: string; published: string; modified: string }[];
+  modified: string;
+}) {
+  const path = "/blogs";
+  const url = absUrl(path);
+  return pageGraph([
+    breadcrumbNode(path, [{ name: "Home", path: "/" }, { name: "Resources" }]),
+    {
+      "@type": "Blog",
+      "@id": `${url}/#blog`,
+      url,
+      name: "AllWebsites.Design Journal",
+      description:
+        "Data-backed notes on colour, typography and technology, drawn from the website design archive.",
+      isPartOf: { "@id": WEBSITE_ID },
+      breadcrumb: { "@id": crumbId(path) },
+      publisher: { "@id": ORG_ID },
+      inLanguage: "en-US",
+      dateModified: modified,
+      blogPost: posts.map((post) => ({
+        "@type": "BlogPosting",
+        "@id": `${absUrl(post.path)}/#article`,
+        url: absUrl(post.path),
+        headline: post.headline,
+        description: post.description,
+        datePublished: post.published,
+        dateModified: post.modified,
+        author: { "@id": ORG_ID },
+        publisher: { "@id": ORG_ID },
+      })),
     },
   ]);
 }
