@@ -57,8 +57,8 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
     heading: "Legal",
     links: [
       { href: "/privacy-policy", label: "Privacy policy", desc: "What we collect and why." },
-      { href: "/terms", label: "Terms", desc: "Terms of use for the archive and plugins." },
-      { href: "/refund-policy", label: "Refunds", desc: "Cancellations and refunds for plugin subscriptions." },
+      { href: "/terms", label: "Terms of service", desc: "Terms for the archive and plugin subscriptions." },
+      { href: "/refund-policy", label: "Refund policy", desc: "Cancellations and refunds for plugin subscriptions." },
       { href: "/cookie-preference", label: "Cookie preferences", desc: "Manage analytics cookies." },
     ],
   },

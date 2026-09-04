@@ -1,4 +1,5 @@
--- Run this in the Supabase SQL editor for the AllWebsites.Design project.
+-- Paste into the SQL editor:
+-- https://supabase.com/dashboard/project/kxqykdxydhfglnubjghj/sql/new
 -- Service role bypasses RLS. Anon/publishable key has no policies, so the
 -- browser cannot read billing rows.
 

@@ -32,6 +32,8 @@ const nextConfig = {
     return [
       // Legal-page renames only. Website records live permanently at /archive/<slug>.
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      { source: "/refunds", destination: "/refund-policy", permanent: true },
+      { source: "/tos", destination: "/terms", permanent: true },
       { source: "/cookies", destination: "/cookie-preference", permanent: true },
       { source: "/sites/:slug", destination: "/archive/:slug", permanent: true },
     ];

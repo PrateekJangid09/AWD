@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
+import PolicyNav from "@/components/PolicyNav";
 import { FREE_USES_PER_PLUGIN, PLANS } from "@/lib/paddle-catalog";
 import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 import CheckoutButton from "./CheckoutButton";
@@ -57,6 +58,9 @@ export default async function PricingPage({
         intro="Four desktop plugins. Each one lets you apply, style or drop a result three times for free. After that, one subscription unlocks the suite."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Pricing" }]}
       />
+      <div className="wrap pt-8">
+        <PolicyNav current="/pricing" />
+      </div>
 
       <section className="py-14 sm:py-20">
         <div className="wrap grid gap-8 lg:grid-cols-2">
