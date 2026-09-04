@@ -67,7 +67,7 @@ export async function createRazorpayPaymentLink(input: {
 }) {
   const client = razorpayClient();
   if (!client) throw new Error("razorpay_unconfigured");
-  return client.paymentLink.create({
+  const link = (await client.paymentLink.create({
     amount: input.amount,
     currency: input.currency,
     accept_partial: false,
@@ -78,7 +78,8 @@ export async function createRazorpayPaymentLink(input: {
     notes: input.notes,
     callback_url: input.callbackUrl,
     callback_method: "get",
-  });
+  } as never)) as { id?: string; short_url?: string };
+  return link;
 }
 
 export function razorpayErrorStatus(err: unknown): { status: number; message: string } {
