@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <title>WebPalette Studio – Website Color Palette Generator</title>
-    <meta name="description" content="Start with your existing brand colors and turn them into a complete website palette. Assign roles, check contrast, preview the system and copy production CSS." />
+    <title>WebPalette – Website Color Palette Generator</title>
+    <meta name="description" content="Website color palette generator for brand colours. Assign roles, fill gaps, check contrast, preview on a layout and copy production CSS. Free, no signup." />
     <link rel="canonical" href="https://allwebsites.design/tools/webpalette" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="theme-color" content="#F5F5F2" />
@@ -16,13 +16,13 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AllWebsites.design" />
-    <meta property="og:title" content="WebPalette Studio – Build a Complete Website Color System" />
+    <meta property="og:title" content="WebPalette – Website Color Palette Generator" />
     <meta property="og:description" content="Keep your brand colors. Complete the website palette around them with semantic roles, contrast checks, an honest before/after preview and CSS export." />
     <meta property="og:url" content="https://allwebsites.design/tools/webpalette" />
     <meta property="og:image" content="https://allwebsites.design/tools/previews/webpalette.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://allwebsites.design/tools/previews/webpalette.webp" />
-    <meta name="twitter:title" content="WebPalette Studio – Build a Complete Website Color System" />
+    <meta name="twitter:title" content="WebPalette – Website Color Palette Generator" />
     <meta name="twitter:description" content="Turn existing brand colors into a complete five-role website palette without overwriting the colors you want to keep." />
 
     <script type="application/ld+json">
@@ -31,7 +31,7 @@
         "@type": "WebApplication",
         "name": "WebPalette Studio",
         "url": "https://allwebsites.design/tools/webpalette",
-        "description": "A website color-system builder that turns existing brand colors into a complete role-based web palette.",
+        "description": "Website color palette generator for brand colours. Assign roles, fill gaps, check contrast, preview on a layout and copy production CSS.",
         "applicationCategory": "DesignApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -71,24 +71,87 @@
         ]
       }
     </script>
+  <style>
+.aw-shell{max-width:720px;margin:0 auto;padding:64px 24px;font-family:system-ui,sans-serif;color:#141414;line-height:1.6}
+.aw-shell h1{font-size:2rem;line-height:1.15;margin:0 0 .6em}
+.aw-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#6b6b6b}
+.aw-lede{font-size:1.05rem;color:#3d3d3d}
+.aw-note{font-size:.9rem;color:#6b6b6b}
+.aw-links{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.aw-links a{border:1px solid #e2e2dc;border-radius:999px;padding:7px 13px;text-decoration:none;font-size:.9rem}
+
+      .aw-shell h2{font-size:1.25rem;line-height:1.25;letter-spacing:-.02em;margin:1.6em 0 .55em}
+      .aw-steps{margin:0 0 1.2em;padding-left:1.2em;color:#3d3d3d;font-size:.95rem}
+      .aw-steps li{margin:0 0 .45em}
+      .aw-examples{margin:0 0 1.2em;padding-left:1.2em;color:#3d3d3d;font-size:.95rem}
+      .aw-examples li{margin:0 0 .45em}
+      .aw-faq{margin:0 0 1.4em}
+      .aw-faq dt{font-weight:650;margin:0.85em 0 .2em;font-size:.95rem}
+      .aw-faq dd{margin:0;color:#3d3d3d;font-size:.92rem}
+</style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://allwebsites.design/tools/webpalette/#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"What is a website color palette generator?","acceptedAnswer":{"@type":"Answer","text":"A tool that turns a few brand colours into a complete role-based palette for interfaces, with contrast checks and CSS you can paste into a project."}},
+        {"@type":"Question","name":"How is WebPalette different from Mockupalettes?","acceptedAnswer":{"@type":"Answer","text":"WebPalette generates and completes the system. Mockupalettes visualizes an existing four-colour palette on a fixed website mockup."}},
+        {"@type":"Question","name":"How is WebPalette different from Colorhyme?","acceptedAnswer":{"@type":"Answer","text":"Colorhyme builds a harmony from one HEX. WebPalette builds a full website palette with several roles."}},
+        {"@type":"Question","name":"Can I name a colour before I start?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use Chromary as a color name finder, then paste the HEX into WebPalette."}},
+        {"@type":"Question","name":"Where can I study real website palettes?","acceptedAnswer":{"@type":"Answer","text":"Browse the archive, the 2026 Website Design Index, and journal notes on accent-colour counts."}}
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Pre-hydration shell: gives crawlers and no-JS visitors the heading, the
          description and real links. React clears #root on its first render, so
          the H1 here is replaced by the app's own rather than duplicating it. -->
     <div id="root"><div class="aw-shell">
-      <p class="aw-eyebrow"><a href="/">AllWebsites.Design</a> / <a href="/tools">Tools</a> / WebPalette Studio</p>
-      <h1 id="hero-title">Turn your brand colors into a complete website palette.</h1>
-      <p class="aw-lede">Start with the colors you already own. WebPalette Studio assigns them to interface roles, fills the gaps, checks contrast and previews the whole system on a real layout before you copy the CSS.</p>
-      <p class="aw-note">The builder loads in your browser. If it does not appear, enable JavaScript or use the links below.</p>
+      <p class="aw-eyebrow"><a href="/">AllWebsites.Design</a> / <a href="/tools">Tools</a> / WebPalette</p>
+      <h1 id="hero-title">Website color palette generator for brand colours.</h1>
+      <p class="aw-lede">Start with the colours you already own. WebPalette assigns them to website roles, fills the gaps, checks contrast and previews the system on a real layout before you copy the CSS.</p>
+      <p class="aw-note">The builder loads in your browser. If it does not appear, enable JavaScript or keep reading the crawlable guide below.</p>
+
+      <h2>How the website color palette generator works</h2>
+      <ol class="aw-steps">
+        <li><strong>Keep your brand colours.</strong> Paste the HEX values you refuse to lose.</li>
+        <li><strong>Assign roles.</strong> Map primary, secondary, accent, surface and text jobs.</li>
+        <li><strong>Complete the system.</strong> Generate only the missing functional roles.</li>
+        <li><strong>Check contrast.</strong> See which pairs fail before they reach production.</li>
+        <li><strong>Preview and export.</strong> Judge the palette on a layout, then copy CSS variables.</li>
+      </ol>
+
+      <h2>Example starting palettes</h2>
+      <p class="aw-lede" style="font-size:1rem">These are plain-language starting points, not finished brand systems.</p>
+      <ul class="aw-examples">
+        <li><strong>Calm SaaS.</strong> Soft blue primary, cool grey surfaces, a teal accent for actions, near-black text.</li>
+        <li><strong>Warm editorial.</strong> Ink black type, cream background, terracotta accent, muted olive secondary.</li>
+      </ul>
+
+      <h2 id="faq">Website color palette generator FAQ</h2>
+      <dl class="aw-faq">
+        <dt>What is a website color palette generator?</dt>
+        <dd>A tool that turns a few brand colours into a complete role-based palette for interfaces, with contrast checks and CSS you can paste into a project.</dd>
+        <dt>How is WebPalette different from Mockupalettes?</dt>
+        <dd>WebPalette generates and completes the system. <a href="/tools/mockupalettes">Mockupalettes</a> visualizes an existing four-colour palette on a fixed website mockup.</dd>
+        <dt>How is WebPalette different from Colorhyme?</dt>
+        <dd><a href="/tools/colorhyme">Colorhyme</a> builds a harmony from one HEX. WebPalette builds a full website palette with several roles.</dd>
+        <dt>Can I name a colour before I start?</dt>
+        <dd>Yes. Use <a href="/tools/chromary">Chromary</a> as a color name finder, then paste the HEX here.</dd>
+        <dt>Where can I study real website palettes?</dt>
+        <dd>Browse the <a href="/archive">archive</a>, the <a href="/research/website-design-index-2026">2026 Website Design Index</a>, and journal notes such as <a href="/blogs/how-many-accent-colours-websites-use">how many accent colours websites use</a>.</dd>
+      </dl>
+
       <ul class="aw-links">
         <li><a href="/tools">All free colour tools</a></li>
-        <li><a href="/tools/chromary">Chromary, colour name finder</a></li>
-        <li><a href="/tools/colorhyme">Colorhyme, hue shift and transformer</a></li>
-        <li><a href="/tools/mockupalettes">Mockupalettes, preview a palette on a mockup</a></li>
-        <li><a href="/tools/truegradient">TrueGradient, sRGB and OKLCH interpolation</a></li>
-        <li><a href="/archive">Browse the website design archive</a></li>
-        <li><a href="/blogs/how-many-accent-colours-websites-use">How many accent colours websites use</a></li>
+        <li><a href="/tools/chromary">Chromary, color name finder</a></li>
+        <li><a href="/tools/colorhyme">Colorhyme, color harmony generator</a></li>
+        <li><a href="/tools/mockupalettes">Mockupalettes, website color palette visualizer</a></li>
+        <li><a href="/tools/truegradient">TrueGradient, OKLCH gradient generator</a></li>
+        <li><a href="/archive">Browse website design examples</a></li>
       </ul>
     </div></div>
     <script type="module" src="/src/main.tsx"></script>

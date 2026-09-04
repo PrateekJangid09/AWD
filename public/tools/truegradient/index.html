@@ -23,13 +23,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9336436557815535" crossorigin="anonymous"></script>
   <meta name="theme-color" content="#09090B" />
   <meta name="robots" content="index,follow" />
-  <title>TrueGradient – OKLCH Gradient Generator &amp; Interpolation</title>
-  <meta name="description" content="Convert HEX gradients to native CSS OKLCH, compare the same stops in sRGB, inspect hue routes and perceptual differences, and copy production-ready CSS." />
+  <title>TrueGradient – OKLCH Gradient Generator</title>
+  <meta name="description" content="OKLCH gradient generator for HEX stops. Compare the same gradient in sRGB and native OKLCH, inspect hue routes, and copy production-ready CSS." />
   <link rel="canonical" href="https://allwebsites.design/tools/truegradient" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AllWebsites.design" />
-  <meta property="og:title" content="TrueGradient – OKLCH Gradient Tool" />
+  <meta property="og:title" content="TrueGradient – OKLCH Gradient Generator" />
   <meta property="og:description" content="Same colors. Different interpolation. Compare native OKLCH and sRGB using the same CSS gradient stops." />
   <meta property="og:url" content="https://allwebsites.design/tools/truegradient" />
   <meta property="og:image" content="https://allwebsites.design/tools/previews/truegradient.webp" />
@@ -60,7 +60,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@id": "https://allwebsites.design/tools/truegradient/#app",
       "name": "TrueGradient",
       "url": "https://allwebsites.design/tools/truegradient",
-      "description": "Convert HEX gradients to native CSS OKLCH, compare the same stops in sRGB, inspect hue routes and perceptual differences, and copy production-ready CSS.",
+      "description": "OKLCH gradient generator for HEX stops. Compare the same gradient in sRGB and native OKLCH, inspect hue routes, and copy production-ready CSS.",
       "applicationCategory": "DesignApplication",
       "operatingSystem": "Web browser",
       "browserRequirements": "Requires a modern web browser with JavaScript enabled",
@@ -158,6 +158,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             "@type": "Answer",
             "text": "It is a perceptual color-distance measure in OKLab. TrueGradient uses it to compare results; it is not a quality score."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How does TrueGradient relate to WebPalette?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WebPalette builds a role-based website palette. TrueGradient is the OKLCH gradient generator for interpolating stops. Name colours in Chromary and study live sites in the archive."
+          }
         }
       ]
     },
@@ -214,8 +222,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main>
       <section class="intro" aria-labelledby="pageTitle">
         <p class="eyebrow">OKLCH GRADIENT TOOL · BY ALLWEBSITES.DESIGN</p>
-        <h1 id="pageTitle">Same colors. Different interpolation.</h1>
-        <p class="intro-copy">Paste a HEX gradient or build one from scratch. Compare the exact same stops in sRGB and native OKLCH, inspect what changes, choose the hue path, and copy production-ready CSS.</p>
+        <h1 id="pageTitle">OKLCH gradient generator for HEX stops.</h1>
+        <p class="intro-copy">Paste a HEX gradient or build one from scratch. Compare the exact same stops in sRGB and native OKLCH, inspect hue routes, and copy production-ready CSS.</p>
         <div class="intro-actions">
           <button class="primary-action" id="pasteCta" type="button">Paste a gradient</button>
           <button class="secondary-action" id="compareCta" type="button">See the difference</button>
@@ -436,6 +444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <details><summary>Can I import any CSS gradient?</summary><p>Not yet. The current parser intentionally supports HEX-based <code>linear-gradient()</code> values.</p></details>
           <details><summary>How many stops can I use?</summary><p>The current editor supports 2–6 stops.</p></details>
           <details><summary>What is ΔEOK?</summary><p>It is a perceptual color-distance measure in OKLab. TrueGradient uses it to compare results; it is not a quality score.</p></details>
+          <details><summary>How does TrueGradient relate to WebPalette?</summary><p><a href="/tools/webpalette">WebPalette</a> is the website color palette generator. TrueGradient is the OKLCH gradient generator for interpolating stops. Name colours in <a href="/tools/chromary">Chromary</a>, build harmonies in <a href="/tools/colorhyme">Colorhyme</a>, or study live sites in the <a href="/archive">archive</a>.</p></details>
         </div>
       </section>
     </main>

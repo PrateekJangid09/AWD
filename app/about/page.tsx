@@ -7,9 +7,9 @@ import JsonLd from "@/components/JsonLd";
 import { CANONICAL, DATASET, liveCategories } from "@/lib/canonical";
 import { ORG_ID, pageMeta, typedPageGraph } from "@/lib/seo";
 
-const title = "About — A Design-Research Layer for the Public Web";
+const title = "About the Design Research Archive";
 const description =
-  "AllWebsites.Design is an independent website-design research archive. Learn how the archive, the intelligence engine and the workflow layer reinforce each other.";
+  "AllWebsites.Design is an independent website design research archive. How the archive, intelligence engine and workflow layer reinforce each other.";
 
 export const metadata: Metadata = pageMeta({
   title,

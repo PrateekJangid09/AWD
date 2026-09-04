@@ -8,9 +8,9 @@ import { archiveStats } from "@/lib/insights";
 import { journalModified, publishedPosts } from "@/lib/journal";
 import { blogGraph, pageMeta } from "@/lib/seo";
 
-const title = "Website Design Research & Data-Backed Notes";
+const title = "Website Design Research Notes";
 const description =
-  "Original research from the AllWebsites.Design archive: what the stack predicts about design, how big headlines really are, and how many accent colours sites use.";
+  "Original research from the archive: what the stack predicts about design, how big headlines really are, and how many accent colours sites use.";
 
 export const metadata: Metadata = pageMeta({
   title,

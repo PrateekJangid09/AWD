@@ -12,7 +12,13 @@ import {
 } from "@/lib/canonical";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { absUrl, collectionPageGraph, fitDescription, pageMeta } from "@/lib/seo";
+import {
+  absUrl,
+  collectionPageGraph,
+  fitDescription,
+  pageMeta,
+  TITLE_MAX,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   const slugs = new Set([
@@ -30,10 +36,12 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
-  // The count is useful in the title but not worth overrunning it for.
+  // Prefer a count when it still fits the 60-char document title budget
+  // (with or without the brand suffix, handled inside pageMeta).
   const withCount = `${cat.name} Website Design Examples (${cat.count})`;
+  const bare = `${cat.name} Website Design Examples`;
   return pageMeta({
-    title: withCount.length <= 50 ? withCount : `${cat.name} Website Design Examples`,
+    title: withCount.length <= TITLE_MAX ? withCount : bare,
     description: fitDescription(
       `${cat.count} ${cat.name.toLowerCase()} website design examples, each studied with its colour palette, typefaces and detected technology.`,
       [
@@ -122,13 +130,16 @@ export default async function CategoryPage({
           {records.length > 0 ? (
             <>
               <div className="flex items-end justify-between border-b border-line pb-6">
-                <p className="text-sm font-semibold tracking-tight">
-                  Showing {records.length}
-                  <span className="text-muted">
-                    {" "}
-                    published {records.length === 1 ? "reference" : "references"}
-                  </span>
-                </p>
+                <div>
+                  <h2 className="display text-2xl sm:text-3xl">Published references</h2>
+                  <p className="mt-2 text-sm font-semibold tracking-tight">
+                    Showing {records.length}
+                    <span className="text-muted">
+                      {" "}
+                      published {records.length === 1 ? "reference" : "references"}
+                    </span>
+                  </p>
+                </div>
                 <Link
                   href="/archive"
                   className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted hover:text-orange"

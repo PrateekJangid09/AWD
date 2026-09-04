@@ -6,9 +6,9 @@ import JsonLd from "@/components/JsonLd";
 import { CANONICAL, DATASET, liveCategories } from "@/lib/canonical";
 import { pageMeta, researchGraph } from "@/lib/seo";
 
-const title = "Website Design Statistics — The 2026 Design Index";
+const title = "2026 Website Design Index";
 const description =
-  "How 304 studied websites break down by industry, with the method behind every count. A transparent, dated snapshot of the AllWebsites.Design research catalogue.";
+  "How studied websites break down by industry, with the method behind every count. A transparent, dated snapshot of the AllWebsites.Design research catalogue.";
 
 export const metadata: Metadata = pageMeta({
   title,

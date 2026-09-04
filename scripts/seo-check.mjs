@@ -32,9 +32,9 @@ const SAMPLE = Number(flag("sample", "25"));
 const CANONICAL_HOST = "https://allwebsites.design";
 
 const LIMITS = {
-  titleMax: 72,
-  descMin: 148,
-  descMax: 168,
+  titleMax: 60,
+  descMin: 140,
+  descMax: 160,
   minInternalLinks: 3,
 };
 
@@ -137,21 +137,33 @@ function checkPage(path, html) {
   else if (canonical.startsWith("https://www.")) fail(path, "canonical", `www host: ${canonical}`);
   else if (canonical !== expected) fail(path, "canonical", `${canonical} != ${expected}`);
 
-  // Title.
+  // Title: hard cap so SERP truncation stays predictable.
   const title = first(html, /<title>([\s\S]*?)<\/title>/i);
   if (!title) fail(path, "title", "missing");
   else if (title.length > LIMITS.titleMax)
-    warn(path, "title", `${title.length} chars: ${title}`);
+    fail(path, "title", `${title.length} chars (max ${LIMITS.titleMax}): ${title}`);
 
-  // Description.
+  // Description: overlong fails; short descriptions warn so thin utility pages
+  // can still ship without inventing padding.
   const desc = first(html, /<meta name="description" content="([^"]*)"/i);
   if (!desc) fail(path, "description", "missing");
-  else if (desc.length < LIMITS.descMin || desc.length > LIMITS.descMax)
+  else if (desc.length > LIMITS.descMax)
+    fail(path, "description", `${desc.length} chars (max ${LIMITS.descMax})`);
+  else if (desc.length < LIMITS.descMin)
     warn(path, "description", `${desc.length} chars (want ${LIMITS.descMin}-${LIMITS.descMax})`);
 
-  // Exactly one H1.
+  // Exactly one H1, and heading levels must not skip (H1 → H3 is a fail).
   const h1s = html.match(/<h1[\s>]/gi) ?? [];
   if (h1s.length !== 1) fail(path, "h1", `${h1s.length} H1 elements`);
+  const headingLevels = [...html.matchAll(/<h([1-6])[\s>]/gi)].map((m) => Number(m[1]));
+  for (let i = 1; i < headingLevels.length; i += 1) {
+    const prev = headingLevels[i - 1];
+    const next = headingLevels[i];
+    if (next > prev + 1) {
+      fail(path, "heading-skip", `H${prev} → H${next}`);
+      break;
+    }
+  }
 
   // Open Graph and Twitter.
   for (const prop of ["og:title", "og:description", "og:url", "og:image"]) {

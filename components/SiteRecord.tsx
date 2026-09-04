@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import SiteCard from "./SiteCard";
+import CopyHexButton from "./CopyHexButton";
 import {
   assetBase,
   canonicalCards,
@@ -426,6 +427,84 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
         </div>
       </Section>
 
+      {/* ── Use this design system ── */}
+      <Section
+        eyebrow="Apply it"
+        title="Use this design system"
+        className="bg-paper"
+      >
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div>
+            <p className="text-pretty text-[15px] leading-relaxed text-soft">
+              Copy the recorded HEX values, then open a tool that speaks the same
+              language. No invented colour names: only what this study captured.
+            </p>
+            {design.palette.length > 0 ? (
+              <div className="mt-5 flex flex-wrap gap-2">
+                {design.palette.map((p, i) => (
+                  <CopyHexButton key={`${p.hex}-${i}`} hex={p.hex} role={p.role} />
+                ))}
+              </div>
+            ) : (
+              <p className="mt-4 text-sm text-muted">No palette recorded for this study.</p>
+            )}
+            {cat && (
+              <p className="mt-5 text-[13px] text-muted">
+                More {cat.name.toLowerCase()} website design examples in{" "}
+                <Link href={`/c/${cat.slug}`} className="underline decoration-orange decoration-2 underline-offset-2 hover:text-ink">
+                  /c/{cat.slug}
+                </Link>
+                .
+              </p>
+            )}
+          </div>
+          <ul className="space-y-2">
+            {[
+              {
+                href: "/tools/chromary",
+                name: "Chromary",
+                line: "Name these colours",
+              },
+              {
+                href: "/tools/colorhyme",
+                name: "Colorhyme",
+                line: "Build a harmony from one HEX",
+              },
+              {
+                href: "/tools/webpalette",
+                name: "WebPalette",
+                line: "Generate a related website palette",
+              },
+              {
+                href: "/tools/mockupalettes",
+                name: "Mockupalettes",
+                line: "Preview the palette on a layout",
+              },
+              {
+                href: "/tools/truegradient",
+                name: "TrueGradient",
+                line: "Make an OKLCH gradient from these stops",
+              },
+            ].map((tool) => (
+              <li key={tool.href}>
+                <a
+                  href={tool.href}
+                  className="flex items-center justify-between gap-3 rounded-xl border border-line bg-bone px-4 py-3 transition-colors hover:border-line-strong hover:bg-paper"
+                >
+                  <span>
+                    <span className="block text-[14px] font-semibold tracking-tight text-ink">
+                      {tool.name}
+                    </span>
+                    <span className="block text-[12px] text-muted">{tool.line}</span>
+                  </span>
+                  <span aria-hidden className="text-ink">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
       {/* ── Technology + Confidence ── */}
       <Section eyebrow="Technology" title={technology.summary ? `Built with ${technology.summary}` : "Detected stack"}>
         <div className="grid gap-6 lg:grid-cols-2">
@@ -563,7 +642,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                   Similar {catName} sites
                 </h2>
                 <p className="mt-2 max-w-xl text-pretty text-[15px] leading-relaxed text-soft">
-                  Keep exploring the same corner of the archive — related brands
+                  Keep exploring the same corner of the archive. Related brands
                   studied the same way.
                 </p>
               </div>

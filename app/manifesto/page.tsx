@@ -7,7 +7,7 @@ import { pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Manifesto";
 const description =
-  "Useful inspiration needs context. Why every website in this archive is studied with its palette, typography and detected technology instead of shown as a thumbnail.";
+  "Useful inspiration needs context. Why every website here is studied with its palette, typography and detected technology, not shown as a bare thumbnail.";
 
 export const metadata: Metadata = pageMeta({
   title,

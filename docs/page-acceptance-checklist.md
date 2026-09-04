@@ -14,8 +14,8 @@ Every item must be true before a page is published.
 | --- | --- | --- |
 | Robots | `index, follow` for real content, `noindex, follow` for genuine placeholders. Never `nofollow` on our own pages. | `seo:check` |
 | Canonical | Self referencing, bare domain, derived from `metadataBase`. Never a `www` URL. | `seo:check` |
-| Title | Leads with a phrase a real person would search, brand last. Visible portion short enough that the rendered title stays under about 70 characters. | `seo:check` (warning) |
-| Description | Unique, 150 to 165 characters, includes the primary phrase and a reason to click. | `seo:check` (warning) |
+| Title | Leads with a phrase a real person would search. Brand suffix only when the full title stays under 60 characters. | `seo:check` |
+| Description | Unique, 140 to 160 characters, includes the primary phrase and a reason to click. | `seo:check` (warning) |
 | Headings | Exactly one H1 in plain words. H2s phrased as the questions people actually ask. | `seo:check` (H1 count) |
 | Answer block | A self contained 40 to 60 word answer directly under the H1, quotable with no surrounding context. | Review |
 | Data | At least one original statistic with its sample size. Every borrowed claim links its source. | Review |
@@ -81,8 +81,8 @@ STRUCTURE
 - canonical: self referencing, bare domain, from metadataBase.
 
 ON PAGE
-- Title leads with a real search phrase, brand last.
-- Unique 150 to 165 character description with the primary phrase.
+- Title leads with a real search phrase. Brand suffix only when the full title stays under 60 characters.
+- Unique 140 to 160 character description with the primary phrase.
 - Exactly one H1 in plain words. H2s phrased as real questions.
 
 ANSWER ENGINE

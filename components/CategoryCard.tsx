@@ -26,9 +26,9 @@ export default function CategoryCard({
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: c }} />
             {category.share}
           </span>
-          <h3 className={`font-semibold tracking-tight ${featured ? "text-2xl" : "text-xl"}`}>
+          <p className={`font-semibold tracking-tight ${featured ? "text-2xl" : "text-xl"}`}>
             {category.name}
-          </h3>
+          </p>
           <p className="mt-2 max-w-[28ch] text-pretty text-[13px] leading-relaxed text-muted">
             {category.blurb}
           </p>

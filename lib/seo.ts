@@ -9,7 +9,11 @@ export const SUPPORT_URL = "https://buymeacoffee.com/prateekjangid";
 export const DEFAULT_TITLE =
   "Website Design Examples & Inspiration — AllWebsites.Design";
 export const DEFAULT_DESCRIPTION =
-  "Browse real website design examples by industry, style, colour, typography and technology. Every reference is studied in depth, with the palette, type and stack listed.";
+  "Browse real website design examples by industry, style, colour, typography and technology. Each reference lists its palette, typefaces and stack.";
+/** Brand suffix added by the root layout title template. */
+export const TITLE_SUFFIX = ` — ${SITE_NAME}`;
+export const TITLE_MAX = 60;
+export const TITLE_SUFFIX_LEN = TITLE_SUFFIX.length;
 export const OG_IMAGE = {
   url: "/og.jpg",
   width: 1200,
@@ -38,6 +42,15 @@ export type OgImage = {
   alt?: string;
 };
 
+/**
+ * Append the layout brand suffix only when the full <title> stays ≤ TITLE_MAX.
+ * Longer titles become absolute so the template does not push them over.
+ */
+export function titled(title: string): Metadata["title"] {
+  if (title.length + TITLE_SUFFIX_LEN <= TITLE_MAX) return title;
+  return { absolute: title };
+}
+
 export function pageMeta({
   title,
   description,
@@ -63,8 +76,10 @@ export function pageMeta({
         alt: image.alt ?? title,
       }
     : OG_IMAGE;
+  // Open Graph / Twitter use the bare title; the document <title> may include
+  // the brand suffix when it still fits under TITLE_MAX.
   return {
-    title,
+    title: titled(title),
     description,
     alternates: { canonical: url },
     // Never emit nofollow on our own pages: a placeholder still has to pass
@@ -164,7 +179,13 @@ export function shortName(raw: string) {
 }
 
 export function studyTitle(name: string) {
-  return `${shortName(name)} website design study`;
+  const brand = shortName(name);
+  const preferred = `${brand} Website Design`;
+  if (preferred.length <= TITLE_MAX) return preferred;
+  // Rare: a still-long shortName. Keep the brand and a shorter cue.
+  const compact = `${brand} Design`;
+  if (compact.length <= TITLE_MAX) return compact;
+  return brand.slice(0, TITLE_MAX);
 }
 
 /**
@@ -172,9 +193,9 @@ export function studyTitle(name: string) {
  * The core is capped below DESC_MIN so there is always room for a closing
  * clause to carry a short record up into the band.
  */
-const DESC_MIN = 150;
-const DESC_MAX = 165;
-const CORE_MAX = 145;
+const DESC_MIN = 140;
+const DESC_MAX = 160;
+const CORE_MAX = 140;
 
 export function studyDescription(site: CanonicalSite) {
   const name = shortName(site.identity.name);
@@ -234,7 +255,7 @@ export function studyDescription(site: CanonicalSite) {
 }
 
 /**
- * Bring a description into the 150 to 165 band.
+ * Bring a description into the 140 to 160 band.
  *
  * Overlong text is clamped on a word boundary. Short text is completed by
  * taking the longest supplied clause that still fits, repeatedly. Clauses must

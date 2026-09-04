@@ -11,7 +11,7 @@ import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Website Design Examples by Industry";
 const description =
-  "Browse website design examples by industry — SaaS, portfolio, agency, e-commerce and more. Each category shows how a sector handles colour, type and layout.";
+  "Browse website design examples by industry: SaaS, portfolio, agency, e-commerce and more. Each category shows how a sector handles colour, type and layout.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -53,6 +53,7 @@ export default function CategoriesPage() {
       <section className="border-b border-ink bg-bone py-14">
         <div className="wrap">
           <p className="eyebrow">Trending</p>
+          <h2 className="display mt-3 text-3xl sm:text-4xl">Trending this week</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {trending.map((c) => (
               <CategoryCard key={c!.slug} category={c!} featured />

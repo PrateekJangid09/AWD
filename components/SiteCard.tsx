@@ -58,9 +58,9 @@ export default function SiteCard({
       </div>
 
       <div className="mt-3 flex items-baseline justify-between gap-3 px-0.5">
-        <h3 className="truncate text-[15px] font-medium tracking-tight text-ink">
+        <p className="truncate text-[15px] font-medium tracking-tight text-ink">
           {site.name}
-        </h3>
+        </p>
         <span className="flex shrink-0 items-center gap-1.5 text-[12px] font-medium text-soft">
           <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accent }} />
           {site.categoryName}

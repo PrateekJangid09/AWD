@@ -8,9 +8,9 @@ import JsonLd from "@/components/JsonLd";
 import { getTool } from "@/lib/data";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
-const title = "Tools for Studying and Building the Web";
+const title = "Free Website Colour Tools";
 const description =
-  "Free colour tools with no signup: find and name a colour, transform a hue, build a role-based palette, preview it on a mockup and compare gradient interpolation.";
+  "Free colour tools with no signup: find a colour name, build a harmony, generate a website palette, preview it on a mockup, and make OKLCH gradients.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -59,8 +59,8 @@ export default function ToolsPage() {
       />
       <UtilityHero
         eyebrow="Tools"
-        title="Tools for studying and building the web."
-        intro="Six focused tools, one design language. Each owns a single job. Free, no signup, everything runs in your browser."
+        title="Free website colour tools."
+        intro="Five focused tools, one design language. Each owns a single job: name, harmony, generate, visualize, interpolate. Free, no signup, everything runs in your browser."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Tools" }]}
       />
 
@@ -73,7 +73,7 @@ export default function ToolsPage() {
               const live = Boolean(tool);
               const name = tool?.name ?? j.soon!.name;
               const tagline = tool?.tagline ?? j.soon!.tagline;
-              const desc = tool?.desc ?? "In progress — coming soon.";
+              const desc = tool?.desc ?? "In progress, coming soon.";
               const swatches = tool?.swatches ?? j.soon!.swatches;
 
               const card = (
@@ -138,9 +138,9 @@ export default function ToolsPage() {
           </div>
 
           <p className="mx-auto mt-16 max-w-2xl text-center text-pretty text-lg leading-relaxed text-soft">
-            Not free SEO widgets — a connected set of design instruments that share a
-            shell, so a colour can travel from one to the next without leaving the
-            language.
+            A connected set of design instruments that share a shell, so a colour
+            can travel from name finder to harmony to website palette without
+            leaving the language.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link href="/archive" className="btn-ghost">

@@ -1,17 +1,17 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import SiteCard from "./SiteCard";
 import { categoryColor, type CardSite } from "@/lib/catalog";
 
 export default function ArchiveBrowser({
   items,
-  initialQuery = "",
 }: {
   items: CardSite[];
-  initialQuery?: string;
 }) {
-  const [query, setQuery] = useState(initialQuery);
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [cat, setCat] = useState<string>("all");
 
   const presentCats = useMemo(() => {
@@ -82,15 +82,18 @@ export default function ArchiveBrowser({
         </div>
 
         {/* Count */}
-        <div className="mt-8 flex items-baseline justify-between">
-          <p className="text-sm font-semibold tracking-tight">
-            {results.length}
-            <span className="font-normal text-muted">
-              {" "}
-              {results.length === 1 ? "website" : "websites"}
-              {query || cat !== "all" ? " match" : ""}
-            </span>
-          </p>
+        <div className="mt-8 flex items-end justify-between gap-4">
+          <div>
+            <h2 className="display text-2xl sm:text-3xl">Published references</h2>
+            <p className="mt-2 text-sm font-semibold tracking-tight">
+              {results.length}
+              <span className="font-normal text-muted">
+                {" "}
+                {results.length === 1 ? "website" : "websites"}
+                {query || cat !== "all" ? " match" : ""}
+              </span>
+            </p>
+          </div>
           {(query || cat !== "all") && (
             <button
               onClick={() => { setQuery(""); setCat("all"); }}

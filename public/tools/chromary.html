@@ -21,12 +21,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" href="/logo.png" />
 <meta name="google-adsense-account" content="ca-pub-9336436557815535">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9336436557815535" crossorigin="anonymous"></script>
-<title>Chromary – Color Name Finder & Color Dictionary | AllWebsites.design</title>
-<meta name="description" content="Search named colors by name or HEX, find perceptually nearby matches, compare alternate definitions and browse CSS, survey and designer-curated references.">
+<title>Chromary – Color Name Finder</title>
+<meta name="description" content="Color name finder for HEX and named colours. Search CSS, survey and curated references, find the closest name, and compare when one name means different shades.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://allwebsites.design/tools/chromary">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Chromary – Color names, with context.">
+<meta property="og:title" content="Chromary – Color Name Finder">
 <meta property="og:description" content="The color dictionary for designers. Search names, identify HEX colors, compare sources and find nearby alternatives.">
 <meta property="og:url" content="https://allwebsites.design/tools/chromary">
 <meta property="og:image" content="https://allwebsites.design/tools/previews/chromary.webp">
@@ -104,6 +104,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "@type": "ListItem",
           "position": 3,
           "name": "Chromary"
+        }
+      ]
+    }    ,
+    {
+      "@type": "FAQPage",
+      "@id": "https://allwebsites.design/tools/chromary/#faq",
+      "isPartOf": { "@id": "https://allwebsites.design/#website" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a color name finder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A color name finder maps a HEX value or typed name to named colour references. Chromary searches CSS keywords, a community survey and curated designer names, then ranks nearby matches in Oklab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Chromary name a HEX colour?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Paste a six-digit HEX value to see exact matches when they exist, or the closest named references with a perceptual distance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do the same color names show different HEX values?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Human colour names are conventions, not universal coordinates. Chromary keeps each source attached so you can see which definition you are using."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Chromary different from WebPalette or Colorhyme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chromary names and looks up colours. Colorhyme builds harmonies from one HEX. WebPalette turns brand colours into a full website palette. Use Mockupalettes to preview a palette on a layout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I study real website palettes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Browse the archive at /archive and the 2026 Website Design Index for industry breakdowns. Journal notes cover accent-colour counts and related research."
+          }
         }
       ]
     }
@@ -184,9 +231,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="hero">
     <div>
-      <div class="eyebrow">Color reference · by AllWebsites.design</div>
-      <h1>Color names, with context.</h1>
-      <p>Search by name or HEX. Find perceptually nearby names, see where each reference comes from, and compare when the same name means different colors.</p>
+      <div class="eyebrow">Color name finder · by AllWebsites.design</div>
+      <h1>Color name finder, with context.</h1>
+      <p>Paste a HEX or type a name. Chromary finds the closest colour name, shows where the reference comes from, and compares when the same name means different shades.</p>
     </div>
     <div class="hero-aside"><strong>The color dictionary for designers.</strong>Names are references, not universal truths. Chromary keeps the source attached to every result.</div>
   </section>
@@ -235,10 +282,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
   </section>
 
+
+  <section class="info-grid" id="faq" aria-labelledby="chromary-faq">
+    <article class="info-card" style="grid-column:1/-1">
+      <div class="kicker">FAQ</div>
+      <h2 id="chromary-faq">Color name finder questions.</h2>
+      <div class="source-list" style="margin-top:18px">
+        <div class="source-line"><strong>What is a color name finder?</strong><span>It maps a HEX value or typed name to named colour references. Chromary searches CSS keywords, a community survey and curated designer names, then ranks nearby matches in Oklab.</span></div>
+        <div class="source-line"><strong>Can Chromary name a HEX colour?</strong><span>Yes. Paste a six-digit HEX value to see exact matches when they exist, or the closest named references with a perceptual distance.</span></div>
+        <div class="source-line"><strong>Why do the same color names show different HEX values?</strong><span>Human colour names are conventions, not universal coordinates. Chromary keeps each source attached so you can see which definition you are using.</span></div>
+        <div class="source-line"><strong>How is Chromary different from WebPalette or Colorhyme?</strong><span>Chromary names and looks up colours. <a href="/tools/colorhyme">Colorhyme</a> builds harmonies from one HEX. <a href="/tools/webpalette">WebPalette</a> turns brand colours into a full website palette. Use <a href="/tools/mockupalettes">Mockupalettes</a> to preview a palette on a layout.</span></div>
+        <div class="source-line"><strong>Where can I study real website palettes?</strong><span>Browse the <a href="/archive">archive</a> and the <a href="/research/website-design-index-2026">2026 Website Design Index</a>. See also <a href="/blogs/how-many-accent-colours-websites-use">how many accent colours websites use</a>.</span></div>
+      </div>
+    </article>
+  </section>
+
   <section class="related">
     <h2>Found the color. Keep going.</h2><p>Pass the selected value into the rest of the AllWebsites.design color toolkit.</p>
     <div class="tool-grid">
-      <a class="tool-card" href="/tools/colorhyme"><strong>Colorhyme</strong><span>Build related colors from this HEX.</span></a>
+      <a class="tool-card" href="/tools/colorhyme"><strong>Colorhyme</strong><span>Build a colour harmony from this HEX.</span></a>
       <a class="tool-card" href="/tools/webpalette"><strong>WebPalette Studio</strong><span>Turn it into a usable website palette.</span></a>
       <a class="tool-card" href="/tools/mockupalettes"><strong>Mockupalettes</strong><span>See how the color behaves in an interface.</span></a>
       <a class="tool-card" href="/tools/truegradient"><strong>TrueGradient</strong><span>Build smoother perceptual gradients.</span></a>

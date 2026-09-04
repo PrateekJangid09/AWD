@@ -104,9 +104,9 @@ export default function Home() {
                 Free design tools that share one language.
               </h2>
               <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-soft">
-                Find, transform, build, preview and interpolate colour — no signup,
-                everything runs in your browser. The same instruments we use to study
-                the archive.
+                Find a colour name, build a harmony, generate a website palette,
+                preview it on a mockup, and make OKLCH gradients. Free, no signup,
+                everything runs in your browser.
               </p>
             </div>
             <Link href="/tools" className="btn-dark shrink-0 self-start sm:self-auto">
@@ -124,7 +124,7 @@ export default function Home() {
                   <span className="relative block aspect-[16/10] overflow-hidden border-b border-line bg-bone">
                     <Image
                       src={`/tools/previews/${t.slug}.webp`}
-                      alt={`${t.name} — ${t.tagline}`}
+                      alt={`${t.name}: ${t.tagline}`}
                       fill
                       priority={i === 0}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -176,7 +176,9 @@ export default function Home() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow text-ink">The gallery</p>
-              <h2 className="display mt-3 text-2xl sm:text-3xl">Recently studied.</h2>
+              <h2 className="display mt-3 text-2xl sm:text-3xl">
+                Website design examples, recently studied.
+              </h2>
             </div>
             <Link href="/archive" className="text-[13px] font-medium text-soft hover:text-ink">
               Browse all {all.length.toLocaleString()} →
@@ -191,7 +193,7 @@ export default function Home() {
 
           <div className="mt-12 flex justify-center">
             <Link href="/archive" className="btn-ghost">
-              Browse all {all.length.toLocaleString()} websites
+              Browse all {all.length.toLocaleString()} website design examples
             </Link>
           </div>
         </div>
