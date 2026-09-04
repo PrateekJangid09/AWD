@@ -50,6 +50,7 @@ const UTILITY = new Set([
   "/refund-policy",
   "/refunds",
   "/pricing",
+  "/checkout",
   "/contact",
   "/submit",
 ]);

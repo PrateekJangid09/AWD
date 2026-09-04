@@ -37,6 +37,15 @@ export function isPluginId(value: string): value is PluginId {
   return (PLUGIN_IDS as readonly string[]).includes(value);
 }
 
+/** Public Paddle.js client token (live). Not a secret. */
+export const PADDLE_CLIENT_TOKEN =
+  process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN || "live_2a71b76e9af63dc5cb7f9d44760";
+
 export function checkoutEnabled() {
-  return process.env.NEXT_PUBLIC_PADDLE_CHECKOUT_ENABLED === "true";
+  return Boolean(PADDLE_CLIENT_TOKEN);
+}
+
+export function planFromQuery(raw?: string | string[] | null): "monthly" | "yearly" {
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  return value === "yearly" ? "yearly" : "monthly";
 }

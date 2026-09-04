@@ -111,7 +111,16 @@ const checkoutLive = checkout
   .join("\n");
 if (checkoutLive.includes("Environment.set")) fail("CheckoutButton must not set sandbox");
 if (!checkout.includes("pwCustomer")) fail("CheckoutButton must pass pwCustomer when a ctm_ id is known");
+if (!checkout.includes("autoOpen")) fail("CheckoutButton must support auto-opening Paddle overlay");
 else ok("CheckoutButton is live-default and supports pwCustomer");
+
+const entitlement = readFileSync(join(root, "app/api/plugins/entitlement/route.ts"), "utf8");
+if (!entitlement.includes('absUrl("/checkout")')) fail("plugin entitlement must send /checkout, not /pricing");
+else ok("entitlement checkoutUrl is /checkout");
+
+const checkoutPage = readFileSync(join(root, "app/checkout/page.tsx"), "utf8");
+if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Paddle");
+else ok("checkout page auto-opens Paddle");
 
 const ips = await fetch("https://api.paddle.com/ips", {
   headers: { "Paddle-Version": "1" },

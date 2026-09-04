@@ -81,7 +81,7 @@ export default async function PricingPage({
               <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
               <CheckoutButton
                 priceId={plan.priceId}
-                label={plan.id === "yearly" ? "Pay yearly" : "Pay monthly"}
+                label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
                 figmaUserId={figmaUserId}
               />
             </article>
