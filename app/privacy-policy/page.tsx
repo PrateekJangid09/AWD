@@ -33,7 +33,7 @@ export default function PrivacyPage() {
       <DocumentHero
         title="Privacy Policy"
         description="What AllWebsites.Design collects, why, and the controls you have. We aim to collect as little as possible."
-        updated="11 August 2026"
+        updated="4 September 2026"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Privacy" }]}
       />
 
@@ -88,19 +88,36 @@ export default function PrivacyPage() {
 
             <h2 id="how-we-use-it">How we use it</h2>
             <ul>
-              <li>Operating and improving the archive</li>
+              <li>Operating and improving the archive and tools</li>
               <li>Measuring performance</li>
               <li>Responding to messages and processing submissions</li>
               <li>Newsletter communication you opt into</li>
+              <li>Counting Figma plugin free uses and unlocking paid access</li>
               <li>Abuse prevention and legal requirements</li>
             </ul>
 
             <h2 id="processors">Service providers</h2>
             <p>
-              We rely on a small set of service providers for functions such as
-              hosting, analytics, performance monitoring and form delivery. These
-              providers process data on our behalf and under our instructions.
+              We rely on a small set of service providers. They process data on our
+              behalf and under our instructions:
             </p>
+            <ul>
+              <li>
+                <strong>Paddle.com Market Limited</strong> (and affiliates) for
+                checkout, invoices, tax, and subscription billing when you subscribe
+                to Figma plugin access. See{" "}
+                <a href="https://www.paddle.com/legal/privacy" rel="noopener noreferrer">
+                  Paddle's privacy policy
+                </a>
+                .
+              </li>
+              <li>
+                <strong>Supabase</strong> stores plugin usage counts and subscription
+                status keyed to your Figma user id (not your canvas or files).
+              </li>
+              <li>Hosting, DNS, analytics, and form-delivery providers</li>
+              <li>Authorities when required by law</li>
+            </ul>
 
             <h2 id="your-controls">Your controls</h2>
             <p>You can, at any time:</p>
@@ -108,7 +125,7 @@ export default function PrivacyPage() {
               <li>Unsubscribe from newsletter communications</li>
               <li>Request access to your information</li>
               <li>Request correction of your information</li>
-              <li>Request deletion through the contact workflow</li>
+              <li>Request deletion through the contact workflow, including plugin usage rows keyed by Figma user id</li>
             </ul>
             <p>
               You can also manage optional analytics cookies from our{" "}

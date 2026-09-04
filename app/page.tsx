@@ -105,13 +105,19 @@ export default function Home() {
               </h2>
               <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-soft">
                 Find a colour name, build a harmony, generate a website palette,
-                preview it on a mockup, and make OKLCH gradients. Free, no signup,
-                everything runs in your browser.
+                preview it on a mockup, and make OKLCH gradients. Browser tools stay
+                free. The same engines ship as Figma plugins: three free uses each,
+                then $3/month or $30/year for the suite.
               </p>
             </div>
-            <Link href="/tools" className="btn-dark shrink-0 self-start sm:self-auto">
-              Explore all tools ↗
-            </Link>
+            <div className="flex shrink-0 flex-wrap gap-3 self-start sm:self-auto">
+              <Link href="/tools" className="btn-dark">
+                Explore all tools ↗
+              </Link>
+              <Link href="/pricing" className="btn-ghost">
+                Plugin pricing
+              </Link>
+            </div>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

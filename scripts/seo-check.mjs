@@ -47,6 +47,8 @@ const UTILITY = new Set([
   "/privacy",
   "/privacy-policy",
   "/terms",
+  "/refund-policy",
+  "/pricing",
   "/contact",
   "/submit",
 ]);

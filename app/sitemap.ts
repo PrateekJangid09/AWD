@@ -28,6 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", changeFrequency: "yearly", priority: 0.4 },
     { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.2 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
+    { path: "/refund-policy", changeFrequency: "yearly", priority: 0.2 },
+    { path: "/pricing", changeFrequency: "monthly", priority: 0.6 },
     { path: "/cookie-preference", changeFrequency: "yearly", priority: 0.2 },
     // /llms.txt is deliberately absent: a sitemap lists indexable HTML pages,
     // and agents find it by convention at the well-known path instead.

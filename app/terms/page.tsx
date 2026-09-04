@@ -33,7 +33,7 @@ export default function TermsPage() {
       <DocumentHero
         title="Terms & Conditions"
         description="The terms that govern use of the archive, including third-party ownership and accuracy limitations."
-        updated="11 August 2026"
+        updated="4 September 2026"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Terms" }]}
       />
 
@@ -45,7 +45,9 @@ export default function TermsPage() {
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               {[
+                ["who", "Who we are"],
                 ["purpose", "Archive purpose"],
+                ["plugins", "Figma plugins"],
                 ["permitted", "Permitted use"],
                 ["prohibited", "Prohibited use"],
                 ["ownership", "Third-party ownership"],
@@ -65,14 +67,38 @@ export default function TermsPage() {
             <p>
               By using AllWebsites.Design you agree to these terms. They exist to keep
               the archive useful, honest and fair to the third parties whose work it
-              references.
+              references, and to describe paid Figma plugin access.
+            </p>
+
+            <h2 id="who">Who we are</h2>
+            <p>
+              These terms are published by Prateek Jangid, operating AllWebsites.Design
+              as a sole proprietor. Contact:{" "}
+              <a href="mailto:prateekjangid10@gmail.com">prateekjangid10@gmail.com</a>.
+              Merchant of record for paid plugin subscriptions is Paddle.com Market
+              Limited (and its affiliates), which handles checkout, invoices, and
+              applicable taxes.
             </p>
 
             <h2 id="purpose">Archive purpose</h2>
             <p>
               AllWebsites.Design is provided for design research and inspiration. It is
-              a reference layer — not the authoritative source for any third-party
-              company represented within it.
+              a reference layer, not the authoritative source for any third-party
+              company represented within it. Browser colour tools (Chromary, Colorhyme,
+              TrueGradient, WebPalette, Mockupalettes) run locally in your browser and
+              are free to use on the website.
+            </p>
+
+            <h2 id="plugins">Figma plugins</h2>
+            <p>
+              Chromary, Colorhyme, TrueGradient, and WebPalette for Figma each include
+              three free uses per Figma account (apply a fill, create a paint style, or
+              drop labelled swatches). After that, access requires an AllWebsites.Design
+              plugin subscription at $3 per month or $30 per year, billed by Paddle. One
+              subscription unlocks all four plugins. Cancel anytime; access continues
+              until the end of the period you paid for. See the{" "}
+              <Link href="/refund-policy">refund and cancellation policy</Link> and{" "}
+              <Link href="/pricing">pricing</Link>.
             </p>
 
             <h2 id="permitted">Permitted use</h2>
@@ -106,10 +132,10 @@ export default function TermsPage() {
 
             <h2 id="law">Governing law</h2>
             <p>
-              These terms are provided in good faith. Where verified operator details
-              have not been published, we deliberately avoid asserting a specific legal
-              entity or jurisdiction. This section will be updated as those details are
-              formalised.
+              These terms are provided in good faith by Prateek Jangid (sole
+              proprietor). Questions:{" "}
+              <a href="mailto:prateekjangid10@gmail.com">prateekjangid10@gmail.com</a>{" "}
+              or the <Link href="/contact">contact page</Link>.
             </p>
           </article>
         </div>
