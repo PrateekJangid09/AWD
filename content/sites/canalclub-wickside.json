@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000041",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Canal Club",
+    "domain": "canalclub-wickside.com",
+    "url": "https://canalclub-wickside.com/",
+    "slug": "canalclub-wickside",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Sports & Recreation",
+    "subcategory": "Clubs",
+    "website_type": "Club Website",
+    "audience": [
+      "Athletes"
+    ],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.84,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#380921",
+    "secondary_color": null,
+    "accent_colors": [
+      "#000000",
+      "#ffffff",
+      "#ffb583",
+      "#a09a8d",
+      "#54453f"
+    ],
+    "background_colors": [],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#380921",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffb583",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#a09a8d",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#54453f",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "info@canalclub-wickside.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "401, 8 Davey Square, Wickside, Hackney Wick, London, E9 5ZF"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Canal Club",
+    "description": "Canal Club is a collection of rental apartments and townhouses spread and distributed across the Wickside development."
+  },
+  "pages": {
+    "homepage": "https://canalclub-wickside.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

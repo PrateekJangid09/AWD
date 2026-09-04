@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000193",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Steve Edge Design",
+    "domain": "steve-edge.com",
+    "url": "https://www.steve-edge.com/",
+    "slug": "steve-edge",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Agency Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.91,
+    "field_confidence": {
+      "category": 0.91,
+      "subcategory": 0.86,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#fff200",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff200",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#6f6f6f",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "__fontMessinaSansLight_d53637",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          32
+        ]
+      },
+      {
+        "name": "__fontMessinaSansBook_f68d1d",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          45
+        ]
+      },
+      {
+        "name": "__fontInstrumentSerif_9096a7",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          126,
+          210
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "PHP",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@steve-edge.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/edge-design-ltd",
+    "x": "https://twitter.com/SteveEdgeDesign"
+  },
+  "seo": {
+    "title": "Steve Edge Design",
+    "description": "Steve Edge Design is a London-based, global branding agency specialising in brand identity, brand strategy and digital design & build."
+  },
+  "pages": {
+    "homepage": "https://www.steve-edge.com/",
+    "about": "https://www.steve-edge.com/about/",
+    "contact": "https://www.steve-edge.com/contact/",
+    "pricing": "not found",
+    "careers": "https://www.steve-edge.com/careers/"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

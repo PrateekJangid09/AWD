@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000072",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Jeanda",
+    "domain": "jeanda.agency",
+    "url": "https://jeanda.agency/",
+    "slug": "jeanda",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": "Agency Website",
+    "audience": [
+      "B2B"
+    ],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": null,
+      "website_type": 0.85,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#44d45e",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#d4d4d4"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#44d45e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1e1e1e",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#2a2a2a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d4d4d4",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geist",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          9,
+          44
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "Geist Variable",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          16
+        ]
+      },
+      {
+        "name": "SF Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "sales@jeanda.agency",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "San Juan del R\u00edo, Quer\u00e9taro, MX"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/jeanda-agency",
+    "x": "https://x.com/jeanda_agency"
+  },
+  "seo": {
+    "title": "Jeanda",
+    "description": "From your first strategy call to launch, a senior team designs and engineers every project in-house \u2014 custom-built from scratch, never from a template, with no technical debt to slow you down."
+  },
+  "pages": {
+    "homepage": "https://jeanda.agency/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

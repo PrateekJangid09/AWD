@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000214",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Lucas Assis",
+    "domain": "lucasassis.com.br",
+    "url": "https://www.lucasassis.com.br/",
+    "slug": "lucasassis-com-br",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": null,
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": 0.62,
+      "website_type": null,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#f6f7f7",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f6f7f7",
+      "#e2e5e3"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#f6f7f7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#575757",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e2e5e3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#949494",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#333333",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          80
+        ]
+      },
+      {
+        "name": "DM Sans Variable",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          20,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/lucasassisdesign",
+    "x": null
+  },
+  "seo": {
+    "title": "Lucas Assis",
+    "description": "Designer especialista em contru\u00e7\u00e3o de marca, websites e design de interfaces (UI Design)."
+  },
+  "pages": {
+    "homepage": "https://www.lucasassis.com.br/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

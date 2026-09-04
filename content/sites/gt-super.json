@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000317",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "GT Super",
+    "domain": "gt-super.com",
+    "url": "https://gt-super.com/",
+    "slug": "gt-super",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ff0000",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff6400",
+      "#ffc808"
+    ],
+    "background_colors": [
+      "#000000",
+      "#c4c4c4"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff0000",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#c4c4c4",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff6400",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffc808",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GT-Super-Text",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          78
+        ]
+      },
+      {
+        "name": "GT-Super-Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          42,
+          270
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "GT Super",
+    "description": "GT Super is the result of an extensive investigation into display serif typefaces from the 1970s and 80s. It captures their expressive nature and translates it into a well balanced system of Text and Display styles. Exclusively available at Grilli Type."
+  },
+  "pages": {
+    "homepage": "https://gt-super.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000104",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Temply",
+    "domain": "temply.store",
+    "url": "https://temply.store/",
+    "slug": "temply-store",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Graphic Design",
+    "website_type": "Resource Website",
+    "audience": [
+      "Developers",
+      "Designers",
+      "Creators"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.87,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#090909",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#090909",
+      "#ffffff"
+    ],
+    "text_color": "#9d9d9d",
+    "palette": [
+      {
+        "hex": "#090909",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9d9d9d",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Space Grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "Syne",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "figma@nutsdev.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Temply",
+    "description": "Find amazing templates at Temply! From captivating slides to stunning websites, discover designs that make your projects stand out. Explore, choose, and create with ease and style!"
+  },
+  "pages": {
+    "homepage": "https://temply.store/",
+    "about": "https://temply.store/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

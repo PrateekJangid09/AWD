@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000283",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "NIPPON DESIGN CENTER ON SCREEN CREATIVE DIVISION",
+    "domain": "ndcosd.jp",
+    "url": "https://ndcosd.jp/",
+    "slug": "ndcosd-jp",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": null,
+    "website_type": "Travel Blog",
+    "audience": [
+      "Investors"
+    ],
+    "confidence": 0.75,
+    "field_confidence": {
+      "category": 0.75,
+      "subcategory": null,
+      "website_type": 0.67,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#1f1f1f",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#1f1f1f"
+    ],
+    "text_color": "#e4e5df",
+    "palette": [
+      {
+        "hex": "#1f1f1f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e4e5df",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Monument Grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          58
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "onscreen-div@ndc.co.jp",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/zoshigayan"
+  },
+  "seo": {
+    "title": "NIPPON DESIGN CENTER ON SCREEN CREATIVE DIVISION",
+    "description": "\u30c7\u30b8\u30bf\u30eb\u4e0a\u306e\u8868\u73fe\u3084\u5a92\u4f53\u306b\u3064\u3044\u3066\u5236\u4f5c\u3092\u884c\u3046\u30c7\u30b6\u30a4\u30f3\u30c1\u30fc\u30e0\u3067\u3059\u30021959\u5e74\u5275\u696d\u306e\u30c7\u30b6\u30a4\u30f3\u5236\u4f5c\u4f1a\u793e\u3001\u65e5\u672c\u30c7\u30b6\u30a4\u30f3\u30bb\u30f3\u30bf\u30fc\u306e1\u90e8\u9580\u3068\u3057\u3066Web\u30b5\u30a4\u30c8\u3084\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u306e\u4f01\u753b\u3084\u958b\u767a\u3092\u624b\u639b\u3051\u307e\u3059\u3002"
+  },
+  "pages": {
+    "homepage": "https://ndcosd.jp/",
+    "about": "https://ndcosd.jp/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

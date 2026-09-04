@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000124",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Portfolio",
+    "domain": "vercel.app",
+    "url": "https://praveenshinde.vercel.app/",
+    "slug": "vercel",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "AI",
+    "website_type": "Portfolio",
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.91,
+    "field_confidence": {
+      "category": 0.91,
+      "subcategory": 0.86,
+      "website_type": 0.93,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#dc2626",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#09090b",
+      "#fafafa"
+    ],
+    "text_color": "#a1a1aa",
+    "palette": [
+      {
+        "hex": "#09090b",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#a1a1aa",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#dc2626",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#27272a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#fafafa",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Satoshi",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "shinde.praveen.dev@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/shindepraveen",
+    "x": "https://x.com/praveens_code"
+  },
+  "seo": {
+    "title": "Portfolio",
+    "description": "Explore the personal projects, achievements, and expertise of Praveen Shinde in web development and UI design."
+  },
+  "pages": {
+    "homepage": "https://praveenshinde.vercel.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

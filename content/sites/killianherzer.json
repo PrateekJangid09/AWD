@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000110",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Killian Herzer Portfolio",
+    "domain": "killianherzer.com",
+    "url": "https://killianherzer.com/",
+    "slug": "killianherzer",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Developer",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.85,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ff2a2a",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#050505",
+      "#ffffff"
+    ],
+    "text_color": "#e0e0e0",
+    "palette": [
+      {
+        "hex": "#050505",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0e0e0",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff2a2a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#333333",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#222222",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Rethink Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          7,
+          64
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          216
+        ]
+      },
+      {
+        "name": "Playfair Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          18,
+          173
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "killianherzer@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Annecy, Haute-Savoie, 74000, FR"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/killian-herzer",
+    "x": null
+  },
+  "seo": {
+    "title": "Killian Herzer Portfolio",
+    "description": "Portfolio de Killian Herzer, d\u00e9veloppeur fullstack interactif, sp\u00e9cialiste de la rigueur back-end et interactivit\u00e9 front-end."
+  },
+  "pages": {
+    "homepage": "https://killianherzer.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000009",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Supaste",
+    "domain": "supaste.com",
+    "url": "https://www.supaste.com/",
+    "slug": "supaste",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Video Editing",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "Designers"
+    ],
+    "confidence": 0.71,
+    "field_confidence": {
+      "category": 0.71,
+      "subcategory": 0.66,
+      "website_type": 0.73,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0080ff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#040a19"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e3e3e3"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0080ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e3e3e3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#231f20",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#040a19",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          8,
+          320
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          12,
+          14
+        ]
+      },
+      {
+        "name": "Instrument Serif",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          30,
+          30
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "convers@ions.founders",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/soltwagner"
+  },
+  "seo": {
+    "title": "Supaste",
+    "description": "Supaste is a local-first clipboard and screenshot history app for Mac. Save copied text, links, images, files, code, colors, and screenshots in a beautiful searchable timeline."
+  },
+  "pages": {
+    "homepage": "https://www.supaste.com/",
+    "about": "not found",
+    "contact": "https://www.supaste.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

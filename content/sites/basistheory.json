@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000208",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Basis Theory: The Payment Stack Fit For Your Business",
+    "domain": "basistheory.com",
+    "url": "https://basistheory.com/",
+    "slug": "basistheory",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Payments",
+    "website_type": "Product Website",
+    "audience": [
+      "Enterprises",
+      "B2B",
+      "Investors"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": 0.79,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#d4f796",
+    "secondary_color": null,
+    "accent_colors": [
+      "#94faf0"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#f5f2f2"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#d4f796",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#27272a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#18181b",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5f2f2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#94faf0",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Kode Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          8,
+          16
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          32
+        ]
+      },
+      {
+        "name": "Chivo Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      },
+      {
+        "name": "Neo Grotesk Medium",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          32,
+          80
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "regul@ions.whether",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/basis-theory",
+    "x": "https://twitter.com/basistheory"
+  },
+  "seo": {
+    "title": "Basis Theory: The Payment Stack Fit For Your Business",
+    "description": "More than a token vault\u2014Basis Theory routes, tokenizes, and optimizes your payments to drive conversion, resilience, and retention."
+  },
+  "pages": {
+    "homepage": "https://basistheory.com/",
+    "about": "not found",
+    "contact": "https://basistheory.com/contact",
+    "pricing": "https://basistheory.com/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

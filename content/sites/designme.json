@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000049",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "DesignMe",
+    "domain": "designme.agency",
+    "url": "https://www.designme.agency/",
+    "slug": "designme",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [
+      "Enterprises",
+      "Startups"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ff4a03",
+    "secondary_color": null,
+    "accent_colors": [
+      "#2e323d"
+    ],
+    "background_colors": [
+      "#fafafa",
+      "#ededed"
+    ],
+    "text_color": "#03111c",
+    "palette": [
+      {
+        "hex": "#fafafa",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#03111c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff4a03",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#2e323d",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ededed",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          8,
+          42
+        ]
+      },
+      {
+        "name": "Saans SemiBold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          15,
+          80
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          13
+        ]
+      },
+      {
+        "name": "PP Mori Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@designme.agency",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/designmeagency",
+    "x": "https://x.com/designmeagency"
+  },
+  "seo": {
+    "title": "DesignMe",
+    "description": "DesignMe helps SaaS, AI, fintech, and tech companies design sharper brands, websites, products, launch videos, and custom MVP builds with one senior team."
+  },
+  "pages": {
+    "homepage": "https://www.designme.agency/",
+    "about": "https://www.designme.agency/about-us",
+    "contact": "https://www.designme.agency/contact",
+    "pricing": "not found",
+    "careers": "https://www.designme.agency/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000136",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Omnius",
+    "domain": "omnius.so",
+    "url": "https://www.omnius.so/",
+    "slug": "omnius",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": "SEO",
+    "website_type": "SaaS Website",
+    "audience": [
+      "Agencies",
+      "B2B Companies",
+      "Small Businesses"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.84,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#1e2124",
+    "secondary_color": null,
+    "accent_colors": [
+      "#72aa9c"
+    ],
+    "background_colors": [
+      "#fefefe",
+      "#dbdbdb",
+      "#e0e9ff"
+    ],
+    "text_color": "#0f141f",
+    "palette": [
+      {
+        "hex": "#fefefe",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0f141f",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1e2124",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#dbdbdb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0e9ff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#72aa9c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          40
+        ]
+      },
+      {
+        "name": "Geistmono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "Alliance",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          36,
+          70
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Editorial"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@omnius.so",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/omniuspartners",
+    "x": null
+  },
+  "seo": {
+    "title": "Omnius",
+    "description": "Holistic B2B SEO/GEO marketing agency that empowers stable & scalable growth of SaaS & Fintech companies through product-led content marketing."
+  },
+  "pages": {
+    "homepage": "https://www.omnius.so/",
+    "about": "https://www.omnius.so/about",
+    "contact": "https://www.omnius.so/contact-us",
+    "pricing": "not found",
+    "careers": "https://www.omnius.so/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

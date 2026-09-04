@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000093",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Neon",
+    "domain": "neon.com",
+    "url": "https://neon.com/",
+    "slug": "neon",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Enterprises",
+      "Developers",
+      "Startups"
+    ],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.8,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#cae6d9",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#e4f1eb",
+      "#ffffff"
+    ],
+    "text_color": "#797d86",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#797d86",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#cae6d9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e4f1eb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#151617",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          80
+        ]
+      },
+      {
+        "name": "GeistMono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "d@abase.object",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/neon-inc",
+    "x": "https://twitter.com/neondatabase"
+  },
+  "seo": {
+    "title": "Neon",
+    "description": "The backend for apps and agents. Build with Lakebase Postgres, Auth, Functions, Storage, and an AI Gateway: instant, branchable, serverless."
+  },
+  "pages": {
+    "homepage": "https://neon.com/",
+    "about": "https://neon.com/about-us",
+    "contact": "https://neon.com/contact-sales",
+    "pricing": "https://neon.com/pricing",
+    "careers": "https://neon.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000043",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Jonathan Moore",
+    "domain": "jonathanmoore.com",
+    "url": "https://jonathanmoore.com/",
+    "slug": "jonathanmoore",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Fashion & Beauty",
+    "subcategory": "Cosmetics",
+    "website_type": "Travel Blog",
+    "audience": [],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": 0.72,
+      "website_type": 0.67,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#c84a2d",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0b0809"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#0b0809",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#c84a2d",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABC Whyte",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          20
+        ]
+      },
+      {
+        "name": "GT Pressura Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Astro",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hey@jonathanmoore.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/jonathanmoore",
+    "x": "https://x.com/moore"
+  },
+  "seo": {
+    "title": "Jonathan Moore",
+    "description": "Design engineer and entrepreneur at the intersection of creativity, product, and technology since 1999."
+  },
+  "pages": {
+    "homepage": "https://jonathanmoore.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

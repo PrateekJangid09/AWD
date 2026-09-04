@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000008",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Micro-Interactions Pro \u2728 for Webflow",
+    "domain": "microinteractions.co",
+    "url": "https://www.microinteractions.co/",
+    "slug": "microinteractions",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Consumers"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ffe52f",
+    "secondary_color": null,
+    "accent_colors": [
+      "#6d7082"
+    ],
+    "background_colors": [
+      "#16161d",
+      "#ffffff"
+    ],
+    "text_color": "#ededed",
+    "palette": [
+      {
+        "hex": "#16161d",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ededed",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffe52f",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#6d7082",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Instrumentsans Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          8,
+          72
+        ]
+      },
+      {
+        "name": "Instrumentsans Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          56
+        ]
+      },
+      {
+        "name": "Instrument Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/itshkmanzoor"
+  },
+  "seo": {
+    "title": "Micro-Interactions Pro \u2728 for Webflow",
+    "description": "Ready to use micro interaction library made for Webflow. Copy & paste pre-made interactions into your Webflow projects in one click."
+  },
+  "pages": {
+    "homepage": "https://www.microinteractions.co/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://www.microinteractions.co/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

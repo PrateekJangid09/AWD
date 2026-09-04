@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000171",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Kyler Phillips",
+    "domain": "kyler.design",
+    "url": "https://kyler.design/",
+    "slug": "kyler",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Designer",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.8,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0f0f0f",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0f0f0f",
+      "#ffffff"
+    ],
+    "text_color": "#ebeaea",
+    "palette": [
+      {
+        "hex": "#0f0f0f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ebeaea",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1c1c",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "finder",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "GeistMono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "signifierDisplay",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          42,
+          42
+        ]
+      }
+    ],
+    "style_tags": [
+      "Corporate / Clean",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "me@kyler.design",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Kyler Phillips",
+    "description": ""
+  },
+  "pages": {
+    "homepage": "https://kyler.design/",
+    "about": "https://kyler.design/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://kyler.design/jobs"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

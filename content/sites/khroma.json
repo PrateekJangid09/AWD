@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000083",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Khroma - The AI Color Tool for Designers",
+    "domain": "khroma.co",
+    "url": "https://www.khroma.co/",
+    "slug": "khroma",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Directory",
+    "audience": [
+      "Consumers"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.86,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#4e42f9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#cb355f",
+      "#f58f8d"
+    ],
+    "background_colors": [
+      "#0c0c0e",
+      "#ffffff"
+    ],
+    "text_color": "#646a85",
+    "palette": [
+      {
+        "hex": "#0c0c0e",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#646a85",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#4e42f9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#cb355f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#f58f8d",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Graphik",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          18
+        ]
+      },
+      {
+        "name": "Instrument Serif",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          46,
+          78
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Khroma - The AI Color Tool for Designers",
+    "description": "Khroma is the fastest way to discover, search, and save color combos and palettes you'll love. Discover a personalized AI-powered color tool for designers to find the perfect color scheme."
+  },
+  "pages": {
+    "homepage": "https://www.khroma.co/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

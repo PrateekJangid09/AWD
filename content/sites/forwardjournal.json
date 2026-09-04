@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000324",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Forward",
+    "domain": "forwardjournal.co",
+    "url": "https://forwardjournal.co/",
+    "slug": "forwardjournal",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Magazines",
+    "website_type": "Magazine",
+    "audience": [],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.68,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Graphik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/graphical-house",
+    "x": "https://twitter.com/graphicalhouse"
+  },
+  "seo": {
+    "title": "Forward",
+    "description": "Forward is a journal of insight and creativity, from our friends, colleagues, collaborators and clients. Curated by Graphical House"
+  },
+  "pages": {
+    "homepage": "https://forwardjournal.co/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000230",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Charles Njoku",
+    "domain": "charlesnjoku.com",
+    "url": "https://charlesnjoku.com/",
+    "slug": "charlesnjoku",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Education",
+    "subcategory": "Universities",
+    "website_type": "Documentation Website",
+    "audience": [],
+    "confidence": 0.62,
+    "field_confidence": {
+      "category": 0.62,
+      "subcategory": 0.57,
+      "website_type": 0.8,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#1d4ed8",
+    "secondary_color": null,
+    "accent_colors": [
+      "#111827"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e5e7eb"
+    ],
+    "text_color": "#6b7280",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b7280",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1d4ed8",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e7eb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#111827",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#9ca3af",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@charlesnjoku.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/madebycharles",
+    "x": "https://x.com/madebycharles"
+  },
+  "seo": {
+    "title": "Charles Njoku",
+    "description": "Charles Njoku is an HCI researcher studying interaction design in aviation safety-critical systems at Cranfield University."
+  },
+  "pages": {
+    "homepage": "https://charlesnjoku.com/",
+    "about": "https://charlesnjoku.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

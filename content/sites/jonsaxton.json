@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000039",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Jon Saxton's Portfolio",
+    "domain": "jonsaxton.com",
+    "url": "https://www.jonsaxton.com/",
+    "slug": "jonsaxton",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Enterprise",
+    "website_type": "Investor Website",
+    "audience": [
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.77,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#00aa2a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#00ff41",
+      "#33ff66",
+      "#cc5500"
+    ],
+    "background_colors": [
+      "#0a0a0a"
+    ],
+    "text_color": "#cccccc",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#cccccc",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#00aa2a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#00ff41",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#33ff66",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#cc5500",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "JetBrains Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/jpsaxton",
+    "x": "https://x.com/JonSaxton"
+  },
+  "seo": {
+    "title": "Jon Saxton's Portfolio",
+    "description": "Working with growth-stage and enterprise organizations to bring great designs to life."
+  },
+  "pages": {
+    "homepage": "https://www.jonsaxton.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

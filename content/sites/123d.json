@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000201",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "123done",
+    "domain": "123d.one",
+    "url": "https://123d.one/",
+    "slug": "123d",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "UI/UX",
+    "website_type": "Resource Website",
+    "audience": [],
+    "confidence": 0.79,
+    "field_confidence": {
+      "category": 0.79,
+      "subcategory": 0.74,
+      "website_type": 0.81,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#252833",
+    "secondary_color": null,
+    "accent_colors": [
+      "#3259e8"
+    ],
+    "background_colors": [
+      "#0b0b0f",
+      "#ffffff"
+    ],
+    "text_color": "#696c80",
+    "palette": [
+      {
+        "hex": "#0b0b0f",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#696c80",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#252833",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#3259e8",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#9a9eb2",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          15,
+          54
+        ]
+      },
+      {
+        "name": "Roboto Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          17
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt on AWS",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "AWS"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@123d.one",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/the123done"
+  },
+  "seo": {
+    "title": "123done",
+    "description": "123done | Optimize your design process"
+  },
+  "pages": {
+    "homepage": "https://123d.one/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

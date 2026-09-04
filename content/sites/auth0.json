@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000246",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Auth0",
+    "domain": "auth0.com",
+    "url": "https://auth0.com/",
+    "slug": "auth0",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Information Portal",
+    "audience": [
+      "Developers",
+      "Enterprises",
+      "B2C"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.81,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#120021",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ebd3ff"
+    ],
+    "background_colors": [
+      "#20003a",
+      "#e5e5e5"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#20003a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#120021",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e5e5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ebd3ff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Aeonik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          64
+        ]
+      },
+      {
+        "name": "Aeonik Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@okta.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Okta HQ North America 100 First Street, San Francisco, CA, 94105, US"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/auth0",
+    "x": "https://twitter.com/auth0"
+  },
+  "seo": {
+    "title": "Auth0",
+    "description": "Secure users, AI agents, and more with Auth0, an easy-to-implement, scalable, and adaptable authentication and authorization platform."
+  },
+  "pages": {
+    "homepage": "https://auth0.com/",
+    "about": "https://auth0.com/about",
+    "contact": "https://auth0.com/contact-us?place=header&amp;type=button&amp;text=let%27s%20connect",
+    "pricing": "https://auth0.com/pricing/",
+    "careers": "https://auth0.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

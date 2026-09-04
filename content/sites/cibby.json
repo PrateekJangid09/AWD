@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000042",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Cibby",
+    "domain": "cibby.app",
+    "url": "https://cibby.app/",
+    "slug": "cibby",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": null,
+    "website_type": "Waitlist Page",
+    "audience": [],
+    "confidence": 0.59,
+    "field_confidence": {
+      "category": 0.59,
+      "subcategory": null,
+      "website_type": 0.83,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#93a0b8",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#08090d"
+    ],
+    "text_color": "#f4f6fb",
+    "palette": [
+      {
+        "hex": "#08090d",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f6fb",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#93a0b8",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#767676",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Instrument Serif",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          88,
+          88
+        ]
+      },
+      {
+        "name": "Turbeau",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          28,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "desk@pixelresort.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/flarup"
+  },
+  "seo": {
+    "title": "Cibby",
+    "description": "Cibby is an app built for people who love physical games. Explore and rediscover your collection in stunning interactive 3D. Coming soon \u2014 sign up to be the first to know."
+  },
+  "pages": {
+    "homepage": "https://cibby.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

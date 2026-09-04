@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000024",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Building ActivityPub",
+    "domain": "ghost.org",
+    "url": "https://activitypub.ghost.org/",
+    "slug": "ghost",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Social Networks",
+    "website_type": "Social Platform",
+    "audience": [
+      "Fans",
+      "Members"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.78,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#0c0a09",
+    "secondary_color": null,
+    "accent_colors": [
+      "#3b5998",
+      "#ee1d52"
+    ],
+    "background_colors": [
+      "#fcf3e1"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#fcf3e1",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c0a09",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#3b5998",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ee1d52",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#1e1e1e",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Ivar Text",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          20,
+          30
+        ]
+      },
+      {
+        "name": "Inter Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          96
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Ghost",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Fastly",
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "OpenResty"
+    ]
+  },
+  "contact": {
+    "email": "activitypub@ghost.org",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Building ActivityPub",
+    "description": "Ghost is federating over ActivityPub to become part of the world\u2019s largest publishing network"
+  },
+  "pages": {
+    "homepage": "https://activitypub.ghost.org/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

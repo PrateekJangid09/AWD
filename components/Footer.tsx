@@ -1,329 +1,162 @@
-'use client';
+import Link from "next/link";
+import Logo from "./Logo";
+import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { publishedPosts } from "@/lib/journal";
+import { CONTACT_EMAIL, SUPPORT_URL } from "@/lib/seo";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+const COLS: { title: string; links: { href: string; label: string }[] }[] = [
+  {
+    title: "Explore",
+    links: [
+      { href: "/archive", label: "Archive" },
+      { href: "/c", label: "Categories" },
+      { href: "/tools", label: "Tools" },
+      { href: "/research/website-design-index-2026", label: "Research" },
+      { href: "/blogs", label: "Resources" },
+      { href: "/site-map", label: "Site Map" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/manifesto", label: "Manifesto" },
+      { href: "/editorial-guidelines", label: "Editorial Guidelines" },
+      { href: "/submit", label: "Submit a Site" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "/privacy-policy", label: "Privacy" },
+      { href: "/terms", label: "Terms" },
+      { href: "/cookie-preference", label: "Cookies" },
+    ],
+  },
+];
 
-// --- STYLES ---
-// Styles will be dynamic based on variant
-
-const containerStyle: React.CSSProperties = {
-  width: '100%',
-  maxWidth: 1400,
-  display: 'flex',
-  flexDirection: 'column',
-};
-
-// Styles will be dynamic based on variant
-
-// Styles will be dynamic based on variant
-
-// Styles will be dynamic based on variant
-
-// --- MAIN FOOTER ---
-interface FooterProps {
-  variant?: 'default' | 'inverted';
-}
-
-export default function Footer({ variant = 'default' }: FooterProps) {
-  const currentYear = new Date().getFullYear();
-  const accentColor = '#CCFF00';
-  
-  // Inverted colors for about page
-  const isInverted = variant === 'inverted';
-  const bgColor = isInverted ? '#050505' : '#FFFFFF';
-  const textColor = isInverted ? '#FFFFFF' : '#111';
-  const borderColor = isInverted ? '#FFFFFF' : '#111';
-  const lightTextColor = isInverted ? '#888' : '#666';
-  const linkColor = isInverted ? '#AAA' : '#555';
-  const columnBorderColor = isInverted ? 'rgba(255,255,255,0.2)' : '#E5E5E5';
-
-  const col1Links: FooterColumnLink[] = [
-    { label: 'Featured', href: '/' },
-    { label: 'Trending', href: '/?tab=trending' },
-    { label: 'New Arrivals', href: '/?tab=new' },
-    { label: 'Collections', href: '/website-templates-for-framer' },
-  ];
-
-  const col2Links: FooterColumnLink[] = [
-    { label: 'Submit a Site', href: '#submit' },
-    { label: 'Pro Membership', href: '/website-templates-for-framer/pricing' },
-    { label: 'Guidelines', href: '/about' },
-  ];
-
-  const col3Links: FooterColumnLink[] = [
-    { label: 'About', href: '/about' },
-    { label: 'Manifesto', href: '/about' },
-    { label: 'Careers', href: '#' },
-    { label: 'Contact', href: '/about' },
-  ];
+export default function Footer() {
+  const categories = liveCategories().filter((c) => c.count > 0).slice(0, 8);
+  const research = publishedPosts().slice(0, 3);
 
   return (
-    <footer style={{
-      width: '100%',
-      backgroundColor: bgColor,
-      color: textColor,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      borderTop: `2px solid ${borderColor}`,
-      overflow: 'hidden',
-    }}>
-      <div style={containerStyle}>
-        {/* 1. LINKS GRID */}
-        <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          width: '100%',
-          borderBottom: `2px solid ${borderColor}`,
-        }}>
-          <FooterColumn title="Discover" links={col1Links} accent={accentColor} isInverted={isInverted} textColor={textColor} lightTextColor={lightTextColor} linkColor={linkColor} columnBorderColor={columnBorderColor} />
-          <FooterColumn title="Submit" links={col2Links} accent={accentColor} isInverted={isInverted} textColor={textColor} lightTextColor={lightTextColor} linkColor={linkColor} columnBorderColor={columnBorderColor} />
-          <FooterColumn title="Company" links={col3Links} accent={accentColor} isInverted={isInverted} textColor={textColor} lightTextColor={lightTextColor} linkColor={linkColor} columnBorderColor={columnBorderColor} />
+    <footer className="border-t border-line bg-ink text-paper">
+      <div className="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-5">
+        <div className="col-span-2">
+          <div className="[&_span]:text-paper">
+            <Logo />
+          </div>
+          <p className="mt-6 max-w-xs text-pretty text-sm leading-relaxed text-white/75">
+            A searchable design archive and a connected set of tools, for people who
+            study how the web is made.
+          </p>
+          <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/70">
+            {CANONICAL.length.toLocaleString()} references · {liveCategories().filter((c) => c.count > 0).length} categories
+          </p>
 
-          {/* Community Column */}
-          <div style={{
-            flex: 1,
-            minWidth: 260,
-            padding: '60px 40px',
-            borderRight: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 24,
-          }}>
-            <h4
-              style={{
-                margin: 0,
-                fontSize: 14,
-                color: lightTextColor,
-                textTransform: 'uppercase',
-              }}
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href={SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#FFDD00] px-4 py-2 text-[13px] font-semibold text-[#0A0A0A] transition-transform hover:-translate-y-0.5"
             >
-              Community
-            </h4>
-            <div
-              style={{
-                display: 'flex',
-                gap: 16,
-                flexWrap: 'wrap',
-              }}
+              <span aria-hidden>☕</span>
+              Buy me a coffee
+            </a>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-[13px] text-white/75 underline decoration-white/30 underline-offset-4 hover:text-orange"
             >
-              <SocialSticker label="TW" href="https://twitter.com" isInverted={isInverted} />
-              <SocialSticker label="IG" href="https://instagram.com" isInverted={isInverted} />
-              <SocialSticker label="LN" href="https://linkedin.com" isInverted={isInverted} />
-              <SocialSticker label="YT" href="https://youtube.com" isInverted={isInverted} />
-            </div>
-            <p
-              style={{
-                fontSize: 14,
-                color: lightTextColor,
-                lineHeight: 1.5,
-                marginTop: 'auto',
-              }}
-            >
-              Join 15,000+ designers building the future of the web.
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+          <p className="mt-3 max-w-xs text-[12px] leading-relaxed text-white/60">
+            The archive and every tool are free. A coffee keeps the research going.
+          </p>
+        </div>
+
+        {COLS.map((col) => (
+          <div key={col.title}>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+              {col.title}
             </p>
+            <ul className="mt-5 space-y-3">
+              {col.links.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-white/80 transition-colors hover:text-orange"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {categories.length > 0 && (
+        <div className="border-t border-white/10">
+          <div className="wrap py-7">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+              Popular categories
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {categories.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/c/${c.slug}`}
+                  className="rounded-full border border-white/10 px-3 py-1.5 text-[12px] text-white/80 transition-colors hover:border-orange hover:text-orange"
+                >
+                  {c.name}
+                </Link>
+              ))}
+              <Link
+                href="/c"
+                className="rounded-full bg-orange px-3 py-1.5 text-[12px] font-medium text-white"
+              >
+                All categories
+              </Link>
+            </div>
           </div>
         </div>
+      )}
 
-        {/* 2. MASSIVE BRAND TEXT (STATIC) */}
-        <div
-          style={{
-            width: '100%',
-            overflow: 'hidden',
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '60px 20px',
-            position: 'relative',
-          }}
-        >
-          <BrandText text="AllWebsites.Design" textColor={textColor} />
-        </div>
-
-        {/* 3. BOTTOM BAR */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: '20px 40px 40px 40px',
-            fontSize: 13,
-            color: lightTextColor,
-            flexWrap: 'wrap',
-            gap: 20,
-          }}
-        >
-          <div>© {currentYear} AllWebsites.Design. Curated in California.</div>
-          <div style={{ display: 'flex', gap: 20 }}>
-            <Link href="/privacy" style={{ textDecoration: 'none', color: linkColor }}>
-              Privacy Policy
-            </Link>
-            <Link href="/terms" style={{ textDecoration: 'none', color: linkColor }}>
-              Terms of Service
-            </Link>
-            <Link href="/sitemap.xml" style={{ textDecoration: 'none', color: linkColor }}>
-              Sitemap
-            </Link>
+      {research.length > 0 && (
+        <div className="border-t border-white/10">
+          <div className="wrap py-7">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+              Latest research
+            </p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+              {research.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className="block text-[13px] leading-relaxed text-white/80 transition-colors hover:text-orange"
+                  >
+                    {post.h1}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
+      )}
+
+      <div className="border-t border-white/10">
+        <div className="wrap flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
+            © {new Date().getFullYear()} AllWebsites.Design
+          </p>
+          <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
+            Discover · Understand · Explore
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
-// --- SUB-COMPONENTS ---
-
-interface FooterColumnLink {
-  label: string;
-  href: string;
-}
-
-function FooterColumn({
-  title,
-  links,
-  accent,
-  isInverted,
-  textColor,
-  lightTextColor,
-  linkColor,
-  columnBorderColor,
-}: {
-  title: string;
-  links: FooterColumnLink[];
-  accent: string;
-  isInverted: boolean;
-  textColor: string;
-  lightTextColor: string;
-  linkColor: string;
-  columnBorderColor: string;
-}) {
-  return (
-    <div style={{
-      flex: 1,
-      minWidth: 200,
-      padding: '60px 40px',
-      borderRight: `1px solid ${columnBorderColor}`,
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 24,
-    }}>
-      <h4
-        style={{
-          margin: 0,
-          fontSize: 14,
-          color: lightTextColor,
-          textTransform: 'uppercase',
-          letterSpacing: '0.05em',
-        }}
-      >
-        {title}
-      </h4>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-        }}
-      >
-        {links.map((link) => (
-          <HoverLink key={link.label} text={link.label} href={link.href} accent={accent} textColor={textColor} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function HoverLink({ text, href, accent, textColor }: { text: string; href: string; accent: string; textColor: string }) {
-  const [hover, setHover] = useState(false);
-  return (
-    <motion.a
-      href={href}
-      target={href.startsWith('http') ? '_blank' : undefined}
-      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{
-        textDecoration: 'none',
-        color: textColor,
-        fontSize: 16,
-        fontWeight: 500,
-        position: 'relative',
-        width: 'fit-content',
-        cursor: 'pointer',
-      }}
-    >
-      {text}
-      <motion.div
-        initial={{ width: 0 }}
-        animate={{ width: hover ? '100%' : 0 }}
-        style={{
-          height: 2,
-          backgroundColor: accent,
-          marginTop: 2,
-          borderRadius: 2,
-        }}
-      />
-    </motion.a>
-  );
-}
-
-function SocialSticker({ label, href, isInverted }: { label: string; href: string; isInverted: boolean }) {
-  const bgColor = isInverted ? '#FFFFFF' : '#111';
-  const textColor = isInverted ? '#111' : '#FFF';
-  const borderColor = isInverted ? '#FFFFFF' : '#111';
-  
-  return (
-    <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{
-        scale: 1.1,
-        rotate: 3,
-        boxShadow: isInverted ? '0 10px 20px rgba(255,255,255,0.15)' : '0 10px 20px rgba(0,0,0,0.15)',
-      }}
-      style={{
-        width: 48,
-        height: 48,
-        borderRadius: '50%',
-        backgroundColor: bgColor,
-        color: textColor,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontWeight: 700,
-        fontSize: 13,
-        cursor: 'pointer',
-        border: `2px solid ${borderColor}`,
-        textDecoration: 'none',
-      }}
-    >
-      {label}
-    </motion.a>
-  );
-}
-
-function BrandText({ text, textColor }: { text: string; textColor: string }) {
-  return (
-    <motion.h1
-      initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      style={{
-        fontSize: '5.5vw',
-        lineHeight: 0.85,
-        fontWeight: 900,
-        letterSpacing: '-0.03em',
-        margin: 0,
-        color: textColor,
-        textAlign: 'center',
-        userSelect: 'none',
-        whiteSpace: 'nowrap',
-        maxWidth: '100%',
-      }}
-    >
-      {text}
-    </motion.h1>
-  );
-}
-

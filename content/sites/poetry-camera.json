@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000005",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "poetry camera",
+    "domain": "poetry.camera",
+    "url": "https://poetry.camera/",
+    "slug": "poetry-camera",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Newsletters",
+    "website_type": "Product Website",
+    "audience": [
+      "Fans"
+    ],
+    "confidence": 0.68,
+    "field_confidence": {
+      "category": 0.68,
+      "subcategory": 0.63,
+      "website_type": 0.73,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ffde5b",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#eee9e9",
+      "#f9fdf9"
+    ],
+    "text_color": "#1c1c1c",
+    "palette": [
+      {
+        "hex": "#eee9e9",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1c1c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffde5b",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f9fdf9",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          19
+        ]
+      },
+      {
+        "name": "BitMatrix A2",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "poetry camera",
+    "description": "a new way to see your world"
+  },
+  "pages": {
+    "homepage": "https://poetry.camera/",
+    "about": "https://poetry.camera/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

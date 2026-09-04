@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000081",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "PolyBlock",
+    "domain": "poly-block.com",
+    "url": "https://poly-block.com/",
+    "slug": "poly-block",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Crypto",
+    "website_type": "Company Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": 0.72,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "text_color": "#9b9b9b",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9b9b9b",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#151515",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#555555",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geist",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          35
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/polyblock",
+    "x": null
+  },
+  "seo": {
+    "title": "PolyBlock",
+    "description": "PolyBlock is a unified blockchain access API that enables businesses to interact with multiple blockchains simultaneously through..."
+  },
+  "pages": {
+    "homepage": "https://poly-block.com/",
+    "about": "not found",
+    "contact": "https://poly-block.com/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

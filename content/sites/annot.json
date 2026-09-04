@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000093",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Annot.io",
+    "domain": "annot.io",
+    "url": "https://www.annot.io/",
+    "slug": "annot",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Comparisons",
+    "website_type": "Comparison Website",
+    "audience": [],
+    "confidence": 0.66,
+    "field_confidence": {
+      "category": 0.66,
+      "subcategory": 0.61,
+      "website_type": 0.78,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#fe3300",
+    "secondary_color": null,
+    "accent_colors": [
+      "#1a7a5e"
+    ],
+    "background_colors": [
+      "#f6f4f3",
+      "#e6e1df"
+    ],
+    "text_color": "#101010",
+    "palette": [
+      {
+        "hex": "#f6f4f3",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#101010",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#fe3300",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#e6e1df",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a7a5e",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          48
+        ]
+      },
+      {
+        "name": "Inter Variable",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "needs@tention.comments",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Annot.io",
+    "description": "Annot.io lets teams comment directly on live websites, track feedback from open to resolved, and share with clients \u2014 no account needed. Works with Webflow, Framer & Shopify."
+  },
+  "pages": {
+    "homepage": "https://www.annot.io/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

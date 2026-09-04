@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000016",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Roy Quilor",
+    "domain": "royquilor.com",
+    "url": "https://www.royquilor.com/",
+    "slug": "royquilor",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Designer",
+    "website_type": "Personal Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.87,
+    "field_confidence": {
+      "category": 0.87,
+      "subcategory": 0.82,
+      "website_type": 0.93,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#292524",
+    "secondary_color": null,
+    "accent_colors": [
+      "#dd3a4e"
+    ],
+    "background_colors": [
+      "#151718",
+      "#fffbeb"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#151718",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#292524",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#fffbeb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#dd3a4e",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ITC Avant Garde Gothic Pro Book",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          64
+        ]
+      },
+      {
+        "name": "Geist Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          14
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          56
+        ]
+      },
+      {
+        "name": "Inter-Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "callhi@royquilor.comhi",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/royquilor",
+    "x": "https://twitter.com/RoyQuilor"
+  },
+  "seo": {
+    "title": "Roy Quilor",
+    "description": "UI UX Designer helping startups and agencies go from zero to one. I use Figma, Framer and Tailwind CSS to launch and scale products."
+  },
+  "pages": {
+    "homepage": "https://www.royquilor.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

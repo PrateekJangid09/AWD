@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000037",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "8px.studio\u2122",
+    "domain": "8px.studio",
+    "url": "https://www.8px.studio/",
+    "slug": "8px",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Studio Website",
+    "audience": [
+      "Creators",
+      "Startups"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.81,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#1ef849",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#fbfbfb",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fbfbfb",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1ef849",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#161616",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#828282",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "rustica",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          32
+        ]
+      },
+      {
+        "name": "roc-grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          17,
+          100
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "th@8px.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/RafalTomal"
+  },
+  "seo": {
+    "title": "8px.studio\u2122",
+    "description": "8px.studio\u2122 is here to help online creators and entrepreneurs like you achieve your goals."
+  },
+  "pages": {
+    "homepage": "https://www.8px.studio/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

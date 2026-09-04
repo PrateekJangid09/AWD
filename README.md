@@ -1,287 +1,81 @@
-# AllWebsites.Design 🚀
+# AllWebsites.Design
 
-A high-performance directory of 700+ curated landing pages with automated screenshot generation, category filtering, and fuzzy search. Built with Next.js 15, TypeScript, and Tailwind CSS.
+The Website Design Research Archive — a Next.js 15 site for browsing curated website-design references by industry, style, colour, typography, and technology.
 
-## ✨ Features
+## Local development
 
-- **700+ Curated Websites** - Handpicked landing pages from SaaS, Fintech, E-commerce, and more
-- **Smart Filtering** - Horizontal scrollable category pills with real-time counts
-- **Fuzzy Search** - Powered by Fuse.js for intelligent search across names, descriptions, and categories
-- **Automated Screenshots** - Puppeteer-based screenshot generation with fallback gradients
-- **Responsive Design** - Mobile-first grid layout (1-4 columns based on screen size)
-- **Performance Optimized** - Next.js Image optimization, lazy loading, and static generation
-- **Accessibility** - WCAG 2.1 AA compliant with keyboard navigation and ARIA labels
-
-## 🏗️ Tech Stack
-
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Search**: Fuse.js (fuzzy search)
-- **Screenshots**: Puppeteer
-- **CSV Parsing**: PapaParse
-- **Image Optimization**: Sharp
-
-## 📁 Project Structure
-
-```
-landing-directory/
-├── app/
-│   ├── api/websites/route.ts    # API endpoint for website data
-│   ├── layout.tsx                # Root layout
-│   ├── page.tsx                  # Main directory page
-│   └── globals.css               # Global styles
-├── components/
-│   ├── WebsiteCard.tsx           # Individual website card
-│   ├── FilterBar.tsx             # Category filter pills
-│   ├── SearchBar.tsx             # Search input with debounce
-│   └── Header.tsx                # Site header
-├── lib/
-│   ├── data.ts                   # CSV parser & data utilities
-│   └── utils.ts                  # Helper functions
-├── scripts/
-│   ├── find-urls.js              # Find placeholder URLs
-│   └── generate-screenshots.js   # Generate hero screenshots
-├── data/
-│   └── websites.csv              # Website data (700+ entries)
-└── public/
-    └── screenshots/              # Generated screenshots
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm
-- For screenshot generation: Chromium (installed automatically with Puppeteer)
-
-### Installation
-
-1. **Navigate to the project:**
-   ```bash
-   cd landing-directory
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Generate screenshots (optional - first 5-10 sites for testing):**
-   ```bash
-   npm run screenshots
-   ```
-   > ⚠️ This will take time for all 700 sites. For testing, modify the script to process fewer sites.
-
-4. **Run development server:**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 📸 Screenshot Generation
-
-The `generate-screenshots.js` script:
-
-1. Reads `data/websites.csv`
-2. Launches headless Chromium via Puppeteer
-3. Captures 1280x720 screenshots (16:9 ratio)
-4. Removes cookie banners automatically
-5. Saves as WebP format for optimization
-6. Generates fallback gradients on failures
-
-### Fallback Strategy
-
-1. **Primary**: Puppeteer screenshot
-2. **Secondary**: Gradient with category color + site name
-3. **Tertiary**: Generic placeholder
-
-### Batch Processing
-
-- Processes 5 sites concurrently
-- ~5-10 seconds per site
-- Total time for 700 sites: ~20-30 minutes
-
-## 🎨 Design System
-
-### Color Palette
-
-Categories are color-coded for quick visual identification:
-
-| Category | Color | Hex |
-|----------|-------|-----|
-| SaaS | Blue | `#3B82F6` |
-| Design Studio | Violet | `#8B5CF6` |
-| Fintech | Emerald | `#10B981` |
-| E-commerce | Amber | `#F59E0B` |
-| Portfolio | Pink | `#EC4899` |
-| AI Tool | Indigo | `#6366F1` |
-
-### Typography
-
-- **Hero**: 48px
-- **Headings**: 24px
-- **Body**: 16px
-- **Meta**: 14px
-
-### Responsive Breakpoints
-
-- **Mobile**: 640px (1 column)
-- **Tablet**: 768px (2 columns)
-- **Laptop**: 1024px (3 columns)
-- **Desktop**: 1280px+ (4 columns)
-
-## 🔧 Configuration
-
-### Adding New Categories
-
-Edit `lib/data.ts` and add to the `getCategoryColor()` function:
-
-```typescript
-'Your Category': '#HEX_COLOR',
-```
-
-### Modifying Screenshot Settings
-
-Edit `scripts/generate-screenshots.js`:
-
-```javascript
-await page.setViewport({ width: 1280, height: 720 });
-```
-
-## 🔄 Revalidation (ISR)
-
-Pages use **Incremental Static Regeneration**: they revalidate at most every 5 minutes. To refresh content immediately after updating `data/websites.csv` or SEO, use on-demand revalidation.
-
-### 1. Set the secret
-
-In **Vercel** (and locally for testing), add an environment variable:
-
-- **Name:** `REVALIDATE_SECRET`
-- **Value:** a long random string (e.g. from `openssl rand -hex 32`)
-
-### 2. Trigger revalidation
-
-**Revalidate homepage only:**
 ```bash
-curl -X POST "https://allwebsites.design/api/revalidate?secret=YOUR_SECRET&path=/"
+npm install
+npm run dev
 ```
 
-**Revalidate one site page:**
-```bash
-curl -X POST "https://allwebsites.design/api/revalidate?secret=YOUR_SECRET&path=/sites/my-site-slug"
-```
-
-**Revalidate entire site (all cached pages):**
-```bash
-curl -X POST "https://allwebsites.design/api/revalidate?secret=YOUR_SECRET&path=all"
-```
-
-Use GET with the same query params if you prefer. Invalid or missing `secret` returns 401.
-
-## 🐛 Troubleshooting
-
-### Issue: Missing URLs (101 placeholder sites)
-
-**Solution**: Run the URL finder script:
-```bash
-node ../scripts/find-urls.js
-```
-This generates `data/missing-urls.json` with sites to research manually.
-
-### Issue: Screenshots failing
-
-**Causes**:
-- Site blocks headless browsers
-- Cloudflare protection
-- Geo-restrictions
-- Invalid URLs
-
-**Solution**: Fallback gradients are automatically generated.
-
-### Issue: Out of memory during screenshot generation
-
-**Solution**: Reduce concurrency in `scripts/generate-screenshots.js`:
-```javascript
-const concurrency = 3; // Reduce from 5 to 3
-```
-
-## 📊 Data Format
-
-### CSV Structure
-
-```csv
-Name,URL,Category,100-char description
-Cursor,https://cursor.com,AI Tool / Developer,"AI code editor..."
-```
-
-### Category Format
-
-Categories can be:
-- **Single**: `SaaS`, `Fintech`, `Portfolio`
-- **Compound**: `SaaS / Analytics`, `AI Tool / Video`
-
-The system automatically extracts the primary category (before `/`) for filtering.
-
-## 🚢 Deployment
-
-### Deploy to Vercel
-
-1. **Install Vercel CLI:**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy:**
-   ```bash
-   vercel
-   ```
-
-3. **Add Environment Variables** (if needed):
-   - `NEXT_PUBLIC_SITE_URL`: Your production URL
-
-### Build Command
+Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
 npm run build
+npm start
 ```
 
-The `prebuild` script automatically runs screenshot generation.
+## Deploy to Vercel
 
-### Performance Targets
+1. Import this GitHub repository in [Vercel](https://vercel.com/new).
+2. Framework Preset: **Next.js** (auto-detected).
+3. Root Directory: `.` (repository root).
+4. Build Command: `npm run build`.
+5. Deploy.
 
-- ✅ First Contentful Paint: <1.5s
-- ✅ Largest Contentful Paint: <2.5s
-- ✅ Cumulative Layout Shift: <0.1
-- ✅ Time to Interactive: <3.5s
-- ✅ Lighthouse Score: 95+
+No environment variables are required for the current build.
 
-## 🔒 Security
+`/privacy` and `/cookies` permanently redirect to `/privacy-policy` and `/cookie-preference`. Tool routes under `/tools/*` rewrite to static HTML in `public/tools`.
 
-- All external links open with `rel="noopener noreferrer"`
-- No user data collection
-- Static generation (no runtime data exposure)
-- Screenshots cached locally
+The archive currently publishes **304** extracted website records (ignored and removed domains are not listed). Each record uses the RankBeaver slug template at `/archive/<slug>`.
 
-## 📝 License
+## Adding a website record
 
-This project is for educational and portfolio purposes.
+Drop a canonical JSON file at `content/sites/<slug>.json` and screenshots at `public/sites/<slug>/` (`desktop.webp`, `about.webp`, …). Records are discovered at build time — no code change required.
 
-## 🙏 Credits
+Extractor preview HTML can be converted with:
 
-- Website data curated from public sources
-- Built with modern web technologies
-- Designed for performance and accessibility
+```bash
+python3 scripts/import-previews.py
+```
 
-## 📞 Support
+## Publishing to the journal
 
-For issues or questions:
-1. Check the troubleshooting section
-2. Review the project structure
-3. Examine the console for errors
+Journal posts live in two places: metadata in `lib/journal.ts` and the body in
+`content/journal/<slug>.tsx`, registered in `content/journal/index.ts`. The
+sitemap, HTML site map, footer and `llms.txt` pick up published posts
+automatically; drafts carry `noindex` and are excluded from the sitemap.
 
----
+Every statistic a post quotes is computed in `lib/insights.ts` from
+`content/sites/*.json` at build time and carries its sample size, so a figure
+cannot drift away from the archive behind it.
 
-**Built with ❤️ for designers and developers**
+## SEO and AEO acceptance gate
+
+`docs/page-acceptance-checklist.md` is the definition of done for any page. The
+machine checkable parts run as a script:
+
+```bash
+npm run build
+npm start -- -p 4360 &
+npm run seo:check -- --base http://localhost:4360 --all
+```
+
+It checks robots, canonicals, title and description length, H1 count, Open
+Graph, JSON-LD validity, that `FAQPage` questions are visible on the page, image
+alt attributes, internal link counts, AI crawler access in `robots.txt` and that
+`llms.txt` resolves. It exits non-zero on failure.
+
+## Project structure
+
+- `app/` — Next.js App Router pages
+- `components/` — shared UI
+- `content/sites/` — canonical website records
+- `content/journal/` — journal article bodies
+- `docs/` — page acceptance checklist and reindex runbook
+- `lib/` — archive data, canonical loaders, SEO helpers and computed insights
+- `scripts/seo-check.mjs` — the acceptance gate
+- `public/tools/` — shipped design tools
+- `public/sites/` — record screenshots
+- `tools-src/webpalette-studio/` — WebPalette source

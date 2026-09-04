@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000142",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Sebastian Camargo",
+    "domain": "sebastiancamargo.com",
+    "url": "https://sebastiancamargo.com/",
+    "slug": "sebastiancamargo",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Artist",
+    "website_type": "Travel Blog",
+    "audience": [],
+    "confidence": 0.65,
+    "field_confidence": {
+      "category": 0.65,
+      "subcategory": 0.6,
+      "website_type": 0.67,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0000ee",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0000ee",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#999999",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABC Favorit Edu Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          40
+        ]
+      },
+      {
+        "name": "ED Manteca Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          96,
+          144
+        ]
+      },
+      {
+        "name": "ABC Favorit Mono Edu Regular",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "ABC Favorit Edu Bold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "sebastian.camargo.tattoo@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Sebastian Camargo",
+    "description": "Sebastian Camargo is a Blackwork Tattoo Artist based in Toronto, Canada, specializing in Illustrative Blackwork and Geometric Tattoos."
+  },
+  "pages": {
+    "homepage": "https://sebastiancamargo.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

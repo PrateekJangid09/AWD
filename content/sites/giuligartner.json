@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000178",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Giulia Gartner",
+    "domain": "giuligartner.com",
+    "url": "https://www.giuligartner.com/",
+    "slug": "giuligartner",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Photography",
+    "website_type": "Lookbook",
+    "audience": [],
+    "confidence": 0.7,
+    "field_confidence": {
+      "category": 0.7,
+      "subcategory": 0.65,
+      "website_type": 0.68,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0e1012",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0e1012"
+    ],
+    "text_color": "#f3f6fa",
+    "palette": [
+      {
+        "hex": "#0e1012",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f3f6fa",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Roslindale",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          42,
+          108
+        ]
+      },
+      {
+        "name": "Mint Grotesk",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "photo@giuligartner.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/giuligartner"
+  },
+  "seo": {
+    "title": "Giulia Gartner",
+    "description": "Giulia Gartner (@giuligartner) is an outdoor, travel, and commercial photographer, filmmaker, and storyteller from the Dolomites in northern Italy."
+  },
+  "pages": {
+    "homepage": "https://www.giuligartner.com/",
+    "about": "https://www.giuligartner.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

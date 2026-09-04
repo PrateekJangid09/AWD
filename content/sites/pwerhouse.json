@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000330",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Powerhouse",
+    "domain": "pwerhouse.com",
+    "url": "https://www.pwerhouse.com/",
+    "slug": "pwerhouse",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Healthcare & Wellness",
+    "subcategory": "Medical",
+    "website_type": "Agency Website",
+    "audience": [
+      "B2C",
+      "Healthcare Professionals"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.83,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#062189",
+    "secondary_color": null,
+    "accent_colors": [
+      "#f15b5d"
+    ],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#062189",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#121212",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#626262",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f15b5d",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Neuzeit Gro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          120
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@pwerhouse.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Powerhouse",
+    "description": "Powerhouse is an award-winning brand and design firm. We help new brands start up and old brands start over."
+  },
+  "pages": {
+    "homepage": "https://www.pwerhouse.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

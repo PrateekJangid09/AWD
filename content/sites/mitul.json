@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000245",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Mitul Shah",
+    "domain": "mitul.ca",
+    "url": "https://mitul.ca/",
+    "slug": "mitul",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Photographer",
+    "website_type": "Resume Website",
+    "audience": [],
+    "confidence": 0.6,
+    "field_confidence": {
+      "category": 0.6,
+      "subcategory": 0.55,
+      "website_type": 0.62,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#021093",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#021093",
+      "#fcfcfc",
+      "#d9d9d9",
+      "#e2f3e3"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#021093",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fcfcfc",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9d9d9",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e2f3e3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "chico",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          24
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "mitulxshah@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "New York City, NY, US"
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/typicalmitul"
+  },
+  "seo": {
+    "title": "Mitul Shah",
+    "description": "Design engineer, photographer, and a bit more."
+  },
+  "pages": {
+    "homepage": "https://mitul.ca/",
+    "about": "https://mitul.ca/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000062",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Rig AI Inc.",
+    "domain": "rig.ai",
+    "url": "https://rig.ai/",
+    "slug": "rig",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.86,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#ed462d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#22c55e"
+    ],
+    "background_colors": [
+      "#0a0a0a",
+      "#ffffff"
+    ],
+    "text_color": "#f0ede6",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f0ede6",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ed462d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#22c55e",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Instrument Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          19
+        ]
+      },
+      {
+        "name": "Chalet",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          19,
+          112
+        ]
+      },
+      {
+        "name": "Chivo Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          4,
+          21
+        ]
+      },
+      {
+        "name": "Geist Pixel Square",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Render",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Render"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@rig.ai",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/get-rig",
+    "x": "https://x.com/rig_code"
+  },
+  "seo": {
+    "title": "Rig AI Inc.",
+    "description": "A complete AI coding agent that executes entirely on your machine. No API calls. No usage caps. No cloud dependency."
+  },
+  "pages": {
+    "homepage": "https://rig.ai/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

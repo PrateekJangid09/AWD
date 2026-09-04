@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000037",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Victoria Lavine",
+    "domain": "victorialavine.com",
+    "url": "https://www.victorialavine.com/",
+    "slug": "victorialavine",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Events",
+    "website_type": "Travel Blog",
+    "audience": [],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.72,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#f73a5a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#a423b2"
+    ],
+    "background_colors": [
+      "#ffebf1",
+      "#ffffff",
+      "#f4e2d2"
+    ],
+    "text_color": "#460f4c",
+    "palette": [
+      {
+        "hex": "#ffebf1",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#460f4c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f73a5a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4e2d2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#a423b2",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "newKansasLightItalic",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          96
+        ]
+      },
+      {
+        "name": "Courier Prime",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      },
+      {
+        "name": "moontime",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          60,
+          96
+        ]
+      },
+      {
+        "name": "newKansas",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "jessica@inkwellmanagement.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Victoria Lavine",
+    "description": "Fall in love laughing with Victoria Lavine, internationally bestselling romance and romcom author. Discover heartwarming stories full of humor, heart, and happily ever afters."
+  },
+  "pages": {
+    "homepage": "https://www.victorialavine.com/",
+    "about": "https://www.victorialavine.com/books/not-that-kind-of-proposal",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

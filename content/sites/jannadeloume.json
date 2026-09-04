@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000092",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Janna Deloume",
+    "domain": "jannadeloume.com",
+    "url": "https://jannadeloume.com/",
+    "slug": "jannadeloume",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Education",
+    "subcategory": "Online Courses",
+    "website_type": "Course Platform",
+    "audience": [
+      "Students"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.79,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#7cbde2",
+    "secondary_color": null,
+    "accent_colors": [
+      "#f88379"
+    ],
+    "background_colors": [
+      "#fff9eb",
+      "#ffffff",
+      "#d4d4d4"
+    ],
+    "text_color": "#1a1a1a",
+    "palette": [
+      {
+        "hex": "#fff9eb",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#7cbde2",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d4d4d4",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f88379",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          40
+        ]
+      },
+      {
+        "name": "EB Garamond",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          64
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      },
+      {
+        "name": "Open Runde",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "all@once.hi",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Janna Deloume",
+    "description": "Learn French that you can actually speak. Individual lessons, group classes, and recorded courses for B1\u2013C2 learners. Real conversations from day one."
+  },
+  "pages": {
+    "homepage": "https://jannadeloume.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

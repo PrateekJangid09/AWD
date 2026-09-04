@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000196",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Lance",
+    "domain": "lance.app",
+    "url": "https://www.lance.app/",
+    "slug": "lance",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Developers",
+      "B2C",
+      "Startups"
+    ],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": 0.85,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#340e1e",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff1f73",
+      "#2ec772",
+      "#ff5c5c"
+    ],
+    "background_colors": [
+      "#101013"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#101013",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#340e1e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff1f73",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#2ec772",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff5c5c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          60
+        ]
+      },
+      {
+        "name": "Geist Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "wh@changed.wh",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Lance",
+    "description": "Lance AI connects to Claude Code, Cursor, and Codex through MCP and handles your App Store Connect work: builds, TestFlight, submissions, and rejections."
+  },
+  "pages": {
+    "homepage": "https://www.lance.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://www.lance.app/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

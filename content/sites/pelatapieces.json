@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000119",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Pelata Pieces 2024",
+    "domain": "pelatapieces.com",
+    "url": "https://www.pelatapieces.com/",
+    "slug": "pelatapieces",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Home & Lifestyle",
+    "subcategory": "Gardening",
+    "website_type": "Directory",
+    "audience": [
+      "Consumers",
+      "Homeowners"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.75,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ff7711",
+    "secondary_color": null,
+    "accent_colors": [
+      "#00a8e5",
+      "#149848",
+      "#e0bf4a"
+    ],
+    "background_colors": [
+      "#fdfcfb"
+    ],
+    "text_color": "#646450",
+    "palette": [
+      {
+        "hex": "#fdfcfb",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#646450",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff7711",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#00a8e5",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#149848",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0bf4a",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABCDailySlabMono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          16,
+          18
+        ]
+      },
+      {
+        "name": "BasteB",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          130,
+          130
+        ]
+      },
+      {
+        "name": "GT Zirkon",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          18
+        ]
+      },
+      {
+        "name": "Times New Roman",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "pieces@finnishdesignshop.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Pelata Pieces 2024",
+    "description": "Explore Pelata Pieces by Finnish Design Shop and turn your home into a playground. Let the fun and games begin \u2013 discover your new quirky favorite games today!"
+  },
+  "pages": {
+    "homepage": "https://www.pelatapieces.com/",
+    "about": "https://www.pelatapieces.com/about",
+    "contact": "https://www.pelatapieces.com/contact",
+    "pricing": "https://www.pelatapieces.com/pricing",
+    "careers": "https://www.pelatapieces.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000316",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Story Page",
+    "domain": "gt-eesti.com",
+    "url": "https://gt-eesti.com/",
+    "slug": "gt-eesti",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ff2800",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff7800",
+      "#0050ff",
+      "#fff000"
+    ],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff2800",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff7800",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#0050ff",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff000",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "GT-Eesti-Display-Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          21,
+          79
+        ]
+      },
+      {
+        "name": "GT-Eesti-Text-Book",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          25,
+          30
+        ]
+      },
+      {
+        "name": "GT-Eesti-Text-Bold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          30,
+          30
+        ]
+      },
+      {
+        "name": "GT-Eesti-Text-Light",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          30,
+          30
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Story Page",
+    "description": "GT Eesti is a characterful geometric sans serif"
+  },
+  "pages": {
+    "homepage": "https://gt-eesti.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

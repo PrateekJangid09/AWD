@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000128",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Shiori",
+    "domain": "shiori.sh",
+    "url": "https://www.shiori.sh/",
+    "slug": "shiori",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Media Website",
+    "audience": [
+      "Developers",
+      "B2C"
+    ],
+    "confidence": 0.69,
+    "field_confidence": {
+      "category": 0.69,
+      "subcategory": 0.64,
+      "website_type": 0.72,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#d27d32",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ff8c42"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#ff8c42",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d27d32",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter Variable",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "l@er.start",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Shiori",
+    "description": "Personal memory for you and your AI"
+  },
+  "pages": {
+    "homepage": "https://www.shiori.sh/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000262",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "DAPP BOI",
+    "domain": "dappboi.com",
+    "url": "https://dappboi.com/",
+    "slug": "dappboi",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Crypto",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.79,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Helvetica Neue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          232
+        ]
+      },
+      {
+        "name": "Neue Pixel Grotesk",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "UNPKG"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "DAPP BOI",
+    "description": "An experiment in personal cryptocurrency tokens. Redeem 1.0 BOI for 1.0 hour of design work."
+  },
+  "pages": {
+    "homepage": "https://dappboi.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

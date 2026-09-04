@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000175",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Won Agency",
+    "domain": "won.agency",
+    "url": "https://www.won.agency/",
+    "slug": "won",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Agency Website",
+    "audience": [
+      "Startups",
+      "B2B",
+      "Enterprises"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.71,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#25292b",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#25292b",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#141415",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#898d99",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "twkLausanne",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          184
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@won.agency",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Burj Khalifa Boulevard, Dubai, Dubai, 5001, AE"
+  },
+  "social": {
+    "linkedin": "http://linkedin.com/company/wonagency",
+    "x": null
+  },
+  "seo": {
+    "title": "Won Agency",
+    "description": "Top award winning branding design studio for ambitious companies. We craft brands, products, and digital experiences that win."
+  },
+  "pages": {
+    "homepage": "https://www.won.agency/",
+    "about": "https://www.won.agency/won-design-agency-dubai",
+    "contact": "https://www.won.agency/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

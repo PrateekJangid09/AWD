@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000248",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Harry Moses",
+    "domain": "harrymoses.com",
+    "url": "https://www.harrymoses.com/",
+    "slug": "harrymoses",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Designer",
+    "website_type": "Resume Website",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.74,
+    "field_confidence": {
+      "category": 0.74,
+      "subcategory": 0.69,
+      "website_type": 0.62,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f7f7f7",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f7f7f7"
+    ],
+    "text_color": "#0c0a0c",
+    "palette": [
+      {
+        "hex": "#f7f7f7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c0a0c",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Apple Garamond Light Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          50,
+          51
+        ]
+      },
+      {
+        "name": "Arial Black Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          72,
+          72
+        ]
+      },
+      {
+        "name": "Arial Narrow Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      },
+      {
+        "name": "Apple Garamond Regular",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "harry@harrymoses.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Harry Moses",
+    "description": "I'm Harry, a graphic designer and creative based in Manchester, UK. I offer creative solutions with personality \u2013 whether it be via a sense of humour or a little touch of weird."
+  },
+  "pages": {
+    "homepage": "https://www.harrymoses.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

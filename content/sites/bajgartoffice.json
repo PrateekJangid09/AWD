@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000135",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Bajgart Office: Your shortcut to a brand that connects meaning with feeling.",
+    "domain": "bajgartoffice.com",
+    "url": "https://bajgartoffice.com/",
+    "slug": "bajgartoffice",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Travel Blog",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.73,
+    "field_confidence": {
+      "category": 0.73,
+      "subcategory": 0.68,
+      "website_type": 0.66,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0f00fe",
+    "secondary_color": null,
+    "accent_colors": [
+      "#189e48",
+      "#db12ff"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0f00fe",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#212121",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#189e48",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#db12ff",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Saans Regular",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          70
+        ]
+      },
+      {
+        "name": "Rhymes Text Light",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          56,
+          72
+        ]
+      },
+      {
+        "name": "Rhymes Text Light Italic",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          56,
+          72
+        ]
+      },
+      {
+        "name": "Saans Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/luciebajgart",
+    "x": "https://x.com/LucieBajgart"
+  },
+  "seo": {
+    "title": "Bajgart Office: Your shortcut to a brand that connects meaning with feeling.",
+    "description": "Branding for founders and startups in tech who want high-quality design delivered fast. A clear process, no overhead, no layers. A result you\u2019ll keep falling for at a fraction of agency cost."
+  },
+  "pages": {
+    "homepage": "https://bajgartoffice.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

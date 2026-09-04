@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000134",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Rotate\u00b0",
+    "domain": "studiorotate.com",
+    "url": "https://studiorotate.com/",
+    "slug": "studiorotate",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.77,
+    "field_confidence": {
+      "category": 0.77,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#131113",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Graphik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Unit 6 5 Durham Yard, Teesdale Street, London, E2 6QF, GB"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/studiorotate",
+    "x": "https://www.twitter.com/studiorotate"
+  },
+  "seo": {
+    "title": "Rotate\u00b0",
+    "description": "Headless eCommerce leaders, without compromise. Beautiful, bespoke & built-to-last experiences. All grounded in strategy, geared for high growth."
+  },
+  "pages": {
+    "homepage": "https://studiorotate.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

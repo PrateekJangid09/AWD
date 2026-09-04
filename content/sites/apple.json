@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000185",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Apple",
+    "domain": "apple.com",
+    "url": "https://www.apple.com/",
+    "slug": "apple",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": "RetailTech",
+    "website_type": "Entertainment Portal",
+    "audience": [
+      "B2B",
+      "B2C",
+      "Consumers"
+    ],
+    "confidence": 0.81,
+    "field_confidence": {
+      "category": 0.81,
+      "subcategory": 0.76,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#5e7eaf",
+    "secondary_color": null,
+    "accent_colors": [
+      "#2d2a45",
+      "#9fc6f4",
+      "#56412b"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#5e7eaf",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#2d2a45",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#9fc6f4",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#56412b",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "SF Pro Text",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          34
+        ]
+      },
+      {
+        "name": "SF Pro Display",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          21,
+          56
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "ed@support.apple.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/apple",
+    "x": "https://www.twitter.com/Apple"
+  },
+  "seo": {
+    "title": "Apple",
+    "description": "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support."
+  },
+  "pages": {
+    "homepage": "https://www.apple.com/",
+    "about": "https://www.apple.com/about",
+    "contact": "https://www.apple.com/contact/",
+    "pricing": "not found",
+    "careers": "https://www.apple.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000019",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Fourmula.ai",
+    "domain": "fourmula.ai",
+    "url": "https://fourmula.ai/",
+    "slug": "fourmula",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": "Product Website",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.71,
+    "field_confidence": {
+      "category": 0.71,
+      "subcategory": null,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#d7d7d6"
+    ],
+    "text_color": "#020108",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#020108",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d7d7d6",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Sf Pro Display",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          8,
+          100
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "gener@ions.easy",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Fourmula.ai",
+    "description": "Generate professional product shots, lifestyle images, and videos instantly with AI. Transform your catalog with on-brand visual assets in seconds."
+  },
+  "pages": {
+    "homepage": "https://fourmula.ai/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

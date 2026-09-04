@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000026",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Cai Tobin",
+    "domain": "caitobin.com",
+    "url": "https://www.caitobin.com/",
+    "slug": "caitobin",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": null,
+    "audience": [
+      "Developers"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0f1f3d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#1a3260",
+      "#d63c2a",
+      "#f0c040"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#dde1ea"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0f1f3d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a3260",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#dde1ea",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d63c2a",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#f0c040",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          8,
+          13
+        ]
+      },
+      {
+        "name": "Bebas Neue",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          374
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Cai Tobin",
+    "description": "Official links for Cai Tobin."
+  },
+  "pages": {
+    "homepage": "https://www.caitobin.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000037",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Madie",
+    "domain": "madie.es",
+    "url": "https://madie.es/",
+    "slug": "madie",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Food & Agriculture",
+    "subcategory": null,
+    "website_type": "Web Application",
+    "audience": [],
+    "confidence": 0.64,
+    "field_confidence": {
+      "category": 0.64,
+      "subcategory": null,
+      "website_type": 0.75,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#3d0012",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff99d3",
+      "#63001e"
+    ],
+    "background_colors": [
+      "#f6efe6",
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#f6efe6",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#3d0012",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff99d3",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#63001e",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "cottorway",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          9,
+          96
+        ]
+      },
+      {
+        "name": "dazzle",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          96
+        ]
+      },
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          11
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          11,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@madie.es",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "C/ de Donoso Cort\u00e9s, 62, Madrid, Comunidad de Madrid, 28015, ES"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Madie",
+    "description": "Madeleines francesas reci\u00e9n horneadas cada ma\u00f1ana, con nuevos sabores cada semana. Caf\u00e9 de especialidad, matcha y ube lattes en Chamber\u00ed. Abierto todos los d\u00edas."
+  },
+  "pages": {
+    "homepage": "https://madie.es/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

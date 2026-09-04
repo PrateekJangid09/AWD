@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000071",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Forward",
+    "domain": "framer.ai",
+    "url": "https://forward.framer.ai/",
+    "slug": "framer",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Events",
+    "website_type": "Booking Website",
+    "audience": [
+      "Travellers",
+      "Event Attendees"
+    ],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": 0.62,
+      "website_type": 0.64,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#0000ee",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0d0d0d",
+      "#fcfcfc"
+    ],
+    "text_color": "#d4d4d4",
+    "palette": [
+      {
+        "hex": "#0d0d0d",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#d4d4d4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0000ee",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#212121",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#fcfcfc",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          18
+        ]
+      },
+      {
+        "name": "Satoshi",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          82
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Forward",
+    "description": "Bold, high-impact, and interactive Framer template for design, AI, and tech conferences. CMS-powered speakers, multi-day schedule, gallery, and newsletter form - ready to launch in a day."
+  },
+  "pages": {
+    "homepage": "https://forward.framer.ai/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

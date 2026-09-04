@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000040",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "The Frontend Subscription Startups Choose",
+    "domain": "frontend.supply",
+    "url": "https://frontend.supply/",
+    "slug": "frontend",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Development",
+    "website_type": "Streaming Platform",
+    "audience": [
+      "Startups"
+    ],
+    "confidence": 0.73,
+    "field_confidence": {
+      "category": 0.73,
+      "subcategory": 0.68,
+      "website_type": 0.88,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#ff9999",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f7f7f7",
+      "#ebebeb"
+    ],
+    "text_color": "#1c1c1c",
+    "palette": [
+      {
+        "hex": "#f7f7f7",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1c1c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff9999",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ebebeb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#2e2e2e",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Roboto Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          8,
+          8
+        ]
+      },
+      {
+        "name": "inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          42
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "collabor@ion.priv",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/dogukanui"
+  },
+  "seo": {
+    "title": "The Frontend Subscription Startups Choose",
+    "description": "Fractional in-house frontend development for startups"
+  },
+  "pages": {
+    "homepage": "https://frontend.supply/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

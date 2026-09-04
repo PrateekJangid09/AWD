@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000004",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "wild",
+    "domain": "wild.as",
+    "url": "https://craft.wild.as/",
+    "slug": "wild-as",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.59,
+    "field_confidence": {
+      "category": 0.59,
+      "subcategory": 0.54,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#e0492a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#3b5bd9",
+      "#1c2541"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#2a2a2a",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#2a2a2a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0492a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a0a0a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#3b5bd9",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c2541",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Sneak",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          75
+        ]
+      },
+      {
+        "name": "SFMono-Regular",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          9,
+          11
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          17,
+          17
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@wild.as",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "wild",
+    "description": "Craft is the constant. Engineering, and now AI, is how we make more of it. A point of view from wild, a design and technology studio born in Vienna."
+  },
+  "pages": {
+    "homepage": "https://craft.wild.as/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

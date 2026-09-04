@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000233",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "lancebank.co",
+    "domain": "lancebank.co",
+    "url": "https://www.lancebank.co/",
+    "slug": "lancebank",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "SaaS Website",
+    "audience": [
+      "Enterprises",
+      "B2B"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.68,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0ea5e9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0369a1",
+      "#bae6fd"
+    ],
+    "background_colors": [
+      "#f0f9ff",
+      "#e5e7eb"
+    ],
+    "text_color": "#0c4a6e",
+    "palette": [
+      {
+        "hex": "#f0f9ff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c4a6e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0ea5e9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#0369a1",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#bae6fd",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e7eb",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          24
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "lancebank.co",
+    "description": "PushSaaS \u2013 the #1 SaaS submission service that boosts your online visibility and SEO. Get manual submissions to hundreds of high-authority directories with verified live links and screenshots, saving time while driving traffic and increasing your product\u2019s discoverability."
+  },
+  "pages": {
+    "homepage": "https://www.lancebank.co/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

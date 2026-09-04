@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NL9HNRBM');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZPWN6GTTE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3ZPWN6GTTE');
+</script>
+<link rel="icon" type="image/png" href="/logo.png" />
+<meta name="google-adsense-account" content="ca-pub-9336436557815535" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9336436557815535" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#09090B" />
+  <meta name="robots" content="index,follow" />
+  <title>TrueGradient – OKLCH Gradient Generator</title>
+  <meta name="description" content="OKLCH gradient generator for HEX stops. Compare the same gradient in sRGB and native OKLCH, inspect hue routes, and copy production-ready CSS." />
+  <link rel="canonical" href="https://allwebsites.design/tools/truegradient" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AllWebsites.design" />
+  <meta property="og:title" content="TrueGradient – OKLCH Gradient Generator" />
+  <meta property="og:description" content="Same colors. Different interpolation. Compare native OKLCH and sRGB using the same CSS gradient stops." />
+  <meta property="og:url" content="https://allwebsites.design/tools/truegradient" />
+  <meta property="og:image" content="https://allwebsites.design/tools/previews/truegradient.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://allwebsites.design/tools/previews/truegradient.webp" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://allwebsites.design/#organization",
+      "name": "AllWebsites.Design",
+      "url": "https://allwebsites.design"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://allwebsites.design/#website",
+      "url": "https://allwebsites.design",
+      "name": "AllWebsites.Design",
+      "publisher": {
+        "@id": "https://allwebsites.design/#organization"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://allwebsites.design/tools/truegradient/#app",
+      "name": "TrueGradient",
+      "url": "https://allwebsites.design/tools/truegradient",
+      "description": "OKLCH gradient generator for HEX stops. Compare the same gradient in sRGB and native OKLCH, inspect hue routes, and copy production-ready CSS.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web browser",
+      "browserRequirements": "Requires a modern web browser with JavaScript enabled",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Native OKLCH CSS gradient interpolation",
+        "Same-stop sRGB comparison",
+        "Hue-route inspection",
+        "HEX fallback sampling",
+        "Runs locally in the browser, no signup"
+      ],
+      "publisher": {
+        "@id": "https://allwebsites.design/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://allwebsites.design/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://allwebsites.design/tools/truegradient/#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://allwebsites.design/tools/truegradient/#faq",
+      "isPartOf": {
+        "@id": "https://allwebsites.design/#website"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is TrueGradient an OKLCH gradient generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but its main purpose is controlling and comparing gradient interpolation rather than simply picking two colors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does TrueGradient change my endpoint colors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The native comparison keeps the same stops and positions while changing the interpolation space."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the live OKLCH result native CSS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes when the browser supports CSS gradient interpolation in OKLCH. TrueGradient detects support and clearly labels the status."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the HEX fallback native OKLCH?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It samples the OKLCH path and converts the result into ordinary sRGB-compatible HEX stops."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is OKLCH always better than sRGB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They are different interpolation choices. Use the path that produces the result you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import any CSS gradient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. The current parser intentionally supports HEX-based linear-gradient() values."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many stops can I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The current editor supports 2–6 stops."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is ΔEOK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a perceptual color-distance measure in OKLab. TrueGradient uses it to compare results; it is not a quality score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does TrueGradient relate to WebPalette?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WebPalette builds a role-based website palette. TrueGradient is the OKLCH gradient generator for interpolating stops. Name colours in Chromary and study live sites in the archive."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://allwebsites.design/tools/truegradient/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://allwebsites.design"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://allwebsites.design/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "TrueGradient"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <link rel="stylesheet" href="/tools/truegradient/styles.css" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL9HNRBM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link" href="#workspace">Skip to TrueGradient</a>
+
+  <div class="app-shell">
+    <header class="nav" aria-label="TrueGradient navigation">
+      <a class="brand" href="/" aria-label="AllWebsites.design home">
+        <img class="brand-mark-img" src="/tools/truegradient/logo.png" alt="" width="26" height="26" />
+        <span class="brand-copy"><strong>TrueGradient</strong><small>by AllWebsites.design</small></span>
+      </a>
+      <div class="nav-meta">
+        <a class="nav-all-tools" href="/archive">Archive</a>
+        <a class="nav-all-tools" href="/tools">← All tools</a>
+        <span class="native-pill">Native OKLCH</span>
+        <button class="quiet-btn" id="reset" type="button">Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <p class="eyebrow">OKLCH GRADIENT TOOL · BY ALLWEBSITES.DESIGN</p>
+        <h1 id="pageTitle">OKLCH gradient generator for HEX stops.</h1>
+        <p class="intro-copy">Paste a HEX gradient or build one from scratch. Compare the exact same stops in sRGB and native OKLCH, inspect hue routes, and copy production-ready CSS.</p>
+        <div class="intro-actions">
+          <button class="primary-action" id="pasteCta" type="button">Paste a gradient</button>
+          <button class="secondary-action" id="compareCta" type="button">See the difference</button>
+        </div>
+        <p class="proof-strip" aria-label="Product capabilities">Native CSS <span>·</span> 4 hue routes <span>·</span> Named-color search <span>·</span> No signup</p>
+      </section>
+
+      <section class="workspace" id="workspace" aria-label="TrueGradient workspace">
+        <div class="workspace-topbar">
+          <div class="support-status" id="supportStatus" role="status" aria-live="polite">
+            <span class="support-dot" aria-hidden="true"></span>
+            <span id="supportText">Checking native OKLCH support…</span>
+          </div>
+          <div class="mode-switch" role="group" aria-label="Preview interpolation mode">
+            <button data-mode="oklch" type="button">OKLCH</button>
+            <button data-mode="compare" type="button">Compare</button>
+            <button data-mode="srgb" type="button">sRGB</button>
+          </div>
+        </div>
+
+        <div class="hero-preview" id="heroPreview" data-mode="compare" aria-label="Gradient preview and inspector">
+          <div class="preview-layer srgb-layer" id="srgbLayer" aria-hidden="true"></div>
+          <div class="preview-layer oklch-layer" id="oklchLayer" aria-hidden="true"></div>
+          <div class="compare-divider" id="compareDivider">
+            <button id="compareHandle" type="button" role="slider" tabindex="0" aria-label="Comparison divider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50 percent OKLCH revealed" title="Drag to compare interpolation"></button>
+          </div>
+          <span class="preview-label left">sRGB</span>
+          <span class="preview-label right">OKLCH</span>
+          <div class="scrubber" id="scrubber" aria-hidden="true"><span></span></div>
+        </div>
+
+        <div class="inspector-intro">
+          <div>
+            <p class="kicker">INSPECTOR</p>
+            <h2>Inspect this point</h2>
+          </div>
+          <p>Drag across the gradient to compare the color produced by each interpolation path at the same position.</p>
+        </div>
+
+        <div class="preview-readout" aria-label="Gradient inspector values">
+          <div><small>Position</small><b class="mono" id="readPosition">50%</b></div>
+          <div><small>OKLCH path</small><b class="mono" id="readHex">—</b><code id="readOklch">—</code></div>
+          <div><small>sRGB path</small><b class="mono" id="readSrgbHex">—</b><code id="readDelta">—</code></div>
+          <div><small>sRGB mapping</small><b id="readGamut">—</b><code id="readMapDelta">—</code></div>
+        </div>
+        <p class="compare-instruction" id="compareInstruction">Drag the center handle to compare interpolation.</p>
+      </section>
+
+      <section class="editor-grid" aria-label="Gradient controls and analysis">
+        <section class="editor-panel" aria-labelledby="gradientHeading">
+          <div class="panel-heading">
+            <div><span class="step-number">01</span><h2 id="gradientHeading">Gradient</h2></div>
+            <button id="addStop" class="add-btn" type="button" title="Adds a stop inside the largest gap using the current OKLCH path as the starting color.">+ Add stop</button>
+          </div>
+
+          <div class="paste-block">
+            <label for="gradientInput">Paste a CSS gradient</label>
+            <p>Current import supports HEX-based <code>linear-gradient()</code> values.</p>
+            <div class="paste-field">
+              <input id="gradientInput" type="text" placeholder="linear-gradient(90deg, #0000FF, #FFFF00)" spellcheck="false" autocomplete="off" />
+              <button id="convertInput" type="button">Convert</button>
+            </div>
+            <p class="field-message" id="parseMessage" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="stop-editor-head">
+            <div>
+              <h3>Color stops</h3>
+              <p>Use the picker, enter a HEX value, or search a color name.</p>
+            </div>
+          </div>
+          <div id="stopEditor" class="stop-editor"></div>
+
+          <div class="control-row">
+            <label for="angle"><span>Angle</span><div class="compact-input"><input id="angle" type="number" min="0" max="360" step="1" inputmode="numeric" /><small>°</small></div></label>
+          </div>
+
+          <div class="hue-section">
+            <div class="control-label">
+              <div><span>Hue route</span><small>Choose which way OKLCH travels around the hue circle.</small></div>
+            </div>
+            <div class="segmented" id="hueModes" role="group" aria-label="OKLCH hue interpolation route">
+              <button data-hue="shorter" type="button" title="Takes the shorter arc between hues.">Shorter</button>
+              <button data-hue="longer" type="button" title="Takes the longer arc between hues.">Longer</button>
+              <button data-hue="increasing" type="button" title="Always moves toward increasing hue angles.">Increasing</button>
+              <button data-hue="decreasing" type="button" title="Always moves toward decreasing hue angles.">Decreasing</button>
+            </div>
+          </div>
+
+          <details class="advanced-settings">
+            <summary>Advanced fallback settings</summary>
+            <label for="samples"><span>Fallback samples</span><div class="compact-input"><input id="samples" type="number" min="9" max="129" step="8" inputmode="numeric" /><small>samples</small></div></label>
+            <p>Most workflows can keep the default 33 samples. This setting only affects the portable HEX fallback.</p>
+          </details>
+        </section>
+
+        <section class="analysis-panel" aria-labelledby="analysisHeading">
+          <div class="panel-heading">
+            <div><span class="step-number">02</span><h2 id="analysisHeading">Why it changes</h2></div>
+          </div>
+
+          <p class="analysis-summary" id="metricSentence">The endpoints are the same. The interpolation path is not.</p>
+
+          <div class="metric-grid">
+            <article>
+              <small>sRGB midpoint</small>
+              <div class="metric-color"><i id="srgbMidSwatch" aria-hidden="true"></i><b id="srgbMidHex">—</b></div>
+              <code id="srgbMidOklch">—</code>
+            </article>
+            <article class="oklch-card">
+              <small>OKLCH midpoint</small>
+              <div class="metric-color"><i id="oklchMidSwatch" aria-hidden="true"></i><b id="oklchMidHex">—</b></div>
+              <code id="oklchMidOklch">—</code>
+            </article>
+          </div>
+
+          <div class="analysis-metrics">
+            <div>
+              <span>Midpoint difference</span>
+              <strong class="mono"><span id="metricDelta">0.000</span> ΔEOK</strong>
+              <small>Perceptual distance measured in OKLab. This is not a quality score.</small>
+            </div>
+            <div>
+              <span>Midpoint chroma</span>
+              <strong class="mono">sRGB <b id="srgbChroma">—</b> · OKLCH <b id="oklchChroma">—</b></strong>
+              <small>Higher chroma is not automatically better.</small>
+            </div>
+          </div>
+          <p class="analysis-note">These measurements explain a difference. They do not decide which gradient is better.</p>
+        </section>
+      </section>
+
+      <section class="compare-section" aria-labelledby="comparisonHeading">
+        <div class="section-title">
+          <span class="step-number">03</span>
+          <div><h2 id="comparisonHeading">Same colors. Different interpolation.</h2><p>Both gradients use the exact same stops, positions and angle. Only the interpolation space changes.</p></div>
+        </div>
+        <div class="compare-cards">
+          <article>
+            <div class="compare-head"><span>Interpolation space</span><b>sRGB</b></div>
+            <div class="compare-gradient" id="compareSrgb" aria-label="sRGB gradient preview"></div>
+            <p>Traditional sRGB interpolation.</p>
+          </article>
+          <article class="featured">
+            <div class="compare-head"><span>Interpolation space</span><b>Native OKLCH</b></div>
+            <div class="compare-gradient" id="compareOklch" aria-label="OKLCH gradient preview"></div>
+            <p>Interpolation through perceptual lightness, chroma and hue.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="export-section" aria-labelledby="outputHeading">
+        <div class="section-title">
+          <span class="step-number">04</span>
+          <div><h2 id="outputHeading">Copy the gradient you actually want to ship.</h2><p>Native first. Fallback second.</p></div>
+        </div>
+        <div class="export-grid">
+          <article class="export-card primary">
+            <div class="export-head">
+              <div><span class="output-badge">PRIMARY OUTPUT</span><h3>Native CSS</h3><p>The browser performs the OKLCH interpolation.</p></div>
+              <button data-copy-target="nativeCode" data-copy-kind="native" type="button">Copy native CSS</button>
+            </div>
+            <pre tabindex="0"><code id="nativeCode"></code></pre>
+            <footer><span>Browser interpolates the gradient</span><span>No inserted midpoint colors</span></footer>
+          </article>
+
+          <article class="export-card fallback-card">
+            <div class="export-head">
+              <div><span class="fallback-badge">PORTABLE</span><h3>HEX fallback</h3><p>Samples the OKLCH path and exports conventional sRGB-compatible HEX stops.</p></div>
+              <button data-copy-target="fallbackCode" data-copy-kind="fallback" type="button">Copy fallback</button>
+            </div>
+            <pre tabindex="0"><code id="fallbackCode"></code></pre>
+            <footer><span id="sampleCount">33 samples</span><span id="mappedCount">0 gamut-mapped</span></footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-section" aria-labelledby="methodHeading">
+        <div><p class="kicker">METHOD</p><h2 id="methodHeading">Native first. Fallback second.</h2></div>
+        <p>The live OKLCH result uses native CSS interpolation when the browser supports it. The fallback is generated separately by sampling the OKLCH path and mapping those samples into sRGB where necessary. They solve different compatibility needs.</p>
+      </section>
+
+      <section class="education-section" aria-labelledby="educationHeading">
+        <div class="education-lead">
+          <p class="kicker">HOW IT WORKS</p>
+          <h2 id="educationHeading">A gradient is more than its endpoints.</h2>
+          <p>The browser has to calculate every color between your stops. Change the interpolation space and that journey changes. TrueGradient keeps the stops fixed so the difference is visible, inspectable and reproducible.</p>
+        </div>
+        <div class="education-grid">
+          <article>
+            <h3>sRGB vs OKLCH</h3>
+            <p>Traditional web gradients commonly interpolate legacy colors through sRGB channels. OKLCH describes color through perceptual lightness, chroma and hue. Neither is automatically “better”; they create different paths.</p>
+          </article>
+          <article>
+            <h3>What does <code>in oklch</code> mean?</h3>
+            <p>Native CSS declares OKLCH as the interpolation space. The browser calculates the colors between your original stops rather than TrueGradient inserting decorative midpoint colors.</p>
+          </article>
+          <article>
+            <h3>Hue routes</h3>
+            <p>Hue wraps around a circle. Shorter, longer, increasing and decreasing routes let you choose which direction OKLCH travels while keeping the endpoints fixed.</p>
+          </article>
+          <article>
+            <h3>Native vs fallback</h3>
+            <p>The native output is actual OKLCH interpolation. The HEX fallback is a sampled approximation for workflows that need ordinary sRGB-compatible stops.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faqHeading">
+        <p class="kicker">FAQ</p>
+        <h2 id="faqHeading">TrueGradient questions</h2>
+        <div class="faq-list">
+          <details><summary>Is TrueGradient an OKLCH gradient generator?</summary><p>Yes, but its main purpose is controlling and comparing gradient interpolation rather than simply picking two colors.</p></details>
+          <details><summary>Does TrueGradient change my endpoint colors?</summary><p>The native comparison keeps the same stops and positions while changing the interpolation space.</p></details>
+          <details><summary>Is the live OKLCH result native CSS?</summary><p>Yes when the browser supports CSS gradient interpolation in OKLCH. TrueGradient detects support and clearly labels the status.</p></details>
+          <details><summary>Is the HEX fallback native OKLCH?</summary><p>No. It samples the OKLCH path and converts the result into ordinary sRGB-compatible HEX stops.</p></details>
+          <details><summary>Is OKLCH always better than sRGB?</summary><p>No. They are different interpolation choices. Use the path that produces the result you want.</p></details>
+          <details><summary>Can I import any CSS gradient?</summary><p>Not yet. The current parser intentionally supports HEX-based <code>linear-gradient()</code> values.</p></details>
+          <details><summary>How many stops can I use?</summary><p>The current editor supports 2–6 stops.</p></details>
+          <details><summary>What is ΔEOK?</summary><p>It is a perceptual color-distance measure in OKLab. TrueGradient uses it to compare results; it is not a quality score.</p></details>
+          <details><summary>How does TrueGradient relate to WebPalette?</summary><p><a href="/tools/webpalette">WebPalette</a> is the website color palette generator. TrueGradient is the OKLCH gradient generator for interpolating stops. Name colours in <a href="/tools/chromary">Chromary</a>, build harmonies in <a href="/tools/colorhyme">Colorhyme</a>, or study live sites in the <a href="/archive">archive</a>.</p></details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>TrueGradient</span>
+      <span>Native OKLCH Gradient &amp; Interpolation Tool</span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="sr-only" id="liveRegion" role="status" aria-live="polite"></div>
+  <script type="module" src="/tools/truegradient/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000110",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Branding",
+    "domain": "erickvelasco.com",
+    "url": "https://www.erickvelasco.com/",
+    "slug": "erickvelasco",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Portfolio",
+    "audience": [
+      "B2B"
+    ],
+    "confidence": 0.73,
+    "field_confidence": {
+      "category": 0.73,
+      "subcategory": 0.68,
+      "website_type": 0.71,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0b0b0b",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0b0b0b",
+      "#ffffff",
+      "#d5d5d5"
+    ],
+    "text_color": "#b6b6b6",
+    "palette": [
+      {
+        "hex": "#0b0b0b",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b6b6b6",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#484848",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#2d2d2d",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d5d5d5",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Fff Acidgrotesk Book",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          15
+        ]
+      },
+      {
+        "name": "Fff Acidgrotesk Light",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          23,
+          23
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@erickvelasco.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/velascoerick",
+    "x": null
+  },
+  "seo": {
+    "title": "Branding",
+    "description": "Brands, products, and services driven by function, form, and conversion. Based in Spain, working online worldwide."
+  },
+  "pages": {
+    "homepage": "https://www.erickvelasco.com/",
+    "about": "https://www.erickvelasco.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

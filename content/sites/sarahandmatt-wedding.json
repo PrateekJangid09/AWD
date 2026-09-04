@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000015",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "sarahandmatt.wedding",
+    "domain": "sarahandmatt.wedding",
+    "url": "https://www.sarahandmatt.wedding/",
+    "slug": "sarahandmatt-wedding",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Home & Lifestyle",
+    "subcategory": "Weddings",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Consumers",
+      "Couples"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.83,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#242b16",
+    "secondary_color": null,
+    "accent_colors": [
+      "#eac5c0",
+      "#83bec2"
+    ],
+    "background_colors": [
+      "#faf7f5",
+      "#dcd3ca"
+    ],
+    "text_color": "#0d0b0a",
+    "palette": [
+      {
+        "hex": "#faf7f5",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0d0b0a",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#242b16",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#eac5c0",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#dcd3ca",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#83bec2",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Instrument Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          36
+        ]
+      },
+      {
+        "name": "Romie",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          64,
+          317
+        ]
+      },
+      {
+        "name": "Spezia Extended",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "me@co.burger",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "sarahandmatt.wedding",
+    "description": "Join us as we celebrate our wedding at Excelsior, Lancaster, PA."
+  },
+  "pages": {
+    "homepage": "https://www.sarahandmatt.wedding/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

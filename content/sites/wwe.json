@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000002",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "WWE",
+    "domain": "wwe.com",
+    "url": "https://www.wwe.com/",
+    "slug": "wwe",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "News",
+    "website_type": "Streaming Platform",
+    "audience": [
+      "Viewers"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.79,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#00263d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#003250",
+      "#d7182a"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#00263d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#1d1d1d",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#003250",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#d7182a",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Roboto",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          32
+        ]
+      },
+      {
+        "name": "Roboto Slab",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          20
+        ]
+      },
+      {
+        "name": "OpenSans",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "HeadingProDouble",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "clubwwesupport@wwe.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "WWE",
+    "description": "Watch every Premium Live Event and get unlimited access to WWE's premium content - available to you anywhere, anytime, on any device."
+  },
+  "pages": {
+    "homepage": "https://www.wwe.com/",
+    "about": "not found",
+    "contact": "https://www.wwe.com/main-help/contact-us",
+    "pricing": "not found",
+    "careers": "https://corporate.wwe.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

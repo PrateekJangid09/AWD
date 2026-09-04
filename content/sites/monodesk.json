@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000124",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "MonoDesk",
+    "domain": "monodesk.com",
+    "url": "https://www.monodesk.com/",
+    "slug": "monodesk",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Magazines",
+    "website_type": "Portfolio",
+    "audience": [
+      "B2C"
+    ],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.81,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#1c64f5",
+    "secondary_color": null,
+    "accent_colors": [
+      "#2c48e3"
+    ],
+    "background_colors": [
+      "#dadee1"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#dadee1",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c64f5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#212121",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#2c48e3",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Geist",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          72
+        ]
+      },
+      {
+        "name": "Geist Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@monodesk.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/_MonoDesk"
+  },
+  "seo": {
+    "title": "MonoDesk",
+    "description": "Win the work, run it, keep clients in the loop, and get paid. Proposals, projects, a client portal and invoices in one calm workspace, with an AI Co-Worker for the admin. Built for creative pros. Free during beta."
+  },
+  "pages": {
+    "homepage": "https://www.monodesk.com/",
+    "about": "https://www.monodesk.com/about-us",
+    "contact": "not found",
+    "pricing": "https://www.monodesk.com/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

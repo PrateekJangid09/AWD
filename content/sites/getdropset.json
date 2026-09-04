@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000032",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Dropset",
+    "domain": "getdropset.app",
+    "url": "https://www.getdropset.app/",
+    "slug": "getdropset",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Healthcare & Wellness",
+    "subcategory": "Fitness",
+    "website_type": "Mobile App Website",
+    "audience": [],
+    "confidence": 0.74,
+    "field_confidence": {
+      "category": 0.74,
+      "subcategory": 0.69,
+      "website_type": 0.85,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0a0a0d",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0a0a0d",
+      "#e6e6e6"
+    ],
+    "text_color": "#a8a9b2",
+    "palette": [
+      {
+        "hex": "#0a0a0d",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#a8a9b2",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#2e2e33",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e6e6e6",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#525359",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Eina03",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          80
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@getdropset.app",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Dropset",
+    "description": "Serious tracking for serious gym workouts"
+  },
+  "pages": {
+    "homepage": "https://www.getdropset.app/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

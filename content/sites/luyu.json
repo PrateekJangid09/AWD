@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000231",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Lu Yu",
+    "domain": "luyu.co",
+    "url": "https://luyu.co/",
+    "slug": "luyu",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": null,
+    "website_type": "Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.84,
+    "field_confidence": {
+      "category": 0.84,
+      "subcategory": null,
+      "website_type": 0.84,
+      "audience": 0.75
+    }
+  },
+  "design": {
+    "primary_color": "#cba5ea",
+    "secondary_color": null,
+    "accent_colors": [
+      "#b7a1e2"
+    ],
+    "background_colors": [
+      "#2c2c30"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#2c2c30",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#cba5ea",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#090809",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#717073",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#b7a1e2",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "patron",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          26
+        ]
+      },
+      {
+        "name": "Patron-Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          24,
+          77
+        ]
+      },
+      {
+        "name": "CosiAzure-Bold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          140,
+          140
+        ]
+      },
+      {
+        "name": "CosiTimes-Bold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          36,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "lugotype@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/Lugotype"
+  },
+  "seo": {
+    "title": "Lu Yu",
+    "description": "Welcome to the portfolio of Lu Yu, a designer specializing in brand & interactive design."
+  },
+  "pages": {
+    "homepage": "https://luyu.co/",
+    "about": "https://luyu.co/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

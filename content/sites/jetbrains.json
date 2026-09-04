@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000258",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "JetBrains",
+    "domain": "jetbrains.com",
+    "url": "https://www.jetbrains.com/",
+    "slug": "jetbrains",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": null,
+    "website_type": null,
+    "audience": [],
+    "confidence": 0.71,
+    "field_confidence": {
+      "category": 0.71,
+      "subcategory": null,
+      "website_type": null,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0094a9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#5a1fd0",
+      "#f311b4"
+    ],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0094a9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#19191c",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#5a1fd0",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#f311b4",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "JetBrains Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          13,
+          79
+        ]
+      },
+      {
+        "name": "JetSites Cookie Banner JetBrains Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on AWS",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "AWS"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/jetbrains",
+    "x": "https://x.com/jetbrains"
+  },
+  "seo": {
+    "title": "JetBrains",
+    "description": "JetBrains is a cutting-edge software vendor specializing in the creation of intelligent development tools, including IntelliJ IDEA \u2013 the leading Java IDE, and the Kotlin programming language."
+  },
+  "pages": {
+    "homepage": "https://www.jetbrains.com/",
+    "about": "https://www.jetbrains.com/company",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://www.jetbrains.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

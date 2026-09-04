@@ -1,70 +1,33 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+build
+# debug
 # dependencies
-/node_modules
-**/node_modules
-landing-directory/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-.vercel
-.netlify
-
-# misc
+dist
 .DS_Store
-*.pem
+# env
 .env
 .env*.local
-
-# debug
+.next
+next-env.d.ts
+# next.js
+node_modules
 npm-debug.log*
+# os
+out
+playwright-report
+.pnp
+.pnp.js
+# production
+__pycache__/
+test-results
+Thumbs.db
+# tooling
+tools-src/**/dist
+tools-src/**/node_modules
+tools-src/**/*.tsbuildinfo
+*.tsbuildinfo
+# typescript
+# vercel
+.vercel
 yarn-debug.log*
 yarn-error.log*
-
-# local env files
-.env*.local
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# turbo
-.turbo
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# screenshots now included in git for team access
-# /public/screenshots/*.webp
-# /public/screenshots/*.jpg
-# /public/screenshots/*.png
-
-# data exports
-/data/missing-urls.json
-/data/websites.backup.*.csv
-
-# scripts output files
-/scripts/*.json
-
-# cache files
-**/.next/cache/
-landing-directory/.next/
-
-.vercel
-
-.vercel

@@ -1,141 +1,112 @@
-import type { Metadata } from 'next';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import type { Metadata } from "next";
+import Link from "next/link";
+import DocumentHero from "@/components/DocumentHero";
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - AllWebsites.Design',
-  description: 'Privacy Policy for AllWebsites.Design. Learn how we collect, use, and protect your data.',
-  alternates: {
-    canonical: '/privacy',
-  },
+  title: "Privacy Policy",
+  description:
+    "How AllWebsites.Design collects, uses and protects information across the archive.",
+  alternates: { canonical: "https://allwebsites.design/privacy-policy" },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-8">
-            Privacy Policy
-          </h1>
-          
-          <div className="prose prose-lg max-w-none text-foreground/80 space-y-6">
-            <p className="text-sm text-foreground/60">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      <DocumentHero
+        title="Privacy Policy"
+        description="What AllWebsites.Design collects, why, and the controls you have. We aim to collect as little as possible."
+        updated="11 August 2026"
+        breadcrumb={[{ href: "/", label: "Home" }, { label: "Privacy" }]}
+      />
+
+      <section className="py-14 sm:py-20">
+        <div className="wrap grid gap-12 lg:grid-cols-[0.28fr_0.72fr]">
+          {/* TOC */}
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-ink/45">
+              On this page
             </p>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                1. Introduction
-              </h2>
-              <p>
-                AllWebsites.Design (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
-                This Privacy Policy explains how we collect, use, disclose, and safeguard your information
-                when you visit our website.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                2. Information We Collect
-              </h2>
-              <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">
-                2.1 Automatically Collected Information
-              </h3>
-              <p>
-                When you visit our website, we may automatically collect certain information about your
-                device, including information about your web browser, IP address, time zone, and some
-                of the cookies that are installed on your device.
-              </p>
-              
-              <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">
-                2.2 Analytics
-              </h3>
-              <p>
-                We use analytics services (such as Vercel Analytics) to collect information about how
-                visitors interact with our website. This may include pages visited, time spent on pages,
-                and other usage statistics.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                3. How We Use Your Information
-              </h2>
-              <p>We use the information we collect to:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Provide, maintain, and improve our services</li>
-                <li>Analyze usage patterns and trends</li>
-                <li>Ensure website security and prevent fraud</li>
-                <li>Comply with legal obligations</li>
-              </ul>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                4. Cookies and Tracking Technologies
-              </h2>
-              <p>
-                We use cookies and similar tracking technologies to track activity on our website and
-                hold certain information. You can instruct your browser to refuse all cookies or to
-                indicate when a cookie is being sent.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                5. Third-Party Services
-              </h2>
-              <p>
-                Our website may contain links to third-party websites or services. We are not responsible
-                for the privacy practices of these third parties. We encourage you to read their privacy
-                policies.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                6. Data Security
-              </h2>
-              <p>
-                We implement appropriate technical and organizational measures to protect your information.
-                However, no method of transmission over the Internet or electronic storage is 100% secure.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                7. Your Rights
-              </h2>
-              <p>
-                Depending on your location, you may have certain rights regarding your personal information,
-                including the right to access, correct, or delete your data.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                8. Changes to This Privacy Policy
-              </h2>
-              <p>
-                We may update our Privacy Policy from time to time. We will notify you of any changes
-                by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-semibold text-foreground mt-8 mb-4">
-                9. Contact Us
-              </h2>
-              <p>
-                If you have any questions about this Privacy Policy, please contact us through our website.
-              </p>
-            </section>
-          </div>
+            <ul className="mt-4 space-y-2 text-sm">
+              {[
+                ["what-we-collect", "What we collect"],
+                ["how-we-use-it", "How we use it"],
+                ["processors", "Service providers"],
+                ["your-controls", "Your controls"],
+                ["contact", "Contact"],
+              ].map(([id, label]) => (
+                <li key={id}>
+                  <a href={`#${id}`} className="text-ink/60 hover:text-orange">
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+
+          {/* Body */}
+          <article className="prose max-w-2xl">
+            <p>
+              AllWebsites.Design is an independent website-design research archive.
+              This policy explains what information the archive collects, why, and the
+              controls you have. We aim to collect as little as possible.
+            </p>
+
+            <h2 id="what-we-collect">What we collect</h2>
+            <h3>Automatically</h3>
+            <ul>
+              <li>Analytics information about how the archive is used</li>
+              <li>Device and browser information</li>
+              <li>IP-related information</li>
+              <li>Page and performance information</li>
+            </ul>
+            <h3>When you interact</h3>
+            <p>Depending on the workflow, we may collect:</p>
+            <ul>
+              <li>Email address</li>
+              <li>Name</li>
+              <li>Message content</li>
+              <li>A website URL and submission notes</li>
+            </ul>
+
+            <h2 id="how-we-use-it">How we use it</h2>
+            <ul>
+              <li>Operating and improving the archive</li>
+              <li>Measuring performance</li>
+              <li>Responding to messages and processing submissions</li>
+              <li>Newsletter communication you opt into</li>
+              <li>Abuse prevention and legal requirements</li>
+            </ul>
+
+            <h2 id="processors">Service providers</h2>
+            <p>
+              We rely on a small set of service providers for functions such as
+              hosting, analytics, performance monitoring and form delivery. These
+              providers process data on our behalf and under our instructions.
+            </p>
+
+            <h2 id="your-controls">Your controls</h2>
+            <p>You can, at any time:</p>
+            <ul>
+              <li>Unsubscribe from newsletter communications</li>
+              <li>Request access to your information</li>
+              <li>Request correction of your information</li>
+              <li>Request deletion through the contact workflow</li>
+            </ul>
+            <p>
+              You can also manage optional analytics cookies from our{" "}
+              <Link href="/cookies">cookie preferences</Link> page.
+            </p>
+
+            <h2 id="contact">Contact</h2>
+            <p>
+              Privacy questions and data requests can be sent through our{" "}
+              <Link href="/contact">contact page</Link>. We respond to verified
+              requests within a reasonable period.
+            </p>
+          </article>
         </div>
-      </main>
-      <Footer />
+      </section>
     </>
   );
 }

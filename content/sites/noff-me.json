@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000321",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Hi, I'm Adam.",
+    "domain": "noff.me",
+    "url": "https://noff.me/",
+    "slug": "noff-me",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Writer",
+    "website_type": "Personal Portfolio",
+    "audience": [],
+    "confidence": 0.7,
+    "field_confidence": {
+      "category": 0.7,
+      "subcategory": 0.65,
+      "website_type": 0.68,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#0a0a0a",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0a0a0a",
+      "#ffffff"
+    ],
+    "text_color": "#707070",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#707070",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#4d4d4d",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "MonumentGrotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          18
+        ]
+      },
+      {
+        "name": "ReplicaLLWeb-Bold",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          18,
+          36
+        ]
+      },
+      {
+        "name": "ReplicaMonoLLWeb-Regular",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          10,
+          14
+        ]
+      },
+      {
+        "name": "MonumentGroteskMedium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Fastly"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "adam.noffsinger@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/anoffsinger",
+    "x": "https://twitter.com/anoffsinger"
+  },
+  "seo": {
+    "title": "Hi, I'm Adam.",
+    "description": "A designer, wannabe engineer, and sometimes writer."
+  },
+  "pages": {
+    "homepage": "https://noff.me/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

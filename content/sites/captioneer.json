@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000019",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Captioneer for Premiere",
+    "domain": "captioneer.com",
+    "url": "https://www.captioneer.com/",
+    "slug": "captioneer",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": "Ecommerce",
+    "website_type": "Pricing Website",
+    "audience": [
+      "B2C",
+      "Consumers"
+    ],
+    "confidence": 0.67,
+    "field_confidence": {
+      "category": 0.67,
+      "subcategory": 0.62,
+      "website_type": 0.71,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#d9c7ff",
+    "secondary_color": null,
+    "accent_colors": [
+      "#734bfe",
+      "#00f8da"
+    ],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": "#321d73",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#321d73",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#d9c7ff",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#734bfe",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#00f8da",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          96
+        ]
+      },
+      {
+        "name": "Univia Pro Ultra",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          187,
+          259
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "podcast@perle.dei.podcast",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Captioneer for Premiere",
+    "description": "Unlimited captions for all major languages. The fastest & easiest animated captions for video editors working in Adobe Premiere Pro and After Effects."
+  },
+  "pages": {
+    "homepage": "https://www.captioneer.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000035",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Abstract 3D Illustrations vol.2",
+    "domain": "wannathis.one",
+    "url": "https://abstract-vol2.wannathis.one/",
+    "slug": "wannathis",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": null,
+    "website_type": "Portfolio",
+    "audience": [
+      "D2C"
+    ],
+    "confidence": 0.62,
+    "field_confidence": {
+      "category": 0.62,
+      "subcategory": null,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#1045b6",
+    "secondary_color": null,
+    "accent_colors": [
+      "#f39761"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#c4c4c4"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1045b6",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#505050",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f39761",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#c4c4c4",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Neuemontreal",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          150
+        ]
+      },
+      {
+        "name": "Inconsolata",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "AWS CloudFront",
+      "Bunny CDN",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "help@wannathis.one",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/wannathis3d"
+  },
+  "seo": {
+    "title": "Abstract 3D Illustrations vol.2",
+    "description": "Welcome to the curated collection of 54 unique crafted elements, each created to inspire and bring your design projects to life."
+  },
+  "pages": {
+    "homepage": "https://abstract-vol2.wannathis.one/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

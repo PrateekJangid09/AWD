@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000076",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "L'Aia e il Pagliaio",
+    "domain": "laiaeilpagliaio.it",
+    "url": "https://laiaeilpagliaio.it/en/",
+    "slug": "laiaeilpagliaio",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Legal & Government",
+    "subcategory": null,
+    "website_type": "Directory",
+    "audience": [],
+    "confidence": 0.64,
+    "field_confidence": {
+      "category": 0.64,
+      "subcategory": null,
+      "website_type": 0.79,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#aa542d",
+    "secondary_color": null,
+    "accent_colors": [
+      "#d89961"
+    ],
+    "background_colors": [
+      "#231d0e",
+      "#ffffff"
+    ],
+    "text_color": "#eae5da",
+    "palette": [
+      {
+        "hex": "#231d0e",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#eae5da",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#aa542d",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#d89961",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Poppins",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          19
+        ]
+      },
+      {
+        "name": "Instrument Serif",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          14,
+          99
+        ]
+      },
+      {
+        "name": "Amelia Poppins",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "LiteSpeed"
+    ]
+  },
+  "contact": {
+    "email": "info@laiaeilpagliaio.it",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "L'Aia e il Pagliaio",
+    "description": "The historical site we propose to visit represented a functional and irreplaceable structure for the ancient masserie (farmhouses) of the area, used for harvesting and processing wheat and other cereals until the 1960s and beyond."
+  },
+  "pages": {
+    "homepage": "https://laiaeilpagliaio.it/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

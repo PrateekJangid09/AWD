@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000150",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "the-sustainable.dev",
+    "domain": "the-sustainable.dev",
+    "url": "https://the-sustainable.dev/",
+    "slug": "the-sustainable",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Nonprofit & Social Impact",
+    "subcategory": "Sustainability",
+    "website_type": "Information Portal",
+    "audience": [
+      "Communities"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.78,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#7bdcb5",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ffcb70"
+    ],
+    "background_colors": [
+      "#f6f2f0",
+      "#acc6bf",
+      "#ffffff"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#f6f2f0",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#7bdcb5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffcb70",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#acc6bf",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "the-sustainable.dev",
+    "description": "Articles and resources that enable you to design and build a greener, more sustainable website. Lower the carbon footprint of your website today."
+  },
+  "pages": {
+    "homepage": "https://the-sustainable.dev/",
+    "about": "https://the-sustainable.dev/about/",
+    "contact": "https://the-sustainable.dev/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

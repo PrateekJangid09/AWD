@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000055",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Branding & Web Design Agency in Surrey | Fairground Studio",
+    "domain": "fairground.studio",
+    "url": "https://fairground.studio/",
+    "slug": "fairground",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Design",
+    "website_type": "Portfolio",
+    "audience": [],
+    "confidence": 0.94,
+    "field_confidence": {
+      "category": 0.94,
+      "subcategory": 0.89,
+      "website_type": 0.7,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ceff00",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#101010"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#101010",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ceff00",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#666666",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "LufgaLight",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          24
+        ]
+      },
+      {
+        "name": "LufgaBold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          52
+        ]
+      },
+      {
+        "name": "LufgaRegular",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          13,
+          20
+        ]
+      },
+      {
+        "name": "LufgaBlack",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          28,
+          28
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "hello@fairground.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/fairground-studio",
+    "x": null
+  },
+  "seo": {
+    "title": "Branding & Web Design Agency in Surrey | Fairground Studio",
+    "description": "Fairground Studio is a digital design agency in Greater London and Surrey crafting and elevating brands today for tomorrow."
+  },
+  "pages": {
+    "homepage": "https://fairground.studio/",
+    "about": "not found",
+    "contact": "https://fairground.studio/contact",
+    "pricing": "not found",
+    "careers": "https://fairground.studio/join-us"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

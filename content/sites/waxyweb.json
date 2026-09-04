@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000025",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "WaxyWeb",
+    "domain": "waxyweb.com",
+    "url": "https://waxyweb.com/",
+    "slug": "waxyweb",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Case Study Website",
+    "audience": [],
+    "confidence": 0.85,
+    "field_confidence": {
+      "category": 0.85,
+      "subcategory": 0.8,
+      "website_type": 0.85,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#ffade4",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0088cc",
+      "#25a750",
+      "#fff570"
+    ],
+    "background_colors": [
+      "#000000",
+      "#f0f0f0"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffade4",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#0088cc",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#25a750",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#f0f0f0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff570",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "HelveticaNeue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          120
+        ]
+      },
+      {
+        "name": "EditorialLight",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          80,
+          120
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/waxyweb",
+    "x": "https://x.com/waxyweb"
+  },
+  "seo": {
+    "title": "WaxyWeb",
+    "description": "Elevate your brand with bold designs, smart strategies, and real results. At Waxy Web, we turn ideas into extraordinary realities. Let\u2019s create some Waxy together."
+  },
+  "pages": {
+    "homepage": "https://waxyweb.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

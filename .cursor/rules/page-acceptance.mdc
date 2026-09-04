@@ -1,0 +1,64 @@
+---
+description: SEO and AEO acceptance contract for any page, post or template change on allwebsites.design
+globs:
+  - "app/**/*.tsx"
+  - "content/journal/**/*.tsx"
+  - "lib/seo.ts"
+  - "lib/journal.ts"
+  - "lib/insights.ts"
+alwaysApply: false
+---
+
+# Page acceptance contract
+
+Full detail in `docs/page-acceptance-checklist.md`. Satisfy all of it before
+returning a page, post or template change.
+
+## Non negotiable
+
+- **Robots:** `index, follow` for real content, `noindex, follow` for genuine
+  placeholders. Never emit `nofollow` on our own pages, not even on a stub.
+- **Canonical:** self referencing, bare domain (`https://allwebsites.design`),
+  from `metadataBase`. Never a `www` URL.
+- **Metadata:** build it with `pageMeta()` from `lib/seo.ts`. Do not hand roll a
+  `Metadata` object. Descriptions must land in 150 to 165 characters; use
+  `fitDescription()` when the text is generated.
+- **One H1** in plain words. H2s phrased as the questions people type.
+- **Answer block:** the first paragraph under the H1 is a self contained 40 to
+  60 word answer that makes sense quoted alone.
+- **Schema describes only what is visible.** If you emit `FAQPage`, every
+  question and answer must be rendered on the page. This is checked.
+
+## Statistics
+
+Never write a number into prose. Compute it in `lib/insights.ts` from the
+canonical record set and interpolate it, and surface its sample size next to it.
+If a figure cannot be derived from `content/sites/*.json`, leave it out.
+
+## Dates
+
+Use `recordDates()` and respect its `exact` flag. When it is false the date
+belongs to the archive release, not to a per record check, and the page must say
+"Archive revision" rather than "Last checked". Never invent a timestamp.
+
+## Adding a journal post
+
+1. Add the entry to `JOURNAL` in `lib/journal.ts`: slug, title, h1, description,
+   answer, `keyStat`, 3 to 5 `faqs`, 5 to 10 `fanout` questions, dates, status.
+2. Add the body at `content/journal/<slug>.tsx` using the parts in
+   `components/journal/ArticleParts.tsx`, including a `Method` block that states
+   how each number was produced and a `Related` block with at least three links.
+3. Register the body in `content/journal/index.ts`.
+4. Sitemap, site map, footer and `llms.txt` pick it up automatically. Drafts are
+   excluded from the sitemap because they carry `noindex`.
+
+## Before returning
+
+Run the gate and fix every failure:
+
+```bash
+npm run build && npm start -- -p 4360 &
+npm run seo:check -- --base http://localhost:4360 --all
+```
+
+Do not use the em dash character in generated page copy.

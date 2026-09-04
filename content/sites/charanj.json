@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000229",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Charanjit Chana",
+    "domain": "charanj.it",
+    "url": "https://charanj.it/",
+    "slug": "charanj",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "SaaS",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "Developers",
+      "Enterprises"
+    ],
+    "confidence": 0.72,
+    "field_confidence": {
+      "category": 0.72,
+      "subcategory": 0.67,
+      "website_type": 0.64,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#f5f5f5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f5f5f5",
+      "#e5e5e5"
+    ],
+    "text_color": "#1f1f1f",
+    "palette": [
+      {
+        "hex": "#f5f5f5",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1f1f1f",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e5e5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#7d7d7d",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/cchana",
+    "x": "https://twitter.com/cchana"
+  },
+  "seo": {
+    "title": "Charanjit Chana",
+    "description": "Charanjit Chana spent 21 years as a website and web applications developer. Now the Head of Development at Maglabs."
+  },
+  "pages": {
+    "homepage": "https://charanj.it/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

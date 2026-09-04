@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000309",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Ruben Kuipers | Freelance UX/UI/Product Designer & Front-end developer",
+    "domain": "rubenkuipers.design",
+    "url": "https://rubenkuipers.design/",
+    "slug": "rubenkuipers",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Portfolio",
+    "subcategory": "Designer",
+    "website_type": "Personal Portfolio",
+    "audience": [
+      "Agencies"
+    ],
+    "confidence": 0.8,
+    "field_confidence": {
+      "category": 0.8,
+      "subcategory": 0.75,
+      "website_type": 0.78,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#007acc",
+    "secondary_color": null,
+    "accent_colors": [
+      "#00083d"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e5e7eb"
+    ],
+    "text_color": "#5b6e80",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#5b6e80",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#007acc",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e7eb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#00083d",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "sofia-pro",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "hi@rubenkuipers.design",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Jasper Ribbers"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/rubenkuipers",
+    "x": "https://twitter.com/rubenkuipersux"
+  },
+  "seo": {
+    "title": "Ruben Kuipers | Freelance UX/UI/Product Designer & Front-end developer",
+    "description": "I help users and businesses reach their goals by designing & building meaningful digital products and interactive experiences"
+  },
+  "pages": {
+    "homepage": "https://rubenkuipers.design/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

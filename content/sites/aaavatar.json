@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000050",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Aaavatar",
+    "domain": "aaavatar.nl",
+    "url": "https://aaavatar.nl/",
+    "slug": "aaavatar",
+    "favicon": null
+  },
+  "classification": {
+    "category": null,
+    "subcategory": null,
+    "website_type": "Ecommerce Store",
+    "audience": [
+      "Developers",
+      "D2C",
+      "Members"
+    ],
+    "confidence": null,
+    "field_confidence": {
+      "category": null,
+      "subcategory": null,
+      "website_type": 0.75,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#eeeeee"
+    ],
+    "text_color": "#999999",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#999999",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#eeeeee",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#6e6e6e",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          24
+        ]
+      },
+      {
+        "name": "Gilroy Bold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          32,
+          40
+        ]
+      },
+      {
+        "name": "Inter Variable",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "autom@ically.pick",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Aaavatar",
+    "description": "One look for every team portrait"
+  },
+  "pages": {
+    "homepage": "https://aaavatar.nl/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

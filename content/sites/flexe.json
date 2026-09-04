@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000216",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Flexe",
+    "domain": "flexe.com",
+    "url": "https://flexe.com/",
+    "slug": "flexe",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Logistics",
+    "website_type": "Corporate Website",
+    "audience": [
+      "Enterprises",
+      "B2B"
+    ],
+    "confidence": 0.93,
+    "field_confidence": {
+      "category": 0.93,
+      "subcategory": 0.88,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#000063",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#191919"
+    ],
+    "text_color": "#f2ebe4",
+    "palette": [
+      {
+        "hex": "#191919",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2ebe4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000063",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c0c0c",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#403e3a",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          9,
+          16
+        ]
+      },
+      {
+        "name": "Reckless Neue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          24,
+          58
+        ]
+      },
+      {
+        "name": "Lausanne",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "Roboto",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "WordPress",
+    "builder_cms": [],
+    "framework": [],
+    "language": "PHP",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/flexe",
+    "x": "https://twitter.com/flexe"
+  },
+  "seo": {
+    "title": "Flexe",
+    "description": "Flexe is North America's largest on-demand flexible warehouse network: 3,000+ warehouses, transactional pricing, no long-term leases required."
+  },
+  "pages": {
+    "homepage": "https://flexe.com/",
+    "about": "https://flexe.com/company/about/",
+    "contact": "https://flexe.com/contact-us/",
+    "pricing": "https://discover.flexe.com/flexe-value?scenario=custom",
+    "careers": "https://flexe.com/careers/"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

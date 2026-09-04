@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000069",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "\u0421\u0421\u0422\u0420",
+    "domain": "sstr.tech",
+    "url": "https://sstr.tech/en/",
+    "slug": "sstr-tech",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Engineering",
+    "website_type": "Portfolio",
+    "audience": [
+      "Engineers"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.83,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#fe5b2a",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#eff0f1",
+      "#c3c4c8"
+    ],
+    "text_color": "#0c0c0c",
+    "palette": [
+      {
+        "hex": "#eff0f1",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c0c0c",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#fe5b2a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#18191b",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#c3c4c8",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#2f3032",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "ABC Monument Grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          96
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          32
+        ]
+      },
+      {
+        "name": "Abc Monument Grotesk",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "ABC Monument Grotesk Cyrillic Mono Variable",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          10,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "info@sstr.tech",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "\u0421\u0421\u0422\u0420",
+    "description": "Friction, vibration, and load-transfer control in oil drilling. FRS, SVR, T&D modeling, on-site engineering support."
+  },
+  "pages": {
+    "homepage": "https://sstr.tech/",
+    "about": "https://sstr.tech/en/about/",
+    "contact": "https://sstr.tech/en/contacts/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

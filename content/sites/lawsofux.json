@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000237",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Laws of UX",
+    "domain": "lawsofux.com",
+    "url": "https://lawsofux.com/",
+    "slug": "lawsofux",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Legal & Government",
+    "subcategory": null,
+    "website_type": "Blog",
+    "audience": [],
+    "confidence": 0.78,
+    "field_confidence": {
+      "category": 0.78,
+      "subcategory": null,
+      "website_type": 0.84,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#e95444",
+    "secondary_color": null,
+    "accent_colors": [
+      "#42928c",
+      "#cfbb28"
+    ],
+    "background_colors": [
+      "#edede9"
+    ],
+    "text_color": "#060f13",
+    "palette": [
+      {
+        "hex": "#edede9",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#060f13",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#e95444",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#42928c",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#cfbb28",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "IBM Plex Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          15,
+          62
+        ]
+      },
+      {
+        "name": "IBM Plex Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Hugo on Netlify",
+    "builder_cms": [],
+    "framework": [
+      "Hugo"
+    ],
+    "language": "Static HTML (Go SSG)",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "jon@jonyablonski.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/jonyablonski"
+  },
+  "seo": {
+    "title": "Laws of UX",
+    "description": "Laws of UX is a collection of best practices that designers can consider when building user interfaces."
+  },
+  "pages": {
+    "homepage": "https://lawsofux.com/",
+    "about": "not found",
+    "contact": "https://lawsofux.com/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

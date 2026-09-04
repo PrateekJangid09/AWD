@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000001",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "RankBeaver",
+    "domain": "rankbeaver.com",
+    "url": "https://rankbeaver.com",
+    "slug": "rankbeaver",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": "SEO",
+    "website_type": "Agency Website",
+    "audience": [
+      "Local Service Businesses",
+      "Marketers"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.79,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#3389f9",
+    "secondary_color": null,
+    "accent_colors": [
+      "#2563eb",
+      "#bfdbfe"
+    ],
+    "background_colors": [
+      "#f7fafc",
+      "#dbeafe"
+    ],
+    "text_color": "#1d4ed8",
+    "palette": [
+      {
+        "hex": "#f7fafc",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#1d4ed8",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#3389f9",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#dbeafe",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#2563eb",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#bfdbfe",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "DM Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          48
+        ]
+      },
+      {
+        "name": "Fraunces",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          68
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Astro",
+    "builder_cms": [],
+    "framework": [
+      "Astro"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "vijay@rankbeaver.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Sharjah Media City, Sharjah, UAE, Sharjah, AE"
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "RankBeaver",
+    "description": "50+ pest and lawn businesses trust RankBeaver for Local SEO and GBP optimization that has generated $17M+ in leads. Want your phone to ring consistently? Book a free consultation today."
+  },
+  "pages": {
+    "homepage": "https://rankbeaver.com/",
+    "about": "https://rankbeaver.com/about",
+    "contact": "https://rankbeaver.com/contact",
+    "pricing": "https://rankbeaver.com/pricing",
+    "careers": "https://rankbeaver.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

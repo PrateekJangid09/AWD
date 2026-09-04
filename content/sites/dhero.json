@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000096",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "digitalhero",
+    "domain": "dhero.studio",
+    "url": "https://dhero.studio/",
+    "slug": "dhero",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Studio Website",
+    "audience": [
+      "Enterprises",
+      "B2B",
+      "Startups"
+    ],
+    "confidence": 0.92,
+    "field_confidence": {
+      "category": 0.92,
+      "subcategory": 0.87,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0d2847",
+    "secondary_color": null,
+    "accent_colors": [
+      "#301c3b"
+    ],
+    "background_colors": [
+      "#0a0a0a",
+      "#eeeeee"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0d2847",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#191919",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#301c3b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#eeeeee",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "dhero",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          152
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Netlify",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Netlify"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@dhero.studio",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Zinca Golescu 31, Bucharest, Sector 6, 060241, RO"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/dherostudio",
+    "x": "https://x.com/dhero_studio"
+  },
+  "seo": {
+    "title": "digitalhero",
+    "description": "Design & build studio for founders and brands. Turning pixels into websites, products and launches that convert. Shipped in weeks, not months."
+  },
+  "pages": {
+    "homepage": "https://dhero.studio/",
+    "about": "https://dhero.studio/about/",
+    "contact": "https://dhero.studio/contact/",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

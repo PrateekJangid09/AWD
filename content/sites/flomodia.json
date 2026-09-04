@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000113",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Flomodia",
+    "domain": "flomodia.com",
+    "url": "https://www.flomodia.com/",
+    "slug": "flomodia",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Blogs",
+    "website_type": "Waitlist Page",
+    "audience": [
+      "B2C",
+      "Viewers"
+    ],
+    "confidence": 0.83,
+    "field_confidence": {
+      "category": 0.83,
+      "subcategory": 0.78,
+      "website_type": 0.82,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#690714",
+    "secondary_color": null,
+    "accent_colors": [
+      "#f10424"
+    ],
+    "background_colors": [
+      "#140003"
+    ],
+    "text_color": "#f8f5e2",
+    "palette": [
+      {
+        "hex": "#140003",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f8f5e2",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#690714",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f10424",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#867b72",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Champ",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          96
+        ]
+      },
+      {
+        "name": "PP Mori",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/flomodia/?originalSubdomain=fr",
+    "x": "https://twitter.com/flomodia"
+  },
+  "seo": {
+    "title": "Flomodia",
+    "description": "Flomodia is your go-to source for insightful content and vibrant events. Join a thriving community of entrepreneurs and transform your dreams into a thriving reality with us."
+  },
+  "pages": {
+    "homepage": "https://www.flomodia.com/",
+    "about": "not found",
+    "contact": "https://www.flomodia.com/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

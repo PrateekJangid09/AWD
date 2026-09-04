@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000290",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Oak",
+    "domain": "oak.is",
+    "url": "https://oak.is/",
+    "slug": "oak-is",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Real Estate & Construction",
+    "subcategory": null,
+    "website_type": "Waitlist Page",
+    "audience": [],
+    "confidence": 0.68,
+    "field_confidence": {
+      "category": 0.68,
+      "subcategory": null,
+      "website_type": 0.59,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#2f2d76",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#2f2d76"
+    ],
+    "text_color": "#ff757d",
+    "palette": [
+      {
+        "hex": "#2f2d76",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff757d",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Input Mono Narrow",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          18
+        ]
+      },
+      {
+        "name": "Tiempos Headline",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          63,
+          63
+        ]
+      },
+      {
+        "name": "Input Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          15,
+          15
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Jekyll on AWS",
+    "builder_cms": [],
+    "framework": [
+      "Jekyll"
+    ],
+    "language": "Static HTML (Ruby SSG)",
+    "hosting": [
+      "AWS"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "info@oak.is",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/oakstudios"
+  },
+  "seo": {
+    "title": "Oak",
+    "description": "Oak Studios builds creative digital products like Dropmark and Siteleaf, invests in new ideas, and helps companies innovate."
+  },
+  "pages": {
+    "homepage": "https://oak.is/",
+    "about": "https://oak.is/about/",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://oak.is/hiring"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

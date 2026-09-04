@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000307",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "LIT Create",
+    "domain": "litcreate.com",
+    "url": "https://www.litcreate.com/",
+    "slug": "litcreate",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Business & Corporate",
+    "subcategory": "Outsourcing",
+    "website_type": "Social Platform",
+    "audience": [
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": 0.74,
+    "field_confidence": {
+      "category": 0.74,
+      "subcategory": 0.69,
+      "website_type": 0.77,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#e8e6e6",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e8e6e6",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6b6b6b",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Scto grotesk a",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          22,
+          50
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "contact@litcreate.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Berlin, DE"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/lit-create/about",
+    "x": "https://twitter.com/litdesignstudio"
+  },
+  "seo": {
+    "title": "LIT Create",
+    "description": "We create meaningful brands that transform businesses & shape organizations. Led by Strategy \u2014 expressed by design."
+  },
+  "pages": {
+    "homepage": "https://www.litcreate.com/",
+    "about": "https://www.litcreate.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://www.litcreate.com/jobs"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

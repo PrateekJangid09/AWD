@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000331",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Genesis Block",
+    "domain": "genesisblockchain.io",
+    "url": "https://www.genesisblockchain.io/",
+    "slug": "genesisblockchain",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Finance",
+    "subcategory": "Crypto",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Investors"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.73,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Rubik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          96
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Genesis Block",
+    "description": "Genesis Block invests in and manages digital asset infrastructure at thecutting edge of Web3. We deliver expertise and opportunities at theintersection of traditional financial services and digital assets, with a coreapproach focused on the growth of a global financial system underpinned bythe growt"
+  },
+  "pages": {
+    "homepage": "https://www.genesisblockchain.io/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

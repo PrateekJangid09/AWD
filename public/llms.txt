@@ -1,0 +1,68 @@
+# AllWebsites.Design
+
+> A curated website-design research archive. Browse real website design examples by industry, style, colour, typography and technology, then use free in-browser colour tools that share the same language.
+
+AllWebsites.Design publishes constructed, source-verified records. We do not invent missing facts: unproven technology or design fields stay unknown. The official destination of each site remains the authority. Every record shows its palette, typefaces, detected stack, classification confidence and last-updated date.
+
+Canonical site: https://allwebsites.design
+Contact: prateekjangid10@gmail.com
+Support: https://buymeacoffee.com/prateekjangid
+
+## Discover
+
+- [Home](https://allwebsites.design/): Website design examples, studied in depth
+- [Archive](https://allwebsites.design/archive): Search and filter every published website record
+- [Categories](https://allwebsites.design/c): Website design examples by industry
+- [2026 Website Design Index](https://allwebsites.design/research/website-design-index-2026): How the catalogue breaks down, with the method behind the counts
+- [Site map](https://allwebsites.design/site-map): Every page and record in one list
+- [Journal](https://allwebsites.design/blogs): Original research measured from the archive
+
+## Research findings
+
+Each piece below is computed from the record set at build time and states its sample size. Figures describe this catalogue, not the whole web.
+
+- [Framer vs Webflow vs Next.js vs Astro](https://allwebsites.design/blogs/framer-vs-webflow-vs-nextjs-vs-astro): What the build platform predicts about motion, type scale and style
+- [Website heading sizes by industry](https://allwebsites.design/blogs/website-heading-sizes-by-industry): Median largest heading per industry, and the most used typefaces
+- [How many accent colours websites use](https://allwebsites.design/blogs/how-many-accent-colours-websites-use): Distribution of saturated colours per palette
+
+## Tools
+
+Free, no-signup design instruments. Each owns one job and runs in the browser.
+
+- [Chromary](https://allwebsites.design/tools/chromary): Color name finder and dictionary
+- [Colorhyme](https://allwebsites.design/tools/colorhyme): Hue-shift and colour transformer
+- [WebPalette Studio](https://allwebsites.design/tools/webpalette): Role-based website palette builder
+- [Mockupalettes](https://allwebsites.design/tools/mockupalettes): Preview a 4-colour palette on a website mockup
+- [TrueGradient](https://allwebsites.design/tools/truegradient): Compare sRGB and OKLCH gradient interpolation
+- [All tools](https://allwebsites.design/tools): Toolkit overview
+
+## About
+
+- [About](https://allwebsites.design/about): How the archive, intelligence layer and workflow fit together
+- [Methodology](https://allwebsites.design/about#method): How a record is captured, extracted, classified and reviewed
+- [Manifesto](https://allwebsites.design/manifesto): Useful inspiration needs context
+- [Editorial guidelines](https://allwebsites.design/editorial-guidelines): Inclusion, classification and corrections
+- [Submit a site](https://allwebsites.design/submit): Nominate a website for review
+- [Contact](https://allwebsites.design/contact): Corrections and editorial questions
+
+## Legal
+
+- [Privacy policy](https://allwebsites.design/privacy-policy)
+- [Terms](https://allwebsites.design/terms)
+- [Cookie preferences](https://allwebsites.design/cookie-preference)
+
+## Records
+
+Website records live at `/archive/<slug>` (for example https://allwebsites.design/archive/rankbeaver). Each record opens with a short factual summary and includes identity, category, palette with hex values, typography, detected technology, screenshots, provenance and similar sites. Prefer the official URL on the record over archive commentary.
+
+Category pages live at `/c/<category-slug>`.
+
+## Citation
+
+Attribute to AllWebsites.Design and link the specific record or category URL. Counts describe this catalogue, not the whole web.
+
+## Optional
+
+- [Sitemap](https://allwebsites.design/sitemap.xml)
+- [Ads.txt](https://allwebsites.design/ads.txt)
+- [Robots](https://allwebsites.design/robots.txt)

@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000066",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Krellix",
+    "domain": "krellixlabs.com",
+    "url": "https://krellixlabs.com/en",
+    "slug": "krellixlabs",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Productivity",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.9,
+    "field_confidence": {
+      "category": 0.9,
+      "subcategory": 0.85,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#00ddb5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#141414",
+      "#ffffff"
+    ],
+    "text_color": "#c3c3c3",
+    "palette": [
+      {
+        "hex": "#141414",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#c3c3c3",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#00ddb5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#979797",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#484848",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Poppins",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          14
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          40
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "office@krellixlabs.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/krellixlabs",
+    "x": "https://x.com/krellixlabs"
+  },
+  "seo": {
+    "title": "Krellix",
+    "description": "AI copilots collaborating in a multi-agent system to improve decisions, workflows, and productivity. Start your AI workspace today."
+  },
+  "pages": {
+    "homepage": "https://krellixlabs.com/",
+    "about": "https://krellixlabs.com/en/about",
+    "contact": "https://krellixlabs.com/en/contact",
+    "pricing": "https://krellixlabs.com/en/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

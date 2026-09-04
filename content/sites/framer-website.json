@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000074",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "APEX FILMS",
+    "domain": "framer.website",
+    "url": "https://apexfilms.framer.website/",
+    "slug": "framer-website",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Industrial & Energy",
+    "subcategory": "Energy",
+    "website_type": "Corporate Website",
+    "audience": [
+      "Enterprises",
+      "Investors"
+    ],
+    "confidence": 0.7,
+    "field_confidence": {
+      "category": 0.7,
+      "subcategory": 0.65,
+      "website_type": 0.79,
+      "audience": 0.8
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "text_color": "#dcdcdc",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#dcdcdc",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#141414",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#626262",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#222222",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Fjalla One",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          18,
+          268
+        ]
+      },
+      {
+        "name": "Poppins",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [
+      "Bunny CDN"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://twitter.com/ena_supply"
+  },
+  "seo": {
+    "title": "APEX FILMS",
+    "description": "Meet Apex Films. - The ultimate portfolio template, designed to bring your work to life. A perfect choice for cinematographers, directors and creators looking to stand out from the crowd."
+  },
+  "pages": {
+    "homepage": "https://apexfilms.framer.website/",
+    "about": "https://apexfilms.framer.website/about",
+    "contact": "https://apexfilms.framer.website/contact",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

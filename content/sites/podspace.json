@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000259",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Podspace\u00ae",
+    "domain": "podspace.com",
+    "url": "https://podspace.com/",
+    "slug": "podspace",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Media & Entertainment",
+    "subcategory": "Podcasts",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Listeners",
+      "Viewers",
+      "Gamers"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": 0.84,
+      "website_type": 0.86,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#151619",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0055ff"
+    ],
+    "background_colors": [
+      "#050505",
+      "#efedfd"
+    ],
+    "text_color": "#fcfdff",
+    "palette": [
+      {
+        "hex": "#050505",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fcfdff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#151619",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#efedfd",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#9194a1",
+        "role": "secondary",
+        "coverage": 0
+      },
+      {
+        "hex": "#0055ff",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          20
+        ]
+      },
+      {
+        "name": "Inter-Medium",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          22
+        ]
+      },
+      {
+        "name": "Fellix SemiBold",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          56,
+          56
+        ]
+      },
+      {
+        "name": "Inter-SemiBold",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          11,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Framer on Framer (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Framer (managed)"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@podspace.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/podspace",
+    "x": "https://x.com/podspace_com"
+  },
+  "seo": {
+    "title": "Podspace\u00ae",
+    "description": "Podspace\u00ae is a complete podcast hosting platform and partner for indie-creators and professional publishers."
+  },
+  "pages": {
+    "homepage": "https://podspace.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://podspace.com/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000034",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Patina",
+    "domain": "patina.md",
+    "url": "https://patina.md/",
+    "slug": "patina-md",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Creator & Community",
+    "subcategory": "Social Networks",
+    "website_type": "Pricing Website",
+    "audience": [
+      "B2C",
+      "Fans",
+      "Members"
+    ],
+    "confidence": 0.72,
+    "field_confidence": {
+      "category": 0.72,
+      "subcategory": 0.67,
+      "website_type": 0.88,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#0a94f5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff",
+      "#f6e9f3",
+      "#e7f6fb",
+      "#fff1d9"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0a94f5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f6e9f3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e7f6fb",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fff1d9",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "General Sans",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          38
+        ]
+      },
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          18,
+          76
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Vercel",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Patina",
+    "description": "Patina gathers context from your everyday apps and surfaces what needs your attention."
+  },
+  "pages": {
+    "homepage": "https://patina.md/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "https://patina.md/pricing",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

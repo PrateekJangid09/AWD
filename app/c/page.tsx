@@ -1,69 +1,104 @@
-import type { Metadata } from 'next';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import LuminousGateway from '@/components/LuminousGateway';
-import SpectrumGrid from '@/components/SpectrumGrid';
-import VelocityVaultObsidian from '@/components/VelocityVaultObsidian';
-import { getWebsites } from '@/lib/data';
-import { MACRO_CATEGORIES } from '@/lib/categories';
+import type { Metadata } from "next";
+import Link from "next/link";
+import UtilityHero from "@/components/UtilityHero";
+import CategoryCard from "@/components/CategoryCard";
+import Reveal from "@/components/Reveal";
+import ExploreMore from "@/components/ExploreMore";
+import JsonLd from "@/components/JsonLd";
+import { TRENDING } from "@/lib/data";
+import { CANONICAL, liveCategories, resolveCategory } from "@/lib/canonical";
+import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
-/** Revalidate at most every 5 minutes (ISR). */
-export const revalidate = 300;
+const title = "Website Design Examples by Industry";
+const description =
+  "Browse website design examples by industry: SaaS, portfolio, agency, e-commerce and more. Each category shows how a sector handles colour, type and layout.";
 
-export const metadata: Metadata = {
-  title: 'All Categories – AllWebsites.Design',
-  description: 'Explore all website categories in our comprehensive archive.',
-  robots: { index: true },
-  alternates: { canonical: '/c' },
-};
+export const metadata: Metadata = pageMeta({
+  title,
+  description,
+  path: "/c",
+});
 
-export default async function AllCategoriesPage() {
-  const websites = await getWebsites();
-
-  // Extract and randomize websites for VelocityVaultObsidian
-  // Use featured websites if available, otherwise use all websites
-  const availableWebsites = websites.filter(w => w.featured).length >= 8 
-    ? websites.filter(w => w.featured)
-    : websites;
-  
-  // Shuffle array using Fisher-Yates algorithm
-  const shuffled = [...availableWebsites];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  
-  // Take first 8 random websites
-  const randomWebsites = shuffled.slice(0, 8);
-  
-  const vaultProps: Record<string, string> = {
-    title: "Velocity Deck",
-  };
-  
-  randomWebsites.forEach((site, index) => {
-    const i = index + 1;
-    vaultProps[`t${i}`] = site.name;
-    vaultProps[`tag${i}`] = site.displayCategory || site.category || 'Featured';
-    vaultProps[`img${i}`] = site.screenshotUrl || '';
-    vaultProps[`slug${i}`] = site.slug || '';
-  });
+export default function CategoriesPage() {
+  const categories = liveCategories().filter((category) => category.count > 0);
+  const trending = TRENDING.map(resolveCategory).filter((category) => category && category.count > 0);
 
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background">
-        <LuminousGateway 
-          title="THE ARCHIVE"
-          subtitle="A curated collection of digital design systems and templates."
-          placeholder="What are you building today?"
-        />
-        <SpectrumGrid 
-          title="BROWSE SECTORS"
-          websites={websites}
-        />
-        <VelocityVaultObsidian {...vaultProps} />
-      </main>
-      <Footer variant="inverted" />
+      <JsonLd
+        data={collectionPageGraph({
+          path: "/c",
+          name: title,
+          description,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Categories" },
+          ],
+          listName: "Website design categories",
+          items: categories.map((category) => ({
+            name: category.name,
+            url: absUrl(`/c/${category.slug}`),
+          })),
+        })}
+      />
+      <UtilityHero
+        eyebrow="Categories"
+        title="Explore by category."
+        intro="Study how different industries approach typography, layout, colour and interaction. Pick a lane and see how a whole sector presents itself."
+        breadcrumb={[{ href: "/", label: "Home" }, { label: "Categories" }]}
+        meta={`${CANONICAL.length.toLocaleString()} references · ${categories.length} categories`}
+      />
+
+      {/* Trending */}
+      <section className="border-b border-ink bg-bone py-14">
+        <div className="wrap">
+          <p className="eyebrow">Trending</p>
+          <h2 className="display mt-3 text-3xl sm:text-4xl">Trending this week</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {trending.map((c) => (
+              <CategoryCard key={c!.slug} category={c!} featured />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All categories */}
+      <section className="py-16 sm:py-20">
+        <div className="wrap">
+          <div className="flex items-end justify-between">
+            <h2 className="display text-3xl sm:text-4xl">All {categories.length} categories</h2>
+            <Link
+              href="/archive"
+              className="font-mono text-[11px] uppercase tracking-wider text-ink/60 hover:text-orange"
+            >
+              Skip to full archive →
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((c, i) => (
+              <Reveal key={c.slug} delay={(i % 3) * 60}>
+                <CategoryCard category={c} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Terminology note */}
+      <section className="border-t border-ink bg-ink py-12 text-paper">
+        <div className="wrap flex flex-col gap-3">
+          <p className="eyebrow text-white/90">On the counts</p>
+          <p className="max-w-3xl text-pretty text-paper/70">
+            Counts describe <strong className="text-paper">website examples</strong>:
+            live sites studied for their palette, typography and detected
+            technology. They are not downloadable templates or theme files. Every
+            number here is the live record count, recomputed from the archive on
+            each build.
+          </p>
+        </div>
+      </section>
+      <ExploreMore except={["/c"]} />
     </>
   );
 }

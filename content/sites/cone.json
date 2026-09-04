@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000323",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Cone",
+    "domain": "cone.app",
+    "url": "https://cone.app/",
+    "slug": "cone",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Analytics",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers"
+    ],
+    "confidence": 0.72,
+    "field_confidence": {
+      "category": 0.72,
+      "subcategory": 0.67,
+      "website_type": 0.72,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0060f1",
+    "secondary_color": null,
+    "accent_colors": [
+      "#a3d16c"
+    ],
+    "background_colors": [
+      "#000407"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#000407",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0060f1",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#a3d16c",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          11,
+          36
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Nuxt",
+    "builder_cms": [],
+    "framework": [
+      "Nuxt"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/kushsolitary"
+  },
+  "seo": {
+    "title": "Cone",
+    "description": "Capture colors live from your camera or photos, organize them effortlessly into a library, and explore detailed insights, including matching Pantone shades"
+  },
+  "pages": {
+    "homepage": "https://cone.app/",
+    "about": "not found",
+    "contact": "https://cone.app/cdn-cgi/l/email-protection#462e2f062d33352e27213427682b23",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

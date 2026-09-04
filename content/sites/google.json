@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000211",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Google Bug Hunters",
+    "domain": "google.com",
+    "url": "https://bughunters.google.com/",
+    "slug": "google",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cybersecurity",
+    "website_type": "Landing Page",
+    "audience": [
+      "B2B"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.65,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#202124",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#202124"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#202124",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Google Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          60
+        ]
+      },
+      {
+        "name": "Roboto Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      },
+      {
+        "name": "Material Icons",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          20,
+          20
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist"
+    ]
+  },
+  "technology": {
+    "summary": "Angular on Google Cloud",
+    "builder_cms": [],
+    "framework": [
+      "Angular"
+    ],
+    "language": "JavaScript / TypeScript",
+    "hosting": [
+      "Google Cloud"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "Google Bug Hunters",
+    "description": "Welcome to Google's Bug Hunting community, learn more about hunting & reporting bugs you\u2019ve found in Google products."
+  },
+  "pages": {
+    "homepage": "https://bughunters.google.com/",
+    "about": "https://bughunters.google.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

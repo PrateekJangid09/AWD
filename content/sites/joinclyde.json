@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000205",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Clyde",
+    "domain": "joinclyde.com",
+    "url": "https://joinclyde.com/",
+    "slug": "joinclyde",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": "Ecommerce",
+    "website_type": "Product Website",
+    "audience": [
+      "B2B",
+      "D2C",
+      "Retailers"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.77,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": "#f6f6f4",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f6f6f4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#262626",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#1a1a1a",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#828282",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Oldschool Grotesk",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          15,
+          138
+        ]
+      },
+      {
+        "name": "Recoleta",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          36,
+          80
+        ]
+      },
+      {
+        "name": "Oldschool Grotesk Compact",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          12
+        ]
+      }
+    ],
+    "style_tags": [
+      "Editorial",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "pl@form.request",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/joinclyde",
+    "x": "https://twitter.com/join_clyde"
+  },
+  "seo": {
+    "title": "Clyde",
+    "description": "Clyde's ownership enrichment platform helps brands deepen customer relationships and drive customer lifetime value with extended warranties, product registration, and efficient issue resolutions."
+  },
+  "pages": {
+    "homepage": "https://joinclyde.com/",
+    "about": "https://joinclyde.com/about",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "https://joinclyde.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

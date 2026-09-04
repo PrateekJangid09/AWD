@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000296",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Alessandro Scarpellini",
+    "domain": "alessandroscarpellini.it",
+    "url": "https://alessandroscarpellini.it/",
+    "slug": "alessandroscarpellini",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": "Branding",
+    "website_type": "Travel Blog",
+    "audience": [],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.67,
+      "audience": 0.0
+    }
+  },
+  "design": {
+    "primary_color": "#000000",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "HelveticaNeue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          14
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "nginx"
+    ]
+  },
+  "contact": {
+    "email": "aesse@alessandroscarpellini.it",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/scarpellinialessandro",
+    "x": "https://twitter.com/aessestudio"
+  },
+  "seo": {
+    "title": "Alessandro Scarpellini",
+    "description": "Alessandro Scarpellini is an art director and design manager from Italy specialized in strategy, branding and visual communication."
+  },
+  "pages": {
+    "homepage": "https://alessandroscarpellini.it/",
+    "about": "https://alessandroscarpellini.it/about",
+    "contact": "https://alessandroscarpellini.it/contact",
+    "pricing": "https://alessandroscarpellini.it/pricing",
+    "careers": "https://alessandroscarpellini.it/careers"
+  },
+  "screenshots": {
+    "desktop": null,
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 80,
+    "extractor_version": "2.2.0"
+  }
+}

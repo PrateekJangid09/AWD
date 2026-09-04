@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000191",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "VSCO\u00ae",
+    "domain": "vsco.co",
+    "url": "https://www.vsco.co/",
+    "slug": "vsco",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Design & Creative Tools",
+    "subcategory": "Image Editing",
+    "website_type": "Community Website",
+    "audience": [
+      "Developers",
+      "Creators",
+      "Agencies"
+    ],
+    "confidence": 0.82,
+    "field_confidence": {
+      "category": 0.82,
+      "subcategory": 0.77,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ffa72a",
+    "secondary_color": null,
+    "accent_colors": [
+      "#7bbce0"
+    ],
+    "background_colors": [
+      "#111111",
+      "#ffffff",
+      "#f2f2f2"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#111111",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffa72a",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f2f2f2",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#7bbce0",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "VSCO Gothic",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          89
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "inspir@ion.resources",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/visual-supply-co",
+    "x": "https://x.com/vsco"
+  },
+  "seo": {
+    "title": "VSCO\u00ae",
+    "description": "VSCO is a connected system built for photographers. Photo editing, filters, video, community, client galleries, studio management, business workflows, & more."
+  },
+  "pages": {
+    "homepage": "https://www.vsco.co/",
+    "about": "https://www.vsco.co/about",
+    "contact": "not found",
+    "pricing": "https://www.vsco.co/features/canvas",
+    "careers": "https://www.vsco.co/vsco-hub/photographers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000289",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "slot siteleri",
+    "domain": "somosfellas.com",
+    "url": "https://somosfellas.com/",
+    "slug": "somosfellas",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Ecommerce & Retail",
+    "subcategory": null,
+    "website_type": "Comparison Website",
+    "audience": [
+      "B2B"
+    ],
+    "confidence": 0.7,
+    "field_confidence": {
+      "category": 0.7,
+      "subcategory": null,
+      "website_type": 0.78,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#113313",
+    "secondary_color": null,
+    "accent_colors": [
+      "#18491b",
+      "#42d547",
+      "#ffeb00"
+    ],
+    "background_colors": [
+      "#081608"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#081608",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#113313",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#18491b",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#42d547",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffeb00",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Rubik",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          32
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "slot siteleri",
+    "description": "Slot bahis siteleri ve casino platformlar\u0131 hakk\u0131nda bilmeniz gereken her \u015fey. Yeni slot kumar siteleri ve yerel \u00f6deme \u00e7\u00f6z\u00fcmleri burada."
+  },
+  "pages": {
+    "homepage": "https://somosfellas.com/",
+    "about": "https://somosfellas.com/about-us",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

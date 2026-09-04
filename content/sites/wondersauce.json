@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000340",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Wondersauce",
+    "domain": "wondersauce.com",
+    "url": "https://www.wondersauce.com/",
+    "slug": "wondersauce",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Directories & Discovery",
+    "subcategory": "Search",
+    "website_type": "Campaign Website",
+    "audience": [
+      "Consumers"
+    ],
+    "confidence": 0.79,
+    "field_confidence": {
+      "category": 0.79,
+      "subcategory": 0.74,
+      "website_type": 0.68,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0052cc",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0c0c0c",
+      "#ffffff",
+      "#e0ddd4"
+    ],
+    "text_color": "#fdf8eb",
+    "palette": [
+      {
+        "hex": "#0c0c0c",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#fdf8eb",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0052cc",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#e0ddd4",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Neue Montreal",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          80
+        ]
+      },
+      {
+        "name": "Pp Neue Montreal",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          16
+        ]
+      },
+      {
+        "name": "Source Sans Pro",
+        "role": "ui",
+        "weights": [],
+        "sizes": [
+          22,
+          22
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Webflow on Webflow (managed)",
+    "builder_cms": [],
+    "framework": [],
+    "language": "JavaScript (managed)",
+    "hosting": [
+      "Webflow (managed)"
+    ],
+    "cdn": [
+      "Cloudflare",
+      "AWS CloudFront",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "hello@wondersauce.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/wondersauce",
+    "x": null
+  },
+  "seo": {
+    "title": "Wondersauce",
+    "description": "Wondersauce is a growth and digital transformation agency. We help brands transform how they're discovered, how customers engage, and how the work gets done \u2014 one mechanism at a time."
+  },
+  "pages": {
+    "homepage": "https://www.wondersauce.com/",
+    "about": "https://www.wondersauce.com/about",
+    "contact": "https://www.wondersauce.com/contact",
+    "pricing": "not found",
+    "careers": "https://www.wondersauce.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

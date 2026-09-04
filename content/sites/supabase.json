@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000224",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Supabase",
+    "domain": "supabase.com",
+    "url": "https://supabase.com/",
+    "slug": "supabase",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Developers",
+      "Startups",
+      "Enterprises"
+    ],
+    "confidence": 0.94,
+    "field_confidence": {
+      "category": 0.94,
+      "subcategory": 0.89,
+      "website_type": 0.83,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#002533",
+    "secondary_color": null,
+    "accent_colors": [
+      "#0c0f24",
+      "#72e3ad"
+    ],
+    "background_colors": [
+      "#f8f3ef"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#f8f3ef",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#002533",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      },
+      {
+        "hex": "#0c0f24",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#72e3ad",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          22
+        ]
+      },
+      {
+        "name": "Manrope",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          14,
+          46
+        ]
+      },
+      {
+        "name": "Source Code Pro",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          13,
+          13
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Playful"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "legal@supabase.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/supabase",
+    "x": "https://twitter.com/supabase"
+  },
+  "seo": {
+    "title": "Supabase",
+    "description": "Build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage and Vector embeddings. Start for free."
+  },
+  "pages": {
+    "homepage": "https://supabase.com/",
+    "about": "https://supabase.com/company",
+    "contact": "https://supabase.com/contact-us",
+    "pricing": "https://supabase.com/pricing",
+    "careers": "https://supabase.com/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

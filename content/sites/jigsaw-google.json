@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000339",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Jigsaw",
+    "domain": "jigsaw.google",
+    "url": "https://jigsaw.google/",
+    "slug": "jigsaw-google",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Agency & Studio",
+    "subcategory": null,
+    "website_type": "Agency Website",
+    "audience": [
+      "Enterprises"
+    ],
+    "confidence": 0.89,
+    "field_confidence": {
+      "category": 0.89,
+      "subcategory": null,
+      "website_type": 0.77,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#0084f5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#f2f2ed"
+    ],
+    "text_color": "#6e6e6e",
+    "palette": [
+      {
+        "hex": "#f2f2ed",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#6e6e6e",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#0084f5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Google Sans",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          16,
+          54
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on Google Cloud",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "Google Cloud"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/jigsaw-google",
+    "x": "https://x.com/Jigsaw"
+  },
+  "seo": {
+    "title": "Jigsaw",
+    "description": "Jigsaw is an incubator within Google that builds technologies to give people greater agency in the world around them."
+  },
+  "pages": {
+    "homepage": "https://jigsaw.google/",
+    "about": "https://jigsaw.google/building-for-agency-ai-era/",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

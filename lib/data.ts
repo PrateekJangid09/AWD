@@ -1,245 +1,199 @@
-import fs from 'fs';
-import path from 'path';
-import Papa from 'papaparse';
-import { cache } from 'react';
-import { Website } from './types';
-import { mapToMacroCategory } from './categories';
+// Sample site rows only. Shared catalogue types live in catalog.ts so
+// client components can import categories/tools without this module.
+export * from "./catalog";
+import type { PaletteRole } from "./catalog";
 
-function createSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+export type SiteRecord = {
+  slug: string;
+  name: string;
+  domain: string;
+  officialUrl: string;
+  category: string;
+  categoryName: string;
+  summary: string;
+  tags: string[];
+  style: string;
+  websiteType: string;
+  audience: string;
+  palette: PaletteRole[];
+  typography: { display: string; body: string; mono?: string; weights: string };
+  technology: { cms?: string; framework?: string; hosting?: string; cdn?: string };
+  reviewedAt: string;
+  lastChecked: string;
+  verification: string;
+  similar: string[];
+};
+
+export const SITES: SiteRecord[] = [
+  {
+    slug: "aboard",
+    name: "Aboard",
+    domain: "aboard.com",
+    officialUrl: "https://aboard.com",
+    category: "saas",
+    categoryName: "SaaS",
+    summary: "Lightweight HR platform for time off, onboarding, contracts, and culture.",
+    tags: ["SaaS", "HR", "B2B"],
+    style: "Minimal",
+    websiteType: "Product Website",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#DCDAFA", coverage: "58%" },
+      { role: "Primary", hex: "#4F46E5", coverage: "22%" },
+      { role: "Deep", hex: "#3731A0", coverage: "9%" },
+      { role: "Ink", hex: "#111111", coverage: "11%" },
+    ],
+    typography: { display: "Inter", body: "Inter", weights: "400 – 700" },
+    technology: { framework: "Next.js", hosting: "Vercel", cdn: "Vercel Edge" },
+    reviewedAt: "11 Aug 2026",
+    lastChecked: "24 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["algolia", "arthur", "deel-clone", "later-clone"],
+  },
+  {
+    slug: "algolia",
+    name: "Algolia",
+    domain: "algolia.com",
+    officialUrl: "https://algolia.com",
+    category: "developer",
+    categoryName: "Developer",
+    summary: "Hosted search and discovery API with docs-first developer onboarding.",
+    tags: ["SaaS", "Developer Tool", "Search"],
+    style: "Bold",
+    websiteType: "Developer Platform",
+    audience: "Developer",
+    palette: [
+      { role: "Surface", hex: "#E8DEFD", coverage: "54%" },
+      { role: "Primary", hex: "#8B5CF6", coverage: "24%" },
+      { role: "Deep", hex: "#6140AC", coverage: "10%" },
+      { role: "Ink", hex: "#111111", coverage: "12%" },
+    ],
+    typography: { display: "System UI", body: "System UI", mono: "JetBrains Mono", weights: "400 – 800" },
+    technology: { framework: "Next.js", hosting: "Netlify", cdn: "Fastly" },
+    reviewedAt: "11 Aug 2026",
+    lastChecked: "22 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["aboard", "arthur", "readme-clone", "stripe-clone"],
+  },
+  {
+    slug: "arthur",
+    name: "Arthur",
+    domain: "arthur.ai",
+    officialUrl: "https://arthur.ai",
+    category: "ai",
+    categoryName: "AI",
+    summary: "Monitoring and observability platform for production machine-learning models.",
+    tags: ["AI Platform", "ML Ops"],
+    style: "Motion-Driven",
+    websiteType: "Product Website",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#CDF0F6", coverage: "50%" },
+      { role: "Primary", hex: "#06B6D4", coverage: "26%" },
+      { role: "Deep", hex: "#047F94", coverage: "12%" },
+      { role: "Ink", hex: "#111111", coverage: "12%" },
+    ],
+    typography: { display: "Inter", body: "Inter", weights: "400 – 700" },
+    technology: { framework: "Nuxt", hosting: "Vercel", cdn: "Cloudflare" },
+    reviewedAt: "11 Aug 2026",
+    lastChecked: "20 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["aboard", "algolia", "levels-clone"],
+  },
+  {
+    slug: "meridian-studio",
+    name: "Meridian Studio",
+    domain: "meridian.studio",
+    officialUrl: "https://meridian.studio",
+    category: "agency-studio",
+    categoryName: "Agency / Studio",
+    summary: "Independent brand and motion studio with a case-study-led portfolio.",
+    tags: ["Agency", "Branding", "Motion"],
+    style: "Editorial",
+    websiteType: "Studio Portfolio",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#F4F1E9", coverage: "60%" },
+      { role: "Ink", hex: "#0A0A0A", coverage: "26%" },
+      { role: "Accent", hex: "#FF6112", coverage: "8%" },
+      { role: "Muted", hex: "#7A7A7A", coverage: "6%" },
+    ],
+    typography: { display: "Archivo", body: "Inter", weights: "400 – 900" },
+    technology: { cms: "Webflow", hosting: "Webflow", cdn: "AWS CloudFront" },
+    reviewedAt: "18 Aug 2026",
+    lastChecked: "25 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["osli-folio", "north-atlas", "aboard"],
+  },
+  {
+    slug: "osli-folio",
+    name: "Osli",
+    domain: "osli.design",
+    officialUrl: "https://osli.design",
+    category: "portfolio",
+    categoryName: "Portfolio",
+    summary: "Product designer portfolio with a restrained grid and long-form case studies.",
+    tags: ["Portfolio", "Personal", "Product Design"],
+    style: "Minimal",
+    websiteType: "Personal Portfolio",
+    audience: "Consumer",
+    palette: [
+      { role: "Surface", hex: "#FBFAF6", coverage: "66%" },
+      { role: "Ink", hex: "#111111", coverage: "24%" },
+      { role: "Accent", hex: "#2536FF", coverage: "6%" },
+      { role: "Muted", hex: "#9A9A9A", coverage: "4%" },
+    ],
+    typography: { display: "Archivo", body: "Inter", weights: "400 – 800" },
+    technology: { framework: "Astro", hosting: "Vercel", cdn: "Vercel Edge" },
+    reviewedAt: "16 Aug 2026",
+    lastChecked: "25 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["meridian-studio", "north-atlas", "arthur"],
+  },
+  {
+    slug: "north-atlas",
+    name: "North Atlas",
+    domain: "northatlas.co",
+    officialUrl: "https://northatlas.co",
+    category: "fintech",
+    categoryName: "Fintech",
+    summary: "Business banking and treasury product with a security-forward marketing site.",
+    tags: ["Fintech", "Banking", "B2B"],
+    style: "Corporate",
+    websiteType: "Product Website",
+    audience: "B2B",
+    palette: [
+      { role: "Surface", hex: "#0B1220", coverage: "56%" },
+      { role: "Primary", hex: "#00A389", coverage: "20%" },
+      { role: "Ink", hex: "#F5F5F5", coverage: "16%" },
+      { role: "Accent", hex: "#FF6112", coverage: "8%" },
+    ],
+    typography: { display: "Archivo", body: "Inter", mono: "IBM Plex Mono", weights: "400 – 800" },
+    technology: { framework: "Next.js", hosting: "AWS", cdn: "CloudFront" },
+    reviewedAt: "14 Aug 2026",
+    lastChecked: "23 Aug 2026",
+    verification: "Automated integrity check",
+    similar: ["aboard", "meridian-studio", "algolia"],
+  },
+];
+
+// Fresh-from-community discovery strip
+export const FRESH = [
+  "Aboard",
+  "airdev.co",
+  "AirPods Pro 3",
+  "algolia.com",
+  "Andersen",
+  "Arthur",
+  "Meridian Studio",
+  "North Atlas",
+  "Osli",
+];
+
+export function getSite(slug: string) {
+  return SITES.find((s) => s.slug === slug);
 }
 
-// Check if category is specific (not "Other" or empty)
-function hasSpecificCategory(category: string): boolean {
-  const cat = category?.trim() || '';
-  return cat !== '' && 
-         cat !== 'Uncategorized' && 
-         cat !== 'Other' &&
-         cat.toLowerCase() !== 'other';
-}
-
-// Check if URL is a valid official website (not platform link, not inferred)
-function isValidOfficialUrl(url: string, name: string): boolean {
-  try {
-    if (!url || typeof url !== 'string' || !url.trim()) return false;
-    if (!name || typeof name !== 'string') return false;
-    
-    const urlLower = url.toLowerCase().trim();
-    
-    // Must start with http:// or https://
-    if (!urlLower.startsWith('http://') && !urlLower.startsWith('https://')) {
-      return false;
-    }
-    
-    // Exclude platform links
-    const platformDomains = [
-      'land-book.com',
-      'saaslandingpage.com',
-      'onepagelove.com',
-      'webflow.com/made-in-webflow',
-      'webflow.com/@',
-      'a1.gallery',
-    ];
-    
-    for (const platform of platformDomains) {
-      if (urlLower.includes(platform)) {
-        return false;
-      }
-    }
-    
-    // Extract domain from URL
-    const urlObj = new URL(url);
-    let domain = urlObj.hostname.toLowerCase().replace(/^www\./, '');
-    const domainParts = domain.split('.');
-    if (domainParts.length === 0) return false;
-    
-    const domainWithoutTld = domainParts[0];
-    
-    // Check if domain is too long (likely inferred)
-    // If domain is longer than 30 chars, it's likely inferred
-    if (domainWithoutTld.length > 30) {
-      return false;
-    }
-    
-    // Check if domain matches slugified name pattern (likely inferred)
-    const nameSlug = createSlug(name);
-    if (nameSlug && nameSlug.length > 15 && domainWithoutTld.length > 20) {
-      // If domain contains a significant portion of the slugified name and is very long
-      const nameSlugStart = nameSlug.substring(0, Math.min(20, nameSlug.length));
-      if (domainWithoutTld.includes(nameSlugStart) && domainWithoutTld.length > 25) {
-        return false;
-      }
-    }
-    
-    // Check for obvious inferred patterns: very long domains with multiple hyphens
-    const hyphenCount = (domainWithoutTld.match(/-/g) || []).length;
-    if (domainWithoutTld.length > 25 && hyphenCount > 3) {
-      return false;
-    }
-    
-    return true;
-  } catch (e) {
-    // Invalid URL format or any error
-    return false;
-  }
-}
-
-// Internal function to fetch and parse websites
-async function fetchWebsites(): Promise<Website[]> {
-  try {
-    const csvPath = path.join(process.cwd(), 'data', 'websites.csv');
-    
-    if (!fs.existsSync(csvPath)) {
-      console.error(`CSV file not found at: ${csvPath}`);
-      return [];
-    }
-    
-    const fileContent = fs.readFileSync(csvPath, 'utf-8');
-
-    if (!fileContent || fileContent.trim() === '') {
-      console.error('CSV file is empty');
-      return [];
-    }
-
-    const { data } = Papa.parse<string[]>(fileContent, {
-      header: false,
-      skipEmptyLines: true,
-    });
-
-    if (!data || data.length === 0) {
-      console.error('No data parsed from CSV');
-      return [];
-    }
-
-    const websites: Website[] = data.slice(1)
-      .map((row, index) => {
-        try {
-          const name = (row[0]?.trim() || 'Unnamed').toString();
-          const url = (row[1]?.trim() || '').toString();
-          const category = (row[2]?.trim() || 'Uncategorized').toString();
-          const description = (row[3]?.trim() || 'No description available').toString();
-          const featured = (row[4]?.trim().toLowerCase() === 'true');
-          const hidden = (row[5]?.trim().toLowerCase() === 'true');
-          const slug = createSlug(name);
-          const displayCategory = mapToMacroCategory(category);
-
-          // Return URLs directly - let the client handle 404s for missing images
-          // This prevents Vercel from bundling screenshot files into the serverless function
-          const screenshotUrl = `/screenshots/${slug}.webp`;
-
-          return {
-            id: `${index + 1}`,
-            name,
-            url,
-            category,
-            description,
-            screenshotUrl,
-            slug,
-            displayCategory: displayCategory || category,
-            fullScreenshotUrl: `/fullshots/${slug}.webp`,
-            featured,
-            hidden,
-          } as Website;
-        } catch (rowError) {
-          console.error(`Error processing row ${index + 1}:`, rowError);
-          return null;
-        }
-      })
-      .filter((website): website is Website => website !== null && website !== undefined);
-
-    // Filter out hidden websites
-    let visibleWebsites = websites.filter(website => !website.hidden);
-    
-    // Filter to only include valid websites:
-    // 1. Must have specific category (not "Other" or empty)
-    // 2. Must have valid official URL (not platform link, not inferred)
-    // 3. Must have a name
-    visibleWebsites = visibleWebsites.filter(website => {
-      try {
-        // Check name
-        if (!website.name || typeof website.name !== 'string' || website.name.trim() === '' || website.name === 'Unnamed') {
-          return false;
-        }
-        
-        // Check category
-        if (!website.category || !hasSpecificCategory(website.category)) {
-          return false;
-        }
-        
-        // Check URL
-        if (!website.url || !isValidOfficialUrl(website.url, website.name)) {
-          return false;
-        }
-        
-        return true;
-      } catch (e) {
-        // If any error occurs during filtering, exclude the website
-        return false;
-      }
-    });
-
-    return sortWebsitesByQuality(visibleWebsites);
-  } catch (error) {
-    console.error('Error in getWebsites:', error);
-    return [];
-  }
-}
-
-// Deduplicate getWebsites within the same request (no unstable_cache - payload exceeds 2MB limit)
-export const getWebsites = cache(fetchWebsites);
-
-function sortWebsitesByQuality(websites: Website[]): Website[] {
-  return websites.sort((a, b) => {
-    // First, prioritize featured websites
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    
-    // If both are featured or both are not featured, sort alphabetically
-    if (a.featured === b.featured) {
-      return a.name.localeCompare(b.name);
-    }
-    
-    // Fallback to quality score
-    const scoreA = calculateQualityScore(a);
-    const scoreB = calculateQualityScore(b);
-    return scoreB - scoreA;
-  });
-}
-
-function calculateQualityScore(website: Website): number {
-  let score = 0;
-
-  // Removed file system checks to reduce serverless function size
-  // Files in public/ are served statically, so we can assume they exist
-  // Featured websites get bonus points
-  if (website.featured) score += 50;
-
-  if (website.url && website.url.startsWith('http')) score += 15;
-
-  // Assume screenshots exist (they're in public/)
-  score += 20;
-
-  if (website.description && website.description.length > 20) score += 5;
-  if (website.name && website.name.length > 2) score += 5;
-
-  return score;
-}
-
-export async function getWebsiteBySlug(slug: string): Promise<Website | null> {
-  const websites = await getWebsites();
-  return websites.find(site => site.slug === slug) || null;
-}
-
-export async function getAllSlugs(): Promise<string[]> {
-  const websites = await getWebsites();
-  return websites.map(site => site.slug);
-}
-
-export async function getRelatedWebsites(website: Website, limit: number = 6): Promise<Website[]> {
-  const websites = await getWebsites();
-  const related = websites.filter(site => site.displayCategory === website.displayCategory && site.id !== website.id);
-  return related.sort(() => Math.random() - 0.5).slice(0, limit);
+export function sitesInCategory(slug: string) {
+  return SITES.filter((s) => s.category === slug);
 }

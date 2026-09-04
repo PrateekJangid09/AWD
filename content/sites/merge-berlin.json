@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000022",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "THE MERGE",
+    "domain": "merge.berlin",
+    "url": "https://merge.berlin/",
+    "slug": "merge-berlin",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Web Application",
+    "audience": [
+      "Developers",
+      "Enterprises",
+      "B2B"
+    ],
+    "confidence": 0.88,
+    "field_confidence": {
+      "category": 0.88,
+      "subcategory": 0.83,
+      "website_type": 0.69,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#3a5f67",
+    "secondary_color": null,
+    "accent_colors": [
+      "#403c68",
+      "#383556"
+    ],
+    "background_colors": [
+      "#24223c"
+    ],
+    "text_color": "#f5f4eb",
+    "palette": [
+      {
+        "hex": "#24223c",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#f5f4eb",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#3a5f67",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#403c68",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#383556",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          14,
+          40
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          18,
+          30
+        ]
+      },
+      {
+        "name": "Bebas Neue",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          60,
+          60
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "SvelteKit on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "SvelteKit"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [
+      "AWS CloudFront"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "megan@gitbutler.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/sorenbs"
+  },
+  "seo": {
+    "title": "THE MERGE",
+    "description": "Learn how to build from GitHub, Atlassian, HashiCorp and more."
+  },
+  "pages": {
+    "homepage": "https://merge.berlin/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

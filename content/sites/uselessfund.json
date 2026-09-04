@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000006",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "The Useless Fund",
+    "domain": "uselessfund.com",
+    "url": "https://uselessfund.com/",
+    "slug": "uselessfund",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Nonprofit & Social Impact",
+    "subcategory": "Charity",
+    "website_type": "Documentation Website",
+    "audience": [
+      "Donors"
+    ],
+    "confidence": 0.75,
+    "field_confidence": {
+      "category": 0.75,
+      "subcategory": 0.7,
+      "website_type": 0.75,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#f4d35e",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#008080",
+      "#c0c0c0",
+      "#ffffff",
+      "#dcdcdc"
+    ],
+    "text_color": "#000000",
+    "palette": [
+      {
+        "hex": "#008080",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#000000",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4d35e",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#c0c0c0",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#dcdcdc",
+        "role": "surface",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Tahoma",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          58
+        ]
+      },
+      {
+        "name": "Courier New",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          25,
+          25
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Bold / Maximalist"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "The Useless Fund",
+    "description": "THE USELESS FUND is an independent internet art project. People may voluntarily contribute money while expecting absolutely nothing in return."
+  },
+  "pages": {
+    "homepage": "https://uselessfund.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000059",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Jeff Brokaw",
+    "domain": "jeffbrokaw.com",
+    "url": "https://jeffbrokaw.com/",
+    "slug": "jeffbrokaw",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Marketing & Sales",
+    "subcategory": "SalesTech",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Sales Teams"
+    ],
+    "confidence": 0.86,
+    "field_confidence": {
+      "category": 0.86,
+      "subcategory": 0.81,
+      "website_type": 0.65,
+      "audience": 0.7
+    }
+  },
+  "design": {
+    "primary_color": "#1c1a17",
+    "secondary_color": null,
+    "accent_colors": [
+      "#ff6a1f"
+    ],
+    "background_colors": [
+      "#0a0a0a",
+      "#f4f1ea"
+    ],
+    "text_color": "#b4aea4",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b4aea4",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#1c1a17",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f4f1ea",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ff6a1f",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#9b958b",
+        "role": "secondary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Hanken Grotesk",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          5,
+          36
+        ]
+      },
+      {
+        "name": "Bricolage Grotesque",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          7,
+          38
+        ]
+      }
+    ],
+    "style_tags": [
+      "Playful",
+      "Motion-Driven"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "AWS CloudFront",
+      "UNPKG",
+      "cdnjs"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": [
+      "LiteSpeed"
+    ]
+  },
+  "contact": {
+    "email": "jeff@jeffbrokaw.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "Charlotte, NC, US"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/thejeffbrokaw",
+    "x": "https://x.com/jeffbrokaw"
+  },
+  "seo": {
+    "title": "Jeff Brokaw",
+    "description": "Jeff Brokaw turns AI into revenue: a technical-commercial operator and Certified Chief AI Officer who rebuilds story, pricing, and go-to-market. Charlotte, NC."
+  },
+  "pages": {
+    "homepage": "https://jeffbrokaw.com/",
+    "about": "https://jeffbrokaw.com/about.html",
+    "contact": "not found",
+    "pricing": "https://jeffbrokaw.com/work/electrical-distribution-ai.html",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

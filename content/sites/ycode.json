@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000078",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Ycode",
+    "domain": "ycode.com",
+    "url": "https://www.ycode.com/",
+    "slug": "ycode",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Developer Tools",
+    "website_type": "Web Application",
+    "audience": [
+      "Developers",
+      "Startups"
+    ],
+    "confidence": 0.76,
+    "field_confidence": {
+      "category": 0.76,
+      "subcategory": 0.71,
+      "website_type": 0.86,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#48e54d",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#0a0a0a"
+    ],
+    "text_color": "#ffffff",
+    "palette": [
+      {
+        "hex": "#0a0a0a",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#ffffff",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#48e54d",
+        "role": "primary",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          12,
+          72
+        ]
+      },
+      {
+        "name": "Geist Mono",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          10,
+          10
+        ]
+      }
+    ],
+    "style_tags": [
+      "Motion-Driven",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "convers@ion.build",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/ycodedotcom"
+  },
+  "seo": {
+    "title": "Ycode",
+    "description": "Ycode is all-in-one website builder and CMS to design, host, and update your custom design website."
+  },
+  "pages": {
+    "homepage": "https://www.ycode.com/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

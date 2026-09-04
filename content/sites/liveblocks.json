@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000213",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Liveblocks",
+    "domain": "liveblocks.io",
+    "url": "https://liveblocks.io/",
+    "slug": "liveblocks",
+    "favicon": null
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Productivity",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "Enterprises",
+      "B2B"
+    ],
+    "confidence": 0.95,
+    "field_confidence": {
+      "category": 0.95,
+      "subcategory": 0.9,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#cfb5c5",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#000000",
+      "#f9fbfd",
+      "#e5e5e5"
+    ],
+    "text_color": "#918d8d",
+    "palette": [
+      {
+        "hex": "#000000",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#918d8d",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#cfb5c5",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#f9fbfd",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#e5e5e5",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#141716",
+        "role": "ink",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "suisse",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          64
+        ]
+      },
+      {
+        "name": "JetBrains Mono",
+        "role": "mono",
+        "weights": [],
+        "sizes": [
+          10,
+          14
+        ]
+      },
+      {
+        "name": "Apple Color Emoji",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Brutalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Next.js on Vercel",
+    "builder_cms": [],
+    "framework": [
+      "Next.js"
+    ],
+    "language": "JavaScript / Node.js",
+    "hosting": [
+      "Vercel"
+    ],
+    "cdn": [],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "support@liveblocks.io",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": "251 Little Falls Drive, Wilmington, Delaware, 19808, US"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/liveblocks",
+    "x": "https://x.com/liveblocks"
+  },
+  "seo": {
+    "title": "Liveblocks",
+    "description": "Liveblocks provides the infrastructure to handle concurrent edits on shared data, so people and AI agents can collaborate without breaking your app."
+  },
+  "pages": {
+    "homepage": "https://liveblocks.io/",
+    "about": "https://liveblocks.io/about",
+    "contact": "https://liveblocks.io/contact",
+    "pricing": "https://liveblocks.io/pricing",
+    "careers": "https://liveblocks.io/careers"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "About",
+        "file": "about.webp"
+      },
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      },
+      {
+        "label": "Pricing",
+        "file": "pricing.webp"
+      },
+      {
+        "label": "Jobs/Careers",
+        "file": "jobs-careers.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": null
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000130",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "The Cozy Hollow",
+    "domain": "thecozyhollow.ca",
+    "url": "https://thecozyhollow.ca/",
+    "slug": "thecozyhollow",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Travel & Hospitality",
+    "subcategory": "Booking",
+    "website_type": "Pricing Website",
+    "audience": [
+      "Guests",
+      "B2C",
+      "Travellers"
+    ],
+    "confidence": 0.73,
+    "field_confidence": {
+      "category": 0.73,
+      "subcategory": 0.68,
+      "website_type": 0.86,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#6e5338",
+    "secondary_color": null,
+    "accent_colors": [
+      "#141e16",
+      "#b5cfdd"
+    ],
+    "background_colors": [
+      "#ffffff",
+      "#e3eef3"
+    ],
+    "text_color": "#f6e8cc",
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      },
+      {
+        "hex": "#f6e8cc",
+        "role": "text",
+        "coverage": 0
+      },
+      {
+        "hex": "#6e5338",
+        "role": "primary",
+        "coverage": 0
+      },
+      {
+        "hex": "#141e16",
+        "role": "accent",
+        "coverage": 0
+      },
+      {
+        "hex": "#e3eef3",
+        "role": "surface",
+        "coverage": 0
+      },
+      {
+        "hex": "#b5cfdd",
+        "role": "accent",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Source Sans 3",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          12,
+          20
+        ]
+      },
+      {
+        "name": "Chewy",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          30,
+          56
+        ]
+      },
+      {
+        "name": "Arial",
+        "role": "body",
+        "weights": [],
+        "sizes": [
+          16,
+          16
+        ]
+      }
+    ],
+    "style_tags": [
+      "Bold / Maximalist",
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML on GitHub Pages",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [
+      "GitHub Pages"
+    ],
+    "cdn": [
+      "Fastly",
+      "jsDelivr"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "thecozyhollowplay@gmail.com",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": null
+  },
+  "seo": {
+    "title": "The Cozy Hollow",
+    "description": "A cozy nature inspired, play-based space for children and caregivers to connect and explore."
+  },
+  "pages": {
+    "homepage": "https://thecozyhollow.ca/",
+    "about": "not found",
+    "contact": "not found",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": []
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}

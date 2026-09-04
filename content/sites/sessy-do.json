@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "site_id": "AWD-000084",
+  "extractor_version": "2.2.0",
+  "identity": {
+    "name": "Sessy",
+    "domain": "sessy.do",
+    "url": "https://sessy.do/",
+    "slug": "sessy-do",
+    "favicon": "favicon.png"
+  },
+  "classification": {
+    "category": "Technology & SaaS",
+    "subcategory": "Cloud",
+    "website_type": "Product Website",
+    "audience": [
+      "Developers",
+      "B2C"
+    ],
+    "confidence": 0.93,
+    "field_confidence": {
+      "category": 0.93,
+      "subcategory": 0.88,
+      "website_type": 0.78,
+      "audience": 0.85
+    }
+  },
+  "design": {
+    "primary_color": "#ffffff",
+    "secondary_color": null,
+    "accent_colors": [],
+    "background_colors": [
+      "#ffffff"
+    ],
+    "text_color": null,
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "coverage": 0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "role": "display",
+        "weights": [],
+        "sizes": [
+          10,
+          48
+        ]
+      }
+    ],
+    "style_tags": [
+      "Minimal"
+    ]
+  },
+  "technology": {
+    "summary": "Static HTML",
+    "builder_cms": [],
+    "framework": [],
+    "language": "Static HTML / CSS / JS",
+    "hosting": [],
+    "cdn": [
+      "Cloudflare"
+    ],
+    "storage": [],
+    "frontend": [],
+    "ecommerce": [],
+    "web_server": []
+  },
+  "contact": {
+    "email": "not found",
+    "on_official_domain": null,
+    "other_emails": [],
+    "address": null
+  },
+  "social": {
+    "linkedin": null,
+    "x": "https://x.com/marckohlbrugge"
+  },
+  "seo": {
+    "title": "Sessy",
+    "description": "Track deliveries, bounces, opens, clicks, and complaints from AWS SES in a self-hosted dashboard you own. Free and open source."
+  },
+  "pages": {
+    "homepage": "https://sessy.do/",
+    "about": "not found",
+    "contact": "https://sessy.do/cdn-cgi/l/email-protection#4a222f2626250a392f393933642e25",
+    "pricing": "not found",
+    "careers": "not found"
+  },
+  "screenshots": {
+    "desktop": "desktop.webp",
+    "pages": [
+      {
+        "label": "Contact",
+        "file": "contact.webp"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "favicon.png"
+  },
+  "extraction": {
+    "status": "complete",
+    "extracted_at": null,
+    "completeness": 100,
+    "extractor_version": "2.2.0"
+  }
+}
