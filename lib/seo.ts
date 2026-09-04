@@ -20,6 +20,7 @@ export const OG_IMAGE = {
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const LOGO_ID = `${SITE_URL}/#logo`;
+export const BLOG_ID = `${SITE_URL}/blogs/#blog`;
 
 export type JsonLdNode = Record<string, unknown>;
 export type Crumb = { name: string; path?: string };
@@ -374,7 +375,14 @@ export function breadcrumbNode(path: string, items: Crumb[]) {
   };
 }
 
-/** Organization + WebSite. Emitted sitewide; the SearchAction lives on the home page only. */
+/**
+ * Organization + WebSite, emitted sitewide.
+ *
+ * This is the only place the WebSite node is declared. Page-level graphs
+ * reference it by `@id` rather than redeclaring it: two nodes sharing an `@id`
+ * in one document merge unpredictably, and a partial second copy can mask the
+ * name and publisher on the page that needs them most.
+ */
 export function globalGraph() {
   return pageGraph([
     {
@@ -411,6 +419,16 @@ export function globalGraph() {
       description: DEFAULT_DESCRIPTION,
       inLanguage: "en-US",
       publisher: { "@id": ORG_ID },
+      // Describes the site, not the page, so it belongs on the single
+      // canonical WebSite node rather than a home-page-only duplicate.
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/archive?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
   ]);
 }
@@ -425,19 +443,6 @@ export function homePageGraph({
   updated: string;
 }) {
   return pageGraph([
-    {
-      "@type": "WebSite",
-      "@id": WEBSITE_ID,
-      url: SITE_URL,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${SITE_URL}/archive?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
-    },
     {
       "@type": "CollectionPage",
       "@id": `${SITE_URL}/#webpage`,
@@ -803,9 +808,17 @@ export function researchGraph({
   ]);
 }
 
+const BLOG_NAME = "AllWebsites.Design Journal";
+const BLOG_DESCRIPTION =
+  "Data-backed notes on colour, typography and technology, drawn from the website design archive.";
+
 /**
  * A journal article: BlogPosting inside the Blog, plus an optional FAQPage
  * built from the questions the page actually answers on screen.
+ *
+ * The parent Blog is emitted as a stub so `isPartOf` resolves within this
+ * document. Only Organization and WebSite are safe to reference across pages,
+ * because those two are the only nodes emitted sitewide.
  */
 export function articleGraph({
   path,
@@ -839,7 +852,7 @@ export function articleGraph({
       description,
       mainEntityOfPage: url,
       url,
-      isPartOf: { "@id": `${absUrl("/blogs")}/#blog` },
+      isPartOf: { "@id": BLOG_ID },
       author: { "@id": ORG_ID },
       publisher: { "@id": ORG_ID },
       image: ogImageNode(),
@@ -850,6 +863,16 @@ export function articleGraph({
       isAccessibleForFree: true,
       ...(about.length ? { about: about.map((name) => ({ "@type": "Thing", name })) } : {}),
       ...(wordCount ? { wordCount } : {}),
+    },
+    {
+      "@type": "Blog",
+      "@id": BLOG_ID,
+      url: absUrl("/blogs"),
+      name: BLOG_NAME,
+      description: BLOG_DESCRIPTION,
+      isPartOf: { "@id": WEBSITE_ID },
+      publisher: { "@id": ORG_ID },
+      inLanguage: "en-US",
     },
   ];
 
@@ -884,11 +907,10 @@ export function blogGraph({
     breadcrumbNode(path, [{ name: "Home", path: "/" }, { name: "Resources" }]),
     {
       "@type": "Blog",
-      "@id": `${url}/#blog`,
+      "@id": BLOG_ID,
       url,
-      name: "AllWebsites.Design Journal",
-      description:
-        "Data-backed notes on colour, typography and technology, drawn from the website design archive.",
+      name: BLOG_NAME,
+      description: BLOG_DESCRIPTION,
       isPartOf: { "@id": WEBSITE_ID },
       breadcrumb: { "@id": crumbId(path) },
       publisher: { "@id": ORG_ID },
