@@ -29,7 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.2 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
     { path: "/cookie-preference", changeFrequency: "yearly", priority: 0.2 },
-    { path: "/llms.txt", changeFrequency: "monthly", priority: 0.3 },
+    // /llms.txt is deliberately absent: a sitemap lists indexable HTML pages,
+    // and agents find it by convention at the well-known path instead.
   ];
 
   return [
