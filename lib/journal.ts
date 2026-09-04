@@ -72,7 +72,7 @@ function buildPosts(): PostEntry[] {
       kicker: "Technology",
       title: "Framer vs Webflow vs Next.js vs Astro",
       h1: "What does a website's stack predict about how it looks?",
-      description: `We classified ${platforms.attributed} websites by the platform they ship on, then compared their palettes, type and style tags. The stack predicts the design more than you would expect.`,
+      description: `We classified ${platforms.attributed} websites by platform, then compared their palettes, type and style tags. The stack predicts the design more than you would expect.`,
       answer: `Across ${platforms.attributed} websites where a platform could be identified, the build tool predicts the visual style. ${framer?.motionShare ?? 0}% of the ${framer?.count ?? 0} Framer sites are tagged motion-driven, against ${next?.motionShare ?? 0}% of the ${next?.count ?? 0} Next.js sites. Webflow runs the largest headlines at a ${webflow?.medianLargestType ?? 0}px median, and Astro sites are the most consistently minimal.`,
       about: ["Framer", "Webflow", "Next.js", "Astro", "Web design", "Web development"],
       published: "2026-09-02",
