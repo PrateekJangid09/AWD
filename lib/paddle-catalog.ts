@@ -9,6 +9,7 @@ export const PLANS = [
     priceId: PADDLE_PRICE_MONTHLY,
     name: "Monthly",
     amountUsd: 3,
+    amountUsdCents: 300,
     amountInr: 249,
     amountPaise: 24900,
     currency: "INR" as const,
@@ -21,6 +22,7 @@ export const PLANS = [
     priceId: PADDLE_PRICE_YEARLY,
     name: "Yearly",
     amountUsd: 30,
+    amountUsdCents: 3000,
     amountInr: 2490,
     amountPaise: 249000,
     currency: "INR" as const,
@@ -53,7 +55,8 @@ export const PADDLE_CLIENT_TOKEN = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN |
 export const RAZORPAY_KEY_ID = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "";
 
 export function checkoutEnabled() {
-  return Boolean(RAZORPAY_KEY_ID);
+  const keyId = process.env.RAZORPAY_KEY_ID || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "";
+  return Boolean(keyId && process.env.RAZORPAY_KEY_SECRET);
 }
 
 export function planFromQuery(raw?: string | string[] | null): "monthly" | "yearly" {

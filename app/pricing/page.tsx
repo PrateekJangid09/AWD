@@ -10,7 +10,7 @@ import CheckoutButton from "./CheckoutButton";
 
 const title = "Figma plugin pricing";
 const description =
-  "Chromary, Colorhyme, TrueGradient and WebPalette: three free uses each, then ₹249 per month or ₹2,490 per year for the suite, billed through Razorpay.";
+  "Chromary, Colorhyme, TrueGradient and WebPalette: three free uses each, then $3 per month or $30 per year for the suite, billed through Razorpay.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -30,7 +30,7 @@ const FEATURES = [
 export default async function PricingPage({
   searchParams,
 }: {
-  searchParams: Promise<{ figma?: string | string[]; pay?: string | string[] }>;
+  searchParams: Promise<{ figma?: string | string[] }>;
 }) {
   const params = await searchParams;
   const raw = Array.isArray(params.figma) ? params.figma[0] : params.figma;
@@ -38,8 +38,6 @@ export default async function PricingPage({
     typeof raw === "string" && raw.trim() && raw.trim().length <= 128
       ? raw.trim()
       : undefined;
-  const payRaw = Array.isArray(params.pay) ? params.pay[0] : params.pay;
-  const autoPay = payRaw === "1" || payRaw === "true" || Boolean(figmaUserId);
   return (
     <>
       <JsonLd
@@ -57,7 +55,7 @@ export default async function PricingPage({
       <PageHero
         eyebrow="Pricing"
         title="Figma color plugins, priced simply."
-        intro="Four desktop plugins. Each one lets you apply, style or drop a result three times for free. After that, one subscription unlocks the suite."
+        intro="Four desktop plugins. Each one lets you apply, style or drop a result three times for free. After that, one payment unlocks the suite."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Pricing" }]}
       />
       <div className="wrap pt-8">
@@ -75,18 +73,16 @@ export default async function PricingPage({
                 {plan.name}
               </p>
               <p className="mt-3 font-display text-4xl font-semibold tracking-tight">
-                ₹{plan.amountInr.toLocaleString("en-IN")}
+                ${plan.amountUsd}
                 <span className="ml-2 text-lg font-medium text-ink/50">
                   / {plan.period}
                 </span>
               </p>
-              <p className="text-sm text-ink/50">≈ ${plan.amountUsd} USD</p>
               <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
               <CheckoutButton
                 planId={plan.id}
-                label={plan.id === "yearly" ? "Pay ₹2,490 / year" : "Pay ₹249 / month"}
+                label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
                 figmaUserId={figmaUserId}
-                autoOpen={autoPay && plan.id === "monthly"}
               />
             </article>
           ))}
@@ -102,7 +98,9 @@ export default async function PricingPage({
             ))}
           </ul>
           <p className="mt-6 text-sm text-ink/60">
-            Billing is handled by Razorpay. Prateek Jangid is the seller. Read the{" "}
+            Pay opens Razorpay hosted checkout — the same pattern as Stripe Checkout,
+            not a page on this site. Unlock from the Figma plugin so your Figma account
+            is attached to the payment. Prateek Jangid is the seller. Read the{" "}
             <Link href="/refund-policy" className="underline decoration-orange decoration-2 underline-offset-2">
               refund policy
             </Link>

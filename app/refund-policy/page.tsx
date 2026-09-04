@@ -65,8 +65,8 @@ export default function RefundPolicyPage() {
             <h2 id="product">What this covers</h2>
             <p>
               This policy applies to paid Figma plugin access sold on{" "}
-              <Link href="/pricing">allwebsites.design/pricing</Link>: ₹249 per month
-              or ₹2,490 per year for Chromary, Colorhyme, TrueGradient, and
+              <Link href="/pricing">allwebsites.design/pricing</Link>: $3 per month
+              or $30 per year for Chromary, Colorhyme, TrueGradient, and
               WebPalette. Razorpay processes the payment. Browser tools on this site
               are free and are not billed.
             </p>
@@ -78,7 +78,7 @@ export default function RefundPolicyPage() {
             <h2 id="cancel">Cancel</h2>
             <p>
               Access lasts until the end of the monthly or yearly period you paid
-              for. Razorpay Standard Checkout does not auto-renew, so there is no
+              for. Razorpay hosted checkout does not auto-renew, so there is no
               subscription to cancel. After the period ends, each plugin returns to
               three free applies.
             </p>

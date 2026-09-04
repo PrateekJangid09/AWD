@@ -101,9 +101,9 @@ export default function TermsPage() {
             </ul>
             <p>
               Current prices are listed on the{" "}
-              <Link href="/pricing">pricing page</Link>: ₹249 per month or ₹2,490 per
-              year for the suite (about $3 / $30). One payment unlocks all four
-              plugins for that period.
+              <Link href="/pricing">pricing page</Link>: $3 per month or $30 per
+              year for the suite. One payment unlocks all four plugins for that
+              period.
             </p>
 
             <h2 id="plugins">Figma plugins</h2>
@@ -121,9 +121,10 @@ export default function TermsPage() {
 
             <h2 id="billing">Billing, renewal, and cancellation</h2>
             <p>
-              Checkout is a one-time Razorpay payment for 30 days (monthly) or 365
-              days (yearly). It does not auto-renew. When the period ends, each
-              plugin returns to three free uses until you pay again. See the{" "}
+              Checkout is a one-time Razorpay hosted payment (same idea as Stripe
+              Checkout) for 30 days (monthly) or 365 days (yearly). It does not
+              auto-renew. When the period ends, each plugin returns to three free
+              uses until you pay again. See the{" "}
               <Link href="/refund-policy">refund and cancellation policy</Link>.
             </p>
             <p>

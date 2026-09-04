@@ -1,20 +1,16 @@
 import { NextResponse } from "next/server";
 import { planById } from "@/lib/paddle-catalog";
+import { grantPluginAccess } from "@/lib/plugin-access";
 import {
   razorpayClient,
   razorpayKeys,
   verifyRazorpayPaymentSignature,
 } from "@/lib/razorpay";
-import { supabaseConfigured, upsertEntitlement } from "@/lib/supabase-admin";
 
 export const runtime = "nodejs";
 
 function json(body: unknown, status = 200) {
   return NextResponse.json(body, { status });
-}
-
-function periodEnd(days: number) {
-  return new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
 }
 
 export async function POST(request: Request) {
@@ -64,14 +60,8 @@ export async function POST(request: Request) {
   }
 
   const plan = planById(planId);
-  if (figmaUserId && supabaseConfigured() && plan) {
-    await upsertEntitlement({
-      figmaUserId,
-      status: "active",
-      plan: plan.id,
-      paddleSubscriptionId: `rzp:${paymentId}`,
-      currentPeriodEnd: periodEnd(plan.accessDays),
-    });
+  if (figmaUserId && plan) {
+    await grantPluginAccess({ figmaUserId, planId: plan.id, paymentId });
   }
 
   return json({

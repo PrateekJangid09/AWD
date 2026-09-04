@@ -112,9 +112,10 @@ export default function PrivacyPage() {
 
             <h2 id="payments">Payments</h2>
             <p>
-              Checkout is handled by Razorpay. We are the seller; Razorpay collects
-              the payment details needed to charge you. We receive a payment id,
-              order id, and signature so we can unlock plugin access. See{" "}
+              Checkout is handled by Razorpay hosted payment links. We are the
+              seller; Razorpay collects the payment details needed to charge you.
+              We receive a payment id, payment-link id, and signature, plus the
+              Figma user id attached at Unlock, so we can grant plugin access. See{" "}
               <a href="https://razorpay.com/privacy/" rel="noopener noreferrer">
                 Razorpay's privacy policy
               </a>

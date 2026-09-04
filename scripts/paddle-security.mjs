@@ -108,23 +108,29 @@ const checkout = readFileSync(join(root, "app/pricing/CheckoutButton.tsx"), "utf
 if (checkout.includes("RAZORPAY_KEY_SECRET") || checkout.includes("KEY_SECRET")) {
   fail("CheckoutButton must never include the Razorpay secret");
 }
-if (!checkout.includes("checkout.razorpay.com/v1/checkout.js")) fail("CheckoutButton must load Razorpay checkout.js");
-if (!checkout.includes("/api/create-order")) fail("CheckoutButton must create a Razorpay order");
-if (!checkout.includes("/api/verify-payment")) fail("CheckoutButton must verify the payment signature");
+if (checkout.includes("checkout.razorpay.com/v1/checkout.js")) {
+  fail("CheckoutButton must not load checkout.js; use hosted /api/pay");
+}
+if (!checkout.includes("/api/pay")) fail("CheckoutButton must open hosted /api/pay");
 if (!checkout.includes("autoOpen")) fail("CheckoutButton must support auto-opening Razorpay");
-else ok("CheckoutButton uses Razorpay Standard Checkout");
+else ok("CheckoutButton uses Razorpay hosted payment links");
 
 const entitlement = readFileSync(join(root, "app/api/plugins/entitlement/route.ts"), "utf8");
-if (!entitlement.includes('absUrl("/checkout")')) fail("plugin entitlement must send /checkout, not /pricing");
-else ok("entitlement checkoutUrl is /checkout");
+if (!entitlement.includes('absUrl("/api/pay")')) fail("plugin entitlement must send /api/pay, not /pricing");
+else ok("entitlement checkoutUrl is /api/pay");
 
 const checkoutPage = readFileSync(join(root, "app/checkout/page.tsx"), "utf8");
-if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Razorpay");
-else ok("checkout page auto-opens Razorpay");
+if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Razorpay for old plugin links");
+else ok("checkout page auto-opens Razorpay for plugin pay links");
 
 const pricingPage = readFileSync(join(root, "app/pricing/page.tsx"), "utf8");
-if (!pricingPage.includes("autoOpen={autoPay")) fail("pricing page must auto-open Razorpay when arriving from the plugin");
-else ok("pricing page auto-opens Razorpay for plugin pay links");
+if (!pricingPage.includes("$3") && !pricingPage.includes("${plan.amountUsd}")) {
+  fail("pricing page must show USD as the primary price");
+} else if (pricingPage.includes("autoOpen")) {
+  fail("pricing page must not auto-create payment links");
+} else {
+  ok("pricing page shows USD and does not auto-open checkout");
+}
 
 const ips = await fetch("https://api.paddle.com/ips", {
   headers: { "Paddle-Version": "1" },

@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     return json({ error: "figmaUserId and a known plugin are required." }, 400);
   }
 
-  const checkoutUrl = absUrl("/checkout");
+  const checkoutUrl = absUrl("/api/pay");
   const payload = {
     checkoutUrl,
     checkoutEnabled: checkoutEnabled(),

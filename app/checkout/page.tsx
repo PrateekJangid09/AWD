@@ -10,7 +10,7 @@ import CheckoutButton from "../pricing/CheckoutButton";
 
 const title = "Unlock Figma plugins";
 const description =
-  "Pay ₹249 per month or ₹2,490 per year to unlock Chromary, Colorhyme, TrueGradient and WebPalette. Razorpay opens the payment modal on this page.";
+  "Pay $3 per month or $30 per year to unlock Chromary, Colorhyme, TrueGradient and WebPalette. Razorpay hosted checkout attaches your Figma account.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -48,7 +48,7 @@ export default async function CheckoutPage({
       <PageHero
         eyebrow="Payment"
         title="Unlock the plugin suite."
-        intro="Razorpay opens the payment modal when you tap Pay. Pick monthly or yearly. Access lasts for the period you buy; pay again to renew."
+        intro="Pay opens Razorpay hosted checkout. Pick monthly or yearly. Access lasts for the period you buy; pay again to renew."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Checkout" }]}
       />
       <div className="wrap pt-8">
@@ -67,18 +67,17 @@ export default async function CheckoutPage({
                 {plan.id === selected ? " · opening" : ""}
               </p>
               <p className="mt-3 font-display text-4xl font-semibold tracking-tight">
-                ₹{plan.amountInr.toLocaleString("en-IN")}
+                ${plan.amountUsd}
                 <span className="ml-2 text-lg font-medium text-ink/50">
                   / {plan.period}
                 </span>
               </p>
-              <p className="text-sm text-ink/50">≈ ${plan.amountUsd} USD</p>
               <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
               <CheckoutButton
                 planId={plan.id}
-                label={plan.id === "yearly" ? "Pay ₹2,490 / year" : "Pay ₹249 / month"}
+                label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
                 figmaUserId={figmaUserId}
-                autoOpen={plan.id === selected}
+                autoOpen={Boolean(figmaUserId) && plan.id === selected}
               />
             </article>
           ))}
@@ -88,7 +87,8 @@ export default async function CheckoutPage({
           <Link href="/pricing" className="underline decoration-orange decoration-2 underline-offset-2">
             pricing page
           </Link>
-          . Questions:{" "}
+          . Start from the plugin Unlock button so the payment is tied to your Figma
+          account. Questions:{" "}
           <a href={`mailto:${CONTACT_EMAIL}`} className="text-orange">
             {CONTACT_EMAIL}
           </a>
