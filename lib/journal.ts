@@ -37,7 +37,21 @@ export function postPath(slug: string) {
   return `/blogs/${slug}`;
 }
 
-function buildPosts(): JournalPost[] {
+/**
+ * When a post was last revised.
+ *
+ * A post's figures are recomputed whenever the record set moves, so the archive
+ * release date is the honest revision date. It cannot precede publication
+ * though, so clamp: a post was not modified before it existed.
+ */
+function postModified(published: string) {
+  return DATASET.updatedAt > published ? DATASET.updatedAt : published;
+}
+
+/** Entries declare when they were published; `modified` is derived, never hand-set. */
+type PostEntry = Omit<JournalPost, "modified">;
+
+function buildPosts(): PostEntry[] {
   const archive = archiveStats();
   const platforms = platformStats();
   const type = typographyStats();
@@ -62,7 +76,6 @@ function buildPosts(): JournalPost[] {
       answer: `Across ${platforms.attributed} websites where a platform could be identified, the build tool predicts the visual style. ${framer?.motionShare ?? 0}% of the ${framer?.count ?? 0} Framer sites are tagged motion-driven, against ${next?.motionShare ?? 0}% of the ${next?.count ?? 0} Next.js sites. Webflow runs the largest headlines at a ${webflow?.medianLargestType ?? 0}px median, and Astro sites are the most consistently minimal.`,
       about: ["Framer", "Webflow", "Next.js", "Astro", "Web design", "Web development"],
       published: "2026-09-02",
-      modified: DATASET.updatedAt,
       status: "published",
       readingMinutes: 6,
       keyStat: {
@@ -107,7 +120,6 @@ function buildPosts(): JournalPost[] {
       answer: `Across ${type.sample} websites where type sizes were captured, the median largest heading is ${type.archiveMedian}px. Industry moves that number more than fashion does. Agency and studio sites sit at a ${agency?.medianLargestType ?? 0}px median across ${agency?.count ?? 0} records, while technology and SaaS sites sit at ${saas?.medianLargestType ?? 0}px across ${saas?.count ?? 0}. Loud type is a positioning choice, not a trend.`,
       about: ["Typography", "Web design", "Font size", "Type scale"],
       published: "2026-09-02",
-      modified: DATASET.updatedAt,
       status: "published",
       readingMinutes: 5,
       keyStat: {
@@ -152,7 +164,6 @@ function buildPosts(): JournalPost[] {
       answer: `Across ${colour.sample} website palettes, ${colour.restrainedShare}% carry at most one saturated colour: ${colour.noneShare}% use none at all and ${colour.oneShare}% use exactly one. Only ${colour.manyShare}% reach three or more. The median palette holds ${colour.medianPalette} colours, so most of that palette is doing neutral structural work rather than shouting.`,
       about: ["Colour palette", "Web design", "Accent colour", "Brand colour"],
       published: "2026-09-02",
-      modified: DATASET.updatedAt,
       status: "published",
       readingMinutes: 5,
       keyStat: {
@@ -191,7 +202,10 @@ function buildPosts(): JournalPost[] {
   ];
 }
 
-export const JOURNAL: JournalPost[] = buildPosts();
+export const JOURNAL: JournalPost[] = buildPosts().map((post) => ({
+  ...post,
+  modified: postModified(post.published),
+}));
 
 export function publishedPosts() {
   return JOURNAL.filter((post) => post.status === "published").sort((a, b) =>
