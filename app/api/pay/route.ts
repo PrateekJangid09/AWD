@@ -31,7 +31,9 @@ function fail(message: string, status = 503) {
 
 export async function GET(request: Request) {
   if (!razorpayConfigured()) {
-    return fail("Razorpay keys are not set on the server. Add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET.");
+    return fail(
+      "Razorpay keys are not set on the server. In Vercel → Settings → Environment Variables, add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET for Production, then Redeploy.",
+    );
   }
 
   const url = new URL(request.url);
