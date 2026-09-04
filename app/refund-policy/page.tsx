@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Refund policy";
 const description =
-  "Refund and cancellation policy for AllWebsites.Design plugin subscriptions: cancel anytime, and a 14-day unused refund, billed by Paddle.";
+  "Refund and cancellation policy for AllWebsites.Design Figma plugin subscriptions: cancel anytime, plus a 14-day unused refund, billed by Paddle.";
 
 export const metadata: Metadata = pageMeta({
   title,
