@@ -122,6 +122,10 @@ const checkoutPage = readFileSync(join(root, "app/checkout/page.tsx"), "utf8");
 if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Paddle");
 else ok("checkout page auto-opens Paddle");
 
+const pricingPage = readFileSync(join(root, "app/pricing/page.tsx"), "utf8");
+if (!pricingPage.includes("autoOpen={autoPay")) fail("pricing page must auto-open Paddle when arriving from the plugin");
+else ok("pricing page auto-opens Paddle for plugin pay links");
+
 const ips = await fetch("https://api.paddle.com/ips", {
   headers: { "Paddle-Version": "1" },
 });

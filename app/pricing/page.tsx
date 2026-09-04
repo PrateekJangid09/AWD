@@ -30,7 +30,7 @@ const FEATURES = [
 export default async function PricingPage({
   searchParams,
 }: {
-  searchParams: Promise<{ figma?: string | string[] }>;
+  searchParams: Promise<{ figma?: string | string[]; pay?: string | string[] }>;
 }) {
   const params = await searchParams;
   const raw = Array.isArray(params.figma) ? params.figma[0] : params.figma;
@@ -38,6 +38,8 @@ export default async function PricingPage({
     typeof raw === "string" && raw.trim() && raw.trim().length <= 128
       ? raw.trim()
       : undefined;
+  const payRaw = Array.isArray(params.pay) ? params.pay[0] : params.pay;
+  const autoPay = payRaw === "1" || payRaw === "true" || Boolean(figmaUserId);
   return (
     <>
       <JsonLd
@@ -83,6 +85,7 @@ export default async function PricingPage({
                 priceId={plan.priceId}
                 label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
                 figmaUserId={figmaUserId}
+                autoOpen={autoPay && plan.id === "monthly"}
               />
             </article>
           ))}
