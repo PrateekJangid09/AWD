@@ -107,7 +107,7 @@ export default function Home() {
                 Find a colour name, build a harmony, generate a website palette,
                 preview it on a mockup, and make OKLCH gradients. Browser tools stay
                 free. The same engines ship as Figma plugins: three free uses each,
-                then $3/month or $30/year for the suite.
+                then ₹249/month or ₹2,490/year for the suite.
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3 self-start sm:self-auto">

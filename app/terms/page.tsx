@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Terms of service";
 const description =
-  "Terms of service for AllWebsites.Design: the archive, free browser tools, and Figma plugin subscriptions billed by Paddle at $3 a month or $30 a year.";
+  "Terms of service for AllWebsites.Design: the archive, free browser tools, and Figma plugin access billed through Razorpay.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -69,8 +69,7 @@ export default function TermsPage() {
           <article className="prose max-w-2xl">
             <p>
               By using AllWebsites.Design you agree to these terms of service. If you
-              buy a plugin subscription, Paddle's buyer terms also apply to that
-              purchase.
+              buy plugin access, Razorpay's terms also apply to that payment.
             </p>
 
             <h2 id="who">Who we are</h2>
@@ -81,16 +80,17 @@ export default function TermsPage() {
               <a href="https://allwebsites.design">https://allwebsites.design</a>.
             </p>
             <p>
-              Merchant of record for paid plugin subscriptions is Paddle.com Market
-              Limited (and its affiliates). Paddle handles checkout, invoices, sales
-              tax / VAT where applicable, and appears on your payment statement.
+              Seller of paid plugin access is Prateek Jangid, operating
+              AllWebsites.Design as a sole proprietor. Razorpay Software Private
+              Limited processes the payment. Razorpay appears on some statements;
+              invoices and GST (where applicable) are our responsibility.
             </p>
 
             <h2 id="product">What we sell</h2>
             <p>
               AllWebsites.Design is a website-design research archive and a set of
               colour tools. The website archive and the in-browser tools are free.
-              What we sell through Paddle is paid access to four Figma plugins that
+              What we sell through Razorpay is paid access to four Figma plugins that
               use the same engines:
             </p>
             <ul>
@@ -101,8 +101,9 @@ export default function TermsPage() {
             </ul>
             <p>
               Current prices are listed on the{" "}
-              <Link href="/pricing">pricing page</Link>: $3 per month or $30 per year
-              for the suite. One subscription unlocks all four plugins.
+              <Link href="/pricing">pricing page</Link>: ₹249 per month or ₹2,490 per
+              year for the suite (about $3 / $30). One payment unlocks all four
+              plugins for that period.
             </p>
 
             <h2 id="plugins">Figma plugins</h2>
@@ -120,15 +121,14 @@ export default function TermsPage() {
 
             <h2 id="billing">Billing, renewal, and cancellation</h2>
             <p>
-              Subscriptions renew automatically at the end of each month or year until
-              you cancel. Cancel at any time. You keep access until the end of the
-              period you already paid for. After that, each plugin returns to three
-              free uses. See the{" "}
+              Checkout is a one-time Razorpay payment for 30 days (monthly) or 365
+              days (yearly). It does not auto-renew. When the period ends, each
+              plugin returns to three free uses until you pay again. See the{" "}
               <Link href="/refund-policy">refund and cancellation policy</Link>.
             </p>
             <p>
-              Paddle sends receipts and cancellation links to the email you use at
-              checkout. You can also email {CONTACT_EMAIL}.
+              Razorpay sends a payment receipt to the email you use at checkout. You
+              can also email {CONTACT_EMAIL}.
             </p>
 
             <h2 id="licence">Licence</h2>

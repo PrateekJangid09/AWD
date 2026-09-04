@@ -10,7 +10,7 @@ import CheckoutButton from "./CheckoutButton";
 
 const title = "Figma plugin pricing";
 const description =
-  "Chromary, Colorhyme, TrueGradient and WebPalette: three free uses each, then $3 per month or $30 per year for the suite, billed through Paddle.";
+  "Chromary, Colorhyme, TrueGradient and WebPalette: three free uses each, then ₹249 per month or ₹2,490 per year for the suite, billed through Razorpay.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -75,15 +75,16 @@ export default async function PricingPage({
                 {plan.name}
               </p>
               <p className="mt-3 font-display text-4xl font-semibold tracking-tight">
-                ${plan.amountUsd}
+                ₹{plan.amountInr.toLocaleString("en-IN")}
                 <span className="ml-2 text-lg font-medium text-ink/50">
                   / {plan.period}
                 </span>
               </p>
+              <p className="text-sm text-ink/50">≈ ${plan.amountUsd} USD</p>
               <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
               <CheckoutButton
-                priceId={plan.priceId}
-                label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
+                planId={plan.id}
+                label={plan.id === "yearly" ? "Pay ₹2,490 / year" : "Pay ₹249 / month"}
                 figmaUserId={figmaUserId}
                 autoOpen={autoPay && plan.id === "monthly"}
               />
@@ -101,7 +102,7 @@ export default async function PricingPage({
             ))}
           </ul>
           <p className="mt-6 text-sm text-ink/60">
-            Billing is handled by Paddle as merchant of record. Read the{" "}
+            Billing is handled by Razorpay. Prateek Jangid is the seller. Read the{" "}
             <Link href="/refund-policy" className="underline decoration-orange decoration-2 underline-offset-2">
               refund policy
             </Link>

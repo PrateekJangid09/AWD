@@ -9,6 +9,7 @@
     "lint": "next lint",
     "seo:check": "node scripts/seo-check.mjs",
     "paddle:check": "node scripts/paddle-security.mjs",
+    "razorpay:check": "node scripts/razorpay-security.mjs",
     "supabase:verify": "node scripts/supabase-verify.mjs"
   },
   "engines": {
@@ -21,6 +22,7 @@
   ],
   "dependencies": {
     "next": "^15.1.11",
+    "razorpay": "^2.9.8",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },

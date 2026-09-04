@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Refund policy";
 const description =
-  "Refund and cancellation policy for AllWebsites.Design Figma plugin subscriptions: cancel anytime, plus a 14-day unused refund, billed by Paddle.";
+  "Refund policy for AllWebsites.Design Figma plugin access: 14-day unused refund on Razorpay charges for the monthly or yearly suite.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -33,7 +33,7 @@ export default function RefundPolicyPage() {
       />
       <DocumentHero
         title="Refund and cancellation policy"
-        description="How to cancel a Figma plugin subscription and when we refund a charge. Paddle is the merchant of record."
+        description="How we refund a Razorpay charge for Figma plugin access. Payments are one-time for a month or a year."
         updated="4 September 2026"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Refund policy" }]}
       />
@@ -65,10 +65,10 @@ export default function RefundPolicyPage() {
             <h2 id="product">What this covers</h2>
             <p>
               This policy applies to paid Figma plugin access sold on{" "}
-              <Link href="/pricing">allwebsites.design/pricing</Link>: $3 per month
-              or $30 per year for Chromary, Colorhyme, TrueGradient, and WebPalette.
-              Paddle processes the payment and appears on your statement. Browser
-              tools on this site are free and are not billed.
+              <Link href="/pricing">allwebsites.design/pricing</Link>: ₹249 per month
+              or ₹2,490 per year for Chromary, Colorhyme, TrueGradient, and
+              WebPalette. Razorpay processes the payment. Browser tools on this site
+              are free and are not billed.
             </p>
             <p>
               Related pages: <Link href="/terms">terms of service</Link> and{" "}
@@ -77,16 +77,15 @@ export default function RefundPolicyPage() {
 
             <h2 id="cancel">Cancel</h2>
             <p>
-              Cancel at any time. Access continues until the end of the monthly or
-              yearly period you already paid for. After that, each plugin returns to
-              three free applies. Cancellation stops the next renewal; it is not
-              itself a refund of the current period.
+              Access lasts until the end of the monthly or yearly period you paid
+              for. Razorpay Standard Checkout does not auto-renew, so there is no
+              subscription to cancel. After the period ends, each plugin returns to
+              three free applies.
             </p>
             <p>
-              Use the customer portal / manage-subscription link in your Paddle
-              receipt email, or email{" "}
-              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and we will
-              help you cancel.
+              Email{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> if you need
+              help with a charge.
             </p>
 
             <h2 id="refunds">Refunds</h2>
@@ -96,17 +95,17 @@ export default function RefundPolicyPage() {
               immediately through Figma.
             </p>
             <p>
-              We may refuse a refund where the subscription was used heavily, where
-              we see refund abuse, or where Paddle's buyer terms require us to.
-              Chargebacks should be a last resort; email us first so we can help.
+              We may refuse a refund where the access was used heavily or where we
+              see refund abuse. Chargebacks should be a last resort; email us first
+              so we can help.
             </p>
 
             <h2 id="ask">How to ask</h2>
             <p>
               Email {CONTACT_EMAIL} or use the{" "}
               <Link href="/contact">contact form</Link>. Include the email on the
-              Paddle receipt and the receipt ID if you have it. We will coordinate
-              the refund through Paddle.
+              Razorpay receipt and the payment id if you have it. We will refund
+              through Razorpay.
             </p>
           </article>
         </div>

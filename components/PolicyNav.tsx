@@ -7,7 +7,7 @@ export const POLICY_LINKS = [
   { href: "/refund-policy", label: "Refund policy" },
 ] as const;
 
-/** Canonical public URLs for Paddle domain review. */
+# Canonical public URLs for policy pages.
 export const PUBLIC_POLICY_URLS = {
   pricing: "https://allwebsites.design/pricing",
   terms: "https://allwebsites.design/terms",

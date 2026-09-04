@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
           <p className="mt-3 max-w-xs text-[12px] leading-relaxed text-white/60">
             The archive and browser tools stay free. Figma plugins include three
-            free uses each; after that $3/month or $30/year (via Paddle) unlocks
+            free uses each; after that ₹249/month or ₹2,490/year (via Razorpay) unlocks
             all four. A coffee still helps keep the research going.
           </p>
         </div>

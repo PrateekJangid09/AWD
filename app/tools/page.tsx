@@ -141,7 +141,7 @@ export default function ToolsPage() {
             A connected set of design instruments that share a shell, so a colour
             can travel from name finder to harmony to website palette without
             leaving the language. The same engines ship as Figma plugins: three
-            free uses each, then one Paddle subscription unlocks the suite.
+            free uses each, then one Razorpay payment unlocks the suite.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link href="/pricing" className="btn-dark">

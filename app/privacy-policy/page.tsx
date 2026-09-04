@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Privacy Policy";
 const description =
-  "Privacy policy for AllWebsites.Design: analytics, contact messages, Figma plugin usage, Paddle billing, and the choices you can make about that data.";
+  "Privacy policy for AllWebsites.Design: analytics, contact messages, Figma plugin usage, Razorpay billing, and the choices you can make about that data.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
               <li>A website URL and notes if you submit a site</li>
               <li>Figma user id when you run a plugin (not your canvas or files)</li>
               <li>Plugin usage counts (applies, styles, dropped swatches)</li>
-              <li>Subscription status and Paddle customer / subscription ids if you pay</li>
+              <li>Paid-access status and Razorpay order / payment ids if you pay</li>
             </ul>
             <p>
               We do not collect your Figma file contents. We do not store card numbers.
@@ -112,12 +112,11 @@ export default function PrivacyPage() {
 
             <h2 id="payments">Payments</h2>
             <p>
-              Checkout is handled by Paddle as merchant of record. Paddle collects
-              the payment details needed to charge you, issue an invoice, and apply
-              tax. We receive events such as subscription activated or canceled, plus
-              the customer id Paddle assigns. See{" "}
-              <a href="https://www.paddle.com/legal/privacy" rel="noopener noreferrer">
-                Paddle's privacy policy
+              Checkout is handled by Razorpay. We are the seller; Razorpay collects
+              the payment details needed to charge you. We receive a payment id,
+              order id, and signature so we can unlock plugin access. See{" "}
+              <a href="https://razorpay.com/privacy/" rel="noopener noreferrer">
+                Razorpay's privacy policy
               </a>
               . Pricing is on the{" "}
               <Link href="/pricing">pricing page</Link>.
@@ -130,8 +129,8 @@ export default function PrivacyPage() {
             </p>
             <ul>
               <li>
-                <strong>Paddle.com Market Limited</strong> (and affiliates) for
-                checkout, invoices, tax, and subscription billing.
+                <strong>Razorpay Software Private Limited</strong> for checkout and
+                payment processing.
               </li>
               <li>
                 <strong>Supabase</strong> stores plugin usage counts and subscription

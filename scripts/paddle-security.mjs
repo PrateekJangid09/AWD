@@ -105,26 +105,26 @@ for (const needle of ["sandbox-api.paddle.com", "Paddle.Environment", "test_"]) 
 ok("no sandbox host or Environment.set in paddle libs");
 
 const checkout = readFileSync(join(root, "app/pricing/CheckoutButton.tsx"), "utf8");
-const checkoutLive = checkout
-  .split("\n")
-  .filter((line) => !line.trim().startsWith("//"))
-  .join("\n");
-if (checkoutLive.includes("Environment.set")) fail("CheckoutButton must not set sandbox");
-if (!checkout.includes("pwCustomer")) fail("CheckoutButton must pass pwCustomer when a ctm_ id is known");
-if (!checkout.includes("autoOpen")) fail("CheckoutButton must support auto-opening Paddle overlay");
-else ok("CheckoutButton is live-default and supports pwCustomer");
+if (checkout.includes("RAZORPAY_KEY_SECRET") || checkout.includes("KEY_SECRET")) {
+  fail("CheckoutButton must never include the Razorpay secret");
+}
+if (!checkout.includes("checkout.razorpay.com/v1/checkout.js")) fail("CheckoutButton must load Razorpay checkout.js");
+if (!checkout.includes("/api/create-order")) fail("CheckoutButton must create a Razorpay order");
+if (!checkout.includes("/api/verify-payment")) fail("CheckoutButton must verify the payment signature");
+if (!checkout.includes("autoOpen")) fail("CheckoutButton must support auto-opening Razorpay");
+else ok("CheckoutButton uses Razorpay Standard Checkout");
 
 const entitlement = readFileSync(join(root, "app/api/plugins/entitlement/route.ts"), "utf8");
 if (!entitlement.includes('absUrl("/checkout")')) fail("plugin entitlement must send /checkout, not /pricing");
 else ok("entitlement checkoutUrl is /checkout");
 
 const checkoutPage = readFileSync(join(root, "app/checkout/page.tsx"), "utf8");
-if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Paddle");
-else ok("checkout page auto-opens Paddle");
+if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Razorpay");
+else ok("checkout page auto-opens Razorpay");
 
 const pricingPage = readFileSync(join(root, "app/pricing/page.tsx"), "utf8");
-if (!pricingPage.includes("autoOpen={autoPay")) fail("pricing page must auto-open Paddle when arriving from the plugin");
-else ok("pricing page auto-opens Paddle for plugin pay links");
+if (!pricingPage.includes("autoOpen={autoPay")) fail("pricing page must auto-open Razorpay when arriving from the plugin");
+else ok("pricing page auto-opens Razorpay for plugin pay links");
 
 const ips = await fetch("https://api.paddle.com/ips", {
   headers: { "Paddle-Version": "1" },

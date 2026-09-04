@@ -10,7 +10,7 @@ import CheckoutButton from "../pricing/CheckoutButton";
 
 const title = "Unlock Figma plugins";
 const description =
-  "Pay $3 per month or $30 per year to unlock Chromary, Colorhyme, TrueGradient and WebPalette. Paddle opens the live payment overlay on this page.";
+  "Pay ₹249 per month or ₹2,490 per year to unlock Chromary, Colorhyme, TrueGradient and WebPalette. Razorpay opens the payment modal on this page.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -48,7 +48,7 @@ export default async function CheckoutPage({
       <PageHero
         eyebrow="Payment"
         title="Unlock the plugin suite."
-        intro="Paddle opens the payment overlay as soon as this page loads. Pick monthly or yearly if you want the other plan."
+        intro="Razorpay opens the payment modal when you tap Pay. Pick monthly or yearly. Access lasts for the period you buy; pay again to renew."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Checkout" }]}
       />
       <div className="wrap pt-8">
@@ -67,15 +67,16 @@ export default async function CheckoutPage({
                 {plan.id === selected ? " · opening" : ""}
               </p>
               <p className="mt-3 font-display text-4xl font-semibold tracking-tight">
-                ${plan.amountUsd}
+                ₹{plan.amountInr.toLocaleString("en-IN")}
                 <span className="ml-2 text-lg font-medium text-ink/50">
                   / {plan.period}
                 </span>
               </p>
+              <p className="text-sm text-ink/50">≈ ${plan.amountUsd} USD</p>
               <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
               <CheckoutButton
-                priceId={plan.priceId}
-                label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
+                planId={plan.id}
+                label={plan.id === "yearly" ? "Pay ₹2,490 / year" : "Pay ₹249 / month"}
                 figmaUserId={figmaUserId}
                 autoOpen={plan.id === selected}
               />

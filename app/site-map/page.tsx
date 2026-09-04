@@ -31,7 +31,7 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
       { href: "/c", label: "Categories", desc: "Website design examples by industry." },
       { href: "/tools", label: "Tools", desc: "Free colour tools that run in your browser." },
       { href: "/pricing", label: "Plugin pricing", desc: "Figma plugins: three free uses, then $3/month or $30/year." },
-      { href: "/checkout", label: "Plugin checkout", desc: "Paddle payment overlay for the Figma plugin suite." },
+      { href: "/checkout", label: "Plugin checkout", desc: "Razorpay payment modal for the Figma plugin suite." },
       {
         href: "/research/website-design-index-2026",
         label: "2026 Design Index",
