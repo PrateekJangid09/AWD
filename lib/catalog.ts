@@ -1,14 +1,22 @@
 // Client-safe catalogue data. Keep sample site records in data.ts so Nav
 // and other client components do not pull unused site rows into the bundle.
 
-export type Category = {
+/**
+ * The taxonomy seed: editorial config that does not depend on the record set.
+ * It deliberately carries no counts, so a stale number cannot reach the page.
+ */
+export type CategorySeed = {
   slug: string;
   name: string;
-  count: number;
-  share: string;
   blurb: string;
   descriptors: string[];
   accent: string;
+};
+
+/** A seed resolved against the live records. Only this shape has counts. */
+export type Category = CategorySeed & {
+  count: number;
+  share: string;
 };
 
 export type PaletteRole = { role: string; hex: string; coverage?: string };
@@ -34,32 +42,31 @@ export type Tool = {
   status: "live" | "soon";
 };
 
-// Taxonomy seed: name, blurb and accent are real config. The count and share
-// on each row are placeholders — resolveCategory() always replaces them with
-// the live record count, so never read them directly.
-export const CATEGORIES: Category[] = [
-  { slug: "portfolio", name: "Portfolio", count: 1990, share: "33.8%", blurb: "Personal sites, folios and CVs where the work is the interface.", descriptors: ["Personal", "Photography", "CV"], accent: "#FF6112" },
-  { slug: "agency-studio", name: "Agency / Studio", count: 975, share: "16.5%", blurb: "Creative shops, design studios and production houses selling taste.", descriptors: ["Creative", "Design", "Video"], accent: "#2536FF" },
-  { slug: "saas", name: "SaaS", count: 943, share: "16.0%", blurb: "Dashboards, CRMs and B2B products explaining themselves fast.", descriptors: ["Dashboards", "CRM", "B2B"], accent: "#0A0A0A" },
-  { slug: "other", name: "Other", count: 462, share: "7.8%", blurb: "References still awaiting a governed home in the taxonomy.", descriptors: ["Mixed", "Unsorted", "Emerging"], accent: "#7A7A7A" },
-  { slug: "media-entertainment", name: "Media / Entertainment", count: 198, share: "3.4%", blurb: "Streaming, publishing and culture brands built for attention.", descriptors: ["Streaming", "Publishing", "Culture"], accent: "#E4005B" },
-  { slug: "ecommerce", name: "E-commerce", count: 187, share: "3.2%", blurb: "Storefronts and DTC brands optimised for the add-to-cart.", descriptors: ["Shopify", "DTC", "Fashion"], accent: "#0F9D58" },
-  { slug: "architecture-real-estate", name: "Architecture / Real Estate", count: 168, share: "2.8%", blurb: "Studios and property brands where space becomes typography.", descriptors: ["Studios", "Property", "Interior"], accent: "#8B5E34" },
-  { slug: "ai", name: "AI", count: 163, share: "2.8%", blurb: "LLMs, chat and model products racing to explain the new.", descriptors: ["LLMs", "Agents", "Chat"], accent: "#6E56CF" },
-  { slug: "food-beverage", name: "Food & Beverage", count: 157, share: "2.7%", blurb: "Restaurants, brands and makers plating design on the web.", descriptors: ["Restaurants", "Brands", "Makers"], accent: "#E8590C" },
-  { slug: "fintech", name: "Fintech", count: 125, share: "2.1%", blurb: "Banking, wallets and crypto rails built to earn trust.", descriptors: ["Banking", "Crypto", "Wallets"], accent: "#00A389" },
-  { slug: "developer", name: "Developer", count: 90, share: "1.5%", blurb: "Dev tools, docs and APIs designed for people who read source.", descriptors: ["Docs", "APIs", "Open Source"], accent: "#111827" },
-  { slug: "ai-agent", name: "AI Agent", count: 79, share: "1.3%", blurb: "Autonomous agents and automation tools staking early ground.", descriptors: ["Agents", "Automation", "Tools"], accent: "#7C3AED" },
-  { slug: "health", name: "Health", count: 69, share: "1.2%", blurb: "Wellness, clinics and care apps balancing calm and clarity.", descriptors: ["Wellness", "Clinics", "Apps"], accent: "#0EA5E9" },
-  { slug: "typography", name: "Typography", count: 67, share: "1.1%", blurb: "Type foundries and lettering sites where the font is the pitch.", descriptors: ["Foundries", "Lettering", "Specimens"], accent: "#0A0A0A" },
-  { slug: "music-audio", name: "Music / Audio", count: 47, share: "0.8%", blurb: "Artists, labels and audio tools tuned for rhythm and motion.", descriptors: ["Artists", "Labels", "Tools"], accent: "#DB2777" },
-  { slug: "education", name: "Education", count: 45, share: "0.8%", blurb: "Courses, learning platforms and schools structuring knowledge.", descriptors: ["Courses", "Learning", "Platforms"], accent: "#2563EB" },
-  { slug: "template", name: "Template", count: 32, share: "0.5%", blurb: "Actual downloadable design kits, themes and resources.", descriptors: ["Designs", "Resources", "Kits"], accent: "#FF6112" },
-  { slug: "travel-hospitality", name: "Travel / Hospitality", count: 31, share: "0.5%", blurb: "Hotels, tourism and experiences selling a place to be.", descriptors: ["Hotels", "Tourism", "Stays"], accent: "#0891B2" },
-  { slug: "photography", name: "Photography", count: 30, share: "0.5%", blurb: "Photographers and galleries where the grid carries the mood.", descriptors: ["Galleries", "Studios", "Prints"], accent: "#0A0A0A" },
-  { slug: "nonprofit", name: "Nonprofit", count: 16, share: "0.3%", blurb: "Causes and foundations turning mission into momentum.", descriptors: ["Causes", "Foundations", "NGOs"], accent: "#16A34A" },
-  { slug: "crypto-web3", name: "Crypto / Web3", count: 15, share: "0.3%", blurb: "DeFi, NFT and DAO projects designing for the on-chain.", descriptors: ["DeFi", "NFT", "DAO"], accent: "#F59E0B" },
-  { slug: "fashion-retail", name: "Fashion / Retail", count: 7, share: "0.1%", blurb: "Labels and boutiques treating the site like a lookbook.", descriptors: ["Labels", "Boutiques", "Lookbooks"], accent: "#0A0A0A" },
+// Taxonomy seed. Counts live only on the resolved Category that
+// resolveCategory() builds from the record set, never here.
+export const CATEGORIES: CategorySeed[] = [
+  { slug: "portfolio", name: "Portfolio", blurb: "Personal sites, folios and CVs where the work is the interface.", descriptors: ["Personal", "Photography", "CV"], accent: "#FF6112" },
+  { slug: "agency-studio", name: "Agency / Studio", blurb: "Creative shops, design studios and production houses selling taste.", descriptors: ["Creative", "Design", "Video"], accent: "#2536FF" },
+  { slug: "saas", name: "SaaS", blurb: "Dashboards, CRMs and B2B products explaining themselves fast.", descriptors: ["Dashboards", "CRM", "B2B"], accent: "#0A0A0A" },
+  { slug: "other", name: "Other", blurb: "References still awaiting a governed home in the taxonomy.", descriptors: ["Mixed", "Unsorted", "Emerging"], accent: "#7A7A7A" },
+  { slug: "media-entertainment", name: "Media / Entertainment", blurb: "Streaming, publishing and culture brands built for attention.", descriptors: ["Streaming", "Publishing", "Culture"], accent: "#E4005B" },
+  { slug: "ecommerce", name: "E-commerce", blurb: "Storefronts and DTC brands optimised for the add-to-cart.", descriptors: ["Shopify", "DTC", "Fashion"], accent: "#0F9D58" },
+  { slug: "architecture-real-estate", name: "Architecture / Real Estate", blurb: "Studios and property brands where space becomes typography.", descriptors: ["Studios", "Property", "Interior"], accent: "#8B5E34" },
+  { slug: "ai", name: "AI", blurb: "LLMs, chat and model products racing to explain the new.", descriptors: ["LLMs", "Agents", "Chat"], accent: "#6E56CF" },
+  { slug: "food-beverage", name: "Food & Beverage", blurb: "Restaurants, brands and makers plating design on the web.", descriptors: ["Restaurants", "Brands", "Makers"], accent: "#E8590C" },
+  { slug: "fintech", name: "Fintech", blurb: "Banking, wallets and crypto rails built to earn trust.", descriptors: ["Banking", "Crypto", "Wallets"], accent: "#00A389" },
+  { slug: "developer", name: "Developer", blurb: "Dev tools, docs and APIs designed for people who read source.", descriptors: ["Docs", "APIs", "Open Source"], accent: "#111827" },
+  { slug: "ai-agent", name: "AI Agent", blurb: "Autonomous agents and automation tools staking early ground.", descriptors: ["Agents", "Automation", "Tools"], accent: "#7C3AED" },
+  { slug: "health", name: "Health", blurb: "Wellness, clinics and care apps balancing calm and clarity.", descriptors: ["Wellness", "Clinics", "Apps"], accent: "#0EA5E9" },
+  { slug: "typography", name: "Typography", blurb: "Type foundries and lettering sites where the font is the pitch.", descriptors: ["Foundries", "Lettering", "Specimens"], accent: "#0A0A0A" },
+  { slug: "music-audio", name: "Music / Audio", blurb: "Artists, labels and audio tools tuned for rhythm and motion.", descriptors: ["Artists", "Labels", "Tools"], accent: "#DB2777" },
+  { slug: "education", name: "Education", blurb: "Courses, learning platforms and schools structuring knowledge.", descriptors: ["Courses", "Learning", "Platforms"], accent: "#2563EB" },
+  { slug: "template", name: "Template", blurb: "Actual downloadable design kits, themes and resources.", descriptors: ["Designs", "Resources", "Kits"], accent: "#FF6112" },
+  { slug: "travel-hospitality", name: "Travel / Hospitality", blurb: "Hotels, tourism and experiences selling a place to be.", descriptors: ["Hotels", "Tourism", "Stays"], accent: "#0891B2" },
+  { slug: "photography", name: "Photography", blurb: "Photographers and galleries where the grid carries the mood.", descriptors: ["Galleries", "Studios", "Prints"], accent: "#0A0A0A" },
+  { slug: "nonprofit", name: "Nonprofit", blurb: "Causes and foundations turning mission into momentum.", descriptors: ["Causes", "Foundations", "NGOs"], accent: "#16A34A" },
+  { slug: "crypto-web3", name: "Crypto / Web3", blurb: "DeFi, NFT and DAO projects designing for the on-chain.", descriptors: ["DeFi", "NFT", "DAO"], accent: "#F59E0B" },
+  { slug: "fashion-retail", name: "Fashion / Retail", blurb: "Labels and boutiques treating the site like a lookbook.", descriptors: ["Labels", "Boutiques", "Lookbooks"], accent: "#0A0A0A" },
 ];
 
 export const TRENDING = ["saas", "ai-agent", "portfolio"];

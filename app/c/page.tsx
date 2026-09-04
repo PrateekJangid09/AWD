@@ -89,13 +89,11 @@ export default function CategoriesPage() {
         <div className="wrap flex flex-col gap-3">
           <p className="eyebrow text-white/90">On the counts</p>
           <p className="max-w-3xl text-pretty text-paper/70">
-            Counts describe <strong className="text-paper">website examples</strong> —
-            curated references and inspiration, not downloadable templates. Only the
-            dedicated{" "}
-            <Link href="/c/template" className="text-orange underline decoration-2 underline-offset-2">
-              Template
-            </Link>{" "}
-            category contains actual design kits and resources.
+            Counts describe <strong className="text-paper">website examples</strong>:
+            live sites studied for their palette, typography and detected
+            technology. They are not downloadable templates or theme files. Every
+            number here is the live record count, recomputed from the archive on
+            each build.
           </p>
         </div>
       </section>

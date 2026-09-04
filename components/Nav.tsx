@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import Logo from "./Logo";
-import { CATEGORIES, TOOLS } from "@/lib/catalog";
+import { TOOLS } from "@/lib/catalog";
 import type { Category } from "@/lib/catalog";
 
 type MenuKey = "categories" | "tools" | null;
@@ -16,10 +16,12 @@ const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null> }[] = 
   { href: "/blogs", label: "Resources" },
 ];
 
+// Required, not defaulted: counts must come from the live record set, so there
+// is no static fallback that could render a stale number.
 export default function Nav({
-  categories = CATEGORIES,
+  categories,
 }: {
-  categories?: Pick<Category, "slug" | "name" | "count" | "accent">[];
+  categories: Pick<Category, "slug" | "name" | "count" | "accent">[];
 }) {
   const [open, setOpen] = useState(false); // mobile
   const [menu, setMenu] = useState<MenuKey>(null); // desktop dropdown
