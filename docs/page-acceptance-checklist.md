@@ -19,9 +19,10 @@ Every item must be true before a page is published.
 | Headings | Exactly one H1 in plain words. H2s phrased as the questions people actually ask. | `seo:check` (H1 count) |
 | Answer block | A self contained 40 to 60 word answer directly under the H1, quotable with no surrounding context. | Review |
 | Data | At least one original statistic with its sample size. Every borrowed claim links its source. | Review |
-| Freshness | A visible last updated date, mirrored in `datePublished` and `dateModified`. Only bump it when the content actually changes. | Review |
+| Freshness | A visible last updated date, mirrored in `datePublished` and `dateModified`. Only bump it when the content actually changes. | `seo:check` (ordering) |
 | Author and org | An editorial line linking `/editorial-guidelines`, plus sitewide `Organization` schema. | `seo:check` (Organization) |
 | Schema | The right type (`Article`, `BlogPosting`, `Dataset`, `FAQPage`, `CollectionPage`, `ItemPage`) describing only what is visible. | `seo:check` (parses, FAQ visibility) |
+| Schema graph | Each `@id` declared once per page, and every `@id` a page references resolves in that page or is one of the sitewide nodes. | `seo:check` |
 | Internal links | At least three descriptive links to related archive, category or guide pages. | `seo:check` |
 | Images | Real alt text, WebP, sized for the layout. | `seo:check` (alt present) |
 | Cluster | The five to ten fan out questions listed, each answered on the page or linked. | Review |
@@ -36,6 +37,11 @@ npm run seo:check                 # sampled, one page per route shape
 npm run seo:check -- --all        # every URL in sitemap.xml
 npm run seo:check -- --base http://localhost:4360
 ```
+
+It also asserts, site wide, that every URL in `sitemap.xml` resolves with a 200
+rather than a redirect, and that the sitemap lists only HTML pages. A text file
+such as `llms.txt` is served and linked by convention, not advertised as an
+indexable page, so it must not appear there.
 
 The script exits non zero on any failure, so it can gate a deploy. It also
 checks that `robots.txt` names and permits `GPTBot`, `ClaudeBot`,

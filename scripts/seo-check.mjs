@@ -9,6 +9,15 @@
 //   npm run seo:check -- --all         # every URL in the sitemap
 //   npm run seo:check -- --base http://localhost:3000
 //
+// Per page: robots, canonical, title and description length, one H1, Open
+// Graph, image alt text, internal link count, and JSON-LD that parses, declares
+// each @id once, resolves every @id it references, keeps dateModified at or
+// after datePublished, and only claims FAQ questions the page actually shows.
+//
+// Per site: every sitemap URL resolves without redirecting, the sitemap lists
+// only HTML pages, robots.txt admits the answer engines and points at the
+// sitemap, and llms.txt is served.
+//
 // Exits non-zero when any page fails, so it can gate a deploy.
 
 const args = process.argv.slice(2);
@@ -92,6 +101,28 @@ function nodesOf(blocks) {
   return blocks.flatMap((b) => (b["@graph"] ? b["@graph"] : [b]));
 }
 
+/**
+ * The only nodes emitted on every page, so the only `@id`s a page may
+ * reference without also defining them.
+ */
+const SITEWIDE_IDS = new Set([
+  `${CANONICAL_HOST}/#organization`,
+  `${CANONICAL_HOST}/#website`,
+  `${CANONICAL_HOST}/#logo`,
+]);
+
+/** Every `{"@id": "..."}` reference anywhere in the graph. */
+function idReferences(value, found = new Set()) {
+  if (Array.isArray(value)) {
+    for (const item of value) idReferences(item, found);
+  } else if (value && typeof value === "object") {
+    const keys = Object.keys(value);
+    if (keys.length === 1 && keys[0] === "@id") found.add(value["@id"]);
+    for (const item of Object.values(value)) idReferences(item, found);
+  }
+  return found;
+}
+
 function checkPage(path, html) {
   const url = `${BASE}${path}`;
 
@@ -136,6 +167,34 @@ function checkPage(path, html) {
   const nodes = nodesOf(blocks.filter((b) => !b.__invalid));
   const types = nodes.flatMap((n) => (Array.isArray(n["@type"]) ? n["@type"] : [n["@type"]]));
   if (!types.includes("Organization")) fail(path, "schema", "no sitewide Organization");
+
+  // Two nodes sharing an @id merge unpredictably, and a partial copy can mask
+  // the fuller one. Each entity must be declared exactly once per document.
+  const declared = nodes.map((n) => n["@id"]).filter(Boolean);
+  const seenIds = new Set();
+  for (const id of declared) {
+    if (seenIds.has(id)) fail(path, "schema", `duplicate @id: ${id}`);
+    seenIds.add(id);
+  }
+  if (nodes.some((n) => !n["@type"])) fail(path, "schema", "node without @type");
+
+  // A reference must resolve in this document, unless it is one of the nodes
+  // emitted sitewide.
+  for (const ref of idReferences(nodes)) {
+    if (!seenIds.has(ref) && !SITEWIDE_IDS.has(ref))
+      fail(path, "schema", `dangling @id reference: ${ref}`);
+  }
+
+  // A page cannot have been revised before it was published.
+  for (const node of nodes) {
+    const { datePublished, dateModified } = node;
+    if (datePublished && dateModified && dateModified < datePublished)
+      fail(
+        path,
+        "dates",
+        `${node["@type"]}: dateModified ${dateModified} precedes datePublished ${datePublished}`,
+      );
+  }
 
   // FAQ schema must describe questions that are actually on the page.
   const text = decode(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
@@ -195,7 +254,15 @@ function pickSample(paths) {
 
 async function main() {
   const all = await sitemapUrls();
-  const paths = (ALL ? all : pickSample(all)).filter((p) => !p.endsWith(".txt"));
+
+  // A sitemap advertises indexable HTML pages. Anything else in it is either a
+  // file that cannot rank or a route that should never have been listed.
+  for (const p of all) {
+    if (/\.(txt|xml|json|png|jpe?g|webp|svg|ico|pdf)$/i.test(p))
+      fail(p, "sitemap", "non-HTML file listed in sitemap.xml");
+  }
+
+  const paths = ALL ? all : pickSample(all);
 
   console.log(`Checking ${paths.length} of ${all.length} sitemap URLs against ${BASE}\n`);
 
@@ -206,7 +273,10 @@ async function main() {
       const path = queue.shift();
       const { status, body } = await get(`${BASE}${path}`);
       if (status !== 200) {
-        fail(path, "status", `HTTP ${status}`);
+        // get() does not follow redirects: a sitemap should list final URLs,
+        // so a 3xx here is as much a defect as a 404.
+        const kind = status >= 300 && status < 400 ? "redirects" : "does not resolve";
+        fail(path, "status", `${kind} (HTTP ${status})`);
         continue;
       }
       checkPage(path, body);
@@ -228,6 +298,8 @@ async function main() {
       fail("/robots.txt", "sitemap", "does not reference sitemap.xml");
   }
 
+  // Not in the sitemap by design, so it is asserted here instead: agents find
+  // it at the well-known path.
   const llms = await get(`${BASE}/llms.txt`);
   if (llms.status !== 200) fail("/llms.txt", "status", `HTTP ${llms.status}`);
 
