@@ -93,7 +93,7 @@ export async function countSuiteUses(ids: string[]) {
   return Number.isFinite(n) ? n : 0;
 }
 
-export async function recordUse(figmaUserId: string, plugin: string, action: string, trackId?: string) {
+export async function ensurePluginUser(figmaUserId: string, trackId?: string) {
   const email = trackId && /^\d{10}$/.test(trackId) ? `track:${trackId}` : undefined;
   await rest("plugin_users", {
     method: "POST",
@@ -104,6 +104,10 @@ export async function recordUse(figmaUserId: string, plugin: string, action: str
       ...(email ? { email } : {}),
     }),
   });
+}
+
+export async function recordUse(figmaUserId: string, plugin: string, action: string, trackId?: string) {
+  await ensurePluginUser(figmaUserId, trackId);
   await rest("plugin_usage", {
     method: "POST",
     headers: { Prefer: "return=minimal" },

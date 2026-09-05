@@ -8,6 +8,7 @@ import {
 } from "@/lib/paddle-catalog";
 import {
   countSuiteUses,
+  ensurePluginUser,
   getEntitlement,
   getEntitlementByTrack,
   recordUse,
@@ -54,6 +55,7 @@ export async function POST(request: Request) {
     checkoutEnabled: checkoutEnabled(),
     priceMonthly: PADDLE_PRICE_MONTHLY,
     priceYearly: PADDLE_PRICE_YEARLY,
+    trackId: trackId || null,
   };
 
   if (!supabaseConfigured()) {
@@ -62,6 +64,8 @@ export async function POST(request: Request) {
         allowed: false,
         remaining: 0,
         plan: null,
+        status: null,
+        currentPeriodEnd: null,
         reason: "billing_unconfigured",
         ...payload,
       },
@@ -69,15 +73,21 @@ export async function POST(request: Request) {
     );
   }
 
+  await ensurePluginUser(figmaUserId, trackId || undefined);
+
   const entitlement =
     (await getEntitlement(figmaUserId)) || (trackId ? await getEntitlementByTrack(trackId) : null);
+  const periodEnd =
+    typeof entitlement?.current_period_end === "string" ? entitlement.current_period_end : null;
   const subscribed =
     entitlement?.status === "active" || entitlement?.status === "trialing";
   if (subscribed) {
     return json({
       allowed: true,
       remaining: null,
-      plan: entitlement?.plan ?? "active",
+      plan: typeof entitlement?.plan === "string" ? entitlement.plan : "monthly",
+      status: typeof entitlement?.status === "string" ? entitlement.status : "active",
+      currentPeriodEnd: periodEnd,
       reason: "subscribed",
       ...payload,
     });
@@ -90,7 +100,9 @@ export async function POST(request: Request) {
       {
         allowed: false,
         remaining: 0,
-        plan: null,
+        plan: "free",
+        status: "free",
+        currentPeriodEnd: null,
         reason: "paywall",
         ...payload,
       },
@@ -106,6 +118,8 @@ export async function POST(request: Request) {
     allowed: true,
     remaining: action === "consume" ? remaining - 1 : remaining,
     plan: "free",
+    status: "free",
+    currentPeriodEnd: null,
     reason: "free_use",
     ...payload,
   });

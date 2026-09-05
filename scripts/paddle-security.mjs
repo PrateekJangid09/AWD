@@ -118,6 +118,8 @@ else ok("CheckoutButton uses Razorpay hosted payment links");
 const entitlement = readFileSync(join(root, "app/api/plugins/entitlement/route.ts"), "utf8");
 if (!entitlement.includes('absUrl("/api/pay")')) fail("plugin entitlement must send /api/pay, not /pricing");
 else ok("entitlement checkoutUrl is /api/pay");
+if (!entitlement.includes("ensurePluginUser")) fail("entitlement check must upsert plugin_users");
+else ok("entitlement check upserts plugin_users");
 
 const checkoutPage = readFileSync(join(root, "app/checkout/page.tsx"), "utf8");
 if (!checkoutPage.includes("autoOpen")) fail("checkout page must auto-open Razorpay for old plugin links");

@@ -10,6 +10,7 @@
     "seo:check": "node scripts/seo-check.mjs",
     "paddle:check": "node scripts/paddle-security.mjs",
     "razorpay:check": "node scripts/razorpay-security.mjs",
+    "entitlement:check": "node scripts/plugin-entitlement.mjs",
     "supabase:verify": "node scripts/supabase-verify.mjs"
   },
   "engines": {
