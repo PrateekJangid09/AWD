@@ -33,14 +33,12 @@ function Shot({
   alt,
   href,
   eager = false,
-  height = 560,
 }: {
   src: string;
   label: string;
   alt: string;
   href?: string;
   eager?: boolean;
-  height?: number;
 }) {
   const intrinsic = imageSize(src);
   return (
@@ -64,8 +62,7 @@ function Shot({
         )}
       </figcaption>
       <div
-        className="skeleton no-scrollbar overflow-y-auto"
-        style={{ height }}
+        className="skeleton no-scrollbar aspect-[2/3] overflow-y-auto"
         tabIndex={0}
         aria-label={`${label} — scroll to view the full page`}
       >
@@ -75,7 +72,7 @@ function Shot({
             alt={alt}
             width={intrinsic.width}
             height={intrinsic.height}
-            sizes="(max-width: 1024px) 100vw, 520px"
+            sizes="(max-width: 1024px) 100vw, 420px"
             priority={eager}
             loading={eager ? undefined : "lazy"}
             quality={72}
@@ -201,8 +198,34 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
         ]}
       />
 
-      <div className="mt-6 grid min-w-0 gap-6 lg:grid-cols-[1fr_0.82fr] lg:items-start lg:gap-8">
-        <div className="min-w-0 space-y-5 lg:order-1">
+      <div className="mt-6 grid min-w-0 gap-8 lg:grid-cols-[minmax(260px,0.68fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
+        <div className="min-w-0 order-2 lg:sticky lg:top-20 lg:order-1">
+          <Shot
+            src={`${base}/${homepageFile}`}
+            label={identity.domain}
+            alt={`${identity.name} homepage, full-page screenshot`}
+            href={identity.url}
+            eager
+          />
+
+          {subPages.length > 0 && (
+            <div className="mt-4">
+              <Label>Key pages</Label>
+              <div className="mt-3 grid grid-cols-3 gap-3">
+                {subPages.map((p) => (
+                  <PageThumb key={p.file} src={`${base}/${p.file}`} label={p.label} href={p.href} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          <p className="mt-4 text-center text-[11px] text-muted">
+            Source-verified
+            {dates.exact ? ` · last checked ${formatDay(dates.modified)}` : ` · archive ${formatDay(dates.modified)}`}
+          </p>
+        </div>
+
+        <div className="min-w-0 order-1 space-y-5 lg:order-2">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex min-w-0 items-center gap-3">
               {identity.favicon && (
@@ -427,33 +450,6 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
               </div>
             </div>
           )}
-        </div>
-
-        <div className="min-w-0 lg:sticky lg:top-20 lg:order-2">
-          <Shot
-            src={`${base}/${homepageFile}`}
-            label={identity.domain}
-            alt={`${identity.name} homepage, full-page screenshot`}
-            href={identity.url}
-            eager
-            height={560}
-          />
-
-          {subPages.length > 0 && (
-            <div className="mt-4">
-              <Label>Key pages</Label>
-              <div className="mt-3 grid grid-cols-3 gap-3">
-                {subPages.map((p) => (
-                  <PageThumb key={p.file} src={`${base}/${p.file}`} label={p.label} href={p.href} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          <p className="mt-4 text-center text-[11px] text-muted">
-            Source-verified
-            {dates.exact ? ` · last checked ${formatDay(dates.modified)}` : ` · archive ${formatDay(dates.modified)}`}
-          </p>
         </div>
       </div>
     </div>
