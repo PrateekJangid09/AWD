@@ -272,8 +272,8 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 {isRecordedEmail(contact.email) && (
                   <div className="flex items-center justify-between gap-4">
                     <dt className="text-muted">Email</dt>
-                    <dd className="flex items-center gap-2">
-                      <a href={`mailto:${contact.email}`} className="font-medium hover:text-orange">
+                    <dd className="flex min-w-0 items-center gap-2">
+                      <a href={`mailto:${contact.email}`} className="min-w-0 break-all font-medium hover:text-orange">
                         {contact.email}
                       </a>
                       {contact.on_official_domain && (
@@ -420,7 +420,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                   See all →
                 </Link>
               </div>
-              <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {similar.map((s) => (
                   <SiteCard key={s.slug} site={s} />
                 ))}
