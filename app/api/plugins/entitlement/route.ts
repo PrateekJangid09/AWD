@@ -7,8 +7,9 @@ import {
   isPluginId,
 } from "@/lib/paddle-catalog";
 import {
-  countUses,
+  countSuiteUses,
   getEntitlement,
+  getEntitlementByTrack,
   recordUse,
   supabaseConfigured,
 } from "@/lib/supabase-admin";
@@ -31,7 +32,7 @@ function json(body: unknown, status = 200) {
 }
 
 export async function POST(request: Request) {
-  let body: { figmaUserId?: string; plugin?: string; action?: string };
+  let body: { figmaUserId?: string; plugin?: string; action?: string; trackId?: string };
   try {
     body = (await request.json()) as typeof body;
   } catch {
@@ -39,6 +40,8 @@ export async function POST(request: Request) {
   }
 
   const figmaUserId = typeof body.figmaUserId === "string" ? body.figmaUserId.trim() : "";
+  const trackId =
+    typeof body.trackId === "string" && /^\d{10}$/.test(body.trackId.trim()) ? body.trackId.trim() : "";
   const plugin = typeof body.plugin === "string" ? body.plugin.trim() : "";
   const action = body.action === "consume" ? "consume" : "check";
   if (!figmaUserId || !isPluginId(plugin)) {
@@ -54,16 +57,20 @@ export async function POST(request: Request) {
   };
 
   if (!supabaseConfigured()) {
-    return json({
-      allowed: true,
-      remaining: null,
-      plan: null,
-      reason: "billing_unconfigured",
-      ...payload,
-    });
+    return json(
+      {
+        allowed: false,
+        remaining: 0,
+        plan: null,
+        reason: "billing_unconfigured",
+        ...payload,
+      },
+      402,
+    );
   }
 
-  const entitlement = await getEntitlement(figmaUserId);
+  const entitlement =
+    (await getEntitlement(figmaUserId)) || (trackId ? await getEntitlementByTrack(trackId) : null);
   const subscribed =
     entitlement?.status === "active" || entitlement?.status === "trialing";
   if (subscribed) {
@@ -76,7 +83,7 @@ export async function POST(request: Request) {
     });
   }
 
-  const used = await countUses(figmaUserId, plugin);
+  const used = await countSuiteUses([figmaUserId, trackId]);
   const remaining = Math.max(0, FREE_USES_PER_PLUGIN - used);
   if (remaining <= 0) {
     return json(
@@ -92,7 +99,7 @@ export async function POST(request: Request) {
   }
 
   if (action === "consume") {
-    await recordUse(figmaUserId, plugin, "apply");
+    await recordUse(figmaUserId, plugin, "apply", trackId || undefined);
   }
 
   return json({

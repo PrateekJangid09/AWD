@@ -48,6 +48,11 @@ export function verifyRazorpayPaymentLinkSignature(
   );
 }
 
+/** Razorpay webhook: HMAC-SHA256(rawBody, webhook secret) */
+export function verifyRazorpayWebhookSignature(rawBody: string, signature: string, secret: string): boolean {
+  return compareHmac(rawBody, signature, secret);
+}
+
 function compareHmac(payload: string, signature: string, secret: string): boolean {
   if (!payload || !signature || !secret) return false;
   const expected = createHmac("sha256", secret).update(payload).digest("hex");

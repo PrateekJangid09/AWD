@@ -39,6 +39,7 @@ export const PLUGIN_IDS = [
   "colorhyme",
   "truegradient",
   "webpalette",
+  "suite",
 ] as const;
 
 export type PlanId = (typeof PLANS)[number]["id"];

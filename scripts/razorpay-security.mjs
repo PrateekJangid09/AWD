@@ -75,7 +75,14 @@ else ok("verify-payment route present");
 const payRoute = readFileSync(join(root, "app/api/pay/route.ts"), "utf8");
 if (!payRoute.includes("createRazorpayPaymentLink")) fail("/api/pay must create a payment link");
 if (!payRoute.includes("figmaUserId")) fail("/api/pay must attach the Figma user id");
+if (!payRoute.includes("Unlock from the Figma plugin")) fail("/api/pay must refuse checkout without an id");
 else ok("/api/pay creates a hosted payment link");
+
+const webhook = readFileSync(join(root, "app/api/razorpay/webhook/route.ts"), "utf8");
+if (!webhook.includes("verifyRazorpayWebhookSignature")) fail("webhook must HMAC the raw body");
+if (!webhook.includes("grantPluginAccess")) fail("webhook must grant plugin access");
+if (!webhook.includes("payment_link.paid")) fail("webhook must handle payment_link.paid");
+else ok("payment-link webhook grants access");
 
 const callback = readFileSync(join(root, "app/api/razorpay/callback/route.ts"), "utf8");
 if (!callback.includes("verifyRazorpayPaymentLinkSignature")) {

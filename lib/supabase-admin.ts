@@ -42,6 +42,16 @@ export async function getEntitlement(figmaUserId: string) {
   return rows[0] ?? null;
 }
 
+export async function getEntitlementByTrack(trackId: string) {
+  const res = await rest("plugin_users", {
+    query: `email=eq.${encodeURIComponent(`track:${trackId}`)}&select=figma_user_id,email`,
+  });
+  const rows = Array.isArray(res.json) ? (res.json as Row[]) : [];
+  const userId = typeof rows[0]?.figma_user_id === "string" ? rows[0].figma_user_id : "";
+  if (!userId) return null;
+  return getEntitlement(userId);
+}
+
 export async function countUses(figmaUserId: string, plugin: string) {
   const cfg = config();
   if (!cfg) return 0;
@@ -61,12 +71,38 @@ export async function countUses(figmaUserId: string, plugin: string) {
   return Number.isFinite(n) ? n : 0;
 }
 
-export async function recordUse(figmaUserId: string, plugin: string, action: string) {
+export async function countSuiteUses(ids: string[]) {
+  const cfg = config();
+  if (!cfg) return 0;
+  const unique = [...new Set(ids.map((id) => id.trim()).filter(Boolean))].slice(0, 4);
+  if (!unique.length) return 0;
+  const list = unique.map((id) => encodeURIComponent(id)).join(",");
+  const query = `figma_user_id=in.(${list})&select=id`;
+  const response = await fetch(`${cfg.url}/rest/v1/plugin_usage?${query}`, {
+    method: "GET",
+    headers: {
+      apikey: cfg.key,
+      Authorization: `Bearer ${cfg.key}`,
+      Prefer: "count=exact",
+      Range: "0-0",
+    },
+  });
+  const range = response.headers.get("content-range");
+  const total = range?.split("/")[1];
+  const n = Number(total);
+  return Number.isFinite(n) ? n : 0;
+}
+
+export async function recordUse(figmaUserId: string, plugin: string, action: string, trackId?: string) {
+  const email = trackId && /^\d{10}$/.test(trackId) ? `track:${trackId}` : undefined;
   await rest("plugin_users", {
     method: "POST",
     query: "on_conflict=figma_user_id",
     headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-    body: JSON.stringify({ figma_user_id: figmaUserId }),
+    body: JSON.stringify({
+      figma_user_id: figmaUserId,
+      ...(email ? { email } : {}),
+    }),
   });
   await rest("plugin_usage", {
     method: "POST",

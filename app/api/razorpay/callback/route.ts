@@ -30,24 +30,27 @@ export async function GET(request: Request) {
 
   const client = razorpayClient();
   let figmaUserId = (url.searchParams.get("figma") || "").trim().slice(0, 128);
+  let trackId = (url.searchParams.get("track") || "").trim().slice(0, 16);
   let planId = url.searchParams.get("plan") || "monthly";
   if (client) {
     try {
       const link = await client.paymentLink.fetch(linkId);
       const notes = (link.notes || {}) as Record<string, string>;
       if (typeof notes.figmaUserId === "string") figmaUserId = notes.figmaUserId;
+      if (typeof notes.trackId === "string") trackId = notes.trackId;
       if (typeof notes.plan === "string") planId = notes.plan;
     } catch {
       // notes are optional; signature already matched
     }
   }
 
-  if (figmaUserId) {
-    await grantPluginAccess({ figmaUserId, planId, paymentId });
+  const billingId = figmaUserId || trackId;
+  if (billingId) {
+    await grantPluginAccess({ figmaUserId: billingId, planId, paymentId, trackId });
   }
 
   const dest = new URL(thanks);
-  if (figmaUserId) dest.searchParams.set("figma", figmaUserId);
+  if (billingId) dest.searchParams.set("figma", billingId);
   dest.searchParams.set("plan", planId);
   return NextResponse.redirect(dest.toString(), 302);
 }

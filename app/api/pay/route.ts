@@ -41,16 +41,22 @@ export async function GET(request: Request) {
   if (!plan) return fail("Unknown plan.", 400);
 
   const figmaUserId = (url.searchParams.get("figma") || "").trim().slice(0, 128);
+  const trackId = (url.searchParams.get("track") || "").trim().slice(0, 16);
+  if (!figmaUserId && !trackId) {
+    return fail("Unlock from the Figma plugin so we can attach your tracking id. Open Color Tool Suite and tap Unlock $3.", 400);
+  }
+  const billingId = figmaUserId || trackId;
   const referenceId = `awd_${plan.id}_${Date.now()}`.slice(0, 40);
   const description =
     plan.id === "yearly"
       ? "AllWebsites.Design plugin suite · 1 year"
       : "AllWebsites.Design plugin suite · 1 month";
-  const notes: Record<string, string> = { plan: plan.id };
-  if (figmaUserId) notes.figmaUserId = figmaUserId;
+  const notes: Record<string, string> = { plan: plan.id, figmaUserId: billingId };
+  if (trackId) notes.trackId = trackId;
 
   const callback = new URL(absUrl("/api/razorpay/callback"));
-  if (figmaUserId) callback.searchParams.set("figma", figmaUserId);
+  callback.searchParams.set("figma", billingId);
+  if (trackId) callback.searchParams.set("track", trackId);
   callback.searchParams.set("plan", plan.id);
 
   // Prefer USD so a US visitor lands on a dollar checkout. INR is the fallback
