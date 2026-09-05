@@ -11,6 +11,7 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/archive", label: "Archive" },
       { href: "/c", label: "Categories" },
       { href: "/tools", label: "Tools" },
+      { href: "/pricing", label: "Plugin pricing" },
       { href: "/research/website-design-index-2026", label: "Research" },
       { href: "/blogs", label: "Resources" },
       { href: "/site-map", label: "Site Map" },
@@ -31,6 +32,7 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
     links: [
       { href: "/privacy-policy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
+      { href: "/refund-policy", label: "Refunds" },
       { href: "/cookie-preference", label: "Cookies" },
     ],
   },
@@ -73,7 +75,9 @@ export default function Footer() {
             </a>
           </div>
           <p className="mt-3 max-w-xs text-[12px] leading-relaxed text-white/60">
-            The archive and every tool are free. A coffee keeps the research going.
+            The archive and browser tools stay free. Figma plugins include three
+            free uses each; after that $3/month or $30/year (via Razorpay) unlocks
+            all four. A coffee still helps keep the research going.
           </p>
         </div>
 

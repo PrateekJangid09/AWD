@@ -30,6 +30,8 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
       { href: "/archive", label: "Archive", desc: "Search and filter every published record." },
       { href: "/c", label: "Categories", desc: "Website design examples by industry." },
       { href: "/tools", label: "Tools", desc: "Free colour tools that run in your browser." },
+      { href: "/pricing", label: "Plugin pricing", desc: "Figma plugins: three free uses, then $3/month or $30/year." },
+      { href: "/checkout", label: "Plugin checkout", desc: "Razorpay hosted checkout for the Figma plugin suite." },
       {
         href: "/research/website-design-index-2026",
         label: "2026 Design Index",
@@ -56,7 +58,8 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
     heading: "Legal",
     links: [
       { href: "/privacy-policy", label: "Privacy policy", desc: "What we collect and why." },
-      { href: "/terms", label: "Terms", desc: "Terms of use for the archive." },
+      { href: "/terms", label: "Terms of service", desc: "Terms for the archive and plugin subscriptions." },
+      { href: "/refund-policy", label: "Refund policy", desc: "Cancellations and refunds for plugin subscriptions." },
       { href: "/cookie-preference", label: "Cookie preferences", desc: "Manage analytics cookies." },
     ],
   },

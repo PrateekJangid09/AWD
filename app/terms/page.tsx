@@ -3,11 +3,12 @@ import Link from "next/link";
 import DocumentHero from "@/components/DocumentHero";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
-import { pageMeta, typedPageGraph } from "@/lib/seo";
+import PolicyNav from "@/components/PolicyNav";
+import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
-const title = "Terms & Conditions";
+const title = "Terms of service";
 const description =
-  "The terms governing use of the AllWebsites.Design archive and tools, including third-party brand ownership, accuracy limits and how our records may be cited.";
+  "Terms of service for AllWebsites.Design: the archive, free browser tools, and Figma plugin access billed through Razorpay.";
 
 export const metadata: Metadata = pageMeta({
   title,
@@ -31,9 +32,9 @@ export default function TermsPage() {
         })}
       />
       <DocumentHero
-        title="Terms & Conditions"
-        description="The terms that govern use of the archive, including third-party ownership and accuracy limitations."
-        updated="11 August 2026"
+        title="Terms of service"
+        description="The agreement that covers the archive, the free browser tools, and paid Figma plugin access."
+        updated="4 September 2026"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Terms" }]}
       />
 
@@ -45,12 +46,15 @@ export default function TermsPage() {
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               {[
-                ["purpose", "Archive purpose"],
-                ["permitted", "Permitted use"],
+                ["who", "Who we are"],
+                ["product", "What we sell"],
+                ["plugins", "Figma plugins"],
+                ["billing", "Billing"],
+                ["licence", "Licence"],
+                ["archive", "Archive and tools"],
                 ["prohibited", "Prohibited use"],
-                ["ownership", "Third-party ownership"],
-                ["accuracy", "Accuracy limitation"],
-                ["law", "Governing law"],
+                ["liability", "Liability"],
+                ["law", "Contact"],
               ].map(([id, label]) => (
                 <li key={id}>
                   <a href={`#${id}`} className="text-ink/60 hover:text-orange">
@@ -59,57 +63,122 @@ export default function TermsPage() {
                 </li>
               ))}
             </ul>
+            <PolicyNav current="/terms" />
           </aside>
 
           <article className="prose max-w-2xl">
             <p>
-              By using AllWebsites.Design you agree to these terms. They exist to keep
-              the archive useful, honest and fair to the third parties whose work it
-              references.
+              By using AllWebsites.Design you agree to these terms of service. If you
+              buy plugin access, Razorpay's terms also apply to that payment.
             </p>
 
-            <h2 id="purpose">Archive purpose</h2>
+            <h2 id="who">Who we are</h2>
             <p>
-              AllWebsites.Design is provided for design research and inspiration. It is
-              a reference layer — not the authoritative source for any third-party
-              company represented within it.
+              These terms are published by Prateek Jangid, operating AllWebsites.Design
+              as a sole proprietor. Contact:{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Website:{" "}
+              <a href="https://allwebsites.design">https://allwebsites.design</a>.
+            </p>
+            <p>
+              Seller of paid plugin access is Prateek Jangid, operating
+              AllWebsites.Design as a sole proprietor. Razorpay Software Private
+              Limited processes the payment. Razorpay appears on some statements;
+              invoices and GST (where applicable) are our responsibility.
             </p>
 
-            <h2 id="permitted">Permitted use</h2>
+            <h2 id="product">What we sell</h2>
+            <p>
+              AllWebsites.Design is a website-design research archive and a set of
+              colour tools. The website archive and the in-browser tools are free.
+              What we sell through Razorpay is paid access to four Figma plugins that
+              use the same engines:
+            </p>
+            <ul>
+              <li>Chromary (colour name finder)</li>
+              <li>Colorhyme (colour harmony generator)</li>
+              <li>TrueGradient (OKLCH gradient generator)</li>
+              <li>WebPalette (website colour palette generator)</li>
+            </ul>
+            <p>
+              Current prices are listed on the{" "}
+              <Link href="/pricing">pricing page</Link>: $3 per month or $30 per
+              year for the suite. One payment unlocks all four plugins for that
+              period.
+            </p>
+
+            <h2 id="plugins">Figma plugins</h2>
+            <p>
+              Each plugin includes three free uses per Figma account (apply a fill,
+              create a paint style, or drop labelled swatches). After that, a
+              subscription is required. Free uses are counted per plugin, not shared
+              across plugins. We identify your Figma account by Figma's user id; we
+              do not read your canvas except when you run the plugin.
+            </p>
+            <p>
+              Plugins require the Figma desktop app. They are delivered digitally. We
+              do not ship physical goods.
+            </p>
+
+            <h2 id="billing">Billing, renewal, and cancellation</h2>
+            <p>
+              Checkout is a one-time Razorpay hosted payment (same idea as Stripe
+              Checkout) for 30 days (monthly) or 365 days (yearly). It does not
+              auto-renew. When the period ends, each plugin returns to three free
+              uses until you pay again. See the{" "}
+              <Link href="/refund-policy">refund and cancellation policy</Link>.
+            </p>
+            <p>
+              Razorpay sends a payment receipt to the email you use at checkout. You
+              can also email {CONTACT_EMAIL}.
+            </p>
+
+            <h2 id="licence">Licence</h2>
+            <p>
+              A paid subscription lets you use the four plugins in your own Figma
+              files for the duration of the subscription. You may not resell, rent,
+              or redistribute the plugins, or remove our branding from the plugin UI.
+              Palettes, colours, and files you create with the plugins remain yours.
+            </p>
+
+            <h2 id="archive">Archive and browser tools</h2>
+            <p>
+              The archive is a reference layer for design research. It is not the
+              authoritative source for any third-party company it mentions. Browser
+              tools (including Mockupalettes) run in your browser and are free. Third-party
+              names, screenshots, and trademarks remain the property of their owners.
+              Inclusion does not imply endorsement.
+            </p>
             <ul>
               <li>Browse the archive and follow source links</li>
               <li>Use references to inform your own original design work</li>
+              <li>Do not scrape the site in a way that harms availability</li>
+              <li>Do not claim third-party work as your own</li>
             </ul>
 
             <h2 id="prohibited">Prohibited use</h2>
             <ul>
               <li>Misusing or disrupting the service</li>
-              <li>Harmful scraping behaviour</li>
-              <li>Claiming third-party work as your own</li>
+              <li>Sharing a paid subscription in a way that bypasses the paywall</li>
+              <li>Using the plugins or archive for unlawful work</li>
             </ul>
 
-            <h2 id="ownership">Third-party ownership</h2>
-            <ul>
-              <li>Third-party names remain the property of their owners</li>
-              <li>Screenshots remain connected to their original websites</li>
-              <li>Trademarks remain the property of their owners</li>
-              <li>Inclusion does not imply endorsement or transfer any rights</li>
-            </ul>
-
-            <h2 id="accuracy">Accuracy limitation</h2>
+            <h2 id="liability">Liability</h2>
             <p>
-              The catalogue can become outdated and automated classification can be
-              imperfect. Always treat the official website as the authority for current
-              facts. You can request a correction via our{" "}
-              <Link href="/contact">contact page</Link>.
+              Tools and palettes are offered as-is. We do not guarantee that any
+              colour combination meets accessibility, brand, or regulatory
+              requirements for your project. To the extent permitted by law, we are
+              not liable for indirect or consequential loss arising from use of this
+              site or the plugins.
             </p>
 
-            <h2 id="law">Governing law</h2>
+            <h2 id="law">Contact</h2>
             <p>
-              These terms are provided in good faith. Where verified operator details
-              have not been published, we deliberately avoid asserting a specific legal
-              entity or jurisdiction. This section will be updated as those details are
-              formalised.
+              Questions:{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> or the{" "}
+              <Link href="/contact">contact page</Link>. Related policies:{" "}
+              <Link href="/privacy-policy">privacy</Link>,{" "}
+              <Link href="/refund-policy">refunds</Link>,{" "}
+              <Link href="/pricing">pricing</Link>.
             </p>
           </article>
         </div>

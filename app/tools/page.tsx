@@ -84,7 +84,7 @@ export default function ToolsPage() {
                     {live ? (
                       <Image
                         src={`/tools/previews/${j.slug}.webp`}
-                        alt={`${name} — ${tagline}`}
+                        alt={`${name}: ${tagline}`}
                         fill
                         priority={i === 0}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -140,9 +140,13 @@ export default function ToolsPage() {
           <p className="mx-auto mt-16 max-w-2xl text-center text-pretty text-lg leading-relaxed text-soft">
             A connected set of design instruments that share a shell, so a colour
             can travel from name finder to harmony to website palette without
-            leaving the language.
+            leaving the language. The same engines ship as Figma plugins: three
+            free uses each, then one Razorpay payment unlocks the suite.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link href="/pricing" className="btn-dark">
+              Figma plugin pricing
+            </Link>
             <Link href="/archive" className="btn-ghost">
               Browse the archive
             </Link>
