@@ -3,10 +3,6 @@ import { TOOLS } from "@/lib/data";
 import { publishedPosts } from "@/lib/journal";
 import { NAMED_COLORS, namedColorPath } from "@/lib/named-colors";
 import { PALETTE_CATEGORIES, WEBSITE_PALETTES, paletteCategoryPath, palettePath } from "@/lib/mockupalettes";
-import { SITE_URL } from "@/lib/seo";
-
-export const SITEMAP_KINDS = ["static", "archive", "colors", "palettes"] as const;
-export type SitemapKind = (typeof SITEMAP_KINDS)[number];
 
 export type SitemapEntry = {
   path: string;
@@ -26,7 +22,7 @@ function entry(
   return { path, lastModified, changeFrequency, priority };
 }
 
-export function staticSitemapEntries(): SitemapEntry[] {
+function staticSitemapEntries(): SitemapEntry[] {
   const routes: [string, SitemapEntry["changeFrequency"], number][] = [
     ["", "daily", 1],
     ["/archive", "daily", 0.9],
@@ -63,7 +59,7 @@ export function staticSitemapEntries(): SitemapEntry[] {
   ];
 }
 
-export function archiveSitemapEntries(): SitemapEntry[] {
+function archiveSitemapEntries(): SitemapEntry[] {
   return [
     ...liveCategories()
       .filter((category) => category.count > 0)
@@ -81,13 +77,13 @@ export function archiveSitemapEntries(): SitemapEntry[] {
   ];
 }
 
-export function colorSitemapEntries(): SitemapEntry[] {
+function colorSitemapEntries(): SitemapEntry[] {
   return NAMED_COLORS.map((color) =>
     entry(namedColorPath(color.slug), CONTENT_UPDATED, "monthly", 0.5),
   );
 }
 
-export function paletteSitemapEntries(): SitemapEntry[] {
+function paletteSitemapEntries(): SitemapEntry[] {
   return [
     ...PALETTE_CATEGORIES.map((category) =>
       entry(paletteCategoryPath(category.slug), CONTENT_UPDATED, "monthly", 0.55),
@@ -98,30 +94,11 @@ export function paletteSitemapEntries(): SitemapEntry[] {
   ];
 }
 
-export function sitemapEntries(kind: SitemapKind): SitemapEntry[] {
-  if (kind === "static") return staticSitemapEntries();
-  if (kind === "archive") return archiveSitemapEntries();
-  if (kind === "colors") return colorSitemapEntries();
-  return paletteSitemapEntries();
-}
-
-export function sitemapIndexLocs() {
-  return SITEMAP_KINDS.map((kind) => `${SITE_URL}/sitemaps/${kind}.xml`);
-}
-
-export function sitemapUrlsetXml(entries: SitemapEntry[]) {
-  const urls = entries
-    .map((item) => {
-      const loc = item.path ? `${SITE_URL}${item.path}` : SITE_URL;
-      return `<url><loc>${loc}</loc><lastmod>${item.lastModified.toISOString()}</lastmod><changefreq>${item.changeFrequency}</changefreq><priority>${item.priority.toFixed(1)}</priority></url>`;
-    })
-    .join("");
-  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
-}
-
-export function sitemapIndexXml() {
-  const body = sitemapIndexLocs()
-    .map((loc) => `<sitemap><loc>${loc}</loc><lastmod>${CONTENT_UPDATED.toISOString()}</lastmod></sitemap>`)
-    .join("");
-  return `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</sitemapindex>`;
+export function allSitemapEntries(): SitemapEntry[] {
+  return [
+    ...staticSitemapEntries(),
+    ...archiveSitemapEntries(),
+    ...colorSitemapEntries(),
+    ...paletteSitemapEntries(),
+  ];
 }

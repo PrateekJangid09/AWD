@@ -50,12 +50,6 @@ export default function robots(): MetadataRoute.Robots {
     ],
     // No `host` directive: it was only ever honoured by Yandex, and the apex
     // host is already enforced by the www redirect in middleware.ts.
-    sitemap: [
-      `${SITE_URL}/sitemap.xml`,
-      `${SITE_URL}/sitemaps/static.xml`,
-      `${SITE_URL}/sitemaps/archive.xml`,
-      `${SITE_URL}/sitemaps/colors.xml`,
-      `${SITE_URL}/sitemaps/palettes.xml`,
-    ],
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
