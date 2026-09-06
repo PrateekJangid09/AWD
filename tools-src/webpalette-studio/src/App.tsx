@@ -6,6 +6,7 @@ import { ContrastMatrix } from './components/ContrastMatrix';
 import { AnalysisTab } from './components/AnalysisTab';
 import { ColorStudio } from './components/ColorStudio';
 import { WebsitePreview } from './components/WebsitePreview';
+import { OtherToolsRail } from './components/OtherToolsRail';
 import { ProductContent } from './components/ProductContent';
 import { Toast } from './components/Toast';
 import { bestText } from './lib/color';
@@ -125,10 +126,10 @@ export default function App() {
   return (
     <div style={cssVars}>
       <header className="topbar glass">
-        <div className="brand">
-          <img className="brand-logo" src={import.meta.env.BASE_URL + "aw-mark.png"} alt="AllWebsites.design" />
+        <a className="brand" href="/" aria-label="AllWebsites.design home">
+          <img className="brand-logo" src={import.meta.env.BASE_URL + "aw-mark.png"} alt="" />
           <span className="brand-copy"><strong>WebPalette Studio</strong><small>Website Color System Builder</small></span>
-        </div>
+        </a>
         <div className="top-actions">
           <a className="btn ghost" href="/archive">Archive</a>
           <a className="btn ghost" href="/tools">← All tools</a>
@@ -249,6 +250,7 @@ export default function App() {
 
       <ColorStudio open={studio.open} editing={studio.editing} initialHex={studio.hex} recent={recent} onClose={() => setStudio((s) => ({ ...s, open: false }))} onCommit={(hex, preferred) => { p.setColor(studio.index, hex, preferred); remember(hex); setStudio((s) => ({ ...s, open: false })); notify(`${preferred?.name || 'Color'} added as a protected decision.`); }} />
       {webOpen && <WebsitePreview items={p.filled} beforeItems={beforePalette || undefined} onClose={() => setWebOpen(false)} onCopyCss={copyCss} />}
+      <OtherToolsRail />
       <Toast message={toast} />
     </div>
   );

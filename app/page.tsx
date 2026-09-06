@@ -4,6 +4,7 @@ import Image from "next/image";
 import SiteCard from "@/components/SiteCard";
 import CountUp from "@/components/CountUp";
 import JsonLd from "@/components/JsonLd";
+import ComingSoonSuiteCard from "@/components/ComingSoonSuiteCard";
 import { TOOLS, type CardSite } from "@/lib/catalog";
 import { CANONICAL, DATASET, canonicalCards, liveCategories } from "@/lib/canonical";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
@@ -222,6 +223,7 @@ export default function Home() {
                   </span>
                 </a>
             ))}
+            <ComingSoonSuiteCard variant="home" />
           </div>
         </div>
       </section>

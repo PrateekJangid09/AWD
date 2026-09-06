@@ -425,5 +425,6 @@ $("#search").oninput=()=>{render();renderSearchResult()};$("#sort").onchange=ren
 $("#randomBtn").onclick=()=>{const pool=sourcePool().filter(c=>c.source.label!=="Community Survey"||!c.sensitive);openDrawer(pool[Math.floor(Math.random()*pool.length)],$("#randomBtn"))};
 buildAlphabet();render();
 </script>
+<script src="/tools/other-tools.js" data-current="chromary" defer></script>
 </body>
 </html>

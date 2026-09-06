@@ -41,6 +41,14 @@ describe('WebPalette Studio — full UI flow', () => {
     expect(byText('Turn your brand colors into a complete website palette.')).toBeTruthy();
     expect(byText('Bring the colors you already have.')).toBeTruthy();
     expect(byText('Add your first color')).toBeTruthy();
+    expect(container.querySelector('.brand')?.getAttribute('href')).toBe('/');
+    const rail = container.querySelector('.aw-other-tools');
+    expect(rail?.textContent).toContain('Use our Other Tools');
+    expect(rail?.textContent).toContain('Chromary');
+    expect(rail?.textContent).toContain('Colorhyme');
+    expect(rail?.textContent).toContain('TrueGradient');
+    expect(rail?.textContent).toContain('Mockupalettes');
+    expect(rail?.textContent).not.toContain('WebPalette');
   });
 
   it('adds two colors and completes all five semantic roles', async () => {

@@ -325,4 +325,5 @@ $$('[data-compare]').forEach(b=>b.onclick=()=>{if(!compare||!compare.b)return;co
 function setControls(hidden){$('#tool').classList.toggle('controls-hidden',hidden);$('#hideControls').textContent=hidden?'Show controls':'Hide controls';localStorage.setItem('mockupalettesControlsHidden',hidden?'1':'0')} $('#hideControls').onclick=()=>setControls(!$('#tool').classList.contains('controls-hidden'));setControls(localStorage.getItem('mockupalettesControlsHidden')==='1');
 sourceColors=[...PALETTES[0].colors];autoMap(sourceColors);$('#pasteColors').value=sourceColors.join(' ');renderFilters();renderPresets();applyRoles(PALETTES[0].name);setTab('presets');
 </script>
+<script src="/tools/other-tools.js" data-current="mockupalettes" defer></script>
 </body></html>
