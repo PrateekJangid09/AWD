@@ -62,6 +62,124 @@ function compareHmac(payload: string, signature: string, secret: string): boolea
   return timingSafeEqual(a, b);
 }
 
+/** payment_id|subscription_id */
+export function verifyRazorpaySubscriptionSignature(
+  paymentId: string,
+  subscriptionId: string,
+  signature: string,
+  secret: string,
+): boolean {
+  return compareHmac(`${paymentId}|${subscriptionId}`, signature, secret);
+}
+
+type PlanPeriod = "monthly" | "yearly";
+
+const planIdCache = new Map<string, string>();
+
+function envPlanId(planId: PlanPeriod, currency: string) {
+  const specific = process.env[`RAZORPAY_PLAN_${planId.toUpperCase()}_${currency}`] || "";
+  const generic = process.env[`RAZORPAY_PLAN_${planId.toUpperCase()}`] || "";
+  return specific || generic;
+}
+
+function planKey(planId: PlanPeriod, currency: string) {
+  return `awd_${planId}_${currency}`;
+}
+
+function planItemName(planId: PlanPeriod, currency: string) {
+  if (planId === "yearly") {
+    return currency === "USD"
+      ? "AWD plugin suite · yearly subscription $30"
+      : "AWD plugin suite · yearly subscription ₹2490";
+  }
+  return currency === "USD"
+    ? "AWD plugin suite · monthly subscription $3"
+    : "AWD plugin suite · monthly subscription ₹249";
+}
+
+export async function ensureRazorpayPlanId(input: {
+  planId: PlanPeriod;
+  currency: string;
+  amount: number;
+}) {
+  const cacheKey = `${input.planId}:${input.currency}:${input.amount}`;
+  const cached = planIdCache.get(cacheKey);
+  if (cached) return cached;
+
+  const fromEnv = envPlanId(input.planId, input.currency);
+  if (fromEnv) {
+    planIdCache.set(cacheKey, fromEnv);
+    return fromEnv;
+  }
+
+  const client = razorpayClient();
+  if (!client) throw new Error("razorpay_unconfigured");
+
+  const key = planKey(input.planId, input.currency);
+  const name = planItemName(input.planId, input.currency);
+  const listed = (await client.plans.all({ count: 100 })) as {
+    items?: Array<{
+      id?: string;
+      period?: string;
+      notes?: Record<string, string>;
+      item?: { name?: string; amount?: number; currency?: string };
+    }>;
+  };
+  const found = (listed.items || []).find((row) => {
+    if (row.notes?.awd_key === key) return true;
+    return (
+      row.item?.name === name &&
+      row.item?.currency === input.currency &&
+      Number(row.item?.amount) === input.amount
+    );
+  });
+  if (found?.id) {
+    planIdCache.set(cacheKey, found.id);
+    return found.id;
+  }
+
+  const created = await client.plans.create({
+    period: input.planId === "yearly" ? "yearly" : "monthly",
+    interval: 1,
+    item: {
+      name,
+      amount: input.amount,
+      currency: input.currency,
+      description:
+        input.planId === "yearly"
+          ? "Color Tool Suite yearly subscription — $30 / year"
+          : "Color Tool Suite monthly subscription — $3 / month",
+    },
+    notes: { awd_key: key, plan: input.planId, currency: input.currency },
+  });
+  planIdCache.set(cacheKey, created.id);
+  return created.id;
+}
+
+export async function createRazorpaySubscription(input: {
+  planId: PlanPeriod;
+  amount: number;
+  currency: string;
+  notes: Record<string, string>;
+}) {
+  const client = razorpayClient();
+  if (!client) throw new Error("razorpay_unconfigured");
+  const razorpayPlanId = await ensureRazorpayPlanId({
+    planId: input.planId,
+    currency: input.currency,
+    amount: input.amount,
+  });
+  const subscription = await client.subscriptions.create({
+    plan_id: razorpayPlanId,
+    total_count: input.planId === "yearly" ? 10 : 36,
+    quantity: 1,
+    customer_notify: 0,
+    expire_by: Math.floor(Date.now() / 1000) + 2 * 24 * 60 * 60,
+    notes: input.notes,
+  });
+  return subscription;
+}
+
 export async function createRazorpayPaymentLink(input: {
   amount: number;
   currency: string;

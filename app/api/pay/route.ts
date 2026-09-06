@@ -4,6 +4,7 @@ import { absUrl } from "@/lib/seo";
 import {
   MIN_AMOUNT_PAISE,
   createRazorpayPaymentLink,
+  createRazorpaySubscription,
   razorpayConfigured,
   razorpayErrorStatus,
 } from "@/lib/razorpay";
@@ -49,8 +50,8 @@ export async function GET(request: Request) {
   const referenceId = `awd_${plan.id}_${Date.now()}`.slice(0, 40);
   const description =
     plan.id === "yearly"
-      ? "AllWebsites.Design plugin suite · 1 year"
-      : "AllWebsites.Design plugin suite · 1 month";
+      ? "AllWebsites.Design plugin suite · yearly subscription $30"
+      : "AllWebsites.Design plugin suite · monthly subscription $3";
   const notes: Record<string, string> = { plan: plan.id, figmaUserId: billingId };
   if (trackId) notes.trackId = trackId;
 
@@ -59,14 +60,31 @@ export async function GET(request: Request) {
   if (trackId) callback.searchParams.set("track", trackId);
   callback.searchParams.set("plan", plan.id);
 
-  // Prefer USD so a US visitor lands on a dollar checkout. INR is the fallback
-  // for Razorpay accounts that have not enabled international payments.
+  // Prefer a Razorpay Subscription so $3 monthly / $30 yearly actually renews.
+  // USD first for international checkout; INR if the account has no USD plans.
   const attempts = [
     { currency: "USD", amount: plan.amountUsdCents },
     { currency: "INR", amount: plan.amountPaise },
   ].filter((attempt) => Number.isFinite(attempt.amount) && attempt.amount >= MIN_AMOUNT_PAISE);
 
-  let lastError = "Razorpay could not create a payment link.";
+  let lastError = "Razorpay could not start the subscription.";
+  for (const attempt of attempts) {
+    try {
+      const subscription = await createRazorpaySubscription({
+        planId: plan.id,
+        amount: attempt.amount,
+        currency: attempt.currency,
+        notes,
+      });
+      if (subscription.short_url) {
+        return NextResponse.redirect(subscription.short_url, 302);
+      }
+      lastError = "Razorpay did not return a subscription URL.";
+    } catch (err) {
+      lastError = razorpayErrorStatus(err).message;
+    }
+  }
+
   for (const attempt of attempts) {
     try {
       const link = await createRazorpayPaymentLink({

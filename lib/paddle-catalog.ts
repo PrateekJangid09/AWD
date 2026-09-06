@@ -7,7 +7,7 @@ export const PLANS = [
   {
     id: "monthly" as const,
     priceId: PADDLE_PRICE_MONTHLY,
-    name: "Monthly",
+    name: "Monthly subscription",
     amountUsd: 3,
     amountUsdCents: 300,
     amountInr: 249,
@@ -15,12 +15,12 @@ export const PLANS = [
     currency: "INR" as const,
     accessDays: 30,
     period: "month",
-    blurb: "Unlimited applies across Chromary, Colorhyme, TrueGradient and WebPalette.",
+    blurb: "$3 / month subscription. Unlimited Chromary, Colorhyme, TrueGradient and WebPalette, billed every month.",
   },
   {
     id: "yearly" as const,
     priceId: PADDLE_PRICE_YEARLY,
-    name: "Yearly",
+    name: "Yearly subscription",
     amountUsd: 30,
     amountUsdCents: 3000,
     amountInr: 2490,
@@ -28,7 +28,7 @@ export const PLANS = [
     currency: "INR" as const,
     accessDays: 365,
     period: "year",
-    blurb: "Two months free versus paying monthly. Same suite, billed once a year.",
+    blurb: "$30 / year subscription. Same suite, billed once a year.",
   },
 ];
 

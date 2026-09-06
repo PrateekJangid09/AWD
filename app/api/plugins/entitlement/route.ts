@@ -6,6 +6,7 @@ import {
   checkoutEnabled,
   isPluginId,
 } from "@/lib/paddle-catalog";
+import { isLiveEntitlement } from "@/lib/entitlement-status";
 import {
   countSuiteUses,
   ensurePluginUser,
@@ -79,8 +80,7 @@ export async function POST(request: Request) {
     (await getEntitlement(figmaUserId)) || (trackId ? await getEntitlementByTrack(trackId) : null);
   const periodEnd =
     typeof entitlement?.current_period_end === "string" ? entitlement.current_period_end : null;
-  const subscribed =
-    entitlement?.status === "active" || entitlement?.status === "trialing";
+  const subscribed = isLiveEntitlement(entitlement);
   if (subscribed) {
     return json({
       allowed: true,
