@@ -57,13 +57,13 @@ export default function SiteCard({
         </div>
       </div>
 
-      <div className="mt-3 flex items-baseline justify-between gap-3 px-0.5">
-        <p className="truncate text-[15px] font-medium tracking-tight text-ink">
+      <div className="mt-3 flex min-w-0 items-baseline justify-between gap-3 px-0.5">
+        <p className="min-w-0 truncate text-[15px] font-medium tracking-tight text-ink">
           {site.name}
         </p>
-        <span className="flex shrink-0 items-center gap-1.5 text-[12px] font-medium text-soft">
-          <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accent }} />
-          {site.categoryName}
+        <span className="flex min-w-0 max-w-[55%] items-center gap-1.5 text-[12px] font-medium text-soft">
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: accent }} />
+          <span className="truncate">{site.categoryName}</span>
         </span>
       </div>
     </Link>

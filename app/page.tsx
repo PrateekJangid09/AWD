@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import SiteCard from "@/components/SiteCard";
+import CountUp from "@/components/CountUp";
 import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/catalog";
 import { CANONICAL, DATASET, canonicalCards, liveCategories } from "@/lib/canonical";
@@ -37,43 +38,116 @@ export default function Home() {
           updated: DATASET.updatedAt,
         })}
       />
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden border-b border-line">
+      {/* ── Hero — 55/45 split ── */}
+      <section className="relative overflow-hidden border-b border-line bg-white">
         <div
-          className="pointer-events-none absolute -top-40 left-1/2 hidden h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-[0.10] blur-[90px] sm:block"
-          style={{ background: "conic-gradient(from 0deg, #FF6112, #2563eb, #16a34a, #db2777, #f59e0b, #FF6112)" }}
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "radial-gradient(60% 70% at 82% 20%, rgba(255,97,18,0.08), transparent 60%)" }}
           aria-hidden
         />
-        <div className="wrap relative py-16 text-center sm:py-24">
-          <p className="mx-auto flex w-fit items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-1.5 text-[12px] text-soft">
-            <span className="h-1.5 w-1.5 rounded-full bg-orange" />
-            {all.length.toLocaleString()} websites, studied in depth
-          </p>
+        <div className="absolute inset-0 grid-bg opacity-40" aria-hidden />
 
-          <h1 className="mega mx-auto mt-7 max-w-4xl text-[2.6rem] leading-[1.03] sm:text-6xl lg:text-7xl">
-            Website design examples,
-            <br className="hidden sm:block" /> studied in depth.
-          </h1>
+        <div className="wrap relative grid items-center gap-10 py-14 lg:grid-cols-[11fr_9fr] lg:gap-12 lg:py-20">
+          <div>
+            <p className="anim-up flex w-fit items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-[12px] font-medium text-soft" style={{ animationDelay: "40ms" }}>
+              <span className="h-1.5 w-1.5 rounded-full bg-orange" />
+              {all.length.toLocaleString()} websites, studied in depth
+            </p>
 
-          <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-soft sm:text-lg">
-            {all.length.toLocaleString()} real websites across {categories.length}{" "}
-            categories, each one broken down into its colour palette, typefaces and
-            detected technology. Free to browse, with tools that speak the same
-            language.
-          </p>
+            <h1 className="mega anim-up mt-5 text-[2.6rem] leading-[1.03] sm:text-5xl lg:text-[3.6rem]" style={{ animationDelay: "120ms" }}>
+              World&apos;s best website designs and web design tools.
+            </h1>
 
-          <form action="/archive" className="mx-auto mt-9 flex w-full max-w-md items-center gap-2 rounded-full border border-line bg-paper p-1.5 pl-5 shadow-soft focus-within:border-line-strong">
-            <span className="text-muted">⌕</span>
-            <input
-              name="q"
-              type="search"
-              placeholder="Search SaaS, portfolio, Framer, yellow…"
-              aria-label="Search the archive"
-              className="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-muted"
-              style={{ borderRadius: 0 }}
-            />
-            <button type="submit" className="btn-primary shrink-0 !px-5">Search</button>
-          </form>
+            <p className="anim-up mt-5 max-w-[46ch] text-pretty text-[17px] leading-relaxed text-soft" style={{ animationDelay: "220ms" }}>
+              Explore real websites and the colour, type and
+              technology behind them — then build with the same
+              tools we use to study them.
+            </p>
+
+            <div className="anim-up mt-4 flex flex-wrap items-center gap-3" style={{ animationDelay: "300ms" }}>
+              <Link href="/archive" className="btn-primary !px-6 !py-3.5 text-[14px]">
+                Explore the archive
+                <span aria-hidden>→</span>
+              </Link>
+              <Link href="/tools" className="btn-ghost !px-6 !py-3.5 text-[14px]">
+                Browse the tools
+              </Link>
+            </div>
+
+            <form action="/archive" className="anim-up mt-6 flex w-full max-w-md items-center gap-2 rounded-full border border-line bg-white py-2 pl-5 pr-2 shadow-soft focus-within:border-line-strong" style={{ animationDelay: "360ms" }}>
+              <span className="text-muted">⌕</span>
+              <input
+                name="q"
+                type="search"
+                placeholder="Search SaaS, portfolio, Framer…"
+                aria-label="Search the archive"
+                className="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-muted"
+                style={{ borderRadius: 0 }}
+              />
+              <button type="submit" className="btn-dark shrink-0 !px-5 !py-2.5">Search</button>
+            </form>
+          </div>
+
+          <div className="anim-pop hidden min-w-0 lg:block" style={{ animationDelay: "220ms" }}>
+            <div className="grid h-[500px] grid-cols-2 grid-rows-3 gap-4">
+              <div
+                className="relative row-span-2 flex flex-col justify-between overflow-hidden rounded-3xl p-6 text-white shadow-soft-lg"
+                style={{ background: "linear-gradient(160deg, #FF6112 0%, #FF7A33 45%, #FF9A5A 100%)" }}
+              >
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85">Colour</span>
+                <div>
+                  <div className="mega text-5xl leading-none">{categories.length}</div>
+                  <p className="mt-1 text-sm text-white/85">colour systems, mapped</p>
+                  <div className="mt-4 flex gap-1.5">
+                    {["#FFFFFF", "#FFD9C2", "#0E0E10", "#FFB088"].map((c) => (
+                      <span key={c} className="h-6 flex-1 rounded-md" style={{ backgroundColor: c }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between rounded-3xl border border-line bg-white p-6 shadow-soft">
+                <div className="mega text-6xl leading-none text-ink">Aa</div>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Typography</p>
+                  <p className="text-sm font-medium text-ink">Inter · Archivo</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between rounded-3xl border border-line bg-bone p-6 shadow-soft">
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    ["Next.js", "#0E0E10"],
+                    ["React", "#2F6BFF"],
+                    ["Tailwind", "#16a34a"],
+                    ["Webflow", "#FF6112"],
+                    ["Vercel", "#0E0E10"],
+                  ].map(([name, c]) => (
+                    <span
+                      key={name}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-1 text-[11px] font-medium text-ink"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: c }} />
+                      {name}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Tech stack, detected</p>
+              </div>
+
+              <div className="col-span-2 flex items-center justify-between gap-3 overflow-hidden rounded-3xl border border-line bg-white px-6 py-5 shadow-soft">
+                <div className="min-w-0">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Palette · roles</p>
+                  <p className="mt-1 text-sm font-medium text-ink">Primary · accent · neutral · dark</p>
+                </div>
+                <div className="flex shrink-0 -space-x-2">
+                  {["#0E1F3D", "#FF6112", "#2F6BFF", "#16a34a", "#F4F4F5"].map((c) => (
+                    <span key={c} className="h-10 w-10 rounded-full border-4 border-white shadow-sm" style={{ backgroundColor: c }} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="relative border-t border-line bg-bone/60">
@@ -81,8 +155,7 @@ export default function Home() {
             {stats.map((s, i) => (
               <div key={i} className={`px-3 py-6 text-center sm:py-8 ${i === 2 ? "border-t border-line md:border-t-0" : ""} ${i === 3 ? "border-t border-line md:border-t-0" : ""}`}>
                 <div className="mega text-3xl text-ink sm:text-5xl">
-                  {s.format ? s.to.toLocaleString() : s.to}
-                  {s.suffix}
+                  <CountUp to={s.to} suffix={s.suffix} format={s.format} />
                 </div>
                 <div className="mt-1.5 text-[11px] uppercase tracking-[0.14em] text-muted sm:text-[12px]">
                   {s.label}
@@ -154,8 +227,8 @@ export default function Home() {
       </section>
 
       {/* ── Colourful category ticker ── */}
-      <section className="overflow-hidden border-b border-line bg-ink py-4">
-        <div className="ticker-track flex w-max gap-3">
+      <section className="max-w-full overflow-hidden border-b border-line bg-ink py-4">
+        <div className="ticker-track flex w-max max-w-none gap-3">
           {tickerCats.map((c, i) => (
             <Link
               key={`${c.slug}-${i}`}
