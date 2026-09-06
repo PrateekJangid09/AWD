@@ -10,6 +10,8 @@ export function ProductContent({ onStart }: { onStart: () => void }) {
     ['Does a perfect readiness score mean my palette is beautiful?', 'No. Website readiness evaluates role coverage, contrast, separation and utility. It does not replace taste, brand strategy or visual judgment.'],
     ['Does WebPalette Studio use AI?', 'The current engine is deterministic. Color science, role inference, candidate generation, scoring and completion do not require an LLM.'],
     ['Are my colors uploaded?', 'The core solver runs client-side and does not require a backend or external color API.'],
+    ['How to build a website color system from brand colors', 'Paste the HEX values you already own, assign website roles, generate only the missing functional colors, then check contrast and export CSS.'],
+    ['What colors work with my brand colors', 'Colors that keep your brand HEX intact and still cover surface, text, hierarchy and action jobs. WebPalette suggests supporting colors around the ones you lock.'],
   ];
 
   return (

@@ -180,12 +180,19 @@ export function shortName(raw: string) {
 
 export function studyTitle(name: string) {
   const brand = shortName(name);
-  const preferred = `${brand} Website Design`;
+  const preferred = `${brand} Website Fonts, Colors and Stack`;
   if (preferred.length <= TITLE_MAX) return preferred;
-  // Rare: a still-long shortName. Keep the brand and a shorter cue.
+  const current = `${brand} Website Design`;
+  if (current.length <= TITLE_MAX) return current;
   const compact = `${brand} Design`;
   if (compact.length <= TITLE_MAX) return compact;
   return brand.slice(0, TITLE_MAX);
+}
+
+export function studyH1(name: string) {
+  const brand = shortName(name);
+  const possessive = /s$/i.test(brand) ? `${brand}'` : `${brand}'s`;
+  return `How ${possessive} website is designed`;
 }
 
 /**
@@ -998,4 +1005,115 @@ export function archiveSampleGraph({
       genre: categoryName,
     },
   ]);
+}
+
+export function colorPageGraph({
+  path,
+  name,
+  description,
+  crumbs,
+  neighbors,
+  faqs,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  crumbs: Crumb[];
+  neighbors: ListItem[];
+  faqs: { question: string; answer: string }[];
+}) {
+  const url = absUrl(path);
+  const nodes: JsonLdNode[] = [
+    breadcrumbNode(path, crumbs),
+    {
+      "@type": "WebPage",
+      "@id": webpageId(path),
+      url,
+      name,
+      description,
+      isPartOf: { "@id": WEBSITE_ID },
+      breadcrumb: { "@id": crumbId(path) },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: absUrl(`${path}/opengraph-image`),
+        width: 1200,
+        height: 630,
+      },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${url}/#neighbors`,
+      name: `Colors similar to ${name}`,
+      numberOfItems: neighbors.length,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      itemListElement: neighbors.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: item.url,
+        name: item.name,
+      })),
+    },
+  ];
+  if (faqs.length) {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}/#faq`,
+      isPartOf: { "@id": webpageId(path) },
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+  return pageGraph(nodes);
+}
+
+export function palettePageGraph({
+  path,
+  name,
+  description,
+  crumbs,
+  faqs,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  crumbs: Crumb[];
+  faqs: { question: string; answer: string }[];
+}) {
+  const url = absUrl(path);
+  const nodes: JsonLdNode[] = [
+    breadcrumbNode(path, crumbs),
+    {
+      "@type": "WebPage",
+      "@id": webpageId(path),
+      url,
+      name,
+      description,
+      isPartOf: { "@id": WEBSITE_ID },
+      breadcrumb: { "@id": crumbId(path) },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: absUrl(`${path}/opengraph-image`),
+        width: 1200,
+        height: 630,
+      },
+      inLanguage: "en-US",
+    },
+  ];
+  if (faqs.length) {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}/#faq`,
+      isPartOf: { "@id": webpageId(path) },
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+  return pageGraph(nodes);
 }

@@ -2,6 +2,13 @@ import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/data";
 import { CANONICAL, DATASET, liveCategories, recordDates } from "@/lib/canonical";
 import { publishedPosts } from "@/lib/journal";
+import { NAMED_COLORS, namedColorPath } from "@/lib/named-colors";
+import {
+  PALETTE_CATEGORIES,
+  WEBSITE_PALETTES,
+  paletteCategoryPath,
+  palettePath,
+} from "@/lib/mockupalettes";
 import { SITE_URL } from "@/lib/seo";
 
 // lastModified tracks the record set, not the build, so a deploy that changes
@@ -66,6 +73,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(`${post.modified}T00:00:00Z`),
       changeFrequency: "monthly" as const,
       priority: 0.75,
+    })),
+    ...PALETTE_CATEGORIES.map((category) => ({
+      url: `${SITE_URL}${paletteCategoryPath(category.slug)}`,
+      lastModified: CONTENT_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    })),
+    ...WEBSITE_PALETTES.map((palette) => ({
+      url: `${SITE_URL}${palettePath(palette)}`,
+      lastModified: CONTENT_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
+    ...NAMED_COLORS.map((color) => ({
+      url: `${SITE_URL}${namedColorPath(color.slug)}`,
+      lastModified: CONTENT_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
     })),
   ];
 }

@@ -141,7 +141,7 @@ export default function App() {
       <main className="wrap">
         <section className="hero" aria-labelledby="hero-title">
           <span className="hero-eyebrow">WEBSITE COLOR SYSTEM BUILDER · BY ALLWEBSITES.DESIGN</span>
-          <h1 id="hero-title">Turn your brand colors into a complete website palette.</h1>
+          <h1 id="hero-title">Keep your brand colors. Get a full system.</h1>
           <p>Start with the colors you already chose. WebPalette Studio keeps those values intact, assigns them real website roles, shows what the system is missing, and generates only the colors needed to complete it.</p>
           <div className="hero-actions">
             <button className="btn dark hero-primary" onClick={() => openAdd()}>Start with your colors</button>
