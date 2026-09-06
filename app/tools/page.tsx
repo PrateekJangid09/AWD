@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ComingSoonSuiteCard from "@/components/ComingSoonSuiteCard";
 import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
 import ExploreMore from "@/components/ExploreMore";
@@ -135,6 +136,9 @@ export default function ToolsPage() {
                 </Reveal>
               );
             })}
+            <Reveal delay={70} className="h-full">
+              <ComingSoonSuiteCard />
+            </Reveal>
           </div>
 
           <p className="mx-auto mt-16 max-w-2xl text-center text-pretty text-lg leading-relaxed text-soft">

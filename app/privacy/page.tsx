@@ -95,7 +95,7 @@ export default function PrivacyPage() {
             </ul>
             <p>
               You can also manage optional analytics cookies from our{" "}
-              <Link href="/cookies">cookie preferences</Link> page.
+              <Link href="/cookie-preference">cookie preferences</Link> page.
             </p>
 
             <h2 id="contact">Contact</h2>
