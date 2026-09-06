@@ -75,8 +75,8 @@ export const TOOLS: Tool[] = [
   {
     slug: "colorhyme",
     name: "Colorhyme",
-    tagline: "Color harmony generator",
-    desc: "Start with one HEX. Build related accents and tonal variants with exact hue, saturation and lightness controls.",
+    tagline: "Palette from one color",
+    desc: "Turn one HEX into a complete palette. Shift hue, tune saturation and lightness, then copy the related accents.",
     tags: ["Harmony", "HSL", "Recipes"],
     swatches: ["#3389F9", "#F933A3", "#6A788A", "#1F5FAE"],
     status: "live",
@@ -84,8 +84,8 @@ export const TOOLS: Tool[] = [
   {
     slug: "mockupalettes",
     name: "Mockupalettes",
-    tagline: "Website color palette visualizer",
-    desc: "Preview any four-colour palette on a full website mockup. Map primary, secondary, accent and dark roles, then compare directions.",
+    tagline: "Website color palettes, live preview",
+    desc: "Website color palettes you can see on a page. Preview four-colour systems on a live layout, then compare directions.",
     tags: ["Palette", "Roles", "Compare"],
     swatches: ["#3978F6", "#3DD6D0", "#8658E8", "#111827"],
     status: "live",
@@ -93,8 +93,8 @@ export const TOOLS: Tool[] = [
   {
     slug: "chromary",
     name: "Chromary",
-    tagline: "Color name finder",
-    desc: "Find colour names from HEX or typed names. Compare CSS, survey and curated references, and see the closest matches.",
+    tagline: "Color name finder from HEX",
+    desc: "Find the name of any HEX color. Compare CSS, survey and curated references, then open the named-color page.",
     tags: ["Names", "HEX", "Sources"],
     swatches: ["#87AE73", "#BCB88A", "#D2AE69", "#681F2A"],
     status: "live",
@@ -111,8 +111,8 @@ export const TOOLS: Tool[] = [
   {
     slug: "webpalette",
     name: "WebPalette",
-    tagline: "Website color palette generator",
-    desc: "Keep your brand colours and complete a full website palette around them: roles, contrast checks and CSS export.",
+    tagline: "Website color system from brand colors",
+    desc: "Keep your brand colors and get a full website color system: roles, contrast checks and CSS export.",
     tags: ["Roles", "Contrast", "Export"],
     swatches: ["#E6E7EA", "#25282D", "#FF6112", "#7AB8FF"],
     status: "live",

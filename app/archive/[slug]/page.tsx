@@ -14,6 +14,7 @@ import {
   archiveSampleGraph,
   pageMeta,
   studyDescription,
+  studyH1,
   studyTitle,
 } from "@/lib/seo";
 
@@ -154,7 +155,7 @@ export default async function SitePage({
                 <span className="tag bg-chalk">{site.style}</span>
                 <span className="tag bg-chalk">{site.websiteType}</span>
               </div>
-              <h1 className="mega mt-4 text-6xl sm:text-7xl">{site.name}</h1>
+              <h1 className="mega mt-4 text-4xl sm:text-6xl">{studyH1(site.name)}</h1>
               <p className="mt-2 font-mono text-sm uppercase tracking-wider text-ink/50">
                 {site.domain}
               </p>

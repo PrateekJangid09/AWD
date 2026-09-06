@@ -236,12 +236,30 @@ function checkPage(path, html) {
   }
 }
 
-async function sitemapUrls() {
-  const { status, body } = await get(`${BASE}/sitemap.xml`);
-  if (status !== 200) throw new Error(`sitemap.xml returned ${status}`);
-  return [...body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) =>
-    m[1].replace(CANONICAL_HOST, "").replace(/^$/, "/"),
-  );
+function locs(body) {
+  return [...body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+}
+
+function toPath(loc) {
+  return loc.replace(CANONICAL_HOST, "").replace(/^$/, "/");
+}
+
+function toFetchUrl(loc) {
+  return loc.startsWith(CANONICAL_HOST) ? `${BASE}${toPath(loc)}` : loc;
+}
+
+async function sitemapUrls(url = `${BASE}/sitemap.xml`) {
+  const { status, body } = await get(url);
+  if (status !== 200) throw new Error(`${url} returned ${status}`);
+  const found = locs(body);
+  if (body.includes("<sitemapindex")) {
+    const pages = [];
+    for (const loc of found) {
+      pages.push(...(await sitemapUrls(toFetchUrl(loc))));
+    }
+    return pages;
+  }
+  return found.map(toPath);
 }
 
 function pickSample(paths) {

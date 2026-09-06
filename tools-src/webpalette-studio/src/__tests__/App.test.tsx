@@ -38,7 +38,7 @@ function addHex(hex: string) {
 describe('WebPalette Studio — full UI flow', () => {
   it('mounts with the public MVP positioning and empty state', () => {
     render();
-    expect(byText('Turn your brand colors into a complete website palette.')).toBeTruthy();
+    expect(byText('Keep your brand colors. Get a full system.')).toBeTruthy();
     expect(byText('Bring the colors you already have.')).toBeTruthy();
     expect(byText('Add your first color')).toBeTruthy();
     expect(container.querySelector('.brand')?.getAttribute('href')).toBe('/');

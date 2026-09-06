@@ -12,7 +12,7 @@ import {
   type CanonicalSite,
 } from "@/lib/canonical";
 import { TOOLS, categoryColor, type CardSite } from "@/lib/catalog";
-import { studyAnswer } from "@/lib/seo";
+import { studyAnswer, studyH1 } from "@/lib/seo";
 
 const DATE_FORMAT: Intl.DateTimeFormatOptions = {
   day: "2-digit",
@@ -241,7 +241,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 />
               )}
               <div className="min-w-0">
-                <h1 className="mega truncate text-2xl sm:text-3xl">{identity.name}</h1>
+                <h1 className="mega text-2xl sm:text-3xl">{studyH1(identity.name)}</h1>
                 <span className="text-[13px] text-muted">{identity.domain}</span>
               </div>
             </div>
