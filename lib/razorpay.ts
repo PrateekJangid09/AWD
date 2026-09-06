@@ -180,6 +180,17 @@ export async function createRazorpaySubscription(input: {
   return subscription;
 }
 
+export async function cancelRazorpaySubscription(subscriptionId: string) {
+  const client = razorpayClient();
+  if (!client) throw new Error("razorpay_unconfigured");
+  return client.subscriptions.cancel(subscriptionId);
+}
+
+export function razorpayAlreadyCancelled(err: unknown) {
+  const message = razorpayErrorStatus(err).message.toLowerCase();
+  return message.includes("already") && message.includes("cancel");
+}
+
 export async function createRazorpayPaymentLink(input: {
   amount: number;
   currency: string;

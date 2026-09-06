@@ -34,7 +34,7 @@ if (tsc.status !== 0) {
 }
 
 const require = createRequire(import.meta.url);
-const { isLiveEntitlement, unixToIso } = require(join(outDir, "entitlement-status.js"));
+const { isLiveEntitlement, unixToIso, razorpaySubscriptionIdFromRef } = require(join(outDir, "entitlement-status.js"));
 
 const future = new Date(Date.now() + 20 * 24 * 60 * 60 * 1000).toISOString();
 const past = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString();
@@ -48,6 +48,9 @@ assert.equal(isLiveEntitlement({ status: "active", current_period_end: null }), 
 assert.equal(isLiveEntitlement({ status: "free", current_period_end: future }), false);
 assert.equal(unixToIso(1_704_067_200), "2024-01-01T00:00:00.000Z");
 assert.equal(unixToIso(null), null);
+assert.equal(razorpaySubscriptionIdFromRef("rzp_sub:sub_abc"), "sub_abc");
+assert.equal(razorpaySubscriptionIdFromRef("sub_abc"), "sub_abc");
+assert.equal(razorpaySubscriptionIdFromRef("rzp:pay_abc"), "");
 
 writeFileSync(
   "/opt/cursor/artifacts/subscription_period_tests.log",

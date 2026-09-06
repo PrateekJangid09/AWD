@@ -15,7 +15,7 @@ import {
   recordUse,
   supabaseConfigured,
 } from "@/lib/supabase-admin";
-import { absUrl } from "@/lib/seo";
+import { CONTACT_EMAIL, absUrl } from "@/lib/seo";
 
 export const runtime = "nodejs";
 
@@ -53,6 +53,8 @@ export async function POST(request: Request) {
   const checkoutUrl = absUrl("/api/pay");
   const payload = {
     checkoutUrl,
+    cancelUrl: absUrl("/pay/cancel"),
+    supportEmail: CONTACT_EMAIL,
     checkoutEnabled: checkoutEnabled(),
     priceMonthly: PADDLE_PRICE_MONTHLY,
     priceYearly: PADDLE_PRICE_YEARLY,

@@ -16,6 +16,14 @@ export function isLiveEntitlement(entitlement: {
   return status === "active" || status === "trialing" || status === "cancelled";
 }
 
+export function razorpaySubscriptionIdFromRef(ref?: unknown) {
+  if (typeof ref !== "string") return "";
+  const value = ref.trim();
+  if (value.startsWith("rzp_sub:")) return value.slice("rzp_sub:".length);
+  if (value.startsWith("sub_")) return value;
+  return "";
+}
+
 export function unixToIso(seconds?: number | null) {
   if (!seconds || !Number.isFinite(seconds) || seconds <= 0) return null;
   return new Date(seconds * 1000).toISOString();
