@@ -27,13 +27,13 @@ export function generateStaticParams() {
 }
 
 function colorDescription(color: NamedColor) {
-  const aliases = color.aliases.map((alias) => alias.name).slice(0, 3);
+  const aliases = color.aliases.map((alias) => alias.name).slice(0, 2);
   return fitDescription(
-    `${color.name} is ${color.hex}. Find the color name, HEX, source group and similar named colors.`,
+    `${color.name} is ${color.hex}. This page lists the color name, HEX, source group and similar named colors from Chromary.`,
     [
-      aliases.length ? ` Also listed as ${aliases.join(", ")}.` : "",
-      ` Source group: ${color.group}.`,
-      " Use it in Colorhyme or WebPalette.",
+      ` Source: ${color.group}.`,
+      aliases.length ? ` Also listed as ${aliases.join(", ")}.` : " Extra names for this HEX stay here.",
+      " Use Colorhyme or WebPalette next.",
     ],
   );
 }

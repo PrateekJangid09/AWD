@@ -26,10 +26,10 @@ export function generateStaticParams() {
 
 function paletteDescription(name: string, category: string, colors: string[]) {
   return fitDescription(
-    `${name} is a ${category.toLowerCase()} website palette: ${colors.join(", ")}.`,
+    `${name} is a ${category.toLowerCase()} website palette using ${colors.join(", ")} on a real page.`,
     [
-      " See the four roles on a static page layout.",
-      " Open the same preset live in Mockupalettes.",
+      " See the four roles on a static layout.",
+      " Then open the same preset live in Mockupalettes.",
     ],
   );
 }

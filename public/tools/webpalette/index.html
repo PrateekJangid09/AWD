@@ -28,21 +28,38 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "WebPalette Studio",
-        "url": "https://allwebsites.design/tools/webpalette",
-        "description": "Keep your brand colors and build a full website color system around them. Assign roles, fill gaps, check contrast, and export CSS.",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "creator": {
-          "@type": "Organization",
-          "name": "AllWebsites.design"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://allwebsites.design/#organization",
+            "name": "AllWebsites.Design",
+            "url": "https://allwebsites.design"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://allwebsites.design/#website",
+            "url": "https://allwebsites.design",
+            "name": "AllWebsites.Design",
+            "publisher": { "@id": "https://allwebsites.design/#organization" }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://allwebsites.design/tools/webpalette/#app",
+            "name": "WebPalette Studio",
+            "url": "https://allwebsites.design/tools/webpalette",
+            "description": "Keep your brand colors and build a full website color system around them. Assign roles, fill gaps, check contrast, and export CSS.",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Any",
+            "isAccessibleForFree": true,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "publisher": { "@id": "https://allwebsites.design/#organization" },
+            "isPartOf": { "@id": "https://allwebsites.design/#website" }
+          }
+        ]
       }
     </script>
     <script type="application/ld+json">

@@ -39,8 +39,9 @@ export async function generateMetadata({
     description: fitDescription(
       `${cat.name} website color palettes you can preview on a real page layout.`,
       [
-        ` ${palettes.length} four-color systems in this category.`,
-        " Open any palette, then load it live in Mockupalettes.",
+        ` ${palettes.length} four-color systems sit in this category.`,
+        " Open a palette page, then load the same preset live in Mockupalettes.",
+        " Browse them free.",
       ],
     ),
     path: paletteCategoryPath(cat.slug),
