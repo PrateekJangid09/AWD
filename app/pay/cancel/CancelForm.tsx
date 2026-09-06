@@ -44,7 +44,13 @@ export default function CancelForm({
         );
       } else {
         setResult("fail");
-        setDetail(data.error || "Cancel did not finish.");
+        const errors: Record<string, string> = {
+          no_subscription: "No paid subscription is attached to this Figma account.",
+          razorpay_cancel_failed: "Razorpay did not cancel it.",
+          razorpay_unconfigured: "Razorpay is not configured on the server.",
+          figmaUserId_required: "Open Cancel from the plugin so we can attach your Figma id.",
+        };
+        setDetail(errors[data.error || ""] || "Cancel did not finish.");
       }
     } catch {
       setResult("fail");
