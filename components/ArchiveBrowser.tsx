@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import SiteCard from "./SiteCard";
 import { categoryColor, type CardSite } from "@/lib/catalog";
 
@@ -10,9 +9,16 @@ export default function ArchiveBrowser({
 }: {
   items: CardSite[];
 }) {
-  const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get("q") ?? "");
+  const [query, setQuery] = useState("");
   const [cat, setCat] = useState<string>("all");
+
+  // Read ?q= after mount so this client grid can still SSR every card as a
+  // crawlable <a href="/archive/{slug}">. useSearchParams() would suspend and
+  // omit those links from the HTML.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q") ?? "";
+    if (q) setQuery(q);
+  }, []);
 
   const presentCats = useMemo(() => {
     const seen = new Map<string, number>();

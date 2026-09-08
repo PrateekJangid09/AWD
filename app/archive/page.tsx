@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import UtilityHero from "@/components/UtilityHero";
 import ArchiveBrowser from "@/components/ArchiveBrowser";
 import ExploreMore from "@/components/ExploreMore";
@@ -46,9 +45,7 @@ export default function ArchivePage() {
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Archive" }]}
         meta={`${CANONICAL.length.toLocaleString()} published references`}
       />
-      <Suspense fallback={null}>
-        <ArchiveBrowser items={items} />
-      </Suspense>
+      <ArchiveBrowser items={items} />
       <ExploreMore except={["/archive"]} />
     </>
   );

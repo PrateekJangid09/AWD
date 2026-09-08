@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import SiteCard from "./SiteCard";
 import CopyHexButton from "./CopyHexButton";
+import WebsiteScreenshot from "./WebsiteScreenshot";
 import {
   assetBase,
   canonicalCards,
@@ -46,8 +46,8 @@ function Shot({
   height?: number;
   className?: string;
 }) {
-  // Full-page captures are up to ~900KB at source. Feeding the real intrinsic
-  // size to next/image lets it ship a resized WebP at the width we display.
+  // Full-page captures are already compressed WebP at 900px. Serve them
+  // directly so crawlers request /sites/{slug}/… instead of /_next/image.
   const intrinsic = imageSize(src);
   return (
     <figure className={`overflow-hidden rounded-xl glass ${className}`}>
@@ -77,15 +77,13 @@ function Shot({
         aria-label={`${label} — scroll to view the full page`}
       >
         {intrinsic ? (
-          <Image
+          <WebsiteScreenshot
             src={src}
             alt={alt}
             width={intrinsic.width}
             height={intrinsic.height}
             sizes="(max-width: 1024px) 100vw, 640px"
             priority={eager}
-            loading={eager ? undefined : "lazy"}
-            quality={72}
             className="block h-auto w-full"
           />
         ) : (
