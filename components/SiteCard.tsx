@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import WebsiteScreenshot from "./WebsiteScreenshot";
 import { categoryColor, type CardSite } from "@/lib/catalog";
 
 export default function SiteCard({
@@ -18,10 +18,10 @@ export default function SiteCard({
   const bg = site.palette.find((p) => p.role === "background")?.hex ?? "#F4F4F5";
 
   return (
-    <Link href={`/archive/${site.slug}`} className="group block">
+    <Link href={`/archive/${site.slug}`} prefetch={false} className="group block">
       <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-line bg-bone transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
         {site.thumb ? (
-          <Image
+          <WebsiteScreenshot
             src={site.thumb}
             alt={`${site.name} ${site.categoryName.toLowerCase()} website design, ${site.style.toLowerCase()} style`}
             fill

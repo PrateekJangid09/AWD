@@ -221,6 +221,7 @@ export default function SiteMapPage() {
                     <li key={site.identity.slug}>
                       <Link
                         href={`/archive/${site.identity.slug}`}
+                        prefetch={false}
                         className="text-[13.5px] text-soft hover:text-orange"
                       >
                         {site.identity.name}
@@ -244,6 +245,7 @@ export default function SiteMapPage() {
                     <li key={site.identity.slug}>
                       <Link
                         href={`/archive/${site.identity.slug}`}
+                        prefetch={false}
                         className="text-[13.5px] text-soft hover:text-orange"
                       >
                         {site.identity.name}
