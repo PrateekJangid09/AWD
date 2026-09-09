@@ -1,14 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "./Breadcrumb";
 import SiteCard from "./SiteCard";
 import CopySwatch from "./CopySwatch";
+import WebsiteScreenshot from "./WebsiteScreenshot";
 import {
   assetBase,
   canonicalCards,
   categorySlug,
   imageSize,
   recordDates,
+  screenshotPath,
   type CanonicalSite,
 } from "@/lib/canonical";
 import { TOOLS, categoryColor, type CardSite } from "@/lib/catalog";
@@ -34,13 +35,13 @@ function Shot({
   href,
   eager = false,
 }: {
-  src: string;
+  src: string | null;
   label: string;
   alt: string;
   href?: string;
   eager?: boolean;
 }) {
-  const intrinsic = imageSize(src);
+  const intrinsic = src ? imageSize(src) : null;
   return (
     <figure className="overflow-hidden rounded-xl border border-line bg-white shadow-soft">
       <figcaption className="flex items-center gap-1.5 border-b border-line bg-bone px-3.5 py-2.5">
@@ -61,34 +62,40 @@ function Shot({
           </a>
         )}
       </figcaption>
-      <div
-        className="skeleton no-scrollbar aspect-[2/3] overflow-y-auto"
-        tabIndex={0}
-        aria-label={`${label} — scroll to view the full page`}
-      >
-        {intrinsic ? (
-          <Image
-            src={src}
-            alt={alt}
-            width={intrinsic.width}
-            height={intrinsic.height}
-            sizes="(max-width: 1024px) 100vw, 420px"
-            priority={eager}
-            loading={eager ? undefined : "lazy"}
-            quality={72}
-            className="block h-auto w-full"
-          />
-        ) : (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            src={src}
-            alt={alt}
-            loading={eager ? "eager" : "lazy"}
-            decoding="async"
-            className="block w-full"
-          />
-        )}
-      </div>
+      {src ? (
+        <div
+          className="skeleton no-scrollbar aspect-[2/3] overflow-y-auto"
+          tabIndex={0}
+          aria-label={`${label} — scroll to view the full page`}
+        >
+          {intrinsic ? (
+            <WebsiteScreenshot
+              src={src}
+              alt={alt}
+              width={intrinsic.width}
+              height={intrinsic.height}
+              priority={eager}
+              className="block h-auto w-full"
+            />
+          ) : (
+            /* Header unreadable, so there is no intrinsic box to reserve. */
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={src}
+              alt={alt}
+              loading={eager ? "eager" : "lazy"}
+              decoding="async"
+              className="block w-full"
+            />
+          )}
+        </div>
+      ) : (
+        <div className="flex aspect-[2/3] items-center justify-center bg-bone px-6">
+          <p className="text-center text-[13px] leading-relaxed text-muted">
+            No screenshot has been captured for this record yet.
+          </p>
+        </div>
+      )}
     </figure>
   );
 }
@@ -158,7 +165,8 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
     ),
   );
 
-  const homepageFile = site.screenshots.desktop ?? "desktop.png";
+  const homepage = screenshotPath(site);
+  const homepageFile = homepage?.split("/").pop();
   const subPages = site.screenshots.pages
     .filter((p) => p.file !== "homepage.png" && p.file !== homepageFile)
     .slice(0, 3)
@@ -201,7 +209,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
       <div className="mt-6 grid min-w-0 gap-8 lg:grid-cols-[minmax(260px,0.68fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
         <div className="min-w-0 order-2 lg:sticky lg:top-20 lg:order-1">
           <Shot
-            src={`${base}/${homepageFile}`}
+            src={homepage}
             label={identity.domain}
             alt={`${identity.name} homepage, full-page screenshot`}
             href={identity.url}

@@ -120,6 +120,45 @@ export function assetBase(site: CanonicalSite) {
   return `/sites/${site.identity.slug}`;
 }
 
+/** Card crop written by scripts/generate-thumbnails.mjs. */
+export const THUMB_FILE = "thumb.webp";
+
+const existsCache = new Map<string, boolean>();
+
+function publicExists(publicPath: string) {
+  const cached = existsCache.get(publicPath);
+  if (cached !== undefined) return cached;
+  const found = fs.existsSync(
+    path.join(process.cwd(), "public", publicPath.replace(/^\//, "")),
+  );
+  existsCache.set(publicPath, found);
+  return found;
+}
+
+/**
+ * Public path of a record's full-page capture, or null when it has none.
+ *
+ * A record is allowed to ship before its screenshot does, so this checks the
+ * file is really on disk instead of trusting the declared name. Callers must
+ * handle null and render a placeholder — guessing an extension here is how a
+ * record ends up advertising a URL that 404s to crawlers.
+ */
+export function screenshotPath(site: CanonicalSite) {
+  const base = assetBase(site);
+  for (const file of [site.screenshots.desktop, "desktop.webp", "desktop.png"]) {
+    if (!file) continue;
+    const candidate = `${base}/${file}`;
+    if (publicExists(candidate)) return candidate;
+  }
+  return null;
+}
+
+/** Public path of the card thumbnail, falling back to the full capture. */
+export function thumbnailPath(site: CanonicalSite) {
+  const candidate = `${assetBase(site)}/${THUMB_FILE}`;
+  return publicExists(candidate) ? candidate : screenshotPath(site);
+}
+
 /* ── Dataset provenance ──────────────────────────────────────────
    Dates are declared in content/dataset.json and only move when the
    records actually change, so datePublished/dateModified never drift
@@ -253,9 +292,7 @@ export function canonicalToCard(s: CanonicalSite): CardSite {
     style: s.design.style_tags[0] ?? "Site",
     summary: s.seo.description ?? "",
     palette: s.design.palette.map((p) => ({ role: p.role, hex: p.hex })),
-    thumb: s.screenshots.desktop
-      ? `${assetBase(s)}/${s.screenshots.desktop}`
-      : undefined,
+    thumb: thumbnailPath(s) ?? undefined,
   };
 }
 

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import WebsiteScreenshot from "./WebsiteScreenshot";
 import { categoryColor, type CardSite } from "@/lib/catalog";
 
 export default function SiteCard({
@@ -18,14 +18,17 @@ export default function SiteCard({
   const bg = site.palette.find((p) => p.role === "background")?.hex ?? "#F4F4F5";
 
   return (
-    <Link href={`/archive/${site.slug}`} className="group block">
+    // Cards appear in grids of up to 300. Left on the default, each one
+    // prefetches its record's RSC payload on sight, which is tens of megabytes
+    // across a full archive scroll and is what makes crawlers report "Failed to
+    // fetch RSC payload". This stays a plain crawlable anchor either way.
+    <Link href={`/archive/${site.slug}`} prefetch={false} className="group block">
       <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-line bg-bone transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
         {site.thumb ? (
-          <Image
+          <WebsiteScreenshot
             src={site.thumb}
             alt={`${site.name} ${site.categoryName.toLowerCase()} website design, ${site.style.toLowerCase()} style`}
             fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             priority={priority}
             className="autoscroll-img object-cover object-top"
           />
