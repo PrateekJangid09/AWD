@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { CanonicalSite } from "./canonical";
-import { recordDates } from "./canonical";
+import { recordDates, screenshotPath } from "./canonical";
 
 export const SITE_URL = "https://allwebsites.design";
 export const SITE_NAME = "AllWebsites.Design";
@@ -611,8 +611,9 @@ export function archiveRecordGraph(site: CanonicalSite) {
   const category = site.classification.category;
   const websiteType = site.classification.website_type;
   const description = studyDescription(site);
-  const screenshotFile = site.screenshots.desktop ?? "desktop.webp";
+  const screenshot = screenshotPath(site);
   const screenshotId = `${url}/#screenshot`;
+  const screenshotRef = screenshot ? { "@id": screenshotId } : undefined;
   const studiedId = `${site.identity.url.replace(/\/+$/, "")}/#studiedsite`;
   const analysisId = `${url}/#article`;
   const crumbs: Crumb[] = [
@@ -688,19 +689,23 @@ export function archiveRecordGraph(site: CanonicalSite) {
       description,
       isPartOf: { "@id": WEBSITE_ID },
       breadcrumb: { "@id": crumbId(path) },
-      primaryImageOfPage: { "@id": screenshotId },
+      ...(screenshotRef ? { primaryImageOfPage: screenshotRef } : {}),
       mainEntity: { "@id": analysisId },
       inLanguage: "en-US",
       dateModified: modified,
     },
-    {
-      "@type": "ImageObject",
-      "@id": screenshotId,
-      url: absUrl(`/sites/${slug}/${screenshotFile}`),
-      contentUrl: absUrl(`/sites/${slug}/${screenshotFile}`),
-      caption: `${site.identity.name} homepage, full-page screenshot`,
-      representativeOfPage: true,
-    },
+    ...(screenshot
+      ? [
+          {
+            "@type": "ImageObject",
+            "@id": screenshotId,
+            url: absUrl(screenshot),
+            contentUrl: absUrl(screenshot),
+            caption: `${site.identity.name} homepage, full-page screenshot`,
+            representativeOfPage: true,
+          },
+        ]
+      : []),
     {
       "@type": "Article",
       "@id": analysisId,
@@ -711,7 +716,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       isPartOf: { "@id": WEBSITE_ID },
       author: { "@id": ORG_ID },
       publisher: { "@id": ORG_ID },
-      image: { "@id": screenshotId },
+      ...(screenshotRef ? { image: screenshotRef } : {}),
       inLanguage: "en-US",
       datePublished: published,
       dateModified: modified,
@@ -725,7 +730,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       name: site.identity.name,
       url: site.identity.url,
       ...(site.seo.description ? { description: site.seo.description } : {}),
-      image: { "@id": screenshotId },
+      ...(screenshotRef ? { image: screenshotRef } : {}),
       publisher: { "@id": studiedOrgId },
       ...(site.design.style_tags.length ? { genre: site.design.style_tags } : {}),
       ...(category ? { about: category } : {}),
