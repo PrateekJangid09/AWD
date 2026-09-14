@@ -8,12 +8,14 @@ import SiteRecord from "@/components/SiteRecord";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { SITES, getSite, getCategory } from "@/lib/data";
-import { CANONICAL, getCanonical } from "@/lib/canonical";
+import { CANONICAL, getCanonical, screenshotPath } from "@/lib/canonical";
+import { outboundUrl } from "@/lib/outbound";
 import {
   archiveRecordGraph,
   archiveSampleGraph,
   pageMeta,
   studyDescription,
+  studyH1,
   studyTitle,
 } from "@/lib/seo";
 
@@ -30,15 +32,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const rec = getCanonical(slug);
   if (rec) {
-    const shot = rec.screenshots.desktop ?? "desktop.webp";
+    const shot = screenshotPath(rec);
     return pageMeta({
       title: studyTitle(rec.identity.name),
       description: studyDescription(rec),
       path: `/archive/${slug}`,
-      image: {
-        url: `/sites/${slug}/${shot}`,
-        alt: `${rec.identity.name} full-page screenshot`,
-      },
+      // Records without a capture fall back to the site-wide OG card rather
+      // than advertising an image URL that 404s.
+      ...(shot
+        ? {
+            image: {
+              url: shot,
+              alt: `${rec.identity.name} full-page screenshot`,
+            },
+          }
+        : {}),
     });
   }
   const site = getSite(slug);
@@ -154,7 +162,7 @@ export default async function SitePage({
                 <span className="tag bg-chalk">{site.style}</span>
                 <span className="tag bg-chalk">{site.websiteType}</span>
               </div>
-              <h1 className="mega mt-4 text-6xl sm:text-7xl">{site.name}</h1>
+              <h1 className="mega mt-4 text-4xl sm:text-6xl">{studyH1(site.name)}</h1>
               <p className="mt-2 font-mono text-sm uppercase tracking-wider text-ink/50">
                 {site.domain}
               </p>
@@ -170,7 +178,7 @@ export default async function SitePage({
 
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href={site.officialUrl}
+                  href={outboundUrl(site.officialUrl) ?? site.officialUrl}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="btn-primary"

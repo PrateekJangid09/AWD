@@ -103,3 +103,15 @@ export function razorpayErrorStatus(err: unknown): { status: number; message: st
   }
   return { status: 500, message: "Razorpay request failed." };
 }
+
+export async function cancelRazorpaySubscription(subscriptionId: string) {
+  const client = razorpayClient();
+  if (!client) throw new Error("razorpay_unconfigured");
+  return client.subscriptions.cancel(subscriptionId);
+}
+
+/** Cancelling an already-cancelled subscription is success, not an error. */
+export function razorpayAlreadyCancelled(err: unknown) {
+  const message = razorpayErrorStatus(err).message.toLowerCase();
+  return message.includes("already") && message.includes("cancel");
+}

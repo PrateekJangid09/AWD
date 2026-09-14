@@ -235,8 +235,8 @@ export default function Home() {
       </section>
 
       {/* ── Colourful category ticker ── */}
-      <section className="overflow-hidden border-b border-line bg-ink py-4">
-        <div className="ticker-track flex w-max gap-3">
+      <section className="max-w-full overflow-hidden border-b border-line bg-ink py-4">
+        <div className="ticker-track flex w-max max-w-none gap-3">
           {tickerCats.map((c, i) => (
             <Link
               key={`${c.slug}-${i}`}

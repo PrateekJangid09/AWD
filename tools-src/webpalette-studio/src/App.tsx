@@ -125,10 +125,10 @@ export default function App() {
   return (
     <div style={cssVars}>
       <header className="topbar glass">
-        <div className="brand">
-          <img className="brand-logo" src={import.meta.env.BASE_URL + "aw-mark.png"} alt="AllWebsites.design" />
+        <a className="brand" href="/" aria-label="AllWebsites.design home">
+          <img className="brand-logo" src={import.meta.env.BASE_URL + "aw-mark.png"} alt="" />
           <span className="brand-copy"><strong>WebPalette Studio</strong><small>Website Color System Builder</small></span>
-        </div>
+        </a>
         <div className="top-actions">
           <a className="btn ghost" href="/archive">Archive</a>
           <a className="btn ghost" href="/tools">← All tools</a>
@@ -141,7 +141,7 @@ export default function App() {
       <main className="wrap">
         <section className="hero" aria-labelledby="hero-title">
           <span className="hero-eyebrow">WEBSITE COLOR SYSTEM BUILDER · BY ALLWEBSITES.DESIGN</span>
-          <h1 id="hero-title">Turn your brand colors into a complete website palette.</h1>
+          <h1 id="hero-title">Keep your brand colors. Get a full system.</h1>
           <p>Start with the colors you already chose. WebPalette Studio keeps those values intact, assigns them real website roles, shows what the system is missing, and generates only the colors needed to complete it.</p>
           <div className="hero-actions">
             <button className="btn dark hero-primary" onClick={() => openAdd()}>Start with your colors</button>
