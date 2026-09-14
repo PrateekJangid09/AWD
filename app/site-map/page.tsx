@@ -222,8 +222,11 @@ export default function SiteMapPage() {
                 <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
                   {records.map((site) => (
                     <li key={site.identity.slug}>
+                      {/* Every record is listed here, so prefetching on sight
+                          would pull the whole archive's RSC payloads at once. */}
                       <Link
                         href={`/archive/${site.identity.slug}`}
+                        prefetch={false}
                         className="text-[13.5px] text-soft hover:text-orange"
                       >
                         {site.identity.name}
@@ -247,6 +250,7 @@ export default function SiteMapPage() {
                     <li key={site.identity.slug}>
                       <Link
                         href={`/archive/${site.identity.slug}`}
+                        prefetch={false}
                         className="text-[13.5px] text-soft hover:text-orange"
                       >
                         {site.identity.name}

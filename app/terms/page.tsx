@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Terms of service";
 const description =
-  "Terms of service for AllWebsites.Design: the archive, free browser tools, and Figma plugin access billed through Razorpay.";
+  "Terms of service for AllWebsites.Design: how the archive and free browser tools may be used, and the rules for paid Figma plugin access billed via Razorpay.";
 
 export const metadata: Metadata = pageMeta({
   title,

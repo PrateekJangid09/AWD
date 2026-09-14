@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { CanonicalSite } from "./canonical";
-import { recordDates } from "./canonical";
+import { recordDates, screenshotPath } from "./canonical";
 
 export const SITE_URL = "https://allwebsites.design";
 export const SITE_NAME = "AllWebsites.Design";
@@ -180,12 +180,19 @@ export function shortName(raw: string) {
 
 export function studyTitle(name: string) {
   const brand = shortName(name);
-  const preferred = `${brand} Website Design`;
+  const preferred = `${brand} Website Fonts, Colors and Stack`;
   if (preferred.length <= TITLE_MAX) return preferred;
-  // Rare: a still-long shortName. Keep the brand and a shorter cue.
+  const current = `${brand} Website Design`;
+  if (current.length <= TITLE_MAX) return current;
   const compact = `${brand} Design`;
   if (compact.length <= TITLE_MAX) return compact;
   return brand.slice(0, TITLE_MAX);
+}
+
+export function studyH1(name: string) {
+  const brand = shortName(name);
+  const possessive = /s$/i.test(brand) ? `${brand}'` : `${brand}'s`;
+  return `How ${possessive} website is designed`;
 }
 
 /**
@@ -347,9 +354,14 @@ export function studyAnswer(site: CanonicalSite) {
 }
 
 export function pageGraph(nodes: JsonLdNode[]) {
+  // One document per page. Each <script type="application/ld+json"> is parsed
+  // as an independent JSON-LD document, so page nodes that reference the site
+  // Organization/WebSite by @id only resolve when those nodes travel in the
+  // same block. Splitting them across two scripts left every page with
+  // unresolved references, which is what validators flag sitewide.
   return {
     "@context": "https://schema.org",
-    "@graph": nodes,
+    "@graph": [...siteEntityNodes(), ...nodes],
   };
 }
 
@@ -397,15 +409,15 @@ export function breadcrumbNode(path: string, items: Crumb[]) {
 }
 
 /**
- * Organization + WebSite, emitted sitewide.
+ * Organization + WebSite, prepended to every page graph by `pageGraph`.
  *
- * This is the only place the WebSite node is declared. Page-level graphs
- * reference it by `@id` rather than redeclaring it: two nodes sharing an `@id`
- * in one document merge unpredictably, and a partial second copy can mask the
- * name and publisher on the page that needs them most.
+ * This is the only place these nodes are declared. Page-level nodes reference
+ * them by `@id` rather than redeclaring them: two nodes sharing an `@id` in one
+ * document merge unpredictably, and a partial second copy can mask the name and
+ * publisher on the page that needs them most.
  */
-export function globalGraph() {
-  return pageGraph([
+function siteEntityNodes(): JsonLdNode[] {
+  return [
     {
       "@type": "Organization",
       "@id": ORG_ID,
@@ -451,7 +463,7 @@ export function globalGraph() {
         "query-input": "required name=search_term_string",
       },
     },
-  ]);
+  ];
 }
 
 export function homePageGraph({
@@ -604,8 +616,9 @@ export function archiveRecordGraph(site: CanonicalSite) {
   const category = site.classification.category;
   const websiteType = site.classification.website_type;
   const description = studyDescription(site);
-  const screenshotFile = site.screenshots.desktop ?? "desktop.webp";
+  const screenshot = screenshotPath(site);
   const screenshotId = `${url}/#screenshot`;
+  const screenshotRef = screenshot ? { "@id": screenshotId } : undefined;
   const studiedId = `${site.identity.url.replace(/\/+$/, "")}/#studiedsite`;
   const analysisId = `${url}/#article`;
   const crumbs: Crumb[] = [
@@ -681,19 +694,23 @@ export function archiveRecordGraph(site: CanonicalSite) {
       description,
       isPartOf: { "@id": WEBSITE_ID },
       breadcrumb: { "@id": crumbId(path) },
-      primaryImageOfPage: { "@id": screenshotId },
+      ...(screenshotRef ? { primaryImageOfPage: screenshotRef } : {}),
       mainEntity: { "@id": analysisId },
       inLanguage: "en-US",
       dateModified: modified,
     },
-    {
-      "@type": "ImageObject",
-      "@id": screenshotId,
-      url: absUrl(`/sites/${slug}/${screenshotFile}`),
-      contentUrl: absUrl(`/sites/${slug}/${screenshotFile}`),
-      caption: `${site.identity.name} homepage, full-page screenshot`,
-      representativeOfPage: true,
-    },
+    ...(screenshot
+      ? [
+          {
+            "@type": "ImageObject",
+            "@id": screenshotId,
+            url: absUrl(screenshot),
+            contentUrl: absUrl(screenshot),
+            caption: `${site.identity.name} homepage, full-page screenshot`,
+            representativeOfPage: true,
+          },
+        ]
+      : []),
     {
       "@type": "Article",
       "@id": analysisId,
@@ -704,7 +721,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       isPartOf: { "@id": WEBSITE_ID },
       author: { "@id": ORG_ID },
       publisher: { "@id": ORG_ID },
-      image: { "@id": screenshotId },
+      ...(screenshotRef ? { image: screenshotRef } : {}),
       inLanguage: "en-US",
       datePublished: published,
       dateModified: modified,
@@ -718,7 +735,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       name: site.identity.name,
       url: site.identity.url,
       ...(site.seo.description ? { description: site.seo.description } : {}),
-      image: { "@id": screenshotId },
+      ...(screenshotRef ? { image: screenshotRef } : {}),
       publisher: { "@id": studiedOrgId },
       ...(site.design.style_tags.length ? { genre: site.design.style_tags } : {}),
       ...(category ? { about: category } : {}),
@@ -998,4 +1015,115 @@ export function archiveSampleGraph({
       genre: categoryName,
     },
   ]);
+}
+
+export function colorPageGraph({
+  path,
+  name,
+  description,
+  crumbs,
+  neighbors,
+  faqs,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  crumbs: Crumb[];
+  neighbors: ListItem[];
+  faqs: { question: string; answer: string }[];
+}) {
+  const url = absUrl(path);
+  const nodes: JsonLdNode[] = [
+    breadcrumbNode(path, crumbs),
+    {
+      "@type": "WebPage",
+      "@id": webpageId(path),
+      url,
+      name,
+      description,
+      isPartOf: { "@id": WEBSITE_ID },
+      breadcrumb: { "@id": crumbId(path) },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: absUrl(`${path}/opengraph-image`),
+        width: 1200,
+        height: 630,
+      },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${url}/#neighbors`,
+      name: `Colors similar to ${name}`,
+      numberOfItems: neighbors.length,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      itemListElement: neighbors.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: item.url,
+        name: item.name,
+      })),
+    },
+  ];
+  if (faqs.length) {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}/#faq`,
+      isPartOf: { "@id": webpageId(path) },
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+  return pageGraph(nodes);
+}
+
+export function palettePageGraph({
+  path,
+  name,
+  description,
+  crumbs,
+  faqs,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  crumbs: Crumb[];
+  faqs: { question: string; answer: string }[];
+}) {
+  const url = absUrl(path);
+  const nodes: JsonLdNode[] = [
+    breadcrumbNode(path, crumbs),
+    {
+      "@type": "WebPage",
+      "@id": webpageId(path),
+      url,
+      name,
+      description,
+      isPartOf: { "@id": WEBSITE_ID },
+      breadcrumb: { "@id": crumbId(path) },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: absUrl(`${path}/opengraph-image`),
+        width: 1200,
+        height: 630,
+      },
+      inLanguage: "en-US",
+    },
+  ];
+  if (faqs.length) {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}/#faq`,
+      isPartOf: { "@id": webpageId(path) },
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+  return pageGraph(nodes);
 }

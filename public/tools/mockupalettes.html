@@ -21,15 +21,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" href="/logo.png" />
 <meta name="google-adsense-account" content="ca-pub-9336436557815535">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9336436557815535" crossorigin="anonymous"></script>
-<title>Mockupalettes – Website Color Palette Visualizer</title>
-<meta name="description" content="Website color palette visualizer. Preview any four colours on a full mockup, map primary, secondary, accent and dark roles, and compare directions in context.">
+<title>Website Color Palettes, Live Preview</title>
+<meta name="description" content="Preview website color palettes on a live page layout. Pick a four-color preset, map roles, and see how the system reads before you ship. Free, no signup.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://allwebsites.design/tools/mockupalettes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<meta property="og:title" content="Mockupalettes – Website Color Palette Visualizer">
-<meta property="og:description" content="See your palette on a real website before you commit.">
+<meta property="og:title" content="Website Color Palettes, Live Preview">
+<meta property="og:description" content="Preview website color palettes on a live page layout. Pick a four-color preset, map roles, and see how the system reads before you ship. Free, no signup.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://allwebsites.design/tools/mockupalettes">
 <meta property="og:image" content="https://allwebsites.design/tools/previews/mockupalettes.webp">
@@ -154,6 +154,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             "@type": "Answer",
             "text": "Name a HEX with Chromary, build a harmony in Colorhyme, complete a system in WebPalette, then visualize here. Study live sites in the archive."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Best palette for a SaaS site",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the SaaS and Tech presets, then preview them on the mock page. A SaaS palette usually needs a calm surface, a clear action color and a dark role that still reads as product UI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to preview a palette on a real layout",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pick a preset or paste four HEX values, map primary, secondary, accent and dark, then read the same composition. Category pages also open this tool with a palette query."
+          }
         }
       ]
     }
@@ -224,8 +240,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <aside class="sidebar" id="controls">
   <div class="side-head">
     <div class="brandline"><a class="brandhome" href="/" aria-label="AllWebsites.design home"><img class="mark-img" src="/tools/logo.png" alt="" width="26" height="26"><span class="brandname">Mockupalettes</span></a><a class="byline byline-link" href="/archive">Archive</a><a class="byline byline-link" href="/tools">← All tools</a></div>
-    <h1>Website color palette visualizer.</h1>
-    <p>Preview any four-colour palette on a full website mockup. Map roles, compare directions, and share the same layout before you commit.</p>
+    <h1>Website color palettes you can see on a page</h1>
+    <p>Preview website color palettes on a live page layout. Map roles, compare directions, and open a category page when you want the static set.</p>
   </div>
   <div class="tabs" role="tablist" aria-label="Palette source">
     <button class="tabbtn active" id="tabPresets" role="tab" aria-selected="true">Presets</button>
@@ -274,12 +290,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="seo" id="faq">
   <span class="seo-kicker">FAQ</span>
-  <h2>Website color palette visualizer questions.</h2>
+  <h2>Website color palette questions.</h2>
   <div class="seo-grid">
     <article class="seo-card"><h3>What is a website color palette visualizer?</h3><p>It shows the same website layout with different colour roles so you can judge a palette in context, not only as swatches.</p></article>
     <article class="seo-card"><h3>How many colors does Mockupalettes use?</h3><p>Four roles: primary, secondary, accent and dark. Paste four HEX values or pick a starting palette.</p></article>
     <article class="seo-card"><h3>How is Mockupalettes different from WebPalette?</h3><p><a href="/tools/webpalette">WebPalette</a> generates and completes a website colour system. Mockupalettes visualizes an existing four-colour palette on a fixed mockup so you can compare directions.</p></article>
     <article class="seo-card"><h3>Can I share or compare two palettes?</h3><p>Yes. Use Compare to hold two directions on the same composition and switch between A and B. Build a harmony first in <a href="/tools/colorhyme">Colorhyme</a>, or study live sites in the <a href="/archive">archive</a>.</p></article>
+    <article class="seo-card"><h3>Best palette for a SaaS site</h3><p>Start with the SaaS and Tech presets, then preview them on the mock page. A SaaS palette usually needs a calm surface, a clear action color and a dark role that still reads as product UI.</p></article>
+    <article class="seo-card"><h3>How to preview a palette on a real layout</h3><p>Pick a preset or paste four HEX values, map primary, secondary, accent and dark, then read the same composition. Category pages also open this tool with a palette query.</p></article>
   </div>
 </section>
 
@@ -311,7 +329,8 @@ function applyRoles(name){const root=document.documentElement.style;for(const ro
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),1100)}
 async function copy(v){try{await navigator.clipboard.writeText(v);toast('Copied '+v)}catch{toast(v)}}
 function renderRoles(){const host=$('#roleList');host.innerHTML='';ROLES.forEach(role=>{const bg=roles[role],fg=bestText(bg),cr=ratio(bg,fg);const el=document.createElement('div');el.className='role-editor';el.draggable=true;el.dataset.role=role;el.innerHTML=`<span class="handle" title="Drag to swap">⋮⋮</span><input class="picker" type="color" aria-label="${LABELS[role]} color" value="${bg}"><div class="role-meta"><label>${LABELS[role]}</label><input class="hexinput" aria-label="${LABELS[role]} HEX" value="${bg}"></div><button class="role-copy" aria-label="Copy ${LABELS[role]} color">⧉</button><div class="contrast ${cr<4.5?'warn':''}">${fg==='#FFFFFF'?'White':'Dark'} text · ${cr.toFixed(2)}:1${cr<4.5?' · low for normal text':''}</div>`;const picker=el.querySelector('.picker'),hex=el.querySelector('.hexinput'),contrastEl=el.querySelector('.contrast');const refreshContrast=()=>{const fgNow=bestText(roles[role]),crNow=ratio(roles[role],fgNow);contrastEl.classList.toggle('warn',crNow<4.5);contrastEl.textContent=`${fgNow==='#FFFFFF'?'White':'Dark'} text · ${crNow.toFixed(2)}:1${crNow<4.5?' · low for normal text':''}`};picker.oninput=e=>{roles[role]=e.target.value.toUpperCase();hex.value=roles[role];activePreset=-1;applyRoles();refreshContrast()};picker.onchange=()=>{refreshContrast();renderPresets()};hex.onchange=e=>{const v=normalizeHex(e.target.value);if(!v){toast('Enter a valid HEX color');e.target.value=roles[role];return}roles[role]=v;picker.value=v;activePreset=-1;applyRoles();refreshContrast();renderPresets()};el.querySelector('.role-copy').onclick=()=>copy(roles[role]);el.addEventListener('dragstart',()=>{draggedRole=role;el.classList.add('dragging')});el.addEventListener('dragend',()=>el.classList.remove('dragging'));el.addEventListener('dragover',e=>e.preventDefault());el.addEventListener('drop',e=>{e.preventDefault();const target=role;if(draggedRole&&draggedRole!==target){[roles[draggedRole],roles[target]]=[roles[target],roles[draggedRole]];activePreset=-1;renderRoles();applyRoles();renderPresets();toast('Roles swapped')}draggedRole=null});host.appendChild(el)})}
-function renderFilters(){const cats=['All',...new Set(PALETTES.map(p=>p.category))];$('#filters').innerHTML=cats.map(c=>`<button class="filter ${c===filter?'active':''}" data-filter="${c}">${c}</button>`).join('');$$('.filter').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;renderFilters();renderPresets()})}
+function slugifyName(name){return name.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}
+function renderFilters(){const cats=['All',...new Set(PALETTES.map(p=>p.category))];$('#filters').innerHTML=cats.map(c=>c==='All'?`<button class="filter ${c===filter?'active':''}" data-filter="${c}">${c}</button>`:`<a class="filter ${c===filter?'active':''}" href="/tools/mockupalettes/${slugifyName(c)}">${c}</a>`).join('');$$('.filter[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;renderFilters();renderPresets()})}
 function renderPresets(){const host=$('#presetList');host.innerHTML='';let shown=0;PALETTES.forEach((p,i)=>{const hay=(p.name+' '+p.category+' '+p.description+' '+p.colors.join(' ')).toLowerCase();if(filter!=='All'&&p.category!==filter)return;if(query&&!hay.includes(query))return;shown++;const card=document.createElement('article');card.className='palette-card'+(i===activePreset?' active':'');card.innerHTML=`<button class="palette-main" aria-label="Preview ${p.name}"><span class="tag">${p.category}</span><strong class="pname">${p.name}</strong><span class="pdesc">${p.description}</span><span class="swatches">${p.colors.map(h=>`<i style="background:${h}"></i>`).join('')}</span></button><div class="card-actions"><span>4 colors</span><button class="copy-preset">Copy palette</button></div>`;card.querySelector('.palette-main').onclick=()=>{activePreset=i;sourceColors=[...p.colors];autoMap(sourceColors);$('#pasteColors').value=p.colors.join(' ');$('#activeName').textContent=p.name;renderPresets();toast('Previewing '+p.name)};card.querySelector('.copy-preset').onclick=()=>copy(p.colors.join(', '));host.appendChild(card)});$('#presetCount').textContent=shown+' palette'+(shown===1?'':'s')}
 function setTab(which){const custom=which==='custom';$('#customPanel').hidden=!custom;$('#presetsPanel').hidden=custom;$('#tabCustom').classList.toggle('active',custom);$('#tabPresets').classList.toggle('active',!custom);$('#tabCustom').setAttribute('aria-selected',custom);$('#tabPresets').setAttribute('aria-selected',!custom)}
 $('#tabCustom').onclick=()=>setTab('custom');$('#tabPresets').onclick=()=>setTab('presets');
@@ -324,5 +343,6 @@ $('#compareBtn').onclick=()=>{if(!compare){compare={a:snapshot(),b:null};$('#com
 $$('[data-compare]').forEach(b=>b.onclick=()=>{if(!compare||!compare.b)return;const which=b.dataset.compare;useSnapshot(compare[which],'Compare '+which.toUpperCase())});
 function setControls(hidden){$('#tool').classList.toggle('controls-hidden',hidden);$('#hideControls').textContent=hidden?'Show controls':'Hide controls';localStorage.setItem('mockupalettesControlsHidden',hidden?'1':'0')} $('#hideControls').onclick=()=>setControls(!$('#tool').classList.contains('controls-hidden'));setControls(localStorage.getItem('mockupalettesControlsHidden')==='1');
 sourceColors=[...PALETTES[0].colors];autoMap(sourceColors);$('#pasteColors').value=sourceColors.join(' ');renderFilters();renderPresets();applyRoles(PALETTES[0].name);setTab('presets');
+(function applyQueryPalette(){const slug=new URLSearchParams(location.search).get('palette');if(!slug)return;const i=PALETTES.findIndex(p=>slugifyName(p.name)===slug);if(i<0)return;activePreset=i;sourceColors=[...PALETTES[i].colors];autoMap(sourceColors);$('#pasteColors').value=PALETTES[i].colors.join(' ');$('#activeName').textContent=PALETTES[i].name;renderPresets();applyRoles(PALETTES[i].name)})();
 </script>
 </body></html>

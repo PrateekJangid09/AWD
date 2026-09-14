@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, pageMeta, typedPageGraph } from "@/lib/seo";
 
 const title = "Refund policy";
 const description =
-  "Refund policy for AllWebsites.Design Figma plugin access: 14-day unused refund on Razorpay charges for the monthly or yearly suite.";
+  "Refund policy for AllWebsites.Design Figma plugin access: a 14-day unused refund on Razorpay charges for the monthly or yearly suite, and how to cancel.";
 
 export const metadata: Metadata = pageMeta({
   title,

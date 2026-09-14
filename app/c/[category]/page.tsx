@@ -112,7 +112,9 @@ export default async function CategoryPage({
             <span className="h-2 w-2 rounded-full" style={{ backgroundColor: cat.accent }} />
             {cat.count.toLocaleString()} references · {cat.share} of archive
           </span>
-          <h1 className="display mt-4 text-4xl sm:text-6xl">{cat.name}</h1>
+          <h1 className="display mt-4 text-4xl sm:text-6xl">
+            {cat.name} website design examples
+          </h1>
           <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-soft">
             {cat.blurb}
           </p>

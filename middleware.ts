@@ -13,5 +13,11 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  // Only page routes need the apex redirect. The archive serves 300+ generated
+  // screenshots straight from /sites/, and running an edge function on each one
+  // just to inspect a Host header costs an invocation and adds latency to every
+  // image on the page. Static assets are skipped by path and by extension.
+  matcher: [
+    "/((?!_next/static|_next/image|sites/|tools/previews/|favicon.ico|.*\\.(?:png|jpg|jpeg|gif|webp|avif|svg|ico|css|js|txt|xml|json|woff|woff2|ttf|otf|map)$).*)",
+  ],
 };
