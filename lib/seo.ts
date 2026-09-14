@@ -354,9 +354,14 @@ export function studyAnswer(site: CanonicalSite) {
 }
 
 export function pageGraph(nodes: JsonLdNode[]) {
+  // One document per page. Each <script type="application/ld+json"> is parsed
+  // as an independent JSON-LD document, so page nodes that reference the site
+  // Organization/WebSite by @id only resolve when those nodes travel in the
+  // same block. Splitting them across two scripts left every page with
+  // unresolved references, which is what validators flag sitewide.
   return {
     "@context": "https://schema.org",
-    "@graph": nodes,
+    "@graph": [...siteEntityNodes(), ...nodes],
   };
 }
 
@@ -404,15 +409,15 @@ export function breadcrumbNode(path: string, items: Crumb[]) {
 }
 
 /**
- * Organization + WebSite, emitted sitewide.
+ * Organization + WebSite, prepended to every page graph by `pageGraph`.
  *
- * This is the only place the WebSite node is declared. Page-level graphs
- * reference it by `@id` rather than redeclaring it: two nodes sharing an `@id`
- * in one document merge unpredictably, and a partial second copy can mask the
- * name and publisher on the page that needs them most.
+ * This is the only place these nodes are declared. Page-level nodes reference
+ * them by `@id` rather than redeclaring them: two nodes sharing an `@id` in one
+ * document merge unpredictably, and a partial second copy can mask the name and
+ * publisher on the page that needs them most.
  */
-export function globalGraph() {
-  return pageGraph([
+function siteEntityNodes(): JsonLdNode[] {
+  return [
     {
       "@type": "Organization",
       "@id": ORG_ID,
@@ -458,7 +463,7 @@ export function globalGraph() {
         "query-input": "required name=search_term_string",
       },
     },
-  ]);
+  ];
 }
 
 export function homePageGraph({

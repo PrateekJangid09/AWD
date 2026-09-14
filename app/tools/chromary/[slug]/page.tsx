@@ -217,14 +217,21 @@ export default async function NamedColorPage({
           <section className="mt-12">
             <h2 className="display text-2xl sm:text-3xl">Use this color</h2>
             <div className="mt-6 flex flex-wrap gap-3">
+              {/* Tool-state deep links. The tool canonicalises back to its own
+                  base URL, so these add nothing to index; nofollow keeps a
+                  crawler from expanding one ?base= URL per colour page. */}
               <Link
                 href={`/tools/colorhyme?base=${color.hex.slice(1)}`}
+                rel="nofollow"
+                prefetch={false}
                 className="btn-primary"
               >
                 Use in Colorhyme
               </Link>
               <Link
                 href={`/tools/webpalette?hex=${color.hex.slice(1)}`}
+                rel="nofollow"
+                prefetch={false}
                 className="btn-ghost"
               >
                 Use in WebPalette

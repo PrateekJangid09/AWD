@@ -168,8 +168,11 @@ export default async function PalettePage({
               <PaletteLayoutPreview roles={roles} name={palette.name} />
             </div>
             <div className="mt-6">
+              {/* Canonicalises to the base tool, so keep it out of crawl paths. */}
               <Link
                 href={`/tools/mockupalettes?palette=${palette.slug}`}
+                rel="nofollow"
+                prefetch={false}
                 className="btn-primary"
               >
                 Open live in Mockupalettes

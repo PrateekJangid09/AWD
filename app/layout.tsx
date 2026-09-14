@@ -5,7 +5,6 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import ConsentScripts from "@/components/ConsentScripts";
-import JsonLd from "@/components/JsonLd";
 import { liveCategories } from "@/lib/canonical";
 import {
   DEFAULT_DESCRIPTION,
@@ -13,7 +12,6 @@ import {
   OG_IMAGE,
   SITE_NAME,
   SITE_URL,
-  globalGraph,
 } from "@/lib/seo";
 
 const inter = Inter({
@@ -66,7 +64,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="min-h-screen bg-paper text-ink antialiased">
-        <JsonLd data={globalGraph()} />
         <ConsentScripts />
         <a
           href="#main"
