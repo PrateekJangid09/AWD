@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import SiteCard from "@/components/SiteCard";
+import FigmaSuiteCard from "@/components/FigmaSuiteCard";
 import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/catalog";
 import { CANONICAL, DATASET, canonicalCards, liveCategories } from "@/lib/canonical";
@@ -155,6 +156,7 @@ export default function Home() {
                   </span>
                 </a>
             ))}
+            <FigmaSuiteCard variant="home" />
           </div>
         </div>
       </section>

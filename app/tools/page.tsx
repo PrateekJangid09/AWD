@@ -4,6 +4,7 @@ import Link from "next/link";
 import UtilityHero from "@/components/UtilityHero";
 import Reveal from "@/components/Reveal";
 import ExploreMore from "@/components/ExploreMore";
+import FigmaSuiteCard, { FIGMA_SUITE_URL } from "@/components/FigmaSuiteCard";
 import JsonLd from "@/components/JsonLd";
 import { getTool } from "@/lib/data";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
@@ -135,6 +136,9 @@ export default function ToolsPage() {
                 </Reveal>
               );
             })}
+            <Reveal delay={70} className="h-full">
+              <FigmaSuiteCard />
+            </Reveal>
           </div>
 
           <p className="mx-auto mt-16 max-w-2xl text-center text-pretty text-lg leading-relaxed text-soft">
@@ -144,7 +148,15 @@ export default function ToolsPage() {
             free uses each, then one Razorpay payment unlocks the suite.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Link href="/pricing" className="btn-dark">
+            <a
+              href={FIGMA_SUITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-dark"
+            >
+              Open Figma plugin ↗
+            </a>
+            <Link href="/pricing" className="btn-ghost">
               Figma plugin pricing
             </Link>
             <Link href="/archive" className="btn-ghost">

@@ -319,6 +319,21 @@ async function main() {
   const llms = await get(`${BASE}/llms.txt`);
   if (llms.status !== 200) fail("/llms.txt", "status", `HTTP ${llms.status}`);
 
+  // IndexNow ownership key. Search engines fetch this after every submission to
+  // prove the host controls the key named in the request. Must be UTF-8 text
+  // whose body equals the filename stem.
+  const INDEXNOW_KEY = "0f2a92162bdf437e8f536234c1bcb160";
+  const indexNow = await get(`${BASE}/${INDEXNOW_KEY}.txt`);
+  if (indexNow.status !== 200) {
+    fail(`/${INDEXNOW_KEY}.txt`, "status", `HTTP ${indexNow.status}`);
+  } else if (indexNow.body.trim() !== INDEXNOW_KEY) {
+    fail(
+      `/${INDEXNOW_KEY}.txt`,
+      "indexnow",
+      `body must equal the key; got "${indexNow.body.trim().slice(0, 64)}"`,
+    );
+  }
+
   console.log(`Pages checked: ${checked}`);
   if (warnings.length) {
     console.log(`\nWarnings (${warnings.length}):`);
