@@ -8,15 +8,20 @@ import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/catalog";
 import { CANONICAL, DATASET, canonicalCards, liveCategories } from "@/lib/canonical";
 import { publishedPosts } from "@/lib/journal";
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
+import { absUrl, DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
+
+const { alternates: _homeAlternates, openGraph: homeOg, ...homeMeta } = pageMeta({
+  title: "Website Design Examples & Inspiration",
+  description: DEFAULT_DESCRIPTION,
+  path: "/",
+});
 
 export const metadata: Metadata = {
-  ...pageMeta({
-    title: "Website Design Examples & Inspiration",
-    description: DEFAULT_DESCRIPTION,
-    path: "/",
-  }),
+  ...homeMeta,
   title: { absolute: DEFAULT_TITLE },
+  // Next.js drops the root trailing slash from metadata URLs. The served
+  // homepage is `/`, so canonical and og:url are emitted as raw tags below.
+  openGraph: homeOg ? { ...homeOg, url: undefined } : undefined,
 };
 
 export default function Home() {
@@ -34,6 +39,8 @@ export default function Home() {
 
   return (
     <>
+      <link rel="canonical" href={absUrl("/")} />
+      <meta property="og:url" content={absUrl("/")} />
       <JsonLd
         data={homePageGraph({
           recordCount: all.length,
