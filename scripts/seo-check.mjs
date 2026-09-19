@@ -55,6 +55,9 @@ const UTILITY = new Set([
   "/submit",
 ]);
 
+/** Reachable, but must stay out of the sitemap and emit noindex. */
+const NOINDEX_PATHS = ["/checkout", "/cookie-preference"];
+
 const failures = [];
 const warnings = [];
 
@@ -136,7 +139,7 @@ function checkPage(path, html) {
 
   // Canonical: self-referencing, bare domain.
   const canonical = first(html, /<link rel="canonical" href="([^"]*)"/i);
-  const expected = `${CANONICAL_HOST}${path === "/" ? "" : path}`;
+  const expected = `${CANONICAL_HOST}${path === "/" ? "/" : path}`;
   if (!canonical) fail(path, "canonical", "missing");
   else if (canonical.startsWith("https://www.")) fail(path, "canonical", `www host: ${canonical}`);
   else if (canonical !== expected) fail(path, "canonical", `${canonical} != ${expected}`);
@@ -276,6 +279,19 @@ async function main() {
   for (const p of all) {
     if (/\.(txt|xml|json|png|jpe?g|webp|svg|ico|pdf)$/i.test(p))
       fail(p, "sitemap", "non-HTML file listed in sitemap.xml");
+    if (NOINDEX_PATHS.includes(p))
+      fail(p, "sitemap", "noindex utility page listed in sitemap.xml");
+  }
+
+  for (const path of NOINDEX_PATHS) {
+    const { status, body } = await get(`${BASE}${path}`);
+    if (status !== 200) {
+      fail(path, "status", `does not resolve (HTTP ${status})`);
+      continue;
+    }
+    const robots = first(body, /<meta name="robots" content="([^"]*)"/i) ?? "";
+    if (!/noindex/i.test(robots)) fail(path, "robots", `expected noindex, got "${robots}"`);
+    if (/nofollow/i.test(robots)) fail(path, "robots", `emits nofollow: "${robots}"`);
   }
 
   const paths = ALL ? all : pickSample(all);
@@ -312,6 +328,16 @@ async function main() {
     }
     if (!robotsTxt.body.includes("sitemap.xml"))
       fail("/robots.txt", "sitemap", "does not reference sitemap.xml");
+  }
+
+  const webpalette = await get(`${BASE}/tools/webpalette`);
+  if (webpalette.status !== 200) {
+    fail("/tools/webpalette", "status", `HTTP ${webpalette.status}`);
+  } else {
+    const robots = first(webpalette.body, /<meta name="robots" content="([^"]*)"/i) ?? "";
+    if (!/index/i.test(robots)) {
+      fail("/tools/webpalette", "robots", `expected index,follow, got "${robots}"`);
+    }
   }
 
   // Not in the sitemap by design, so it is asserted here instead: agents find

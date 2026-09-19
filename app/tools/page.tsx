@@ -7,6 +7,8 @@ import ExploreMore from "@/components/ExploreMore";
 import FigmaSuiteCard, { FIGMA_SUITE_URL } from "@/components/FigmaSuiteCard";
 import JsonLd from "@/components/JsonLd";
 import { getTool } from "@/lib/data";
+import { NAMED_COLORS, namedColorPath } from "@/lib/named-colors";
+import { PALETTE_CATEGORIES, paletteCategoryPath } from "@/lib/mockupalettes";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Free Website Colour Tools";
@@ -165,6 +167,62 @@ export default function ToolsPage() {
             <Link href="/c" className="btn-ghost">
               Explore categories
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-bone py-14 sm:py-16">
+        <div className="wrap">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow text-ink">Mockupalettes</p>
+              <h2 className="display mt-3 text-2xl sm:text-3xl">
+                Website palettes by category.
+              </h2>
+            </div>
+            <a href="/tools/mockupalettes" className="text-[13px] font-medium text-soft hover:text-ink">
+              Open the tool →
+            </a>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {PALETTE_CATEGORIES.map((category) => (
+              <Link
+                key={category.slug}
+                href={paletteCategoryPath(category.slug)}
+                prefetch={false}
+                className="inline-flex items-center rounded-full border border-line bg-paper px-4 py-2 text-[13px] font-medium text-ink hover:border-line-strong"
+              >
+                {category.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line py-14 sm:py-16">
+        <div className="wrap">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow text-ink">Chromary</p>
+              <h2 className="display mt-3 text-2xl sm:text-3xl">
+                Named colours, ready to study.
+              </h2>
+            </div>
+            <Link href="/site-map" className="text-[13px] font-medium text-soft hover:text-ink">
+              Full colour directory →
+            </Link>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-x-4 gap-y-1.5">
+            {NAMED_COLORS.slice(0, 24).map((color) => (
+              <Link
+                key={color.slug}
+                href={namedColorPath(color.slug)}
+                prefetch={false}
+                className="text-[13.5px] text-soft hover:text-orange"
+              >
+                {color.name}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

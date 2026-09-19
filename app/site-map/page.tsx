@@ -10,6 +10,13 @@ import {
   liveCategories,
 } from "@/lib/canonical";
 import { publishedPosts } from "@/lib/journal";
+import { NAMED_COLORS, namedColorPath } from "@/lib/named-colors";
+import {
+  PALETTE_CATEGORIES,
+  WEBSITE_PALETTES,
+  paletteCategoryPath,
+  palettePath,
+} from "@/lib/mockupalettes";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Site Map — Every Page in the Archive";
@@ -79,6 +86,12 @@ export default function SiteMapPage() {
         (category) => categorySlug(site.classification.category) === category.slug,
       ),
   );
+  const colorsByGroup = new Map<string, typeof NAMED_COLORS>();
+  for (const color of NAMED_COLORS) {
+    const group = colorsByGroup.get(color.group) ?? [];
+    group.push(color);
+    colorsByGroup.set(color.group, group);
+  }
 
   return (
     <>
@@ -106,6 +119,10 @@ export default function SiteMapPage() {
             ...TOOLS.map((tool) => ({
               name: tool.name,
               url: absUrl(`/tools/${tool.slug}`),
+            })),
+            ...PALETTE_CATEGORIES.map((category) => ({
+              name: `${category.name} website palettes`,
+              url: absUrl(paletteCategoryPath(category.slug)),
             })),
             ...publishedPosts().map((post) => ({
               name: post.h1,
@@ -189,6 +206,69 @@ export default function SiteMapPage() {
                 </span>
                 <span className="mt-1 block text-[13px] text-muted">{tool.tagline}</span>
               </a>
+            ))}
+          </div>
+
+          <h3 className="mt-12 text-[15px] font-semibold tracking-tight">
+            Palette categories
+          </h3>
+          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
+            {PALETTE_CATEGORIES.map((category) => (
+              <li key={category.slug}>
+                <Link
+                  href={paletteCategoryPath(category.slug)}
+                  prefetch={false}
+                  className="text-[13.5px] text-soft hover:text-orange"
+                >
+                  {category.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mt-10 text-[15px] font-semibold tracking-tight">
+            Website palettes
+          </h3>
+          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">
+            {WEBSITE_PALETTES.map((palette) => (
+              <li key={`${palette.categorySlug}/${palette.slug}`}>
+                <Link
+                  href={palettePath(palette)}
+                  prefetch={false}
+                  className="text-[13.5px] text-soft hover:text-orange"
+                >
+                  {palette.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mt-10 text-[15px] font-semibold tracking-tight">
+            Named colours
+          </h3>
+          <div className="mt-6 space-y-8">
+            {[...colorsByGroup.entries()].map(([group, colors]) => (
+              <div key={group}>
+                <h4 className="text-[13px] font-semibold tracking-tight text-ink">
+                  {group}{" "}
+                  <span className="text-[12px] font-normal text-muted">
+                    {colors.length.toLocaleString()}
+                  </span>
+                </h4>
+                <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5">
+                  {colors.map((color) => (
+                    <li key={color.slug}>
+                      <Link
+                        href={namedColorPath(color.slug)}
+                        prefetch={false}
+                        className="text-[13.5px] text-soft hover:text-orange"
+                      >
+                        {color.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
