@@ -16,6 +16,7 @@ export const metadata: Metadata = pageMeta({
   title,
   description,
   path: "/checkout",
+  index: false,
 });
 
 export default async function CheckoutPage({

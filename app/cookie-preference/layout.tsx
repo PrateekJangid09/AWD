@@ -11,6 +11,7 @@ export const metadata: Metadata = pageMeta({
   title,
   description,
   path: "/cookie-preference",
+  index: false,
 });
 
 export default function CookiePreferenceLayout({

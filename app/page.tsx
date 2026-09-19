@@ -7,6 +7,7 @@ import CountUp from "@/components/CountUp";
 import JsonLd from "@/components/JsonLd";
 import { TOOLS, type CardSite } from "@/lib/catalog";
 import { CANONICAL, DATASET, canonicalCards, liveCategories } from "@/lib/canonical";
+import { publishedPosts } from "@/lib/journal";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, homePageGraph, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function Home() {
     { to: 100, suffix: "%", label: "Source-verified" },
   ];
   const tickerCats = [...categories, ...categories];
+  const posts = publishedPosts();
 
   return (
     <>
@@ -302,6 +304,43 @@ export default function Home() {
                 <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
                 {c.name}
                 <span className="text-muted">{c.count.toLocaleString()}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Resources — crawlable path into /blogs ── */}
+      <section className="border-t border-line py-16 sm:py-20">
+        <div className="wrap">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow text-ink">Resources</p>
+              <h2 className="display mt-3 text-2xl sm:text-3xl">
+                What the archive shows, measured.
+              </h2>
+            </div>
+            <Link href="/blogs" className="text-[13px] font-medium text-soft hover:text-ink">
+              All research →
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blogs/${post.slug}`}
+                className="rounded-2xl border border-line bg-white p-5 transition-colors hover:border-line-strong"
+              >
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-orange">
+                  {post.kicker}
+                </span>
+                <span className="mt-2 block text-[15px] font-semibold tracking-tight">
+                  {post.h1}
+                </span>
+                <span className="mt-1 block text-[13px] leading-relaxed text-muted">
+                  {post.keyStat.label}
+                </span>
               </Link>
             ))}
           </div>

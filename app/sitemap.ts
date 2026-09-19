@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
     priority: number;
   }[] = [
-    { path: "", changeFrequency: "daily", priority: 1 },
+    { path: "/", changeFrequency: "daily", priority: 1 },
     { path: "/archive", changeFrequency: "daily", priority: 0.9 },
     { path: "/c", changeFrequency: "weekly", priority: 0.8 },
     { path: "/tools", changeFrequency: "weekly", priority: 0.8 },
@@ -37,8 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
     { path: "/refund-policy", changeFrequency: "yearly", priority: 0.2 },
     { path: "/pricing", changeFrequency: "monthly", priority: 0.6 },
-    { path: "/checkout", changeFrequency: "monthly", priority: 0.5 },
-    { path: "/cookie-preference", changeFrequency: "yearly", priority: 0.2 },
+    // /checkout and /cookie-preference are noindex utility pages.
     // /llms.txt is deliberately absent: a sitemap lists indexable HTML pages,
     // and agents find it by convention at the well-known path instead.
   ];

@@ -31,7 +31,8 @@ export type Crumb = { name: string; path?: string };
 export type ListItem = { name: string; url: string };
 
 export function absUrl(path = "/") {
-  if (!path || path === "/") return SITE_URL;
+  // Homepage is served at `/`, so the canonical must include the slash.
+  if (!path || path === "/") return `${SITE_URL}/`;
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
@@ -479,7 +480,7 @@ export function homePageGraph({
     {
       "@type": "CollectionPage",
       "@id": `${SITE_URL}/#webpage`,
-      url: SITE_URL,
+      url: absUrl("/"),
       name: "Website design examples, studied in depth",
       description: DEFAULT_DESCRIPTION,
       isPartOf: { "@id": WEBSITE_ID },
