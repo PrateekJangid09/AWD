@@ -4,6 +4,47 @@ import { CANONICAL, liveCategories } from "@/lib/canonical";
 import { publishedPosts } from "@/lib/journal";
 import { CONTACT_EMAIL, SUPPORT_URL } from "@/lib/seo";
 
+const FEATURED: {
+  href: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  rel?: string;
+}[] = [
+  {
+    href: "https://fazier.com/launches/allwebsites.design",
+    src: "https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=dark",
+    alt: "Fazier badge",
+    width: 120,
+    height: 40,
+  },
+  {
+    href: "https://startupbase.io/products/awdesign?utm_source=startupbase&utm_medium=badge&utm_campaign=featured-badge-dark",
+    src: "https://statics.startupbase.io/site/badges/featured-on-sb-dark.svg",
+    alt: "Featured on StartupBase",
+    width: 180,
+    height: 55,
+    rel: "noopener noreferrer",
+  },
+  {
+    href: "https://smollaunch.com",
+    src: "https://smollaunch.com/badges/featured-dark.svg",
+    alt: "AllWebsites.Design — Featured on Smol Launch",
+    width: 250,
+    height: 60,
+    rel: "noopener",
+  },
+  {
+    href: "https://uno.directory",
+    src: "https://uno.directory/uno-directory.svg",
+    alt: "Listed on Uno Directory",
+    width: 120,
+    height: 30,
+    rel: "noopener",
+  },
+];
+
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
     title: "Explore",
@@ -159,6 +200,36 @@ export default function Footer() {
           <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
             Discover · Understand · Explore
           </p>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="wrap py-7">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+            We are featured on
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-4">
+            {FEATURED.map((badge) => (
+              <a
+                key={badge.href}
+                href={badge.href}
+                target="_blank"
+                rel={badge.rel}
+                className="inline-flex items-center opacity-90 transition-opacity hover:opacity-100"
+              >
+                {/* External launch badges: served by each directory, not our optimizer. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={badge.src}
+                  alt={badge.alt}
+                  width={badge.width}
+                  height={badge.height}
+                  loading="lazy"
+                  className="h-8 w-auto sm:h-10"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
