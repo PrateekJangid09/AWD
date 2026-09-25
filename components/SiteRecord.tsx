@@ -12,7 +12,7 @@ import {
   type CanonicalSite,
 } from "@/lib/canonical";
 import { categoryColor, type CardSite } from "@/lib/catalog";
-import { studyAnswer } from "@/lib/seo";
+import { displayName, studyAnswer } from "@/lib/seo";
 
 const DATE_FORMAT: Intl.DateTimeFormatOptions = {
   day: "2-digit",
@@ -248,7 +248,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
               ...(cat
                 ? [{ href: `/c/${cat.slug}`, label: cat.name }]
                 : []),
-              { label: identity.name },
+              { label: displayName(site) },
             ]}
           />
 
@@ -281,7 +281,7 @@ export default function SiteRecord({ site }: { site: CanonicalSite }) {
                 </span>
               </div>
 
-              <h1 className="mega mt-4 text-5xl sm:text-6xl">{identity.name}</h1>
+              <h1 className="mega mt-4 text-5xl sm:text-6xl">{displayName(site)}</h1>
 
               {meta && (
                 <p className="mt-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-soft">

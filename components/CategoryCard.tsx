@@ -4,11 +4,14 @@ import type { Category } from "@/lib/data";
 export default function CategoryCard({
   category,
   featured = false,
+  line,
 }: {
   category: Category;
   featured?: boolean;
+  line?: string;
 }) {
   const c = category.accent;
+  const copy = line ?? category.blurb;
   return (
     <Link
       href={`/c/${category.slug}`}
@@ -30,7 +33,7 @@ export default function CategoryCard({
             {category.name}
           </p>
           <p className="mt-2 max-w-[28ch] text-pretty text-[13px] leading-relaxed text-muted">
-            {category.blurb}
+            {copy}
           </p>
         </div>
         <span

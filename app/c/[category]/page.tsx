@@ -12,6 +12,7 @@ import {
 } from "@/lib/canonical";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
+import { categoryInsights, categoryIntro, categoryPatterns } from "@/lib/insights";
 import {
   absUrl,
   collectionPageGraph,
@@ -36,20 +37,16 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
-  // Prefer a count when it still fits the 60-char document title budget
-  // (with or without the brand suffix, handled inside pageMeta).
-  const withCount = `${cat.name} Website Design Examples (${cat.count})`;
-  const bare = `${cat.name} Website Design Examples`;
+  const insight = categoryInsights(category);
+  const intro = categoryIntro(cat.name, cat.blurb, insight);
+  const withCount = `${cat.name} Website Design Inspiration`;
+  const bare = `${cat.name} Website Designs`;
   return pageMeta({
     title: withCount.length <= TITLE_MAX ? withCount : bare,
-    description: fitDescription(
-      `${cat.count} ${cat.name.toLowerCase()} website design examples, each studied with its colour palette, typefaces and detected technology.`,
-      [
-        ` ${cat.blurb}`,
-        " Screenshots and provenance on every record.",
-        " Updated as the archive grows.",
-      ],
-    ),
+    description: fitDescription(intro, [
+      ` ${insight.fonts.length ? `Type includes ${insight.fonts[0]}.` : ""}`,
+      " Screenshots and provenance on every record.",
+    ]),
     path: `/c/${category}`,
     index: cat.count > 0,
   });
@@ -65,8 +62,11 @@ export default async function CategoryPage({
   if (!cat) notFound();
 
   const records = canonicalCardsInCategory(cat.slug);
+  const insight = categoryInsights(cat.slug);
+  const intro = categoryIntro(cat.name, cat.blurb, insight);
+  const patterns = categoryPatterns(cat.name, insight);
 
-  const description = `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`;
+  const description = intro;
   const related = liveCategories()
     .filter((c) => c.slug !== cat.slug && c.count > 0)
     .slice(0, 12);
@@ -112,9 +112,11 @@ export default async function CategoryPage({
             <span className="h-2 w-2 rounded-full" style={{ backgroundColor: cat.accent }} />
             {cat.count.toLocaleString()} references · {cat.share} of archive
           </span>
-          <h1 className="display mt-4 text-4xl sm:text-6xl">{cat.name}</h1>
+          <h1 className="display mt-4 text-4xl sm:text-6xl">
+            {cat.name} Website Design Inspiration
+          </h1>
           <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-soft">
-            {cat.blurb}
+            {intro}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {cat.descriptors.map((d) => (
@@ -175,6 +177,17 @@ export default async function CategoryPage({
           )}
         </div>
       </section>
+
+      {records.length > 0 && (
+        <section className="border-t border-line bg-paper py-12 sm:py-16">
+          <div className="wrap max-w-3xl">
+            <h2 className="display text-2xl sm:text-3xl">Common patterns</h2>
+            <p className="mt-4 text-pretty text-base leading-relaxed text-soft">
+              {patterns}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* A note on classification */}
       <section className="border-y border-line bg-bone py-10">

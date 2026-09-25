@@ -32,7 +32,7 @@ export async function generateMetadata({
   if (rec) {
     const shot = rec.screenshots.desktop ?? "desktop.webp";
     return pageMeta({
-      title: studyTitle(rec.identity.name),
+      title: studyTitle(rec),
       description: studyDescription(rec),
       path: `/archive/${slug}`,
       image: {
