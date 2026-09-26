@@ -11,6 +11,7 @@ const FEATURED: {
   width: number;
   height: number;
   rel: string;
+  title?: string;
 }[] = [
   {
     href: "https://ideakiln.com/ideas/allwebsites-design",
@@ -66,6 +67,48 @@ const FEATURED: {
     alt: "AllWebsites - Featured on Startup Fame",
     width: 171,
     height: 54,
+    rel: "noopener",
+  },
+  {
+    href: "https://openhunts.com",
+    src: "https://cdn.openhunts.com/badges/club.webp",
+    alt: "OpenHunts Club Member",
+    width: 195,
+    height: 42,
+    rel: "noopener",
+    title: "OpenHunts Club",
+  },
+  {
+    href: "https://uno.directory",
+    src: "https://uno.directory/uno-directory.svg",
+    alt: "Listed on Uno Directory",
+    width: 120,
+    height: 30,
+    rel: "noopener",
+  },
+  {
+    href: "https://tinyhunt.dev/projects/allwebsites-design?utm_source=badge",
+    src: "https://r2.direasy-multi-tenant.focusapps.app/uploads/616d0b1a-3979-4b8c-94d1-b4f1fedd3ead/1783232960041/17rsshdhmati/featured-on-dark.svg",
+    alt: "Featured on TinyHunt",
+    width: 180,
+    height: 44,
+    rel: "noopener noreferrer",
+  },
+  {
+    href: "https://dailypings.com/p/allwebsites-design",
+    src: "https://dailypings.com/badge.svg",
+    alt: "Featured on DailyPings",
+    width: 179,
+    height: 32,
+    rel: "noopener",
+    title: "Featured on DailyPings",
+  },
+  {
+    href: "https://neeed.directory",
+    src: "https://neeed.directory/badges/neeed-badge-dark.svg",
+    alt: "Featured on neeed.directory",
+    width: 139,
+    height: 40,
     rel: "noopener",
   },
 ];
@@ -240,6 +283,7 @@ export default function Footer() {
                 href={badge.href}
                 target="_blank"
                 rel={badge.rel}
+                title={badge.title}
                 className="inline-flex items-center opacity-90 transition-opacity hover:opacity-100"
               >
                 {/* External launch badges: served by each directory, not our optimizer. */}
