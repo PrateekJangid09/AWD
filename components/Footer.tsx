@@ -4,6 +4,72 @@ import { CANONICAL, liveCategories } from "@/lib/canonical";
 import { publishedPosts } from "@/lib/journal";
 import { CONTACT_EMAIL, SUPPORT_URL } from "@/lib/seo";
 
+const FEATURED: {
+  href: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  rel: string;
+}[] = [
+  {
+    href: "https://ideakiln.com/ideas/allwebsites-design",
+    src: "https://ideakiln.com/dark.svg",
+    alt: "Featured on Idea Kiln",
+    width: 200,
+    height: 54,
+    rel: "noopener",
+  },
+  {
+    href: "https://marketingdb.live",
+    src: "https://marketingdb.live/badge.svg",
+    alt: "Listed on MarketingDB",
+    width: 190,
+    height: 44,
+    rel: "noopener noreferrer nofollow sponsored",
+  },
+  {
+    href: "https://tools.launchllama.co?utm_source=badge&utm_medium=referral",
+    src: "https://tools.launchllama.co/featured-badge.png?v=2",
+    alt: "Featured on Launch Llama Tools",
+    width: 200,
+    height: 52,
+    rel: "noopener noreferrer",
+  },
+  {
+    href: "https://dofollow.tools",
+    src: "https://dofollow.tools/badge/badge_dark.svg",
+    alt: "Featured on Dofollow.Tools",
+    width: 200,
+    height: 54,
+    rel: "noopener",
+  },
+  {
+    href: "https://fazier.com/launches/allwebsites.design",
+    src: "https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=dark",
+    alt: "Fazier badge",
+    width: 120,
+    height: 40,
+    rel: "noopener",
+  },
+  {
+    href: "https://twelve.tools",
+    src: "https://twelve.tools/badge2-dark.svg",
+    alt: "Featured on Twelve Tools",
+    width: 148,
+    height: 40,
+    rel: "noopener",
+  },
+  {
+    href: "https://startupfa.me/s/allwebsites?utm_source=allwebsites.design",
+    src: "https://startupfa.me/badge?t=classic&theme=dark",
+    alt: "AllWebsites - Featured on Startup Fame",
+    width: 171,
+    height: 54,
+    rel: "noopener",
+  },
+];
+
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
     title: "Explore",
@@ -159,6 +225,36 @@ export default function Footer() {
           <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
             Discover · Understand · Explore
           </p>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="wrap py-7">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+            We are featured on
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-4">
+            {FEATURED.map((badge) => (
+              <a
+                key={badge.href}
+                href={badge.href}
+                target="_blank"
+                rel={badge.rel}
+                className="inline-flex items-center opacity-90 transition-opacity hover:opacity-100"
+              >
+                {/* External launch badges: served by each directory, not our optimizer. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={badge.src}
+                  alt={badge.alt}
+                  width={badge.width}
+                  height={badge.height}
+                  loading="lazy"
+                  className="h-8 w-auto sm:h-10"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
