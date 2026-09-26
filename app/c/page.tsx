@@ -7,6 +7,7 @@ import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { TRENDING } from "@/lib/data";
 import { CANONICAL, liveCategories, resolveCategory } from "@/lib/canonical";
+import { categoryInsights, categoryLine } from "@/lib/insights";
 import { absUrl, collectionPageGraph, pageMeta } from "@/lib/seo";
 
 const title = "Website Design Examples by Industry";
@@ -56,7 +57,12 @@ export default function CategoriesPage() {
           <h2 className="display mt-3 text-3xl sm:text-4xl">Trending this week</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {trending.map((c) => (
-              <CategoryCard key={c!.slug} category={c!} featured />
+              <CategoryCard
+                key={c!.slug}
+                category={c!}
+                featured
+                line={categoryLine(c!.name, categoryInsights(c!.slug))}
+              />
             ))}
           </div>
         </div>
@@ -78,7 +84,10 @@ export default function CategoriesPage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c, i) => (
               <Reveal key={c.slug} delay={(i % 3) * 60}>
-                <CategoryCard category={c} />
+                <CategoryCard
+                  category={c}
+                  line={categoryLine(c.name, categoryInsights(c.slug))}
+                />
               </Reveal>
             ))}
           </div>

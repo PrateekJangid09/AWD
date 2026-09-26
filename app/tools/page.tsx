@@ -64,6 +64,30 @@ export default function ToolsPage() {
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Tools" }]}
       />
 
+      <section className="border-b border-line bg-bone py-8">
+        <div className="wrap">
+          <p className="eyebrow">A colour journey</p>
+          <ol className="mt-4 flex flex-wrap gap-2">
+            {JOBS.filter((job) => job.slug).map((job, i) => {
+              const tool = getTool(job.slug!);
+              if (!tool) return null;
+              return (
+                <li key={tool.slug}>
+                  <a
+                    href={`/tools/${tool.slug}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3.5 py-1.5 text-[13px] text-soft transition-colors hover:border-line-strong hover:text-ink"
+                  >
+                    <span className="font-mono text-[11px] text-muted">{i + 1}</span>
+                    {job.job}
+                    <span className="text-ink">{tool.name}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden py-12 sm:py-16">
         <span className="aura" aria-hidden />
         <div className="wrap relative">

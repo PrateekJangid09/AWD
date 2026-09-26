@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-09-14",
+  "note": "Verified 404/410 outbound targets. lib/outbound.ts renders these as plain text.",
+  "urls": [
+    "https://agentcard.sh/contact",
+    "https://rankbeaver.com/about",
+    "https://rankbeaver.com/careers",
+    "https://vzy.co/contact"
+  ]
+}

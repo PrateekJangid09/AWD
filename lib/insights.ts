@@ -302,3 +302,99 @@ export function archiveStats() {
     classified: [...categories.values()].reduce((n, v) => n + v, 0),
   };
 }
+
+export type CategoryInsight = {
+  slug: string;
+  count: number;
+  samples: string[];
+  types: string[];
+  fonts: string[];
+  stacks: string[];
+  styles: string[];
+};
+
+function topKeys(map: Map<string, number>, take: number) {
+  return [...map.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, take)
+    .map(([key]) => key);
+}
+
+export function categoryInsights(slug: string): CategoryInsight {
+  const sites = CANONICAL.filter((site) => categorySlug(site.classification.category) === slug);
+  const fonts = new Map<string, number>();
+  const stacks = new Map<string, number>();
+  const styles = new Map<string, number>();
+  const types = new Map<string, number>();
+  for (const site of sites) {
+    for (const font of site.design.fonts) {
+      if (font.name) fonts.set(font.name, (fonts.get(font.name) ?? 0) + 1);
+    }
+    for (const tag of site.design.style_tags) {
+      styles.set(tag, (styles.get(tag) ?? 0) + 1);
+    }
+    const type = site.classification.website_type;
+    if (type) types.set(type, (types.get(type) ?? 0) + 1);
+    for (const part of [...site.technology.builder_cms, ...site.technology.framework]) {
+      if (part) stacks.set(part, (stacks.get(part) ?? 0) + 1);
+    }
+  }
+  return {
+    slug,
+    count: sites.length,
+    samples: sites.slice(0, 4).map((site) => site.identity.name),
+    types: topKeys(types, 3),
+    fonts: topKeys(fonts, 3),
+    stacks: topKeys(stacks, 3),
+    styles: topKeys(styles, 3),
+  };
+}
+
+function joinAnd(items: string[]) {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
+}
+
+export function categoryIntro(name: string, blurb: string, insight: CategoryInsight) {
+  const examples = insight.samples.length
+    ? ` Current studies include ${joinAnd(insight.samples)}.`
+    : "";
+  const types = insight.types.length
+    ? ` The set covers ${joinAnd(insight.types.map((item) => item.toLowerCase()))}.`
+    : "";
+  return `Browse ${insight.count} ${name} website${insight.count === 1 ? "" : "s"} collected in the AllWebsites.Design archive. ${blurb}${types}${examples} Open any record to inspect its colour palette, typefaces and detected technology.`;
+}
+
+export function categoryLine(name: string, insight: CategoryInsight) {
+  if (insight.count === 0) return `${name} has no published records yet.`;
+  const extra = insight.types[0]
+    ? ` Mostly ${insight.types[0].toLowerCase()} work.`
+    : "";
+  return `${insight.count} ${name} website${insight.count === 1 ? "" : "s"} with studied palettes and type.${extra}`;
+}
+
+export function categoryPatterns(name: string, insight: CategoryInsight) {
+  const parts: string[] = [];
+  parts.push(
+    `Across ${insight.count} ${name} records, the archive stores the same fields on every site: palette roles, typefaces, style tags and whatever technology could be verified.`,
+  );
+  if (insight.styles.length) {
+    parts.push(`Recurring style tags in this group include ${joinAnd(insight.styles)}.`);
+  }
+  if (insight.fonts.length) {
+    parts.push(`Typefaces that appear more than once include ${joinAnd(insight.fonts)}.`);
+  }
+  if (insight.stacks.length) {
+    parts.push(`Detected builders and frameworks include ${joinAnd(insight.stacks)}.`);
+  } else {
+    parts.push(
+      `Technology stays unknown when headers and DOM markers are not enough — the archive does not invent a stack.`,
+    );
+  }
+  parts.push(
+    `Use the grid to compare layout, colour and type, then open a record for screenshots and provenance. Related categories and research notes sit below for the next hop.`,
+  );
+  return parts.join(" ");
+}
