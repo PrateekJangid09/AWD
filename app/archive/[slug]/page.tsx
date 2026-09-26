@@ -8,7 +8,7 @@ import SiteRecord from "@/components/SiteRecord";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
 import { SITES, getSite, getCategory } from "@/lib/data";
-import { CANONICAL, getCanonical } from "@/lib/canonical";
+import { CANONICAL, getCanonical, screenshotPath } from "@/lib/canonical";
 import {
   archiveRecordGraph,
   archiveSampleGraph,
@@ -30,15 +30,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const rec = getCanonical(slug);
   if (rec) {
-    const shot = rec.screenshots.desktop ?? "desktop.webp";
+    const shot = screenshotPath(rec);
     return pageMeta({
       title: studyTitle(rec),
       description: studyDescription(rec),
       path: `/archive/${slug}`,
-      image: {
-        url: `/sites/${slug}/${shot}`,
-        alt: `${rec.identity.name} full-page screenshot`,
-      },
+      ...(shot
+        ? {
+            image: {
+              url: shot,
+              alt: `${rec.identity.name} full-page screenshot`,
+            },
+          }
+        : {}),
     });
   }
   const site = getSite(slug);
