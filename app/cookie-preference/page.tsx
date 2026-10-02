@@ -77,11 +77,11 @@ export default function CookiesPage() {
               return (
                 <div
                   key={g.id}
-                  className="card-brutal hover:!translate-x-0 hover:!translate-y-0 flex items-start justify-between gap-6 p-5 sm:p-6"
+                  className="card flex items-start justify-between gap-6 p-5 sm:p-6"
                 >
                   <div>
                     <h2 className="display text-xl">{g.title}</h2>
-                    <p className="mt-2 max-w-lg text-pretty text-sm leading-relaxed text-ink/70">
+                    <p className="mt-2 max-w-lg text-pretty text-sm leading-relaxed text-soft">
                       {g.desc}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default function CookiesPage() {
             )}
           </div>
 
-          <p className="mt-8 font-mono text-[11px] leading-relaxed text-ink/45">
+          <p className="mt-8 font-mono text-[11px] leading-relaxed text-muted">
             Preferences are stored only in your browser via localStorage — they never
             reach our servers or other devices. See the{" "}
             <Link href="/privacy-policy" className="underline decoration-orange decoration-2 underline-offset-2">

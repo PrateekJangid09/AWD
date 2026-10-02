@@ -1,7 +1,7 @@
 import Breadcrumb from "./Breadcrumb";
 
-// Compact, functional hero for product surfaces (Archive, Categories, Tools,
-// Submit, Contact). Archivo heading — NOT Anton — to get users in fast.
+// Compact hero for product surfaces (Archive, Categories, Tools, Submit,
+// Contact). Editorial serif headline, then straight into the content.
 export default function UtilityHero({
   eyebrow,
   title,
@@ -9,6 +9,7 @@ export default function UtilityHero({
   breadcrumb,
   meta,
   children,
+  aside,
 }: {
   eyebrow?: string;
   title: string;
@@ -16,31 +17,40 @@ export default function UtilityHero({
   breadcrumb?: { href?: string; label: string }[];
   meta?: string;
   children?: React.ReactNode;
+  aside?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-line bg-paper">
-      <span className="aura" aria-hidden />
-      <div className="wrap relative py-10 sm:py-12">
-        {breadcrumb && (
-          <div className="mb-6">
-            <Breadcrumb items={breadcrumb} />
+    <section className="relative border-b border-line">
+      <div className="wrap relative pb-12 pt-8 sm:pb-16 sm:pt-10">
+        {breadcrumb && <Breadcrumb items={breadcrumb} />}
+        <div className={aside ? "grid gap-10 lg:grid-cols-[7fr_5fr] lg:items-end" : ""}>
+          <div className="mt-10 sm:mt-14">
+            {eyebrow && (
+              <div className="anim-up" style={{ animationDelay: "0ms" }}>
+                <p className="eyebrow text-ink">{eyebrow}</p>
+              </div>
+            )}
+            <div className="anim-up" style={{ animationDelay: "70ms" }}>
+              <h1 className="mega mt-5 max-w-[16ch] text-balance text-[48px] sm:text-[68px] lg:text-[80px]">
+                {title}
+              </h1>
+            </div>
+            {intro && (
+              <div className="anim-up" style={{ animationDelay: "140ms" }}>
+                <p className="mt-6 max-w-[62ch] text-pretty text-[17px] leading-[1.55] text-soft sm:text-[18px]">
+                  {intro}
+                </p>
+              </div>
+            )}
+            {meta && (
+              <div className="anim-up" style={{ animationDelay: "210ms" }}>
+                <p className="mt-6 text-[13px] font-medium text-muted">{meta}</p>
+              </div>
+            )}
+            {children && <div className="anim-up" style={{ animationDelay: "280ms" }}>{children}</div>}
           </div>
-        )}
-        {eyebrow && <p className="eyebrow text-ink">{eyebrow}</p>}
-        <h1 className="display mt-4 max-w-4xl text-balance text-3xl sm:text-5xl">
-          {title}
-        </h1>
-        {intro && (
-          <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-soft">
-            {intro}
-          </p>
-        )}
-        {meta && (
-          <p className="mt-5 text-[11px] uppercase tracking-[0.16em] text-muted">
-            {meta}
-          </p>
-        )}
-        {children}
+          {aside && <div className="hidden lg:block">{aside}</div>}
+        </div>
       </div>
     </section>
   );

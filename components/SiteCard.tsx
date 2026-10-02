@@ -1,7 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
-import { categoryColor, type CardSite } from "@/lib/catalog";
+import WebsiteScreenshot from "./WebsiteScreenshot";
+import type { CardSite } from "@/lib/catalog";
 
+/**
+ * Screenshot-first archive card. 16:10 crop of the real homepage, name,
+ * category and style. No shadow, no lift: on hover the frame and the name
+ * pick up the orange accent.
+ */
 export default function SiteCard({
   site,
   priority = false,
@@ -10,62 +15,34 @@ export default function SiteCard({
   index?: number;
   priority?: boolean;
 }) {
-  const accent = categoryColor(site.categoryName);
-  const primary =
-    site.palette.find((p) => p.role === "primary")?.hex ??
-    site.palette[1]?.hex ??
-    "#111111";
-  const bg = site.palette.find((p) => p.role === "background")?.hex ?? "#F4F4F5";
-
   return (
-    <Link href={`/archive/${site.slug}`} className="group block">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-line bg-bone transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
+    // Cards appear in grids of up to 300. Left on the default, each one
+    // prefetches its record's RSC payload on sight, which is tens of megabytes
+    // across a full archive scroll. This stays a plain crawlable anchor.
+    <Link href={`/archive/${site.slug}`} prefetch={false} className="group block">
+      <div className="shot aspect-[16/10] transition-colors duration-150 group-hover:border-orange">
         {site.thumb ? (
-          <Image
+          <WebsiteScreenshot
             src={site.thumb}
-            alt={`${site.name} ${site.categoryName.toLowerCase()} website design, ${site.style.toLowerCase()} style`}
+            alt={`Screenshot of the ${site.name} homepage`}
             fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             priority={priority}
-            className="autoscroll-img object-cover object-top"
+            className="object-cover object-top"
           />
         ) : (
-          <div
-            className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6"
-            style={{ backgroundColor: bg }}
-          >
-            <span className="h-14 w-14 rounded-2xl" style={{ backgroundColor: primary }} />
-            <span className="text-center text-lg font-semibold tracking-tight text-ink/80">
-              {site.name}
-            </span>
+          <div className="absolute inset-0 grid place-items-center p-6">
+            <span className="font-serif text-2xl text-muted">{site.name}</span>
           </div>
         )}
-
-        <div
-          className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
-          style={{ backgroundColor: accent }}
-        />
-
-        <span className="glass-chip absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10.5px] font-medium text-ink opacity-0 shadow-sm transition-opacity duration-300 group-hover:opacity-100">
-          {site.style}
-        </span>
-
-        <div className="absolute inset-x-0 bottom-0 flex h-1.5 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-          {site.palette.slice(0, 6).map((p, i) => (
-            <span key={`${p.hex}-${i}`} className="flex-1" style={{ backgroundColor: p.hex }} />
-          ))}
-        </div>
       </div>
 
-      <div className="mt-3 flex items-baseline justify-between gap-3 px-0.5">
-        <p className="truncate text-[15px] font-medium tracking-tight text-ink">
+      <div className="mt-3 flex min-w-0 items-baseline justify-between gap-3">
+        <p className="min-w-0 truncate text-[17px] font-semibold tracking-[-0.01em] text-ink underline decoration-transparent decoration-[1.5px] underline-offset-[5px] transition-colors group-hover:decoration-orange">
           {site.name}
         </p>
-        <span className="flex shrink-0 items-center gap-1.5 text-[12px] font-medium text-soft">
-          <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accent }} />
-          {site.categoryName}
-        </span>
+        <span className="shrink-0 text-[12.5px] text-muted">{site.style}</span>
       </div>
+      <p className="mt-0.5 truncate text-[13.5px] text-muted">{site.categoryName}</p>
     </Link>
   );
 }

@@ -119,8 +119,38 @@ export const TOOLS: Tool[] = [
   },
 ];
 
+/**
+ * Live classification slugs (from record category names) that should reuse a
+ * seed blurb without changing the public `/c/{live-slug}` URL.
+ */
+const CATEGORY_SEED_ALIASES: Record<string, string> = {
+  "technology-and-saas": "saas",
+  "tech-and-saas": "saas",
+  "media-and-entertainment": "media-entertainment",
+  "agency-and-studio": "agency-studio",
+  "food-and-beverage": "food-beverage",
+  "architecture-and-real-estate": "architecture-real-estate",
+  "fashion-and-retail": "fashion-retail",
+  "crypto-and-web3": "crypto-web3",
+  "music-and-audio": "music-audio",
+  "design-and-creative-tools": "developer",
+};
+
 export function getCategory(slug: string) {
   return CATEGORIES.find((c) => c.slug === slug);
+}
+
+/** Seed used for copy/accent. Does not rewrite the public category slug. */
+export function seedForLiveSlug(slug: string) {
+  const direct = CATEGORIES.find((c) => c.slug === slug);
+  if (direct) return direct;
+  const aliased = CATEGORY_SEED_ALIASES[slug];
+  if (aliased) return CATEGORIES.find((c) => c.slug === aliased);
+  return CATEGORIES.find(
+    (c) =>
+      c.name.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") ===
+      slug,
+  );
 }
 
 export function getTool(slug: string) {

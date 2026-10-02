@@ -62,194 +62,123 @@ export default function AboutPage() {
       />
       <PageHero
         eyebrow="About"
-        title="A design-research layer for the public web."
-        intro="Not another inspiration gallery. AllWebsites.Design is a structured, cleaned, governed archive of how real websites are actually designed — built for the people building the web."
+        title="We study how real websites are designed."
+        intro={`AllWebsites.Design is an independent archive of ${total.toLocaleString()} real websites across ${cats} categories. Each record pairs a full-page screenshot with the colour palette, typefaces and technology we could verify from the live site, and free colour tools help you put what you learn to work.`}
         breadcrumb={[{ href: "/", label: "Home" }, { label: "About" }]}
       />
 
-      {/* Positioning */}
-      <section className="border-b border-ink py-16 sm:py-20">
-        <div className="wrap grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div>
-            <p className="eyebrow">The short version</p>
-            <p className="mt-5 text-balance font-display text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
-              We help designers, developers and founders{" "}
-              <span className="text-orange">discover, compare and study</span>{" "}
-              real website design — backed by an engine that reads design, taxonomy,
-              technology and typography from the source.
+      {/* What it is */}
+      <section className="py-20 sm:py-28">
+        <div className="wrap grid gap-14 lg:grid-cols-12">
+          <Reveal className="lg:col-span-6">
+            <p className="font-serif text-[34px] leading-[1.08] tracking-[-0.02em] text-ink sm:text-[44px]">
+              A gallery shows you a screenshot. A record tells you what made it: the
+              colours, the type, the stack, and where the page lives.
             </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
+          </Reveal>
+          <dl className="border-t border-ink lg:col-span-5 lg:col-start-8">
             {[
-              [total.toLocaleString(), "Curated references"],
-              [cats.toString(), "Governed categories"],
-              ["17", "Data points per record"],
-              ["2026", "Design Index published"],
-            ].map(([k, v]) => (
-              <div key={v} className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-5">
-                <div className="display text-4xl text-orange">{k}</div>
-                <div className="mt-1 font-mono text-[11px] uppercase tracking-widest text-ink/55">
-                  {v}
-                </div>
+              ["The archive", `${total.toLocaleString()} published records in ${cats} categories, searchable and crawlable.`, "/archive"],
+              ["Each record", "Homepage capture, key pages where available, palette roles, typefaces, detected technology and provenance.", "/archive/linear"],
+              ["The tools", "Five browser colour tools, free and without signup. The same engines ship as Figma plugins.", "/tools"],
+              ["The research", "Findings measured from the record set, each with its sample size.", "/blogs"],
+            ].map(([k, v, href]) => (
+              <div key={k} className="border-b border-line py-5">
+                <dt>
+                  <Link href={href} className="link-underline text-[17px] font-semibold text-ink">
+                    {k}
+                  </Link>
+                </dt>
+                <dd className="mt-1.5 text-[15px] leading-relaxed text-soft">{v}</dd>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Three layers */}
-      <section className="border-b border-ink bg-ink py-16 text-paper sm:py-20">
-        <div className="wrap">
-          <p className="eyebrow">Three layers</p>
-          <h2 className="display mt-3 max-w-2xl text-4xl text-paper sm:text-5xl">
-            Archive → Intelligence → Workflow.
-          </h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                t: "The Archive",
-                d: `A public, curated, searchable and crawlable corpus of ${total.toLocaleString()} website-design references across ${cats} categories.`,
-                tags: ["Curated", "Deduplicated", "Crawlable"],
-              },
-              {
-                t: "The Intelligence",
-                d: "A private modular engine that extracts identity, taxonomy, design tokens, typography, technology and more — with evidence and confidence.",
-                tags: ["Palette", "Type", "Tech"],
-              },
-              {
-                t: "The Workflow",
-                d: "Free colour tools, Similar Aesthetics, the 2026 Design Index and public corrections turn browsing into a repeat utility.",
-                tags: ["Tools", "Research", "Corrections"],
-              },
-            ].map((c, i) => (
-              <Reveal
-                key={c.t}
-                delay={i * 90}
-                className="border border-paper/20 bg-paper/[0.04] p-6"
-              >
-                <h3 className="display text-2xl text-paper">{c.t}</h3>
-                <p className="mt-3 text-pretty text-sm leading-relaxed text-paper/60">
-                  {c.d}
-                </p>
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {c.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="border border-paper/25 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-paper/70"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          </dl>
         </div>
       </section>
 
       {/* Principles */}
-      <section className="py-16 sm:py-20">
-        <div className="wrap">
-          <p className="eyebrow">What we believe</p>
-          <h2 className="display mt-3 text-4xl sm:text-5xl">What we believe.</h2>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {PRINCIPLES.map((p) => (
-              <Reveal key={p.n} className="card-brutal hover:!translate-x-0 hover:!translate-y-0 flex gap-5 p-6">
-                <span className="display shrink-0 text-3xl text-orange">{p.n}</span>
+      <section className="border-t border-line py-20 sm:py-28">
+        <div className="wrap grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="eyebrow text-ink">Principles</p>
+            <h2 className="display mt-5 text-[42px] sm:text-[56px]">What we hold to.</h2>
+          </div>
+          <ol className="border-t border-ink lg:col-span-8">
+            {PRINCIPLES.map((p, i) => (
+              <Reveal as="li" key={p.n} delay={i * 60} className="grid gap-3 border-b border-line py-7 sm:grid-cols-[64px_1fr]">
+                <span className="font-serif text-[32px] leading-none text-orange-ink">{p.n}</span>
                 <div>
-                  <h3 className="display text-xl">{p.t}</h3>
-                  <p className="mt-2 text-pretty text-sm leading-relaxed text-ink/70">
-                    {p.d}
-                  </p>
+                  <h3 className="text-[20px] font-semibold tracking-[-0.01em] text-ink">{p.t}</h3>
+                  <p className="mt-2 max-w-[60ch] text-pretty text-[16px] leading-relaxed text-soft">{p.d}</p>
                 </div>
               </Reveal>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* Methodology */}
-      <section id="method" className="scroll-mt-24 border-t border-line bg-bone py-16 sm:py-20">
-        <div className="wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="eyebrow">Methodology</p>
-            <h2 className="display mt-3 text-3xl sm:text-4xl">
-              How a record is built.
-            </h2>
-            <p className="mt-4 max-w-md text-pretty text-[15px] leading-relaxed text-soft">
-              Every published study is assembled from the live site, then reviewed
-              before it appears. Nothing is inferred to fill a gap.
+      <section id="method" className="scroll-mt-24 border-t border-line bg-bone/70 py-20 sm:py-28">
+        <div className="wrap grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="eyebrow text-ink">Methodology</p>
+            <h2 className="display mt-5 text-[42px] sm:text-[56px]">How a record is built.</h2>
+            <p className="mt-5 max-w-[40ch] text-[16px] leading-relaxed text-soft">
+              Every published study is assembled from the live site, then reviewed before
+              it appears. Nothing is inferred to fill a gap.
             </p>
             <p className="mt-6 text-[13px] leading-relaxed text-muted">
-              Dataset {DATASET.method} · first published {DATASET.publishedAt} · last
-              updated {DATASET.updatedAt}
+              Dataset {DATASET.method} · first published {DATASET.publishedAt} · last updated{" "}
+              {DATASET.updatedAt}
             </p>
           </div>
-          <ol className="space-y-4">
+          <ol className="grid gap-x-10 border-t border-ink sm:grid-cols-2 lg:col-span-8">
             {[
-              [
-                "Capture",
-                "The live homepage and key pages are captured full-page, so the screenshot is evidence rather than decoration.",
-              ],
-              [
-                "Extract",
-                "Colour palette, typefaces and technology signals are read from the rendered page and its response headers.",
-              ],
-              [
-                "Classify",
-                "Category, website type and audience are assigned automatically and carry a confidence score you can see on the record.",
-              ],
-              [
-                "Review",
-                "Records are checked against the editorial guidelines. Anything that cannot be verified stays marked as not detected.",
-              ],
+              ["Capture", "The live homepage and key pages are captured full-page, so the screenshot is evidence rather than decoration."],
+              ["Extract", "Colour palette, typefaces and technology signals are read from the rendered page and its response headers."],
+              ["Classify", "Category, website type and audience are assigned automatically and carry a confidence score you can see on the record."],
+              ["Review", "Records are checked against the editorial guidelines. Anything that cannot be verified stays marked as not detected."],
             ].map(([step, detail], i) => (
-              <li key={step} className="flex gap-4 rounded-2xl border border-line bg-paper p-5">
-                <span className="font-mono text-[13px] text-orange">
+              <li key={step} className="border-b border-line py-7">
+                <span className="text-[13px] font-semibold tabular-nums text-muted">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span>
-                  <span className="block text-[15px] font-semibold tracking-tight">{step}</span>
-                  <span className="mt-1 block text-[14px] leading-relaxed text-soft">
-                    {detail}
-                  </span>
-                </span>
+                <h3 className="mt-2 font-serif text-[30px] leading-none text-ink">{step}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-soft">{detail}</p>
               </li>
             ))}
           </ol>
         </div>
-        <div className="wrap mt-8 flex flex-wrap gap-3">
+        <div className="wrap mt-12 flex flex-wrap gap-3">
           <Link href="/editorial-guidelines" className="btn-ghost">
             Editorial guidelines
           </Link>
           <Link href="/research/website-design-index-2026" className="btn-ghost">
             2026 Design Index
           </Link>
-          <Link href="/site-map" className="btn-ghost">
-            Site map
+          <Link href="/manifesto" className="btn-ghost">
+            Manifesto
           </Link>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="border-t border-ink bg-orange py-16 text-white sm:py-20">
-        <div className="wrap flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-          <div>
-            <h2 className="display text-4xl text-white sm:text-5xl">
-              Build the archive with us.
-            </h2>
-            <p className="mt-4 max-w-xl text-pretty text-lg text-white/90">
-              Submit a site, request a correction, or just start exploring{" "}
-              {total.toLocaleString()} references.
+      <section className="border-t border-line py-20 sm:py-28">
+        <div className="wrap grid gap-10 lg:grid-cols-12 lg:items-end">
+          <h2 className="display text-[44px] sm:text-[64px] lg:col-span-7">Help build the archive.</h2>
+          <div className="lg:col-span-5">
+            <p className="text-[16px] leading-relaxed text-soft">
+              Submit a site, request a correction, or start browsing{" "}
+              {total.toLocaleString()} records.
             </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/submit" className="btn bg-ink px-6 py-3.5 text-white shadow-[6px_6px_0_0_#0A0A0A]">
-              Submit a site
-            </Link>
-            <Link href="/archive" className="btn bg-white px-6 py-3.5 text-ink shadow-[6px_6px_0_0_#0A0A0A]">
-              Explore archive
-            </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/submit" className="btn-primary">
+                Submit a website
+              </Link>
+              <Link href="/archive" className="btn-ghost">
+                Browse the archive
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { AnimatePresence } from "motion/react";
+import * as m from "motion/react-m";
 import { readConsent, saveConsent, type ConsentPrefs } from "@/lib/consent";
 
 export default function CookieBanner() {
@@ -20,12 +22,19 @@ export default function CookieBanner() {
     setShow(false);
   }
 
-  if (!show) return null;
-
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[60] p-3">
-      <div className="wrap">
-        <div className="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-3.5 shadow-soft-lg sm:flex-row sm:items-center sm:justify-between sm:p-5">
+    <AnimatePresence>
+      {show && (
+    <m.div
+      role="region"
+      aria-label="Cookie preferences"
+      className="fixed inset-x-0 bottom-0 z-[60] p-3"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.22 } }}
+      exit={{ opacity: 0, y: 8, transition: { duration: 0.16 } }}
+    >
+      <div className="mx-auto max-w-3xl">
+        <div className="flex flex-col gap-3 rounded-[6px] border border-ink bg-surface p-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-2xl text-[13px] leading-relaxed text-soft">
             Essential cookies run the archive. We also use Google Analytics and
             Tag Manager to understand how the site is used.{" "}
@@ -41,7 +50,7 @@ export default function CookieBanner() {
                   "essential",
                 )
               }
-              className="btn-ghost !px-3.5 !py-2 !text-[12px]"
+              className="btn-ghost !min-h-[40px] !px-3.5 !py-2 !text-[13px]"
             >
               Essential only
             </button>
@@ -52,13 +61,15 @@ export default function CookieBanner() {
                   "all",
                 )
               }
-              className="btn-primary !px-3.5 !py-2 !text-[12px]"
+              className="btn-primary !min-h-[40px] !px-3.5 !py-2 !text-[13px]"
             >
               Accept all
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </m.div>
+      )}
+    </AnimatePresence>
   );
 }

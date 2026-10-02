@@ -40,10 +40,10 @@ function TechRow({
       ? "text-orange border-orange"
       : state === "Likely"
         ? "text-ink border-ink/40"
-        : "text-ink/40 border-ink/20";
+        : "text-muted border-ink/20";
   return (
     <div className="flex items-center justify-between border-b-2 border-ink/10 py-3 last:border-0">
-      <span className="font-mono text-[11px] uppercase tracking-wider text-ink/50">
+      <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
         {label}
       </span>
       <span className="flex items-center gap-2">
@@ -107,12 +107,12 @@ export default async function SitePage({
                 <span className="tag bg-chalk">{site.websiteType}</span>
               </div>
               <h1 className="mega mt-4 text-6xl sm:text-7xl">{site.name}</h1>
-              <p className="mt-2 font-mono text-sm uppercase tracking-wider text-ink/50">
+              <p className="mt-2 font-mono text-sm uppercase tracking-wider text-muted">
                 {site.domain}
               </p>
 
               <div className="mt-6 border-l-2 border-orange pl-4">
-                <p className="font-mono text-[11px] uppercase tracking-widest text-ink/40">
+                <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
                   Source summary
                 </p>
                 <p className="mt-2 text-pretty leading-relaxed text-ink/80">
@@ -168,13 +168,13 @@ export default async function SitePage({
                     style={{ backgroundColor: p.hex }}
                   />
                   <div className="flex-1">
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-ink/50">
+                    <p className="font-mono text-[11px] uppercase tracking-wider text-muted">
                       {p.role}
                     </p>
                     <p className="font-mono text-sm">{p.hex.toUpperCase()}</p>
                   </div>
                   {p.coverage && (
-                    <span className="font-mono text-xs text-ink/50">{p.coverage}</span>
+                    <span className="font-mono text-xs text-muted">{p.coverage}</span>
                   )}
                 </div>
               ))}
@@ -189,7 +189,7 @@ export default async function SitePage({
                 ["Style", site.style],
               ].map(([k, v]) => (
                 <div key={k} className="border border-ink/15 bg-chalk p-3">
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-ink/45">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-muted">
                     {k}
                   </p>
                   <p className="mt-1 text-sm font-medium">{v}</p>
@@ -210,7 +210,7 @@ export default async function SitePage({
                 <TechRow label="CDN" value={site.technology.cdn} state={site.technology.cdn ? "Likely" : "Unknown"} />
                 <TechRow label="Backend language" state="Unknown" />
               </div>
-              <p className="mt-4 font-mono text-[10px] leading-relaxed text-ink/45">
+              <p className="mt-4 font-mono text-[10px] leading-relaxed text-muted">
                 Signals from headers, DOM markers and rendered evidence. We never fabricate
                 certainty — unproven fields stay Unknown.
               </p>

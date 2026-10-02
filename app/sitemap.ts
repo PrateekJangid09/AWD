@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/c", changeFrequency: "weekly", priority: 0.8 },
     { path: "/tools", changeFrequency: "weekly", priority: 0.8 },
     { path: "/research/website-design-index-2026", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/resources", changeFrequency: "weekly", priority: 0.6 },
     { path: "/blogs", changeFrequency: "weekly", priority: 0.6 },
     { path: "/about", changeFrequency: "monthly", priority: 0.6 },
     { path: "/site-map", changeFrequency: "weekly", priority: 0.5 },
@@ -30,7 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
     { path: "/refund-policy", changeFrequency: "yearly", priority: 0.2 },
     { path: "/pricing", changeFrequency: "monthly", priority: 0.6 },
-    { path: "/checkout", changeFrequency: "monthly", priority: 0.5 },
     { path: "/cookie-preference", changeFrequency: "yearly", priority: 0.2 },
     // /llms.txt is deliberately absent: a sitemap lists indexable HTML pages,
     // and agents find it by convention at the well-known path instead.

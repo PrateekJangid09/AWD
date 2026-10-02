@@ -11,7 +11,8 @@
     "paddle:check": "node scripts/paddle-security.mjs",
     "razorpay:check": "node scripts/razorpay-security.mjs",
     "entitlement:check": "node scripts/plugin-entitlement.mjs",
-    "supabase:verify": "node scripts/supabase-verify.mjs"
+    "supabase:verify": "node scripts/supabase-verify.mjs",
+    "seo:archive": "node scripts/archive-seo-check.mjs"
   },
   "engines": {
     "node": ">=20"
@@ -22,6 +23,8 @@
     "safari >= 16.4"
   ],
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "motion": "^12.43.0",
     "next": "^15.1.11",
     "razorpay": "^2.9.8",
     "react": "19.0.0",

@@ -1,56 +1,52 @@
 import Link from "next/link";
+import WebsiteScreenshot from "./WebsiteScreenshot";
 import type { Category } from "@/lib/data";
 
+/**
+ * Category as an editorial entry: one representative screenshot, the name in
+ * the serif, a one-line description from the record set, and the count.
+ */
 export default function CategoryCard({
   category,
   featured = false,
+  line,
+  thumb,
+  tilt = "",
 }: {
   category: Category;
   featured?: boolean;
+  line?: string;
+  thumb?: string | null;
+  tilt?: string;
 }) {
-  const c = category.accent;
+  const copy = line ?? category.blurb;
   return (
-    <Link
-      href={`/c/${category.slug}`}
-      className="glass-card group relative flex flex-col justify-between overflow-hidden p-6 hover:-translate-y-1"
-    >
-      {/* accent glow */}
-      <div
-        className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30"
-        style={{ background: c }}
-        aria-hidden
-      />
-      <div className="relative flex items-start justify-between gap-3">
-        <div>
-          <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-bone px-2.5 py-1 text-[11px] font-medium text-soft">
-            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: c }} />
-            {category.share}
+    <Link href={`/c/${category.slug}`} className="group block">
+      {thumb && (
+        <span className={`block bg-paper-light p-1.5 ring-1 ring-ink/10 ${tilt}`}>
+          <span className="shot block aspect-[16/10] transition-colors duration-150 group-hover:border-orange">
+            <WebsiteScreenshot
+              src={thumb}
+              alt={`Screenshot of a ${category.name} website in the archive`}
+              fill
+              className="object-cover object-top"
+            />
           </span>
-          <p className={`font-semibold tracking-tight ${featured ? "text-2xl" : "text-xl"}`}>
-            {category.name}
-          </p>
-          <p className="mt-2 max-w-[28ch] text-pretty text-[13px] leading-relaxed text-muted">
-            {category.blurb}
-          </p>
-        </div>
+        </span>
+      )}
+      <span className="mt-5 flex items-baseline justify-between gap-4">
         <span
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink text-lg text-white transition-transform duration-300 group-hover:translate-x-0.5"
-          aria-hidden
+          className={`min-w-0 font-serif leading-none text-ink underline decoration-transparent decoration-[1.5px] underline-offset-[6px] transition-colors group-hover:decoration-orange ${featured ? "text-[38px]" : "text-[30px]"}`}
         >
-          →
+          {category.name}
         </span>
-      </div>
-
-      <div className="relative mt-6 flex items-end justify-between border-t border-line pt-4">
-        <div className="flex flex-wrap gap-x-3 gap-y-1">
-          {category.descriptors.map((d) => (
-            <span key={d} className="text-[11px] text-muted">{d}</span>
-          ))}
-        </div>
-        <span className="text-xl font-semibold tracking-tight text-ink">
-          {category.count.toLocaleString()}
+        <span className="shrink-0 text-[14px] tabular-nums text-muted">
+          {category.count.toLocaleString()} sites
         </span>
-      </div>
+      </span>
+      <span className="mt-2 block max-w-[46ch] text-pretty text-[15px] leading-relaxed text-soft">
+        {copy}
+      </span>
     </Link>
   );
 }

@@ -67,18 +67,18 @@ export default async function PricingPage({
           {PLANS.map((plan) => (
             <article
               key={plan.id}
-              className="rounded-2xl border border-line bg-paper p-6 sm:p-8"
+              className="rounded-[6px] border border-ink bg-surface p-6 sm:p-10"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/45">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                 {plan.name}
               </p>
-              <p className="mt-3 font-display text-4xl font-semibold tracking-tight">
+              <p className="mt-4 font-display text-[64px] leading-none">
                 ${plan.amountUsd}
-                <span className="ml-2 text-lg font-medium text-ink/50">
+                <span className="ml-2 text-lg font-medium text-muted">
                   / {plan.period}
                 </span>
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
+              <p className="mt-3 text-sm leading-relaxed text-soft">{plan.blurb}</p>
               <CheckoutButton
                 planId={plan.id}
                 label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
@@ -89,7 +89,7 @@ export default async function PricingPage({
         </div>
 
         <div className="wrap mt-12 max-w-2xl">
-          <h2 className="font-display text-2xl font-semibold tracking-tight">
+          <h2 className="display text-[34px]">
             What you get
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink/80">
@@ -97,7 +97,7 @@ export default async function PricingPage({
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p className="mt-6 text-sm text-ink/60">
+          <p className="mt-6 text-sm text-soft">
             Pay opens Razorpay hosted checkout — the same pattern as Stripe Checkout,
             not a page on this site. Unlock from the Figma plugin so your Figma account
             is attached to the payment. Prateek Jangid is the seller. Read the{" "}

@@ -1,20 +1,51 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "motion/react";
+import * as m from "motion/react-m";
+import { CaretDown, List, X } from "@phosphor-icons/react";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 import { TOOLS } from "@/lib/catalog";
 import type { Category } from "@/lib/catalog";
 
 type MenuKey = "categories" | "tools" | null;
 
-const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null> }[] = [
-  { href: "/archive", label: "Archive" },
-  { href: "/c", label: "Categories", menu: "categories" },
-  { href: "/tools", label: "Tools", menu: "tools" },
-  { href: "/research/website-design-index-2026", label: "Research" },
-  { href: "/blogs", label: "Resources" },
+const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null>; match: RegExp }[] = [
+  { href: "/archive", label: "Archive", match: /^\/archive/ },
+  { href: "/c", label: "Categories", menu: "categories", match: /^\/c(\/|$)/ },
+  { href: "/tools", label: "Tools", menu: "tools", match: /^\/tools/ },
+  { href: "/resources", label: "Resources", match: /^\/(resources|blogs|research)/ },
+  { href: "/about", label: "About", match: /^\/(about|manifesto)/ },
 ];
+
+const panel = {
+  initial: { opacity: 0, y: -6 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -4 },
+  transition: { duration: 0.16, ease: [0.22, 0.7, 0.2, 1] as const },
+};
+
+function CurrentMark() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 60 8"
+      preserveAspectRatio="none"
+      className="absolute -bottom-[3px] left-2 right-2 h-[6px] w-[calc(100%-1rem)]"
+    >
+      <path
+        d="M2 5c14-2.6 30-3.2 44-2.4 4 .2 7.6.6 12 1.4"
+        fill="none"
+        stroke="#FF6112"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 // Required, not defaulted: counts must come from the live record set, so there
 // is no static fallback that could render a stale number.
@@ -23,10 +54,27 @@ export default function Nav({
 }: {
   categories: Pick<Category, "slug" | "name" | "count" | "accent">[];
 }) {
+  const pathname = usePathname() ?? "/";
   const [open, setOpen] = useState(false); // mobile
   const [menu, setMenu] = useState<MenuKey>(null); // desktop dropdown
   const [mobileSub, setMobileSub] = useState<MenuKey>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    setOpen(false);
+    setMenu(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setMenu(null);
+        setOpen(false);
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   function openMenu(k: MenuKey) {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -34,186 +82,207 @@ export default function Nav({
   }
   function scheduleClose() {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setMenu(null), 120);
+    closeTimer.current = setTimeout(() => setMenu(null), 140);
   }
 
+  const sortedCats = [...categories].sort((a, b) => b.count - a.count);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white">
-      <div className="wrap flex h-16 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper">
+      <div className="wrap flex h-[76px] items-center justify-between gap-6">
         <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
-          {LINKS.map((l) => (
-            <div
-              key={l.href}
-              className="relative"
-              onMouseEnter={() => (l.menu ? openMenu(l.menu) : openMenu(null))}
-              onMouseLeave={l.menu ? scheduleClose : undefined}
-            >
-              <Link
-                href={l.href}
-                className="flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium tracking-wide text-soft transition-colors hover:text-ink"
-                aria-haspopup={l.menu ? "true" : undefined}
-                aria-expanded={l.menu ? menu === l.menu : undefined}
+          {LINKS.map((l) => {
+            const current = l.match.test(pathname);
+            return (
+              <div
+                key={l.href}
+                className="relative"
+                onMouseEnter={() => (l.menu ? openMenu(l.menu) : openMenu(null))}
+                onMouseLeave={l.menu ? scheduleClose : undefined}
+                onFocus={() => l.menu && openMenu(l.menu)}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node | null)) scheduleClose();
+                }}
               >
-                {l.label}
-                {l.menu && (
-                  <span
-                    className={`text-[9px] transition-transform ${menu === l.menu ? "rotate-180" : ""}`}
-                    aria-hidden
-                  >
-                    ▾
-                  </span>
-                )}
-              </Link>
-            </div>
-          ))}
+                <Link
+                  href={l.href}
+                  aria-current={current ? "page" : undefined}
+                  className="relative flex items-center gap-1 px-3 py-2 text-[15px] font-semibold text-ink"
+                  aria-haspopup={l.menu ? "true" : undefined}
+                  aria-expanded={l.menu ? menu === l.menu : undefined}
+                >
+                  {l.label}
+                  {l.menu && (
+                    <CaretDown
+                      size={12}
+                      weight="bold"
+                      className={`text-muted transition-transform duration-150 ${menu === l.menu ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
+                  )}
+                  {current && <CurrentMark />}
+                </Link>
+
+                <AnimatePresence>
+                  {l.menu && menu === l.menu && (
+                    <m.div
+                      {...panel}
+                      className={`absolute top-full z-50 pt-3 ${l.menu === "categories" ? "-left-40 w-[640px]" : "-left-24 w-[520px]"}`}
+                      onMouseEnter={() => openMenu(l.menu!)}
+                      onMouseLeave={scheduleClose}
+                    >
+                      <div className="rounded-[6px] border border-ink/80 bg-surface p-6">
+                        {l.menu === "categories" ? (
+                          <>
+                            <div className="mb-3 flex items-baseline justify-between">
+                              <p className="eyebrow text-ink">Browse by industry</p>
+                              <Link href="/c" className="link-underline text-[13px] font-semibold text-ink">
+                                All {categories.length}
+                              </Link>
+                            </div>
+                            <ul className="grid grid-cols-2 gap-x-8">
+                              {sortedCats.map((c) => (
+                                <li key={c.slug}>
+                                  <Link
+                                    href={`/c/${c.slug}`}
+                                    className="index-row !py-2.5 text-[14px] text-ink"
+                                  >
+                                    <span className="flex-1">{c.name}</span>
+                                    <span className="tabular-nums text-[12px] text-muted">
+                                      {c.count.toLocaleString()}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : (
+                          <>
+                            <div className="mb-3 flex items-baseline justify-between">
+                              <p className="eyebrow text-ink">Free colour tools</p>
+                              <Link href="/tools" className="link-underline text-[13px] font-semibold text-ink">
+                                All tools
+                              </Link>
+                            </div>
+                            <ul>
+                              {TOOLS.map((t) => (
+                                <li key={t.slug}>
+                                  <a href={`/tools/${t.slug}`} className="index-row !py-3 text-ink">
+                                    <span className="w-36 shrink-0 text-[12px] font-bold uppercase tracking-[0.12em]">
+                                      {t.name}
+                                    </span>
+                                    <span className="flex-1 text-[14px] text-soft">{t.tagline}</span>
+                                    <span aria-hidden className="text-muted">→</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
+                      </div>
+                    </m.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <Link href="/submit" className="btn-dark !py-2.5 !text-[12px]">
-            Submit a Site <span aria-hidden>↗</span>
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
+          <Link href="/submit" className="btn-primary hidden !min-h-[44px] !px-4 !text-[14px] lg:inline-flex">
+            Submit a site
           </Link>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="grid h-11 w-11 place-items-center rounded-[6px] border border-line text-ink lg:hidden"
+          >
+            {open ? <X size={20} /> : <List size={20} />}
+          </button>
         </div>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-label="Toggle menu"
-          className="flex h-10 w-10 items-center justify-center lg:hidden"
-        >
-          <div className="space-y-[6px]">
-            <span className={`block h-[2px] w-6 bg-ink transition-transform duration-200 ${open ? "translate-y-[8px] rotate-45" : ""}`} />
-            <span className={`block h-[2px] w-6 bg-ink transition-opacity duration-200 ${open ? "opacity-0" : ""}`} />
-            <span className={`block h-[2px] w-6 bg-ink transition-transform duration-200 ${open ? "-translate-y-[8px] -rotate-45" : ""}`} />
-          </div>
-        </button>
       </div>
 
-      {/* ── Desktop dropdown panels ── */}
-      {menu && (
-        <div
-          className="absolute inset-x-0 top-16 hidden lg:block"
-          onMouseEnter={() => openMenu(menu)}
-          onMouseLeave={scheduleClose}
-        >
-          <div className="wrap">
-            <div className="anim-up ml-auto mt-2 w-full overflow-hidden rounded-2xl border border-line bg-white shadow-soft-lg" style={{ animationDuration: "0.28s" }}>
-              {menu === "categories" ? (
-                <div className="p-6">
-                  <div className="mb-4 flex items-center justify-between">
-                    <p className="eyebrow text-ink">Browse by category</p>
-                    <Link href="/c" className="text-[13px] font-medium text-soft hover:text-ink">
-                      All {categories.length} →
-                    </Link>
+      <AnimatePresence>
+        {open && (
+          <m.div
+            id="mobile-menu"
+            {...panel}
+            className="max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-line bg-paper lg:hidden"
+          >
+            <nav className="wrap flex flex-col py-3" aria-label="Mobile">
+              {LINKS.map((l) =>
+                l.menu ? (
+                  <div key={l.href} className="border-b border-line">
+                    <button
+                      onClick={() => setMobileSub(mobileSub === l.menu ? null : l.menu!)}
+                      className="flex min-h-[52px] w-full items-center justify-between text-[17px] font-semibold"
+                      aria-expanded={mobileSub === l.menu}
+                    >
+                      {l.label}
+                      <CaretDown
+                        size={14}
+                        weight="bold"
+                        className={`transition-transform duration-150 ${mobileSub === l.menu ? "rotate-180" : ""}`}
+                        aria-hidden
+                      />
+                    </button>
+                    {mobileSub === l.menu && (
+                      <div className="pb-3">
+                        {l.menu === "categories"
+                          ? sortedCats.slice(0, 10).map((c) => (
+                              <Link
+                                key={c.slug}
+                                href={`/c/${c.slug}`}
+                                className="flex min-h-[44px] items-center justify-between text-[15px] text-soft"
+                              >
+                                {c.name}
+                                <span className="text-[12px] tabular-nums text-muted">{c.count}</span>
+                              </Link>
+                            ))
+                          : TOOLS.map((t) => (
+                              <a
+                                key={t.slug}
+                                href={`/tools/${t.slug}`}
+                                className="flex min-h-[44px] items-center text-[15px] text-soft"
+                              >
+                                {t.name}
+                              </a>
+                            ))}
+                        <Link
+                          href={l.href}
+                          className="mt-1 flex min-h-[44px] items-center text-[14px] font-semibold text-orange-ink"
+                        >
+                          {l.menu === "categories" ? "All categories →" : "All tools →"}
+                        </Link>
+                      </div>
+                    )}
                   </div>
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3 lg:grid-cols-4">
-                    {categories.map((c) => (
-                      <Link
-                        key={c.slug}
-                        href={`/c/${c.slug}`}
-                        onClick={() => setMenu(null)}
-                        className="group flex items-center justify-between border-b border-line/60 py-2.5"
-                      >
-                        <span className="flex items-center gap-2.5">
-                          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
-                          <span className="text-sm text-soft group-hover:text-ink">
-                            {c.name}
-                          </span>
-                        </span>
-                        <span className="text-[11px] text-muted">{c.count.toLocaleString()}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="p-6">
-                  <div className="mb-4 flex items-center justify-between">
-                    <p className="eyebrow text-ink">Free design tools</p>
-                    <Link href="/tools" className="text-[13px] font-medium text-soft hover:text-ink">
-                      All tools →
-                    </Link>
-                  </div>
-                  <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                    {TOOLS.map((t) => (
-                      <a
-                        key={t.slug}
-                        href={`/tools/${t.slug}`}
-                        onClick={() => setMenu(null)}
-                        className="group flex items-center gap-3 rounded-xl border border-line bg-white p-3 transition-all hover:-translate-y-0.5 hover:border-line-strong hover:shadow-soft"
-                      >
-                        <span className="flex h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-line">
-                          {t.swatches.map((s) => (
-                            <span key={s} className="flex-1" style={{ backgroundColor: s }} />
-                          ))}
-                        </span>
-                        <span className="min-w-0">
-                          <span className="block truncate text-sm font-medium tracking-tight group-hover:text-ink">
-                            {t.name}
-                          </span>
-                          <span className="block truncate text-[11px] text-muted">{t.tagline}</span>
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ── Mobile menu ── */}
-      {open && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-white lg:hidden">
-          <div className="wrap flex flex-col py-3">
-            {LINKS.map((l) =>
-              l.menu ? (
-                <div key={l.href} className="border-b border-line">
-                  <button
-                    onClick={() => setMobileSub(mobileSub === l.menu ? null : l.menu!)}
-                    className="flex w-full items-center justify-between py-3.5 text-sm font-medium tracking-wide"
-                    aria-expanded={mobileSub === l.menu}
+                ) : (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    aria-current={l.match.test(pathname) ? "page" : undefined}
+                    className="flex min-h-[52px] items-center border-b border-line text-[17px] font-semibold"
                   >
                     {l.label}
-                    <span className={`text-[10px] transition-transform ${mobileSub === l.menu ? "rotate-180" : ""}`}>▾</span>
-                  </button>
-                  {mobileSub === l.menu && (
-                    <div className="pb-3">
-                      {l.menu === "categories"
-                        ? categories.slice(0, 8).map((c) => (
-                            <Link key={c.slug} href={`/c/${c.slug}`} onClick={() => setOpen(false)} className="flex items-center gap-2 py-2 text-[13px] text-soft">
-                              <span className="h-1.5 w-1.5" style={{ backgroundColor: c.accent }} />
-                              {c.name}
-                            </Link>
-                          ))
-                        : TOOLS.map((t) => (
-                            <a key={t.slug} href={`/tools/${t.slug}`} onClick={() => setOpen(false)} className="block py-2 text-[13px] text-soft">
-                              {t.name}
-                            </a>
-                          ))}
-                      <Link href={l.href} onClick={() => setOpen(false)} className="mt-1 block py-2 text-[12px] font-semibold uppercase tracking-[0.1em] text-orange-700">
-                        {l.menu === "categories" ? "All categories →" : "All tools →"}
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="border-b border-line py-3.5 text-sm font-medium tracking-wide">
-                  {l.label}
-                </Link>
-              ),
-            )}
-            <Link href="/contact" onClick={() => setOpen(false)} className="border-b border-line py-3.5 text-sm font-medium tracking-wide">
-              Contact
-            </Link>
-            <Link href="/submit" onClick={() => setOpen(false)} className="btn-dark mt-4 w-full">
-              Submit a Site ↗
-            </Link>
-          </div>
-        </div>
-      )}
+                  </Link>
+                ),
+              )}
+              <Link href="/contact" className="flex min-h-[52px] items-center border-b border-line text-[17px] font-semibold">
+                Contact
+              </Link>
+              <Link href="/submit" className="btn-primary mt-5 w-full">
+                Submit a site
+              </Link>
+            </nav>
+          </m.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

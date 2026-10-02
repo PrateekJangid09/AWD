@@ -1,8 +1,7 @@
 import Breadcrumb from "./Breadcrumb";
 
-// Very compact hero for legal / policy documents (Privacy, Terms, Editorial
-// Guidelines, Cookies). Breadcrumb + small title + short description + last
-// updated. No Anton, no oversized display.
+// Compact hero for legal and policy documents. Breadcrumb, title, short
+// description, last updated. Quiet on purpose.
 export default function DocumentHero({
   title,
   description,
@@ -15,20 +14,16 @@ export default function DocumentHero({
   breadcrumb: { href?: string; label: string }[];
 }) {
   return (
-    <section className="border-b border-line bg-paper">
-      <div className="wrap py-8 sm:py-10">
+    <section className="border-b border-line">
+      <div className="wrap anim-up pb-10 pt-8 sm:pb-12">
         <Breadcrumb items={breadcrumb} />
-        <h1 className="display mt-5 text-2xl sm:text-3xl">{title}</h1>
+        <h1 className="display mt-10 text-[44px] sm:text-[60px]">{title}</h1>
         {description && (
-          <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-soft">
+          <p className="mt-4 max-w-[62ch] text-pretty text-[16px] leading-relaxed text-soft">
             {description}
           </p>
         )}
-        {updated && (
-          <p className="mt-4 text-[11px] uppercase tracking-[0.16em] text-muted">
-            Last updated · {updated}
-          </p>
-        )}
+        {updated && <p className="mt-5 text-[13px] font-medium text-muted">Last updated {updated}</p>}
       </div>
     </section>
   );

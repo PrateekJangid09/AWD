@@ -1,10 +1,17 @@
 import type { Config } from "tailwindcss";
 
+// Every neutral is a theme token (see app/globals.css). Light and dark values
+// live in CSS, so a class like `bg-paper` or `text-muted` is correct in both
+// themes without a `dark:` variant.
+const token = (name: string) => `rgb(var(--c-${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -12,49 +19,55 @@ const config: Config = {
           DEFAULT: "#FF6112",
           500: "#FF6112",
           600: "#E8500A",
-          700: "#C23A08",
+          // Orange that is safe for small text on the current theme.
+          700: token("orange-ink"),
+          ink: token("orange-ink"),
         },
-        // Cool, modern neutral scale. muted meets 4.5:1 on white.
-        ink: "#0E0E10",
-        soft: "#3F3F46",
-        muted: "#59595F",
-        paper: "#FFFFFF",
-        chalk: "#FFFFFF",
-        "paper-dark": "#F1F1F3",
-        bone: "#FAFAFA",
-        sand: "#F4F4F5",
-        "sand-2": "#EDEDF0",
-        line: "#ECECEE",
-        "line-strong": "#DBDBDF",
+        ink: token("ink"),
+        soft: token("soft"),
+        muted: token("muted"),
+        paper: token("bg"),
+        chalk: token("surface"),
+        surface: token("surface"),
+        "paper-dark": token("paper-2"),
+        "paper-2": token("paper-2"),
+        matte: token("matte"),
+        "paper-light": token("paper-light"),
+        bone: token("bone"),
+        sand: token("bone"),
+        "sand-2": token("paper-2"),
+        line: token("rule"),
+        "line-strong": token("rule-strong"),
+        // Fixed light/dark pair for the few surfaces that must not flip,
+        // such as text sitting on the orange button.
+        "on-accent": "#11100E",
       },
       fontFamily: {
-        // Modern-minimal: one clean grotesk everywhere.
-        mega: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-inter)", "system-ui", "sans-serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        mega: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "Arial", "Helvetica", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        hand: ["var(--font-hand)", "cursive"],
+      },
+      borderRadius: {
+        // One practical radius for the product UI.
+        lg: "6px",
+        xl: "6px",
+        "2xl": "6px",
+        "3xl": "6px",
       },
       boxShadow: {
-        soft: "0 1px 3px rgba(0,0,0,0.05), 0 12px 30px -12px rgba(0,0,0,0.12)",
-        "soft-lg": "0 2px 6px rgba(0,0,0,0.05), 0 40px 70px -24px rgba(0,0,0,0.18)",
-        brutal: "0 1px 3px rgba(0,0,0,0.05), 0 12px 30px -12px rgba(0,0,0,0.12)",
-        "brutal-sm": "0 1px 2px rgba(0,0,0,0.05)",
-        "brutal-lg": "0 2px 6px rgba(0,0,0,0.05), 0 40px 70px -24px rgba(0,0,0,0.18)",
-        "brutal-orange": "0 16px 40px -16px rgba(255,97,18,0.45)",
+        // Depth comes from overlap and paper contrast, never soft shadows.
+        soft: "none",
+        "soft-lg": "none",
+        brutal: "none",
+        "brutal-sm": "none",
+        "brutal-lg": "none",
+        "brutal-orange": "none",
       },
-      keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
-        "marquee-reverse": {
-          "0%": { transform: "translateX(-50%)" },
-          "100%": { transform: "translateX(0)" },
-        },
-      },
-      animation: {
-        marquee: "marquee 40s linear infinite",
-        "marquee-reverse": "marquee-reverse 40s linear infinite",
+      transitionTimingFunction: {
+        paper: "cubic-bezier(0.22, 0.7, 0.2, 1)",
       },
     },
   },
