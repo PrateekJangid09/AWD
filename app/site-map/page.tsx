@@ -37,7 +37,8 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
         label: "2026 Design Index",
         desc: "How the catalogue breaks down, and the method behind it.",
       },
-      { href: "/blogs", label: "Resources", desc: "Original research measured from the archive." },
+      { href: "/resources", label: "Resources", desc: "Research, the design index, tools and reference pages." },
+      { href: "/blogs", label: "Journal", desc: "Original research measured from the archive." },
     ],
   },
   {

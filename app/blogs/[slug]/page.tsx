@@ -68,140 +68,126 @@ export default async function JournalPostPage({
           faqs: post.faqs,
           crumbs: [
             { name: "Home", path: "/" },
-            { name: "Resources", path: "/blogs" },
+            { name: "Resources", path: "/resources" },
+            { name: "Journal", path: "/blogs" },
             { name: post.title },
           ],
         })}
       />
 
       <article>
-        <header className="relative overflow-hidden border-b border-line bg-paper">
-          <span className="aura" aria-hidden />
-          <div className="wrap relative py-10 sm:py-14">
+        <header className="relative border-b border-line">
+          <div className="wrap pb-14 pt-8 sm:pb-20">
             <Breadcrumb
               items={[
                 { href: "/", label: "Home" },
-                { href: "/blogs", label: "Resources" },
+                { href: "/resources", label: "Resources" },
+                { href: "/blogs", label: "Journal" },
                 { label: post.title },
               ]}
             />
+            <div className="mx-auto mt-12 max-w-[920px] sm:mt-16">
+              <p className="eyebrow anim-up text-ink">{post.kicker}</p>
+              <h1
+                className="mega anim-up mt-6 text-balance text-[46px] sm:text-[72px] lg:text-[84px]"
+                style={{ animationDelay: "60ms" }}
+              >
+                {post.h1}
+              </h1>
 
-            <p className="eyebrow mt-8 text-orange">{post.kicker}</p>
-            <h1 className="mega mt-4 max-w-4xl text-pretty text-4xl leading-[1.05] sm:text-5xl">
-              {post.h1}
-            </h1>
-
-            {/* Self-contained answer: quotable without the rest of the page. */}
-            <div className="mt-7 max-w-3xl border-l-2 border-orange pl-4">
-              <p className="eyebrow text-ink">The short answer</p>
-              <p className="mt-2 text-pretty text-[17px] leading-relaxed text-ink/85">
+              {/* Self-contained answer: quotable without the rest of the page. */}
+              <p
+                className="anim-up mt-8 max-w-[64ch] text-pretty text-[19px] leading-[1.55] text-ink sm:text-[21px]"
+                style={{ animationDelay: "120ms" }}
+              >
                 {post.answer}
               </p>
-            </div>
 
-            <p className="mt-6 text-[13px] leading-relaxed text-muted">
-              <span className="font-medium text-ink">
-                Last updated {formatDay(post.modified)}
-              </span>
-              {" · First published "}
-              {formatDay(post.published)}
-              {` · ${post.readingMinutes} min read · Compiled and reviewed by the `}
-              <Link
-                href="/editorial-guidelines"
-                className="underline decoration-orange decoration-2 underline-offset-2 hover:text-ink"
-              >
-                AllWebsites.Design editorial team
-              </Link>
-              {" · "}
-              <Link
-                href="/about#method"
-                className="underline decoration-line decoration-2 underline-offset-2 hover:text-ink"
-              >
-                Methodology
-              </Link>
-            </p>
-
-            {post.status !== "published" && (
-              <p className="mt-6 inline-block border border-line px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-muted">
-                Draft — not yet indexed
+              <p className="anim-up mt-8 text-[14px] leading-relaxed text-muted" style={{ animationDelay: "160ms" }}>
+                <span className="font-medium text-ink">Last updated {formatDay(post.modified)}</span>
+                {" · First published "}
+                {formatDay(post.published)}
+                {` · ${post.readingMinutes} min read · Compiled and reviewed by the `}
+                <Link href="/editorial-guidelines" className="link-underline text-ink">
+                  AllWebsites.Design editorial team
+                </Link>
+                {" · "}
+                <Link href="/about#method" className="link-underline text-ink">
+                  Methodology
+                </Link>
               </p>
-            )}
+
+              {post.status !== "published" && (
+                <p className="mt-6 inline-block rounded-[6px] border border-line px-3 py-1.5 text-[13px] text-muted">
+                  Draft, not yet indexed
+                </p>
+              )}
+            </div>
           </div>
         </header>
 
-        {/* The column is left-aligned inside the wrap so it lines up with the
-            hero above it rather than centring against it. */}
-        <div className="wrap py-12 sm:py-16">
-          <div className="max-w-3xl">
-            <Body />
+        {/* Long reading text sits on solid paper: no waves or texture behind it. */}
+        <div className="bg-paper py-14 sm:py-20">
+          <div className="wrap">
+            <div className="mx-auto max-w-[720px]">
+              <Body />
 
-            <section className="mt-16 border-t border-line pt-12">
-              <h2 className="display text-2xl sm:text-3xl">
-                Questions people also ask
-              </h2>
-              <div className="mt-8 divide-y divide-line border-y border-line">
-                {post.faqs.map((faq) => (
-                  <details key={faq.question} className="group py-5">
-                    <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[16px] font-medium text-ink">
-                      {faq.question}
-                      <span
-                        className="mt-1 shrink-0 text-orange transition-transform group-open:rotate-45"
-                        aria-hidden
-                      >
-                        +
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-pretty text-[15px] leading-relaxed text-soft">
-                      {faq.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </section>
+              <section className="mt-20 border-t border-ink pt-10">
+                <h2 className="display text-[34px] sm:text-[42px]">Questions people also ask</h2>
+                <div className="mt-8 border-t border-line">
+                  {post.faqs.map((faq) => (
+                    <details key={faq.question} className="group border-b border-line py-5">
+                      <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[17px] font-semibold text-ink">
+                        {faq.question}
+                        <span
+                          className="mt-0.5 shrink-0 text-[20px] leading-none text-orange-ink transition-transform duration-200 group-open:rotate-45"
+                          aria-hidden
+                        >
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-3 text-pretty text-[16px] leading-relaxed text-soft">{faq.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
 
-            <section className="mt-14">
-              <p className="eyebrow text-ink">Related questions this raises</p>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {post.fanout.map((question) => (
-                  <li
-                    key={question}
-                    className="rounded-full bg-bone px-3.5 py-1.5 text-[13px] text-soft"
-                  >
-                    {question}
-                  </li>
-                ))}
-              </ul>
-            </section>
+              <section className="mt-14">
+                <p className="eyebrow text-ink">Related questions this raises</p>
+                <ul className="mt-5 space-y-2">
+                  {post.fanout.map((question) => (
+                    <li key={question} className="border-l-2 border-line pl-4 text-[15.5px] text-soft">
+                      {question}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
           </div>
         </div>
       </article>
 
       {more.length > 0 && (
-        <section className="border-t border-line bg-bone py-14 sm:py-20">
+        <section className="border-t border-line py-16 sm:py-24">
           <div className="wrap">
-            <h2 className="display text-3xl sm:text-4xl">Keep reading</h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <h2 className="display text-[40px] sm:text-[52px]">Keep reading</h2>
+            <ul className="mt-10 border-t border-ink">
               {more.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/blogs/${p.slug}`}
-                  className="hover-lift group flex h-full flex-col rounded-xl border border-line bg-paper p-6 hover:border-line-strong hover:shadow-soft"
-                >
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-orange">
-                    {p.kicker}
-                  </span>
-                  <h3 className="mt-4 text-xl font-bold leading-tight tracking-tight">
-                    {p.h1}
-                  </h3>
-                  <p className="mt-3 flex-1 text-pretty text-[14px] leading-relaxed text-soft">
-                    {p.description}
-                  </p>
-                  <span className="mt-5 text-[13px] font-medium text-ink">
-                    Read the piece →
-                  </span>
-                </Link>
+                <li key={p.slug}>
+                  <Link
+                    href={`/blogs/${p.slug}`}
+                    className="index-row grid !items-baseline gap-y-2 !py-7 sm:grid-cols-[180px_1fr_auto] sm:gap-x-10"
+                  >
+                    <span className="font-serif text-[44px] leading-none text-ink">{p.keyStat.value}</span>
+                    <span>
+                      <span className="block text-[20px] font-semibold leading-snug text-ink">{p.h1}</span>
+                      <span className="mt-1.5 block text-[14.5px] text-muted">{p.description}</span>
+                    </span>
+                    <span className="text-[13px] font-medium text-muted">{p.readingMinutes} min read →</span>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
       )}

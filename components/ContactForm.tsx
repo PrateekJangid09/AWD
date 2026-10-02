@@ -13,9 +13,9 @@ type Status =
   | { kind: "error"; message: string };
 
 const INPUT =
-  "mt-2 w-full border border-line bg-paper px-4 py-3 text-sm outline-none focus:border-orange";
+  "mt-2 w-full min-h-[48px] border border-ink/70 bg-surface px-4 py-3 text-[16px] text-ink outline-none transition-colors placeholder:text-muted focus:border-orange";
 const LABEL =
-  "text-[11px] font-semibold uppercase tracking-[0.14em] text-muted";
+  "text-[13px] font-semibold text-ink";
 
 export default function ContactForm({
   to,
@@ -130,7 +130,7 @@ export default function ContactForm({
             {reasons.map((r) => (
               <label
                 key={r.t}
-                className="flex cursor-pointer items-start gap-3 border border-ink/15 bg-paper p-3 transition-colors has-[:checked]:border-orange has-[:checked]:bg-orange/10"
+                className="flex cursor-pointer items-start gap-3 rounded-[6px] border border-line bg-surface p-3 transition-colors has-[:checked]:border-orange has-[:checked]:shadow-[inset_0_-2px_0_#FF6112]"
               >
                 <input
                   type="radio"
@@ -142,7 +142,7 @@ export default function ContactForm({
                 />
                 <span>
                   <span className="block text-sm font-semibold">{r.t}</span>
-                  <span className="block text-xs text-ink/60">{r.d}</span>
+                  <span className="block text-xs text-muted">{r.d}</span>
                 </span>
               </label>
             ))}
@@ -157,7 +157,7 @@ export default function ContactForm({
         <label className="block">
           <span className={LABEL}>
             {websiteLabel}{" "}
-            {!websiteRequired && <span className="text-ink/30">(optional)</span>}
+            {!websiteRequired && <span className="font-normal text-muted">(optional)</span>}
           </span>
           <input
             name="website"
@@ -183,7 +183,7 @@ export default function ContactForm({
       </div>
 
       <button type="submit" disabled={sending} className="btn-primary w-full disabled:opacity-60 sm:w-auto">
-        {sending ? "Sending…" : `${submitLabel} →`}
+        {sending ? "Sending…" : submitLabel}
       </button>
 
       <div aria-live="polite">
@@ -206,11 +206,11 @@ export default function ContactForm({
           </p>
         )}
         {status.kind === "error" && (
-          <p className="text-sm font-medium text-orange-700">{status.message}</p>
+          <p className="text-sm font-medium text-orange-ink">{status.message}</p>
         )}
       </div>
 
-      <p className="text-[11px] leading-relaxed text-muted">
+      <p className="text-[13px] leading-relaxed text-muted">
         Or email{" "}
         <a
           href={`mailto:${to}`}

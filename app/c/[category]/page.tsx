@@ -12,6 +12,8 @@ import {
 } from "@/lib/canonical";
 import ExploreMore from "@/components/ExploreMore";
 import JsonLd from "@/components/JsonLd";
+import { ArrowDown, Note } from "@/components/Doodles";
+import { categoryInsights, categoryIntro, categoryPatterns } from "@/lib/insights";
 import {
   absUrl,
   collectionPageGraph,
@@ -36,20 +38,16 @@ export async function generateMetadata({
   const { category } = await params;
   const cat = resolveCategory(category);
   if (!cat) return { title: "Category not found" };
-  // Prefer a count when it still fits the 60-char document title budget
-  // (with or without the brand suffix, handled inside pageMeta).
-  const withCount = `${cat.name} Website Design Examples (${cat.count})`;
-  const bare = `${cat.name} Website Design Examples`;
+  const insight = categoryInsights(category);
+  const intro = categoryIntro(cat.name, cat.blurb, insight);
+  const withCount = `${cat.name} Website Design Inspiration`;
+  const bare = `${cat.name} Website Designs`;
   return pageMeta({
     title: withCount.length <= TITLE_MAX ? withCount : bare,
-    description: fitDescription(
-      `${cat.count} ${cat.name.toLowerCase()} website design examples, each studied with its colour palette, typefaces and detected technology.`,
-      [
-        ` ${cat.blurb}`,
-        " Screenshots and provenance on every record.",
-        " Updated as the archive grows.",
-      ],
-    ),
+    description: fitDescription(intro, [
+      ` ${insight.fonts.length ? `Type includes ${insight.fonts[0]}.` : ""}`,
+      " Screenshots and provenance on every record.",
+    ]),
     path: `/c/${category}`,
     index: cat.count > 0,
   });
@@ -65,8 +63,11 @@ export default async function CategoryPage({
   if (!cat) notFound();
 
   const records = canonicalCardsInCategory(cat.slug);
+  const insight = categoryInsights(cat.slug);
+  const intro = categoryIntro(cat.name, cat.blurb, insight);
+  const patterns = categoryPatterns(cat.name, insight);
 
-  const description = `${cat.blurb} Study ${cat.name} website design references — palettes, typography, layout and technology.`;
+  const description = intro;
   const related = liveCategories()
     .filter((c) => c.slug !== cat.slug && c.count > 0)
     .slice(0, 12);
@@ -90,14 +91,8 @@ export default async function CategoryPage({
           })),
         })}
       />
-      {/* Header — colour-forward */}
-      <section className="relative overflow-hidden border-b border-line bg-paper">
-        <div
-          className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full opacity-20 blur-[80px]"
-          style={{ background: cat.accent }}
-          aria-hidden
-        />
-        <div className="wrap relative py-10 sm:py-14">
+      <section className="border-b border-line">
+        <div className="wrap pb-12 pt-8 sm:pb-16">
           <Breadcrumb
             items={[
               { href: "/", label: "Home" },
@@ -105,65 +100,68 @@ export default async function CategoryPage({
               { label: cat.name },
             ]}
           />
-          <span
-            className="mt-6 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[12px] font-medium"
-            style={{ backgroundColor: `${cat.accent}18`, color: cat.accent }}
-          >
-            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: cat.accent }} />
-            {cat.count.toLocaleString()} references · {cat.share} of archive
-          </span>
-          <h1 className="display mt-4 text-4xl sm:text-6xl">{cat.name}</h1>
-          <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-soft">
-            {cat.blurb}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {cat.descriptors.map((d) => (
-              <span key={d} className="tag">{d}</span>
-            ))}
+          <div className="mt-10 grid gap-8 sm:mt-14 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-8">
+              <p className="eyebrow anim-up text-ink">
+                {cat.count.toLocaleString()} {cat.count === 1 ? "website" : "websites"} · {cat.share} of the archive
+              </p>
+              <h1
+                className="mega anim-up mt-5 max-w-[14ch] text-balance text-[48px] sm:text-[72px] lg:text-[88px]"
+                style={{ animationDelay: "60ms" }}
+              >
+                {cat.name} Website Design Inspiration
+              </h1>
+              <p
+                className="anim-up mt-6 max-w-[64ch] text-pretty text-[17px] leading-[1.55] text-soft"
+                style={{ animationDelay: "120ms" }}
+              >
+                {intro}
+              </p>
+              {cat.descriptors.length > 0 && (
+                <div className="anim-up mt-6 flex flex-wrap gap-2" style={{ animationDelay: "170ms" }}>
+                  {cat.descriptors.map((d) => (
+                    <span key={d} className="tag">
+                      {d}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            {records.length > 0 && (
+              <div className="relative hidden lg:col-span-4 lg:block">
+                <Note className="absolute -top-10 right-6 text-[28px]">{cat.count} sites</Note>
+                <ArrowDown className="absolute -top-2 right-24 h-14 w-8 rotate-[18deg] text-ink" />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Records */}
       <section className="py-14 sm:py-20">
         <div className="wrap">
           {records.length > 0 ? (
             <>
-              <div className="flex items-end justify-between border-b border-line pb-6">
-                <div>
-                  <h2 className="display text-2xl sm:text-3xl">Published references</h2>
-                  <p className="mt-2 text-sm font-semibold tracking-tight">
-                    Showing {records.length}
-                    <span className="text-muted">
-                      {" "}
-                      published {records.length === 1 ? "reference" : "references"}
-                    </span>
-                  </p>
-                </div>
-                <Link
-                  href="/archive"
-                  className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted hover:text-orange"
-                >
-                  Search the archive →
+              <div className="flex items-end justify-between gap-4 border-b border-line pb-4">
+                <h2 className="display text-[32px] sm:text-[40px]">Published references</h2>
+                <Link href="/archive" className="link-underline text-[14px] font-semibold text-ink">
+                  Search the whole archive →
                 </Link>
               </div>
-              <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-12 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {records.map((site, i) => (
                   <Reveal key={site.slug} delay={(i % 4) * 60}>
-                    <SiteCard site={site} />
+                    <SiteCard site={site} priority={i < 4} />
                   </Reveal>
                 ))}
               </div>
             </>
           ) : (
-            /* Honest empty state (spec §16) */
-            <div className="mx-auto max-w-xl rounded-xl border border-dashed border-line-strong bg-bone px-8 py-16 text-center">
-              <p className="eyebrow justify-center text-ink">{cat.name}</p>
-              <p className="mt-5 text-pretty text-lg leading-relaxed text-soft">
+            <div className="max-w-xl border-t border-ink pt-8">
+              <p className="text-[18px] leading-relaxed text-ink">
                 No verified references are published in this category yet. We only show
-                records we&apos;ve actually reviewed — never filler.
+                records we have reviewed.
               </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/submit" className="btn-primary">
                   Submit a {cat.name} site
                 </Link>
@@ -176,42 +174,37 @@ export default async function CategoryPage({
         </div>
       </section>
 
-      {/* A note on classification */}
-      <section className="border-y border-line bg-bone py-10">
-        <div className="wrap max-w-3xl">
-          <p className="eyebrow text-ink">A note on classification</p>
-          <p className="mt-4 text-pretty text-sm leading-relaxed text-soft">
-            Categories are assigned by automated classification and reviewed
-            corrections, and curated for design comparison. Automated labels can be
-            imperfect — always treat the official site as the authority. Spot something
-            wrong?{" "}
-            <Link href="/contact" className="underline decoration-orange decoration-2 underline-offset-2">
-              Report it
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* Related categories — colourful */}
-      <section className="bg-ink py-14 text-paper">
-        <div className="wrap">
-          <p className="eyebrow text-white/90">Explore more</p>
-          <div className="mt-6 flex flex-wrap gap-2.5">
-            {related.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/c/${c.slug}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[13px] text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-                >
-                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
-                  {c.name}
+      {records.length > 0 && (
+        <section className="border-t border-line py-14 sm:py-20">
+          <div className="wrap grid gap-8 lg:grid-cols-12">
+            <h2 className="display text-[36px] sm:text-[44px] lg:col-span-4">Common patterns</h2>
+            <div className="lg:col-span-8">
+              <p className="max-w-[68ch] text-pretty text-[16.5px] leading-[1.65] text-soft">{patterns}</p>
+              <p className="mt-6 max-w-[68ch] border-l-2 border-orange pl-4 text-[14px] leading-relaxed text-muted">
+                Categories come from automated classification plus reviewed corrections.
+                Labels can be wrong, and the official site is always the authority. Spot
+                a mistake?{" "}
+                <Link href="/contact" className="link-underline font-semibold text-ink">
+                  Report it
                 </Link>
-              ))}
-            <Link
-              href="/c"
-              className="inline-flex items-center rounded-full bg-orange px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-orange-600"
-            >
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="border-t border-line py-14">
+        <div className="wrap">
+          <p className="eyebrow text-ink">Other categories</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {related.map((c) => (
+              <Link key={c.slug} href={`/c/${c.slug}`} className="chip">
+                {c.name}
+                <span className="text-[12px] tabular-nums text-muted">{c.count}</span>
+              </Link>
+            ))}
+            <Link href="/c" className="chip !border-ink">
               All categories →
             </Link>
           </div>

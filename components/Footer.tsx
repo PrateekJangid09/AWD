@@ -1,8 +1,119 @@
 import Link from "next/link";
-import Logo from "./Logo";
-import { CANONICAL, liveCategories } from "@/lib/canonical";
+import { Wordmark } from "./Logo";
+import ThemeToggle from "./ThemeToggle";
+import { CANONICAL, DATASET, liveCategories } from "@/lib/canonical";
+import { TOOLS } from "@/lib/catalog";
 import { publishedPosts } from "@/lib/journal";
 import { CONTACT_EMAIL, SUPPORT_URL } from "@/lib/seo";
+
+const FEATURED: {
+  href: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  rel: string;
+  title?: string;
+}[] = [
+  {
+    href: "https://ideakiln.com/ideas/allwebsites-design",
+    src: "https://ideakiln.com/dark.svg",
+    alt: "Featured on Idea Kiln",
+    width: 200,
+    height: 54,
+    rel: "noopener",
+  },
+  {
+    href: "https://marketingdb.live",
+    src: "https://marketingdb.live/badge.svg",
+    alt: "Listed on MarketingDB",
+    width: 190,
+    height: 44,
+    rel: "noopener noreferrer nofollow sponsored",
+  },
+  {
+    href: "https://tools.launchllama.co?utm_source=badge&utm_medium=referral",
+    src: "https://tools.launchllama.co/featured-badge.png?v=2",
+    alt: "Featured on Launch Llama Tools",
+    width: 200,
+    height: 52,
+    rel: "noopener noreferrer",
+  },
+  {
+    href: "https://dofollow.tools",
+    src: "https://dofollow.tools/badge/badge_dark.svg",
+    alt: "Featured on Dofollow.Tools",
+    width: 200,
+    height: 54,
+    rel: "noopener",
+  },
+  {
+    href: "https://fazier.com/launches/allwebsites.design",
+    src: "https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=dark",
+    alt: "Fazier badge",
+    width: 120,
+    height: 40,
+    rel: "noopener",
+  },
+  {
+    href: "https://twelve.tools",
+    src: "https://twelve.tools/badge2-dark.svg",
+    alt: "Featured on Twelve Tools",
+    width: 148,
+    height: 40,
+    rel: "noopener",
+  },
+  {
+    href: "https://startupfa.me/s/allwebsites?utm_source=allwebsites.design",
+    src: "https://startupfa.me/badge?t=classic&theme=dark",
+    alt: "AllWebsites - Featured on Startup Fame",
+    width: 171,
+    height: 54,
+    rel: "noopener",
+  },
+  {
+    href: "https://openhunts.com",
+    src: "https://cdn.openhunts.com/badges/club.webp",
+    alt: "OpenHunts Club Member",
+    width: 195,
+    height: 42,
+    rel: "noopener",
+    title: "OpenHunts Club",
+  },
+  {
+    href: "https://uno.directory",
+    src: "https://uno.directory/uno-directory.svg",
+    alt: "Listed on Uno Directory",
+    width: 120,
+    height: 30,
+    rel: "noopener",
+  },
+  {
+    href: "https://tinyhunt.dev/projects/allwebsites-design?utm_source=badge",
+    src: "https://r2.direasy-multi-tenant.focusapps.app/uploads/616d0b1a-3979-4b8c-94d1-b4f1fedd3ead/1783232960041/17rsshdhmati/featured-on-dark.svg",
+    alt: "Featured on TinyHunt",
+    width: 180,
+    height: 44,
+    rel: "noopener noreferrer",
+  },
+  {
+    href: "https://dailypings.com/p/allwebsites-design",
+    src: "https://dailypings.com/badge.svg",
+    alt: "Featured on DailyPings",
+    width: 179,
+    height: 32,
+    rel: "noopener",
+    title: "Featured on DailyPings",
+  },
+  {
+    href: "https://neeed.directory",
+    src: "https://neeed.directory/badges/neeed-badge-dark.svg",
+    alt: "Featured on neeed.directory",
+    width: 139,
+    height: 40,
+    rel: "noopener",
+  },
+];
 
 const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
@@ -10,20 +121,31 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
     links: [
       { href: "/archive", label: "Archive" },
       { href: "/c", label: "Categories" },
-      { href: "/tools", label: "Tools" },
-      { href: "/pricing", label: "Plugin pricing" },
-      { href: "/research/website-design-index-2026", label: "Research" },
-      { href: "/blogs", label: "Resources" },
-      { href: "/site-map", label: "Site Map" },
+      { href: "/research/website-design-index-2026", label: "2026 Design Index" },
+      { href: "/site-map", label: "Site map" },
     ],
   },
   {
-    title: "About",
+    title: "Tools",
+    links: [
+      ...TOOLS.map((t) => ({ href: `/tools/${t.slug}`, label: t.name })),
+      { href: "/pricing", label: "Figma plugin pricing" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/resources", label: "Resources" },
+      { href: "/blogs", label: "Journal" },
+      { href: "/editorial-guidelines", label: "Curation rules" },
+      { href: "/submit", label: "Submit a site" },
+    ],
+  },
+  {
+    title: "Company",
     links: [
       { href: "/about", label: "About" },
       { href: "/manifesto", label: "Manifesto" },
-      { href: "/editorial-guidelines", label: "Editorial Guidelines" },
-      { href: "/submit", label: "Submit a Site" },
       { href: "/contact", label: "Contact" },
     ],
   },
@@ -33,132 +155,153 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/privacy-policy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
       { href: "/refund-policy", label: "Refunds" },
-      { href: "/cookie-preference", label: "Cookies" },
+      { href: "/cookie-preference", label: "Cookie preferences" },
     ],
   },
 ];
 
 export default function Footer() {
-  const categories = liveCategories().filter((c) => c.count > 0).slice(0, 8);
+  const live = liveCategories().filter((c) => c.count > 0);
+  const popular = live.slice(0, 8);
   const research = publishedPosts().slice(0, 3);
 
   return (
-    <footer className="border-t border-line bg-ink text-paper">
-      <div className="wrap grid grid-cols-2 gap-10 py-16 md:grid-cols-5">
-        <div className="col-span-2">
-          <div className="[&_span]:text-paper">
-            <Logo />
-          </div>
-          <p className="mt-6 max-w-xs text-pretty text-sm leading-relaxed text-white/75">
-            A searchable design archive and a connected set of tools, for people who
-            study how the web is made.
+    <footer className="relative border-t border-ink bg-paper text-ink">
+      <div className="wrap grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_2fr]">
+        <div>
+          <p className="max-w-sm text-pretty text-[16px] leading-relaxed text-soft">
+            A curated archive of real websites, studied for colour, type and
+            technology, plus the free tools we use to study them.
           </p>
-          <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-white/70">
-            {CANONICAL.length.toLocaleString()} references · {liveCategories().filter((c) => c.count > 0).length} categories
+          <p className="mt-5 text-[13px] font-medium text-muted">
+            {CANONICAL.length.toLocaleString()} websites · {live.length} categories · updated{" "}
+            {DATASET.updatedAt}
           </p>
-
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-[14px]">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline font-medium text-ink">
+              {CONTACT_EMAIL}
+            </a>
             <a
               href={SUPPORT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#FFDD00] px-4 py-2 text-[13px] font-semibold text-[#0A0A0A] transition-transform hover:-translate-y-0.5"
+              className="link-underline font-medium text-ink"
             >
-              <span aria-hidden>☕</span>
               Buy me a coffee
             </a>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="text-[13px] text-white/75 underline decoration-white/30 underline-offset-4 hover:text-orange"
-            >
-              {CONTACT_EMAIL}
-            </a>
           </div>
-          <p className="mt-3 max-w-xs text-[12px] leading-relaxed text-white/60">
-            The archive and browser tools stay free. Figma plugins include three
-            free uses each; after that $3/month or $30/year (via Razorpay) unlocks
-            all four. A coffee still helps keep the research going.
+          <p className="mt-3 max-w-sm text-[13px] leading-relaxed text-muted">
+            The archive and browser tools are free. Figma plugins include three free
+            uses each, then $3/month or $30/year unlocks all four.
           </p>
         </div>
 
-        {COLS.map((col) => (
-          <div key={col.title}>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-              {col.title}
-            </p>
-            <ul className="mt-5 space-y-3">
-              {col.links.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-white/80 transition-colors hover:text-orange"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
+          {COLS.map((col) => (
+            <div key={col.title}>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted">
+                {col.title}
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className="link-underline text-[14px] text-ink">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {categories.length > 0 && (
-        <div className="border-t border-white/10">
-          <div className="wrap py-7">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-              Popular categories
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {categories.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/c/${c.slug}`}
-                  className="rounded-full border border-white/10 px-3 py-1.5 text-[12px] text-white/80 transition-colors hover:border-orange hover:text-orange"
-                >
-                  {c.name}
-                </Link>
-              ))}
-              <Link
-                href="/c"
-                className="rounded-full bg-orange px-3 py-1.5 text-[12px] font-medium text-white"
-              >
-                All categories
-              </Link>
+      {(popular.length > 0 || research.length > 0) && (
+        <div className="wrap grid gap-8 border-t border-line py-8 lg:grid-cols-2">
+          {popular.length > 0 && (
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted">
+                Popular categories
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                {popular.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={`/c/${c.slug}`} className="link-underline text-[14px] text-ink">
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          )}
+          {research.length > 0 && (
+            <div>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted">
+                Latest research
+              </p>
+              <ul className="mt-3 space-y-2">
+                {research.map((post) => (
+                  <li key={post.slug}>
+                    <Link href={`/blogs/${post.slug}`} className="link-underline text-[14px] text-ink">
+                      {post.h1}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
 
-      {research.length > 0 && (
-        <div className="border-t border-white/10">
-          <div className="wrap py-7">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-              Latest research
-            </p>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-              {research.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blogs/${post.slug}`}
-                    className="block text-[13px] leading-relaxed text-white/80 transition-colors hover:text-orange"
-                  >
-                    {post.h1}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      <div className="wrap overflow-hidden">
+        <p
+          aria-hidden
+          className="select-none whitespace-nowrap pb-2 text-[clamp(56px,13.4vw,208px)] leading-[0.9] text-ink"
+        >
+          <Wordmark />
+        </p>
+      </div>
+
+      <div className="border-t border-line">
+        <div className="wrap flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[13px] text-muted">
+            © {new Date().getFullYear()} AllWebsites.Design. Screenshots belong to the sites they show.
+          </p>
+          <div className="flex items-center gap-3 text-[13px] text-muted">
+            <span>Theme</span>
+            <ThemeToggle />
           </div>
         </div>
-      )}
+      </div>
 
-      <div className="border-t border-white/10">
-        <div className="wrap flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
-            © {new Date().getFullYear()} AllWebsites.Design
+      <div className="border-t border-line">
+        <div className="wrap py-7">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted">
+            Listed on
           </p>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-white/70">
-            Discover · Understand · Explore
-          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-4">
+            {FEATURED.map((badge) => (
+              <a
+                key={badge.href}
+                href={badge.href}
+                target="_blank"
+                rel={badge.rel}
+                title={badge.title}
+                className="inline-flex items-center opacity-80 transition-opacity hover:opacity-100"
+              >
+                {/* External launch badges: served by each directory, not our optimizer. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={badge.src}
+                  alt={badge.alt}
+                  width={badge.width}
+                  height={badge.height}
+                  loading="lazy"
+                  className="h-8 w-auto sm:h-9"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

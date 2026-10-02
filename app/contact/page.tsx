@@ -65,8 +65,8 @@ export default function ContactPage() {
       <section className="py-14 sm:py-20">
         <div className="wrap grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
           {/* Form */}
-          <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6 sm:p-8">
-            <p className="eyebrow">Send a message</p>
+          <div className="rounded-[6px] border border-ink bg-surface p-6 sm:p-10">
+            <h2 className="display text-[34px] sm:text-[40px]">Send a message</h2>
             <ContactForm
               to={CONTACT_EMAIL}
               reasons={REASONS}
@@ -77,17 +77,17 @@ export default function ContactPage() {
 
           {/* Sidebar */}
           <aside className="flex flex-col gap-5">
-            <div className="rounded-xl border border-line bg-ink p-6 text-paper">
-              <p className="eyebrow text-white/90">How we handle it</p>
-              <p className="mt-3 text-sm leading-relaxed text-paper/70">
+            <div className="border-t border-ink pt-6">
+              <p className="eyebrow text-ink">How we handle it</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-soft">
                 Corrections are prioritised. The official site always remains the
                 authority for current facts — we update records as they change.
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-paper/70">
+              <p className="mt-4 text-[15px] leading-relaxed text-soft">
                 Prefer your own mail client? Write to{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="font-medium text-orange underline decoration-2 underline-offset-2"
+                  className="link-underline font-semibold text-ink"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -95,9 +95,9 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6">
-              <p className="eyebrow">Support the archive</p>
-              <p className="mt-3 text-sm leading-relaxed text-soft">
+            <div className="border-t border-line pt-6">
+              <p className="eyebrow text-ink">Support the archive</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-soft">
                 Every record and every tool is free. If the archive saved you time,
                 a coffee funds the next batch of studies.
               </p>
@@ -105,15 +105,14 @@ export default function ContactPage() {
                 href={SUPPORT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#FFDD00] px-4 py-2.5 text-[13px] font-semibold text-[#0A0A0A] transition-transform hover:-translate-y-0.5"
+                className="btn-ghost mt-4"
               >
-                <span aria-hidden>☕</span>
                 Buy me a coffee
               </a>
             </div>
 
-            <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6">
-              <p className="eyebrow">Elsewhere</p>
+            <div className="border-t border-line pt-6">
+              <p className="eyebrow text-ink">Elsewhere</p>
               <ul className="mt-4 space-y-3">
                 {[
                   ["Submit a site", "/submit"],
@@ -124,7 +123,7 @@ export default function ContactPage() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className="flex items-center justify-between border-b-2 border-ink/10 pb-3 text-sm font-medium hover:text-orange"
+                      className="index-row !py-3 text-[15px] font-medium text-ink"
                     >
                       {label}
                       <span aria-hidden>→</span>

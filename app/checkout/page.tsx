@@ -16,6 +16,7 @@ export const metadata: Metadata = pageMeta({
   title,
   description,
   path: "/checkout",
+  index: false,
 });
 
 export default async function CheckoutPage({
@@ -60,19 +61,19 @@ export default async function CheckoutPage({
           {PLANS.map((plan) => (
             <article
               key={plan.id}
-              className="rounded-2xl border border-line bg-paper p-6 sm:p-8"
+              className="rounded-[6px] border border-ink bg-surface p-6 sm:p-10"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/45">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                 {plan.name}
                 {plan.id === selected ? " · opening" : ""}
               </p>
-              <p className="mt-3 font-display text-4xl font-semibold tracking-tight">
+              <p className="mt-4 font-display text-[64px] leading-none">
                 ${plan.amountUsd}
-                <span className="ml-2 text-lg font-medium text-ink/50">
+                <span className="ml-2 text-lg font-medium text-muted">
                   / {plan.period}
                 </span>
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-ink/70">{plan.blurb}</p>
+              <p className="mt-3 text-sm leading-relaxed text-soft">{plan.blurb}</p>
               <CheckoutButton
                 planId={plan.id}
                 label={plan.id === "yearly" ? "Pay $30 / year" : "Pay $3 / month"}
@@ -82,7 +83,7 @@ export default async function CheckoutPage({
             </article>
           ))}
         </div>
-        <p className="wrap mt-8 max-w-2xl text-sm text-ink/60">
+        <p className="wrap mt-8 max-w-2xl text-sm text-soft">
           Compare plans on the{" "}
           <Link href="/pricing" className="underline decoration-orange decoration-2 underline-offset-2">
             pricing page

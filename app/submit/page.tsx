@@ -32,55 +32,59 @@ export default function SubmitPage() {
         })}
       />
       <UtilityHero
-        eyebrow="CONTRIBUTE"
-        title="Submit a site to the archive."
-        intro="Found a website worth studying? Send it over. Every submission is reviewed against our editorial guidelines — submission doesn't guarantee inclusion."
+        eyebrow="Found something worth saving?"
+        title="Submit a website to the archive."
+        intro="Send us a real, live website that is worth studying for its layout, colour or type. Every submission is reviewed against the editorial guidelines, and if it is accepted we capture it and record its palette, typefaces and detected technology. Submitting does not guarantee inclusion."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Submit" }]}
       />
 
       <section className="py-14 sm:py-20">
-        <div className="wrap grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div className="card-brutal hover:!translate-x-0 hover:!translate-y-0 p-6 sm:p-8">
-            <p className="eyebrow">Submit a site</p>
-            <ContactForm
-              to={CONTACT_EMAIL}
-              defaultReason="Submission"
-              websiteLabel="Website URL"
-              websiteRequired
-              messageLabel="Why it belongs"
-              submitLabel="Submit for review"
-            />
+        <div className="wrap grid gap-14 lg:grid-cols-12">
+          <div className="relative lg:col-span-7">
+            <div className="rounded-[6px] border border-ink bg-surface p-6 sm:p-10">
+              <span aria-hidden className="tape -top-3 left-12 rotate-[-3deg]" />
+              <h2 className="display text-[34px] sm:text-[40px]">Submit a website</h2>
+              <ContactForm
+                to={CONTACT_EMAIL}
+                defaultReason="Submission"
+                websiteLabel="Website URL"
+                websiteRequired
+                messageLabel="Why it belongs"
+                submitLabel="Submit for review"
+              />
+            </div>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink p-6 text-paper sm:p-8">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-orange">
-              What we look for
-            </p>
-            <ul className="mt-5 space-y-4">
+          <aside className="lg:col-span-5">
+            <h2 className="display text-[34px] sm:text-[40px]">What we look for</h2>
+            <ol className="mt-6 border-t border-ink">
               {[
-                "A real, reachable official destination",
-                "A usable design capture",
-                "Enough visual or structural reference value",
-              ].map((t) => (
-                <li key={t} className="flex gap-3 text-sm text-paper/80">
-                  <span className="font-mono text-orange">→</span>
-                  {t}
+                ["A real, reachable site", "The official destination loads and is not a placeholder or a parked domain."],
+                ["A usable capture", "The page renders well enough to screenshot without a login wall or cookie maze."],
+                ["Reference value", "Something in the layout, colour, type or structure is worth studying."],
+              ].map(([t, d], i) => (
+                <li key={t} className="grid grid-cols-[40px_1fr] gap-2 border-b border-line py-5">
+                  <span className="font-serif text-[26px] leading-none text-orange-ink">{i + 1}</span>
+                  <span>
+                    <span className="block text-[16px] font-semibold text-ink">{t}</span>
+                    <span className="mt-1 block text-[15px] leading-relaxed text-soft">{d}</span>
+                  </span>
                 </li>
               ))}
-            </ul>
-            <p className="mt-6 text-sm leading-relaxed text-paper/60">
-              We exclude hidden, placeholder, duplicate and platform-hosted records.
-              Read the full{" "}
-              <Link href="/editorial-guidelines" className="text-orange underline decoration-2 underline-offset-2">
+            </ol>
+            <p className="mt-6 text-[15px] leading-relaxed text-soft">
+              We exclude hidden, placeholder, duplicate and platform-hosted records. Read
+              the full{" "}
+              <Link href="/editorial-guidelines" className="link-underline font-semibold text-ink">
                 editorial guidelines
-              </Link>
-              {" "}or browse the{" "}
-              <Link href="/archive" className="text-orange underline decoration-2 underline-offset-2">
+              </Link>{" "}
+              or browse the{" "}
+              <Link href="/archive" className="link-underline font-semibold text-ink">
                 archive
-              </Link>
-              .
+              </Link>{" "}
+              to see what is already in.
             </p>
-          </div>
+          </aside>
         </div>
       </section>
       <ExploreMore except={["/submit"]} />

@@ -2,6 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Structured Editorial Scrapbook — theme tokens
+   Channels are space-separated RGB so Tailwind can apply alpha
+   (`bg-ink/10`). Dark mode is designed, not inverted: charcoal
+   sketchbook stock with light paper fragments kept light.
+   Precedence: saved choice → OS preference → light.
+   ============================================================ */
+:root {
+  color-scheme: light;
+  --c-bg: 247 243 236;          /* #F7F3EC main paper */
+  --c-surface: 251 248 242;     /* #FBF8F2 raised paper */
+  --c-bone: 241 235 225;        /* quiet alternate band */
+  --c-paper-2: 232 221 207;     /* #E8DDCF tape / backing */
+  --c-matte: 225 216 204;       /* #E1D8CC screenshot matte */
+  --c-paper-light: 251 248 242; /* collage paper inserts */
+  --c-ink: 17 16 14;            /* #11100E */
+  --c-soft: 58 54 49;
+  --c-muted: 105 99 90;         /* #69635A, 5.4:1 on paper */
+  --c-rule: 202 193 181;        /* #CAC1B5 */
+  --c-rule-strong: 143 135 123;
+  --c-orange-ink: 178 64 8;     /* orange that passes AA for small text */
+  --accent: #ff6112;
+
+  --wave-ink: 17 16 14;
+  --wave-alpha: 0.075;
+  --wave-accent-alpha: 0.38;
+  --grain-opacity: 0.035;
+  --grain-blend: multiply;
+
+  --radius: 6px;
+  --content-max: 1440px;
+  --motion-press: 90ms;
+  --motion-focus: 120ms;
+  --motion-filter: 140ms;
+  --motion-menu: 160ms;
+  --motion-theme: 180ms;
+  --motion-modal: 220ms;
+  --motion-underline: 300ms;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: 17 18 16;             /* #111210 sketchbook base */
+  --c-surface: 23 24 21;        /* #171815 */
+  --c-bone: 27 28 24;
+  --c-paper-2: 41 39 33;        /* #292721 */
+  --c-matte: 34 33 29;
+  --c-paper-light: 216 205 190; /* #D8CDBE occasional light paper */
+  --c-ink: 247 243 236;
+  --c-soft: 214 208 197;
+  --c-muted: 164 158 147;       /* #A49E93, 7:1 on dark */
+  --c-rule: 58 57 51;           /* #3A3933 */
+  --c-rule-strong: 98 95 86;
+  --c-orange-ink: 255 122 51;
+
+  --wave-ink: 247 243 236;
+  --wave-alpha: 0.07;
+  --wave-accent-alpha: 0.5;
+  --grain-opacity: 0.05;
+  --grain-blend: screen;
+}
+
+/* No-JS fallback: follow the OS unless the reader picked light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --c-bg: 17 18 16;
+    --c-surface: 23 24 21;
+    --c-bone: 27 28 24;
+    --c-paper-2: 41 39 33;
+    --c-matte: 34 33 29;
+    --c-paper-light: 216 205 190;
+    --c-ink: 247 243 236;
+    --c-soft: 214 208 197;
+    --c-muted: 164 158 147;
+    --c-rule: 58 57 51;
+    --c-rule-strong: 98 95 86;
+    --c-orange-ink: 255 122 51;
+    --wave-ink: 247 243 236;
+    --wave-alpha: 0.07;
+    --wave-accent-alpha: 0.5;
+    --grain-opacity: 0.05;
+    --grain-blend: screen;
+  }
+}
+
 @layer base {
   * {
     -webkit-font-smoothing: antialiased;
@@ -10,193 +96,214 @@
 
   html {
     scroll-behavior: smooth;
+    background-color: rgb(var(--c-bg));
   }
 
+  /* The page colour lives on <html> only. Body stays transparent so the
+     fixed wave canvas (z-index -1) paints between the two. */
   body {
-    background-color: theme("colors.paper");
-    color: theme("colors.ink");
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv01";
+    color: rgb(var(--c-ink));
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  }
+
+  /* Theme switch is a short colour crossfade only. The class is added for
+     one frame by ThemeToggle so ordinary hovers keep their own timing. */
+  html.theme-fade *,
+  html.theme-fade *::before,
+  html.theme-fade *::after {
+    transition: background-color var(--motion-theme) ease, border-color var(--motion-theme) ease,
+      color var(--motion-theme) ease, fill var(--motion-theme) ease !important;
   }
 
   ::selection {
-    background: theme("colors.orange.DEFAULT");
-    color: #fff;
+    background: var(--accent);
+    color: #11100e;
   }
 
-  /* Softer, more modern form controls */
   input:not([type="checkbox"]):not([type="radio"]),
   textarea,
   select {
-    border-radius: 10px;
+    border-radius: var(--radius);
   }
 
+  /* 2px orange outer line plus a neutral gap so it reads on both themes. */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
   textarea:focus-visible,
+  select:focus-visible,
+  summary:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid theme("colors.orange.DEFAULT");
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
+    box-shadow: 0 0 0 3px rgb(var(--c-bg));
+  }
+
+  /* Fine print grain, barely there. Static, so it costs nothing per frame. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: var(--grain-blend);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.45  0 0 0 0 0.4  0 0 0 1.4 -0.2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
 }
 
 @layer components {
   .wrap {
-    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8;
+    @apply mx-auto w-full max-w-[1440px] px-5 min-[480px]:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20;
   }
 
-  /* Section eyebrow — small caps label with an orange dot (editorial).
-     Colour is inherited so it reads on both light and dark sections. */
+  /* Small curator label. A short orange rule instead of a dot. */
   .eyebrow {
-    @apply inline-flex items-center gap-2.5 font-sans text-[11px] font-semibold uppercase tracking-[0.2em];
+    @apply inline-flex items-center gap-2.5 font-sans text-[11.5px] font-semibold uppercase tracking-[0.16em];
   }
   .eyebrow::before {
     content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 9999px;
-    background: theme("colors.orange.DEFAULT");
+    width: 14px;
+    height: 2px;
+    background: var(--accent);
     flex: none;
   }
 
-  /* Cards — soft, quiet, lift gently on hover */
+  /* Flat paper panel. No lift, no shadow; border may turn orange. */
   .card,
-  .card-brutal {
-    @apply rounded-2xl border border-line bg-paper transition-all duration-300 ease-out;
-  }
-  .card:hover,
-  .card-brutal:hover {
-    @apply -translate-y-1 border-line-strong shadow-soft;
-  }
-
-  /* ── Glassmorphism system ─────────────────────────────────────
-     Frosted translucent surfaces. Read best over colour/glow.
-     Light theme: white-tinted glass; dark sections: use .glass-dark. */
-  .glass {
-    background: rgba(255, 255, 255, 0.55);
-    -webkit-backdrop-filter: blur(20px) saturate(1.6);
-    backdrop-filter: blur(20px) saturate(1.6);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: 0 8px 32px -12px rgba(17, 17, 20, 0.14),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
-  }
-  .glass-strong {
-    background: rgba(255, 255, 255, 0.72);
-    -webkit-backdrop-filter: blur(28px) saturate(1.7);
-    backdrop-filter: blur(28px) saturate(1.7);
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    box-shadow: 0 12px 40px -14px rgba(17, 17, 20, 0.18),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-  }
-  .glass-dark {
-    background: rgba(20, 20, 24, 0.5);
-    -webkit-backdrop-filter: blur(20px) saturate(1.5);
-    backdrop-filter: blur(20px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 32px -12px rgba(0, 0, 0, 0.5),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
-  }
-  /* Glass card — frosted surface that lifts on hover */
-  .glass-card {
-    @apply rounded-2xl transition-all duration-300 ease-out;
-    background: rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(18px) saturate(1.5);
-    backdrop-filter: blur(18px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 6px 24px -14px rgba(17, 17, 20, 0.16),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.65);
-  }
-  .glass-card:hover {
-    @apply -translate-y-1;
-    background: rgba(255, 255, 255, 0.66);
-    box-shadow: 0 16px 40px -16px rgba(17, 17, 20, 0.22),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-  }
-  /* Frosted pill/chip */
+  .card-brutal,
+  .glass,
+  .glass-strong,
+  .glass-card,
+  .glass-dark,
   .glass-chip {
-    background: rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(12px) saturate(1.5);
-    backdrop-filter: blur(12px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    @apply rounded-[6px] border border-line bg-surface;
+    transition: border-color var(--motion-focus) ease;
   }
-  /* Soft colour aura behind glass so the blur has something to refract.
-     Drop into a `position:relative` section as an aria-hidden layer. */
-  .aura {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .aura::before,
-  .aura::after {
-    content: "";
-    position: absolute;
-    width: 42%;
-    height: 60%;
-    border-radius: 9999px;
-    filter: blur(80px);
-    opacity: 0.5;
-  }
-  .aura::before {
-    top: -10%;
-    left: -6%;
-    background: radial-gradient(circle, rgba(255, 97, 18, 0.5), transparent 70%);
-  }
-  .aura::after {
-    bottom: -14%;
-    right: -8%;
-    background: radial-gradient(circle, rgba(24, 86, 255, 0.4), transparent 70%);
+  a.card:hover,
+  a.glass-card:hover,
+  .card-link:hover {
+    border-color: var(--accent);
   }
 
-  /* Buttons — pill, sentence case, quiet weight */
+  /* Legacy decorative layers retired by the design system. */
+  .aura {
+    display: none;
+  }
+
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full text-[13px] font-medium tracking-tight transition-all duration-200;
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-[6px] text-[14px] font-semibold tracking-[-0.005em];
+    min-height: 44px;
+    transition: background-color var(--motion-focus) ease, border-color var(--motion-focus) ease,
+      color var(--motion-focus) ease, transform var(--motion-press) ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
   }
   .btn-primary {
-    @apply btn bg-orange px-5 py-3 text-white shadow-[0_8px_22px_-8px_rgba(255,97,18,0.55)] hover:bg-orange-600;
+    @apply btn border border-[#11100E]/15 bg-orange px-5 py-2.5 text-on-accent hover:bg-[#FF7429];
   }
   .btn-dark {
-    @apply btn bg-ink px-5 py-3 text-white hover:bg-ink/90;
+    @apply btn border border-ink bg-ink px-5 py-2.5 text-paper hover:bg-ink/85;
   }
   .btn-ghost {
-    @apply btn border border-line bg-paper px-5 py-3 text-ink hover:border-ink hover:bg-transparent;
+    @apply btn border border-ink/80 bg-transparent px-5 py-2.5 text-ink hover:border-orange;
   }
 
   .tag {
-    @apply inline-flex items-center rounded-full border border-line px-3 py-1 font-sans text-[11px] font-medium text-muted;
+    @apply inline-flex items-center rounded-[6px] border border-line px-2.5 py-1 font-sans text-[12px] font-medium text-soft;
+  }
+
+  .chip {
+    @apply inline-flex min-h-[38px] items-center gap-2 rounded-[6px] border border-line bg-transparent px-3.5 text-[13.5px] font-medium text-ink;
+    transition: border-color var(--motion-focus) ease, color var(--motion-focus) ease;
+  }
+  .chip:hover {
+    border-color: rgb(var(--c-ink) / 0.6);
+  }
+  .chip[aria-pressed="true"],
+  .chip[aria-current="page"] {
+    border-color: var(--accent);
+    box-shadow: inset 0 -2px 0 var(--accent);
   }
 
   .link-underline {
-    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-orange after:transition-all after:duration-300 hover:after:w-full;
+    @apply underline decoration-transparent decoration-[1.5px] underline-offset-[5px];
+    transition: text-decoration-color var(--motion-focus) ease;
+  }
+  .link-underline:hover {
+    text-decoration-color: var(--accent);
   }
 
-  /* Long-form legal / editorial copy */
+  /* Ruled editorial index row */
+  .index-row {
+    @apply relative flex items-baseline gap-4 border-b border-line py-4;
+  }
+  .index-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 280ms cubic-bezier(0.22, 0.7, 0.2, 1);
+  }
+  .index-row:hover::before,
+  .index-row:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  /* Screenshot frame: ink outline, matte backing, no shadow. */
+  .shot {
+    @apply relative overflow-hidden rounded-[4px] border-[1.5px] border-ink bg-matte;
+  }
+
+  /* Tape strip. Decorative only. */
+  .tape {
+    position: absolute;
+    width: 92px;
+    height: 22px;
+    background: rgb(var(--c-paper-2) / 0.72);
+    border-left: 1px dashed rgb(var(--c-ink) / 0.08);
+    border-right: 1px dashed rgb(var(--c-ink) / 0.08);
+    pointer-events: none;
+    z-index: 3;
+  }
+  :root[data-theme="dark"] .tape {
+    background: rgb(var(--c-paper-light) / 0.62);
+  }
+
+  /* Long-form legal / editorial copy sits on solid paper: no waves behind it. */
+  .prose {
+    background: rgb(var(--c-bg));
+    box-shadow: 0 0 0 24px rgb(var(--c-bg));
+  }
   .prose > * + * {
     margin-top: 1.05rem;
   }
   .prose h2 {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-weight: 800;
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 400;
     letter-spacing: -0.02em;
-    font-size: 1.5rem;
-    line-height: 1.1;
+    font-size: 2rem;
+    line-height: 1.05;
     margin-top: 2.8rem;
     padding-top: 1.6rem;
-    border-top: 1px solid theme("colors.line");
+    border-top: 1px solid rgb(var(--c-rule));
   }
   .prose h3 {
-    font-family: var(--font-inter), system-ui, sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     margin-top: 1.8rem;
   }
   .prose p,
   .prose li {
-    color: theme("colors.soft");
-    line-height: 1.75;
-    font-size: 0.97rem;
+    color: rgb(var(--c-soft));
+    line-height: 1.7;
+    font-size: 1rem;
   }
   .prose ul {
     list-style: none;
@@ -210,23 +317,22 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 0.65em;
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background: theme("colors.orange.DEFAULT");
+    top: 0.8em;
+    width: 10px;
+    height: 1.5px;
+    background: var(--accent);
   }
   .prose a {
-    color: theme("colors.ink");
+    color: rgb(var(--c-ink));
     font-weight: 600;
     text-decoration: underline;
-    text-decoration-color: theme("colors.orange.DEFAULT");
+    text-decoration-color: var(--accent);
     text-decoration-thickness: 1.5px;
     text-underline-offset: 3px;
   }
   .prose strong {
     font-weight: 700;
-    color: theme("colors.ink");
+    color: rgb(var(--c-ink));
   }
 }
 
@@ -237,28 +343,22 @@
   .text-pretty {
     text-wrap: pretty;
   }
-  /* Giant condensed editorial display */
-  /* Large, quiet, modern display — clean grotesk, tight tracking, sentence case */
+  /* Editorial serif display. Instrument Serif ships one weight; never fake bold. */
+  .mega,
+  .display,
+  .font-display,
+  .font-serif {
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 400 !important;
+    font-synthesis: none;
+  }
   .mega {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-weight: 600;
-    line-height: 1.02;
-    letter-spacing: -0.04em;
+    line-height: 0.93;
+    letter-spacing: -0.035em;
   }
   .display {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
-  }
-  /* Auto-scroll a full-page screenshot with transform (compositor-friendly) */
-  .autoscroll-img {
-    transform: translate3d(0, 0, 0);
-    transition: transform 14s linear;
-    will-change: transform;
-  }
-  .group:hover .autoscroll-img {
-    transform: translate3d(0, -40%, 0);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -268,90 +368,63 @@
     scrollbar-width: none;
   }
   .hairline {
-    border-color: theme("colors.line");
+    border-color: rgb(var(--c-rule));
   }
-  /* Very faint blueprint grid for hero/panel backgrounds */
-  .grid-bg {
-    background-image: linear-gradient(
-        rgba(20, 20, 20, 0.035) 1px,
-        transparent 1px
-      ),
-      linear-gradient(90deg, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
-    background-size: 64px 64px;
-  }
+  .grid-bg,
   .grid-bg-sm {
-    background-image: linear-gradient(
-        rgba(20, 20, 20, 0.035) 1px,
-        transparent 1px
-      ),
-      linear-gradient(90deg, rgba(20, 20, 20, 0.035) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background-image: none;
+  }
+  .tilt-a { transform: rotate(-1.8deg); }
+  .tilt-b { transform: rotate(2.4deg); }
+  .tilt-c { transform: rotate(-3.2deg); }
+  .tilt-d { transform: rotate(1.1deg); }
+
+  /* CSS-only entrance used by server components. Short, once, opacity-led. */
+  .anim-up {
+    animation: fadeUp 520ms cubic-bezier(0.22, 0.7, 0.2, 1) both;
+  }
+  .anim-in {
+    animation: fadeIn 420ms ease both;
+  }
+  .anim-pop {
+    animation: fadeUp 520ms cubic-bezier(0.22, 0.7, 0.2, 1) both;
+  }
+  .float-slow,
+  .float-med,
+  .hover-lift,
+  .autoscroll-img {
+    animation: none;
+  }
+  .skeleton {
+    background-color: rgb(var(--c-matte));
+  }
+  .img-fade {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .img-fade.is-loaded {
+    opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* ============================================================
-   Motion system — transform/opacity only (GPU-friendly),
-   fully disabled under prefers-reduced-motion (see media query
-   at the top of the reduced-motion block below).
-   ============================================================ */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
   to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
-}
-@keyframes floatY {
-  0%, 100% { transform: translate3d(0, 0, 0) var(--tilt, rotate(0deg)); }
-  50%      { transform: translate3d(0, -10px, 0) var(--tilt, rotate(0deg)); }
-}
-@keyframes barGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
 
-@layer utilities {
-  /* On-load entrance — add a stagger with inline style="animation-delay:..." */
-  .anim-up   { opacity: 0; animation: fadeUp 0.75s cubic-bezier(0.22, 0.7, 0.2, 1) both; }
-  .anim-in   { opacity: 0; animation: fadeIn 0.9s ease both; }
-  .anim-pop  { opacity: 0; animation: scaleIn 0.7s cubic-bezier(0.22, 0.7, 0.2, 1) both; }
-  .float-slow { animation: floatY 7s ease-in-out infinite; will-change: transform; }
-  .float-med  { animation: floatY 5.5s ease-in-out infinite; will-change: transform; }
-
-  /* Underlines / links get a smoother feel */
-  .hover-lift { transition: transform 0.3s cubic-bezier(0.22, 0.7, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease; }
-  .hover-lift:hover { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
-
-/* ── Image loading skeleton (no broken flashes on big captures) ── */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-.skeleton {
-  background-color: #f2f2f4;
-  background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.09) 40%, rgba(0,0,0,0) 60%);
-  background-size: 200% 100%;
-  animation: shimmer 1.6s linear infinite;
-}
-.img-fade { opacity: 0; transition: opacity 0.5s ease; }
-.img-fade.is-loaded { opacity: 1; }
-
-/* ── Scrolling ticker (category chips) ── */
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ticker-track { animation: ticker 60s linear infinite; }
-.ticker-track:hover { animation-play-state: paused; }

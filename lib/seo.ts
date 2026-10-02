@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import type { CanonicalSite } from "./canonical";
-import { recordDates } from "./canonical";
+import { CANONICAL, recordDates, type CanonicalSite } from "./canonical";
 
 export const SITE_URL = "https://allwebsites.design";
 export const SITE_NAME = "AllWebsites.Design";
@@ -178,8 +177,28 @@ export function shortName(raw: string) {
   return (atWord.length >= 12 ? atWord : clipped).replace(/[\s,;:•·-]+$/, "");
 }
 
-export function studyTitle(name: string) {
-  const brand = shortName(name);
+function hostLabel(domain: string) {
+  return domain.replace(/^www\./i, "").replace(/\/+$/, "");
+}
+
+/**
+ * Visible brand for a record. When two sites share a short name (Forward on
+ * framer.ai vs Forward Journal), append the registrable host so titles and H1s
+ * stay unique. Does not change slugs.
+ */
+export function displayName(site: CanonicalSite) {
+  const brand = shortName(site.identity.name);
+  const clash = CANONICAL.some(
+    (other) =>
+      other.identity.slug !== site.identity.slug &&
+      shortName(other.identity.name) === brand,
+  );
+  if (!clash) return brand;
+  return `${brand} (${hostLabel(site.identity.domain)})`;
+}
+
+export function studyTitle(site: CanonicalSite | string) {
+  const brand = typeof site === "string" ? shortName(site) : displayName(site);
   const preferred = `${brand} Website Design`;
   if (preferred.length <= TITLE_MAX) return preferred;
   // Rare: a still-long shortName. Keep the brand and a shorter cue.
@@ -198,7 +217,7 @@ const DESC_MAX = 160;
 const CORE_MAX = 140;
 
 export function studyDescription(site: CanonicalSite) {
-  const name = shortName(site.identity.name);
+  const name = displayName(site);
   const styles = site.design.style_tags.slice(0, 3);
   const paletteCount = site.design.palette.length;
   const fonts = uniqueStrings(site.design.fonts.map((font) => font.name)).slice(0, 2);
@@ -677,7 +696,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
       "@type": "ItemPage",
       "@id": `${url}/#webpage`,
       url,
-      name: studyTitle(site.identity.name),
+      name: studyTitle(site),
       description,
       isPartOf: { "@id": WEBSITE_ID },
       breadcrumb: { "@id": crumbId(path) },
@@ -697,7 +716,7 @@ export function archiveRecordGraph(site: CanonicalSite) {
     {
       "@type": "Article",
       "@id": analysisId,
-      headline: studyTitle(site.identity.name),
+      headline: studyTitle(site),
       description,
       about: [{ "@id": studiedOrgId }, { "@id": studiedId }],
       mainEntityOfPage: url,
@@ -925,7 +944,7 @@ export function blogGraph({
   const path = "/blogs";
   const url = absUrl(path);
   return pageGraph([
-    breadcrumbNode(path, [{ name: "Home", path: "/" }, { name: "Resources" }]),
+    breadcrumbNode(path, [{ name: "Home", path: "/" }, { name: "Resources", path: "/resources" }, { name: "Journal" }]),
     {
       "@type": "Blog",
       "@id": BLOG_ID,

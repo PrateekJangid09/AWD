@@ -26,8 +26,8 @@ export default function PolicyNav({ current }: { current?: string }) {
             href={link.href}
             className={
               active
-                ? "rounded-full bg-ink px-3 py-1.5 text-[12px] font-medium text-paper"
-                : "rounded-full border border-line px-3 py-1.5 text-[12px] font-medium text-soft hover:border-ink hover:text-ink"
+                ? "chip !min-h-[36px] !border-orange text-[13px] [box-shadow:inset_0_-2px_0_#FF6112]"
+                : "chip !min-h-[36px] text-[13px]"
             }
           >
             {link.label}

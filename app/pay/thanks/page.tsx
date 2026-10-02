@@ -19,7 +19,7 @@ export default function PayThanksPage() {
         breadcrumb={[{ href: "/", label: "Home" }, { href: "/pricing", label: "Pricing" }, { label: "Thanks" }]}
       />
       <section className="py-14">
-        <p className="wrap max-w-xl text-sm text-ink/70">
+        <p className="wrap max-w-xl text-sm text-soft">
           If the plugin still shows free uses, close it and run it again. Questions: see the{" "}
           <Link href="/pricing" className="underline decoration-orange decoration-2 underline-offset-2">
             pricing page

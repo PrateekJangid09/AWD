@@ -60,99 +60,95 @@ export default function ToolsPage() {
       <UtilityHero
         eyebrow="Tools"
         title="Free website colour tools."
-        intro="Five focused tools, one design language. Each owns a single job: name, harmony, generate, visualize, interpolate. Free, no signup, everything runs in your browser."
+        intro="Five focused colour tools that share one design language. Each owns a single job: find a colour name, build a harmony, generate a website palette, preview it on a mockup, or interpolate an OKLCH gradient. They are free, need no signup, and run entirely in your browser."
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Tools" }]}
       />
 
-      <section className="relative overflow-hidden py-12 sm:py-16">
-        <span className="aura" aria-hidden />
-        <div className="wrap relative">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="py-16 sm:py-24">
+        <div className="wrap">
+          <ol className="border-t border-ink">
             {JOBS.map((j, i) => {
               const tool = j.slug ? getTool(j.slug) : undefined;
-              const live = Boolean(tool);
               const name = tool?.name ?? j.soon!.name;
               const tagline = tool?.tagline ?? j.soon!.tagline;
-              const desc = tool?.desc ?? "In progress, coming soon.";
-              const swatches = tool?.swatches ?? j.soon!.swatches;
-
-              const card = (
-                <div
-                  className={`glass-card group flex h-full flex-col overflow-hidden ${live ? "hover:-translate-y-1" : "opacity-70"}`}
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-bone">
-                    {live ? (
-                      <Image
-                        src={`/tools/previews/${j.slug}.webp`}
-                        alt={`${name}: ${tagline}`}
-                        fill
-                        priority={i === 0}
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <div className="flex h-full">
-                        {swatches.map((s) => (
-                          <span key={s} className="flex-1" style={{ backgroundColor: s }} />
-                        ))}
-                      </div>
-                    )}
-                    <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-ink shadow-sm backdrop-blur">
-                      {j.job}
-                    </span>
-                    <span
-                      className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[10.5px] font-medium ${live ? "bg-orange text-white" : "bg-white/85 text-muted"}`}
-                    >
-                      {live ? "Live" : "Soon"}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-1 flex-col p-6">
-                    <h2 className="text-lg font-medium tracking-tight">{name}</h2>
-                    <p className="mt-0.5 text-[13px] text-muted">{tagline}</p>
-                    <p className="mt-3 flex-1 text-pretty text-[14px] leading-relaxed text-soft">
-                      {desc}
-                    </p>
-                    {live && (
-                      <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-ink">
-                        Open tool
-                        <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>→</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-              );
-
+              const desc = tool?.desc ?? "In progress. Not available yet.";
               return (
-                <Reveal key={j.job} delay={(i % 3) * 70} className="h-full">
-                  {live ? (
-                    <a href={`/tools/${j.slug}`} className="block h-full">
-                      {card}
-                    </a>
-                  ) : (
-                    card
-                  )}
+                <Reveal as="li" key={j.job} className="border-b border-line">
+                  <div className="grid gap-8 py-12 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-16">
+                    <div className="lg:col-span-5">
+                      <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-muted">
+                        {String(i + 1).padStart(2, "0")} · {j.job}
+                      </p>
+                      <h2 className="display mt-4 text-[44px] sm:text-[56px]">{name}</h2>
+                      <p className="mt-2 text-[17px] font-medium text-ink">{tagline}</p>
+                      <p className="mt-4 max-w-[48ch] text-pretty text-[16px] leading-relaxed text-soft">
+                        {desc}
+                      </p>
+                      {tool ? (
+                        <>
+                          <p className="mt-5 text-[13px] text-muted">{tool.tags.join(" · ")}</p>
+                          <a href={`/tools/${tool.slug}`} className="btn-primary mt-7">
+                            Open {tool.name}
+                          </a>
+                        </>
+                      ) : (
+                        <p className="mt-6 inline-block rounded-[6px] border border-line px-3 py-1.5 text-[13px] text-muted">
+                          In progress
+                        </p>
+                      )}
+                    </div>
+                    <div className={`lg:col-span-7 ${i % 2 ? "lg:order-first" : ""}`}>
+                      {tool ? (
+                        <a
+                          href={`/tools/${tool.slug}`}
+                          className={`group block bg-paper-light p-1.5 ring-1 ring-ink/10 ${["rotate-[1deg]", "rotate-[-1.2deg]", "rotate-[0.6deg]", "rotate-[-0.8deg]", "rotate-[1.4deg]"][i % 5]}`}
+                          aria-label={`Open ${tool.name}`}
+                        >
+                          <span className="shot block aspect-[16/10] transition-colors duration-150 group-hover:border-orange">
+                            <Image
+                              src={`/tools/previews/${tool.slug}.webp`}
+                              alt={`${tool.name} interface: ${tool.tagline}`}
+                              fill
+                              priority={i === 0}
+                              sizes="(max-width: 1024px) 100vw, 55vw"
+                              className="object-cover object-top"
+                            />
+                          </span>
+                        </a>
+                      ) : (
+                        <div className="shot grid aspect-[16/10] place-items-center">
+                          <div className="flex h-16 w-64 overflow-hidden rounded-[4px] border border-ink/20">
+                            {j.soon!.swatches.map((sw) => (
+                              <span key={sw} className="flex-1" style={{ backgroundColor: sw }} />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </Reveal>
               );
             })}
-          </div>
+          </ol>
 
-          <p className="mx-auto mt-16 max-w-2xl text-center text-pretty text-lg leading-relaxed text-soft">
-            A connected set of design instruments that share a shell, so a colour
-            can travel from name finder to harmony to website palette without
-            leaving the language. The same engines ship as Figma plugins: three
-            free uses each, then one Razorpay payment unlocks the suite.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Link href="/pricing" className="btn-dark">
-              Figma plugin pricing
-            </Link>
-            <Link href="/archive" className="btn-ghost">
-              Browse the archive
-            </Link>
-            <Link href="/c" className="btn-ghost">
-              Explore categories
-            </Link>
+          <div className="mt-16 grid gap-8 lg:grid-cols-12">
+            <h2 className="display text-[36px] sm:text-[44px] lg:col-span-5">Also in Figma</h2>
+            <div className="lg:col-span-7">
+              <p className="max-w-[60ch] text-pretty text-[16px] leading-relaxed text-soft">
+                The tools share one shell, so a colour can travel from name finder to
+                harmony to website palette without changing language. The same engines
+                ship as Figma plugins: three free uses each, then one payment unlocks the
+                suite.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link href="/pricing" className="btn-dark">
+                  Figma plugin pricing
+                </Link>
+                <Link href="/archive" className="btn-ghost">
+                  Browse the archive
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

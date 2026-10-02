@@ -41,7 +41,7 @@ export default function RefundPolicyPage() {
       <section className="py-14 sm:py-20">
         <div className="wrap grid gap-12 lg:grid-cols-[0.28fr_0.72fr]">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <p className="font-mono text-[11px] uppercase tracking-widest text-ink/45">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted">
               On this page
             </p>
             <ul className="mt-4 space-y-2 text-sm">
@@ -52,7 +52,7 @@ export default function RefundPolicyPage() {
                 ["ask", "How to ask"],
               ].map(([id, label]) => (
                 <li key={id}>
-                  <a href={`#${id}`} className="text-ink/60 hover:text-orange">
+                  <a href={`#${id}`} className="text-soft hover:text-orange">
                     {label}
                   </a>
                 </li>

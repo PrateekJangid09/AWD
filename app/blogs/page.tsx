@@ -47,102 +47,66 @@ export default function BlogsPage() {
         })}
       />
       <UtilityHero
-        eyebrow="Resources"
+        eyebrow="Journal"
         title="What the archive shows, measured."
-        intro={`Original research drawn from ${archive.records} websites studied in depth. Every figure is computed from the record set and shown with its sample size.`}
-        breadcrumb={[{ href: "/", label: "Home" }, { label: "Resources" }]}
+        intro={`This journal publishes findings measured directly from the ${archive.records} records in the AllWebsites.Design archive, across ${archive.categories} industry categories. Each piece states its sample size, explains how the number was produced, and links to the records behind it. Nothing here is estimated from outside sources.`}
+        breadcrumb={[
+          { href: "/", label: "Home" },
+          { href: "/resources", label: "Resources" },
+          { label: "Journal" },
+        ]}
+        meta={`Last updated ${formatDay(modified)} · ${posts.length} published ${posts.length === 1 ? "piece" : "pieces"}`}
       />
 
-      <section className="border-b border-line bg-bone py-10">
+      <section className="py-16 sm:py-24">
         <div className="wrap">
-          <div className="max-w-3xl border-l-2 border-orange pl-4">
-            <p className="eyebrow text-ink">The short answer</p>
-            <p className="mt-2 text-pretty text-[17px] leading-relaxed text-ink/85">
-              This journal publishes findings measured directly from the{" "}
-              {archive.records} records in the AllWebsites.Design archive, across{" "}
-              {archive.categories} industry categories. Each piece states its
-              sample size, explains how the number was produced, and links to the
-              records behind it. Nothing here is estimated from outside sources.
-            </p>
-          </div>
-          <p className="mt-5 text-[13px] leading-relaxed text-muted">
-            <span className="font-medium text-ink">
-              Last updated {formatDay(modified)}
-            </span>
-            {` · ${posts.length} published ${posts.length === 1 ? "piece" : "pieces"} · Compiled and reviewed by the `}
-            <Link
-              href="/editorial-guidelines"
-              className="underline decoration-orange decoration-2 underline-offset-2 hover:text-ink"
-            >
-              AllWebsites.Design editorial team
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="py-14 sm:py-20">
-        <div className="wrap">
-          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="border-t border-ink">
             {posts.map((post, i) => (
-              <Reveal key={post.slug} delay={(i % 3) * 90}>
-                <Link
-                  href={`/blogs/${post.slug}`}
-                  className="hover-lift group flex h-full flex-col rounded-xl border border-line bg-paper p-6 hover:border-line-strong hover:shadow-soft"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-orange">
-                      {post.kicker}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted">
-                      {post.readingMinutes} min
-                    </span>
-                  </div>
-
-                  <h2 className="mt-5 text-[22px] font-bold leading-tight tracking-tight">
-                    {post.h1}
-                  </h2>
-
-                  <div className="mt-5 rounded-lg bg-orange/[0.07] p-4">
-                    <p className="mega text-3xl leading-none text-ink">
+              <Reveal as="li" key={post.slug} delay={i * 70} className="border-b border-line">
+                <Link href={`/blogs/${post.slug}`} className="group grid gap-6 py-10 lg:grid-cols-12 lg:gap-10 lg:py-14">
+                  <div className="lg:col-span-4">
+                    <p className="font-serif text-[80px] leading-[0.85] tracking-[-0.03em] text-ink sm:text-[104px]">
                       {post.keyStat.value}
                     </p>
-                    <p className="mt-2 text-pretty text-[12.5px] leading-relaxed text-soft">
-                      {post.keyStat.label}
-                    </p>
+                    <p className="mt-3 max-w-[30ch] text-[14.5px] leading-snug text-muted">{post.keyStat.label}</p>
                   </div>
-
-                  <p className="mt-5 flex-1 text-pretty text-[14px] leading-relaxed text-soft">
-                    {post.description}
-                  </p>
-
-                  <span className="mt-6 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink">
-                    Read the research →
-                  </span>
+                  <div className="lg:col-span-8">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-muted">
+                      {post.kicker} · {post.readingMinutes} min read
+                    </p>
+                    <h2 className="display mt-4 text-[34px] underline decoration-transparent decoration-2 underline-offset-[8px] transition-colors group-hover:decoration-orange sm:text-[46px]">
+                      {post.h1}
+                    </h2>
+                    <p className="mt-4 max-w-[62ch] text-pretty text-[16.5px] leading-relaxed text-soft">
+                      {post.description}
+                    </p>
+                    <span className="mt-6 inline-block text-[14px] font-semibold text-ink">Read the research →</span>
+                  </div>
                 </Link>
               </Reveal>
             ))}
-          </div>
+          </ol>
 
-          <div className="mt-16 border-t border-line pt-12 text-center">
-            <p className="eyebrow justify-center text-ink">Built on the archive</p>
-            <h2 className="mega mt-5 text-3xl sm:text-4xl">
-              Every figure traces back to a record.
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-pretty text-soft">
-              These findings come from the same {archive.records} studies you can
-              browse yourself. Open any record to see the palette, typefaces and
-              detected stack the numbers are built from.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/archive" className="btn-primary">
-                Explore the archive
-              </Link>
-              <Link href="/research/website-design-index-2026" className="btn-ghost">
-                Read the 2026 Index
-              </Link>
-              <Link href="/submit" className="btn-ghost">
-                Submit a site
-              </Link>
+          <div className="mt-16 grid gap-8 lg:grid-cols-12">
+            <h2 className="display text-[36px] sm:text-[44px] lg:col-span-5">Every figure traces back to a record.</h2>
+            <div className="lg:col-span-7">
+              <p className="max-w-[60ch] text-pretty text-[16px] leading-relaxed text-soft">
+                These findings come from the same {archive.records} studies you can browse.
+                Open any record to see the palette, typefaces and detected stack the numbers
+                are built from. Compiled and reviewed by the{" "}
+                <Link href="/editorial-guidelines" className="link-underline font-semibold text-ink">
+                  AllWebsites.Design editorial team
+                </Link>
+                .
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link href="/archive" className="btn-primary">
+                  Explore the archive
+                </Link>
+                <Link href="/research/website-design-index-2026" className="btn-ghost">
+                  Read the 2026 Index
+                </Link>
+              </div>
             </div>
           </div>
         </div>

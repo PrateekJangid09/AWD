@@ -6,22 +6,27 @@ export default function Breadcrumb({
   items: { href?: string; label: string }[];
 }) {
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-muted"
-    >
-      {items.map((item, i) => (
-        <span key={i} className="flex items-center gap-2">
-          {item.href ? (
-            <Link href={item.href} className="transition-colors hover:text-orange">
-              {item.label}
-            </Link>
-          ) : (
-            <span className="text-ink">{item.label}</span>
-          )}
-          {i < items.length - 1 && <span className="text-line-strong">/</span>}
-        </span>
-      ))}
+    <nav aria-label="Breadcrumb" className="text-[13px] text-muted">
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-center gap-2">
+            {item.href ? (
+              <Link href={item.href} className="link-underline text-muted hover:text-ink">
+                {item.label}
+              </Link>
+            ) : (
+              <span aria-current="page" className="font-medium text-ink">
+                {item.label}
+              </span>
+            )}
+            {i < items.length - 1 && (
+              <span aria-hidden className="text-line-strong">
+                /
+              </span>
+            )}
+          </li>
+        ))}
+      </ol>
     </nav>
   );
 }
