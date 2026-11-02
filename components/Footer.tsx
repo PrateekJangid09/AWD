@@ -8,8 +8,10 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
   {
     title: "Explore",
     links: [
+      { href: "/components", label: "Website Components" },
+      { href: "/builder", label: "Website Builder AI" },
       { href: "/archive", label: "Archive" },
-      { href: "/c", label: "Categories" },
+      { href: "/c", label: "Website Inspirations" },
       { href: "/tools", label: "Tools" },
       { href: "/research/website-design-index-2026", label: "Research" },
       { href: "/blogs", label: "Resources" },
@@ -23,7 +25,7 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/manifesto", label: "Manifesto" },
       { href: "/editorial-guidelines", label: "Editorial Guidelines" },
       { href: "/submit", label: "Submit a Site" },
-      { href: "/contact", label: "Contact" },
+      { href: "/contact", label: "Contact Us" },
     ],
   },
   {

@@ -27,8 +27,10 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
     heading: "Explore",
     links: [
       { href: "/", label: "Home", desc: "Website design examples, studied in depth." },
+      { href: "/components", label: "Website Components", desc: "Free sections and buttons to copy or download." },
+      { href: "/builder", label: "Website Builder AI", desc: "Place components on a full page and edit them." },
       { href: "/archive", label: "Archive", desc: "Search and filter every published record." },
-      { href: "/c", label: "Categories", desc: "Website design examples by industry." },
+      { href: "/c", label: "Website Inspirations", desc: "Website design examples by industry." },
       { href: "/tools", label: "Tools", desc: "Free colour tools that run in your browser." },
       {
         href: "/research/website-design-index-2026",
@@ -49,7 +51,7 @@ const SECTIONS: { heading: string; links: { href: string; label: string; desc: s
         desc: "Inclusion, classification and corrections.",
       },
       { href: "/submit", label: "Submit a site", desc: "Nominate a website for review." },
-      { href: "/contact", label: "Contact", desc: "Corrections and editorial questions." },
+      { href: "/contact", label: "Contact Us", desc: "Corrections and editorial questions." },
     ],
   },
   {

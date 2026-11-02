@@ -11,8 +11,10 @@ Support: https://buymeacoffee.com/prateekjangid
 ## Discover
 
 - [Home](https://allwebsites.design/): Website design examples, studied in depth
+- [Website Components](https://allwebsites.design/components): Free sections and buttons. Copy for Framer or Cursor, or copy and download the complete code
+- [Website Builder AI](https://allwebsites.design/builder): Place those components on a full page, edit them, and download the site
 - [Archive](https://allwebsites.design/archive): Search and filter every published website record
-- [Categories](https://allwebsites.design/c): Website design examples by industry
+- [Website Inspirations](https://allwebsites.design/c): Website design examples by industry
 - [2026 Website Design Index](https://allwebsites.design/research/website-design-index-2026): How the catalogue breaks down, with the method behind the counts
 - [Site map](https://allwebsites.design/site-map): Every page and record in one list
 - [Journal](https://allwebsites.design/blogs): Original research measured from the archive
@@ -43,7 +45,7 @@ Free, no-signup design instruments. Each owns one job and runs in the browser.
 - [Manifesto](https://allwebsites.design/manifesto): Useful inspiration needs context
 - [Editorial guidelines](https://allwebsites.design/editorial-guidelines): Inclusion, classification and corrections
 - [Submit a site](https://allwebsites.design/submit): Nominate a website for review
-- [Contact](https://allwebsites.design/contact): Corrections and editorial questions
+- [Contact Us](https://allwebsites.design/contact): Corrections and editorial questions
 
 ## Legal
 

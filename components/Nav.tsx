@@ -9,11 +9,12 @@ import type { Category } from "@/lib/catalog";
 type MenuKey = "categories" | "tools" | null;
 
 const LINKS: { href: string; label: string; menu?: Exclude<MenuKey, null> }[] = [
-  { href: "/archive", label: "Archive" },
-  { href: "/c", label: "Categories", menu: "categories" },
+  { href: "/components", label: "Website Components" },
+  { href: "/builder", label: "Website Builder AI" },
+  { href: "/c", label: "Website Inspirations", menu: "categories" },
   { href: "/tools", label: "Tools", menu: "tools" },
-  { href: "/research/website-design-index-2026", label: "Research" },
   { href: "/blogs", label: "Resources" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 // Required, not defaulted: counts must come from the live record set, so there
@@ -42,7 +43,7 @@ export default function Nav({
       <div className="wrap flex h-16 items-center justify-between gap-4">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {LINKS.map((l) => (
             <div
               key={l.href}
@@ -52,7 +53,7 @@ export default function Nav({
             >
               <Link
                 href={l.href}
-                className="flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium tracking-wide text-soft transition-colors hover:text-ink"
+                className="flex items-center gap-1.5 whitespace-nowrap px-2.5 py-2 text-[13px] font-medium tracking-wide text-soft transition-colors hover:text-ink"
                 aria-haspopup={l.menu ? "true" : undefined}
                 aria-expanded={l.menu ? menu === l.menu : undefined}
               >
@@ -70,18 +71,12 @@ export default function Nav({
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <Link href="/submit" className="btn-dark !py-2.5 !text-[12px]">
-            Submit a Site <span aria-hidden>↗</span>
-          </Link>
-        </div>
-
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label="Toggle menu"
-          className="flex h-10 w-10 items-center justify-center lg:hidden"
+          className="flex h-10 w-10 items-center justify-center xl:hidden"
         >
           <div className="space-y-[6px]">
             <span className={`block h-[2px] w-6 bg-ink transition-transform duration-200 ${open ? "translate-y-[8px] rotate-45" : ""}`} />
@@ -94,7 +89,7 @@ export default function Nav({
       {/* ── Desktop dropdown panels ── */}
       {menu && (
         <div
-          className="absolute inset-x-0 top-16 hidden lg:block"
+          className="absolute inset-x-0 top-16 hidden xl:block"
           onMouseEnter={() => openMenu(menu)}
           onMouseLeave={scheduleClose}
         >
@@ -166,7 +161,7 @@ export default function Nav({
 
       {/* ── Mobile menu ── */}
       {open && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-white lg:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-white xl:hidden">
           <div className="wrap flex flex-col py-3">
             {LINKS.map((l) =>
               l.menu ? (
@@ -205,12 +200,6 @@ export default function Nav({
                 </Link>
               ),
             )}
-            <Link href="/contact" onClick={() => setOpen(false)} className="border-b border-line py-3.5 text-sm font-medium tracking-wide">
-              Contact
-            </Link>
-            <Link href="/submit" onClick={() => setOpen(false)} className="btn-dark mt-4 w-full">
-              Submit a Site ↗
-            </Link>
           </div>
         </div>
       )}

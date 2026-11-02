@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 const LINKS = [
+  { href: "/components", label: "Website Components", desc: "Free sections and buttons you can copy." },
+  { href: "/builder", label: "Website Builder AI", desc: "Place those components on a full page." },
   { href: "/archive", label: "Browse the archive", desc: "Search every published website." },
-  { href: "/c", label: "Explore categories", desc: "See how each industry designs." },
+  { href: "/c", label: "Website Inspirations", desc: "See how each industry designs." },
   { href: "/tools", label: "Free colour tools", desc: "Palette, gradient and naming tools." },
   { href: "/blogs", label: "Research", desc: "Findings measured from the record set." },
   { href: "/research/website-design-index-2026", label: "2026 Design Index", desc: "What the archive is measuring." },

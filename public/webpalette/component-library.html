@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('wp-ui');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-ui',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<title>Component library — WebPalette</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23141414'/%3E%3Crect x='13' y='5' width='6' height='20' rx='3' fill='%23EFE9DF' transform='rotate(-30 16 25)'/%3E%3Crect x='13' y='5' width='6' height='20' rx='3' fill='%238C8C8C' transform='rotate(-8 16 25)'/%3E%3Crect x='13' y='5' width='6' height='20' rx='3' fill='%23D63A1F' transform='rotate(16 16 25)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="studio.css">
+<style>
+body{overflow:hidden}
+.lib{display:grid;grid-template-columns:280px 1fr;grid-template-rows:56px 1fr;height:100vh}
+body.has-drawer .lib{grid-template-columns:280px 1fr 480px}
+.lib__top{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:0 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+.lib__count{margin-left:auto;color:var(--ink-3);font-size:12px}
+.lib__side{display:grid;grid-template-rows:auto 1fr;gap:8px;padding:10px;background:var(--panel);border-right:1px solid var(--line);min-height:0}
+.lib__list{overflow:auto;display:grid;align-content:start;gap:2px}
+.lib__list h4{margin:12px 4px 4px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.lib__item{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:center;padding:5px;border:1px solid transparent;border-radius:8px;background:transparent;text-align:left}
+.lib__item:hover{background:var(--panel-2)}
+.lib__item[aria-current=true]{border-color:var(--brand);background:var(--brand-soft)}
+.lib__item img{width:64px;height:36px;object-fit:cover;object-position:top;border-radius:5px;border:1px solid var(--line)}
+.lib__item span{display:grid;min-width:0}.lib__item small{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lib__main{display:grid;grid-template-rows:auto auto 1fr;min-height:0;overflow:hidden}
+.lib__bar{display:flex;flex-wrap:wrap;gap:14px;align-items:end;padding:10px 18px;background:var(--panel);border-bottom:1px solid var(--line)}
+.lib__info{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px}
+.lib__info h1{margin:0;font-size:18px}.lib__info p{margin:2px 0 0;color:var(--ink-2)}
+.lib__meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lib__meta a{text-decoration:none}
+.lib__stage{overflow:auto;padding:0 18px 18px}
+.lib__one{display:flex;justify-content:center;height:100%}
+.lib__frame{width:100%;height:100%;min-height:600px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:var(--shadow)}
+.lib__compare{display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:16px}
+.lib__compare figure{margin:0;display:grid;gap:6px}
+.lib__mini{position:relative;aspect-ratio:1440/1000;overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#fff}
+.lib__mini iframe{position:absolute;left:0;top:0;width:1440px!important;height:1000px!important;transform:scale(var(--k,.33));transform-origin:0 0;border:0;box-shadow:none;border-radius:0}
+.lib__compare figcaption{display:grid}.lib__compare small{color:var(--ink-3)}
+/* v15 */
+.lib__modes{margin-left:12px}
+.lib__drawer{grid-row:2;grid-column:3;display:grid;grid-template-rows:auto auto auto auto auto 1fr;gap:10px;min-height:0;overflow:hidden;padding:14px 16px;background:var(--panel);border-left:1px solid var(--line)}
+.lib__drawer[hidden]{display:none}
+.lib__dh{display:flex;justify-content:space-between;align-items:start;gap:10px}.lib__dh small{color:var(--ink-3);font-size:11px;text-transform:uppercase;letter-spacing:.06em}.lib__dh h2{margin:2px 0 0;font-size:17px}
+.lib__dd{margin:0;color:var(--ink-2);font-size:13px}
+.lib__meta-tbl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:12px;max-height:200px;overflow:auto;padding:8px 10px;border:1px solid var(--line);border-radius:8px}
+.lib__meta-tbl dt{color:var(--ink-3)}.lib__meta-tbl dd{margin:0}
+.lib__chips{display:flex;flex-wrap:wrap;gap:4px}.lib__chips .tag{font-family:ui-monospace,monospace;font-size:10.5px}
+.lib__ok{color:#15803d;font-weight:600}
+.lib__tabs{display:flex;gap:2px;border-bottom:1px solid var(--line)}.lib__tabs button{border:0;background:none;padding:8px 10px;font-size:12.5px;font-weight:600;color:var(--ink-3);border-bottom:2px solid transparent;cursor:pointer}.lib__tabs button[aria-selected=true]{color:var(--ink);border-color:var(--brand)}
+.lib__dacts{display:flex;flex-wrap:wrap;gap:6px}
+.lib__code{margin:0;overflow:auto;min-height:0;padding:12px;border-radius:8px;background:#111318;color:#e6e6ea;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;tab-size:2}
+.lib__grp{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border:1px solid transparent;border-radius:8px;background:none;text-align:left;font-weight:600;font-size:13px}
+.lib__grp:hover{background:var(--panel-2)}.lib__grp[aria-current=true]{border-color:var(--brand);background:var(--brand-soft)}.lib__grp b{font-weight:500;color:var(--ink-3);font-size:12px}
+.lib__sub{display:block;padding:2px 12px 2px 22px;color:var(--ink-3);font-size:11.5px}
+.lib__note{margin:14px 4px;color:var(--ink-3);font-size:11.5px;line-height:1.45}
+.lib__new{margin-left:6px;padding:1px 6px;border-radius:999px;background:var(--brand-soft);color:var(--brand);font:600 10px/1.6 inherit;font-style:normal;vertical-align:middle}
+.lib__gallery{min-height:calc(100vh - 220px)}
+@media (max-width:1100px){body.has-drawer .lib{grid-template-columns:240px 1fr}.lib__drawer{position:fixed;right:0;top:56px;bottom:0;width:min(480px,100vw);z-index:20;box-shadow:-20px 0 40px rgba(0,0,0,.15)}}
+</style>
+</head>
+<body>
+<script src="assets.js"></script>
+<script src="library.js"></script>
+<script src="awd-ui.js"></script>
+</body>
+</html>
