@@ -1,0 +1,22 @@
+WebPalette v23 — UI redesigned to match allwebsites.design
+==========================================================
+Open any HTML file as before (e.g. Website builder.html or WebPalette.html).
+Everything runs offline; nothing to install.
+
+What changed (UI chrome only — the live section/button/site PREVIEWS are untouched):
+- Editorial look from allwebsites.design: warm paper + charcoal themes, one
+  orange accent (#FF6112), Instrument Serif display headings, 6px corners,
+  flat surfaces (depth from 1px rules, not drop shadows).
+- A manual light/dark toggle (sun/moon) in the top bar of ALL SIX pages,
+  including the new Website builder. Saved per browser (localStorage "wp-ui");
+  starts from your OS setting. Both themes fully designed.
+- Website builder: serif headline, orange emphasis + kicker + step numerals,
+  flat composer with an orange focus ring.
+
+Files touched: studio.css + components.css + builder.css (tokens swapped +
+an appended override layer), awd-ui.js (new — the toggle), and the six HTML
+files (Instrument Serif link + theme init + awd-ui.js). Originals are kept in
+_pre-awd-backup/ inside this folder.
+
+Instrument Serif loads from Google Fonts, so headings need a connection to show
+the serif; offline they fall back to Georgia. Everything else is offline.

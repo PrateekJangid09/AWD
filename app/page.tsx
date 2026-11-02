@@ -166,20 +166,131 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Tools — featured up top ── */}
+      {/* ── Website inspirations ── */}
+      <section className="border-b border-line py-16 sm:py-20">
+        <div className="wrap">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow text-ink">Website inspirations</p>
+              <h2 className="display mt-3 max-w-2xl text-3xl sm:text-4xl">
+                {all.length.toLocaleString()} real websites, already studied.
+              </h2>
+              <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-soft">
+                Each record keeps its palette, typefaces and detected stack.
+                Browse the archive, or follow an industry.
+              </p>
+            </div>
+            <Link href="/archive" className="btn-dark shrink-0 self-start sm:self-auto">
+              Browse the archive ↗
+            </Link>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+            {gallery.map((site, i) => (
+              <SiteCard key={site.slug} site={site} priority={i < 2} />
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {categories.slice(0, 12).map((c) => (
+              <Link
+                key={c.slug}
+                href={`/c/${c.slug}`}
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-[13px] font-medium text-ink transition-transform hover:-translate-y-0.5"
+              >
+                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
+                {c.name}
+                <span className="text-muted">{c.count.toLocaleString()}</span>
+              </Link>
+            ))}
+            <Link href="/c" className="inline-flex items-center px-2 text-[13px] font-medium text-soft hover:text-ink">
+              All {categories.length} inspirations →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-full overflow-hidden border-b border-line bg-ink py-4" aria-label="Industries">
+        <div className="ticker-track flex w-max max-w-none gap-3">
+          {tickerCats.map((c, i) => (
+            <Link
+              key={`${c.slug}-${i}`}
+              href={`/c/${c.slug}`}
+              className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-[13px] text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
+              {c.name}
+              <span className="text-white/70">{c.count.toLocaleString()}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Website components ── */}
+      <section className="border-b border-line bg-bone py-16 sm:py-20">
+        <div className="wrap">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="eyebrow text-ink">Website components</p>
+              <h2 className="display mt-3 max-w-2xl text-3xl sm:text-4xl">
+                Free to copy. Heroes, buttons, and the rest of the page.
+              </h2>
+              <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-soft">
+                Open any piece and copy it for Framer, copy it for Cursor, copy
+                the complete code, or download the complete code. Then open it
+                in Website Builder to see it on a full page.
+              </p>
+            </div>
+            <Link href="/components" className="btn-primary shrink-0 self-start sm:self-auto">
+              Browse components ↗
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["hero-aurora.jpg", "Hero"],
+              ["bento-grid.jpg", "Features"],
+              ["testimonials-wall.jpg", "Social proof"],
+              ["cta-band.jpg", "Call to action"],
+            ].map(([file, label]) => (
+              <Link
+                key={file}
+                href="/components"
+                className="group overflow-hidden rounded-2xl border border-line bg-white"
+              >
+                <span className="relative block aspect-[16/10] overflow-hidden border-b border-line bg-paper">
+                  <Image
+                    src={`/webpalette/kit/thumbs/${file}`}
+                    alt={`${label} component preview`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </span>
+                <span className="flex items-center justify-between px-4 py-3 text-[14px] font-semibold text-ink">
+                  {label}
+                  <span aria-hidden>→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Tools ── */}
       <section className="relative overflow-hidden border-b border-line py-16 sm:py-20">
         <span className="aura hidden sm:block" aria-hidden />
         <div className="wrap relative">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="eyebrow text-ink">The toolkit</p>
+              <p className="eyebrow text-ink">Tools</p>
               <h2 className="display mt-3 max-w-2xl text-3xl sm:text-4xl">
-                Free design tools that share one language.
+                Five colour tools, live in the browser.
               </h2>
               <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-soft">
-                Find a colour name, build a harmony, generate a website palette,
-                preview it on a mockup, and make OKLCH gradients. Free, no signup,
-                everything runs in your browser.
+                Chromary, Colorhyme, WebPalette, Mockupalettes and TrueGradient.
+                Website Builder AI is the tool that joins them, wired to the
+                component gallery.
               </p>
             </div>
             <Link href="/tools" className="btn-dark shrink-0 self-start sm:self-auto">
@@ -188,7 +299,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {TOOLS.map((t, i) => (
+            {TOOLS.map((t) => (
                 <a
                   key={t.slug}
                   href={`/tools/${t.slug}`}
@@ -199,7 +310,6 @@ export default function Home() {
                       src={`/tools/previews/${t.slug}.webp`}
                       alt={`${t.name}: ${t.tagline}`}
                       fill
-                      priority={i === 0}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                     />
@@ -222,97 +332,56 @@ export default function Home() {
                   </span>
                 </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Colourful category ticker ── */}
-      <section className="max-w-full overflow-hidden border-b border-line bg-ink py-4">
-        <div className="ticker-track flex w-max max-w-none gap-3">
-          {tickerCats.map((c, i) => (
             <Link
-              key={`${c.slug}-${i}`}
-              href={`/c/${c.slug}`}
-              className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-[13px] text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+              href="/builder"
+              className="flex h-full flex-col justify-between rounded-2xl border border-dashed border-line-strong bg-bone p-6"
             >
-              <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
-              {c.name}
-              <span className="text-white/70">{c.count.toLocaleString()}</span>
+              <span>
+                <span className="rounded-full border border-line bg-white px-2.5 py-1 text-[10.5px] font-semibold text-ink">
+                  Joining the toolkit
+                </span>
+                <span className="mt-4 block text-[16px] font-semibold tracking-tight text-ink">
+                  Website Builder AI
+                </span>
+                <span className="mt-1 block text-[13px] leading-relaxed text-soft">
+                  Place the free components on a full page, edit them, and download the site.
+                </span>
+              </span>
+              <span className="mt-6 text-[13px] font-medium text-ink">Open the builder →</span>
             </Link>
-          ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Gallery ── */}
-      <section className="py-12 sm:py-16">
-        <div className="wrap">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="eyebrow text-ink">The gallery</p>
-              <h2 className="display mt-3 text-2xl sm:text-3xl">
-                Website design examples, recently studied.
-              </h2>
-            </div>
-            <Link href="/archive" className="text-[13px] font-medium text-soft hover:text-ink">
-              Browse all {all.length.toLocaleString()} →
+      {/* ── List a product ── */}
+      <section className="py-16 sm:py-24">
+        <div className="wrap grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="eyebrow text-ink">List a product</p>
+            <h2 className="display mt-3 max-w-xl text-3xl sm:text-5xl">
+              Put a website in front of people studying real design.
+            </h2>
+            <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-soft">
+              A listing is a studied record: palette, type and stack, beside the
+              {" "}{all.length.toLocaleString()} sites already here. Send the URL.
+              We review it against the editorial guidelines before it is published.
+            </p>
+            <Link href="/submit" className="btn-primary mt-8 inline-flex">
+              Submit a site ↗
             </Link>
           </div>
-
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {gallery.map((site, i) => (
-              <SiteCard key={site.slug} site={site} priority={i < 2} />
+          <ul className="space-y-4 rounded-3xl border border-line bg-white p-6 sm:p-8">
+            {[
+              "A real destination, checked before it is added.",
+              "The same palette, type and technology breakdown as every other record.",
+              "A place in the archive people already browse by industry.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-[15px] leading-relaxed text-ink">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange" aria-hidden />
+                {item}
+              </li>
             ))}
-          </div>
-
-          <div className="mt-12 flex justify-center">
-            <Link href="/archive" className="btn-ghost">
-              Browse all {all.length.toLocaleString()} website design examples
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Categories ── */}
-      <section className="border-t border-line bg-bone py-16 sm:py-20">
-        <div className="wrap">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="eyebrow text-ink">Browse</p>
-              <h2 className="display mt-3 text-2xl sm:text-3xl">By category.</h2>
-            </div>
-            <Link href="/c" className="text-[13px] font-medium text-soft hover:text-ink">
-              All {categories.length} →
-            </Link>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-2.5">
-            {categories.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/c/${c.slug}`}
-                className="group inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-[13px] font-medium text-ink transition-transform hover:-translate-y-0.5"
-              >
-                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: c.accent }} />
-                {c.name}
-                <span className="text-muted">{c.count.toLocaleString()}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="border-t border-line py-24 sm:py-32">
-        <div className="wrap text-center">
-          <h2 className="mega mx-auto max-w-3xl text-4xl sm:text-6xl">
-            Discover, understand, explore.
-          </h2>
-          <p className="mx-auto mt-5 max-w-lg text-pretty text-lg text-soft">
-            The definitive place to study how the web is designed.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/archive" className="btn-primary !px-6 !py-3.5">Explore the archive</Link>
-            <Link href="/submit" className="btn-ghost !px-6 !py-3.5">Submit a site</Link>
-          </div>
+          </ul>
         </div>
       </section>
     </>
